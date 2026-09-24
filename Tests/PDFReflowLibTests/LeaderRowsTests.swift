@@ -15,14 +15,14 @@ private func tocSource(_ number: Int) throws -> (PageContent, [GraphicsReader.Pa
     return (page, fixture.paints)
 }
 
-@Test(arguments: [8,19,20])
+@Test(arguments: Array(8...20))
 func noaaContentsKeepPaintedLeaderEntriesWithTheirLocators(number: Int) throws {
     var (page, paints) = try tocSource(number)
     let before = page.lines
     page.lines = LeaderRows.joined(page, paints: paints)
     let numberLines = before.filter { $0.text.range(of: #"^(?:[ivxlcdmIVXLCDM]{1,8}|[A-Z]?[0-9]{1,3}-[0-9]{1,3})$"#,
         options: .regularExpression) != nil }.sorted { $0.rect.midY > $1.rect.midY }
-    #expect(numberLines.count == (number == 8 ? 25 : number == 19 ? 28 : 15))
+    #expect(numberLines.count == [8:25,9:27,10:26,11:18,12:19,13:16,14:22,15:20,16:16,17:18,18:22,19:28,20:15][number])
     let crops = LayoutReconstructor.graphicsWithLabels(page)
     var warnings: [ConversionWarning] = []
     let blocks = LayoutReconstructor.blocks(page: page,
@@ -38,8 +38,26 @@ func noaaContentsKeepPaintedLeaderEntriesWithTheirLocators(number: Int) throws {
     for numberLine in numberLines {
         let entry = try #require(before.first { $0.rect.maxX < numberLine.rect.minX
             && abs($0.rect.midY - numberLine.rect.midY) < 1 })
-        let phrase = normalized(entry.text) + " " + numberLine.text
-        #expect(texts.contains { $0.contains(phrase) }, "Page \(number) missing pair: \(phrase)")
+        var parts = [entry]
+        // A wrapped entry's preceding source row has the same left edge and type, with
+        // 11pt baseline leading. Its PDFKit rectangle can overlap the final row's box.
+        while let last = parts.last, let prior = before.first(where: {
+            abs($0.rect.minX - last.rect.minX) < 1 && abs($0.fontSize - last.fontSize) < 0.1
+                && $0.rect.midY - last.rect.midY >= last.fontSize * 0.8
+                && $0.rect.midY - last.rect.midY <= last.fontSize * 1.25
+        }) { parts.append(prior) }
+        let phrase = parts.reversed().map { normalized($0.text) }.joined(separator: " ") + " " + numberLine.text
+        #expect(full.contains(phrase), "Page \(number) missing complete entry: \(phrase)")
+        // Preserve the original single-row association contract; wrapped entries may span
+        // existing paragraph blocks, but their complete source text must remain adjacent.
+        if [8,19,20].contains(number) {
+            #expect(texts.contains { $0.contains(phrase) }, "Page \(number) detached locator: \(phrase)")
+        }
+        let restored: [Int: Set<String>] = [9:["4-16"],10:["9-5"],12:["15-17"],
+            13:["18-11"],15:["24-21"],16:["27-8","27-21"]]
+        if restored[number]?.contains(numberLine.text) == true {
+            #expect(page.lines.contains { normalized($0.text) == normalized(entry.text) + " " + numberLine.text })
+        }
         if let range = full.range(of: phrase) { positions.append(range.lowerBound) }
     }
     #expect(positions == positions.sorted())
@@ -123,4 +141,24 @@ func noaaContentsKeepPaintedLeaderEntriesWithTheirLocators(number: Int) throws {
     let dense = PageContent(number:1,bounds:page.bounds,lines:labels+numbers,graphics:[])
     #expect(LeaderRows.maximumComparisons == 2_000_000)
     #expect(LeaderRows.joined(dense,paints:marks) == dense.lines)
+}
+
+@Test func paintedLeaderObstructionUsesInkBandRatherThanOverlappingLineLeading() {
+    var rows: [TextLine] = [], paints: [GraphicsReader.Paint] = []
+    for index in 0..<3 {
+        let y = CGFloat(200 - index * 40)
+        rows += [TextLine(text:"A long entry wraps before",rect:CGRect(x:20,y:y+11,width:140,height:13.27),fontSize:10),
+                 TextLine(text:"its final row",rect:CGRect(x:20,y:y,width:70,height:13.27),fontSize:10),
+                 TextLine(text:"A1-\(index+1)",rect:CGRect(x:190,y:y,width:25,height:13.27),fontSize:10)]
+        paints.append(.init(rect:CGRect(x:92,y:y+2,width:96,height:4),strokeOnly:true,
+            vertices:[CGPoint(x:94,y:y+4),CGPoint(x:186,y:y+4)]))
+    }
+    let page = PageContent(number:1,bounds:CGRect(x:0,y:0,width:300,height:300),lines:rows,graphics:[])
+    let joined = LeaderRows.joined(page,paints:paints)
+    #expect(joined.count == 6)
+    #expect(joined.contains { $0.text == "its final row A1-1" })
+    // Moving the first row down so its ink box crosses the leader makes it an obstruction.
+    var crossed = page
+    for index in [0,3,6] { crossed.lines[index].rect.origin.y -= 9 }
+    #expect(LeaderRows.joined(crossed,paints:paints) == crossed.lines)
 }

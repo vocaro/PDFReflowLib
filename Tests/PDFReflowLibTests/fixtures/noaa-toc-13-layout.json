@@ -1,0 +1,3390 @@
+{
+  "bounds" : [
+    0,
+    0,
+    792,
+    612
+  ],
+  "caseID" : "noaa-nca5-2023",
+  "graphics" : [
+    [
+      140.87789917000001,
+      408.27999999999997,
+      651.12210083000002,
+      203.72000000000003
+    ],
+    [
+      198.58009338299999,
+      381.45001220699999,
+      331.18499755800008,
+      4
+    ],
+    [
+      144.76949999999999,
+      364.45001220699999,
+      391.20999145500002,
+      4
+    ],
+    [
+      378.55371093700001,
+      348.95001220699999,
+      157.42599487300004,
+      4
+    ],
+    [
+      397.6796875,
+      333.45001220699999,
+      132.68499755799996,
+      4
+    ],
+    [
+      195.89750671300001,
+      306.95001220699999,
+      334.46701049800004,
+      4
+    ],
+    [
+      179.134796142,
+      291.45001220699999,
+      351.23001098600002,
+      4
+    ],
+    [
+      140.87789917000001,
+      275.95001220699999,
+      389.48699951100002,
+      4
+    ],
+    [
+      287.73049926700003,
+      245.64999389600001,
+      242.03500366200001,
+      4
+    ],
+    [
+      144.76949999999999,
+      228.64999389600001,
+      391.20999145500002,
+      4
+    ],
+    [
+      178.27540588299999,
+      202.14999389600001,
+      357.70498657200005,
+      4
+    ],
+    [
+      190.55569457999999,
+      175.64999389600001,
+      345.42401123000002,
+      4
+    ],
+    [
+      234.105499267,
+      149.14999389600001,
+      296.25900268499993,
+      4
+    ],
+    [
+      179.134796142,
+      133.64999389600001,
+      351.23001098600002,
+      4
+    ],
+    [
+      140.87789917000001,
+      118.15000152499999,
+      389.48699951100002,
+      4
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        13.9001,
+        720.00029785100003,
+        14.19
+      ],
+      "text" : "Fifth National Climate Assessment xii"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        563.74800000000005,
+        405.462609375,
+        15.923999999999978
+      ],
+      "text" : "Chapter 18. Sector Interactions, Multiple Stressors, and Complex Systems \b"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        531.25307568300002,
+        563.74800000000005,
+        25.319999999999936,
+        15.923999999999978
+      ],
+      "text" : "18-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        547.28999999999996,
+        58.749499999999983,
+        13.269999999999982
+      ],
+      "text" : "Introduction \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        536.95991943299998,
+        547.28999999999996,
+        19.620000000000005,
+        13.269999999999982
+      ],
+      "text" : "18-5"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        531.78999999999996,
+        355.63400000955005,
+        13.269999999999982
+      ],
+      "text" : "Key Message 18.1. Human–Nature Interconnections Create Unexpected Climate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        520.78999999999996,
+        466.57991943299999,
+        13.269999999999982
+      ],
+      "text" : "Risks and Opportunities \b 18-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        505.29000000000002,
+        339.93200000573012,
+        13.270000000000039
+      ],
+      "text" : "Key Message 18.2. Complex Climate Impacts and Responses Further Burden"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        494.29000000000002,
+        466.57991943299999,
+        13.269999999999982
+      ],
+      "text" : "Frontline Communities \b 18-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        478.79000000000002,
+        348.24000000764011,
+        13.269999999999982
+      ],
+      "text" : "Key Message 18.3. Collaborations Among Diverse Knowledge Holders Improve"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        467.79000000000002,
+        195.370594482,
+        13.269999999999982
+      ],
+      "text" : "Responses to Complex Climate Challenges \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        467.79000000000002,
+        25.240000000000009,
+        13.269999999999982
+      ],
+      "text" : "18-11"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        452.29000000000002,
+        370.90900000573015,
+        13.269999999999982
+      ],
+      "text" : "Key Message 18.4.New Governance Approaches Are Emerging, but Gaps in Practice"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        441.29000000000002,
+        466.58468505799999,
+        13.269999999999982
+      ],
+      "text" : "and Evidence Persist \b 18-16"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        425.79000000000002,
+        93.114796141999989,
+        13.269999999999982
+      ],
+      "text" : "Traceable Accounts \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        425.79000000000002,
+        25.240000000000009,
+        13.269999999999982
+      ],
+      "text" : "18-20"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        410.29000000000002,
+        54.857899169999996,
+        13.269999999999982
+      ],
+      "text" : "References \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        410.29000000000002,
+        25.240000000000009,
+        13.269999999999982
+      ],
+      "text" : "18-25"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        379.44801220699998,
+        131.06809338299999,
+        15.923999999999978
+      ],
+      "text" : "Chapter 19. Economics \b"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        531.25307568300002,
+        379.44801220699998,
+        25.319999999999936,
+        15.923999999999978
+      ],
+      "text" : "19-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        362.99001220700001,
+        58.749499999999983,
+        13.269999999999982
+      ],
+      "text" : "Introduction \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        536.95991943299998,
+        362.99001220700001,
+        19.620000000000005,
+        13.269999999999982
+      ],
+      "text" : "19-5"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        347.49001220700001,
+        292.53371093700002,
+        13.269999999999982
+      ],
+      "text" : "Key Message 19.1. Climate Change Affects the Economy Directly \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        536.95991943299998,
+        347.49001220700001,
+        19.620000000000005,
+        13.269999999999982
+      ],
+      "text" : "19-5"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        331.99001220700001,
+        311.65968750000002,
+        13.269999999999982
+      ],
+      "text" : "Key Message 19.2. Markets and Budgets Respond to Climate Change \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        331.99001220700001,
+        25.240000000000009,
+        13.269999999999982
+      ],
+      "text" : "19-13"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        316.49001220700001,
+        340.46000000190992,
+        13.269999999999982
+      ],
+      "text" : "Key Message 19.3. Economic Opportunities for Households, Businesses, and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        305.49001220700001,
+        466.58468505799999,
+        13.269999999999982
+      ],
+      "text" : "Institutions Will Change \b 19-17"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        289.99001220700001,
+        93.114796141999989,
+        13.269999999999982
+      ],
+      "text" : "Traceable Accounts \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        289.99001220700001,
+        25.240000000000009,
+        13.269999999999982
+      ],
+      "text" : "19-20"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        274.49001220700001,
+        54.857899169999996,
+        13.269999999999982
+      ],
+      "text" : "References \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        274.49001220700001,
+        25.240000000000009,
+        13.269999999999982
+      ],
+      "text" : "19-25"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        72,
+        243.647993896,
+        220.21849926700003,
+        15.923999999999978
+      ],
+      "text" : "Chapter 20. Social Systems and Justice \b"
+    },
+    {
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        531.25307568300002,
+        243.647993896,
+        25.319999999999936,
+        15.923999999999978
+      ],
+      "text" : "20-1"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        227.189993896,
+        58.749499999999983,
+        13.27000000000001
+      ],
+      "text" : "Introduction \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        536.95991943299998,
+        227.189993896,
+        19.620000000000005,
+        13.27000000000001
+      ],
+      "text" : "20-4"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        211.689993896,
+        356.04700000190996,
+        13.27000000000001
+      ],
+      "text" : "Key Message 20.1. Social Systems Are Changing the Climate and Distributing Its"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        200.689993896,
+        466.57991943299999,
+        13.27000000000001
+      ],
+      "text" : "Impacts Inequitably \b 20-6"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        185.189993896,
+        364.68300000573009,
+        13.27000000000001
+      ],
+      "text" : "Key Message 20.2. Social Systems Structure How People Know and Communicate"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        174.189993896,
+        466.57991943299999,
+        13.27000000000001
+      ],
+      "text" : "About Climate Change \b 20-9"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        158.689993896,
+        345.4100000057299,
+        13.27000000000001
+      ],
+      "text" : "Key Message 20.3. Climate Justice Is Possible If Processes like Migration and"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        147.689993896,
+        148.08549926699999,
+        13.27000000000001
+      ],
+      "text" : "Energy Transitions Are Equitable \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        147.689993896,
+        25.240000000000009,
+        13.27000000000001
+      ],
+      "text" : "20-14"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        132.189993896,
+        93.114796141999989,
+        13.27000000000001
+      ],
+      "text" : "Traceable Accounts \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        132.189993896,
+        25.240000000000009,
+        13.27000000000001
+      ],
+      "text" : "20-19"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        90,
+        116.690001525,
+        54.857899169999996,
+        13.269999999999996
+      ],
+      "text" : "References \b"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        531.34468505799998,
+        116.690001525,
+        25.240000000000009,
+        13.269999999999996
+      ],
+      "text" : "20-26"
+    }
+  ],
+  "nativeLines" : [
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "Fifth National Climate Assessment xii",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          13.9001
+        ],
+        [
+          720.00029785100003,
+          14.19
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 815
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Chapter 18. Sector Interactions, Multiple Stressors, and Complex Systems \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        [
+          72,
+          563.74800000000005
+        ],
+        [
+          405.462609375,
+          15.923999999999978
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 815
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "18-1",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.25307568300002,
+          563.74800000000005
+        ],
+        [
+          25.319999999999936,
+          15.923999999999978
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 819
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Introduction \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          547.28999999999996
+        ],
+        [
+          58.749499999999983,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 819
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "18-5",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          536.95991943299998,
+          547.28999999999996
+        ],
+        [
+          19.620000000000005,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 820
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 18.1. Human–Nature Interconnections Create Unexpected Climate",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          531.78999999999996
+        ],
+        [
+          355.63400000955005,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 820
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Risks and Opportunities \b 18-6",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          520.78999999999996
+        ],
+        [
+          466.57991943299999,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 823
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 18.2. Complex Climate Impacts and Responses Further Burden",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          505.29000000000002
+        ],
+        [
+          339.93200000573012,
+          13.270000000000039
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 823
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Frontline Communities \b 18-9",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          494.29000000000002
+        ],
+        [
+          466.57991943299999,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 825
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 18.3. Collaborations Among Diverse Knowledge Holders Improve",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          478.79000000000002
+        ],
+        [
+          348.24000000764011,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 825
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Responses to Complex Climate Challenges \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          467.79000000000002
+        ],
+        [
+          195.370594482,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 825
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "18-11",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          467.79000000000002
+        ],
+        [
+          25.240000000000009,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 830
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 18.4.New Governance Approaches Are Emerging, but Gaps in Practice",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          452.29000000000002
+        ],
+        [
+          370.90900000573015,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 830
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "and Evidence Persist \b 18-16",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          441.29000000000002
+        ],
+        [
+          466.58468505799999,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 834
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Traceable Accounts \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          425.79000000000002
+        ],
+        [
+          93.114796141999989,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 834
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "18-20",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          425.79000000000002
+        ],
+        [
+          25.240000000000009,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 839
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "References \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          410.29000000000002
+        ],
+        [
+          54.857899169999996,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 839
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "18-25",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          410.29000000000002
+        ],
+        [
+          25.240000000000009,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 855
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Chapter 19. Economics \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        [
+          72,
+          379.44801220699998
+        ],
+        [
+          131.06809338299999,
+          15.923999999999978
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 855
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "19-1",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.25307568300002,
+          379.44801220699998
+        ],
+        [
+          25.319999999999936,
+          15.923999999999978
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 859
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Introduction \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          362.99001220700001
+        ],
+        [
+          58.749499999999983,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 859
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "19-5",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          536.95991943299998,
+          362.99001220700001
+        ],
+        [
+          19.620000000000005,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 859
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 19.1. Climate Change Affects the Economy Directly \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          347.49001220700001
+        ],
+        [
+          292.53371093700002,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 859
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "19-5",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          536.95991943299998,
+          347.49001220700001
+        ],
+        [
+          19.620000000000005,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 867
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 19.2. Markets and Budgets Respond to Climate Change \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          331.99001220700001
+        ],
+        [
+          311.65968750000002,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 867
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "19-13",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          331.99001220700001
+        ],
+        [
+          25.240000000000009,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 871
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 19.3. Economic Opportunities for Households, Businesses, and",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          316.49001220700001
+        ],
+        [
+          340.46000000190992,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 871
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Institutions Will Change \b 19-17",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          305.49001220700001
+        ],
+        [
+          466.58468505799999,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 874
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Traceable Accounts \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          289.99001220700001
+        ],
+        [
+          93.114796141999989,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 874
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "19-20",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          289.99001220700001
+        ],
+        [
+          25.240000000000009,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 879
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "References \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          274.49001220700001
+        ],
+        [
+          54.857899169999996,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 879
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "19-25",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          274.49001220700001
+        ],
+        [
+          25.240000000000009,
+          13.269999999999982
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 893
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Chapter 20. Social Systems and Justice \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        [
+          72,
+          243.647993896
+        ],
+        [
+          220.21849926700003,
+          15.923999999999978
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 893
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "20-1",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 12,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.25307568300002,
+          243.647993896
+        ],
+        [
+          25.319999999999936,
+          15.923999999999978
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 896
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Introduction \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          227.189993896
+        ],
+        [
+          58.749499999999983,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 896
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "20-4",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          536.95991943299998,
+          227.189993896
+        ],
+        [
+          19.620000000000005,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 898
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 20.1. Social Systems Are Changing the Climate and Distributing Its",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          211.689993896
+        ],
+        [
+          356.04700000190996,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 898
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Impacts Inequitably \b 20-6",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          200.689993896
+        ],
+        [
+          466.57991943299999,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 901
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 20.2. Social Systems Structure How People Know and Communicate",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          185.189993896
+        ],
+        [
+          364.68300000573009,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 901
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "About Climate Change \b 20-9",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          174.189993896
+        ],
+        [
+          466.57991943299999,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 906
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Key Message 20.3. Climate Justice Is Possible If Processes like Migration and",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          158.689993896
+        ],
+        [
+          345.4100000057299,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 906
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Energy Transitions Are Equitable \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          147.689993896
+        ],
+        [
+          148.08549926699999,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 906
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "20-14",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          147.689993896
+        ],
+        [
+          25.240000000000009,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 911
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "Traceable Accounts \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          132.189993896
+        ],
+        [
+          93.114796141999989,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 911
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "20-19",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          132.189993896
+        ],
+        [
+          25.240000000000009,
+          13.27000000000001
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 918
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "References \b",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          90,
+          116.690001525
+        ],
+        [
+          54.857899169999996,
+          13.269999999999996
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "link" : {
+              "_0" : {
+                "page" : {
+                  "_0" : 918
+                }
+              },
+              "_1" : {
+                "elements" : [
+                  {
+                    "text" : {
+                      "_0" : "20-26",
+                      "_1" : 0
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          531.34468505799998,
+          116.690001525
+        ],
+        [
+          25.240000000000009,
+          13.269999999999996
+        ]
+      ]
+    }
+  ],
+  "page" : 13,
+  "paintOperations" : [
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          358.5,
+          409.28002529999998
+        ],
+        [
+          433.5,
+          202.71997470000002
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          349.5,
+          408.27999999999997
+        ],
+        [
+          442.5,
+          203.72000000000003
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          475.90740966700002,
+          565.75
+        ],
+        [
+          52.390998839999952,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          477.90740966700002,
+          567.75
+        ],
+        [
+          526.29840850699998,
+          567.75
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          472.974609375,
+          565.75
+        ],
+        [
+          56.789999999999964,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          147.771194458,
+          548.75
+        ],
+        [
+          386.70800781200001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          149.771194458,
+          550.75
+        ],
+        [
+          532.47920226999997,
+          550.75
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          144.76949999999999,
+          548.75
+        ],
+        [
+          391.20999145500002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          199.77890000000002,
+          522.25
+        ],
+        [
+          334.70498657200005,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          201.77890000000002,
+          524.25
+        ],
+        [
+          532.48388657200007,
+          524.25
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          196.78610229399999,
+          522.25
+        ],
+        [
+          339.19400000000007,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          194.65150451599999,
+          495.75
+        ],
+        [
+          339.82199096599999,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          196.65150451599999,
+          497.75
+        ],
+        [
+          532.47349548199998,
+          497.75
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          191.639602661,
+          495.75
+        ],
+        [
+          344.339996337,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          284.37811279200002,
+          469.25
+        ],
+        [
+          244.49299621500006,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          286.37811279200002,
+          471.25
+        ],
+        [
+          526.87110900700009,
+          471.25
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          281.39059448199998,
+          469.25
+        ],
+        [
+          248.97399902300003,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          186.28010559000001,
+          442.75
+        ],
+        [
+          342.579986572,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          188.28010559000001,
+          444.75
+        ],
+        [
+          526.860092162,
+          444.75
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          183.270492553,
+          442.75
+        ],
+        [
+          347.09399414000001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          182.12809753400001,
+          427.25
+        ],
+        [
+          346.739990234,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          184.12809753400001,
+          429.25
+        ],
+        [
+          526.86808776800001,
+          429.25
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          179.134796142,
+          427.25
+        ],
+        [
+          351.23001098600002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          143.88949584900001,
+          411.75
+        ],
+        [
+          384.96899413999995,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          145.88949584900001,
+          413.75
+        ],
+        [
+          526.85848998899996,
+          413.75
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          140.87789917000001,
+          411.75
+        ],
+        [
+          389.48699951100002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          201.58180236800001,
+          381.45001220699999
+        ],
+        [
+          326.68200683499992,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          203.58180236800001,
+          383.45001220699999
+        ],
+        [
+          526.26380920299994,
+          383.45001220699999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          198.58009338299999,
+          381.45001220699999
+        ],
+        [
+          331.18499755800008,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          147.771194458,
+          364.45001220699999
+        ],
+        [
+          386.70800781200001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          149.771194458,
+          366.45001220699999
+        ],
+        [
+          532.47920226999997,
+          366.45001220699999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          144.76949999999999,
+          364.45001220699999
+        ],
+        [
+          391.20999145500002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          381.56210327100001,
+          348.95001220699999
+        ],
+        [
+          152.91400146400002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          383.56210327100001,
+          350.95001220699999
+        ],
+        [
+          532.47610473500004,
+          350.95001220699999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          378.55371093700001,
+          348.95001220699999
+        ],
+        [
+          157.42599487300004,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          400.67239379799997,
+          333.45001220699999
+        ],
+        [
+          128.19599914500003,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          402.67239379799997,
+          335.45001220699999
+        ],
+        [
+          526.868392943,
+          335.45001220699999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          397.6796875,
+          333.45001220699999
+        ],
+        [
+          132.68499755799996,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          198.90170287999999,
+          306.95001220699999
+        ],
+        [
+          329.96099853499993,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          200.90170287999999,
+          308.95001220699999
+        ],
+        [
+          526.86270141499995,
+          308.95001220699999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          195.89750671300001,
+          306.95001220699999
+        ],
+        [
+          334.46701049800004,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          182.12809753400001,
+          291.45001220699999
+        ],
+        [
+          346.739990234,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          184.12809753400001,
+          293.45001220699999
+        ],
+        [
+          526.86808776800001,
+          293.45001220699999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          179.134796142,
+          291.45001220699999
+        ],
+        [
+          351.23001098600002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          143.88949584900001,
+          275.95001220699999
+        ],
+        [
+          384.96899413999995,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          145.88949584900001,
+          277.95001220699999
+        ],
+        [
+          526.85848998899996,
+          277.95001220699999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          140.87789917000001,
+          275.95001220699999
+        ],
+        [
+          389.48699951100002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          290.74359130800002,
+          245.64999389600001
+        ],
+        [
+          237.51499938900002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          292.74359130800002,
+          247.64999389600001
+        ],
+        [
+          526.25859069700005,
+          247.64999389600001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          287.73049926700003,
+          245.64999389600001
+        ],
+        [
+          242.03500366200001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          147.771194458,
+          228.64999389600001
+        ],
+        [
+          386.70800781200001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          149.771194458,
+          230.64999389600001
+        ],
+        [
+          532.47920226999997,
+          230.64999389600001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          144.76949999999999,
+          228.64999389600001
+        ],
+        [
+          391.20999145500002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          181.272903442,
+          202.14999389600001
+        ],
+        [
+          353.20800781200001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          183.272903442,
+          204.14999389600001
+        ],
+        [
+          532.48091125400003,
+          204.14999389600001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          178.27540588299999,
+          202.14999389600001
+        ],
+        [
+          357.70498657200005,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          193.55059814399999,
+          175.64999389600001
+        ],
+        [
+          340.93200683499992,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          195.55059814399999,
+          177.64999389600001
+        ],
+        [
+          532.48260497899992,
+          177.64999389600001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          190.55569457999999,
+          175.64999389600001
+        ],
+        [
+          345.42401123000002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          237.11849975499999,
+          149.14999389600001
+        ],
+        [
+          291.73999023399995,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          239.11849975499999,
+          151.14999389600001
+        ],
+        [
+          526.85848998899996,
+          151.14999389600001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          234.105499267,
+          149.14999389600001
+        ],
+        [
+          296.25900268499993,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          182.12809753400001,
+          133.64999389600001
+        ],
+        [
+          346.739990234,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          184.12809753400001,
+          135.64999389600001
+        ],
+        [
+          526.86808776800001,
+          135.64999389600001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          179.134796142,
+          133.64999389600001
+        ],
+        [
+          351.23001098600002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          143.88949584900001,
+          118.15000152499999
+        ],
+        [
+          384.96899413999995,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          145.88949584900001,
+          120.15000152499999
+        ],
+        [
+          526.85848998899996,
+          120.15000152499999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          140.87789917000001,
+          118.15000152499999
+        ],
+        [
+          389.48699951100002,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      358.5,
+      409.28002529999998,
+      433.5,
+      202.71997470000002
+    ]
+  ],
+  "rightsBasis" : "NOAA repository explicitly identifies CC0 Public Domain. See corpus manifest for owner-admitted development source and derivative scope.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "sourceTitle" : "Fifth National Climate Assessment",
+  "sourceURL" : "https://repository.library.noaa.gov/view/noaa/61592/noaa_61592_DS1.pdf"
+}

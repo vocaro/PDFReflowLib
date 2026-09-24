@@ -60,3 +60,44 @@ the focused test completed in 0.232 seconds on the review host. Low injected
 budgets additionally verify unchanged fallback rather than partial association.
 All four focused tests (including the three source pages and all 68 pairs) pass.
 The root task owns the final integrated suite and whole-conversion gates.
+
+## Complete contents-page qualification
+
+The final whole-book comparison exposed seven further missing locators on physical
+pages 9, 10, 12, 13, 15 and 16. Complete renders of all six pages confirm ordinary
+wrapped entries ending in 4-16, 9-5, 15-17, 18-11, 24-21, 27-8 and 27-21. The
+preceding row has 11pt baseline leading but a 13.27pt PDFKit rectangle. Its extra
+leading therefore overlaps the last row's rectangle by 2.27pt, while its actual
+text does not cross the last row's leader. The initial full-row obstruction box
+incorrectly treated this as intervening text.
+
+The obstruction corridor now takes the vertical band of the proved horizontal
+stroke, retaining the same entry-to-locator horizontal interval. Text intersecting
+that stroke band still rejects the join. A generated control distinguishes an
+overlapping preceding row from the same row lowered onto the painted leader.
+No evidence thresholds, comparison limits, crop fallback or numeric interpretation
+change.
+
+Fresh native captures extend coverage to all thirteen contents pages, 8–20. The
+ten added fixtures carry source lines extracted with native rules, links and text
+shows, plus their encoded inline metadata and original paint operations. They
+were captured with the same unchanged NativeTextReader/NativeSpacingReader and
+GraphicsReader versions as integrated revision 4f301ca. Existing fixtures for
+8/19/20 remain unchanged. No reconstruction output becomes fixture evidence.
+
+All 272 complete entry/locator phrases are asserted in printed order. Wrapped
+prefixes are read from the preceding source rows' matching margins, sizes and
+leading. Existing paragraph boundaries are not pinned; the original 68 single-row
+block checks remain, and each of the seven newly restored locators must join its
+actual final source row. Source characters, links and retained artwork remain
+checked on every page. The corpus contract replaces shorter contents prefixes
+with these complete entries to avoid duplicate forward-order searches.
+
+On exact integrated 4f301ca, the expanded tests report 16 failures: seven missing
+complete source entries, seven missing native row associations and two generated
+leading controls. The existing final NOAA EPUB fails precisely the seven new
+complete-entry contracts; all other checks in the expanded 411-check NOAA contract
+pass. Restoring the stroke-band correction passes all five focused tests, including
+all thirteen source pages and the existing budget/obstruction negatives. All 33
+Python corpus-content tests pass. Final corrected whole-book conversion remains
+with the coordinator; no new conversion is claimed by this bounded fix.

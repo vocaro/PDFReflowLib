@@ -325,6 +325,14 @@ struct InlineText: Sendable, Equatable, Codable {
 
 struct ReflowBlock: Sendable, Equatable {
     struct Image: Sendable, Equatable {
+        struct SelectableLabel: Sendable, Equatable {
+            var text: String
+            /// Source line bounds normalized to the preserved image's width and height.
+            var left: Double
+            var top: Double
+            var width: Double
+            var height: Double
+        }
         var assetID: String
         var alternativeText: String
         var caption: String
@@ -332,6 +340,8 @@ struct ReflowBlock: Sendable, Equatable {
         var link: LinkTarget?
         /// Source-proven expressions rendered as MathML, each with a row crop as fallback (#206).
         var math: [MathExpression] = []
+        /// Transparent native text over its rasterized source glyphs, for selection (#212).
+        var selectableLabels: [SelectableLabel] = []
     }
     /// A table the source draws, as rows of cells rather than as a picture or as rows of text
     /// (#210). The model carries the association a reader needs — which value stands under which

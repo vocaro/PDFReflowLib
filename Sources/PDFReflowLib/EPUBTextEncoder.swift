@@ -172,8 +172,22 @@ enum EPUBTextEncoder {
             let picture = "<img src=\"\(xml(path))\" alt=\"\(xml(image.alternativeText))\"/>"
             // A link whose rect covers the figure rather than text links the figure (#247).
             let linked = image.link.map { "<a href=\"\(href($0))\">\(picture)</a>" } ?? picture
-            return "<figure>\(linked)<figcaption>\(xml(image.caption))</figcaption></figure>"
+            let visible = image.selectableLabels.isEmpty ? linked : {
+                let overlays = image.selectableLabels.map { label in
+                    let position = "left:\(percent(label.left));top:\(percent(label.top));"
+                        + "width:\(percent(label.width));height:\(percent(label.height))"
+                    return "<span class=\"diagram-label\" style=\"\(position)\">\(xml(label.text))</span>"
+                }.joined()
+                return "<span class=\"source-diagram\">\(linked)\(overlays)</span>"
+            }()
+            return "<figure>\(visible)<figcaption>\(xml(image.caption))</figcaption></figure>"
         }
+    }
+
+    private static func percent(_ fraction: Double) -> String {
+        let hundredths = Int((min(1, max(0, fraction)) * 10_000).rounded())
+        let rest = hundredths % 100
+        return "\(hundredths / 100).\(rest < 10 ? "0" : "")\(rest)%"
     }
 
     private static let mathNamespace = "http://www.w3.org/1998/Math/MathML"

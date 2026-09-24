@@ -2016,13 +2016,12 @@ enum LayoutReconstructor {
         let markerList = hangingMarkerList(in: lines, body: typography.body)
         let answerWraps = numberedAnswerWraps(in: lines, body: typography.body)
         let wrappedAnswerOpenings = Set(answerWraps.values)
-        let imageDescriptions = DiagramLabelTranscript.descriptions(page: page, images: images,
-                                                                    body: typography.body)
-            .merging(tableAssets(images, tables: page.recognizedTables, page: page.number)) { _, table in table }
+        let diagramLabels = DiagramLabelTranscript.labels(page: page, images: images, body: typography.body)
         var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
                                        additionalLeading: typography.additionalLeading,
                                        hyphens: context.hyphens, imageLinks: imageLinks,
-                                       imageDescriptions: imageDescriptions,
+                                       imageDescriptions: tableAssets(images, tables: page.recognizedTables,
+                                                                      page: page.number),
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
                                        numberedAnswerWraps: answerWraps,
                                        columnSeams: columnSeams(in: lines, body: typography.body,
@@ -2145,6 +2144,12 @@ enum LayoutReconstructor {
             }
         }
         var result = assembler.finish()
+        for index in result.indices {
+            guard case var .image(image) = result[index].content,
+                  let labels = diagramLabels[image.assetID] else { continue }
+            image.selectableLabels = labels
+            result[index].content = .image(image)
+        }
         if slideTitle.count > 1,
            let start = result.firstIndex(where: { block in
                if case let .heading(_, text, _) = block.content { return text.text == slideTitle[0].text }

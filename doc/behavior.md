@@ -2376,8 +2376,10 @@ inside the grid, exactly once; incomplete selections leave the table as a source
 `NativeTextPanels` keeps recovered sidebar prose together. A proved text panel follows the
 complete adjacent paragraph, including rows whose measure widens above or below the panel.
 Its native text is reconstructed with its own type size and leading, then appended as a closed
-reading unit. Intersecting figures, tables, quotations, asides, and tagged groups that cross the
-panel boundary prevent this grouping; styles, links and individual heading roles remain native.
+reading unit. Intersecting figures, tables, quotations and asides prevent this grouping.
+Pages carrying tagged text retain the accepted structured reading order. Styles, links and
+individual heading roles remain native, and panel headings receive identifiers from the
+parent page's assembler so navigation anchors remain unique.
 
 ## Paragraphs interrupted by a displayed block
 

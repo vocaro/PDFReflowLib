@@ -54,6 +54,7 @@ enum PageWarning: Equatable, Sendable {
     case incompleteRecognition(uncoveredFraction: Double, retriedInBands: Bool)
     case ocrFailed(RecognitionFailure)
     case pageImageFallback
+    case reviewedPanelImage
     case verticalJapaneseFallback
     /// The page's content stream draws nothing at all (#224).
     case emptyPage
@@ -130,6 +131,8 @@ enum ConversionWarnings {
                 + "and does not reflow.")
         case .pageImageFallback:
             (.pageImageFallback, "This page is preserved as an image and does not reflow.")
+        case .reviewedPanelImage:
+            (.reviewedPanelImage, "A reviewer selected this page's readable source image because panel and speech-balloon order could not be verified. Its dialogue does not reflow or provide a verified reading order.")
         case .verticalJapaneseFallback:
             (.verticalJapaneseFallback, "Japanese vertical columns overlap horizontal content or artwork; "
                 + "their reading order cannot be reconstructed safely, so the source page is preserved as an image.")

@@ -128,6 +128,22 @@ See [selective OCR measurements](../measurements/selective-ocr/record.md) for th
 excerpt, native controls, timings and limitations. These measurements do not qualify whole-book
 accuracy or physical-device budgets.
 
+### Reviewed comic panels
+
+When a reviewer has verified that OCR puts a comic's panels or speech balloons in the wrong
+order, `--reviewed-panel-pages 13,24` preserves those one-based physical PDF pages as readable
+full-page images. The library equivalent is `ConversionOptions.reviewedPanelImagePages`. Selected
+pages skip OCR under every OCR policy, emit no dialogue text or invented speaker attribution, and
+report `reviewedPanelImage` alongside `pageImageFallback`. The warning explicitly says that the
+dialogue does not reflow and its reading order was not verified. Other pages retain the selected
+OCR policy. A page outside the source is rejected instead of silently ignored.
+
+This is a reviewed-page option, not an automatic comic classifier. The CDC page-13 source image
+preserves its upper-right awakening dialogue before the lower-left response, while default OCR
+currently reverses them; its page-26 OCR already has useful order. Applying image fallback to
+every scanned page would unnecessarily remove reflow from ordinary scanned prose. See the
+[panel-order audit](../measurements/comic-panel-order/record.md).
+
 ## Recommended starting settings
 
 Client control and useful defaults work together. Recommendations follow measured document

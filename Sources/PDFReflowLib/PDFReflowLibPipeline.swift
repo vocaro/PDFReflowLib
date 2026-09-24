@@ -38,6 +38,9 @@ enum PDFReflowLibPipeline {
         let document = try PDFPageSource(url: source, password: options.password)
         let total = document.pageCount
         guard total <= options.maximumPages else { throw ConversionError.resourceLimit("page count") }
+        guard options.reviewedPanelImagePages.allSatisfy({ (1...total).contains($0) }) else {
+            throw ConversionError.invalidOptions("reviewed panel pages must exist in the source PDF")
+        }
         try FileManager.default.createDirectory(at: workspace.appendingPathComponent("assets"),
                                                  withIntermediateDirectories: true)
 
@@ -75,6 +78,21 @@ enum PDFReflowLibPipeline {
             }
             let pageEvidence = try PageDiagnosis.assess(extracted, options: options, measureInk: ink.measure)
             if !pageEvidence.hasText || pageEvidence.imageBackedText { pagesDrawnFromImage.insert(i) }
+            if options.reviewedPanelImagePages.contains(i + 1) {
+                // This is an explicit source-review decision, not a classifier: text geometry
+                // alone cannot tell a balloon stack from a prose column (#18). Keep the source
+                // image and do not emit OCR that would claim an unverified narrative order.
+                var content = extracted.content
+                content.lines = []
+                content.requiresPageImage = true
+                warnings.append(ConversionWarnings.warning(.reviewedPanelImage, page: i + 1, options: options))
+                try evidence.collect(content, pageIndex: i, suppliesVocabulary: false, options: options)
+                try store.store(content, at: i)
+                await progress(.init(stage: .extracting,
+                    fractionCompleted: ProgressBudget.pipeline(extractedPages: i + 1, of: total),
+                    page: i + 1, totalPages: total))
+                continue
+            }
             let plan = RecognitionPolicy.plan(pageEvidence, policy: options.ocr)
             var content = extracted.content
             // A page whose text stands, or is compared with recognition, is prepared as a kept

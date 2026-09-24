@@ -124,6 +124,11 @@ public struct ConversionOptions: Sendable {
     /// throws `ConversionError.encryptedPDF`; a document that is not locked ignores it.
     public var password: Password?
     public var ocr: OCRPolicy = .automatic
+    /// One-based physical pages a reviewer has selected for image-only output because panel or
+    /// balloon order cannot be verified from their text. These pages bypass OCR under every OCR
+    /// policy; their full-page image and an explicit limited-reflow warning reach the EPUB (#18).
+    /// Selection is deliberate: a page's text boxes alone do not establish comic panel order.
+    public var reviewedPanelImagePages: Set<Int> = []
     /// Let the recognizer correct each recognized word against its language model (#108). Off
     /// by default, and meant for scans of plain prose only: on the corpus's English scans it
     /// reads prose a little better and codes, dates and names worse — Census variable names fell
@@ -174,6 +179,8 @@ public struct ConversionWarning: Sendable, Codable, Equatable {
         /// actually given, not what the conversion attempted.
         case incompleteRecognition
         case imageRegion, pageImageFallback, unsupportedGraphics
+        /// A reviewer selected an image-only page because panel/balloon reading order is unknown.
+        case reviewedPanelImage
         /// Native Japanese vertical columns share a band with horizontal content or artwork;
         /// their interleaving cannot be reconstructed safely from these selections (#44).
         case verticalJapaneseFallback

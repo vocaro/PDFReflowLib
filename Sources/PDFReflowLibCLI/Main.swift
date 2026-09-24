@@ -9,6 +9,7 @@ struct PDFReflowLibCommand {
         Usage: pdf-reflow input.pdf output.epub [options]
           --ocr automatic|image-backed|keep-image-backed|always|never
           --no-ocr  (alias for --ocr never)
+          --reviewed-panel-pages 13,24          (one-based physical pages shown as images; no OCR/reflow)
           --ocr-language-correction on|off       (recognizer corrects words to its language model; default off)
           --reference-images automatic|always|never
           --repeated-headers-and-footers remove|keep
@@ -80,6 +81,13 @@ struct PDFReflowLibCommand {
                     case "never": options.ocr = .never
                     default: throw ConversionError.invalidOptions("unknown OCR policy: \(value)")
                     }
+                case "--reviewed-panel-pages":
+                    let parts = value.split(separator: ",", omittingEmptySubsequences: false)
+                    guard !parts.isEmpty, parts.count <= options.maximumPages,
+                          parts.allSatisfy({ Int($0).map { (1...options.maximumPages).contains($0) } == true }) else {
+                        throw ConversionError.invalidOptions("reviewed panel pages must be comma-separated positive physical page numbers")
+                    }
+                    options.reviewedPanelImagePages = Set(parts.compactMap { Int($0) })
                 case "--ocr-language-correction":
                     // An opt-in with a measured cost to codes, dates and names (#108), so it
                     // takes an explicit value rather than standing as a bare switch.

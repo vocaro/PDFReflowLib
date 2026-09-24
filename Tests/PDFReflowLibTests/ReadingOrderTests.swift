@@ -118,6 +118,38 @@ func faaSourceColumnsCompleteBeforeTheNextColumn(name: String) throws {
     #expect(headingIndex < imageIndex)
 }
 
+@Test func wallaceAnswerCropsSplitAtTheirPrintedColumnGutters() throws {
+    let fixture = try SourceLayoutFixture.load("algebra-478")
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    let page = fixture.content()
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    func owner(_ text: String, x: Double, below y: Double = .infinity) throws -> Int {
+        let line = try #require(page.lines.first {
+            $0.text.hasPrefix(text) && abs($0.rect.minX - x) < 1 && $0.rect.midY < y
+        })
+        return try #require(regions.firstIndex { LayoutReconstructor.takes($0, line) })
+    }
+    // One old crop held 10–12 from the middle column together with 18–19 from the right;
+    // another held every entry of 9.3 across both columns.
+    #expect(try owner("10)", x: 233.4) != owner("18)", x: 381.72))
+    #expect(try owner("1)", x: 84.96, below: 440) != owner("17)", x: 307.6))
+    let firstTitle = try #require(page.lines.first { $0.text == "Answers - Solving with Exponents" })
+    let secondTitle = try #require(page.lines.first { $0.text == "Answers - Complete the Square" })
+    #expect(regions.allSatisfy { !LayoutReconstructor.takes($0, firstTitle) })
+    #expect(regions.allSatisfy { !LayoutReconstructor.takes($0, secondTitle) })
+    let images = regions.enumerated().map { ($0.element, "image-\($0.offset)") }
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: images, vocabulary: [], warnings: &warnings)
+    let texts = blocks.map(\.text)
+    let section = try #require(texts.firstIndex(of: "9.3"))
+    let title = try #require(texts.firstIndex(of: "Answers - Complete the Square"))
+    let firstAnswer = try owner("1)", x: 84.96, below: 440)
+    let firstAnswerBlock = try #require(blocks.firstIndex {
+        if case let .image(image) = $0.content { image.assetID == "image-\(firstAnswer)" } else { false }
+    })
+    #expect(section < title && title < firstAnswerBlock)
+}
+
 @Test func leaderTableControlsSeparateLookupRowsFromContentsAndEllipses() {
     func page(_ strings: [String], gap: Double = 14, mono: Bool = false, header: Bool = true) -> PageContent {
         var lines = strings.enumerated().map { index, text in

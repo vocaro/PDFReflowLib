@@ -332,6 +332,65 @@ enum LayoutReconstructor {
         }
     }
 
+    /// A fraction crop can bridge two numbered answer columns through the key title above
+    /// them. Split only when the printed markers prove two runs, and a vertical strip between
+    /// those runs contains neither text nor graphics. The title then remains native text above
+    /// both crops. Wallace page 478 has both a short 10–12 / 18–19 bridge and a whole 9.3 key
+    /// (1–16 / 17–32) joined this way.
+    private static func separatedAnswerColumns(_ region: CGRect, on page: PageContent, body: CGFloat) -> [CGRect] {
+        guard let title = page.lines.first(where: { $0.text.hasPrefix("Answers -")
+            && region.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }) else { return [region] }
+        let below = page.lines.filter { region.intersects($0.rect) && $0.rect.midY < title.rect.minY }
+        guard let highestAnswer = below.map(\.rect.maxY).max() else { return [region] }
+        let top = max(title.rect.minY, highestAnswer)
+        guard top < title.rect.midY, top > region.minY + body * 2 else { return [region] }
+        let answerArea = CGRect(x: region.minX, y: region.minY, width: region.width, height: top - region.minY)
+        // A painted mark above the answer area may belong to the title; dropping it would
+        // change the source. Such a region needs a different decomposition.
+        guard !page.graphics.contains(where: { region.intersects($0) && $0.midY > top
+            && $0.midY < region.maxY }) else { return [region] }
+        let markerPattern = #"^[0-9]{1,3}(?=\))"#
+        let markers = below.compactMap { line -> (rect: CGRect, number: Int)? in
+            guard let range = line.text.range(of: markerPattern, options: .regularExpression),
+                  let number = Int(line.text[range]) else { return nil }
+            return (line.rect, number)
+        }
+        var groups: [[(rect: CGRect, number: Int)]] = []
+        for marker in markers.sorted(by: { $0.rect.minX < $1.rect.minX }) {
+            if let last = groups.last, abs(marker.rect.minX - last[0].rect.minX) <= body * 0.25 {
+                groups[groups.count - 1].append(marker)
+            } else { groups.append([marker]) }
+        }
+        let columns = groups.filter { $0.count >= 2 }
+        guard columns.count == 2,
+              columns[1][0].rect.minX - columns[0][0].rect.minX >= body * 6 else { return [region] }
+        func numbersDown(_ column: [(rect: CGRect, number: Int)]) -> [Int] {
+            column.sorted { $0.rect.midY > $1.rect.midY }.map(\.number)
+        }
+        let leftNumbers = numbersDown(columns[0]), rightNumbers = numbersDown(columns[1])
+        guard zip(leftNumbers, leftNumbers.dropFirst()).allSatisfy({ $1 > $0 }),
+              zip(rightNumbers, rightNumbers.dropFirst()).allSatisfy({ $1 > $0 }),
+              leftNumbers.max()! < rightNumbers.min()! else { return [region] }
+        let occupied = (below.map(\.rect) + page.graphics.filter { answerArea.intersects($0)
+            && $0.midY < top }).map { ($0.minX, $0.maxX) }.sorted { $0.0 < $1.0 }
+        guard let first = occupied.first else { return [region] }
+        var end = first.1
+        var gap: (width: CGFloat, x: CGFloat)?
+        for interval in occupied.dropFirst() {
+            let width = interval.0 - end
+            let middle = (end + interval.0) / 2
+            if width >= body * 2, width > (gap?.width ?? 0),
+               middle > columns[0][0].rect.minX + body,
+               middle < columns[1][0].rect.minX - body {
+                gap = (width, middle)
+            }
+            end = max(end, interval.1)
+        }
+        guard let x = gap?.x else { return [region] }
+        return [CGRect(x: region.minX, y: region.minY, width: x - region.minX, height: answerArea.height),
+                CGRect(x: x, y: region.minY, width: region.maxX - x, height: answerArea.height)]
+    }
+
     /// Whether a line a crop cannot cut around is the book's own prose, which a crop never
     /// admits (#255).
     ///
@@ -445,7 +504,7 @@ enum LayoutReconstructor {
             // the image clips part of it (for example, a raised exponent beside a fraction).
             regions = merged(regions, protecting: protectedProse)
         }
-        return regions.map(\.bounds)
+        return regions.flatMap { separatedAnswerColumns($0.bounds, on: page, body: body) }
     }
 
     /// Whether a line states an equation: an `=` with a term after it, over a line short enough
@@ -682,8 +741,9 @@ enum LayoutReconstructor {
         if let titleIndex = elements.indices.first(where: { index in
             guard let line = elements[index].line,
                   line.text.hasPrefix("Answers -"),
-                  elements.contains(where: { $0.image != nil && sameRow($0.rect, line.rect)
-                      && $0.rect.midY < line.rect.midY }) else { return false }
+                  elements.contains(where: { $0.image != nil && $0.rect.maxY > line.rect.minY
+                      && $0.rect.minY < line.rect.midY && $0.rect.midY < line.rect.midY })
+            else { return false }
             let marker = #"^\s*\d+\)"#
             return elements.filter { $0.line?.text.range(of: marker, options: .regularExpression) != nil
                 && $0.rect.midY < line.rect.midY }.count >= 2

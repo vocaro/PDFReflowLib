@@ -228,9 +228,13 @@ enum PDFReflowLibPipeline {
                         pageBlocks = SlideDeck.notesLast(pageBlocks, on: content)
                     }
                     for index in pageBlocks.indices {
-                        guard case var .image(image) = pageBlocks[index].content,
-                              let expressions = imageMath[image.assetID] else { continue }
-                        image.math = expressions
+                        guard case var .image(image) = pageBlocks[index].content else { continue }
+                        if let expressions = imageMath[image.assetID] { image.math = expressions }
+                        if image.math.isEmpty,
+                           let alt = figureAlt(for: image.assetID, images: images,
+                                               figures: content.taggedFigures) {
+                            image.alternativeText = alt
+                        }
                         pageBlocks[index].content = .image(image)
                     }
                     if pageBlocks.contains(where: \.hasReflowedText) {
@@ -277,5 +281,21 @@ enum PDFReflowLibPipeline {
         warnings.insert(contentsOf: furnitureWarnings.sorted { $0.page < $1.page }, at: furnitureWarningIndex)
         return Result(document: emit == nil ? collector.document : nil, pageCount: total, reflowedPageCount: reflowed,
             recognizedPageCount: evidence.recognizedPages, imageCount: assets.assets.count, warnings: warnings)
+    }
+
+    /// The crop must contain exactly one tagged image, and no second crop may also claim it.
+    /// The author text describes only that image; ambiguous composite regions keep their
+    /// generic description instead of borrowing a nearby Figure's Alt text (#17).
+    static func figureAlt(for assetID: String, images: [(CGRect, String)],
+                          figures: [PageContent.TaggedFigure]) -> String? {
+        guard let crop = images.first(where: { $0.1 == assetID })?.0 else { return nil }
+        let matches = figures.filter { figure in
+            let overlap = crop.intersection(figure.rect)
+            return !overlap.isNull
+                && overlap.width * overlap.height >= figure.rect.width * figure.rect.height * 0.95
+        }
+        guard matches.count == 1,
+              images.filter({ $0.0.intersects(matches[0].rect) }).count == 1 else { return nil }
+        return matches[0].alternativeText
     }
 }

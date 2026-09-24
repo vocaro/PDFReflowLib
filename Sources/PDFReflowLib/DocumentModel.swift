@@ -165,12 +165,18 @@ struct PageTable: Equatable, Codable, Sendable {
 }
 
 struct PageContent: Equatable, Codable {
+    struct TaggedFigure: Equatable, Codable {
+        var rect: CGRect
+        var alternativeText: String
+    }
     var number: Int
     var bounds: CGRect
     var lines: [TextLine]
     var graphics: [CGRect]
     /// The placed raster image XObjects among `graphics`: the page's pictures (#176, #239).
     var pictures: [CGRect] = []
+    /// Validated author Alt text for a single marked raster figure (#17).
+    var taggedFigures: [TaggedFigure] = []
     /// A flat painted head band, recorded before decoration leaves the crop seeds.
     var headerBackdrop: CGRect?
     var outlinedInitialRows: [CGRect]?
@@ -204,7 +210,7 @@ struct PageContent: Equatable, Codable {
 
 extension PageContent {
     private enum CodingKeys: String, CodingKey {
-        case number, bounds, lines, graphics, pictures, headerBackdrop, outlinedInitialRows
+        case number, bounds, lines, graphics, pictures, taggedFigures, headerBackdrop, outlinedInitialRows
         case sidebarValueRows, nativeTextPanels, closedNativeFrames, blanks, requiresPageImage
         case recognized, hasSyntheticTextStyle, preservePageReference, recognizedArtwork
         case backdropTextPanels, links, tables, recognizedTables
@@ -217,6 +223,7 @@ extension PageContent {
         lines = try values.decode([TextLine].self, forKey: .lines)
         graphics = try values.decode([CGRect].self, forKey: .graphics)
         pictures = try values.decode([CGRect].self, forKey: .pictures)
+        taggedFigures = try values.decodeIfPresent([TaggedFigure].self, forKey: .taggedFigures) ?? []
         headerBackdrop = try values.decodeIfPresent(CGRect.self, forKey: .headerBackdrop)
         outlinedInitialRows = try values.decodeIfPresent([CGRect].self, forKey: .outlinedInitialRows)
         sidebarValueRows = try values.decodeIfPresent([CGRect].self, forKey: .sidebarValueRows)

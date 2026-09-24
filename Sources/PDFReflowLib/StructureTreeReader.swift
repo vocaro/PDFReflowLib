@@ -5,8 +5,12 @@ import Foundation
 enum StructureTreeReader {
     struct Index {
         var pages: [Int: [Int: TextStructure]] = [:]
+        /// A Figure with one page MCID and author supplied Alt text. Artwork association is
+        /// checked separately against the page's marked image draw.
+        var figures: [Int: [Int: String]] = [:]
         // Paths through root K (-1 means dictionary K; nonnegative means array index).
         var owners: [Int: [Int: [Int]]] = [:]
+        var figureOwners: [Int: [Int: [Int]]] = [:]
         var present = false
         var rejected = false
     }
@@ -65,6 +69,9 @@ enum StructureTreeReader {
                 result.pages[page] = result.pages[page]?.filter { !rejectedGroups.contains($0.value.group) }
                 result.owners[page] = result.owners[page]?.filter { result.pages[page]?[$0.key] != nil }
             }
+            for page in result.figures.keys {
+                result.figureOwners[page] = result.figureOwners[page]?.filter { result.figures[page]?[$0.key] != nil }
+            }
             return result
         }
         func role(_ dict: CGPDFDictionaryRef) throws -> String {
@@ -119,6 +126,15 @@ enum StructureTreeReader {
                 let inline: Set<String> = ["Span", "Link"]
                 let level = role == "P" ? 0 : (["H1", "H2", "H3", "H4", "H5", "H6"].contains(role) ? Int(role.dropFirst()) : nil)
                 var childAllowed = allowed
+                if allowed, group == nil, role == "Figure",
+                   let alt = CGPDFObjects.text(dict, "Alt")?.trimmingCharacters(in: .whitespacesAndNewlines),
+                   !alt.isEmpty, alt.count <= 2_000,
+                   let kids = CGPDFObjects.object(dict, "K"), CGPDFObjectGetType(kids) == .integer {
+                    var id: CGPDFInteger = 0
+                    guard CGPDFObjectGetValue(kids, .integer, &id) else { throw Invalid.tree }
+                    try reference(id, page: localPage, group: nil, ownerPath: path, figure: alt)
+                    return
+                }
                 if allowed, let level, (0...6).contains(level) {
                     guard group == nil else { reject(group); return }
                     groupCounter += 1
@@ -137,7 +153,7 @@ enum StructureTreeReader {
             result.rejected = true
             if let group { rejectedGroups.insert(group.group) }
         }
-        func reference(_ id: Int, page: Int?, group: TextStructure?, ownerPath: [Int]) throws {
+        func reference(_ id: Int, page: Int?, group: TextStructure?, ownerPath: [Int], figure: String? = nil) throws {
             guard let page, id >= 0, id < 100_000,
                   references.insert("\(page):\(id)").inserted else { throw Invalid.tree }
             guard parentKeys[page] != nil else { throw Invalid.tree }
@@ -146,6 +162,9 @@ enum StructureTreeReader {
                 tag.order = order
                 result.pages[page, default: [:]][id] = tag
                 result.owners[page, default: [:]][id] = ownerPath
+            } else if let figure {
+                result.figures[page, default: [:]][id] = figure
+                result.figureOwners[page, default: [:]][id] = ownerPath
             }
         }
     }
@@ -153,6 +172,10 @@ enum StructureTreeReader {
     /// Validate only this page's sparse ParentTree array in the caller's bounded page window.
     /// Resolving all such arrays in one CGPDFDocument can retain a quadratic number of null slots.
     static func validates(_ tags: [Int: TextStructure], owners: [Int: [Int]], page: CGPDFPage) -> Bool {
+        validates(ids: Set(tags.keys), owners: owners, page: page)
+    }
+
+    static func validates(ids: Set<Int>, owners: [Int: [Int]], page: CGPDFPage) -> Bool {
         guard let pageDictionary = page.dictionary, let key = CGPDFObjects.integer(pageDictionary, "StructParents"),
               let catalog = page.document?.catalog, let root = CGPDFObjects.dictionary(catalog, "StructTreeRoot"),
               let parentTree = CGPDFObjects.dictionary(root, "ParentTree"), let rootKids = CGPDFObjects.object(root, "K") else { return false }
@@ -189,7 +212,7 @@ enum StructureTreeReader {
             return nil
         }
         guard let entries = entries(parentTree, depth: 0) else { return false }
-        for id in tags.keys {
+        for id in ids {
             guard !Task.isCancelled, let path = owners[id], id >= 0, id < CGPDFArrayGetCount(entries), path.count < 128 else { return false }
             var expected = rootKids
             for component in path {

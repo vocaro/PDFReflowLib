@@ -163,6 +163,23 @@ enum PageReader {
                  && MarkedTextReader.apply(tags, page: reference, lines: &content.lines)) {
                 warnings.append(.structureFallback)
             }
+            if !requiresPageImage && !syntheticStyle && options.ocr != .always,
+               let structure, let figures = structure.figures[i + 1], !figures.isEmpty,
+               StructureTreeReader.validates(ids: Set(figures.keys),
+                                             owners: structure.figureOwners[i + 1] ?? [:], page: reference) {
+                let markedImages = MarkedImageReader.read(reference, ids: Set(figures.keys))
+                for (id, alt) in figures {
+                    guard let draw = markedImages[id] else { continue }
+                    let matches = graphics.images.filter { image in
+                        let overlap = image.intersection(draw)
+                        return !overlap.isNull && overlap.width * overlap.height >= image.width * image.height * 0.9
+                            && overlap.width * overlap.height >= draw.width * draw.height * 0.9
+                    }
+                    if matches.count == 1 {
+                        content.taggedFigures.append(.init(rect: matches[0], alternativeText: alt))
+                    }
+                }
+            }
             content.requiresPageImage = requiresPageImage
             content.hasSyntheticTextStyle = syntheticStyle
             if !requiresPageImage, !syntheticStyle,

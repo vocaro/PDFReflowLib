@@ -211,7 +211,7 @@ enum DiscretionaryHyphenReader {
                 let prefix = String(normalized(left).reversed().prefix(while: \.isLetter).reversed()).lowercased()
                 let suffix = String(normalized(right).prefix(while: \.isLetter)).lowercased()
                 guard prefix.count >= 2, suffix.count >= 2 else { valid = false; break }
-                if LayoutReconstructor.lexiconVouches(prefix: prefix, suffix: suffix, usesEnglishLexicon: true) {
+                if EnglishText.vouchesForHyphenJoin(prefix: prefix, suffix: suffix) {
                     vouched.insert(prefix + suffix)
                 }
                 selected[line] = prefix + suffix

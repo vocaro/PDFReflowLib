@@ -57,6 +57,15 @@ enum EnglishText {
         lexicon.withLock { embedding in embedding.map { $0.contains(word) } }
     }
 
+    /// Conservative lexical corroboration for a line-break join and for source-font census
+    /// calibration. Keeping this extraction-safe predicate here lets standalone native-text
+    /// probes use the census without depending on the reconstruction pipeline.
+    static func vouchesForHyphenJoin(prefix: String, suffix: String) -> Bool {
+        guard prefix.count >= 2, suffix.count >= 2, prefix.count + suffix.count >= 6,
+              lexiconContains(prefix + suffix) == true else { return false }
+        return !(lexiconContains(prefix) == true && lexiconContains(suffix) == true)
+    }
+
     /// The longest English word of three letters or more that opens `text`, or nil.
     ///
     /// A run the source draws against the number before it is a word the page set tight, not the

@@ -135,12 +135,11 @@ extension LayoutReconstructor {
                   !hyphens.vocabulary.contains(compound) else { return .concatenate }
             return .removeHyphen
         }
-        // A separately drawn source break corroborates unknown technical words, but does not
-        // settle a split between two independently valid words (camera-/man, by-/law).
-        // Source-attested compounds retain their hyphens regardless of this font evidence.
+        // A complete source-font census can decide this exact break even when both halves
+        // happen to be words. This is independent evidence beyond the ordinary dictionary
+        // rule below. A compound the document actually prints still keeps its hyphen.
         if sourceDiscretionaryWord == joined, hyphens.usesEnglishLexicon,
-           !hyphens.vocabulary.contains(compound),
-           !(EnglishText.lexiconContains(prefix) == true && EnglishText.lexiconContains(suffix) == true) {
+           !hyphens.vocabulary.contains(compound) {
             return .removeHyphen
         }
         if hyphens.vocabulary.contains(joined), !hyphens.vocabulary.contains(compound) { return .removeHyphen }

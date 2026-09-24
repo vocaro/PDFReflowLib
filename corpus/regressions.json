@@ -298,7 +298,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Pages 12, 16 and 347 source rasters reviewed: page 12 prints the 36/84 = (36 ÷ 4)/(84 ÷ 4) = 9/21 fraction reduction, and page 347 exercise 35 prints −5n² − 3n − 52 = 2 − 7n². These are now MathML with verified source structures and existing altimg fallback assets, so earlier visible-image requirements are obsolete. Page 16's product exercises 22, 23, 27, 28, 30 and 32 once split a numbered text stub from its fraction crop; the source-backed MathML checks now require each complete expression with its fallback, and absentText excludes the detached stubs. The source prints exercise 33 without a closing parenthesis after its number; a Poppler-rendered reference pins its complete warned image fallback. Page 347's 1–40 problem numbers now read in source row order with individual equation fallback images; the reference image remains source evidence, not a converted-image requirement. Page 438's integer answer numbers read 1–60 under their chapter and section headings before the fractions answer title. Page 479 source geometry and source raster establish 33–56 above 9.4 and the quadratic-formula title, then 1–27 left-column first; the complex expressions remain explicit image-region fallbacks, and a pinned source fixture checks the four crop runs. Page 483's 18 numbered graph answers are in source column order, each followed by its own graph crop; a pinned source fixture checks one distinctive coordinate within each paired crop. The corpus checks do not qualify every equation structure or every answer image (#29). Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230). Page 101 rendered and read at 100 DPI: exercises 11-30 are a two-column numbered list, one printed line to an item, and 17 and 28 are set exactly as 16 and 27 are. PDFKit ends those two lines at the marker, so each arrived as `17)` and its coordinates separately and read as prose; all four must be preformatted items, as their neighbours on the page already are (#172). Page 2 read against the source for the list conversion (#292): the licence's bulleted terms list where two touch (`to Share`/`to Remix`, `Waiver`/`Public Domain`), `Attribution`, which its wrapped line sets apart, is a paragraph keeping its bullet, the `−` sub-items stay preformatted because a minus is no bullet, and `Notice`, standing beside them, stays preformatted too.",
+      "basis": "Pages 12, 16 and 347 source rasters reviewed: page 12 prints the 36/84 = (36 ÷ 4)/(84 ÷ 4) = 9/21 fraction reduction, and page 347 exercise 35 prints −5n² − 3n − 52 = 2 − 7n². These are now MathML with verified source structures and existing altimg fallback assets, so earlier visible-image requirements are obsolete. Page 16's product exercises 22, 23, 27, 28, 30 and 32 once split a numbered text stub from its fraction crop; the source-backed MathML checks now require each complete expression with its fallback, and absentText excludes the detached stubs. The source prints exercise 33 without a closing parenthesis after its number; a Poppler-rendered reference pins its complete warned image fallback. Page 347's 1–40 problem numbers now read in source row order with individual equation fallback images; the reference image remains source evidence, not a converted-image requirement. Page 438's integer answer numbers read 1–60 under their chapter and section headings before the fractions answer title. Page 479 source geometry and source raster establish 33–56 above 9.4 and the quadratic-formula title, then 1–27 left-column first; the complex expressions remain explicit image-region fallbacks, and a pinned source fixture checks the four crop runs. Page 483's 18 numbered graph answers are in source column order, each followed by its own graph crop; a pinned source fixture checks one distinctive coordinate within each paired crop. Page 266 source raster prints 1–22 as paired complex-fraction exercises; the row order and marker-to-crop ownership are pinned by a source fixture, item 11 is nested-fraction MathML with altimg, and unsupported stacks retain warned image crops. Page 293 keeps Example 386 after its prose and preserves indexed-root working as warned image regions. The corpus checks do not qualify every equation structure or every answer image (#29). Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230). Page 101 rendered and read at 100 DPI: exercises 11-30 are a two-column numbered list, one printed line to an item, and 17 and 28 are set exactly as 16 and 27 are. PDFKit ends those two lines at the marker, so each arrived as `17)` and its coordinates separately and read as prose; all four must be preformatted items, as their neighbours on the page already are (#172). Page 2 read against the source for the list conversion (#292): the licence's bulleted terms list where two touch (`to Share`/`to Remix`, `Waiver`/`Public Domain`), `Attribution`, which its wrapped line sets apart, is a paragraph keeping its bullet, the `−` sub-items stay preformatted because a minus is no bullet, and `Notice`, standing beside them, stays preformatted too.",
       "spineContinuity": [
         {
           "sourcePages": [
@@ -428,6 +428,32 @@
           "warningCodesAnyOf": ["imageRegion"]
         },
         {
+          "page": 266,
+          "orderedText": [
+            "7.5 Practice - Complex Fractions",
+            "Solve.",
+            "1)", "2)", "3)", "4)", "5)", "6)", "7)", "8)", "9)", "10)", "11)",
+            "12)", "13)", "14)", "15)", "16)", "17)", "18)", "19)", "20)", "21)", "22)"
+          ],
+          "math": [
+            {
+              "alttext": "(x/(x + 1) − 1/x)/(x/(x + 1) + 1/x)",
+              "structure": "mfrac(mrow(mfrac(mi(x),mrow(mi(x),mo(+),mn(1))),mo(−),mfrac(mn(1),mi(x))),mrow(mfrac(mi(x),mrow(mi(x),mo(+),mn(1))),mo(+),mfrac(mn(1),mi(x))))"
+            }
+          ],
+          "minimumImages": 20,
+          "warningCodesAnyOf": ["imageRegion"]
+        },
+        {
+          "page": 293,
+          "orderedText": [
+            "We can also take higher roots of variables.",
+            "Example 386."
+          ],
+          "minimumImages": 4,
+          "warningCodesAnyOf": ["imageRegion"]
+        },
+        {
           "page": 347,
           "orderedText": [
             "1)", "2)", "3)", "4)", "5)", "6)", "7)", "8)", "9)", "10)",
@@ -500,7 +526,8 @@
             "Objective: Solve quadratic equations by using the quadratic formula.",
             "Example 465."
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "warningCodesAnyOf": ["imageRegion"]
         },
         {
           "page": 26,

@@ -631,8 +631,14 @@ the 124 issues that branch closed against what `main` actually holds.
 The NBS paper stands in for an owner-supplied, ACM-copyrighted Lamport CACM article in the same
 two-column scanned format. Replay Clocks is CC BY 4.0: retain the attribution recorded in the
 manifest. USCIS states some guide images are licensed, so that case commits no page rasters.
-Vertical CJK, Hebrew and Devanagari layouts remain uncovered for lack of clearly licensed sources
-([#44](https://github.com/vocaro/PDFReflowLib/issues/44)).
+Hebrew is covered by the [UCL Shakespeare source review](../measurements/ucl-hebrew-shakespeare-2017/record.md)
+and its page-specific content contract. The 553-page CC BY 4.0 book converts with
+`--language he --no-ocr`; six reviewed pages protect selected text, cover art and reference
+order. Parallel bilingual alignment, verse hierarchy, speaker pairing and note links remain
+unqualified. Vertical Japanese and Devanagari candidates have [documented source
+blockers](../measurements/japanese-tategaki-overleaf/record.md) and [Hindi source
+blockers](../measurements/hindi-candidates-44/record.md), respectively, so [#44](https://github.com/vocaro/PDFReflowLib/issues/44)
+remains open.
 
 ## Earthdata Cloud Analytics Project
 

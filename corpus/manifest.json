@@ -1324,6 +1324,57 @@
         "maxPeakRSSMiB": 128,
         "scope": "macOS arm64 release CLI, library defaults; regression ceiling, not an iOS memory guarantee"
       }
+    },
+    {
+      "id": "ucl-hebrew-shakespeare-2017",
+      "title": "The First Hebrew Shakespeare Translations: A Bilingual Edition and Commentary",
+      "author": "Lily Kahn",
+      "publicationYear": 2017,
+      "role": "development",
+      "identity": {
+        "suppliedBy": "publisher-download"
+      },
+      "url": "https://discovery.ucl.ac.uk/id/eprint/1563534/",
+      "publisherPageURL": "https://discovery.ucl.ac.uk/id/eprint/1563534/",
+      "downloadURL": "https://discovery.ucl.ac.uk/id/eprint/1563534/1/The-First-Hebrew-Shakespeare-Translations.pdf",
+      "filename": "The-First-Hebrew-Shakespeare-Translations.pdf",
+      "sha256": "8c28b79157cdbf57f4a3e9b65b2ecc1bb02e9e1597a7574e9a9cf2fb53ed6393",
+      "bytes": 13421843,
+      "pages": 553,
+      "language": "he",
+      "noOCR": true,
+      "provenance": "Direct UCL Discovery publisher PDF, copied without modification into the local ignored corpus cache; PDF metadata identifies Lily Kahn and an untagged InDesign/Distiller export. Identity verified by SHA-256 and byte count on 2026-09-24.",
+      "rightsBasis": "PDF copyright page (physical page 6) and the UCL Discovery record state CC BY 4.0 for the book. Text © Lily Kahn, 2017; images courtesy of Lily Kahn, 2017. The PDF remains an external corpus source and is not bundled or relicensed under MIT.",
+      "license": "CC-BY-4.0",
+      "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+      "attribution": "Lily Kahn, The First Hebrew Shakespeare Translations. London, UCL Press, 2017. DOI 10.14324/111.9781911307976. CC BY 4.0.",
+      "rightsClearance": {
+        "status": "publisher-declared",
+        "scope": "Commercial use and redistribution permitted with CC BY 4.0 attribution; retain the source outside the library's MIT package."
+      },
+      "coverage": [
+        "Hebrew right-to-left prose and punctuation",
+        "Hebrew niqqud and presentation forms",
+        "parallel English and Hebrew columns",
+        "bilingual dramatic dialogue with speaker labels",
+        "numbered textual notes",
+        "references with embedded Hebrew titles",
+        "untagged 553-page book"
+      ],
+      "reviewPages": [
+        5,
+        13,
+        81,
+        150,
+        250,
+        550
+      ],
+      "reviewStatus": "Six physical pages visually compared with the source under --language he --no-ocr; a narrow content contract checks title, English opening, Hebrew prose and vocalized text. Side-by-side translation alignment, vocalized verse hierarchy and note/speaker order are unqualified. See corpus/ucl-hebrew-shakespeare-2017-review.json.",
+      "baselineStatus": "Full release baseline and reviewed content contract recorded in measurements/ucl-hebrew-shakespeare-2017/record.md; targeted corpus regression gate passed on 2026-09-24.",
+      "memoryBudget": {
+        "maxPeakRSSMiB": 256,
+        "scope": "macOS 27 arm64 release CLI with --language he --no-ocr; initial RSS regression ceiling with headroom above a 114.7 MiB measured peak, not an iOS memory guarantee"
+      }
     }
   ]
 }

@@ -73,8 +73,13 @@ set in `corpus/ucl-hebrew-shakespeare-2017-review.json`.
   Needler and Salkinson entries remain in source order; typography and punctuation are
   not qualified.
 
-`proposed-entries.json` holds draft manifest and regression entries for serial integration.
-The proposed contract was run directly through `tools/check_corpus_content.py`'s page
+`proposed-entries.json` preserves the reviewed manifest and regression entry proposal.
+The case was admitted to `corpus/manifest.json` and `corpus/regressions.json` with
+`--language he --no-ocr` and a 256 MiB peak RSS ceiling. The targeted gate passed on
+2026-09-24: 28.21 seconds, 111,067,136 bytes peak RSS, EPUBCheck exit 0, and all 19
+content checks passed on the six reviewed pages. This is the targeted corpus lane, not
+the full 22-case run. Before admission, the contract was run directly through
+`tools/check_corpus_content.py`'s page
 reader and assessor against this EPUB and report: **19 content checks pass on six pages**,
 all 553 source markers are present, and there are no content errors. These checks protect
 only verified text and image presence. The remaining pages and the parallel bilingual

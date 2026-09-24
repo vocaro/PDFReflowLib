@@ -3685,6 +3685,66 @@
           ]
         }
       ]
+    },
+    {
+      "id": "ucl-hebrew-shakespeare-2017",
+      "sourceSHA256": "8c28b79157cdbf57f4a3e9b65b2ecc1bb02e9e1597a7574e9a9cf2fb53ed6393",
+      "basis": "Rendered source pages 5, 13, 81, 150, 250 and 550 were compared with the --language he --no-ocr EPUB. Positive checks protect the title and cover art, introduction opening, selectable Hebrew prose on the dense bilingual page, vocalized Hebrew beside English translation, a stage direction and the order of three reference authors. They do not bless parallel alignment, verse heading levels, notes, speaker pairing or the remaining 547 unreviewed pages.",
+      "pages": [
+        {
+          "page": 5,
+          "orderedText": [
+            "The First Hebrew Shakespeare Translations",
+            "A Bilingual Edition and Commentary",
+            "Lily Kahn"
+          ],
+          "minimumImages": 1
+        },
+        {
+          "page": 13,
+          "headings": [
+            "Introduction"
+          ],
+          "orderedText": [
+            "The historical and literary background to the first Hebrew Shakespeare translations",
+            "Shakespeare translations are a product of the Haskalah"
+          ]
+        },
+        {
+          "page": 81,
+          "paragraphs": [
+            "for a man whom I despise",
+            "למען אשרה יעשה זאת"
+          ],
+          "text": [
+            "שם יתרועע איש את"
+          ]
+        },
+        {
+          "page": 150,
+          "orderedText": [
+            "And melodies to drinkers of alcohol",
+            "נְ גִ ינוֹת",
+            "46 Ecclesiastes Rabbah 9."
+          ]
+        },
+        {
+          "page": 250,
+          "text": [
+            "The sound of a trumpet from outside",
+            "Your word is very good",
+            "טוֹב"
+          ]
+        },
+        {
+          "page": 550,
+          "orderedText": [
+            "Markel",
+            "Needler",
+            "Salkinson"
+          ]
+        }
+      ]
     }
   ],
   "excludedFullConversions": []

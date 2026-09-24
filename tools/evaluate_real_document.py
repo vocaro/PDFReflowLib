@@ -85,12 +85,16 @@ def conversion_flags(case):
 
     A document that declares a `language` converts with `--language TAG`, so the lane exercises
     the tag it declares: the package's dc:language, the recognizer's language where Vision
-    supports it, and the rules that hold only for a declared English (#293). Every conversion of
-    the case carries the flags, including a memory attempt spent after host pressure spoiled the
-    first; a case without the field converts at library defaults, exactly as before.
+    supports it, and the rules that hold only for a declared English (#293). A `noOCR` case
+    exercises a source-reviewed text layer without recognition. Every conversion carries the
+    flags, including a memory attempt spent after host pressure spoiled the first; a case
+    without either field converts at library defaults, exactly as before.
     """
     language = case.get("language")
-    return ["--language", language] if language else []
+    flags = ["--language", language] if language else []
+    if case.get("noOCR"):
+        flags.append("--no-ocr")
+    return flags
 
 
 def settle(read_pressure, seconds):

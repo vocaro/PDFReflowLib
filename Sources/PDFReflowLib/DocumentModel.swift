@@ -202,6 +202,40 @@ struct PageContent: Equatable, Codable {
     var recognizedTables: [TableCellEvidence.Reading] = []
 }
 
+extension PageContent {
+    private enum CodingKeys: String, CodingKey {
+        case number, bounds, lines, graphics, pictures, headerBackdrop, outlinedInitialRows
+        case sidebarValueRows, nativeTextPanels, closedNativeFrames, blanks, requiresPageImage
+        case recognized, hasSyntheticTextStyle, preservePageReference, recognizedArtwork
+        case backdropTextPanels, links, tables, recognizedTables
+    }
+
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        number = try values.decode(Int.self, forKey: .number)
+        bounds = try values.decode(CGRect.self, forKey: .bounds)
+        lines = try values.decode([TextLine].self, forKey: .lines)
+        graphics = try values.decode([CGRect].self, forKey: .graphics)
+        pictures = try values.decode([CGRect].self, forKey: .pictures)
+        headerBackdrop = try values.decodeIfPresent(CGRect.self, forKey: .headerBackdrop)
+        outlinedInitialRows = try values.decodeIfPresent([CGRect].self, forKey: .outlinedInitialRows)
+        sidebarValueRows = try values.decodeIfPresent([CGRect].self, forKey: .sidebarValueRows)
+        nativeTextPanels = try values.decodeIfPresent([CGRect].self, forKey: .nativeTextPanels)
+        closedNativeFrames = try values.decodeIfPresent([CGRect].self, forKey: .closedNativeFrames)
+        // The earlier captured page fixtures have no form evidence field (#211).
+        blanks = try values.decodeIfPresent([FormBlank].self, forKey: .blanks) ?? []
+        requiresPageImage = try values.decode(Bool.self, forKey: .requiresPageImage)
+        recognized = try values.decode(Bool.self, forKey: .recognized)
+        hasSyntheticTextStyle = try values.decode(Bool.self, forKey: .hasSyntheticTextStyle)
+        preservePageReference = try values.decode(Bool.self, forKey: .preservePageReference)
+        recognizedArtwork = try values.decode([CGRect].self, forKey: .recognizedArtwork)
+        backdropTextPanels = try values.decodeIfPresent([CGRect].self, forKey: .backdropTextPanels)
+        links = try values.decode([PageLink].self, forKey: .links)
+        tables = try values.decode([PageTable].self, forKey: .tables)
+        recognizedTables = try values.decode([TableCellEvidence.Reading].self, forKey: .recognizedTables)
+    }
+}
+
 func union(_ rects: [CGRect]) -> CGRect {
     rects.reduce(CGRect.null) { $0.union($1) }
 }

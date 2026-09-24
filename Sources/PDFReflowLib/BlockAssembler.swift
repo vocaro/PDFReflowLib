@@ -684,6 +684,9 @@ struct BlockAssembler {
         codeOrigin = nil; rowInProgress = nil; itemRowInProgress = nil
         let count = blocks.count - start
         guard count > 0, count <= 4_096 else { return }
+        // A painted background can belong to an ordinary body paragraph that continues
+        // onto the next page. One prose block alone does not prove an independent unit.
+        if count == 1, case .paragraph = blocks[start].content { return }
         for index in start..<blocks.count {
             blocks[index].closedUnit = .init(id: start, position: index - start, count: count)
         }

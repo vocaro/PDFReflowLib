@@ -202,3 +202,36 @@ func unlabeledFedProseBesideVectorChartsKeepsItsParagraph(number: Int) throws {
     let body = try #require(blocks.firstIndex { $0.text.hasPrefix("Many US households") })
     #expect(first < body)
 }
+
+@Test func ordinaryPaintedProseContinuesAcrossTheSourcePage() throws {
+    let previous=try captionSource("noaa-caption-65")
+    struct Capture: Decodable { var sourceSHA256:String;var nativePage:PageContent }
+    let captured=try JSONDecoder().decode(Capture.self,from:Data(contentsOf:fixtureURL("noaa-cross-page-66.json")))
+    #expect(captured.sourceSHA256 == "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf")
+    var next=captured.nativePage
+    next.lines.removeAll{$0.rect.maxY < 50}
+    let before=captionBlocks(previous),after=captionBlocks(next)
+    let body=try #require(before.firstIndex{$0.text.hasPrefix("Many US households")})
+    let heading=try #require(before.firstIndex{$0.text == "change and climate action"})
+    // The source's ordinary white-filled rectangle is legitimate local typography evidence;
+    // it cannot turn this unfinished body paragraph into a movable sidebar.
+    let bodyLine=try #require(previous.lines.first{$0.text.hasPrefix("Many US households")})
+    #expect(previous.nativeTextPanels?.contains{$0.contains(bodyLine.rect)} == true)
+    #expect(before[body].closedUnit == nil)
+    #expect(heading < body)
+    #expect(LayoutReconstructor.continuationAnchor(in:before) == body)
+    var warnings:[ConversionWarning]=[],blocks:[ReflowBlock]=[]
+    let vocabulary=LayoutReconstructor.vocabulary(in:[previous,next])
+    LayoutReconstructor.appendPage(before,page:previous,previousPage:nil,to:&blocks,vocabulary:vocabulary,warnings:&warnings)
+    let tail=LayoutReconstructor.amendableTail(of:blocks)
+    let emitted=Array(blocks.dropLast(tail));blocks=Array(blocks.suffix(tail))
+    LayoutReconstructor.appendPage(after,page:next,previousPage:previous,to:&blocks,vocabulary:vocabulary,warnings:&warnings)
+    blocks=emitted+blocks
+    let joined=try #require(blocks.firstIndex{$0.text.hasPrefix("Many US households")})
+    let retainedHeading=try #require(blocks.firstIndex{$0.text == "change and climate action"})
+    #expect(retainedHeading < joined)
+    #expect(blocks[joined].text.contains("Quality of life is also threatened by climate change in ways that can be more difficult to quantify"))
+    #expect(blocks[joined].sourcePages == [66])
+    #expect(blocks[retainedHeading].sourcePages.isEmpty)
+    #expect(blocks.filter(\.isImage) == (before+after).filter(\.isImage))
+}

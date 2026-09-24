@@ -1,0 +1,1120 @@
+{
+  "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
+  "provenance": "Actual PageReader with StructureTreeReader.Index from pinned NOAA source physical66; text, styles, tags and geometry only. Paired with noaa-caption-65-layout.json for source continuation ownership.",
+  "nativePage": {
+    "bounds": [
+      [
+        0,
+        0
+      ],
+      [
+        792,
+        612
+      ]
+    ],
+    "graphics": [
+      [
+        [
+          0,
+          111.599998474
+        ],
+        [
+          726.5,
+          500.400001526
+        ]
+      ]
+    ],
+    "hasSyntheticTextStyle": false,
+    "lines": [
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Overview | 1-34",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            688.851074218,
+            13.9001
+          ],
+          [
+            67.14999999999998,
+            14.19
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Fifth National Climate Assessment",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            36,
+            13.9001
+          ],
+          [
+            151.11999999999998,
+            14.19
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "in ways that can be more difficult to quantify, such as increased",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            559.29
+          ],
+          [
+            295.1249999771102,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "crime and domestic violence, harm to mental health, reduced",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            545.29
+          ],
+          [
+            285.11600000191015,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "happiness, and fewer opportunities for outdoor recreation and",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            531.29
+          ],
+          [
+            291.5160000000001,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "play. {11.3, 19.1, 19.3}",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            517.29
+          ],
+          [
+            88.458,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Climate change, and how the country responds, is expected",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            489.29
+          ],
+          [
+            277.08700000000016,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "to alter demand for workers and shift where jobs are available.",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            475.29
+          ],
+          [
+            288.97599999618,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "For example, energy-related livelihoods in the Northern and",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            461.29
+          ],
+          [
+            279.7260000000001,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Southern Great Plains are expected to shift as the energy sector",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            447.29
+          ],
+          [
+            297.5359999961801,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "transforms toward more renewables, low-carbon technologies,",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            433.29
+          ],
+          [
+            292.8670000000001,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "and electrification of more sectors of the economy. Losses in",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            419.29
+          ],
+          [
+            282.6879999961801,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "fossil fuel\u2013related jobs are projected to be completely offset",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            405.29
+          ],
+          [
+            277.3560000000002,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "by greater increases in mitigation-related jobs, as increased",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            391.29
+          ],
+          [
+            277.11599999618016,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "demand for renewable energy and low-carbon technologies is",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            72,
+            377.29
+          ],
+          [
+            287.8759999923601,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "expected to lead to long-term expansion in most states\u2019 energy",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            559.29
+          ],
+          [
+            293.336,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "and decarbonization workforce (Figure 1.12). Grid expansion and",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            545.29
+          ],
+          [
+            296.89700000000005,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "energy efficiency efforts are already creating new jobs in places",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            531.29
+          ],
+          [
+            295.49599999618,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "like Nevada, Vermont, and Alaska, and advancements in biofuels",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            517.29
+          ],
+          [
+            295.49600000191003,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "and agrivoltaics (combined renewable energy and agriculture)",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            503.29
+          ],
+          [
+            286.52600000000007,
+            13.849999999999966
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "provide economic opportunities in rural communities. {10.2, 11.3,",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            489.29
+          ],
+          [
+            298.47599999236,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "19.3, 25.3, 26.2, 29.3, 32.4}",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            475.29
+          ],
+          [
+            116.928,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Additional opportunities include jobs in ecosystem restoration",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            447.29
+          ],
+          [
+            283.88799999617993,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "and construction of energy-efficient and climate-resilient",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            433.29
+          ],
+          [
+            263.6099999999999,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "housing and infrastructure. Workforce training and equitable",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            419.29
+          ],
+          [
+            277.721,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "access to clean energy jobs, which have tended to exclude women",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            405.29
+          ],
+          [
+            300.259,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "and people of color, are essential elements of a just transition to a",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            391.29
+          ],
+          [
+            297.8889999999999,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "decarbonized economy. {5.3, 19.3, 20.3, 22.3, 25.3, 26.2, 27.3, 32.4}",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            418.5,
+            377.29
+          ],
+          [
+            292.19900000000007,
+            13.850000000000023
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Energy Employment (2020\u20132050) for",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 11,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            328.608996337
+          ],
+          [
+            183.43380000210095,
+            14.59699999999998
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Alternative Net-Zero Pathways",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 11,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            314.608996337
+          ],
+          [
+            151.71090001049402,
+            14.59699999999998
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Employment gains in electrification and",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            298.379996337
+          ],
+          [
+            177.764,
+            13.269999999999982
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "renewable energy industries are projected to",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            286.379996337
+          ],
+          [
+            199.95200001145008,
+            13.269999999999982
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "far outpace job losses in fossil fuel industries.",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            274.379996337
+          ],
+          [
+            207.00199999999995,
+            13.269999999999982
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "Figure 1.12. Despite decreases in the",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            257.879996337
+          ],
+          [
+            165.28318896399992,
+            13.269999999999982
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "number of fossil fuel\u2013related jobs, the overall",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            245.879996337
+          ],
+          [
+            200.47600000762998,
+            13.27000000000001
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "number of energy jobs (specifically those",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            233.879996337
+          ],
+          [
+            182.50700000000006,
+            13.27000000000001
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "involved in the supply of energy) relative",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            221.879996337
+          ],
+          [
+            177.10700000191014,
+            13.27000000000001
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "to 2019 is generally projected to increase",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            209.879996337
+          ],
+          [
+            181.97100000955004,
+            13.27000000000001
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "in net-zero-emissions energy scenarios",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            197.879996337
+          ],
+          [
+            172.80999999999995,
+            13.27000000000001
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "between 2020 and 2050, although by much",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            185.879996337
+          ],
+          [
+            190.41300000190995,
+            13.27000000000001
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "more in some scenarios than in others.",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            173.879996337
+          ],
+          [
+            172.769,
+            13.27000000000001
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "text": {
+                "_0": "{Figure 32.17} Adapted with permission from",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            161.879996337
+          ],
+          [
+            198.69800000381997,
+            13.27000000000001
+          ]
+        ]
+      },
+      {
+        "content": {
+          "elements": [
+            {
+              "link": {
+                "_0": {
+                  "external": {
+                    "_0": "https://doi.org/10.1016/j.joule.2021.10.016"
+                  }
+                },
+                "_1": {
+                  "elements": [
+                    {
+                      "text": {
+                        "_0": "Jenkins et al. 2021",
+                        "_1": 0
+                      }
+                    }
+                  ]
+                }
+              }
+            },
+            {
+              "text": {
+                "_0": ".",
+                "_1": 0
+              }
+            }
+          ]
+        },
+        "fontSize": 10,
+        "monospaced": false,
+        "rect": [
+          [
+            513,
+            149.879996337
+          ],
+          [
+            86.08208740199996,
+            13.27000000000001
+          ]
+        ]
+      }
+    ],
+    "links": [
+      {
+        "rect": [
+          [
+            513,
+            149.88
+          ],
+          [
+            83.452,
+            13.27200000000002
+          ]
+        ],
+        "target": {
+          "external": {
+            "_0": "https://doi.org/10.1016/j.joule.2021.10.016"
+          }
+        }
+      }
+    ],
+    "number": 66,
+    "pictures": [
+      [
+        [
+          0,
+          111.599998474
+        ],
+        [
+          496.090985107,
+          500.400001526
+        ]
+      ]
+    ],
+    "preservePageReference": false,
+    "recognized": false,
+    "recognizedArtwork": [],
+    "recognizedTables": [],
+    "requiresPageImage": false,
+    "tables": []
+  }
+}

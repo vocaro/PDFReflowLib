@@ -405,6 +405,14 @@ struct ReflowBlock: Sendable, Equatable {
     /// cross-page join, which must not call such a block the continuation of the page before
     /// ([#267](https://github.com/vocaro/PDFReflowLib/issues/267)).
     var followsCroppedText = false
+    /// Complete page-local source-container membership, assigned only after assembly closes
+    /// every owned block. Partial or inconsistent groups are barriers to page continuation.
+    struct ClosedUnit: Sendable, Equatable {
+        var id: Int
+        var position: Int
+        var count: Int
+    }
+    var closedUnit: ClosedUnit?
 
     var text: String {
         switch content {

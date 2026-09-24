@@ -1875,9 +1875,17 @@ enum LayoutReconstructor {
                 continuations[index] = index - 1
             }
         }
+        let units = page.recognized || page.hasSyntheticTextStyle ? [] : ClosedSourceUnits.ranges(elements,
+            panels: (page.nativeTextPanels ?? []) + (page.closedNativeFrames ?? []))
+        // A closed source container cannot borrow or lend a suspended body paragraph.
+        continuations = continuations.filter { target, origin in
+            units.first(where: { $0.contains(target) }) == units.first(where: { $0.contains(origin) })
+        }
         let suspendedAt = Set(continuations.values)
         var paragraphHandles: [Int: Int] = [:]
+        var unitStart: Int?
         for (index, element) in elements.enumerated() {
+            if units.contains(where: { $0.lowerBound == index }) { unitStart = assembler.beginClosedUnit() }
             if let start = continuations[index], let handle = paragraphHandles[start], let line = element.line,
                assembler.resumeProse(handle, with: line) {
                 // The sentence continues in its original paragraph; its figure remains after it.
@@ -1917,6 +1925,9 @@ enum LayoutReconstructor {
                 } else {
                     assembler.append(line, as: spatial)
                 }
+            }
+            if let start = unitStart, units.contains(where: { $0.upperBound == index + 1 }) {
+                assembler.endClosedUnit(start: start); unitStart = nil
             }
             if suspendedAt.contains(index), let handle = assembler.suspendProse() {
                 paragraphHandles[index] = handle
@@ -2148,15 +2159,42 @@ enum LayoutReconstructor {
     /// hold back (#203, [decision 0008](../../doc/decisions/0008-streamed-blocks-to-the-writer.md)).
     ///
     /// Ordinarily that is the trailing block alone, which is the paragraph a continued paragraph
-    /// joins. Where images stand at the tail, the join steps over them to the paragraph beneath,
-    /// so that paragraph and every image the join would move are still open.
+    /// joins. Where images or complete source containers stand at the tail, the join steps over them to the paragraph beneath,
+    /// so that paragraph and every block the join would move are still open.
     ///
     /// The count cannot grow without bound: a page that opens no paragraph puts its own marker at
     /// the tail, and a marker is not a paragraph, so the walk stops there and the tail is one
     /// block again.
-    static func amendableTail(of blocks: [ReflowBlock]) -> Int {
+    /// The same complete-unit proof drives streaming retention and the eventual page join.
+    static func completeClosedUnit(at index: Int, in blocks: [ReflowBlock]) -> Range<Int>? {
+        guard blocks.indices.contains(index), let unit = blocks[index].closedUnit,
+              unit.id >= 0, unit.count > 0, unit.count <= 4_096,
+              unit.position >= 0, unit.position < unit.count, index >= unit.position else { return nil }
+        let start = index - unit.position
+        guard start <= blocks.count - unit.count else { return nil }
+        let page = blocks[index].page, range = start..<start + unit.count
+        guard range.allSatisfy({ offset in
+            let block = blocks[offset]
+            if case .sourcePage = block.content { return false }
+            return block.page == page && block.sourcePages.isEmpty
+                && block.closedUnit == .init(id: unit.id, position: offset - start, count: unit.count)
+        }) else { return nil }
+        return range
+    }
+
+    static func continuationAnchor(in blocks: [ReflowBlock]) -> Int {
         var anchor = blocks.count - 1
-        while anchor >= 0, blocks[anchor].isImage { anchor -= 1 }
+        while anchor >= 0 {
+            if let unit = completeClosedUnit(at: anchor, in: blocks), unit.upperBound == anchor + 1 {
+                anchor = unit.lowerBound - 1
+            } else if blocks[anchor].closedUnit == nil && blocks[anchor].isImage { anchor -= 1 }
+            else { break }
+        }
+        return anchor
+    }
+
+    static func amendableTail(of blocks: [ReflowBlock]) -> Int {
+        let anchor = continuationAnchor(in: blocks)
         guard anchor >= 0, anchor < blocks.count - 1,
               carriedOn(blocks[anchor].content, substitute: nil) != nil else { return 1 }
         return blocks.count - anchor
@@ -2175,11 +2213,14 @@ enum LayoutReconstructor {
         // paragraph: page 47's box is placed before the paragraph, where it also reads before the
         // sentence that refers to it, and page 48's rule after it. Placing page 47's box after the
         // paragraph would carry it past the page-48 marker (#203).
-        var anchor = blocks.count - 1
-        while anchor >= 0, blocks[anchor].isImage { anchor -= 1 }
+        let anchor = continuationAnchor(in: blocks)
         var opening = 0
-        while opening < remaining.count, remaining[opening].isImage { opening += 1 }
+        while opening < remaining.count {
+            if remaining[opening].closedUnit == nil && remaining[opening].isImage { opening += 1 }
+            else { break }
+        }
         if anchor >= 0, opening < remaining.count, let previousPage,
+           blocks[anchor].closedUnit == nil, remaining[opening].closedUnit == nil,
            let left = carriedOn(blocks[anchor].content, substitute: hyphens.lineEndSubstitute),
            case let .paragraph(right) = remaining[opening].content,
            // Reaching past a picture asks more of the paragraph than standing beside the boundary

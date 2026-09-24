@@ -457,7 +457,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 161, 526 and 581-583 visually reviewed against their Poppler rasters for #229 and #227: 161 and 526 print an underlined word (`gain` and `risk`; `not`) as a painted rule and must reflow their prose with no crop at all, and 581-583 are notes pages that paint nothing, cite web addresses with query strings, and keep only their source-page reference image. Their earlier minimumImages 2 counted the runaway crop, not a figure the page prints. Notes 39, 40 and 9 on pages 472 and 532 carry the word spaces the source draws without a space glyph, which the spacing reader restores (#119, #128, #225): the boundaries were reviewed against the rendered source pages, and the expectations do not bless any other line of those notes. Page 117 visually reviewed: the page's last printed line opens with the second half of a president's name (\"W. Bush\"), which the restored word spaces made visible, and must stay inside the paragraph it wraps from (#39). Pages 257, 572, 579, 580, 584 and 585 are source-reviewed running heads standing in the margin slot the book keeps on 538 of its 585 pages; their words repeat on too few neighboring pages for a run. Each page keeps every other line, and pages 572 and 580 keep their genuine notes-chapter titles (#10). Page 381 read against the source for the list conversion (#292): the strategy's three bulleted policies are one unordered list between the sentence that introduces them and the heading that follows; the notes pages, headed NOTES TO CHAPTER, gain no list.",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 161, 526 and 581-583 visually reviewed against their Poppler rasters for #229 and #227: 161 and 526 print an underlined word (`gain` and `risk`; `not`) as a painted rule and must reflow their prose with no crop at all, and 581-583 are notes pages that paint nothing, cite web addresses with query strings, and keep only their source-page reference image. Their earlier minimumImages 2 counted the runaway crop, not a figure the page prints. Notes 39, 40 and 9 on pages 472 and 532 carry the word spaces the source draws without a space glyph, which the spacing reader restores (#119, #128, #225): the boundaries were reviewed against the rendered source pages, and the expectations do not bless any other line of those notes. Page 117 visually reviewed: the page's last printed line opens with the second half of a president's name (\"W. Bush\"), which the restored word spaces made visible, and must stay inside the paragraph it wraps from (#39). Pages 257, 572, 579, 580, 584 and 585 are source-reviewed running heads standing in the margin slot the book keeps on 538 of its 585 pages; their words repeat on too few neighboring pages for a run. Each page keeps every other line, and pages 572 and 580 keep their genuine notes-chapter titles (#10). Page 381 read against the source for the list conversion (#292): the strategy's three bulleted policies are one unordered list between the sentence that introduces them and the heading that follows; the notes pages, headed NOTES TO CHAPTER, gain no list. Source pages164/374 visually reviewed: the Detainee Interrogation Reports frame and the Operational Opportunities continuation frame respectively precede the main body continuation. These intentional block interruptions retain their own page markers and are not forced into cross-page paragraph identities.",
       "pages": [
         {
           "page": 15,
@@ -775,13 +775,28 @@
             "attack terrorists and their organizations;",
             "More Than a War on Terrorism"
           ]
+        },
+        {
+          "page": 164,
+          "orderedText": [
+            "Detainee Interrogation Reports",
+            "school, KSM left Kuwait"
+          ]
+        },
+        {
+          "page": 374,
+          "orderedText": [
+            "June 2001: FBI and CIA",
+            "August 2001: The CIA and FBI",
+            "responsible for making it work"
+          ]
         }
       ]
     },
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228). Source pages 19 and 21 visually reviewed: the 8 pt running head standing where the book keeps it on 119 of its 135 pages must be absent, while the 14 pt section headings lower on the page remain headings (#10). Pages 19 and 75 read against the source for the list conversion (#292): page 19 opens on items 2 to 4 of a numbered list whose first item is on page 18, so the list starts at 2; page 75's five examination objectives list 1 to 4, and item 5, whose wrapped line sets it apart, is a paragraph that keeps its printed number. Physical opener pages 8, 14, 24, 50, 66, 88 and 116: the complete unquoted display summary is one aside below its title and above the chapter contents, following the owner decision on #214; it is not a quotation or navigation heading. Source page 123 re-rendered for #191: the complete Box 7.1 native sidebar now reflows before Interagency Initiatives. The cross-page continuity check includes its actual opening heading immediately after page 122, and ordered text pins its introduction and closing outreach paragraph before the section below it. Native source captures on physical pages 19, 34-37, 54, 56, 60, 63, 71, 73-74, 78-80 and 94-95 were reviewed for paragraph continuity alongside recovered painted sidebars. These checks retain complete source paragraphs rather than accepting conserved letters in interleaved columns. Page 35 also has a rendered-source review of main paragraph, sidebar and following paragraph order; page 95 has a rendered-source check of body leading beside smaller notes. The page 79 paragraph check follows the source word consolidated across its page break, instead of requiring the old dangling consoli- fragment. Physical page 84 source raster and native geometry reviewed: the broken word mini-/mum continues at the same 16-point leading from the narrow right measure into the full width below the left sidebar; the entire liquidity-requirements paragraph must remain complete, with the recovered capital/liquidity panel after the preceding capital/liquidity discussion and before the following standardized-requirements paragraph. Physical page 47 visually reviewed: two short 10-point main-text paragraphs retain their own 16-point leading above the recovered 9-point box; the second paragraph continues across the next source-page boundary. Physical pages 102,105,111 were source-render reviewed independently: unlabeled introductions/notes beside vector charts remain complete paragraphs, including source line breaks within U.S. Treasury and URLs. These are not newly numbered captions.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228). Source pages 19 and 21 visually reviewed: the 8 pt running head standing where the book keeps it on 119 of its 135 pages must be absent, while the 14 pt section headings lower on the page remain headings (#10). Pages 19 and 75 read against the source for the list conversion (#292): page 19 opens on items 2 to 4 of a numbered list whose first item is on page 18, so the list starts at 2; page 75's five examination objectives list 1 to 4, and item 5, whose wrapped line sets it apart, is a paragraph that keeps its printed number. Physical opener pages 8, 14, 24, 50, 66, 88 and 116: the complete unquoted display summary is one aside below its title and above the chapter contents, following the owner decision on #214; it is not a quotation or navigation heading. Source page 123 re-rendered for #191: the complete Box 7.1 native sidebar now reflows before Interagency Initiatives. The cross-page continuity check includes its actual opening heading immediately after page 122, and ordered text pins its introduction and closing outreach paragraph before the section below it. Native source captures on physical pages 19, 34-37, 54, 56, 60, 63, 71, 73-74, 78-80 and 94-95 were reviewed for paragraph continuity alongside recovered painted sidebars. These checks retain complete source paragraphs rather than accepting conserved letters in interleaved columns. Page 35 also has a rendered-source review of main paragraph, sidebar and following paragraph order; page 95 has a rendered-source check of body leading beside smaller notes. The page 79 paragraph check follows the source word consolidated across its page break, instead of requiring the old dangling consoli- fragment. Physical page 84 source raster and native geometry reviewed: the broken word mini-/mum continues at the same 16-point leading from the narrow right measure into the full width below the left sidebar; the entire liquidity-requirements paragraph must remain complete, with the recovered capital/liquidity panel after the preceding capital/liquidity discussion and before the following standardized-requirements paragraph. Physical page 47 visually reviewed: two short 10-point main-text paragraphs retain their own 16-point leading above the recovered 9-point box; the second paragraph continues across the next source-page boundary. Physical pages 102,105,111 were source-render reviewed independently: unlabeled introductions/notes beside vector charts remain complete paragraphs, including source line breaks within U.S. Treasury and URLs. These are not newly numbered captions. Source pairs 21/22,40/41,47/48,55/56,93/94,97/98,98/99,100/101,103/104 retain the same EPUB paragraph identity across each source-page marker; recovered framed content remains a complete separate unit. Page22 sidebar follows the adjacent Model Validation Council paragraph rather than preceding the top-of-page continuation.",
       "spineContinuity": [
         {
           "sourcePages": [
@@ -925,6 +940,12 @@
           ],
           "paragraphs": [
             "Although the issuance of paper money"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "Bureau of Engraving",
+              "next": "and Printing (BEP)"
+            }
           ]
         },
         {
@@ -993,6 +1014,12 @@
             "FOMC Responsibilities",
             "Depository Institutions",
             "Advisory Councils"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "Board four times",
+              "next": "a year, as required by law"
+            }
           ]
         },
         {
@@ -1171,6 +1198,12 @@
           "paragraphs": [
             "in the banking system. (See subsection “2020 and Beyond: Taking Aggressive Action Amid the Global Pandemic” on page 34 for more details.)",
             "Finally, the Federal Reserve’s actions to implement monetary policy are reflected in the Federal Reserve’s balance sheet. Key assets and liabilities are reported to the public each week. (See box 3.5 for more details about key line items of the Federal Reserve’s balance sheet.) The vast major"
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "The vast major",
+              "next": "ity of the Federal Reserve"
+            }
           ]
         },
         {
@@ -1189,6 +1222,71 @@
           "page": 111,
           "paragraphs": [
             "Note: Quarterly averages of daily data. The Federal Reserve measures each depository institution’s account balance at the end of each minute during the business day. An institution’s peak daylight overdraft for a given day is its largest negative end-of-minute balance. The System peak daylight overdraft for a given day is determined by adding the negative account balances of all depository institutions at the end of each minute and then selecting the largest negative end-of-minute balance. The average daylight overdraft for a given day is the sum of the average per-minute daylight overdrafts for all institutions on that day. Further data regarding peak and average daylight overdrafts is available in the Payment Systems section of the Federal Reserve Board’s website, https://www. federalreserve.gov/paymentsystems.htm."
+          ]
+        },
+        {
+          "page": 40,
+          "continuedParagraphs": [
+            {
+              "end": "When the",
+              "next": "securities are bought or sold"
+            }
+          ]
+        },
+        {
+          "page": 55,
+          "continuedParagraphs": [
+            {
+              "end": "for large banking",
+              "next": "institutions and the Financial Stability Report"
+            }
+          ]
+        },
+        {
+          "page": 93,
+          "continuedParagraphs": [
+            {
+              "end": "interbank transactions)",
+              "next": "and between businesses"
+            }
+          ]
+        },
+        {
+          "page": 97,
+          "continuedParagraphs": [
+            {
+              "end": "Much of the recent",
+              "next": "growth in ACH payments"
+            }
+          ]
+        },
+        {
+          "page": 98,
+          "continuedParagraphs": [
+            {
+              "end": "all institu",
+              "next": "tions dealing with the Federal Reserve directly"
+            }
+          ]
+        },
+        {
+          "page": 100,
+          "continuedParagraphs": [
+            {
+              "end": "before a business",
+              "next": "day and closes at 7:00 p.m."
+            }
+          ]
+        },
+        {
+          "page": 22,
+          "orderedText": [
+            "a year, as required by law",
+            "2. Community Depository Institutions Advisory Council",
+            "3. Model Validation Council",
+            "on page 77",
+            "More on Federal Reserve Advisory Councils",
+            "4. Community Advisory Council"
           ]
         }
       ]

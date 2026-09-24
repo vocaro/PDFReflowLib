@@ -62,6 +62,13 @@ enum TextLayerPlausibility {
     static let minimumMisreadShareForNumericPages = 0.1
     static let minimumUncoveredFraction = 0.75
     static let minimumUncoveredRows = 7
+    /// A short recognition has too few words for the inherited-layer word-share rule. Several
+    /// letters of another script, making up at least a tenth of its writing, and more than a
+    /// third damaged words together are stronger evidence of OCR noise than its raw word count.
+    /// Warren 555 (a handwritten hospital note) has 6 English of 11 judged words and 11 foreign
+    /// letters of 97; Warren 239's recognized diagram labels have 7 of 11 and 11 of 86 (#216).
+    static let minimumShortRecognitionWords = 5
+    static let minimumShortRecognitionForeignLetters = 5
     /// The ink test renders the page, which dominates its cost. A layer fails it only with fewer
     /// English words than uncovered text rows, and no image-backed page surveyed leaves 75% of its
     /// text ink uncovered in more than 27 rows, so a layer with 32 or more English words is not
@@ -155,16 +162,33 @@ enum TextLayerPlausibility {
     }
 
     /// Whether recognition of a page reads as English, judged as an inherited layer's words are
-    /// (#7); nil when it does, or the language is not judged. Only the English-share test applies:
+    /// (#7, #216); nil when it does, or the language is not judged. The English-share test applies:
     /// recognition of a legible page can misread a tenth of its words and still be the best text
     /// the page has, while recognition of handwriting reads under half English. Such a reading is
-    /// noise, which serves a reader worse than the page image.
+    /// noise, which serves a reader worse than the page image. A short result needs the separate
+    /// mixed-script evidence below because its handful of guessed words makes that share unstable.
     static func judgeRecognized(lines: [TextLine], language: String) -> Finding? {
         let text = lines.map(\.text).joined(separator: "\n")
         guard !lines.isEmpty, EnglishText.isDeclared(language),
               let counts = EnglishText.wordCounts(text),
-              case .fewEnglishWords(let english, let judged)? = wordFinding(counts),
               !EnglishText.readsAsAnotherLanguage(text) else { return nil }
+        if case .fewEnglishWords(let english, let judged)? = wordFinding(counts) {
+            return .fewEnglishWords(english: english, judged: judged)
+        }
+        let letters = text.unicodeScalars.filter(\.properties.isAlphabetic).count
+        return shortRecognitionFinding(counts, foreignLetters: EnglishText.foreignLetters(text), letters: letters)
+    }
+
+    /// A short recognized result can be judged only when its weak English words are corroborated
+    /// by substantial mixed-script noise. Numeric forms and too-short fragments stay unjudged.
+    static func shortRecognitionFinding(_ counts: WordCounts, foreignLetters: Int, letters: Int) -> Finding? {
+        let english = counts.english - counts.lonelyLetters
+        let judged = counts.judged - counts.lonelyLetters
+        guard judged >= minimumShortRecognitionWords, judged < minimumJudgedWords,
+              Double(counts.numberTokens) < Double(counts.tokens) * maximumNumericShare,
+              foreignLetters >= minimumShortRecognitionForeignLetters,
+              foreignLetters * 10 >= letters,
+              english * 3 < judged * 2 else { return nil }
         return .fewEnglishWords(english: english, judged: judged)
     }
 
@@ -179,6 +203,11 @@ enum TextLayerPlausibility {
     /// The `implausibleRecognition` warning for a page whose recognition was discarded.
     static func recognitionMessage(_ finding: Finding) -> String {
         guard case .fewEnglishWords(let english, let judged) = finding else { return "" }
+        if judged < minimumJudgedWords {
+            return "OCR of this page image is a short, mixed-script reading rather than a reliable English transcription: "
+                + "only \(english) of \(judged) judged words are English. The recognized text was discarded; "
+                + "the page is preserved as an image and does not reflow."
+        }
         return "OCR of this page image does not read as English: only \(english) of \(judged) words are English words "
             + "(handwriting, or print recognition cannot read). The recognized text was discarded; "
             + "the page is preserved as an image and does not reflow."

@@ -281,6 +281,37 @@ import Testing
     #expect(!TextLayerPlausibility.readsBetter(lines(noise), than: 50, of: 100, language: "en"))
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func shortMixedScriptRecognitionIsNotTreatedAsReadableProse() {
+    typealias Counts = TextLayerPlausibility.WordCounts
+    // Checksum-pinned corpus recognition survey, 4afe5c39:measurements/suspect-text-layers/
+    // scores-recognized.tsv. Warren 555 is a handwritten note; page 239's sparse diagram labels
+    // are also not prose. The short Blue Book readings remain too English to discard.
+    let hospital = Counts(english: 6, damaged: 5, neutral: 6, numericTokens: 2, tokens: 18)
+    #expect(TextLayerPlausibility.shortRecognitionFinding(hospital, foreignLetters: 11, letters: 97)
+        == .fewEnglishWords(english: 6, judged: 11))
+    let diagram = Counts(english: 7, damaged: 4, neutral: 5, numericTokens: 2, tokens: 18)
+    #expect(TextLayerPlausibility.shortRecognitionFinding(diagram, foreignLetters: 11, letters: 86)
+        == .fewEnglishWords(english: 7, judged: 11))
+    let blueBook = Counts(english: 6, damaged: 2, neutral: 2, numericTokens: 2, tokens: 12)
+    #expect(TextLayerPlausibility.shortRecognitionFinding(blueBook, foreignLetters: 9, letters: 47) == nil)
+    let shortPrinted = Counts(english: 16, damaged: 1, neutral: 4, numericTokens: 2, tokens: 23)
+    #expect(TextLayerPlausibility.shortRecognitionFinding(shortPrinted, foreignLetters: 1, letters: 180) == nil)
+    #expect(TextLayerPlausibility.shortRecognitionFinding(hospital, foreignLetters: 4, letters: 97) == nil)
+    #expect(TextLayerPlausibility.shortRecognitionFinding(hospital, foreignLetters: 11, letters: 120) == nil)
+    #expect(TextLayerPlausibility.recognitionMessage(.fewEnglishWords(english: 6, judged: 11))
+        .contains("short, mixed-script reading"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func warren555RecognitionIsDiscardedAsShortMixedScriptNoise() throws {
+    let capture = try SourceRecognitionFixture.load("warren-555")
+    #expect(capture.sourceSHA256 == "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19")
+    #expect(capture.page == 555)
+    let reading = capture.reading()
+    #expect(reading.lines.contains { $0.text.contains("Piاتهب") })
+    #expect(TextLayerPlausibility.judgeRecognized(lines: reading.lines, language: "en")
+        == .fewEnglishWords(english: 6, judged: 11))
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/93")) func warningStatesWhatFailedAndWhatWasDone() {
     let words = TextLayerPlausibility.message(.fewEnglishWords(english: 31, judged: 95), outcome: .replaced, referencesDisabled: false)
     #expect(words == "Existing text over a page-sized image does not read as English: only 31 of 95 words are English words "

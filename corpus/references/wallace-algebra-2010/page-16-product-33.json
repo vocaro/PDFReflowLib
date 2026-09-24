@@ -1,0 +1,21 @@
+{
+  "case": "wallace-algebra-2010",
+  "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+  "page": 16,
+  "regionPoints": [
+    82.0,
+    680.0,
+    135.0,
+    704.0
+  ],
+  "target": "Printed exercise 33 and its complete product with a stacked fraction; source omits the closing parenthesis after 33",
+  "renderer": "pdftoppm version 26.04.0",
+  "renderDPI": 180,
+  "referenceDPI": 36,
+  "inkThreshold": 200,
+  "pixels": [
+    23,
+    10
+  ],
+  "sha256": "521d347d11dd25868b1d00b88a21c90a2f22592b058dc1238731f19e15da390e"
+}

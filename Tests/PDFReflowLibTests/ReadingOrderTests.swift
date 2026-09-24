@@ -1263,10 +1263,8 @@ func aStackOfCellsIsThreeUnnumberedRowsBesideAColumnOfProse() {
     // of the other column.
     #expect(LayoutReconstructor.ordered(page(rows: 3, office: 100), bodySize: 10).map { $0.rect.minX }
             == [40, 40, 40, 300, 300, 300])
-    // And a grid the page numbered states its own order. What to do with Wallace's two-per-row
-    // exercise grids is an owner decision taken in #195 and scoped in #219 item 4, which names
-    // the contract and the test it has to move with; until it lands, a numbered cell keeps the
-    // reading it has.
+    // Repeating the same marker in every cell does not establish a numbered exercise sequence.
+    // Without paired, consecutive numbers this still reads down each column.
     #expect(LayoutReconstructor.ordered(page(rows: 3, marker: "1) "), bodySize: 10).map { $0.rect.minX }
             == [40, 40, 40, 300, 300, 300])
 }

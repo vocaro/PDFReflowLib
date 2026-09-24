@@ -708,6 +708,12 @@ enum LayoutReconstructor {
                            exhausted: &exhausted)
                 .map { elements[slots[$0.rect]!.removeFirst()] }
         }
+        // A numbered exercise grid states a row order in its paired markers. Read each
+        // exercise's own cells before a whitespace cut separates the two columns (#219).
+        if let exercises = numberedExerciseRows(elements, body: bodySize, rightToLeft: rightToLeft,
+                                               depth: depth, exhausted: &exhausted) {
+            return exercises
+        }
         /// Whether one side of a candidate gutter holds nothing but the page numbers of the
         /// entries on the other side: every element is a text piece no wider than three bodies,
         /// standing on the row of a line beside it, and reading as a number.
@@ -773,12 +779,8 @@ enum LayoutReconstructor {
         /// page reads `Joanne M. Accolla`, `Samuel M. W. Caspersen`, `Staff Assistant`, `Counsel`,
         /// which is neither column.
         ///
-        /// A cell the page numbered is not read here at all. **A numbered grid states its own
-        /// order**, and what to do with Wallace's two-per-row exercise grids — which are cells
-        /// beside cells on this test and would be reordered by it — is an owner decision taken in
-        /// #195 and scoped in #219 item 4, which names the contract and the test it has to move
-        /// with. Until that lands, a side any of whose cells opens a marker keeps the reading it
-        /// has.
+        /// A cell the page numbered is handled by `numberedExerciseRows` above when paired
+        /// markers establish a row order. Other marked cells keep their existing column order.
         func cellStackBesideItsRows(_ side: [Element], beside rest: [Element]) -> Bool {
             guard side.count >= 3,
                   rest.count(where: { $0.line != nil && $0.rect.width >= bodySize * 12 }) >= 2,

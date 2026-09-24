@@ -706,7 +706,14 @@ struct BlockAssembler {
         initialOpening = nil
         flushNote(); flushParagraph()
         codeOrigin = nil; rowInProgress = nil; itemRowInProgress = nil
-        blocks += content
+        for var block in content {
+            // Panel reconstruction used a fresh assembler. Allocate its headings in this
+            // page's sequence so their EPUB anchors cannot collide with surrounding headings.
+            if case let .heading(_, text, level) = block.content {
+                block.content = .heading(id: headingID(), text: text, level: level)
+            }
+            blocks.append(block)
+        }
         previous = nil; previousRow = nil
     }
 

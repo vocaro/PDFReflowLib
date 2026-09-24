@@ -7,6 +7,9 @@ enum NativeTextPanels {
     static func ordered(_ elements: [LayoutReconstructor.Element], panels: [CGRect], body: CGFloat,
                         rightToLeft: Bool) -> [LayoutReconstructor.Element] {
         guard !panels.isEmpty, panels.count <= 128, elements.count <= 2_000 else { return elements }
+        // structuredOrder has already validated these tags and their intervening barriers.
+        // Geometry may group untagged prose, but cannot override the source's reading order.
+        guard !elements.contains(where: { $0.line?.structure != nil }) else { return elements }
         struct Group { var rect: CGRect; var indices: Set<Int>; var first: Int }
         var groups: [Group] = [], claimed: Set<Int> = []
         for panel in panels.sorted(by: { $0.width * $0.height < $1.width * $1.height }) {
@@ -19,10 +22,6 @@ enum NativeTextPanels {
                 return panel.insetBy(dx: -1,dy: -1).contains(line.rect)
             })
             guard members.count >= 3, members.reduce(0,{ $0 + (elements[$1].line?.text.count ?? 0) }) >= 100 else { continue }
-            let tags = Set(members.compactMap { elements[$0].line?.structure?.group })
-            guard !elements.indices.contains(where: { index in
-                !members.contains(index) && elements[index].line?.structure.map { tags.contains($0.group) } == true
-            }) else { continue }
             groups.append(Group(rect: panel, indices: members, first: members.min()!)); claimed.formUnion(members)
         }
         guard !groups.isEmpty else { return elements }

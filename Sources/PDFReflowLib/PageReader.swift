@@ -101,6 +101,7 @@ enum PageReader {
                     !ruled.contains { $0.rect.intersects(table.rect) }
                 }
             }
+            content.lines = LeaderRows.joined(content, paints: graphics.paints)
             if graphics.unsupported {
                 warnings.append(.unsupportedGraphics)
             }

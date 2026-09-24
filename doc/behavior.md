@@ -2334,7 +2334,10 @@ of larger native type; they become one `blockquote`, with an adjacent dash attri
 never supply navigation headings.
 
 Thin leaders remain separate until their decoration role is classified, so a nearby painting
-cannot acquire table-of-contents text through an early bounding-box union. A patterned rectangular
+cannot acquire table-of-contents text through an early bounding-box union. A repeated column
+of Roman or chapter-qualified locators can be reunited with its entries when explicit horizontal
+strokes bridge each native row. Each joined row retains its styles and links; semantic table cells,
+tagged or rotated text, and unproved graphic bounds provide no such evidence. A patterned rectangular
 panel remains source artwork; independently proved wrapped prose over it can also reflow.
 
 `PrintedColumns` supplements whitespace cuts with sustained body-text margins when a

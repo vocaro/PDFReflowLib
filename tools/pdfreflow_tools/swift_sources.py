@@ -30,10 +30,12 @@ EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpac
               # `PageContent` carries each located table's cell counts (#31), so every probe
               # compiling the model compiles the measurement with it.
               'TableCellEvidence.swift',
-              'DocumentModel.swift', 'ReflowDocument.swift', 'ConversionTypes.swift']
+              'DocumentModel.swift', 'ReflowDocument.swift', 'ConversionTypes.swift',
+              'MathExpression.swift', 'FormBlank.swift']
 # Page rasterization with the options and model types it takes.
 RASTER = ['PageRasterizer.swift', 'ImageContentClassifier.swift', 'ConversionTypes.swift',
-          'TableCellEvidence.swift', 'DocumentModel.swift', 'ReflowDocument.swift']
+          'TableCellEvidence.swift', 'DocumentModel.swift', 'ReflowDocument.swift',
+          'MathExpression.swift']
 
 # Vision recognition: `OCRReader` with the two measurements it applies to its own reading.
 RECOGNITION = RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift']
@@ -48,7 +50,7 @@ PROBE_SOURCES = {
     'inspect-structure.swift': ['StructureTreeReader.swift', 'CGPDFObjects.swift',
                                 'TableCellEvidence.swift',
                                 'DocumentModel.swift', 'ReflowDocument.swift',
-                                'ConversionTypes.swift', 'PDFPageSource.swift', 'EmbeddedImageReader.swift',
+                                'ConversionTypes.swift', 'MathExpression.swift', 'PDFPageSource.swift', 'EmbeddedImageReader.swift',
                                 'ImageAlphaBounds.swift', 'SourceMetadata.swift',
                                 'XMLText.swift'],
     'inspect-chapter-boundaries.swift': EXTRACTION + ['ChapterBoundaryReader.swift', 'PDFPageSource.swift',

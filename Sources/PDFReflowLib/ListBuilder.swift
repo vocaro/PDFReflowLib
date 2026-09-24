@@ -22,7 +22,7 @@ import Foundation
 /// - **No one-item lists.** A marked line with nothing list-shaped on its page or the pages beside
 ///   it becomes a paragraph that keeps its printed marker, and so does an accepted item that other
 ///   blocks set apart from the rest of its run. Everything else keeps its preformatted form and
-///   printed marker: lettered items, contents entries, reference lists, exercise sets, answer keys,
+///   printed marker: lettered items, contents entries, reference lists, answer keys,
 ///   numbered section titles, a note's asterisk and recognition debris. Lettered runs with
 ///   ascending markers and source indentation can become ordered sublists (#219).
 ///
@@ -185,11 +185,9 @@ struct ListBuilder {
     init() {}
 
     /// Whether a heading names a set of exercises: one of its words is *practice* or
-    /// *exercise(s)*. The numbered problems under such a heading key the book's answers to
-    /// them, and whether they are to be lists is decided after their reading order is (#219
-    /// item 4); until then they keep their printed numbers as they are. The book's own heading
-    /// is the evidence, as `NOTES TO CHAPTER` is for a notes apparatus: Wallace heads every
-    /// exercise set `1.7 Practice - Variation`, and heads its worked procedures otherwise.
+    /// *exercise(s)*. The book's own heading distinguishes short mathematical exercises from
+    /// answer-key values and worked procedures. Numbered two-column exercise grids are read
+    /// in printed row order before this pass (#219 item 4).
     static func namesExercises(_ heading: String) -> Bool {
         heading.split(whereSeparator: { !$0.isLetter }).contains { word in
             let lowered = word.lowercased()
@@ -237,8 +235,12 @@ struct ListBuilder {
             // A transcription of a scan offers numbered items only; a bullet in one is recognition
             // of a table rule or a header, which ends every run as any other list-shaped block
             // that is no item does.
+            let exercise = marker.map { marker in
+                if case .number = marker.family { return entry.heading.map(Self.namesExercises) == true && !recognized }
+                return false
+            } ?? false
             if let marker, (!recognized || { if case .number = marker.family { return true }; return false }()),
-               Self.readsAsItem(String(plain.dropFirst(marker.length))) {
+               (Self.readsAsItem(String(plain.dropFirst(marker.length))) || exercise) {
                 entry.candidate = chain(marker, recognized: recognized, page: block.page, id: entry.id)
             } else {
                 latest = [:]
@@ -399,9 +401,8 @@ struct ListBuilder {
                 return entry.value == expected
             }
             guard !continued else { return }
-            // The numbered problems of an exercise set key the book's answers to them, and the
-            // book's own heading says which numbered runs those are (#219 item 4).
-            if let heading = first.heading, Self.namesExercises(heading) { return }
+            // A practice heading also permits short mathematical expressions as items: the
+            // printed numbers are now in row order, and the list retains their ordinal values.
         }
         // A piece of a verified run that other blocks set apart on both sides is one item, not a
         // list: it is a paragraph keeping its printed marker, as a lone marked line is (#195): the

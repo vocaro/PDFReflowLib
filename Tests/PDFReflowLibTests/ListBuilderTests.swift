@@ -215,15 +215,14 @@ func unverifiableListShapesStayPreformatted() {
                              item("2. Applying a correction factor to the indicated altitude")])).count == 2)
 }
 
-@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/292"))
-func exerciseSetsUnderTheBooksOwnHeadingKeepTheirNumbers() {
-    // Wallace heads every exercise set `Practice`; its numbered problems key the answers and wait
-    // for their reading order (#219 item 4). Its worked procedures are headed otherwise and list.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/29"))
+func exerciseSetsUnderTheBooksOwnHeadingBecomeNumberedLists() {
+    // The practice heading distinguishes exercises from answer-key values. Their source row
+    // order is established before this pass (#219 item 4).
     let exercises = [heading("1.7 Practice - Variation"), paragraph("Write the formula that expresses the relationship described"),
                      item("1. c varies directly as a"), item("2. x is jointly proportional to y and z"),
                      item("3. w varies inversely as x")]
-    #expect(listItems(built(exercises)).isEmpty)
-    #expect(preformatted(built(exercises)).count == 3)
+    #expect(listItems(built(exercises)).map(\.ordinal) == [1, 2, 3])
     let procedure = [heading("1.3 Solving Linear Equations - General"), paragraph("The steps are:"),
                      item("1. Distribute through any parentheses."), item("2. Combine like terms on each side of the equation."),
                      item("3. Get the variables on one side by adding or subtracting")]
@@ -232,7 +231,7 @@ func exerciseSetsUnderTheBooksOwnHeadingKeepTheirNumbers() {
     // and a bulleted run under the heading is untouched by the rule.
     let continued = [heading("1.9 Practice - Number and Geometry Problems", page: 1), item("1. When five is added to a number", page: 1),
                      marker(2), item("2. A certain number added twice", page: 2), item("3. The sum of three integers", page: 2)]
-    #expect(listItems(built(continued)).isEmpty)
+    #expect(listItems(built(continued)).map(\.ordinal) == [1, 2, 3])
     #expect(listItems(built([heading("Exercises"), item("• one thing to do"), item("• another thing to do")])).count == 2)
     #expect(ListBuilder.namesExercises("Chapter 3 Exercises") && ListBuilder.namesExercises("3.4 Practice - Three Variables"))
     #expect(!ListBuilder.namesExercises("Practiced Hands") && !ListBuilder.namesExercises("The Exercised Prerogative"))

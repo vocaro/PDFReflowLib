@@ -2016,7 +2016,8 @@ enum LayoutReconstructor {
                 && !tableRects.contains { $0.contains(line.rect) }
         }.map(\.element)
         // An inline fraction's denominator joins the line its numerator ends (#53).
-        var lines = joinedInlineFractions(reflowable, rules: page.graphics.filter(isThinRule),
+        var lines = joinedInlineFractions(FormBlankRows.joined(reflowable, blanks: page.blanks),
+                                          rules: page.graphics.filter(isThinRule),
                                           body: max(4, bodySize(page.lines)))
         let typography = PageTypography(pageLines: page.lines, reflowableLines: lines, documentBody: context.documentBody,
                                         nativeSizeEvidence: !page.recognized && !page.hasSyntheticTextStyle)

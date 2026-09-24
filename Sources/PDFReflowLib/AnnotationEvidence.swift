@@ -76,6 +76,15 @@ enum AnnotationEvidence {
         return judgment
     }
 
+    /// A visible text or choice widget whose lower edge overlays a printed writing rule.
+    static func blanks(on page: PDFPage, paints: [CGRect]) -> [FormBlank] {
+        let fields = page.annotations.filter { annotation in
+            annotation.type == "Widget" && annotation.shouldDisplay && !isHidden(annotation)
+                && (annotation.widgetFieldType == .text || annotation.widgetFieldType == .choice)
+        }.map(\.bounds)
+        return FormBlank.under(fields: fields, paints: paints)
+    }
+
     /// The annotation flags Hidden (bit 2) and NoView (bit 6).
     private static func isHidden(_ annotation: PDFAnnotation) -> Bool {
         guard let flags = annotation.value(forAnnotationKey: .flags) as? NSNumber else { return false }

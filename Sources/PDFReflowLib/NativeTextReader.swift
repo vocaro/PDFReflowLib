@@ -291,6 +291,57 @@ enum NativeTextReader {
         }
     }
 
+    /// PDFKit can close a line across a form's empty rule: `State of (name).` is printed with a
+    /// writing space before its period. Split only where the rule interior selects no letters or
+    /// numbers, and require the pieces to spell the original line (#197, #211).
+    static func splitAtBlanks(_ lines: [TextLine], blanks: [FormBlank], on page: PDFPage) throws -> [TextLine] {
+        guard !blanks.isEmpty else { return lines }
+        return try withExtractionLock {
+            var result: [TextLine] = []
+            for line in lines {
+                try Task.checkCancellation()
+                let em = max(4, line.fontSize)
+                let crossed = blanks.filter { $0.sharesRow(with: line.rect) }
+                    .map { $0.rule.insetBy(dx: 2, dy: 0) }
+                    .filter { $0.width > em * 3 && line.rect.minX < $0.minX && line.rect.maxX > $0.maxX }
+                    .sorted { $0.minX < $1.minX }
+                guard !crossed.isEmpty, !line.monospaced, line.turn == .upright,
+                      crossed.allSatisfy({ rule in
+                          let interior = CGRect(x: rule.minX + em, y: line.rect.minY,
+                                                width: rule.width - em * 2, height: line.rect.height)
+                          return !(page.selection(for: interior)?.string ?? "").contains { $0.isLetter || $0.isNumber }
+                      }) else { result.append(line); continue }
+                let edges = [line.rect.minX] + crossed.map(\.midX) + [line.rect.maxX]
+                var pieces: [TextLine] = []
+                for (start, end) in zip(edges, edges.dropFirst()) {
+                    guard let (reading, bounds) = detachedPiece(line.rect, from: start, to: end, on: page),
+                          !reading.isEmpty else { pieces = []; break }
+                    let selected = page.selection(for: CGRect(x: start, y: line.rect.minY,
+                                                              width: end - start, height: line.rect.height))
+                    let styled = selected?.attributedString
+                    pieces.append(textLine(semantic: reading, bounds: bounds, attributed: styled))
+                }
+                func compact(_ text: String) -> String { String(text.filter { !$0.isWhitespace }) }
+                guard pieces.count == crossed.count + 1,
+                      compact(pieces.map(\.text).joined()) == compact(line.text) else {
+                    result.append(line); continue
+                }
+                for index in pieces.indices {
+                    var rect = pieces[index].rect
+                    if index > 0 {
+                        let left = max(rect.minX, crossed[index - 1].maxX)
+                        rect = CGRect(x: left, y: rect.minY, width: rect.maxX - left, height: rect.height)
+                    }
+                    if index < crossed.count { rect.size.width = min(rect.maxX, crossed[index].minX) - rect.minX }
+                    guard rect.width > 0 else { pieces = []; break }
+                    pieces[index].rect = rect
+                }
+                result += pieces.isEmpty ? [line] : pieces
+            }
+            return result
+        }
+    }
+
     private static func detachedPiece(_ rect: CGRect, from minX: CGFloat, to maxX: CGFloat,
                                 on page: PDFPage) -> (String, CGRect)? {
         func selection(_ left: CGFloat, _ right: CGFloat) -> PDFSelection? {

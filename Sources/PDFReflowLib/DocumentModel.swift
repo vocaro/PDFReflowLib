@@ -178,6 +178,8 @@ struct PageContent: Equatable, Codable {
     var nativeTextPanels: [CGRect]?
     /// Complete source-painted rule frames; ownership only, not permission to recover text.
     var closedNativeFrames: [CGRect]?
+    /// Rules on which a form reader writes, with or without interactive fields (#197, #211).
+    var blanks: [FormBlank] = []
     var requiresPageImage = false
     var recognized = false
     var hasSyntheticTextStyle = false

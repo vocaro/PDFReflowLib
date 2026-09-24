@@ -66,10 +66,12 @@ enum PageReader {
             // page put on each printed row (#210).
             let shows = styled ? page.pageRef.map(NativeSpacingReader.read) ?? [] : []
             let rules = graphics.regions.filter(LayoutReconstructor.isThinRule)
+            let fieldBlanks = styled ? AnnotationEvidence.blanks(on: page, paints: graphics.paints.map(\.rect)) : []
             var content = PageContent(number: i + 1, bounds: bounds,
                 lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: styled,
                     rules: rules, links: links, preserveInvisibleWordGaps: syntheticStyle, shows: shows), graphics: graphics.regions,
                 pictures: graphics.images)
+            content.blanks = fieldBlanks
             if styled, !SlideDeck.title(in: content).isEmpty {
                 content.lines = try NativeTextReader.separateSlideLabels(content.lines, on: page)
             }
@@ -100,6 +102,26 @@ enum PageReader {
                                           wraps: false, turn: label.turn)
                     merged.structure = label.structure
                     content.lines[row.labelIndex] = merged
+                }
+                content.blanks += FormBlank.printed(paints: graphics.paints.map(\.rect),
+                                                   lines: content.lines, fields: fieldBlanks)
+                content.lines = try NativeTextReader.splitAtBlanks(content.lines, blanks: content.blanks, on: page)
+                let blankRules = content.blanks.map(\.rule)
+                content.graphics.removeAll { region in
+                    let marks = graphics.paints.filter { region.contains($0.rect) }
+                    return !marks.isEmpty && marks.allSatisfy { paint in
+                        blankRules.contains { $0.contains(paint.rect) }
+                    }
+                }
+                let body = max(4, LayoutReconstructor.bodySize(content.lines))
+                for blank in content.blanks where blank.field.height > body * 2.5 {
+                    let area = blank.field.union(blank.rule).insetBy(dx: 2, dy: 2)
+                    guard !content.lines.contains(where: { $0.rect.insetBy(dx: 1, dy: 1).intersects(area) }),
+                          !content.graphics.contains(where: { $0.intersects(area) }) else { continue }
+                    let rule = blank.rule.insetBy(dx: 2, dy: 0)
+                    content.lines.append(TextLine(text: FormBlank.text,
+                        rect: CGRect(x: rule.minX, y: rule.midY, width: rule.width, height: body),
+                        fontSize: body, wraps: false))
                 }
             }
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,

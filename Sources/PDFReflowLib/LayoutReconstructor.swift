@@ -489,6 +489,7 @@ enum LayoutReconstructor {
         var quotation: [TextLine]?
         var pictureCaption: [TextLine]?
         var caption: [TextLine]?
+        var nativePanel: [TextLine]?
     }
 
     /// Convenience for callers that do not report an abandoned cut.
@@ -1789,7 +1790,8 @@ enum LayoutReconstructor {
                 message: "Whitespace cuts reached their depth limit before separating this page's content; "
                     + "what remained keeps the order it was extracted in, which may not be its reading order."))
         }
-        let elements = structuredOrder(spatial, page: page.number, warnings: &warnings)
+        let elements = NativeTextPanels.ordered(structuredOrder(spatial, page: page.number, warnings: &warnings),
+            panels: page.recognized || page.hasSyntheticTextStyle ? [] : page.nativeTextPanels ?? [], body: typography.body, rightToLeft: rightToLeft)
         let noteGroups = NumberedNoteDetector.groups(in: elements, page: page,
                                                      headingEvidence: context.numberedNotePages.contains(page.number))
         // A link whose rectangle covers a figure links the figure (#247).
@@ -1858,6 +1860,11 @@ enum LayoutReconstructor {
             if let start = continuations[index], let handle = paragraphHandles[start], let line = element.line,
                assembler.resumeProse(handle, with: line) {
                 // The sentence continues in its original paragraph; its figure remains after it.
+            } else if let panel = element.nativePanel {
+                // A panel states its own type size and leading. Reusing the surrounding
+                // paragraph's metrics would split its smaller words at every printed row.
+                let content = PageContent(number: page.number, bounds: element.rect, lines: panel, graphics: [])
+                assembler.appendTextPanel(blocks(page: content, images: [], context: context, warnings: &warnings))
             } else if let group = noteGroups[index], let line = element.line {
                 assembler.appendNote(group: group, line)
             } else if let path = element.image {

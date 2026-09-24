@@ -43,6 +43,17 @@ enum BracketedReferenceBlocks {
         else { return blocks }
 
         var result = Array(blocks[..<after])
+        if case let .paragraph(label) = result[heading].content {
+            result[heading].content = .heading(id: "references-\(result[heading].page)-\(heading)",
+                                               text: label, level: 2)
+        }
+        if let acknowledgements = result[..<heading].lastIndex(where: {
+            $0.text.trimmingCharacters(in: .whitespacesAndNewlines) == "ACKNOWLEDGEMENTS"
+        }), case let .paragraph(label) = result[acknowledgements].content {
+            result[acknowledgements].content = .heading(
+                id: "acknowledgements-\(result[acknowledgements].page)-\(acknowledgements)",
+                text: label, level: 2)
+        }
         for (offset, opening) in openings.enumerated() {
             let end = offset + 1 < openings.count ? openings[offset + 1].0 : boundary
             var entry = blocks[opening.0]

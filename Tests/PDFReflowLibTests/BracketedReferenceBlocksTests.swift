@@ -17,6 +17,8 @@ func nasaWordBracketedReferencesAreWholeParagraphs() throws {
     #expect(entries.contains { $0.text.hasPrefix("[2] Farmer") && $0.text.contains("Wind Tunnel Studies") })
     #expect(entries.contains { $0.text.hasPrefix("[18] McCullough") && $0.text.contains("Adjacent Structures") })
     #expect(!blocks.contains { $0.text.hasPrefix("doi: 10.1016") })
+    #expect(blocks.contains { if case .heading = $0.content { return $0.text == "REFERENCES" }; return false })
+    #expect(blocks.contains { if case .heading = $0.content { return $0.text == "ACKNOWLEDGEMENTS" }; return false })
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/171"))

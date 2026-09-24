@@ -504,7 +504,36 @@ enum LayoutReconstructor {
             // the image clips part of it (for example, a raised exponent beside a fraction).
             regions = merged(regions, protecting: protectedProse)
         }
-        return regions.flatMap { separatedAnswerColumns($0.bounds, on: page, body: body) }
+        return regions.flatMap { region in
+            var crop = region.bounds
+            // A formula at the bottom of an answer column may grow its crop two points into
+            // the next section number. The number belongs with the answer-key title beneath
+            // the crop (Wallace page 486: 10.4 / Answers - Exponential Functions).
+            if let label = page.lines.first(where: { line in
+                line.text.range(of: #"^[0-9]{1,2}\.[0-9]{1,2}$"#, options: .regularExpression) != nil
+                    && crop.intersects(line.rect)
+                    && line.rect.minY <= crop.minY + body * 0.4
+                    && page.lines.contains { title in
+                        title.text.hasPrefix("Answers -")
+                            && title.rect.maxY < line.rect.minY
+                            && line.rect.minY - title.rect.maxY < body * 4
+                    }
+                    && !page.lines.contains { other in
+                        other.rect != line.rect && crop.intersects(other.rect)
+                            && other.rect.minY < line.rect.maxY + body * 0.15
+                    }
+                    && !page.graphics.contains { graphic in
+                        crop.intersects(graphic) && graphic.minY < line.rect.maxY + body * 0.15
+                    }
+                    && !page.pictures.contains { picture in
+                        crop.intersects(picture) && picture.minY < line.rect.maxY + body * 0.15
+                    }
+            }) {
+                let bottom = label.rect.maxY + body * 0.15
+                crop = CGRect(x: crop.minX, y: bottom, width: crop.width, height: crop.maxY - bottom)
+            }
+            return separatedAnswerColumns(crop, on: page, body: body)
+        }
     }
 
     /// Whether a line states an equation: an `=` with a term after it, over a line short enough

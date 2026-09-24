@@ -184,6 +184,27 @@ func wallaceWrappedAnswersKeepTheirNumberedBlocks(pageNumber: Int) throws {
     #expect(!blocks.contains { $0.text == "11b + 19" })
 }
 
+@Test func wallaceNextAnswerSectionFollowsThePreviousCrop() throws {
+    let fixture = try SourceLayoutFixture.load("algebra-486")
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    let page = fixture.content()
+    let images = LayoutReconstructor.graphicsWithLabels(page).enumerated().map { ($0.element, "image-\($0.offset)") }
+    let label = try #require(page.lines.first { $0.text == "10.4" })
+    let previousAnswer = try #require(page.lines.first { $0.text.hasPrefix("16) g") })
+    let previousCrop = try #require(images.first { $0.0.contains(previousAnswer.rect) })
+    #expect(previousCrop.0.minY > label.rect.maxY)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: images, vocabulary: [], warnings: &warnings)
+    let cropIndex = try #require(blocks.firstIndex { block in
+        if case let .image(image) = block.content { return image.assetID == previousCrop.1 }
+        return false
+    })
+    let labelIndex = try #require(blocks.firstIndex { $0.text == "10.4" })
+    let titleIndex = try #require(blocks.firstIndex { $0.text == "Answers - Exponential Functions" })
+    let firstAnswerIndex = try #require(blocks.firstIndex { $0.text == "1) 0" })
+    #expect(cropIndex < labelIndex && labelIndex < titleIndex && titleIndex < firstAnswerIndex)
+}
+
 @Test func leaderTableControlsSeparateLookupRowsFromContentsAndEllipses() {
     func page(_ strings: [String], gap: Double = 14, mono: Bool = false, header: Bool = true) -> PageContent {
         var lines = strings.enumerated().map { index, text in

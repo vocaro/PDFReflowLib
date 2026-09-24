@@ -14,20 +14,40 @@ enum EPUBTextEncoder {
     }
 
     static func inline(_ text: InlineText, labels: [Int: String] = [:]) -> String {
-        text.elements.map { element in
+        var result = ""
+        var openScripts: [String] = []
+        func setScripts(_ desired: [String]) {
+            let common = zip(openScripts, desired).prefix { $0 == $1 }.count
+            for tag in openScripts.dropFirst(common).reversed() { result += "</\(tag)>" }
+            for tag in desired.dropFirst(common) { result += "<\(tag)>" }
+            openScripts = desired
+        }
+        for element in text.elements {
             switch element {
             case let .text(text, style):
+                var scripts: [String] = []
+                if style.contains(.superscript) { scripts.append("sup") }
+                else if style.contains(.subscript) { scripts.append("sub") }
+                if !scripts.isEmpty {
+                    if style.contains(.nestedSuperscript) { scripts.append("sup") }
+                    else if style.contains(.nestedSubscript) { scripts.append("sub") }
+                }
+                setScripts(scripts)
                 var run = xml(text)
                 if style.contains(.italic) { run = "<em>\(run)</em>" }
                 if style.contains(.bold) { run = "<strong>\(run)</strong>" }
                 if style.contains(.underline) { run = "<u>\(run)</u>" }
-                if style.contains(.superscript) { run = "<sup>\(run)</sup>" }
-                else if style.contains(.subscript) { run = "<sub>\(run)</sub>" }
-                return run
-            case let .link(target, text): return "<a href=\"\(href(target))\">\(inline(text, labels: labels))</a>"
-            case let .sourcePage(page): return sourcePage(page, labels: labels)
+                result += run
+            case let .link(target, text):
+                setScripts([])
+                result += "<a href=\"\(href(target))\">\(inline(text, labels: labels))</a>"
+            case let .sourcePage(page):
+                setScripts([])
+                result += sourcePage(page, labels: labels)
             }
-        }.joined()
+        }
+        setScripts([])
+        return result
     }
 
     /// What an internal link's `href` holds until the writer knows which spine document holds the

@@ -155,6 +155,11 @@ struct TextStyle: OptionSet, Sendable, Equatable, Codable {
     /// A rule the page paints under a run of words, which is emphasis the font does not carry
     /// (#235). Not a link: the writer emits `<u>`, which states appearance without claiming one.
     static let underline = TextStyle(rawValue: 1 << 4)
+    /// A second level inside the outer superscript or subscript. These flags are meaningful
+    /// only alongside one of the outer script flags; the encoder keeps the outer tag open as
+    /// the source moves between its nested raised and lowered glyphs (#213).
+    static let nestedSuperscript = TextStyle(rawValue: 1 << 5)
+    static let nestedSubscript = TextStyle(rawValue: 1 << 6)
 }
 
 /// Where a link the source draws points (#247).

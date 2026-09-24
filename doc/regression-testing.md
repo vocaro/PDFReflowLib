@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->952 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->957 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->257 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->258 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
@@ -207,7 +207,7 @@ loaded host. Each case verifies the pinned source identity, converts in a fresh 
 otherwise; see [corpus.md](corpus.md#index)),
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->1399 checks on 265 reviewed pages across 24 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->1529 checks on 271 reviewed pages across 24 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded (`excludedFullConversions`, whose entries the
@@ -219,11 +219,12 @@ each book is in [corpus.md](corpus.md#warren-commission-report) and the admissio
 [corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 
 <!-- counts:contract-breakdown -->
-Those 1399 checks are 4 `spineContinuity`, 127 `text`, 702 `orderedText`, 71 `absentText`,
-52 `headings`, 154 `paragraphs`, 16 `continuedParagraphs`, 10 `preformatted`, 15 `lists`,
-7 `asides`, 2 `quotations`, 16 `scripts`, 4 `math`, 10 `imageRegions`, 37 `tableRows`,
-119 `minimumImages`, 1 `originalPageImage`, 23 `warningCodesAnyOf` and 29 `absentWarningCodes`,
-counted as `tools/check_corpus_content.py` counts them.
+Those 1529 checks are 4 `spineContinuity`, 127 `text`, 807 `orderedText`, 71 `absentText`,
+52 `headings`, 154 `paragraphs`, 16 `continuedParagraphs`, 10 `preformatted`,
+6 `absentPreformatted`, 15 `lists`, 7 `asides`, 2 `quotations`, 16 `scripts`, 11 `math`,
+11 `imageRegions`, 37 `tableRows`, 124 `minimumImages`, 1 `originalPageImage`,
+29 `warningCodesAnyOf` and 29 `absentWarningCodes`, counted as `tools/check_corpus_content.py`
+counts them.
 <!-- counts:end -->
 
 Contract expectations per page: `orderedText` and `text` (selected correct words in order),

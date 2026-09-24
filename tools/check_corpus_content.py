@@ -31,7 +31,8 @@ CONTRACT_CHECK_TYPES = {'spineContinuity': 'sequence'}
 PAGE_CHECK_TYPES = {
     'text': 'sequence', 'orderedText': 'sequence', 'absentText': 'sequence',
     'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
-    'preformatted': 'sequence', 'lists': 'sequence', 'asides': 'sequence', 'quotations': 'sequence',
+    'preformatted': 'sequence', 'absentPreformatted': 'sequence', 'lists': 'sequence',
+    'asides': 'sequence', 'quotations': 'sequence',
     'scripts': 'sequence', 'math': 'sequence', 'imageRegions': 'sequence', 'tableRows': 'sequence',
     'minimumImages': 'presence', 'originalPageImage': 'presence',
     'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
@@ -370,7 +371,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'originalPageImage', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'math', 'absentText', 'headings', 'paragraphs', 'preformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'originalPageImage', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'math', 'absentText', 'headings', 'paragraphs', 'preformatted', 'absentPreformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -410,6 +411,12 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
             checks += 1
             if not any(normalized(phrase) in block for block in page.get('preformatted', [])):
                 errors.append(f'Page {number}: missing preformatted block {phrase!r}')
+        for phrase in item.get('absentPreformatted', []):
+            if not isinstance(phrase, str) or not normalized(phrase):
+                raise ValueError('Empty or invalid absent preformatted phrase')
+            checks += 1
+            if any(normalized(phrase) in block for block in page.get('preformatted', [])):
+                errors.append(f'Page {number}: unwanted preformatted block {phrase!r}')
         for expected_list in item.get('lists', []):
             # One list element of the named kind (and start, where named) with an item opening on
             # the page must hold the phrases in consecutive items, in order (#292): items that

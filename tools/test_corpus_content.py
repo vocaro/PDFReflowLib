@@ -192,6 +192,21 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_absent_preformatted_targets_detached_stub_without_rejecting_math_text(self):
+        self.contract['pages'][0]['absentPreformatted'] = ['23) (2)(−']
+        self.pages[1]['text'] += ' 23) (2)(−2/9)'
+        self.pages[1]['preformatted'] = []
+        self.assertTrue(self.check()['passed'])
+        self.pages[1]['preformatted'] = ['23) (2)(−']
+        self.assertFalse(self.check()['passed'])
+        self.pages[1]['preformatted'] = []
+        self.pages[2]['preformatted'] = ['23) (2)(−']
+        self.assertTrue(self.check()['passed'])
+        for phrase in ['', '  ', 123]:
+            self.contract['pages'][0]['absentPreformatted'] = [phrase]
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_preformatted_parser_reads_one_block_at_a_time(self):
         path = self.epub('<span epub:type="pagebreak" id="page-1"/><pre>17) <em>(1, 2)</em></pre>'
                          '<pre>18) (3, 4)</pre><p>prose</p>',

@@ -15,7 +15,7 @@
     {
       "page": 16,
       "focus": "Two-column fraction exercises; keep each problem number attached to its full expression.",
-      "observed": "Visible initial fractions are retained as image crops; this spot check does not verify every exercise."
+      "observed": "Exercises 1–20 are stacked-fraction MathML with source altimg assets. Products 21–32 and 34–36 retain their printed number and complete expression as MathML/altimg. The source prints item 33 without a closing parenthesis; a source-correlated image crop preserves that whole exceptional product with an imageRegion warning."
     },
     {
       "page": 119,
@@ -40,11 +40,12 @@
     {
       "page": 347,
       "focus": "Quadratic exercise set; powers and problem numbering.",
-      "observed": "Visible left-column equations retain powers in an image region. Verify the remaining column and all problem numbers before qualification."
+      "observed": "Source layout and bounded EPUB verify printed paired row order 1–40 across both columns. Each equation has native MathML with a packaged source altimg crop, including exercise 35's squared terms."
     },
     {
       "page": 438,
-      "focus": "Start of multi-column chapter answer key; section identifiers and answer-number associations."
+      "focus": "Start of multi-column chapter answer key; section identifiers and answer-number associations.",
+      "observed": "The source-reviewed integer key reads answers 1–60 under Chapter 0 / 0.1 / Answers - Integers before 0.2 / Answers - Fractions; the values and numbering are verified against the printed page."
     },
     {
       "page": 479,
@@ -53,7 +54,8 @@
     },
     {
       "page": 483,
-      "focus": "Quadratic graph answer keys; coordinate axes, labels and correct problem association."
+      "focus": "Quadratic graph answer keys; coordinate axes, labels and correct problem association.",
+      "observed": "All 18 graph numbers precede their own preserved graph crops in printed column order. A source fixture checks that each numbered crop intersects a distinctive coordinate label on its graph. The page emits the imageRegion warning."
     }
   ]
 }

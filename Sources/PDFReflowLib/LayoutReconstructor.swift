@@ -414,6 +414,30 @@ enum LayoutReconstructor {
         return EnglishText.readsAsWords(line.text)
     }
 
+    /// A framed screenshot may share one graphic seed with the box's prose above it. Fed 126
+    /// and 132 draw a frame around both, but the raster picture begins 14 points below the
+    /// final prose line. The frame is not a transcription of that prose: keep the screenshot
+    /// and the lower frame, and let the source text above the picture reflow (#169).
+    private static func belowProseAbovePicture(_ crop: CGRect, on page: PageContent,
+                                               language: String, body: CGFloat) -> CGRect {
+        let pictures = page.pictures.filter { crop.contains($0) }
+        guard pictures.count == 1, let picture = pictures.first,
+              picture.width >= crop.width * 0.8, picture.height >= crop.height * 0.25,
+              page.graphics.contains(where: { $0.contains(picture) && $0.contains(crop) }) else { return crop }
+        let above = page.lines.filter { line in
+            crop.intersects(line.rect) && line.rect.minY > picture.maxY + body * 0.5
+        }
+        // Short closing fragments can be part of those paragraphs (`the country.`,
+        // `employment.`). Require prose to dominate the strip rather than every line to
+        // read as a sentence in isolation.
+        guard above.count >= 3,
+              above.count(where: { releasesProse($0, language: language) }) * 4 >= above.count * 3,
+              let lowest = above.min(by: { $0.rect.minY < $1.rect.minY }) else { return crop }
+        let gap = lowest.rect.minY - picture.maxY
+        let top = picture.maxY + min(body * 0.25, gap * 0.5)
+        return CGRect(x: crop.minX, y: crop.minY, width: crop.width, height: top - crop.minY)
+    }
+
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent, language: String = "en") -> [CGRect] {
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
@@ -576,6 +600,7 @@ enum LayoutReconstructor {
                     crop = crop.union(line.rect)
                 }
             }
+            crop = belowProseAbovePicture(crop, on: page, language: language, body: body)
             return separatedAnswerColumns(crop, on: page, body: body)
         }
     }

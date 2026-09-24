@@ -10,11 +10,18 @@ enum PrintedColumns {
 
     static func plan(_ elements: [Element], body: CGFloat) -> Plan? {
         guard elements.count <= 2_000, body > 0 else { return nil }
-        let captionLines = elements.flatMap { $0.caption ?? $0.pictureCaption ?? [] }
+        // A wide caption is a floating unit, not necessarily a column margin. Preserve a
+        // complete body/quotation plan before asking caption rows to supply missing evidence.
+        return plan(elements, body: body, includeCaptions: false)
+            ?? plan(elements, body: body, includeCaptions: true)
+    }
+
+    private static func plan(_ elements: [Element], body: CGFloat, includeCaptions: Bool) -> Plan? {
+        let captionLines = includeCaptions ? elements.flatMap { $0.caption ?? $0.pictureCaption ?? [] } : []
         let quoteLines = elements.flatMap { $0.quotation ?? [] }
         let writing = elements.flatMap { element -> [TextLine] in
             if let quote = element.quotation { return quote }
-            if let caption = element.caption ?? element.pictureCaption { return caption }
+            if includeCaptions, let caption = element.caption ?? element.pictureCaption { return caption }
             return element.line.map { [$0] } ?? []
         }
         let evidence = writing.filter {

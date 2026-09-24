@@ -57,19 +57,19 @@ enum LeaderRows {
                 guard abs(label.fontSize - value.fontSize) <= size * 0.1,
                       abs(label.rect.midY - value.rect.midY) <= size * 0.25,
                       label.rect.maxX < value.rect.minX - size else { continue }
-                var linked = false
+                var linked: CGRect?
                 for rule in rules {
                     guard spend() else { return lines }
                     if rule.midY >= label.rect.minY && rule.midY <= label.rect.maxY
                         && abs(rule.minX - label.rect.maxX) <= size
                         && abs(rule.maxX - value.rect.minX) <= size
-                        && rule.width >= size * 2 { linked = true; break }
+                        && rule.width >= size * 2 { linked = rule; break }
                 }
-                guard linked else { continue }
-                let bottom = max(label.rect.minY, value.rect.minY)
-                let corridor = CGRect(x: label.rect.maxX, y: bottom,
-                    width: value.rect.minX - label.rect.maxX,
-                    height: min(label.rect.maxY, value.rect.maxY) - bottom)
+                guard let linked else { continue }
+                // PDFKit boxes include leading and can overlap a preceding wrapped row.
+                // Only text crossing the painted leader's own band obstructs this connection.
+                let corridor = CGRect(x: label.rect.maxX, y: linked.minY,
+                    width: value.rect.minX - label.rect.maxX, height: linked.height)
                 var obstructed = false
                 for other in lines.indices where other != entry && other != number {
                     guard spend() else { return lines }

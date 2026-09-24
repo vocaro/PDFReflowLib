@@ -1,0 +1,12 @@
+{
+  "case": "cdc-zombie-pandemic-2011",
+  "sourceSha256": "d95e9ec2d8cf52cb8c218a6195e132ec140725018358fd2122928bab8a13efc3",
+  "pageNumbering": "One-based physical PDF pages",
+  "reviewedPanelImagePages": [
+    3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14,
+    18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35
+  ],
+  "basis": "Visual source review: pages 3–14 and 18–35 carry the illustrated story, speech balloons, and panel-dependent sequence. This includes the owner's 15 known wrong-order pages and the correct-order pages whose OCR can still misclassify speech as headings or lose balloon text.",
+  "retainedReflow": "Pages 1–2, 15–17, and 36–42 remain under ordinary OCR policy. Page 15 is the Part 2 title, page 37 is the prose epilogue, and page 39 is the emergency checklist.",
+  "limit": "Image-only story pages preserve their printed sequence and speaker proximity visually. Dialogue is not reflowable, searchable, or transcribed for screen readers. The map applies only to this exact source checksum."
+}

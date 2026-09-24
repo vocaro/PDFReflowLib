@@ -142,7 +142,9 @@ This is a reviewed-page option, not an automatic comic classifier. The CDC page-
 preserves its upper-right awakening dialogue before the lower-left response, while default OCR
 currently reverses them; its page-26 OCR already has useful order. Applying image fallback to
 every scanned page would unnecessarily remove reflow from ordinary scanned prose. See the
-[panel-order audit](../measurements/comic-panel-order/record.md).
+[panel-order audit](../measurements/comic-panel-order/record.md) and the [source-reviewed CDC story
+page map](../measurements/comic-panel-order/cdc-reviewed-story-2026-09-24.md). The latter includes
+page 26 because its correct-order OCR still misclassifies speech as a heading.
 
 ## Recommended starting settings
 

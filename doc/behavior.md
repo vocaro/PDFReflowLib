@@ -1669,6 +1669,15 @@ the entries of a notes apparatus. Evidence: [list-conversion](../measurements/li
   `ﬀ`, so the book's own words held `diﬀerent` — 56 times — and never `different`, and had
   nothing to say about `dif-` + `ferent` on pages 50 and 218. Only the evidence folds: the
   ligature the page printed stays in the text the reader gets, on both sides of a join.
+- Strong source-font evidence can resolve an exact native line break in a declared English
+  document, including a word whose halves are both valid words. A bounded complete census
+  must show a same-family resource used only for isolated line-final hyphens, repeated uniquely
+  owned lowercase continuations, independently dictionary-supported joins, and hard compounds
+  drawn by the body resource and attested whole. Any interior use or ambiguous ownership rejects
+  that resource. The source stays a literal hyphen plus evidence metadata until joining; an
+  attested document compound still vetoes removal. This owner-approved policy resolves
+  `as-/say` as `assay` without changing the ordinary dictionary rule below. Evidence:
+  [source-hyphen-font-policy](../measurements/source-hyphen-font-policy/record.md).
 - When the vocabulary is silent on both, an English document's system lexicon may decide (#186):
   the join goes ahead, still silently, only when each half has at least two letters and the two
   together at least six, the lexicon holds the joined word, and *not* both halves are lexicon
@@ -2333,6 +2342,13 @@ complete caption. Display quotations require opening/closing quote marks and sev
 of larger native type; they become one `blockquote`, with an adjacent dash attribution, and
 never supply navigation headings.
 
+Aggregate artwork covering more than 75% of a page retains the established full-page reference
+and native-text handling unless every individually page-sized paint independently proves a
+flat ground or background shading. Numeric ICCBased paint is flat, but its component tuple
+cannot prove white without processing the profile. Known semantic tables own their numbered
+titles and aligned introductions, even where decorative paint overlaps them. Source evidence:
+[conservative-paint-ownership](../measurements/conservative-paint-ownership/record.md).
+
 Thin leaders remain separate until their decoration role is classified, so a nearby painting
 cannot acquire table-of-contents text through an early bounding-box union. A patterned rectangular
 panel remains source artwork; independently proved wrapped prose over it can also reflow.
@@ -2363,16 +2379,6 @@ Its native text is reconstructed with its own type size and leading, then append
 reading unit. Intersecting figures, tables, quotations, asides, and tagged groups that cross the
 panel boundary prevent this grouping; styles, links and individual heading roles remain native.
 
-## Limits
-
-PDF structure is ambiguous. The synthetic suite and the corpus do not establish general
-textbook fidelity: untagged borderless tables, arbitrary equations, complex magazine layouts,
-footnote relationships, vertical and right-to-left reading order and damaged font encodings
-still need broader qualification. The detectors cannot identify every difficult region. Fonts,
-original colors, full tagged-PDF semantics, links and interactive elements are not reproduced.
-Smaller graphics and undetected scans can still carry transcription errors. Review warnings and
-compare the source before distributing a derived book.
-
 ## Paragraphs interrupted by a displayed block
 
 `InterruptedColumnContinuation` extends the existing figure-continuation plan when a
@@ -2390,9 +2396,22 @@ proves the combined heading. The rows then produce one heading and navigation en
 Source evidence and rejected boundaries are in
 [magazine-continuations](../measurements/magazine-continuations/record.md).
 
-A page with many small table or footnote lines may also state a larger ordinary body size.
+A page with many small table or footnote lines may also state another ordinary body size.
 `PageTypography` accepts a native wrapped run with at least four rows and 200 characters,
 a stable margin and leading, three lowercase continuations, and a substantial measure.
-Bold/tagged headings, caption openings and displayed quotations do not supply that floor.
-Only the heading-size comparison changes; small text and the page's modal geometry remain.
-Fed pages 13 and 46 provide source controls for this distinction.
+Bold/tagged headings, caption openings and displayed quotations do not supply that evidence.
+The document's body size must corroborate the run: a larger heading floor cannot exceed it
+by more than 5%. The same strong evidence supplies leading for its own font size, including
+when that size is already the page's modal body. Smaller notes retain their own spacing.
+Fed pages 13, 46 and 95 and NOAA display headings provide source controls.
+
+## Limits
+
+PDF structure is ambiguous. The synthetic suite and the corpus do not establish general
+textbook fidelity: untagged borderless tables, arbitrary equations, complex magazine layouts,
+footnote relationships, vertical and right-to-left reading order and damaged font encodings
+still need broader qualification. The detectors cannot identify every difficult region. Fonts,
+original colors, full tagged-PDF semantics, links and interactive elements are not reproduced.
+Smaller graphics and undetected scans can still carry transcription errors. Review warnings and
+compare the source before distributing a derived book.
+

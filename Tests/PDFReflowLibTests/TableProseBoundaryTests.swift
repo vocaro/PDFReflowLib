@@ -32,3 +32,24 @@ import Testing
     let first = try #require(lines.first { $0.text.hasPrefix("Most information") })
     #expect(TableRegionDetector.rowBlocks(in: lines, body: 8.5).contains { $0.contains(first.rect) })
 }
+
+@Test(arguments: [false, true])
+func separatelyDrawnNumericCellsKeepLongLabelsInsideTheirTable(rightToLeft: Bool) {
+    func line(_ text: String, x: CGFloat = 30, y: CGFloat, width: CGFloat) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: rightToLeft ? 300 - x - width : x,
+            y: y, width: width, height: 10), fontSize: 10)
+    }
+    var lines = (0..<3).map { line("Ordinary item row \($0) 10", y: 200 - CGFloat($0) * 10, width: 220) }
+    let labels = ["This description contains several ordinary words",
+                  "and this item also has descriptive prose",
+                  "with another sentence describing the next item",
+                  "and the final description ends with a period."]
+    for (index, text) in labels.enumerated() {
+        let y = 167.8 - CGFloat(index) * 10
+        lines.append(line(text, y: y, width: 180))
+        lines.append(line("120", x: 230, y: y, width: 20))
+    }
+    let regions = TableRegionDetector.rowBlocks(in: lines, body: 10, rightToLeft: rightToLeft)
+    #expect(regions.count == 1)
+    #expect(lines.allSatisfy { line in regions.contains { $0.contains(line.rect) } })
+}

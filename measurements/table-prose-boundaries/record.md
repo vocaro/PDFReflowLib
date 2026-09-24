@@ -10,7 +10,11 @@ wrapped prose rows below the last telephone number; the first baseline gap is
 A row run now stops at a larger baseline gap when the following four rows prove
 full-measure prose on the same outer edge, with stable size/leading, lowercase
 continuations, no list or terminal numeric entries, and a complete sentence.
-Indented cell continuations provide no such evidence. This leaves the staff rows
+Indented cell continuations provide no such evidence. Independent review also
+verified that a long description can still be a table cell beside a separate
+numeric value: every proposed prose row must contain exactly one extracted piece
+inside the established table measure. LTR and mirrored RTL controls preserve the
+complete table, while the source copyright and no-gap controls still pass. This leaves the staff rows
 and their numeric associations intact while reconstructing the copyright as prose.
 The exact source capture and a no-gap negative control pass, along with all 79
 table-related Swift tests. The complete corpus

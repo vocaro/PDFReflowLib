@@ -1317,7 +1317,8 @@ row-major sort, one entry of each column at a time.
   one another, and nothing about that page is a table (#171).
   A larger baseline gap ends the run when four following rows prove a full-measure
   prose paragraph: the same outer edge and size, stable leading, lowercase continuations,
-  no terminal numeric cells or list markers, and a complete sentence. An indented wrapped
+  no terminal numeric cells or list markers, and a complete sentence. Separate cells
+  inside the established table measure prevent this proof. An indented wrapped
   cell does not meet that proof. This keeps recovered staff contacts from absorbing the
   separately spaced copyright paragraph beneath them.
 - A run the page **filled to one measure** states no cell boundary, however far apart the
@@ -2418,7 +2419,17 @@ Bold/tagged headings, caption openings and displayed quotations do not supply th
 The document's body size must corroborate the run: a larger heading floor cannot exceed it
 by more than 5%. The same strong evidence supplies leading for its own font size, including
 when that size is already the page's modal body. Smaller notes retain their own spacing.
-Fed pages 13, 46 and 95 and NOAA display headings provide source controls.
+Two shorter paragraphs can establish leading alone when the document corroborates their
+font size and they share a margin, measure and spacing across at least five rows and 300
+characters. This does not raise the heading threshold. Fed pages 13, 46, 47 and 95 provide
+source controls.
+
+A larger untagged display paragraph uses the same strong wrapped-run evidence locally when
+it contains at least two complete sentences. `WrappedDisplayProse` groups it as one native
+reading unit, preserving inline content. Tagged text, lists, quotations, intervening text and
+semantic tables prevent this grouping. The surrounding page retains its heading threshold,
+so genuine display headings still enter navigation. NOAA pages 69, 74 and 1061 provide
+paragraph controls, with separate retained-heading controls.
 
 ## Limits
 

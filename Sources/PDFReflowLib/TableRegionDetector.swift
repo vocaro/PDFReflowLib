@@ -226,6 +226,12 @@ enum TableRegionDetector {
             let size = candidates[first].fontSize
             var prose: [TextLine] = []
             for row in printed[start...start + 3] {
+                // A full-width textual label can still be one cell of a table. A separate
+                // cell anywhere inside the established measure defeats the prose proof.
+                guard row.filter({ index in
+                    let rect = candidates[index].rect
+                    return isBefore(edge, trailing(rect)) && isBefore(leading(rect), reach)
+                }).count == 1 else { return false }
                 let aligned = row.map { candidates[$0] }.filter {
                     abs(leading($0.rect) - edge) <= body * 0.3
                         && abs($0.fontSize - size) <= size * 0.05

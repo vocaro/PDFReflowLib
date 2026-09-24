@@ -2016,11 +2016,13 @@ enum LayoutReconstructor {
         let markerList = hangingMarkerList(in: lines, body: typography.body)
         let answerWraps = numberedAnswerWraps(in: lines, body: typography.body)
         let wrappedAnswerOpenings = Set(answerWraps.values)
+        let imageDescriptions = DiagramLabelTranscript.descriptions(page: page, images: images,
+                                                                    body: typography.body)
+            .merging(tableAssets(images, tables: page.recognizedTables, page: page.number)) { _, table in table }
         var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
                                        additionalLeading: typography.additionalLeading,
                                        hyphens: context.hyphens, imageLinks: imageLinks,
-                                       imageDescriptions: tableAssets(images, tables: page.recognizedTables,
-                                                                      page: page.number),
+                                       imageDescriptions: imageDescriptions,
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
                                        numberedAnswerWraps: answerWraps,
                                        columnSeams: columnSeams(in: lines, body: typography.body,

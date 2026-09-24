@@ -41,7 +41,7 @@ enum PageWarning: Equatable, Sendable {
     case unsupportedGraphics
     /// Some of the page's annotations did not convert. `converted` counts the links that did, so
     /// the message says what happened rather than what used to be true of all of them (#247).
-    case annotationsNotConverted(converted: Int, unconverted: Int)
+    case annotationsNotConverted(converted: Int, unconverted: Int, imagePreserved: Bool)
     case damagedTextEncoding(EncodingOutcome)
     case unverifiedTextLayer
     case implausibleTextLayer(TextLayerPlausibility.Finding, TextLayerPlausibility.Outcome)
@@ -77,8 +77,9 @@ enum ConversionWarnings {
             (.structureFallback, "Some tagged text could not be matched unambiguously to native lines; spatial reconstruction is retained for those groups.")
         case .unsupportedGraphics:
             (.unsupportedGraphics, "Unsupported or excessive drawing operations require the original page image.")
-        case let .annotationsNotConverted(converted, unconverted):
+        case let .annotationsNotConverted(converted, unconverted, imagePreserved):
             (.annotationsNotConverted, annotationOutcome(converted: converted, unconverted: unconverted,
+                                                         imagePreserved: imagePreserved,
                                                          referencesDisabled: referencesDisabled))
         case .damagedTextEncoding(let outcome):
             (.damagedTextEncoding, "Native text has no usable Unicode mapping (custom font encoding without ToUnicode) "
@@ -151,11 +152,15 @@ enum ConversionWarnings {
 
     /// What became of the page's annotations (#247). Links convert to anchors, so the message no
     /// longer claims that no link is reconstructed; it says how many did and how many did not.
-    private static func annotationOutcome(converted: Int, unconverted: Int, referencesDisabled: Bool) -> String {
+    private static func annotationOutcome(converted: Int, unconverted: Int, imagePreserved: Bool,
+                                          referencesDisabled: Bool) -> String {
         let reproduced = converted == 0 ? ""
             : "\(converted) link\(converted == 1 ? "" : "s") converted to anchors. "
         let remaining = "\(unconverted) annotation\(unconverted == 1 ? " is" : "s are") not reconstructed "
             + "(form fields, comments, and links this converter does not reproduce). "
+        if !imagePreserved {
+            return reproduced + remaining + "They draw no additional content, so no page image is added."
+        }
         return reproduced + remaining + (referencesDisabled
             ? "Supplementary references are disabled, so the page's own picture does not preserve them."
             : "A page image preserves their appearance.")

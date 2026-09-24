@@ -53,10 +53,10 @@ enum PageReader {
             // neither styles nor links, so its links are counted as unconverted with the rest.
             let styled = !requiresPageImage && !syntheticStyle
             var links: [PageLink] = []
-            var unconvertedAnnotations = 0
+            var unconvertedAnnotations: [PDFAnnotation] = []
             for annotation in page.annotations {
                 if styled, let link = link(annotation, on: page) { links.append(link) }
-                else { unconvertedAnnotations += 1 }
+                else { unconvertedAnnotations.append(annotation) }
             }
             // Invisible text over a scan supplies transcription, not source typography.
             // Fallback pages contribute vocabulary and furniture evidence, but their
@@ -103,16 +103,24 @@ enum PageReader {
                 }
             }
             content.lines = LeaderRows.joined(content, paints: graphics.paints)
+            // A form widget with no new visible content needs no page picture merely because
+            // its interaction cannot be reproduced. Read the printed value under a widget
+            // before deciding whether its appearance adds anything (#151, #170).
+            let annotationEvidence = try AnnotationEvidence.judge(unconvertedAnnotations, on: page, bounds: bounds)
+            if styled { AnnotationEvidence.markBoxes(annotationEvidence.boxes, in: &content.lines) }
+            let unconvertedCount = annotationEvidence.visible + annotationEvidence.links
+                + annotationEvidence.formFields + annotationEvidence.invisible
             if graphics.unsupported {
                 warnings.append(.unsupportedGraphics)
             }
             // Only an annotation that did not convert still needs the page's own picture, which
             // is what `annotationsNotConverted` has always claimed and now means (#247).
-            let annotated = !links.isEmpty || unconvertedAnnotations > 0
-            if unconvertedAnnotations > 0 {
-                content.preservePageReference = true
+            let annotated = !links.isEmpty || unconvertedCount > 0
+            if unconvertedCount > 0 {
+                content.preservePageReference = annotationEvidence.visible > 0
                 warnings.append(.annotationsNotConverted(converted: links.count,
-                                                         unconverted: unconvertedAnnotations))
+                                                         unconverted: unconvertedCount,
+                                                         imagePreserved: annotationEvidence.visible > 0))
             }
             // A page whose content stream paints nothing: no extracted text, no visible text
             // operator, no painted region (a white ground is not one) and no annotation. The

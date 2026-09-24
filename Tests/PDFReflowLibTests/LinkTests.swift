@@ -132,15 +132,16 @@ func resolvingALinkCanOnlyShortenTheBodyThePackerMeasured() async throws {
     #expect(report.imageCount == 0)
     #expect(try converted.chapter().contains("<a href=\"https://example.org/\">"))
 
-    // A destination outside this document is not a link this converter reproduces, so the page
-    // still needs its own picture and still says so.
+    // A destination outside this document is not a link this converter reproduces. Its
+    // borderless annotation draws nothing, so a page picture would preserve no missing content.
     let (_, dropped) = try await convert(annotatedPDF(pages: 2, lines: 6, annotations: [
         linkAnnotation("/A << /S /GoToR /F (other.pdf) /D [0 /XYZ null null null] >>"),
     ]), in: dir, name: "dropped")
     let warning = try #require(dropped.warnings.first { $0.code == .annotationsNotConverted })
     #expect(warning.message.contains("1 annotation is not reconstructed"))
     #expect(!warning.message.contains("converted to anchors"))
-    #expect(dropped.imageCount == 1)
+    #expect(warning.message.contains("no page image is added"))
+    #expect(dropped.imageCount == 0)
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/247")) func editingTextReachesInsideALinkRatherThanSkippingIt() {

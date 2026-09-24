@@ -90,6 +90,7 @@ enum TextBackdrop {
         let prose = paragraphs(original.lines)
         let gutters = galleryGutters(original.lines, pictures: graphics.paints.filter(\.image).map(\.rect))
         var page = original
+        page.closedNativeFrames = ClosedSourceUnits.frames(paints: graphics.paints, bounds: original.bounds)
         page.pictures = graphics.paints.filter(\.image).map(\.rect)
         page.headerBackdrop = graphics.paints.first { paint in
             paint.rectangular && paint.filled && !paint.image

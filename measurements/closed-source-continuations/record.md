@@ -1,0 +1,22 @@
+# Source containers at continued paragraphs
+
+Refs #191, #214. The recovered content of a painted box used to block cross-page body continuation even where the same box, represented by an image, had allowed the paragraph to continue. The unit proof now preserves a complete source container through the existing trailing-image continuation policy. It does not recover additional text, flatten a figure/table, change styles, or skip unowned prose.
+
+The source evidence is an existing proved native text panel or a complete frame assembled from four continuous axis-aligned stroked sides. Frame assembly has bounded paint/segment/candidate counts and requires at least half the page width and one tenth its height. Every reading element in the frame must be consecutive and fully owned, with no outside overlapping element and no paragraph tag shared with outside text. The largest complete container wins over nested candidates. All block positions, counts, unit identities, and physical pages must match before either the streaming tail or eventual join treats a unit as movable. A page marker or an incomplete unit is a barrier.
+
+Opening text containers remain barriers. Source GPO pages 164 and 374 place the Detainee Interrogation Reports box and Operational Opportunities items 6–10 before their continued main text. The one-paragraph block model cannot both join that body paragraph and keep the box between its fragments. These two source-proven interruptions therefore retain their split, their standalone page markers, and box-before-body order. They are explicit source-order exceptions, not successful paragraph-ID joins.
+
+Fed page 22 is different: the Advisory Councils sidebar is beside item 3, below the continuation at the page top. A narrow repair permits moving a prematurely ordered native panel after its adjacent paragraph only when two untagged full-measure prose rows physically above the panel prove its current position wrong; retained tag barriers still constrain movement.
+
+## Pinned sources and permanent controls
+
+Fed SHA-256: `8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60`.
+GPO SHA-256: `657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b`.
+
+The two text-only fixtures serialize actual PageReader output with StructureTreeReader.Index, native styles, links, retained tags, source geometry and panel metadata. Fed 55/103 additionally retain raw paint operations for independently validating their segmented rectangular frames. No raster or source PDF is committed. Tests remove only the source running-head/folio bands that full-document furniture removal handles.
+
+All nine Fed pairs retain one paragraph across their page marker in focused source reconstruction: 21→22,40→41,47→48,55→56,93→94,97→98,98→99,100→101,103→104. Each uses the real image/caption/semantic-table reconstruction and streaming tail. Complete unit blocks are compared for equality before/after movement, including styles, links, headings, image ownership and physical page. Corpus continuedParagraphs assertions require the same actual EPUB paragraph ID across all nine boundaries. Page 22 also pins item2, item 3, sidebar, item4 order. GPO 164/374 pin their source-proven exceptions.
+
+Negative controls cover incomplete unit positions/counts, mixed physical pages, standalone/inline page markers, unproved prose, shared source tags through every native line wrapper, heading-state leakage, intervening outside elements, nested frames, missing stroke sides, filled-only evidence and oversized paint input. A packaged EPUB control verifies one continued paragraph, exactly one page 2 anchor, separate closed-unit paragraphs, and retained emphasis. Existing native-panel source and tagged-order controls also pass. Full-document resource, paragraph-ID, EPUB and cross-corpus qualification belongs to the root integration run; focused source controls alone do not claim whole-book fidelity.
+
+Validation command: `swift test --scratch-path /tmp/pdfreflow-fed-cross-build --filter 'Closed|SourceUnits|closedFrame|closedUnitBoundaries|genuineOpening|continuedParagraphKeeps|sourceUnitsAre|nativePanel|recoveredFedPanels'` passed all 16 selected tests, including their parameterized cases. `git diff --check` passed. Evaluating the new contracts against the frozen v2 Fed EPUB fails all nine continuity assertions, establishing a counterfactual for the actual regressions. The independent read by the magazine agent covers complete-unit proof, streaming retention, tags and order.

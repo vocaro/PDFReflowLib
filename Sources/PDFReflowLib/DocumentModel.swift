@@ -176,6 +176,8 @@ struct PageContent: Equatable, Codable {
     var outlinedInitialRows: [CGRect]?
     var sidebarValueRows: [CGRect]?
     var nativeTextPanels: [CGRect]?
+    /// Complete source-painted rule frames; ownership only, not permission to recover text.
+    var closedNativeFrames: [CGRect]?
     var requiresPageImage = false
     var recognized = false
     var hasSyntheticTextStyle = false

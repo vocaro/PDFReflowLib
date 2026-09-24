@@ -670,6 +670,25 @@ struct BlockAssembler {
         return true
     }
 
+    /// Close the ordinary paragraph before recording a separately proved source container.
+    mutating func beginClosedUnit() -> Int {
+        flushNote(); flushParagraph()
+        initialOpening = nil; headingLine = nil; itemLine = nil
+        codeOrigin = nil; rowInProgress = nil; itemRowInProgress = nil
+        return blocks.count
+    }
+
+    mutating func endClosedUnit(start: Int) {
+        flushNote(); flushParagraph()
+        initialOpening = nil; headingLine = nil; itemLine = nil
+        codeOrigin = nil; rowInProgress = nil; itemRowInProgress = nil
+        let count = blocks.count - start
+        guard count > 0, count <= 4_096 else { return }
+        for index in start..<blocks.count {
+            blocks[index].closedUnit = .init(id: start, position: index - start, count: count)
+        }
+    }
+
     /// A line of a numbered note; consecutive lines of one `group` join into one paragraph.
     mutating func appendNote(group: Int, _ line: TextLine) {
         initialOpening = nil

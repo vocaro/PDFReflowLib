@@ -337,12 +337,13 @@ enum LayoutReconstructor {
     /// those runs contains neither text nor graphics. The title then remains native text above
     /// both crops. Wallace page 478 has both a short 10–12 / 18–19 bridge and a whole 9.3 key
     /// (1–16 / 17–32) joined this way.
-    private static func separatedAnswerColumns(_ region: CGRect, on page: PageContent, body: CGFloat) -> [CGRect] {
-        guard let title = page.lines.first(where: { $0.text.hasPrefix("Answers -")
+    private static func separatedAnswerColumns(_ region: CGRect, on page: PageContent, body: CGFloat,
+                                               releasedTitle: TextLine? = nil) -> [CGRect] {
+        guard let title = releasedTitle ?? page.lines.first(where: { $0.text.hasPrefix("Answers -")
             && region.contains(CGPoint(x: $0.rect.midX, y: $0.rect.midY)) }) else { return [region] }
         let below = page.lines.filter { region.intersects($0.rect) && $0.rect.midY < title.rect.minY }
         guard let highestAnswer = below.map(\.rect.maxY).max() else { return [region] }
-        let top = max(title.rect.minY, highestAnswer)
+        let top = min(region.maxY, max(title.rect.minY, highestAnswer))
         guard top < title.rect.midY, top > region.minY + body * 2 else { return [region] }
         let answerArea = CGRect(x: region.minX, y: region.minY, width: region.width, height: top - region.minY)
         // A painted mark above the answer area may belong to the title; dropping it would
@@ -556,6 +557,7 @@ enum LayoutReconstructor {
                 let bottom = label.rect.maxY + body * 0.15
                 crop = CGRect(x: crop.minX, y: bottom, width: crop.width, height: crop.maxY - bottom)
             }
+            var releasedAnswerTitle: TextLine?
             // A centred answer-key title can be swallowed by the first formula crop in
             // the right column. On Wallace 479 the title is printed in a separate band
             // above answers 15–18, while 1–14 start in the left column. Release the title
@@ -577,6 +579,7 @@ enum LayoutReconstructor {
                            && line.rect.minY - title.rect.maxY < body * 3
                    }),
                    cut > crop.minY + body * 2 {
+                    releasedAnswerTitle = title
                     crop = CGRect(x: crop.minX, y: crop.minY, width: crop.width, height: cut - crop.minY)
                 }
             }
@@ -625,7 +628,7 @@ enum LayoutReconstructor {
                 }
             }
             crop = belowProseAbovePicture(crop, on: page, language: language, body: body)
-            return separatedAnswerColumns(crop, on: page, body: body)
+            return separatedAnswerColumns(crop, on: page, body: body, releasedTitle: releasedAnswerTitle)
         }
     }
 
@@ -1940,6 +1943,7 @@ enum LayoutReconstructor {
         var labelStyles: Set<LabelStyle> = []
         var headingRank = HeadingRank()
         var numberedNotePages: Set<Int> = []
+        var scannedNotePages: Set<Int> = []
         var slideDeck = false
     }
 
@@ -2250,9 +2254,16 @@ enum LayoutReconstructor {
                 message: "Whitespace cuts reached their depth limit before separating this page's content; "
                     + "what remained keeps the order it was extracted in, which may not be its reading order."))
         }
-        let elements = NativeTextPanels.ordered(structuredOrder(spatial, page: page.number, warnings: &warnings),
+        var elements = NativeTextPanels.ordered(structuredOrder(spatial, page: page.number, warnings: &warnings),
             panels: page.recognized || page.hasSyntheticTextStyle ? [] : page.nativeTextPanels ?? [], body: typography.body, rightToLeft: rightToLeft)
-        let noteGroups = NumberedNoteDetector.groups(in: elements, page: page,
+        // The scan itself is not a figure whose caption may claim a note line. Establish
+        // this text-only apparatus before incidental caption/grouping heuristics; actual
+        // retained crops and reconstructed tables still refuse the note plan.
+        let scannedNotes = images.isEmpty && page.tables.isEmpty
+            ? ScannedEndnotes.plan(lines.map { .init(rect: $0.rect, line: $0) }, page: page,
+                headingEvidence: context.scannedNotePages.contains(page.number)) : nil
+        if let scannedNotes { elements = scannedNotes.elements }
+        let noteGroups = scannedNotes?.groups ?? NumberedNoteDetector.groups(in: elements, page: page,
                                                      headingEvidence: context.numberedNotePages.contains(page.number))
         // A link whose rectangle covers a figure links the figure (#247).
         var imageLinks: [String: LinkTarget] = [:]
@@ -2379,7 +2390,9 @@ enum LayoutReconstructor {
                                                  inheritedInlineReferenceWraps: inlineReferenceWraps,
                                                  warnings: &warnings))
             } else if let group = noteGroups[index], let line = element.line {
-                assembler.appendNote(group: group, line)
+                assembler.appendNote(group: group, line, endnoteID: scannedNotes.map {
+                    ScannedEndnotes.identifier(page: page.number, line: $0.elements[group].line!)
+                })
             } else if let path = element.image {
                 assembler.appendImage(path)
                 if let caption = element.pictureCaption { assembler.appendCaption(caption) }
@@ -2465,6 +2478,19 @@ enum LayoutReconstructor {
                 combined.append(next)
                 result[start].content = .heading(id: id, text: combined, level: level)
                 result.remove(at: start + 1)
+            }
+        }
+        // The owner chose ordinary paragraphs for source-proved numbered bibliographies
+        // (#195). Keep citation numbers as source text; they are reference keys, not a list
+        // counter for the reader to regenerate.
+        if numberedReferences != nil || !inlineReferenceWraps.isEmpty {
+            for index in result.indices {
+                guard case let .preformatted(text) = result[index].content,
+                      text.text.range(of: #"^[1-9][0-9]{0,3}\.\s+"#, options: .regularExpression) != nil,
+                      text.text.range(of: #"\b(?:19|20)[0-9]{2}\b|https?://|doi\.org/"#,
+                                      options: .regularExpression) != nil else { continue }
+                result[index].content = .paragraph(text)
+                result[index].listEvidence = nil
             }
         }
         warnings += assembler.warnings
@@ -2762,6 +2788,7 @@ enum LayoutReconstructor {
         }
         if anchor >= 0, opening < remaining.count, let previousPage,
            blocks[anchor].closedUnit == nil, remaining[opening].closedUnit == nil,
+           blocks[anchor].endnoteID == nil, remaining[opening].endnoteID == nil,
            let left = carriedOn(blocks[anchor].content, substitute: hyphens.lineEndSubstitute),
            case let .paragraph(right) = remaining[opening].content,
            // Reaching past a picture asks more of the paragraph than standing beside the boundary

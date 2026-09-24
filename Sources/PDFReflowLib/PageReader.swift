@@ -121,14 +121,16 @@ enum PageReader {
                     merged.structure = label.structure
                     content.lines[row.labelIndex] = merged
                 }
-                content.blanks += FormBlank.printed(paints: graphics.paints.map(\.rect),
-                                                   lines: content.lines, fields: fieldBlanks,
-                                                   pageBounds: bounds,
-                                                   emptyRuleInterior: { interior in
-                                                       !(page.selection(for: interior)?.string ?? "").contains {
-                                                           $0.isLetter || $0.isNumber
-                                                       }
-                                                   })
+                content.blanks += try NativeTextReader.withExtractionLock {
+                    FormBlank.printed(paints: graphics.paints.map(\.rect),
+                                      lines: content.lines, fields: fieldBlanks,
+                                      pageBounds: bounds,
+                                      emptyRuleInterior: { interior in
+                                          !(page.selection(for: interior)?.string ?? "").contains {
+                                              $0.isLetter || $0.isNumber
+                                          }
+                                      })
+                }
                 content.lines = try NativeTextReader.splitAtBlanks(content.lines, blanks: content.blanks, on: page)
                 let blankRules = content.blanks.map(\.rule)
                 content.graphics.removeAll { region in

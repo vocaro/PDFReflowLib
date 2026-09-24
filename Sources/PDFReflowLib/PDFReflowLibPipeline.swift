@@ -151,7 +151,9 @@ enum PDFReflowLibPipeline {
         // run it may belong to can still change (#292).
         var lists = ListBuilder()
         let sendBlock: (ReflowBlock) async throws -> Void = { block in
-            for final in lists.accept(block) { try await send(.block(final)) }
+            for final in lists.accept(block) {
+                try await send(.block(evidence.noteLinker.applying(to: final, pageLabels: pageLabels)))
+            }
         }
         // Client values win over the document's own, exactly as `options.title` always has; what
         // the document states fills the rest (#253).
@@ -306,7 +308,9 @@ enum PDFReflowLibPipeline {
                 page: i + 1, totalPages: total))
         }
         for block in pending { try await sendBlock(block) }
-        for block in lists.finish() { try await send(.block(block)) }
+        for block in lists.finish() {
+            try await send(.block(evidence.noteLinker.applying(to: block, pageLabels: pageLabels)))
+        }
         document.releaseCachedPages()
         store.finish()
         warnings.insert(contentsOf: furnitureWarnings.sorted { $0.page < $1.page }, at: furnitureWarningIndex)

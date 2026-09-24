@@ -508,8 +508,9 @@ headers and all rows in a warned region image; see [current evidence](../measure
 Drop-cap ordering is fixed: `a9d8fd5` attaches a native decorative initial to its own body line,
 so pages 7, 9, 27 and 31 emit the opening before its continuation and neither initial becomes a
 heading ([record](../measurements/drop-cap-order/record.md)). General figure/name/description
-association remains unqualified under
-[validated structure #17](https://github.com/vocaro/PDFReflowLib/issues/17).
+association remains a qualification limit. [Validated structure support](../measurements/structure-and-note-qualification/record.md)
+consumes proved text groups, table headers and single-image figure descriptions; ambiguous
+or multipart figure ownership retains the spatial/image fallback.
 
 
 ## Preparedness 101: Zombie Pandemic
@@ -533,8 +534,10 @@ The [baseline](../measurements/cdc-zombie-pandemic-2011/record.md) passes EPUB v
 progress and the 512 MiB Mac RSS gate, retaining 42 page images. The
 [review targets](../corpus/cdc-zombie-pandemic-2011-review.json) expose damaged existing dialogue
 on page 5 and fresh-OCR panel-order failure on page 13. [Suspect text #7](https://github.com/vocaro/PDFReflowLib/issues/7)
-and [comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18) track those gaps. Page
-5's damaged dialogue is exactly the layer `TextLayerPlausibility` (#93, #7) now tests before any
+recorded the text-layer gap. [Comic grouping #18](https://github.com/vocaro/PDFReflowLib/issues/18)
+was resolved through a reviewed image fallback: the pinned source's 30 illustrated story pages
+(3–14 and 18–35) retain full-page images and omit unverified OCR semantics. This preserves
+readable source order without claiming reconstructed panel order. Page 5's damaged dialogue is exactly the layer `TextLayerPlausibility` (#93, #7) now tests before any
 recognition: under the default policy such a page reports `implausibleTextLayer`, and its layer is
 replaced by fresh OCR when the layer fails the word or ink test, or kept and reported
 `implausibleTextLayer` when fresh recognition itself fails the same English test. The gated

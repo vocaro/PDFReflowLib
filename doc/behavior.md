@@ -457,8 +457,15 @@ Evidence: [native-label-spacing](../measurements/native-label-spacing/record.md)
   alone is not grounds to discard a populated tree. Cancellation is checked during traversal.
 - Supported roles are `P` and `H1`–`H6`, reached through grouping containers and transparent
   inline spans. Heading levels enter the model and serialize as `h1`–`h6`; navigation stays flat.
-  Table, figure and alternate-text semantics, Form content, generic `H`, general link ownership
-  and arbitrary reading order are unsupported.
+  A `TH` directly inside `Table`/`TR` can supply a row-header role where its validated MCID
+  agrees with a geometrically reconstructed cell. A `Figure` with nonempty author-supplied
+  `Alt` (at most 2,000 characters) can describe one direct page Image XObject: its single
+  content item may be an integer MCID, a page `MCR`, or a one-item array. Its exact ParentTree
+  owner must validate, the marked draw and extracted image must overlap at least 90% in both
+  directions, and only one final crop may own at least 95% of that figure. Multiple images,
+  vector or Form artwork and ambiguous crops retain their preserved-region description.
+  Form content, generic `H`, general tag-based link ownership and arbitrary reading order
+  remain spatial fallbacks; unsupported roles never establish semantic ownership.
 - Complete tagged groups may reorder only within an uninterrupted run of tagged text; unmatched
   lines and preserved images are barriers. Captions, list-like text and headings of 200 or more
   characters fall back to spatial order. Furniture removal or an image crop that takes a line
@@ -1141,8 +1148,8 @@ and reads column by column — `Thomas Pickering Colin Powell Ronald Reagan …`
 — as soon as the one row the extractor hands back whole is divided at its gutter, which is the
 correct reading of what that page prints. Three rows at least, because two cells beside two lines
 are a label and a heading; and none of them numbered, because a numbered grid states its own
-order, and what to do with a two-per-row exercise grid is an owner decision taken in #195 and
-scoped in #219 (#270, #283,
+order. Verified two-per-row exercise grids now follow number order, applying the owner decision
+in #195 and prerequisite #219 (#270, #283,
 [two-column-lists-read-by-rows](../measurements/two-column-lists-read-by-rows/record.md)).
 
 A fifth condition is that a marker keeps its item. **A bullet is never a column of its own**, so a
@@ -1635,10 +1642,10 @@ byte-identical to what it was.
   a DOI or an address (a reference list); when its pages hold more numbered entries that read as
   no item, with its punctuation, than it has items (an answer key); when the list-shaped entry
   before or after it, reading as no item, continues its numbering (a transcription's garbled
-  notes, an exercise set that opens on conversions of figures); or when the heading in force —
-  the last heading before its first item — names an exercise set, with a word *practice* or
-  *exercise(s)*, since those problems key the book's answers and wait for their reading order
-  (#219 item 4). The book's heading is the evidence, as `NOTES TO CHAPTER` is for a notes page.
+  notes, an exercise set that opens on conversions of figures). A native heading containing
+  *practice* or *exercise(s)* permits short mathematical entries as candidates after the
+  source's exercise-grid ordering has run; the same consecutive-number and separation checks
+  still apply. Unsupported expressions retain their printed numbers and preserved crops.
 - **No one-item lists.** A list element is a piece of an accepted run whose items touch: only
   page boundaries stand between them. A piece of one item is a paragraph that keeps its printed
   marker. A run of one — a marked line with no other list-shaped block on its page or the pages
@@ -1647,16 +1654,18 @@ byte-identical to what it was.
   holds, is one or two from it (a section title in a sequence spread over the paper) and a
   note's asterisk (`* Estimated`), which stay as printed; a run of one with a list-shaped
   neighbour within a page stays preformatted, as it was.
-- **Items are flat** (#219 item 3). A candidate of another family between two items of a run —
-  the 9/11 brief's bullets under its numbered paragraphs, the guidelines' `-` items under a `+` —
-  leaves the run intact but ends its list element, so the item before and the item after are
-  pieces judged as any piece is, and the inner items are a list of their own. Lettered items
-  (`a.`, `b)`) are never candidates and keep their preformatted form.
+- **Lettered nesting follows source indentation.** Consecutive native lettered items (`a.`,
+  `b)`) can form an alphabetic ordered sublist beneath the preceding item when their marker
+  edges establish the deeper level. A different marker family alone does not establish depth.
+  Unverified scanned lettered runs retain their transcription; the Warren page-529/page-572
+  controls do not invent nesting from damaged OCR. A candidate of another family between two
+  items leaves that run intact, while list elements follow the established item levels.
 
-What stays preformatted, recorded so nobody re-opens it: display maths rows, the FAA's coded
-weather reports, OCR debris, the Warren report's elisions and testimony turns, note asterisks,
-contents and section titles, lettered sub-items, exercise sets, answer keys, reference lists and
-the entries of a notes apparatus. Evidence: [list-conversion](../measurements/list-conversion/record.md).
+Display maths rows, the FAA's coded weather reports, OCR debris, Warren's elisions and testimony,
+note asterisks, contents, section titles, unverified lists and answer apparatus keep their printed
+text where no semantic rule applies. Source-proved bibliography and endnote entries follow the
+paragraph/endnote rules below. Evidence: [list-conversion](../measurements/list-conversion/record.md)
+and [current qualification](../measurements/structure-and-note-qualification/record.md).
 
 ## HyphenRepair
 
@@ -2031,6 +2040,28 @@ pairs retain separate paragraphs. See
   agree before a bounded native endnote paragraph repair applies; ambiguous layouts keep spatial
   reconstruction. This is layout, not reference-to-note ownership. The pages the heading names
   are also the pages whose numbered lines are never list items ([Lists](#lists)).
+- **`ScannedEndnotes`.** A `NOTES TO PAGES` running head and at least twenty numeric
+  openings on two separated marker edges establish a two-column note apparatus. Each edge
+  needs at least eight examples; at least three quarters fall within 0.7 body sizes of its
+  median edge. Citation numbers on the dedented continuation edge do not veto it. Each column reads
+  downward, with spanning `CHAPTER`/`APPENDIX` headings separating successive column bands.
+  A merged row that cannot be assigned to either column remains an unlinked boundary. A marker
+  on its established edge opens an entry; dedented lines continue it. Letter-like and
+  misread markers stay exactly as transcribed. Unproved boundaries keep spatial text, and
+  the existing unverified-layer/OCR source-image policy remains in force. Grouped entries
+  carry neutral endnote identifiers and become `<aside epub:type="endnote" role="note">`;
+  they cannot join unrelated paragraphs across a page boundary.
+- **`NoteLinker`.** A numeric marker is a link candidate only when its immediate neighbors
+  read one less and one greater. The note heading must state a numeric printed-page range,
+  and the referring page must have an explicit numeric source page label inside that range.
+  Duplicate matches refuse a link. Only a standalone superscript after a prose word can
+  reference that candidate; existing links and mathematical operators are excluded. The
+  writer resolves against endnotes actually emitted into the spine; a target lost to a
+  later fallback leaves the original reference text unlinked. This does not infer page-label
+  offsets, repair OCR digits or certify the transcription. Source images remain available.
+- Source-proved numbered bibliography entries with citation evidence reflow as paragraphs,
+  preserving printed citation numbers (#195 owner decision). They do not become ordered-list
+  counters. The hanging-indent join is applied before this markup choice.
 - **A table a recognition located (#31).** A recognized page's tables become its crops, so every
   one of them reaches the reader as a picture and none of its cells reaches the text. Such a crop
   is described as what it is — "Table from page N, preserved as an image. Its cells are not

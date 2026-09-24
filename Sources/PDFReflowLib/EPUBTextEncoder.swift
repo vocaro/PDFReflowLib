@@ -40,7 +40,8 @@ enum EPUBTextEncoder {
                 result += run
             case let .link(target, text):
                 setScripts([])
-                result += "<a href=\"\(href(target))\">\(inline(text, labels: labels))</a>"
+                let note = if case .note = target { " epub:type=\"noteref\" role=\"doc-noteref\"" } else { "" }
+                result += "<a\(note) href=\"\(href(target))\">\(inline(text, labels: labels))</a>"
             case let .sourcePage(page):
                 setScripts([])
                 result += sourcePage(page, labels: labels)
@@ -71,6 +72,9 @@ enum EPUBTextEncoder {
     static func href(_ target: LinkTarget) -> String {
         switch target {
         case let .external(url): return xml(url)
+        case let .note(id):
+            let token = "pdfreflow:note:" + xml(id) + ":"
+            return token + String(repeating: "-", count: max(0, 128 - token.count))
         case let .page(page):
             // Padded with a character an href may carry and the resolver can recognize.
             let named = "\(pageLinkToken)\(page)"
@@ -90,6 +94,10 @@ enum EPUBTextEncoder {
         let dir = ArabicText.readsRightToLeft(block.text) ? " dir=\"rtl\"" : ""
         switch block.content {
         case .paragraph:
+            if let id = block.endnoteID {
+                return SpinePacker.Piece(markup: "<aside epub:type=\"endnote\" role=\"note\" id=\"\(xml(id))\"\(dir)><p>\(payload)</p></aside>\n",
+                                         sourcePages: block.sourcePages, heading: nil)
+            }
             return SpinePacker.Piece(markup: "<p\(dir)>\(payload)</p>\n", sourcePages: block.sourcePages, heading: nil)
         case let .heading(id, _, level):
             return SpinePacker.Piece(markup: "<h\(level) id=\"\(xml(id))\"\(dir)>\(payload)</h\(level)>\n",

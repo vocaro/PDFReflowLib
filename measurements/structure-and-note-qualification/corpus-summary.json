@@ -1,0 +1,245 @@
+{
+  "description": "Complete corpus lane after final runtime changes; standalone probe build dependencies were subsequently repaired and all gates rerun together. macOS host measurements, not device qualification.",
+  "cases": [
+    {
+      "case": "arxiv-replay-clocks-2023",
+      "runID": "94fa783a-4050-4cc6-906c-24cd829c8335",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 182026240,
+      "outputSHA256": "eaf2d76c401a3fa12f7f1efe0f5499e14899dbf51cc52a573c6a06a8b616af69",
+      "runPassed": true
+    },
+    {
+      "case": "cdc-zombie-pandemic-2011",
+      "runID": "7565d175-dfd6-4dcd-849f-7ec4d86d01d1",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 459915264,
+      "outputSHA256": "4991b4232909d65e09c787d3ad9c6e71c98e6fd8796504619a2135f57e5b027d",
+      "runPassed": true
+    },
+    {
+      "case": "census-rrs2002-01",
+      "runID": "63b26ee0-d458-428d-a9b7-c7b714c78a2c",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 255983616,
+      "outputSHA256": "4324f6c68e5c66c8055ec52ca59e148190e561b2a4dac1cec1d4d4c6fd61a05c",
+      "runPassed": true
+    },
+    {
+      "case": "cia-blue-book-14-1955",
+      "runID": "703987c5-7700-4a1c-a95f-1fa166b1ec56",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 563822592,
+      "outputSHA256": "ca81dc2e836a20243e80b69e425a82cc40b122ce306217fe9114a7eae371a654",
+      "runPassed": true
+    },
+    {
+      "case": "dga-2025-2030",
+      "runID": "180d4f6d-a257-4af6-964d-aef2223d6a42",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 122126336,
+      "outputSHA256": "35bc39ff0648afc49aa8d91d563ba78cab42573d36fd88b396675817fd112fd2",
+      "runPassed": true
+    },
+    {
+      "case": "faa-phak-8083-25c",
+      "runID": "ea27503d-f07d-48fd-927c-b4300442cab2",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 805142528,
+      "outputSHA256": "9b3d3c9dd1da60d06c40967387f65dfb532b12585219a2bbefb821c0e34644a8",
+      "runPassed": true
+    },
+    {
+      "case": "fed-explained-2021",
+      "runID": "fccb8704-69f6-4c2c-a2b8-464e69c9b552",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 282509312,
+      "outputSHA256": "2d58326d375cd29a828dcae6f0e29e4a140e58f872a2668bfc7da897605023ab",
+      "runPassed": true
+    },
+    {
+      "case": "gpo-911-2004",
+      "runID": "fd113db7-42e5-473b-8f12-9a080d09dafe",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 121470976,
+      "outputSHA256": "05dcb6fa06e9cf44ee96d23ab8ade95a0898a108adb37c1ce009b1df320df8b6",
+      "runPassed": true
+    },
+    {
+      "case": "gpo-our-flag-2003",
+      "runID": "687542cb-28bf-43a9-9e19-cfb60510cfce",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 109428736,
+      "outputSHA256": "d9f58854e0fde2b08d26a7b7f4ab4191b9acc94584907bc1d563a0ce136851e7",
+      "runPassed": true
+    },
+    {
+      "case": "gpo-warren-1964",
+      "runID": "8a2dab20-2b99-4dae-9a6b-ab986e67acbd",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 1224228864,
+      "outputSHA256": "aa0340823484a78d440b0789c2e6a0cd308370790843ea18b4be209b5d1aec18",
+      "runPassed": true
+    },
+    {
+      "case": "gpo-warren-1964-suspect-text-excerpt",
+      "runID": "3b7f1125-7158-4707-b646-5b7c77867142",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 791134208,
+      "outputSHA256": "a718b94fc686b4b525bce9dfd1f5cae0f0f4726adc700ac980926a63452d6e07",
+      "runPassed": true
+    },
+    {
+      "case": "irs-p596-zhs-2025",
+      "runID": "9fd17290-54ba-441f-8791-7919d82d2836",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 177553408,
+      "outputSHA256": "e45f1845b30cb50444e7effedbf8190d065e12a1783123d23c0f9d54ed9da8aa",
+      "runPassed": true
+    },
+    {
+      "case": "nbs-jres-geltman-1977",
+      "runID": "1b061ea8-f879-4fbb-93f6-6de1a18bd2b6",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 277430272,
+      "outputSHA256": "8e676f8310b604745e613977f567445a16c41d8c899f46ee023e07eea548748b",
+      "runPassed": true
+    },
+    {
+      "case": "noaa-nca5-2023",
+      "runID": "38af2d8f-561a-43e2-9210-91dc86d57c98",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 956055552,
+      "outputSHA256": "40f98d0d05e20f77e97f7341e7ed71f8f16f9267cdf193f623fa797c630cd059",
+      "runPassed": true
+    },
+    {
+      "case": "ntrs-20180003024-earthdata-slides-2018",
+      "runID": "6a2a71c4-fab8-432b-98af-f71f908e3fc4",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 101105664,
+      "outputSHA256": "d7e41dd0314a9f555d7d42036c6a7886337440c9703d48fbd8d1f8c7b655bc59",
+      "runPassed": true
+    },
+    {
+      "case": "ntrs-20210020887-techport-thm-2021",
+      "runID": "4bfc84c7-e583-46db-b36a-5701df1ef32a",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 48447488,
+      "outputSHA256": "b1d940692e06b87b8d5687475c370eea4c64d315eb0e58018c17671b3e983c57",
+      "runPassed": true
+    },
+    {
+      "case": "openlogic-hindi-reader-2026",
+      "runID": "a86b7b84-9976-4379-9c11-12413ecf02a0",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 235274240,
+      "outputSHA256": "b8d27f6a60a507d802bfa440f71d311fef781562dbb8bac342029497746d50b0",
+      "runPassed": true
+    },
+    {
+      "case": "scotus-loper-bright-2024",
+      "runID": "ceaaa182-3e2f-4882-9ff9-cf23c1d5acac",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 45924352,
+      "outputSHA256": "03fd3f8e05e140ee8f4cdc8063e93b3bea6724b9ce95201aa6fe227e905b4f2d",
+      "runPassed": true
+    },
+    {
+      "case": "tufs-hoshino-tategaki-2017",
+      "runID": "bd94b312-dadd-4a27-9707-fe4a4d39d6d4",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 50692096,
+      "outputSHA256": "a14c2cdf6096d55f0badf2358ee4930077d55b98514cc3ce7aa766cae8f85d7d",
+      "runPassed": true
+    },
+    {
+      "case": "ucl-hebrew-shakespeare-2017",
+      "runID": "a65208a1-edbc-49b5-9237-98ca7c35455c",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 122814464,
+      "outputSHA256": "ba900a86a7760038fe98262128562a371423c3c0f5f0ec0f86278023039e6da0",
+      "runPassed": true
+    },
+    {
+      "case": "uscis-m618-arabic-2015",
+      "runID": "ce662e60-9e93-4c02-a93f-77fd254f45d2",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 170147840,
+      "outputSHA256": "792e6c59a9bf51ab2b8112e37ca31a355d5d6a7001952eef05651195e77036f2",
+      "runPassed": true
+    },
+    {
+      "case": "usda-ars-agresearch-2012-11",
+      "runID": "c0779825-2900-47e0-aeca-452641d1cd2d",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 332873728,
+      "outputSHA256": "c076184509c989e7ff89effff1e2577294538be8121f8bf5fbff7aa111acb086",
+      "runPassed": true
+    },
+    {
+      "case": "usgs-mcs2025-copper",
+      "runID": "5f3df597-ff5d-4bb9-9fed-6cbfc8948ac2",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 32784384,
+      "outputSHA256": "0a10f819d60a59beb21baf8e29729d42adcd2d8564fc19fa40e6d2cb07e76098",
+      "runPassed": true
+    },
+    {
+      "case": "wallace-algebra-2010",
+      "runID": "c617fdde-3776-443f-a283-579060c4d11a",
+      "converterSHA256": "f7bff88cd606c0cf7e113e9e41fc71143b8a628d2619f1a06464ce6df0a761e4",
+      "conversionExitCode": 0,
+      "epubcheckExitCode": 0,
+      "converterPeakRSSBytes": 92012544,
+      "outputSHA256": "8f48537b2ad6e0f726776efae246d19a74cfafd1202dc34e446b43c99b37b6e5",
+      "runPassed": true
+    }
+  ]
+}

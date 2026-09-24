@@ -35,6 +35,8 @@ actor EPUBWriter {
     private var imagePathByID: [String: String] = [:]
     /// Spine documents holding an internal link whose page is not yet placed (#247).
     private var documentsWithPageLinks: [String] = []
+    private var documentsWithNoteLinks: [String] = []
+    private var noteFiles: [String: String] = [:]
     /// EPUB's manifest must identify every spine document containing MathML (#206).
     private var mathDocuments: Set<String> = []
     private var consumed: Int64 = 0
@@ -184,6 +186,7 @@ actor EPUBWriter {
             pageFiles[Int(entry.fragment.dropFirst(5)) ?? 0] = entry.file
         }
         try resolvePageLinks(pageFiles: pageFiles)
+        try resolveNoteLinks()
         // The author's own contents is the navigation where the document states a usable one;
         // the detected headings are the navigation everywhere else. Headings keep their ids
         // either way, so nothing in the text stops being addressable.
@@ -314,8 +317,41 @@ actor EPUBWriter {
             if spineDocument.body.contains(EPUBTextEncoder.pageLinkToken) {
                 documentsWithPageLinks.append(spineDocument.name)
             }
+            if spineDocument.body.contains("pdfreflow:note:") { documentsWithNoteLinks.append(spineDocument.name) }
+            let notes = try NSRegularExpression(pattern: #"<aside epub:type="endnote" role="note" id="([^"]+)""#)
+            let body = spineDocument.body as NSString
+            for match in notes.matches(in: spineDocument.body, range: NSRange(location: 0, length: body.length)) {
+                noteFiles[body.substring(with: match.range(at: 1))] = spineDocument.name
+            }
             if spineDocument.body.contains("<math ") { mathDocuments.insert(spineDocument.name) }
             try writeText(document(spineDocument.body, name: title), publication.appendingPathComponent(spineDocument.name))
+        }
+    }
+
+    /// Resolve against emitted entries, not extraction candidates: a later image fallback
+    /// can remove an entry. In that case keep the reference's text without a dangling link.
+    private func resolveNoteLinks() throws {
+        let links = try NSRegularExpression(
+            pattern: #"<a epub:type="noteref" role="doc-noteref" href="pdfreflow:note:([^":]+):-*">(.*?)</a>"#,
+            options: [.dotMatchesLineSeparators])
+        for name in documentsWithNoteLinks {
+            try Task.checkCancellation()
+            let url = publication.appendingPathComponent(name)
+            let text = try String(contentsOf: url, encoding: .utf8)
+            let original = text as NSString
+            let result = NSMutableString(string: text)
+            for match in links.matches(in: text, range: NSRange(location: 0, length: original.length)).reversed() {
+                let id = original.substring(with: match.range(at: 1))
+                let content = original.substring(with: match.range(at: 2))
+                let replacement = noteFiles[id].map {
+                    "<a epub:type=\"noteref\" role=\"doc-noteref\" href=\"\($0)#\(id)\">\(content)</a>"
+                } ?? content
+                result.replaceCharacters(in: match.range, with: replacement)
+            }
+            let resolved = result as String
+            consumed += Int64(resolved.utf8.count) - Int64(text.utf8.count)
+            guard consumed <= maximumOutputBytes else { throw ConversionError.resourceLimit("EPUB text size") }
+            try resolved.write(to: url, atomically: true, encoding: .utf8)
         }
     }
 

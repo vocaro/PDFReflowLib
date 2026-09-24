@@ -31,6 +31,8 @@ struct DocumentEvidence {
     /// the vocabulary is the text stream the reader gets, not the one extraction read (#184).
     private var marginWords: [Int: [Int: [String]]] = [:]
     private(set) var numberedNotePages: Set<Int> = []
+    private var scannedNotePages: Set<Int> = []
+    private(set) var noteLinker = NoteLinker()
     /// Evidence that this book's font draws its line-end hyphen as another character (#233).
     private var lineEndSubstitutes: [Character: LineEndSubstituteTally] = [:]
     /// Characters per type size over the native pages: the document's body (#186).
@@ -98,6 +100,10 @@ struct DocumentEvidence {
             // The sizes this page's tags call a heading, ranked once the book is read (#294).
             headingTally.record(content, pageIndex: i)
         }
+        if ScannedEndnotes.hasHeading(content) {
+            scannedNotePages.insert(content.number)
+            noteLinker.collect(content)
+        }
         if NumberedNoteDetector.hasHeading(on: content) { numberedNotePages.insert(content.number) }
         if content.recognized { recognizedPages += 1 }
     }
@@ -124,6 +130,7 @@ struct DocumentEvidence {
             labelStyles: LayoutReconstructor.labelStyles(from: labelStylePages),
             headingRank: HeadingRank(headingTally),
             numberedNotePages: numberedNotePages,
+            scannedNotePages: scannedNotePages,
             slideDeck: slideCount >= 3 && uniformLandscape && slideTextPages > 0
                 && slidePages * 3 >= slideTextPages * 2)
         let establishedOutline = FormOutlineEvidence.established(formOutlineCandidates)

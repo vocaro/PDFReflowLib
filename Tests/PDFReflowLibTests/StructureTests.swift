@@ -687,3 +687,42 @@ private func nestedFormObjects(levels: Int) -> [String] {
     let untagged = [element("Section Title", size: 16, y: 700, group: 1, level: 0)]
     #expect(LayoutReconstructor.contradictedHeadingGroups(untagged, roles: [.heading]).isEmpty)
 }
+
+@Test(arguments: ["0", "[0]", "<< /Type /MCR /MCID 0 >>",
+                  "[<< /Type /MCR /Pg 3 0 R /MCID 0 >>]"])
+func figureContentReferenceSpellingsKeepValidatedOwnership(_ kid: String) throws {
+    var objects = taggedObjects()
+    objects[7] = "<< /Type /StructElem /S /Figure /P 6 0 R /Pg 3 0 R /Alt (Source description) /K \(kid) >>"
+    try withTaggedPDF(objects) { url, page in
+        let tree = try StructureTreeReader.read(url)
+        #expect(tree.figures[1]?[0] == "Source description")
+        #expect(StructureTreeReader.validates(ids: [0],
+            owners: try #require(tree.figureOwners[1]), page: page))
+        // Figure contents never acquire paragraph semantics as a side effect.
+        #expect(tree.pages[1]?[0] == nil)
+    }
+}
+
+@Test(arguments: ["[0 1]", "<< /Type /MCR /Stm 5 0 R /MCID 0 >>",
+                  "<< /Type /OBJR /Obj 5 0 R >>", "<< /Type /MCR /Pg 2 0 R /MCID 0 >>"])
+func ambiguousFigureReferencesDoNotAssignAlternativeText(_ kid: String) throws {
+    var objects = taggedObjects()
+    objects[7] = "<< /Type /StructElem /S /Figure /P 6 0 R /Pg 3 0 R /Alt (Wrong if guessed) /K \(kid) >>"
+    try withTaggedPDF(objects) { url, _ in
+        let tree = try StructureTreeReader.read(url)
+        #expect(tree.figures.isEmpty)
+        #expect(tree.rejected)
+    }
+}
+
+@Test func figureMCRCanSupplyItsOwnPageAndRequiresExactParentTreeOwner() throws {
+    var objects = taggedObjects()
+    objects[7] = "<< /Type /StructElem /S /Figure /P 6 0 R /Alt (Source description) /K << /Type /MCR /Pg 3 0 R /MCID 0 >> >>"
+    objects[6] = "<< /Nums [0 [9 0 R 10 0 R 9 0 R]] >>"
+    try withTaggedPDF(objects) { url, page in
+        let tree = try StructureTreeReader.read(url)
+        #expect(tree.figures[1]?[0] == "Source description")
+        #expect(!StructureTreeReader.validates(ids: [0],
+            owners: try #require(tree.figureOwners[1]), page: page))
+    }
+}

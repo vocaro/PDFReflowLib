@@ -71,3 +71,14 @@ func noaaInlineNumberedActualPagePreservesEntries() throws {
     #expect(texts.contains { $0.hasPrefix("2. USGCRP, 2018") && $0.contains("D.R. Easterling") })
     #expect(texts.contains { $0.hasPrefix("4. Mastrandrea") && $0.contains("guidance note") })
 }
+
+@Test(arguments: [31, 122])
+func noaaJoinedBibliographyUsesParagraphsWithPrintedNumbers(_ number: Int) throws {
+    let page = try SourceLayoutFixture.load("noaa-\(number)").content()
+    var warnings: [ConversionWarning] = []
+    let blocks = ListBuilder.build(LayoutReconstructor.blocks(page: page, images: [],
+        vocabulary: [], warnings: &warnings))
+    let first = try #require(blocks.first { $0.text.hasPrefix(number == 31 ? "2. USGCRP" : "30. Saunois") })
+    guard case .paragraph = first.content else { Issue.record("Bibliography should reflow as a paragraph"); return }
+    #expect(first.listEvidence == nil)
+}

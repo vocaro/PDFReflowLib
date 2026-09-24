@@ -51,7 +51,7 @@ struct ReflowDocument: Sendable, Equatable {
 
     enum ValidationError: Error, Equatable {
         case emptyDocument, duplicateAsset(String), missingAsset(String), invalidHeadingLevel(Int),
-             invalidChapterBoundary(Int), invalidTable
+             invalidChapterBoundary(Int), invalidTable, invalidEndnote
     }
 
     /// The document as the stream a producer emits, in production order.
@@ -76,6 +76,7 @@ struct ReflowDocument: Sendable, Equatable {
         private var identifiers: Set<String> = []
         private var unmatchedChapterStarts: Set<Int> = []
         private var blocks = 0
+        private var endnotes: Set<String> = []
 
         init() {}
 
@@ -87,6 +88,12 @@ struct ReflowDocument: Sendable, Equatable {
                 guard identifiers.insert(asset.id).inserted else { throw ValidationError.duplicateAsset(asset.id) }
             case let .block(block):
                 blocks += 1
+                if let id = block.endnoteID {
+                    guard case .paragraph = block.content,
+                          id.hasPrefix("note-"), id.utf8.count <= 80,
+                          id.utf8.allSatisfy({ (48...57).contains($0) || (97...122).contains($0) || $0 == 45 }),
+                          endnotes.insert(id).inserted else { throw ValidationError.invalidEndnote }
+                }
                 switch block.content {
                 case let .heading(_, _, level):
                     guard (1...6).contains(level) else { throw ValidationError.invalidHeadingLevel(level) }
@@ -170,6 +177,8 @@ struct TextStyle: OptionSet, Sendable, Equatable, Codable {
 enum LinkTarget: Sendable, Equatable, Codable {
     case external(String)
     case page(Int)
+    /// A verified endnote entry; the writer resolves its actual spine document.
+    case note(String)
 }
 
 struct InlineText: Sendable, Equatable, Codable {
@@ -410,6 +419,8 @@ struct ReflowBlock: Sendable, Equatable {
         case sourcePage(Int)
     }
     var content: Content
+    /// A grouped endnote keeps its printed marker in its text, including uncertain OCR.
+    var endnoteID: String? = nil
     /// Validated source paragraph identity, used to avoid heuristic joins across tag boundaries.
     var structureGroup: Int?
     /// Physical PDF page where this block begins; inline markers record later page boundaries.

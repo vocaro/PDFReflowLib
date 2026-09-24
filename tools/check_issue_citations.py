@@ -61,6 +61,12 @@ HASH = re.compile(r'(?<![\w/#-])#(\d+)\b')
 # prose has to say so, and the gate requires that commit to appear in every document that cites
 # the issue, so the citation cannot quietly revert to reading like a live tracker (#234).
 ALLOWED = {
+    17: ('historical', 'the validated structure mapping and bounded index now in the tree, with spatial fallback for unsupported associations'),
+    195: ('historical', 'the owner decisions implemented for bibliography paragraphs, conservative endnotes and verified lists'),
+    219: ('historical', 'the bibliography, endnote, lettered-list and exercise-order prerequisites now in the tree'),
+    18: ('historical', 'the reviewed CDC image fallback already on main, with unqualified panel ordering stated explicitly'),
+    44: ('historical', 'the three script corpus admissions already on main, with their qualification limits stated'),
+    171: ('historical', 'the source-backed paragraph, reference and table rules already on main'),
     # Fixed, and cited for what it established or where the behavior came from.
     15: ('historical', 'the source-validated chapter boundaries and bounded report processing now in the tree'),
     160: ('historical', 'the column-cut, hanging-entry and cross-figure continuation rules now in the tree'),

@@ -88,6 +88,37 @@ enum StructureTreeReader {
             }
             return role
         }
+        /// A single page content item, independent of whether K uses its compact integer
+        /// spelling, an MCR dictionary, or a one-item array. Form MCIDs have another
+        /// namespace and cannot be validated against the page's ParentTree.
+        func pageItem(_ value: CGPDFObjectRef, page: Int?, depth: Int = 0) throws -> (Int, Int)? {
+            try step(depth)
+            switch CGPDFObjectGetType(value) {
+            case .integer:
+                var id: CGPDFInteger = 0
+                guard CGPDFObjectGetValue(value, .integer, &id), let page else { return nil }
+                return (page, id)
+            case .array:
+                var array: CGPDFArrayRef?
+                var child: CGPDFObjectRef?
+                guard CGPDFObjectGetValue(value, .array, &array), let array,
+                      CGPDFArrayGetCount(array) == 1,
+                      CGPDFArrayGetObject(array, 0, &child), let child else { return nil }
+                return try pageItem(child, page: page, depth: depth + 1)
+            case .dictionary:
+                var dict: CGPDFDictionaryRef?
+                guard CGPDFObjectGetValue(value, .dictionary, &dict), let dict,
+                      CGPDFObjects.name(dict, "Type") == "MCR",
+                      CGPDFObjects.object(dict, "Stm") == nil,
+                      let id = CGPDFObjects.integer(dict, "MCID") else { return nil }
+                if let pg = CGPDFObjects.dictionary(dict, "Pg") {
+                    guard let number = pages[UInt(bitPattern: pg.rawValue)] else { throw Invalid.tree }
+                    return (number, id)
+                }
+                return page.map { ($0, id) }
+            default: return nil
+            }
+        }
         func walk(_ value: CGPDFObjectRef, parent: CGPDFDictionaryRef, page: Int?, group: TextStructure?,
                   allowed: Bool, inTable: Bool, inRow: Bool, depth: Int, path: [Int], parentPath: [Int]) throws {
             try step(depth)
@@ -141,10 +172,9 @@ enum StructureTreeReader {
                 if allowed, group == nil, role == "Figure",
                    let alt = CGPDFObjects.text(dict, "Alt")?.trimmingCharacters(in: .whitespacesAndNewlines),
                    !alt.isEmpty, alt.count <= 2_000,
-                   let kids = CGPDFObjects.object(dict, "K"), CGPDFObjectGetType(kids) == .integer {
-                    var id: CGPDFInteger = 0
-                    guard CGPDFObjectGetValue(kids, .integer, &id) else { throw Invalid.tree }
-                    try reference(id, page: localPage, group: nil, ownerPath: path, figure: alt)
+                   let kids = CGPDFObjects.object(dict, "K"),
+                   let (figurePage, id) = try pageItem(kids, page: localPage) {
+                    try reference(id, page: figurePage, group: nil, ownerPath: path, figure: alt)
                     return
                 }
                 if allowed, let level, (0...6).contains(level) {

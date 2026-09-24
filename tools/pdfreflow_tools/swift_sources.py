@@ -24,7 +24,7 @@ EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpac
               'ColumnGutterCut.swift', 'DetachedTextReader.swift', 'TextLineGeometry.swift',
               'GlyphIdentityReader.swift', 'DiscretionaryHyphenReader.swift',
               'GlyphIndexDecoder.swift', 'TextEncodingCheck.swift',
-              'EnglishText.swift', 'CJKText.swift', 'ArabicText.swift', 'ContentStreamWalk.swift',
+              'EnglishText.swift', 'CJKText.swift', 'ArabicText.swift', 'VerticalJapaneseColumns.swift', 'ContentStreamWalk.swift',
               'CGPDFObjects.swift',
               'AnchorMatcher.swift',
               # `PageContent` carries each located table's cell counts (#31), so every probe
@@ -35,7 +35,7 @@ EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpac
 # Page rasterization with the options and model types it takes.
 RASTER = ['PageRasterizer.swift', 'ImageContentClassifier.swift', 'ConversionTypes.swift',
           'TableCellEvidence.swift', 'DocumentModel.swift', 'ReflowDocument.swift',
-          'MathExpression.swift']
+          'MathExpression.swift', 'FormBlank.swift']
 
 # Vision recognition: `OCRReader` with the two measurements it applies to its own reading.
 RECOGNITION = RASTER + ['OCRReader.swift', 'OCRTextCoverage.swift', 'CJKText.swift', 'EnglishText.swift']
@@ -52,7 +52,7 @@ PROBE_SOURCES = {
                                 'DocumentModel.swift', 'ReflowDocument.swift',
                                 'ConversionTypes.swift', 'MathExpression.swift', 'PDFPageSource.swift', 'EmbeddedImageReader.swift',
                                 'ImageAlphaBounds.swift', 'SourceMetadata.swift',
-                                'XMLText.swift'],
+                                'XMLText.swift', 'FormBlank.swift'],
     'inspect-chapter-boundaries.swift': EXTRACTION + ['ChapterBoundaryReader.swift', 'PDFPageSource.swift',
                                                       'EmbeddedImageReader.swift', 'ImageAlphaBounds.swift',
                                                       'SourceMetadata.swift', 'XMLText.swift'],

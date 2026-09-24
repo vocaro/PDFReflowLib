@@ -5,12 +5,17 @@ import CoreGraphics
 /// rule joining that label to the box, and the four strokes must be the whole graphics region.
 enum DrawnCheckboxReader {
     struct Reading {
-        var boxes: [CGRect]
+        struct Row {
+            var labelIndex: Int
+            var box: CGRect
+        }
+        var rows: [Row]
         var regions: [CGRect]
     }
 
     static func read(lines: [TextLine], paints: [GraphicsReader.Paint], regions: [CGRect]) -> [Reading] {
         struct Row {
+            var labelIndex: Int
             var box: CGRect
             var boxPaint: Int
             var rulePaint: Int
@@ -21,7 +26,8 @@ enum DrawnCheckboxReader {
             guard (6...20).contains(box.width), (6...20).contains(box.height),
                   box.width / box.height >= 0.5, box.width / box.height <= 2,
                   !lines.contains(where: { $0.rect.intersects(box) }) else { return nil }
-            for line in lines where line.rect.maxX < box.minX && abs(line.rect.midY - box.midY) <= 3 {
+            for (lineIndex, line) in lines.enumerated()
+                where line.rect.maxX < box.minX && abs(line.rect.midY - box.midY) <= 3 {
                 guard line.text.split(whereSeparator: \.isWhitespace).count >= 2 else { continue }
                 if let rule = paints.indices.first(where: { other in
                     let mark = paints[other]
@@ -33,7 +39,7 @@ enum DrawnCheckboxReader {
                         && box.minX - right >= 0 && box.minX - right <= line.fontSize
                         && abs(start.y - box.midY) <= box.height * 0.5
                 }) {
-                    return Row(box: box, boxPaint: index, rulePaint: rule)
+                    return Row(labelIndex: lineIndex, box: box, boxPaint: index, rulePaint: rule)
                 }
             }
             return nil
@@ -53,7 +59,9 @@ enum DrawnCheckboxReader {
                   group.allSatisfy({ row in outlineRegions.contains {
                       $0.contains(paints[row.boxPaint].rect) && $0.contains(paints[row.rulePaint].rect)
                   } }) else { continue }
-            readings.append(Reading(boxes: group.map(\.box), regions: outlineRegions))
+            guard Set(group.map(\.labelIndex)).count == group.count else { continue }
+            readings.append(Reading(rows: group.map { Reading.Row(labelIndex: $0.labelIndex, box: $0.box) },
+                                    regions: outlineRegions))
         }
         return readings
     }

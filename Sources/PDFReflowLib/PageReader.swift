@@ -91,9 +91,15 @@ enum PageReader {
                                                           regions: content.graphics)
                 let outlines = drawnBoxes.flatMap(\.regions)
                 content.graphics.removeAll { outlines.contains($0) }
-                for box in drawnBoxes.flatMap(\.boxes) {
-                    content.lines.append(TextLine(text: "☐", rect: box,
-                                                  fontSize: min(12, max(6, box.height))))
+                for row in drawnBoxes.flatMap(\.rows) {
+                    let label = content.lines[row.labelIndex]
+                    var reading = label.content
+                    reading.append(InlineText(" ☐"))
+                    var merged = TextLine(content: reading, rect: label.rect.union(row.box),
+                                          fontSize: label.fontSize, monospaced: label.monospaced,
+                                          wraps: false, turn: label.turn)
+                    merged.structure = label.structure
+                    content.lines[row.labelIndex] = merged
                 }
             }
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,

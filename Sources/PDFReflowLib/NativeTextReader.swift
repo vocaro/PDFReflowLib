@@ -244,6 +244,53 @@ enum NativeTextReader {
         return kept
     }
 
+    /// Separate independently painted labels on a slide when PDFKit joins their row. The
+    /// ordinary detached-label rule keeps its wider threshold for books; PageReader calls this
+    /// only after the page's top-band title establishes that it reads as a slide (#175).
+    static func separateSlideLabels(_ lines: [TextLine], on page: PDFPage) throws -> [TextLine] {
+        try withExtractionLock {
+            guard let selection = page.selection(for: page.bounds(for: .cropBox)) else { return lines }
+            let selections = selection.selectionsByLine()
+            let texts = selections.map(\.string)
+            let boxes = characterBoxes(of: texts, on: page)
+            return lines.flatMap { line -> [TextLine] in
+                guard line.turn == .upright, line.structure == nil, line.content.elements.count == 1,
+                      case let .text(value, style) = line.content.elements[0], value == line.text,
+                      let space = line.text.firstIndex(of: " "),
+                      line.text.filter(\.isWhitespace).count == 1,
+                      let left = String(line.text[..<space]).first,
+                      let right = String(line.text[line.text.index(after: space)...]).first,
+                      left.isUppercase, right.isUppercase,
+                      let index = selections.indices.first(where: {
+                          texts[$0]?.trimmingCharacters(in: .whitespacesAndNewlines) == line.text
+                              && selections[$0].bounds(for: page).intersects(line.rect)
+                      }),
+                      boxes[index].count == (line.text as NSString).length
+                else { return [line] }
+                let split = (line.text as NSString).range(of: " ").location
+                guard split > 0, split + 1 < boxes[index].count else { return [line] }
+                let leftBoxes = boxes[index][..<split], rightBoxes = boxes[index][(split + 1)...]
+                guard leftBoxes.allSatisfy(\.isFinite), rightBoxes.allSatisfy(\.isFinite),
+                      let first = leftBoxes.first, let second = rightBoxes.first else { return [line] }
+                let leftRect = leftBoxes.dropFirst().reduce(first) { $0.union($1) }
+                let rightRect = rightBoxes.dropFirst().reduce(second) { $0.union($1) }
+                let gap = rightRect.minX - leftRect.maxX
+                let least = max(line.fontSize * 4, page.bounds(for: .cropBox).width * 0.1)
+                let gapRect = CGRect(x: leftRect.maxX, y: line.rect.minY,
+                                     width: max(0, gap), height: line.rect.height)
+                guard gap >= least, gap >= min(leftRect.width, rightRect.width),
+                      !lines.contains(where: { $0 != line && $0.sharesRow(with: line)
+                          && gapRect.intersects($0.rect) }) else { return [line] }
+                let before = String(line.text[..<space])
+                let after = String(line.text[line.text.index(after: space)...])
+                return [TextLine(content: InlineText(before, style: style), rect: leftRect,
+                                 fontSize: line.fontSize, monospaced: line.monospaced, wraps: line.wraps),
+                        TextLine(content: InlineText(after, style: style), rect: rightRect,
+                                 fontSize: line.fontSize, monospaced: line.monospaced, wraps: line.wraps)]
+            }
+        }
+    }
+
     private static func detachedPiece(_ rect: CGRect, from minX: CGFloat, to maxX: CGFloat,
                                 on page: PDFPage) -> (String, CGRect)? {
         func selection(_ left: CGFloat, _ right: CGFloat) -> PDFSelection? {

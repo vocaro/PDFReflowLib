@@ -12,6 +12,24 @@ private func furniturePage(_ number: Int, header: String, y: Double = 752,
     ], graphics: [])
 }
 
+/// NASA NTRS 20200002975 prints every folio at x=303.05, y=50.112 on a 612×792 page.
+/// PDFKit gives its 12-point glyph a 13.284-point rectangle, putting the midpoint just beyond
+/// the ordinary 7%-from-foot test although the glyph begins inside that margin.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/171"))
+func nasaBareFoliosAtTheFootBandEdgeAreRemoved() {
+    var pages = (1...4).map { number in
+        PageContent(number: number, bounds: CGRect(x: 0, y: 0, width: 612, height: 792), lines: [
+            TextLine(text: "Body text on page \(number).", rect: CGRect(x: 72, y: 120, width: 230, height: 10), fontSize: 10),
+            TextLine(text: "U.S. Government work not protected by U.S. copyright",
+                     rect: CGRect(x: 72, y: 65, width: 200, height: 8), fontSize: 8),
+            TextLine(text: "\(number)", rect: CGRect(x: 303.05, y: 50.112, width: 6, height: 13.284), fontSize: 12),
+        ], graphics: [])
+    }
+    let warnings = FurnitureDetector.strip(&pages)
+    #expect(warnings.map(\.page) == [1, 2, 3, 4])
+    #expect(pages.allSatisfy { $0.lines.count == 2 && !$0.lines.contains { Int($0.text) != nil } })
+}
+
 @Test func reportHeadersDisappearWhileSourceBodyAndChapterOpeningsSurvive() throws {
     let numbers = Array(19...26) + Array(65...71) + Array(471...476)
     var pages = try numbers.map { try SourceLayoutFixture.load("911-\($0)").content() }

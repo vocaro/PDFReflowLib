@@ -185,12 +185,13 @@ enum FurnitureDetector {
         /// never reached the top tenth of the paper. All 210 of that book's heads survived,
         /// because none of them was ever a candidate for `resolve` to weigh (#289).
         ///
-        /// The foot is left exactly as it was. Its band is already narrower on purpose — a
-        /// lower-margin number takes part in the whitespace cuts around an illustrated row, and
-        /// widening it changes reading order in *Our Flag* even where the number is furniture —
-        /// and this rule has no evidence about that.
+        /// Keep the foot band narrow for prose and captions. A bare folio's taller glyph may
+        /// begin inside it while its midpoint falls just outside (NASA NTRS 20200002975); the
+        /// numeric value and recurring page offset must still prove it furniture in `resolve`.
         func inBand(_ line: TextLine, top: Bool) -> Bool {
-            guard top else { return position(line.rect.midY) <= 0.07 }
+            guard top else {
+                return position(isFolio(words(line)) ? line.rect.minY : line.rect.midY) <= 0.07
+            }
             guard let type = typePage(of: page), type.height > 0 else {
                 return position(line.rect.midY) >= 0.90
             }

@@ -70,6 +70,9 @@ enum PageReader {
                 lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: styled,
                     rules: rules, links: links, preserveInvisibleWordGaps: syntheticStyle, shows: shows), graphics: graphics.regions,
                 pictures: graphics.images)
+            if styled, !SlideDeck.title(in: content).isEmpty {
+                content.lines = try NativeTextReader.separateSlideLabels(content.lines, on: page)
+            }
             content.links = links
             content = TextBackdrop.compose(content, graphics: graphics)
             if !requiresPageImage, PageBackdrop.eligible(graphics, bounds: bounds),

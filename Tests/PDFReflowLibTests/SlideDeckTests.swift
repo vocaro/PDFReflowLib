@@ -1,4 +1,5 @@
 import Foundation
+import PDFKit
 import Testing
 @testable import PDFReflowLib
 
@@ -131,4 +132,17 @@ func lowerLeftSlideNotesReadAfterTheirDiagrams() throws {
         #expect(ordered.filter { !$0.text.contains("Analytics Optimized Data Store") }.map(\.text)
             == blocks.filter { !$0.text.contains("Analytics Optimized Data Store") }.map(\.text))
     }
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/175"))
+func slideElevenSeparatesTheTwoPrintedCircleLabels() throws {
+    let fixture = try SourceLayoutFixture.load("earthdata-11")
+    #expect(fixture.sourceSHA256 == "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94")
+    #expect(fixture.lines.contains { $0.text == "Analyze Visualize" })
+    let source = try PDFPageSource(url: URL(fileURLWithPath: "corpus/cache/20180003024.pdf"))
+    let page = try PageReader.read(pageIndex: 10, from: source, limit: 100_000,
+                                   options: ConversionOptions(), structure: nil).content
+    let texts = page.lines.map(\.text)
+    #expect(texts == ["data", "Abstract Analytics Workflow", "Extract", "Transform", "Load",
+                      "Analyze", "Visualize"])
 }

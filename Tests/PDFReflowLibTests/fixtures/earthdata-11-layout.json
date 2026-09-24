@@ -1,0 +1,194 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        37.233113691459607,
+        191.19164315813279,
+        46.680001493760003,
+        22.512000720384009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : -0.042750001368005996,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.000000768,
+          "text" : "data "
+        }
+      ],
+      "text" : "data "
+    },
+    {
+      "rect" : [
+        220.59558705905857,
+        348.07267863832578,
+        345.15599871799162,
+        26.263999902447949
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "Abstract Analytics Workflow"
+        }
+      ],
+      "text" : "Abstract Analytics Workflow"
+    },
+    {
+      "rect" : [
+        177.86709719174692,
+        216.07439855938094,
+        62.180000435259956,
+        18.760000131319998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.000000139999983,
+          "text" : "Extract"
+        }
+      ],
+      "text" : "Extract"
+    },
+    {
+      "rect" : [
+        163.42937922973996,
+        192.0743932913808,
+        91.080000637559948,
+        18.76000013131997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.000000139999983,
+          "text" : "Transform"
+        }
+      ],
+      "text" : "Transform"
+    },
+    {
+      "rect" : [
+        186.73570197554227,
+        168.07439252338079,
+        44.480000311359959,
+        18.76000013131997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.000000139999983,
+          "text" : "Load"
+        }
+      ],
+      "text" : "Load"
+    },
+    {
+      "rect" : [
+        365.85046395721446,
+        191.19164315813279,
+        267.99800282593566,
+        22.512000720384009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.000000139999983,
+          "text" : "Analyze Visualize"
+        }
+      ],
+      "text" : "Analyze Visualize"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    720,
+    405
+  ],
+  "caseID" : "ntrs-20180003024-earthdata-slides-2018",
+  "graphics" : [
+    [
+      0,
+      0,
+      720,
+      405
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 24.000000768,
+      "monospaced" : false,
+      "rect" : [
+        37.233113691459607,
+        191.19164315813279,
+        46.680001493760003,
+        22.512000720384009
+      ],
+      "text" : "data"
+    },
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        220.59558705905857,
+        348.07267863832578,
+        345.15599871799162,
+        26.263999902447949
+      ],
+      "text" : "Abstract Analytics Workflow"
+    },
+    {
+      "fontSize" : 20.000000139999983,
+      "monospaced" : false,
+      "rect" : [
+        177.86709719174692,
+        216.07439855938094,
+        62.180000435259956,
+        18.760000131319998
+      ],
+      "text" : "Extract"
+    },
+    {
+      "fontSize" : 20.000000139999983,
+      "monospaced" : false,
+      "rect" : [
+        163.42937922973996,
+        192.0743932913808,
+        91.080000637559948,
+        18.76000013131997
+      ],
+      "text" : "Transform"
+    },
+    {
+      "fontSize" : 20.000000139999983,
+      "monospaced" : false,
+      "rect" : [
+        186.73570197554227,
+        168.07439252338079,
+        44.480000311359959,
+        18.76000013131997
+      ],
+      "text" : "Load"
+    },
+    {
+      "fontSize" : 20.000000139999983,
+      "monospaced" : false,
+      "rect" : [
+        365.85046395721446,
+        191.19164315813279,
+        267.99800282593566,
+        22.512000720384009
+      ],
+      "text" : "Analyze Visualize"
+    }
+  ],
+  "page" : 11,
+  "rightsBasis" : "Slide 1 marks both presenters with *U.S. Civil Servant, and the NTRS record places Chris Lynnes at NASA Goddard Space Flight Center and Rahul Ramachandran at NASA Marshall Space Flight Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and thirdPartyContentCondition NOT_SET; distribution PUBLIC, no export control. Every slide was checked: no AWS, Google, partner or vendor logo and no screenshot of a commercial product appears. Every slide shows the NASA insignia, whose use is restricted by 14 CFR 1221. Slide 2 carries uncredited satellite renders and a ground-station photo, slides 3-4 uncredited EOSDIS metrics chart rasters, and slides 12-21 uncredited pictogram icons. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "sourceSHA256" : "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+  "sourceTitle" : "Earthdata Cloud Analytics Project",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20180003024/downloads/20180003024.pdf"
+}

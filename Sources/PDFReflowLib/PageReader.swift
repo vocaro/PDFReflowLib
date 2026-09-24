@@ -72,7 +72,8 @@ enum PageReader {
                 pictures: graphics.images)
             content.links = links
             content = TextBackdrop.compose(content, graphics: graphics)
-            if !requiresPageImage, PageBackdrop.eligible(graphics, bounds: bounds) {
+            if !requiresPageImage, PageBackdrop.eligible(graphics, bounds: bounds),
+               ImageAlphaBounds.fitsPageBudget(ImageAlphaBounds.sampleCounts(on: reference)) {
                 let trimmed = GraphicsReader.read(reference) { imageIndex, dictionary in
                     guard ImageAlphaBounds.mask(in: dictionary) != nil else { return nil }
                     return document.imageAlphaBounds(page: i, image: imageIndex)

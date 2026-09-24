@@ -44,7 +44,8 @@ private struct BackdropCapture: Decodable {
     #expect(!PageBackdrop.isArrowPolygon(Array(polygon.prefix(6))))
 }
 
-private func paddedIconPDF(opaque: Bool = false, maskExtra: String = "", clip: Bool = false) -> Data {
+private func paddedIconPDF(opaque: Bool = false, maskExtra: String = "", clip: Bool = false,
+                           maskSide: Int = 10, placements: Int = 1) -> Data {
     func stream(_ data: Data, _ extra: String = "") -> Data {
         Data("<< /Length \(data.count) \(extra) >>\nstream\n".utf8) + data + Data("\nendstream".utf8)
     }
@@ -52,14 +53,15 @@ private func paddedIconPDF(opaque: Bool = false, maskExtra: String = "", clip: B
         opaque || ((2...7).contains(offset / 10) && (1...8).contains(offset % 10)) ? 255 : 0
     }
     let paint = backdrop + (clip ? "60 230 80 50 re W n " : "")
-        + "q 80 0 0 80 60 200 cm /Im Do Q BT /F 14 Tf 60 198 Td (Cumulus) Tj ET"
+        + String(repeating: "q 80 0 0 80 60 200 cm /Im Do Q ", count: placements)
+        + "BT /F 14 Tf 60 198 Td (Cumulus) Tj ET"
     let objects: [Data] = [
         Data("<< /Type /Catalog /Pages 2 0 R >>".utf8),
         Data("<< /Type /Pages /Kids [3 0 R] /Count 1 >>".utf8),
         Data("<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /XObject << /Im 5 0 R >> /Font << /F 7 0 R >> >> /Contents 4 0 R >>".utf8),
         stream(Data(paint.utf8)),
         stream(Data(repeating: 0, count: 100), "/Type /XObject /Subtype /Image /Width 10 /Height 10 /BitsPerComponent 8 /ColorSpace /DeviceGray /SMask 6 0 R"),
-        stream(Data(samples), "/Type /XObject /Subtype /Image /Width 10 /Height 10 /BitsPerComponent 8 /ColorSpace /DeviceGray \(maskExtra)"),
+        stream(Data(samples), "/Type /XObject /Subtype /Image /Width \(maskSide) /Height \(maskSide) /BitsPerComponent 8 /ColorSpace /DeviceGray \(maskExtra)"),
         Data("<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>".utf8)]
     var data = Data("%PDF-1.7\n".utf8), offsets = [0]
     for (index, object) in objects.enumerated() {
@@ -212,4 +214,59 @@ func connectedRectangularTextPanelsKeepTheirDiagramAndNativeLabels(arrowhead: Bo
     let text = blocks.filter(\.hasReflowedText).map(\.text).joined(separator: " ")
     #expect(text.contains("Input node"))
     #expect(text.contains("Output node"))
+}
+
+@Test func alphaPreflightCountsEveryPlacementBeforeAnyMaskDecode() throws {
+    for (data, expected) in [(paddedIconPDF(), true),
+        (paddedIconPDF(maskExtra:"/Decode [0 1]"),false),
+        (paddedIconPDF(maskSide:8_000,placements:2),false)] {
+        let directory = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at:directory) }
+        let url = directory.appendingPathComponent("budget.pdf"); try data.write(to:url)
+        let source = try PDFPageSource(url:url), pdf = try source.page(at:0)
+        let ref = try #require(pdf.pageRef)
+        let counts = ImageAlphaBounds.sampleCounts(on:ref)
+        #expect(ImageAlphaBounds.fitsPageBudget(counts) == expected)
+        if counts.count == 2 { #expect(counts == [64_000_000,64_000_000]) }
+        let extracted = try PageReader.read(pageIndex:0,from:source,limit:1_000,
+            options:ConversionOptions(),structure:nil).content
+        #expect(extracted.graphics.contains { PageDiagnosis.coversPage($0,bounds:extracted.bounds) } == !expected)
+        #expect(extracted.lines.contains { $0.text == "Cumulus" })
+    }
+    #expect(!ImageAlphaBounds.fitsPageBudget([1,nil]))
+    #expect(!ImageAlphaBounds.fitsPageBudget([Int.max]))
+    #expect(ImageAlphaBounds.fitsPageBudget([32_000_000,32_000_000]))
+    #expect(!ImageAlphaBounds.fitsPageBudget([32_000_000,32_000_001]))
+}
+
+@Test func dgaCoverMaskBudgetRetainsAllNativeLabelsAndTheSourceReference() throws {
+    struct Capture: Decodable {
+        var sourceSHA256: String
+        var original: PageContent
+        var rawPaints: [GraphicsReader.Paint]
+        var maskSamples: [Int?]
+    }
+    let fixture = try JSONDecoder().decode(Capture.self,
+        from:Data(contentsOf:fixtureURL("dga-cover-alpha-budget.json")))
+    #expect(fixture.sourceSHA256 == "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472")
+    #expect(fixture.maskSamples.count == 45)
+    #expect(fixture.maskSamples.compactMap { $0 }.reduce(0,+) == 164_359_023)
+    let graphics = GraphicsReader.Result(regions:fixture.original.graphics,unsupported:false,
+        images:fixture.original.pictures,paints:fixture.rawPaints)
+    #expect(PageBackdrop.eligible(graphics,bounds:fixture.original.bounds))
+    #expect(!ImageAlphaBounds.fitsPageBudget(fixture.maskSamples))
+    var page = TextBackdrop.compose(fixture.original,graphics:graphics)
+    let extracted = ExtractedPage(content:page,hasUnmappedFont:false,unreadGlyphs:0,printedLabel:nil,warnings:[])
+    let evidence = PageDiagnosis.assess(extracted,options:ConversionOptions(),measureInk:{ _ in nil })
+    #expect(evidence.imageBackedText)
+    PageDiagnosis.prepareExtracted(&page,evidence:evidence)
+    #expect(page.preservePageReference)
+    #expect(page.graphics.isEmpty)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page:page,images:[],
+        vocabulary:LayoutReconstructor.vocabulary(in:[page]),warnings:&warnings)
+    let texts = blocks.filter(\.hasReflowedText).map(\.text)
+    for label in ["Protein, Dairy & Healthy Fats","Vegetables & Fruits","Whole Grains","realfood.gov","2025–2030"] {
+        #expect(texts.contains(label))
+    }
+    #expect(texts.joined(separator:" ").contains("Dietary Guidelines For Americans"))
 }

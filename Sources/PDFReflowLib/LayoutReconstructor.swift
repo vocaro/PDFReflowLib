@@ -1679,7 +1679,7 @@ enum LayoutReconstructor {
         let displayed = page.hasSyntheticTextStyle ? [] : DisplayQuotation.groups(in: page.lines,
             body: displayTypography.body, threshold: displayTypography.headingThreshold)
         let nativeCaptions = page.hasSyntheticTextStyle ? [] : CaptionParagraphs.groups(lines: page.lines,
-            pictures: page.pictures + images.map(\.0), body: displayTypography.body)
+            pictures: page.pictures, figures: images.map(\.0), body: displayTypography.body)
         let captionIndices = nativeCaptions.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
         let displayedIndices = displayed.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
         let overPicture = displayedIndices.union(captionIndices).union(PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures + (page.nativeTextPanels ?? []),
@@ -1756,14 +1756,16 @@ enum LayoutReconstructor {
                               height: max(crop.maxY,card.rect.maxY) - card.rect.minY)
             return GalleryCaptions.Group(image: image, lines: card.lines, rect: rect)
         }
-        let photoCaptions = CaptionParagraphs.groups(lines: lines, pictures: page.pictures + images.map(\.0), body: typography.body)
+        let photoCaptions = CaptionParagraphs.groups(lines: lines, pictures: page.pictures, figures: images.map(\.0), body: typography.body)
         var captioned = Set(gallery.flatMap(\.lines))
         let pictureElements = images.enumerated().map { imageIndex, image -> Element in
             if let card = gallery.first(where: { $0.image == imageIndex }) {
                 return Element(rect: card.rect, image: image.1, pictureCaption: card.lines.map { lines[$0] })
             }
             let caption = photoCaptions.filter { group in
-                group.indices.isDisjoint(with: captioned) && group.lines.contains { image.0.contains($0.rect) }
+                // Ownership starts at the caption opening. A decorative crop touching only
+                // a later credit row cannot move the whole caption after unrelated prose.
+                group.indices.isDisjoint(with: captioned) && group.lines.first.map { image.0.contains($0.rect) } == true
             }.flatMap { $0.indices }.sorted { lines[$0].rect.minY > lines[$1].rect.minY }
             captioned.formUnion(caption)
             let bodyOver = page.lines.indices.filter {

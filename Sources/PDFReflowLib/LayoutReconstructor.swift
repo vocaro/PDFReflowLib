@@ -1975,6 +1975,7 @@ enum LayoutReconstructor {
     static func blocks(page: PageContent, images: [(CGRect, String)], context: DocumentContext,
                        formOutline: [FormOutlineEvidence.Candidate] = [], formOutlineBaseLevel: Int = 2,
                        formOutlineOuterTier: Int = 0,
+                       inheritedInlineReferenceWraps: Set<CGRect> = [],
                        warnings: inout [ConversionWarning]) -> [ReflowBlock] {
         // A crop takes every line it intersects, except a wrapped paragraph the page prints over
         // one of its own pictures, which is the book's prose and no cut can free (#239).
@@ -2130,6 +2131,11 @@ enum LayoutReconstructor {
         let markerList = hangingMarkerList(in: lines, body: typography.body)
         let numberedReferences = markerList == nil
             ? NumberedBibliography.evidence(in: lines, body: typography.body) : nil
+        // The page reader's native text grouping can consume citation rows before the final
+        // reflowable line list is assembled. Detect the printed hanging edge in the complete
+        // source lines; the assembler only uses rectangles it actually receives.
+        let inlineReferenceWraps = inheritedInlineReferenceWraps.union(
+            NumberedBibliography.inlineWraps(in: page.lines, body: typography.body))
         let bibliography = bibliographyLines(in: lines, body: typography.body)
         let quoteGroups = quotationGroups(in: lines, body: typography.body)
         let answerWraps = numberedAnswerWraps(in: lines, body: typography.body)
@@ -2148,6 +2154,7 @@ enum LayoutReconstructor {
                                        markerEntries: markerList?.openings ?? numberedReferences?.openings ?? [],
                                        markerEntryEdge: markerList?.edge ?? numberedReferences?.edge,
                                        numberedBibliography: numberedReferences != nil,
+                                       inlineBibliographyWraps: inlineReferenceWraps,
                                        bibliographyOpenings: bibliography.openings,
                                        bibliographyWraps: bibliography.wraps,
                                        labelValueStarts: page.recognized || page.hasSyntheticTextStyle
@@ -2234,7 +2241,9 @@ enum LayoutReconstructor {
                 // A panel states its own type size and leading. Reusing the surrounding
                 // paragraph's metrics would split its smaller words at every printed row.
                 let content = PageContent(number: page.number, bounds: element.rect, lines: panel, graphics: [])
-                assembler.appendTextPanel(blocks(page: content, images: [], context: context, warnings: &warnings))
+                assembler.appendTextPanel(blocks(page: content, images: [], context: context,
+                                                 inheritedInlineReferenceWraps: inlineReferenceWraps,
+                                                 warnings: &warnings))
             } else if let group = noteGroups[index], let line = element.line {
                 assembler.appendNote(group: group, line)
             } else if let path = element.image {

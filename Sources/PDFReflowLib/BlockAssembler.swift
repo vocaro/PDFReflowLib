@@ -604,6 +604,8 @@ struct BlockAssembler {
     private let markerEntryEdge: CGFloat?
     /// Dotted citation numbers and their text edge, established by a repeated bibliography.
     private let numberedBibliography: Bool
+    /// Continuation rows of inline-numbered citations, established by repeated hanging edges.
+    private let inlineBibliographyWraps: Set<CGRect>
     /// Entry starts and hanging continuations established by a repeated author column (#157).
     private let bibliographyOpenings: Set<CGRect>
     private let bibliographyWraps: Set<CGRect>
@@ -634,7 +636,7 @@ struct BlockAssembler {
          columnSeams: [CGFloat] = [],
          ordinaryHeights: [Int: CGFloat] = [:],
          markerEntries: Set<CGRect> = [], markerEntryEdge: CGFloat? = nil,
-         numberedBibliography: Bool = false,
+         numberedBibliography: Bool = false, inlineBibliographyWraps: Set<CGRect> = [],
          bibliographyOpenings: Set<CGRect> = [], bibliographyWraps: Set<CGRect> = [],
          labelValueStarts: Set<CGRect> = [],
          rightToLeft: Bool = false, recognized: Bool = false, notesPage: Bool = false) {
@@ -650,6 +652,7 @@ struct BlockAssembler {
         self.markerEntries = markerEntries
         self.markerEntryEdge = markerEntryEdge
         self.numberedBibliography = numberedBibliography
+        self.inlineBibliographyWraps = inlineBibliographyWraps
         self.bibliographyOpenings = bibliographyOpenings
         self.bibliographyWraps = bibliographyWraps
         self.labelValueStarts = labelValueStarts
@@ -925,6 +928,16 @@ struct BlockAssembler {
     }
 
     mutating func append(_ line: TextLine, as role: LineRole) {
+        if inlineBibliographyWraps.contains(line.rect), let above = itemLine,
+           let last = blocks.last, last.page == page, case let .preformatted(text) = last.content,
+           paragraph.elements.isEmpty, above.hasSize(line.fontSize),
+           above.rect.minY > line.rect.minY,
+           above.rect.minY - line.rect.minY <= body * 1.6 {
+            blocks[blocks.count - 1].content = .preformatted(join(text, line.content))
+            itemLine = line
+            itemRowInProgress = line
+            return
+        }
         // A numbered bibliography sets its marker in a separate column and every line of the
         // citation on one text edge. Keep that whole entry together even when an author's
         // initial would otherwise read as a fresh lettered item (#219 item 1).

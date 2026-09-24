@@ -50,4 +50,46 @@ enum NumberedBibliography {
         }
         return nil
     }
+
+    /// Some reference pages print the number and author on one line, then hang every later
+    /// line to the right. The source must repeat that edge and citation syntax before a line
+    /// starting with an initial, a word, or even a page number can extend the entry (#219).
+    static func inlineWraps(in lines: [TextLine], body: CGFloat) -> Set<CGRect> {
+        guard body.isFinite, body >= 4 else { return [] }
+        let marker = #"^[1-9][0-9]{0,3}\.\s+\S"#
+        let citation = #"\b(?:19|20)[0-9]{2}:|https?://|doi\.org/"#
+        let starts = lines.filter { $0.turn == .upright && !$0.monospaced
+            && $0.text.range(of: marker, options: .regularExpression) != nil }
+        let groups = Dictionary(grouping: starts) {
+            Int(($0.rect.minX / max(body * 0.25, 1)).rounded())
+        }
+        for group in groups.values.sorted(by: { $0.count > $1.count }) where group.count >= 3 {
+            let ordered = group.sorted { $0.rect.midY > $1.rect.midY }
+            let numbers = ordered.compactMap { Int($0.text.prefix(while: \.isNumber)) }
+            guard numbers.count == ordered.count,
+                  zip(numbers, numbers.dropFirst()).allSatisfy({ $0.0 < $0.1 }),
+                  ordered.count(where: { $0.text.range(of: citation, options: .regularExpression) != nil }) >= 2
+            else { continue }
+            let edge = ordered.map(\.rect.minX).reduce(0, +) / CGFloat(ordered.count)
+            var wraps: Set<CGRect> = []
+            for index in ordered.indices {
+                let opening = ordered[index]
+                let floor = index + 1 < ordered.count ? ordered[index + 1].rect.midY : -CGFloat.infinity
+                var previous = opening
+                for line in lines.filter({ $0.rect.midY < opening.rect.midY && $0.rect.midY > floor })
+                    .sorted(by: { $0.rect.midY > $1.rect.midY }) {
+                    let inset = line.rect.minX - edge
+                    guard line.turn == .upright, !line.monospaced,
+                          inset >= body * 0.75, inset <= body * 2.5,
+                          opening.hasSize(line.fontSize), previous.hasSize(line.fontSize),
+                          previous.rect.minY > line.rect.minY,
+                          previous.rect.minY - line.rect.minY <= body * 1.6 else { break }
+                    wraps.insert(line.rect)
+                    previous = line
+                }
+            }
+            if wraps.count >= 3 { return wraps }
+        }
+        return []
+    }
 }

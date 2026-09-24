@@ -168,30 +168,42 @@ enum PDFReflowLibPipeline {
                     var images: [(CGRect, String)] = []
                     var imageMath: [String: [MathExpression]] = [:]
                     var pageGlyphs: MathRecognizer.PageGlyphs?
-                    for rect in LayoutReconstructor.graphicsWithLabels(content, language: options.language) {
+                    for region in LayoutReconstructor.graphicsWithLabels(content, language: options.language) {
+                        var glyphs: MathRecognizer.PageGlyphs?
                         if !content.recognized, !content.hasSyntheticTextStyle,
-                           !content.links.contains(where: { $0.rect.intersects(rect) }),
+                           !content.links.contains(where: { $0.rect.intersects(region) }),
                            let reference = page.pageRef {
-                            let glyphs = try pageGlyphs ?? NativeTextReader.withExtractionLock {
+                            glyphs = try pageGlyphs ?? NativeTextReader.withExtractionLock {
                                 MathRecognizer.glyphs(on: reference)
                             }
                             pageGlyphs = glyphs
-                            if let rows = MathRecognizer.rows(in: rect, page: glyphs, graphics: content.graphics,
-                                                              lines: content.lines,
-                                                              body: LayoutReconstructor.bodySize(content.lines)) {
-                                let expressions = try rows.map { row in
-                                    MathExpression(label: row.label, node: row.node,
-                                                   fallbackAssetID: try assets.save(page: page, rect: row.rect,
-                                                       drawnFromImage: pagesDrawnFromImage.contains(i)))
-                                }
-                                let id = expressions[0].fallbackAssetID
-                                images.append((rect, id))
-                                imageMath[id] = expressions
-                                continue
-                            }
                         }
-                        images.append((rect, try assets.save(page: page, rect: rect,
-                                                            drawnFromImage: pagesDrawnFromImage.contains(i))))
+                        let body = LayoutReconstructor.bodySize(content.lines)
+                        let wholeRows = glyphs.flatMap { MathRecognizer.rows(in: region, page: $0,
+                            graphics: content.graphics, lines: content.lines, body: body) }
+                        let slices = wholeRows == nil ? glyphs.flatMap {
+                            MathRecognizer.radicalExerciseSlices(in: region, page: $0,
+                                graphics: content.graphics, lines: content.lines, body: body)
+                        } ?? [region] : [region]
+                        for rect in slices {
+                            if let glyphs {
+                                let rows = rect == region ? wholeRows : MathRecognizer.rows(in: rect,
+                                    page: glyphs, graphics: content.graphics, lines: content.lines, body: body)
+                                if let rows {
+                                    let expressions = try rows.map { row in
+                                        MathExpression(label: row.label, node: row.node,
+                                                       fallbackAssetID: try assets.save(page: page, rect: row.rect,
+                                                           drawnFromImage: pagesDrawnFromImage.contains(i)))
+                                    }
+                                    let id = expressions[0].fallbackAssetID
+                                    images.append((rect, id))
+                                    imageMath[id] = expressions
+                                    continue
+                                }
+                            }
+                            images.append((rect, try assets.save(page: page, rect: rect,
+                                                                drawnFromImage: pagesDrawnFromImage.contains(i))))
+                        }
                     }
                     if images.contains(where: { imageMath[$0.1] == nil }) {
                         warnings.append(ConversionWarnings.warning(.imageRegion(.regionCrops), page: i + 1, options: options))

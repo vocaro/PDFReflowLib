@@ -13,6 +13,7 @@ import Foundation
 /// - a **bar fraction**: a thin rule with one row of glyphs just above it and one just below,
 ///   each centred on the bar, the wider spanning it, the bar on the maths axis of its row, and
 ///   no other glyph or rule touching the stack (so a stacked or nested fraction is refused);
+/// - a **square root**: a radical glyph joined to a painted vinculum over one proven expression;
 /// - a **superscript**: a glyph smaller than the row's type, raised by a fifth to three quarters
 ///   of it, set straight after its base (a number, a variable, a bracketed group);
 /// - a **row** of numbers, maths italic variables, operators and brackets on one baseline, with no
@@ -22,8 +23,8 @@ import Foundation
 /// A crop may hold several rows (a column of exercises) and a row several exercises; a printed
 /// label (`52)`) opens each. Every row of the crop must read, every glyph and rule in the crop
 /// must be used, and the characters must be exactly those of the page's text lines in the crop;
-/// anything else (a word, an upright letter, a subscript, a radical, an undecodable glyph, a rule
-/// that is not a fraction bar, a gap that aligns rather than spaces) leaves the crop a picture.
+/// anything else (a word, an upright letter, a subscript, an undecodable glyph, an unclaimed rule,
+/// a gap that aligns rather than spaces) leaves the crop a picture.
 enum MathRecognizer {
     /// One glyph as the page draws it: its character, its advance along the baseline, its
     /// baseline and its size in page space.
@@ -100,16 +101,22 @@ enum MathRecognizer {
             if !glyph.text.allSatisfy(\.isWhitespace) { glyphs.append(glyph) }
         }
         guard !glyphs.isEmpty, explains(glyphs, lines: lines, crop: crop) else { return nil }
-        // Every painted mark in the crop must be a fraction bar: a thin rule, as padded by GraphicsReader.
+        // Every painted mark in the crop must be a fraction bar or radical vinculum: a thin
+        // rule, as padded by GraphicsReader.
         let bars = graphics.filter { $0.intersects(crop) }
         guard bars.allSatisfy({ crop.insetBy(dx: -1, dy: -1).contains($0) && $0.height <= 5 && $0.width >= 6 }) else { return nil }
         var claimed = Set<Int>()
         var items: [Item] = []
         for bar in bars {
-            guard let fraction = fraction(bar, glyphs: glyphs, bars: bars, body: body),
-                  claimed.isDisjoint(with: fraction.members) else { return nil }
-            claimed.formUnion(fraction.members)
-            items.append(.init(box: fraction.box, fraction: fraction))
+            if let fraction = fraction(bar, glyphs: glyphs, bars: bars, body: body),
+               claimed.isDisjoint(with: fraction.members) {
+                claimed.formUnion(fraction.members)
+                items.append(.init(box: fraction.box, fraction: fraction))
+            } else if let radical = squareRoot(bar, glyphs: glyphs, bars: bars),
+                      claimed.isDisjoint(with: radical.members) {
+                claimed.formUnion(radical.members)
+                items.append(.init(box: radical.box, radical: radical))
+            } else { return nil }
         }
         items += glyphs.indices.filter { !claimed.contains($0) }.map { Item(box: glyphs[$0].box, glyph: glyphs[$0]) }
         var rows: [Row] = []
@@ -118,6 +125,49 @@ enum MathRecognizer {
             rows += read.map { Row(label: $0.label, node: $0.node, rect: $0.rect.intersection(crop)) }
         }
         return rows.isEmpty ? nil : rows
+    }
+
+    /// Partition a tall, numbered radical exercise column only at clear spaces between its
+    /// painted rows. Each partition is still checked by `rows`; an unproved row remains an image.
+    static func radicalExerciseSlices(in crop: CGRect, page: PageGlyphs, graphics: [CGRect],
+                                     lines: [TextLine], body: CGFloat) -> [CGRect]? {
+        let bars = graphics.filter { $0.intersects(crop) }.sorted { $0.midY > $1.midY }
+        guard bars.count >= 3, bars.allSatisfy({ crop.contains($0) && $0.height <= 5
+            && $0.width >= 6 && $0.width <= body * 6 }),
+              page.glyphs.count(where: { $0.text == "√" && crop.contains($0.center) }) >= 3
+        else { return nil }
+        let markers = lines.filter { line in
+            line.rect.intersects(crop) && abs(line.rect.minX - crop.minX) <= body * 0.5
+                && line.text.range(of: #"^\d{1,3}\)"#, options: .regularExpression) != nil
+        }.sorted { $0.rect.midY > $1.rect.midY }
+        guard markers.count == bars.count,
+              zip(markers, bars).allSatisfy({ pair in
+                  abs(pair.0.rect.midY - pair.1.midY) <= body * 2
+              }) else { return nil }
+        let numbers = markers.compactMap { Int($0.text.prefix(while: \.isNumber)) }
+        guard numbers.count == bars.count else { return nil }
+        guard zip(numbers, numbers.dropFirst()).allSatisfy({ pair in 1...2 ~= pair.1 - pair.0 }),
+              zip(bars, bars.dropFirst()).allSatisfy({ pair in
+                  body * 1.5 ... body * 3.5 ~= pair.0.midY - pair.1.midY
+              })
+        else { return nil }
+        let ink = page.glyphs.filter { crop.contains($0.center) }.map(\.box)
+        func clear(_ y: CGFloat) -> Bool {
+            !ink.contains(where: { $0.minY < y && $0.maxY > y })
+                && !bars.contains(where: { $0.minY < y && $0.maxY > y })
+        }
+        var cuts: [CGFloat] = []
+        let top = bars[0].midY + body
+        if top < crop.maxY - body * 0.4 && clear(top) { cuts.append(top) }
+        for index in 0..<(bars.count - 1) {
+            let cut = (bars[index].midY + bars[index + 1].midY) / 2
+            if clear(cut) { cuts.append(cut) }
+        }
+        guard cuts.count >= 3 else { return nil }
+        let edges = [crop.maxY] + cuts.sorted(by: >) + [crop.minY]
+        return zip(edges, edges.dropFirst()).map { high, low in
+            CGRect(x: crop.minX, y: low, width: crop.width, height: high - low)
+        }
     }
 
     // MARK: - Evidence
@@ -159,12 +209,46 @@ enum MathRecognizer {
         var axis: CGFloat { bar.midY }
     }
 
+    struct Radical {
+        var node: MathExpression.Node
+        var box: CGRect
+        var members: Set<Int>
+    }
+
     struct Item {
         var box: CGRect
         var glyph: Glyph?
         var fraction: Fraction?
+        var radical: Radical?
         init(box: CGRect, glyph: Glyph) { self.box = box; self.glyph = glyph }
         init(box: CGRect, fraction: Fraction) { self.box = box; self.fraction = fraction }
+        init(box: CGRect, radical: Radical) { self.box = box; self.radical = radical }
+    }
+
+    /// Wallace's CMR radical stands just left of its painted vinculum. The glyph rises over
+    /// the radicand; the rule spans the entire expression and touches no neighbouring glyph.
+    static func squareRoot(_ bar: CGRect, glyphs: [Glyph], bars: [CGRect]) -> Radical? {
+        let roots = glyphs.indices.filter { index in
+            let glyph = glyphs[index]
+            return glyph.text == "√" && abs(glyph.baseline - bar.midY) <= glyph.size * 0.2
+                && glyph.minX < bar.minX && abs(glyph.maxX - bar.minX) <= glyph.size * 0.3
+        }
+        guard roots.count == 1, let root = roots.first else { return nil }
+        let left = glyphs[root].maxX - 0.5, right = bar.maxX - 2
+        let inside = glyphs.indices.filter { index in
+            index != root && glyphs[index].minX >= left && glyphs[index].maxX <= right + 0.75
+                && bar.midY - glyphs[index].baseline >= glyphs[index].size * 0.55
+                && bar.midY - glyphs[index].baseline <= glyphs[index].size * 1.2
+        }
+        guard !inside.isEmpty, let radicand = term(inside.map { glyphs[$0] }),
+              radicand.extent.lowerBound - left <= glyphs[root].size * 0.2,
+              right - radicand.extent.upperBound <= glyphs[root].size * 0.25 else { return nil }
+        let members = Set(inside + [root])
+        let box = members.reduce(bar) { $0.union(glyphs[$1].box) }
+        let inner = box.insetBy(dx: 0.5, dy: 0.5)
+        guard !glyphs.indices.contains(where: { !members.contains($0) && glyphs[$0].box.intersects(inner) }),
+              !bars.contains(where: { $0 != bar && $0.intersects(inner) }) else { return nil }
+        return Radical(node: .squareRoot(radicand.node), box: box, members: members)
     }
 
     /// The fraction a bar draws, or nil unless one row of glyphs sits just above it and one just
@@ -325,6 +409,15 @@ enum MathRecognizer {
                 guard opensOperand(at: item.box.minX) else { return nil }
                 flushNumber()
                 stack[stack.count - 1].append(fraction.node)
+                endsOperand = true
+                previousMaxX = item.box.maxX
+                index += 1
+                continue
+            }
+            if let radical = item.radical {
+                guard opensOperand(at: item.box.minX) else { return nil }
+                flushNumber()
+                stack[stack.count - 1].append(radical.node)
                 endsOperand = true
                 previousMaxX = item.box.maxX
                 index += 1

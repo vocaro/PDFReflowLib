@@ -1298,9 +1298,10 @@ enum LayoutReconstructor {
     /// need not fill its column or read as a sentence, so the prose-only `hangingEntries` rule
     /// cannot recognize it. Wallace page 456 sets twenty such pairs, including `33) $3500 @ 6%;`
     /// over `$5000 @ 3.5%`; three pairs on the same two edges establish the wrap instead of an
-    /// isolated indented expression.
+    /// isolated indented expression. A terminal operator on the opening row also proves a
+    /// single continuation, as on page 459.
     static func numberedAnswerWraps(in lines: [TextLine], body: CGFloat) -> [CGRect: CGRect] {
-        let marker = #"^[0-9]{1,3}\)\s"#
+        let marker = #"^[0-9]{1,3}\)"#
         let openings = lines.filter { $0.text.range(of: marker, options: .regularExpression) != nil }
         var candidates: [(wrap: TextLine, entry: TextLine)] = []
         for line in lines where !line.monospaced && !isList(line.text) {
@@ -1328,6 +1329,21 @@ enum LayoutReconstructor {
         var result: [CGRect: CGRect] = [:]
         for group in aligned where group.count >= 3 {
             for candidate in group { result[candidate.wrap.rect] = candidate.entry.rect }
+        }
+        // A single mathematical answer may break after an operator. PDFKit splits the
+        // operator at the end of Wallace 459's `39) ... −` into another box on the same
+        // printed row, while the next row carries `11b + 19`.
+        for candidate in candidates where result[candidate.wrap.rect] == nil {
+            let opening = candidate.entry.rect
+            let hasTerminalOperator = lines.contains { fragment in
+                fragment.rect.minX > opening.maxX
+                    && fragment.rect.minX >= candidate.wrap.rect.maxX
+                    && fragment.rect.minY < opening.maxY
+                    && fragment.rect.maxY > opening.minY
+                    && fragment.text.trimmingCharacters(in: .whitespacesAndNewlines)
+                        .range(of: #"^[+−\-×÷=]$"#, options: .regularExpression) != nil
+            }
+            if hasTerminalOperator { result[candidate.wrap.rect] = opening }
         }
         return result
     }
@@ -1944,13 +1960,15 @@ enum LayoutReconstructor {
         // the wrapped second line of each entry the page hangs, both read from the lines that
         // still reflow, as the table rows below are (#160).
         let markerList = hangingMarkerList(in: lines, body: typography.body)
+        let answerWraps = numberedAnswerWraps(in: lines, body: typography.body)
+        let wrappedAnswerOpenings = Set(answerWraps.values)
         var assembler = BlockAssembler(page: page.number, body: typography.body, leading: typography.leading,
                                        additionalLeading: typography.additionalLeading,
                                        hyphens: context.hyphens, imageLinks: imageLinks,
                                        imageDescriptions: tableAssets(images, tables: page.recognizedTables,
                                                                       page: page.number),
                                        hangingEntries: hangingEntries(in: lines, body: typography.body),
-                                       numberedAnswerWraps: numberedAnswerWraps(in: lines, body: typography.body),
+                                       numberedAnswerWraps: answerWraps,
                                        columnSeams: columnSeams(in: lines, body: typography.body,
                                                                 rightToLeft: rightToLeft),
                                        ordinaryHeights: ordinaryLineHeights(in: lines),
@@ -1976,6 +1994,9 @@ enum LayoutReconstructor {
             element.line.map { line -> LineRole in
                 let role = role(of: line, on: page, in: lines, typography: typography,
                                 labels: labels, judgesTitleWords: judgesTitleWords, rightToLeft: rightToLeft)
+                // A numbered answer whose final line hangs under its expression is still an
+                // item when its opening row happens to be too wide for the usual list detector.
+                if role == .prose && wrappedAnswerOpenings.contains(line.rect) { return .listItem }
                 // A heading standing in the block, and monospaced text that keeps its own
                 // breaks already, are left as they read.
                 guard role != .heading, role != .code,

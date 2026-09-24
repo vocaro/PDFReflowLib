@@ -172,6 +172,18 @@ func wallaceWrappedAnswersKeepTheirNumberedBlocks(pageNumber: Int) throws {
     }
 }
 
+@Test func wallaceOperatorEndedAnswerKeepsItsLastLine() throws {
+    let fixture = try SourceLayoutFixture.load("algebra-459")
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    let page = fixture.content()
+    let images = LayoutReconstructor.graphicsWithLabels(page).enumerated().map { ($0.element, "image-\($0.offset)") }
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: images, vocabulary: [], warnings: &warnings)
+    let answer = try #require(blocks.first { $0.text.hasPrefix("39)") })
+    #expect(answer.text.contains("− 7b2 − 11b + 19"))
+    #expect(!blocks.contains { $0.text == "11b + 19" })
+}
+
 @Test func leaderTableControlsSeparateLookupRowsFromContentsAndEllipses() {
     func page(_ strings: [String], gap: Double = 14, mono: Bool = false, header: Bool = true) -> PageContent {
         var lines = strings.enumerated().map { index, text in

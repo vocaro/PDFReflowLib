@@ -22,6 +22,24 @@ enum NativeTextPanels {
                 return panel.insetBy(dx: -1,dy: -1).contains(line.rect)
             })
             guard members.count >= 3, members.reduce(0,{ $0 + (elements[$1].line?.text.count ?? 0) }) >= 100 else { continue }
+            // A painted panel can stop between items of one list. Earthdata slide 7's panel
+            // contains `a.` but leaves `b.` immediately below it. Recursing over just the
+            // panel would take away the sibling that establishes `a.` as a marker (#219).
+            let panelLines = elements.compactMap(\.line)
+            let cutsMarkerRun = members.contains { index in
+                guard let marker = elements[index].line,
+                      let kind = LayoutReconstructor.markerKind(of: marker.text, whole: true),
+                      LayoutReconstructor.opensAloneAsMarker(marker, in: panelLines, body: body)
+                else { return false }
+                return elements.indices.contains { sibling in
+                    guard !members.contains(sibling), let next = elements[sibling].line,
+                          LayoutReconstructor.markerKind(of: next.text, whole: true) == kind,
+                          next.hasSize(marker.fontSize),
+                          abs(next.rect.minX - marker.rect.minX) < body * 0.5 else { return false }
+                    return abs(next.rect.minY - marker.rect.minY) <= body * 3
+                }
+            }
+            if cutsMarkerRun { continue }
             let first = members.min()!, last = members.max()!
             guard !tagged.contains(where: { first <= $0 && $0 <= last }) else { continue }
             let lower = (tagged.last(where: { $0 < first }) ?? -1) + 1

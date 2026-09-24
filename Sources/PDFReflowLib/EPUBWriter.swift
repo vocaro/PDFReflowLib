@@ -123,7 +123,8 @@ actor EPUBWriter {
             case let .listItem(item):
                 textBlocks += 1
                 if ArabicText.readsRightToLeft(block.text) { rightToLeftBlocks += 1 }
-                if var open = openList, !item.opensList, open.kind == item.kind {
+                if var open = openList,
+                   (item.level > 0 || (!item.opensList && open.kind == item.kind)) {
                     open.entries.append(.init(block: block, item: item, pagesBefore: heldPage.map { [$0] } ?? []))
                     openList = open
                     heldPage = nil

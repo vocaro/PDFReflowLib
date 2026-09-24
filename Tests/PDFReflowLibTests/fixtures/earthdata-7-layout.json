@@ -1,0 +1,501 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        41.277683820885841,
+        297.42393405756599,
+        19.992000639744006,
+        22.51200072038398
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.000000768,
+          "text" : "1. "
+        }
+      ],
+      "text" : "1. "
+    },
+    {
+      "rect" : [
+        41.277683820885841,
+        254.67392518956572,
+        19.992000639744006,
+        22.512000720384009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.000000768,
+          "text" : "2. "
+        }
+      ],
+      "text" : "2. "
+    },
+    {
+      "rect" : [
+        41.277683820885841,
+        211.92391632156549,
+        19.992000639744006,
+        22.512000720384009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.000000768,
+          "text" : "3. "
+        }
+      ],
+      "text" : "3. "
+    },
+    {
+      "rect" : [
+        356.71434391485866,
+        354.07267883032574,
+        73.107999728455923,
+        26.263999902447949
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 27.999999895999967,
+          "text" : "Goals"
+        }
+      ],
+      "text" : "Goals"
+    },
+    {
+      "rect" : [
+        79.293310037385851,
+        297.42393405756599,
+        382.6320122442238,
+        22.51200072038398
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.000000768,
+          "text" : "Enable big compute next to big data"
+        }
+      ],
+      "text" : "Enable big compute next to big data"
+    },
+    {
+      "rect" : [
+        79.293310037385851,
+        254.67392518956572,
+        493.32001578624022,
+        22.512000720384009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.000000768,
+          "text" : "Encourage user adoption of cloud for analytics"
+        }
+      ],
+      "text" : "Encourage user adoption of cloud for analytics"
+    },
+    {
+      "rect" : [
+        79.293310037385851,
+        211.92391632156549,
+        491.88001574016005,
+        22.512000720384009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.000000768,
+          "text" : "Maximum analytics capability at minimum cost"
+        }
+      ],
+      "text" : "Maximum analytics capability at minimum cost"
+    },
+    {
+      "rect" : [
+        80.620138079844338,
+        173.85393020832595,
+        16.660000116619983,
+        18.760000131319998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.000000139999983,
+          "text" : "a. "
+        }
+      ],
+      "text" : "a. "
+    },
+    {
+      "rect" : [
+        115.29331118938583,
+        173.85393020832595,
+        529.82000370873993,
+        18.760000131319998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.000000139999983,
+          "text" : "Use capabilities within NASA more effectively and efficiently"
+        }
+      ],
+      "text" : "Use capabilities within NASA more effectively and efficiently"
+    },
+    {
+      "rect" : [
+        80.620138079844338,
+        140.10392912832597,
+        16.660000116619983,
+        18.76000013131997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.000000139999983,
+          "text" : "b. "
+        }
+      ],
+      "text" : "b. "
+    },
+    {
+      "rect" : [
+        115.29331118938583,
+        140.10392912832597,
+        448.88000314215969,
+        18.76000013131997
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.000000139999983,
+          "text" : "Leverage analytics capabilities of external partners"
+        }
+      ],
+      "text" : "Leverage analytics capabilities of external partners"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    720,
+    405
+  ],
+  "caseID" : "ntrs-20180003024-earthdata-slides-2018",
+  "filledCells" : [
+
+  ],
+  "filledCellText" : [
+
+  ],
+  "graphics" : [
+    [
+      0,
+      0,
+      720,
+      405
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 24.000000768,
+      "monospaced" : false,
+      "rect" : [
+        41.277683820885841,
+        297.42393405756599,
+        19.992000639744006,
+        22.51200072038398
+      ],
+      "text" : "1."
+    },
+    {
+      "fontSize" : 24.000000768,
+      "monospaced" : false,
+      "rect" : [
+        41.277683820885841,
+        254.67392518956572,
+        19.992000639744006,
+        22.512000720384009
+      ],
+      "text" : "2."
+    },
+    {
+      "fontSize" : 24.000000768,
+      "monospaced" : false,
+      "rect" : [
+        41.277683820885841,
+        211.92391632156549,
+        19.992000639744006,
+        22.512000720384009
+      ],
+      "text" : "3."
+    },
+    {
+      "fontSize" : 27.999999895999967,
+      "monospaced" : false,
+      "rect" : [
+        356.71434391485866,
+        354.07267883032574,
+        73.107999728455923,
+        26.263999902447949
+      ],
+      "text" : "Goals"
+    },
+    {
+      "fontSize" : 24.000000768,
+      "monospaced" : false,
+      "rect" : [
+        79.293310037385851,
+        297.42393405756599,
+        382.6320122442238,
+        22.51200072038398
+      ],
+      "text" : "Enable big compute next to big data"
+    },
+    {
+      "fontSize" : 24.000000768,
+      "monospaced" : false,
+      "rect" : [
+        79.293310037385851,
+        254.67392518956572,
+        493.32001578624022,
+        22.512000720384009
+      ],
+      "text" : "Encourage user adoption of cloud for analytics"
+    },
+    {
+      "fontSize" : 24.000000768,
+      "monospaced" : false,
+      "rect" : [
+        79.293310037385851,
+        211.92391632156549,
+        491.88001574016005,
+        22.512000720384009
+      ],
+      "text" : "Maximum analytics capability at minimum cost"
+    },
+    {
+      "fontSize" : 20.000000139999983,
+      "monospaced" : false,
+      "rect" : [
+        80.620138079844338,
+        173.85393020832595,
+        16.660000116619983,
+        18.760000131319998
+      ],
+      "text" : "a."
+    },
+    {
+      "fontSize" : 20.000000139999983,
+      "monospaced" : false,
+      "rect" : [
+        115.29331118938583,
+        173.85393020832595,
+        529.82000370873993,
+        18.760000131319998
+      ],
+      "text" : "Use capabilities within NASA more effectively and efficiently"
+    },
+    {
+      "fontSize" : 20.000000139999983,
+      "monospaced" : false,
+      "rect" : [
+        80.620138079844338,
+        140.10392912832597,
+        16.660000116619983,
+        18.76000013131997
+      ],
+      "text" : "b."
+    },
+    {
+      "fontSize" : 20.000000139999983,
+      "monospaced" : false,
+      "rect" : [
+        115.29331118938583,
+        140.10392912832597,
+        448.88000314215969,
+        18.76000013131997
+      ],
+      "text" : "Leverage analytics capabilities of external partners"
+    }
+  ],
+  "page" : 7,
+  "paintOperations" : [
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          720,
+          405
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          0,
+          405
+        ],
+        [
+          720.00002303999997,
+          405
+        ],
+        [
+          720.00002303999997,
+          -1.295999999229025e-05
+        ],
+        [
+          0,
+          -1.295999999229025e-05
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          10.037401959999999,
+          340.48720666100803
+        ],
+        [
+          63.271655440000004,
+          53.07676633423597
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          12.037401959999999,
+          391.563972995244
+        ],
+        [
+          71.3090574,
+          391.563972995244
+        ],
+        [
+          71.3090574,
+          342.48720666100803
+        ],
+        [
+          12.037401959999999,
+          342.48720666100803
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          12.037401959999999,
+          342.48720666100803
+        ],
+        [
+          59.271655440000004,
+          49.07676633423597
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          89.108270631999986,
+          346.48818716800002
+        ],
+        [
+          608.34647603199994,
+          49.094489631999977
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          91.108270631999986,
+          393.5826768
+        ],
+        [
+          695.45474666399991,
+          393.5826768
+        ],
+        [
+          695.45474666399991,
+          348.48818716800002
+        ],
+        [
+          91.108270631999986,
+          348.48818716800002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          34.543308255999996,
+          157.52951970400002
+        ],
+        [
+          674.91340729599995,
+          176.72441497599996
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          36.543308255999996,
+          332.25393467999999
+        ],
+        [
+          707.45671555199999,
+          332.25393467999999
+        ],
+        [
+          707.45671555199999,
+          159.52951970400002
+        ],
+        [
+          36.543308255999996,
+          159.52951970400002
+        ]
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      12.037401959999999,
+      342.48720666100803,
+      59.271655440000004,
+      49.07676633423597
+    ]
+  ],
+  "rightsBasis" : "Slide 1 marks both presenters with *U.S. Civil Servant, and the NTRS record places Chris Lynnes at NASA Goddard Space Flight Center and Rahul Ramachandran at NASA Marshall Space Flight Center (17 U.S.C. 105). The NTRS API copyright record (checked 2026-09-17) gives determinationType GOV_PUBLIC_USE_PERMITTED, containsThirdPartyMaterial false, belongsToPublisher false and thirdPartyContentCondition NOT_SET; distribution PUBLIC, no export control. Every slide was checked: no AWS, Google, partner or vendor logo and no screenshot of a commercial product appears. Every slide shows the NASA insignia, whose use is restricted by 14 CFR 1221. Slide 2 carries uncredited satellite renders and a ground-station photo, slides 3-4 uncredited EOSDIS metrics chart rasters, and slides 12-21 uncredited pictogram icons. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94",
+  "sourceTitle" : "Earthdata Cloud Analytics Project",
+  "sourceURL" : "https://ntrs.nasa.gov/api/citations/20180003024/downloads/20180003024.pdf"
+}

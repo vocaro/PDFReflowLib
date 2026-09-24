@@ -364,9 +364,8 @@ struct ReflowBlock: Sendable, Equatable {
                 .filter { !$0.isEmpty }.joined(separator: "\n")
         }
     }
-    /// One item of a real list (#292). Items are a flat sequence rather than a tree: the writer
-    /// streams blocks and packs spine documents freely, so each item says whether it opens a list
-    /// element, and the writer opens and closes `<ul>`/`<ol>` as that and the kind change.
+    /// One item of a real list (#292). Items stream as a sequence with source-derived depth;
+    /// the writer nests a child run inside the preceding item (#219).
     struct ListItem: Sendable, Equatable {
         enum Kind: Sendable, Equatable {
             /// A bulleted item: `<ul>`, whose own marker replaces the printed glyph.
@@ -374,6 +373,8 @@ struct ReflowBlock: Sendable, Equatable {
             /// A numbered item in a run whose printed numbers ascend by one: `<ol>`, numbered
             /// from the opening item's `ordinal`.
             case ordered
+            /// A lettered sequence rendered by an ordered list with alphabetic markers.
+            case lettered(uppercase: Bool)
         }
         /// The item's text with its printed marker removed; the list renders its own.
         var text: InlineText
@@ -382,6 +383,8 @@ struct ReflowBlock: Sendable, Equatable {
         /// The printed number of an ordered item.
         var ordinal: Int?
         var kind: Kind
+        /// Indentation level measured against the containing list's marker edge.
+        var level = 0
         /// The first item of its list element. A following item that does not open a list
         /// continues the one open before it.
         var opensList = true
@@ -414,6 +417,9 @@ struct ReflowBlock: Sendable, Equatable {
         /// Whether the line's text is a transcription of a scan: recognized by OCR, or an
         /// inherited invisible text layer over the page image.
         var recognized = false
+        /// The source marker's writing edge and size, when a line opened this block.
+        var edge: CGFloat? = nil
+        var fontSize: CGFloat? = nil
     }
     /// Whether a crop took text the page printed *before* this block, so the page's own text
     /// does not begin here. Set only on the first block a page reflows, and read by the

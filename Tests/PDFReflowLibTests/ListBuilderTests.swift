@@ -343,13 +343,15 @@ func markerOpenedBlocksCarryTheirEvidenceAndCodeTableRowsAndNotesPagesCarryNone(
     var blocks = reconstruct(page)
     let bullets = blocks.filter { $0.text.hasPrefix("•") }
     #expect(bullets.count == 2)
-    #expect(bullets.allSatisfy { $0.listEvidence == .init(recognized: false) })
+    #expect(bullets.allSatisfy { $0.listEvidence?.recognized == false && $0.listEvidence?.edge != nil })
     #expect(blocks.first { $0.text.hasPrefix("if value") }?.listEvidence == nil)
     #expect(listItems(ListBuilder.build(blocks)).map(\.text.text) == ["Alternator switch position", "Battery master switch"])
     // A transcription says so on its evidence, and a page the document heads as notes leaves none.
     page.recognized = true
     blocks = reconstruct(page)
-    #expect(blocks.filter { $0.text.hasPrefix("•") }.allSatisfy { $0.listEvidence == .init(recognized: true) })
+    #expect(blocks.filter { $0.text.hasPrefix("•") }.allSatisfy {
+        $0.listEvidence?.recognized == true && $0.listEvidence?.edge != nil
+    })
     page.recognized = false
     #expect(reconstruct(page, notesPage: true).allSatisfy { $0.listEvidence == nil })
     // A numbered line on an edge the page sets a list on carries evidence; on an edge that reads

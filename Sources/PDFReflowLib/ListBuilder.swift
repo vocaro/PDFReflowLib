@@ -23,17 +23,17 @@ import Foundation
 ///   it becomes a paragraph that keeps its printed marker, and so does an accepted item that other
 ///   blocks set apart from the rest of its run. Everything else keeps its preformatted form and
 ///   printed marker: lettered items, contents entries, reference lists, exercise sets, answer keys,
-///   numbered section titles, a note's asterisk and recognition debris.
+///   numbered section titles, a note's asterisk and recognition debris. Lettered runs with
+///   ascending markers and source indentation can become ordered sublists (#219).
 ///
 /// A `+` bullet is read from the block's text rather than from reconstruction's marker reading,
 /// because reconstruction reads `+` as the operator it is in every other book: a paragraph that
 /// opens with `+`, a space and a word, and reads as words, is a candidate of the `+` family (the
 /// dietary guidelines set their top-level items so, and reconstruction joins each one whole).
 ///
-/// Items are flat (#219 item 3). A candidate of another family between two items of a run — the
-/// 9/11 brief's bullets under its numbered paragraphs, the guidelines' `-` items under a `+` —
-/// leaves the run intact but ends its list element, and the pieces on either side are judged as
-/// any piece is; nesting is not in the model.
+/// Source marker edges can nest a verified lettered run beneath an immediately preceding item
+/// (#219 item 3). A candidate of another family between two items of a run leaves that run
+/// intact; list level is determined from geometry, never from marker family alone.
 ///
 /// The pass streams (decision 0008). A block is held only while its verdict can still change. A
 /// run chains a candidate to the latest candidate of its family on the same page or the page
@@ -45,7 +45,7 @@ import Foundation
 struct ListBuilder {
     struct Marker: Equatable {
         /// A bullet glyph, or a number's punctuation.
-        enum Family: Hashable { case bullet(Character), number(Character) }
+        enum Family: Hashable { case bullet(Character), number(Character), letter(Character, Bool) }
         var family: Family
         /// The printed marker without its trailing space (`•`, `12.`).
         var printed: String
@@ -69,6 +69,14 @@ struct ListBuilder {
         }
         // A number of one to three digits (a year is no item number) with its punctuation and a
         // space.
+        if let range = text.range(of: "^[A-Za-z][.)]\\s+", options: .regularExpression) {
+            let token = text[range].trimmingCharacters(in: .whitespaces)
+            guard let letter = token.first, let punctuation = token.last,
+                  let scalar = letter.lowercased().unicodeScalars.first else { return nil }
+            return Marker(family: .letter(punctuation, letter.isUppercase), printed: token,
+                          value: Int(scalar.value - 96),
+                          length: text.distance(from: text.startIndex, to: range.upperBound))
+        }
         guard let range = text.range(of: "^[0-9]{1,3}[.)]\\s+", options: .regularExpression) else { return nil }
         let token = text[range].trimmingCharacters(in: .whitespaces)
         guard let punctuation = token.last, let value = Int(token.dropLast()) else { return nil }
@@ -142,6 +150,8 @@ struct ListBuilder {
         var previousEntry: Marker?
         /// The heading in force where this block arrived: the last heading block before it.
         var heading: String?
+        var edge: CGFloat?
+        var fontSize: CGFloat?
         var decided = false
     }
 
@@ -206,6 +216,8 @@ struct ListBuilder {
         case let .preformatted(text) where block.listEvidence != nil:
             entry.shaped = true
             recognized = block.listEvidence?.recognized ?? false
+            entry.edge = block.listEvidence?.edge
+            entry.fontSize = block.listEvidence?.fontSize
             if !text.text.contains("\n") { marker = Self.marker(plain) }
         case .paragraph where plain.hasPrefix("+") && Self.opensWithPlusBullet(plain):
             entry.shaped = true
@@ -225,7 +237,7 @@ struct ListBuilder {
             // A transcription of a scan offers numbered items only; a bullet in one is recognition
             // of a table rule or a header, which ends every run as any other list-shaped block
             // that is no item does.
-            if let marker, !(recognized && marker.value == nil),
+            if let marker, (!recognized || { if case .number = marker.family { return true }; return false }()),
                Self.readsAsItem(String(plain.dropFirst(marker.length))) {
                 entry.candidate = chain(marker, recognized: recognized, page: block.page, id: entry.id)
             } else {
@@ -263,7 +275,7 @@ struct ListBuilder {
             let chains: Bool
             switch marker.family {
             case .bullet: chains = true
-            case .number:
+            case .number, .letter:
                 if let value = marker.value, let before = run.lastValue, value != 1 {
                     chains = (1...2).contains(abs(value - before))
                 } else { chains = false }
@@ -321,6 +333,11 @@ struct ListBuilder {
             return
         }
         let candidates = members.map { held[position($0)].candidate! }
+        if case .letter = run.family {
+            let values = candidates.compactMap(\.marker.value)
+            guard zip(values, values.dropFirst()).allSatisfy({ $1 == $0 + 1 }),
+                  zip(members, members.dropFirst()).contains(where: { contiguous($0, $1) }) else { return }
+        }
         if case let .number(punctuation) = run.family {
             let values = candidates.compactMap(\.marker.value)
             guard zip(values, values.dropFirst()).allSatisfy({ $1 == $0 + 1 }) else { return }
@@ -406,7 +423,25 @@ struct ListBuilder {
                 }
                 held[position(id)].block.content = .listItem(.init(
                     text: Self.dropping(candidate.marker.length, from: text), marker: candidate.marker.printed,
-                    ordinal: candidate.marker.value, kind: candidate.marker.value == nil ? .unordered : .ordered,
+                    ordinal: candidate.marker.value,
+                    kind: { switch candidate.marker.family {
+                        case .bullet: return .unordered
+                        case .number: return .ordered
+                        case let .letter(_, uppercase): return .lettered(uppercase: uppercase)
+                    } }(),
+                    level: { () -> Int in
+                        guard case .letter = candidate.marker.family, let edge = entry.edge,
+                              let size = entry.fontSize else { return 0 }
+                        for previous in held[..<position(id)].reversed() {
+                            if case .sourcePage = previous.block.content { continue }
+                            guard case let .listItem(parent) = previous.block.content,
+                                  let parentEdge = previous.edge else { return 0 }
+                            let shift = edge - parentEdge
+                            if shift >= size * 0.75 && shift <= size * 5 { return parent.level + 1 }
+                            if shift < -size * 0.75 { return 0 }
+                        }
+                        return 0
+                    }(),
                     opensList: offset == 0))
                 held[position(id)].block.listEvidence = nil
             }

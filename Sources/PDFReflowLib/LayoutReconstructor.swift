@@ -2171,6 +2171,12 @@ enum LayoutReconstructor {
                 // A numbered answer whose final line hangs under its expression is still an
                 // item when its opening row happens to be too wide for the usual list detector.
                 if role == .prose && wrappedAnswerOpenings.contains(line.rect) { return .listItem }
+                // A repeated, hanging marker and the words on its printed row are one item,
+                // even when the regular columns of a slide resemble a table region (#219).
+                if lines.contains(where: { marker in
+                    opensAloneAsMarker(marker, in: lines, body: typography.body)
+                        && (marker == line || pieceBeside(marker, in: lines) == line)
+                }) { return role }
                 // A heading standing in the block, and monospaced text that keeps its own
                 // breaks already, are left as they read.
                 guard role != .heading, role != .code,

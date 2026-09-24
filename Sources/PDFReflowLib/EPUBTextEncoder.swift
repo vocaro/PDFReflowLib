@@ -113,22 +113,40 @@ enum EPUBTextEncoder {
     /// right to left carries `dir`, as a paragraph does (#41).
     static func list(_ kind: ReflowBlock.ListItem.Kind, start: Int?, entries: [ListEntry],
                      imagePaths: [String: String], labels: [Int: String] = [:]) throws -> SpinePacker.Piece {
-        let tag: String
-        switch kind {
-        case .unordered: tag = "ul"
-        case .ordered: tag = "ol"
+        func opening(_ kind: ReflowBlock.ListItem.Kind, _ start: Int?) -> (String, String) {
+            switch kind {
+            case .unordered: return ("ul", "<ul>")
+            case .ordered:
+                return ("ol", (start ?? 1) == 1 ? "<ol>" : "<ol start=\"\(start ?? 1)\">")
+            case let .lettered(uppercase):
+                let type = uppercase ? "A" : "a"
+                let initial = (start ?? 1) == 1 ? "" : " start=\"\(start ?? 1)\""
+                return ("ol", "<ol type=\"\(type)\"\(initial)>")
+            }
         }
-        let opening = kind == .ordered && (start ?? 1) != 1 ? "<ol start=\"\(start ?? 1)\">" : "<\(tag)>"
-        var markup = opening
+        var index = 0
         var pages: [Int] = []
-        for entry in entries {
-            let dir = ArabicText.readsRightToLeft(entry.block.text) ? " dir=\"rtl\"" : ""
-            let before = entry.pagesBefore.map { sourcePage($0, labels: labels) }.joined()
-            let after = entry.pagesAfter.map { sourcePage($0, labels: labels) }.joined()
-            markup += "<li\(dir)>\(before)\(try payload(entry.block, imagePaths: imagePaths, labels: labels))\(after)</li>"
-            pages += entry.pagesBefore + entry.block.sourcePages + entry.pagesAfter
+        func render(level: Int, kind: ReflowBlock.ListItem.Kind, start: Int?) throws -> String {
+            let (tag, first) = opening(kind, start)
+            var markup = first
+            while index < entries.count, entries[index].item.level == level {
+                let entry = entries[index]
+                index += 1
+                let dir = ArabicText.readsRightToLeft(entry.block.text) ? " dir=\"rtl\"" : ""
+                let before = entry.pagesBefore.map { sourcePage($0, labels: labels) }.joined()
+                let after = entry.pagesAfter.map { sourcePage($0, labels: labels) }.joined()
+                markup += "<li\(dir)>\(before)\(try payload(entry.block, imagePaths: imagePaths, labels: labels))\(after)"
+                pages += entry.pagesBefore + entry.block.sourcePages + entry.pagesAfter
+                if index < entries.count, entries[index].item.level == level + 1 {
+                    markup += try render(level: level + 1, kind: entries[index].item.kind,
+                                         start: entries[index].item.ordinal)
+                }
+                markup += "</li>"
+            }
+            return markup + "</\(tag)>"
         }
-        return SpinePacker.Piece(markup: markup + "</\(tag)>\n", sourcePages: pages, heading: nil)
+        return SpinePacker.Piece(markup: try render(level: 0, kind: kind, start: start) + "\n",
+                                 sourcePages: pages, heading: nil)
     }
 
     /// One table as EPUB 3 XHTML (#210).

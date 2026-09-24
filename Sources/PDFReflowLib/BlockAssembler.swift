@@ -196,6 +196,28 @@ extension LayoutReconstructor {
         guard let kind = markerKind(of: line.text, whole: true),
               !continuesPrintedRow(line, in: lines, body: body) else { return false }
         let gutter = body * 0.75
+        // A deck may hang every marker away from its words. Require a second marker of the
+        // same kind on the same edge, with each marker paired to one nearby row of words.
+        // Earthdata slide 7 prints 1–3 and a–b this way; a lone citation year cannot pass.
+        let pairedMarkers = lines.filter { candidate in
+            guard markerKind(of: candidate.text, whole: true) == kind,
+                  candidate.hasSize(line.fontSize),
+                  abs(candidate.rect.minX - line.rect.minX) < body * 0.5,
+                  let item = pieceBeside(candidate, in: lines) else { return false }
+            let gap = item.rect.minX - candidate.rect.maxX
+            return gap >= gutter && gap < body
+                && markerKind(of: item.text, whole: true) == nil
+        }
+        func ordinal(_ marker: TextLine) -> Int? {
+            let token = marker.text.dropLast()
+            if token.count <= 3, let number = Int(token) { return number }
+            guard token.count == 1, let scalar = token.first?.lowercased().unicodeScalars.first else { return nil }
+            return Int(scalar.value - 96)
+        }
+        let sequence = pairedMarkers.sorted { $0.rect.minY > $1.rect.minY }
+        if zip(sequence, sequence.dropFirst()).contains(where: { before, after in
+            (before == line || after == line) && ordinal(before).map { $0 + 1 == ordinal(after) } == true
+        }) { return true }
         for other in lines where other != line && other.sharesRow(with: line)
             && other.rect.minX >= line.rect.maxX {
             guard other.rect.minX - line.rect.maxX < gutter
@@ -634,7 +656,9 @@ struct BlockAssembler {
     /// there are the notes apparatus, which is not a list whatever its numbering (#219).
     private func markerOpenedBlock(_ line: TextLine) -> ReflowBlock {
         var block = ReflowBlock(content: .preformatted(line.content), page: page)
-        if !notesPage { block.listEvidence = .init(recognized: recognized) }
+        if !notesPage {
+            block.listEvidence = .init(recognized: recognized, edge: startEdge(line), fontSize: line.fontSize)
+        }
         return block
     }
 
@@ -1437,11 +1461,12 @@ struct BlockAssembler {
     /// columns of items, and the second column's text stands 1.2 bodies past the first column's
     /// items: it is a column, and it stays one.
     private func marksItem(_ above: TextLine, _ line: TextLine, text: InlineText) -> Bool {
-        guard LayoutReconstructor.isBulletGlyph(text.text) else { return false }
+        let bullet = LayoutReconstructor.isBulletGlyph(text.text)
+        guard bullet || LayoutReconstructor.markerKind(of: text.text, whole: true) != nil else { return false }
         let (aboveRect, lineRect) = (above.uprightRect, line.uprightRect)
         guard TextLine.sameRow(aboveRect, lineRect) else { return false }
         let indent = rightToLeft ? aboveRect.minX - lineRect.maxX : lineRect.minX - aboveRect.maxX
-        return indent >= 0 && indent < body * LayoutReconstructor.hangingIndentBound
+        return indent >= 0 && indent < body * (bullet ? LayoutReconstructor.hangingIndentBound : 1)
     }
 
     mutating func finish() -> [ReflowBlock] {

@@ -761,7 +761,7 @@
     {
       "id": "fed-explained-2021",
       "sourceSHA256": "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60",
-      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228). Source pages 19 and 21 visually reviewed: the 8 pt running head standing where the book keeps it on 119 of its 135 pages must be absent, while the 14 pt section headings lower on the page remain headings (#10). Pages 19 and 75 read against the source for the list conversion (#292): page 19 opens on items 2 to 4 of a numbered list whose first item is on page 18, so the list starts at 2; page 75's five examination objectives list 1 to 4, and item 5, whose wrapped line sets it apart, is a paragraph that keeps its printed number. Physical opener pages 8, 14, 24, 50, 66, 88 and 116: the complete unquoted display summary is one aside below its title and above the chapter contents, following the owner decision on #214; it is not a quotation or navigation heading. Source page 123 re-rendered for #191: the complete Box 7.1 native sidebar now reflows before Interagency Initiatives. The cross-page continuity check includes its actual opening heading immediately after page 122, and ordered text pins its introduction and closing outreach paragraph before the section below it.",
+      "basis": "Page 9 source raster reviewed: five functions in source order alongside Figure 1.1. Page 45 retains a graphic, without claiming its labels or arrows are semantically reconstructed. Physical page 46 source raster and native typography reviewed: prose beside the sidebar and above Table 3.1 must remain paragraphs, with both graphic regions retained. Source pages 13, 32, 54, 75, 77, 103, 109 and 123 visually reviewed; preserve ordinary prose and six genuine modest-size section headings beside graphics. Cover source and structure element 4417 reviewed: the title/subtitle spans form one H1, while Public Education & Outreach remains paragraph text. Source pages 33 and 122-123 visually reviewed for the two spine-document boundaries the packer writes there: the press-conference paragraph ends one document and the Communicating Policy Regularly and Clearly section opens the next with nothing between, and the consumer-compliance paragraph ends page 122 before Interagency Initiatives opens page 123 in the following document (#27). Does not bless the 12-point sub-headings this book sets in blue italic, which stay ordinary paragraphs on pages 33, 94 and 122 while the same style becomes a heading on page 123; on page 94 that leaves Electronic Check Processing at the end of a spine document with its paragraph opening the next (#228). Source pages 19 and 21 visually reviewed: the 8 pt running head standing where the book keeps it on 119 of its 135 pages must be absent, while the 14 pt section headings lower on the page remain headings (#10). Pages 19 and 75 read against the source for the list conversion (#292): page 19 opens on items 2 to 4 of a numbered list whose first item is on page 18, so the list starts at 2; page 75's five examination objectives list 1 to 4, and item 5, whose wrapped line sets it apart, is a paragraph that keeps its printed number. Physical opener pages 8, 14, 24, 50, 66, 88 and 116: the complete unquoted display summary is one aside below its title and above the chapter contents, following the owner decision on #214; it is not a quotation or navigation heading. Source page 123 re-rendered for #191: the complete Box 7.1 native sidebar now reflows before Interagency Initiatives. The cross-page continuity check includes its actual opening heading immediately after page 122, and ordered text pins its introduction and closing outreach paragraph before the section below it. Native source captures on physical pages 19, 34-37, 54, 56, 60, 63, 71, 73-74, 78-80 and 94-95 were reviewed for paragraph continuity alongside recovered painted sidebars. These checks retain complete source paragraphs rather than accepting conserved letters in interleaved columns. Page 35 also has a rendered-source review of main paragraph, sidebar and following paragraph order; page 95 has a rendered-source check of body leading beside smaller notes.",
       "spineContinuity": [
         {
           "sourcePages": [
@@ -862,7 +862,9 @@
             "Asset Valuations and Risk Appetite"
           ],
           "paragraphs": [
-            "These vulnerability assessments inform internal"
+            "These vulnerability assessments inform internal",
+            "However, it is very difficult to judge whether an asset price is over valued relative to fundamentals. As a result, analysis typically considers a range of possible valuation metrics, developments in areas where asset prices are rising",
+            "especially rapidly or into which investor flows have been considerable, or the implications of unusually low or high levels of volatility in certain markets."
           ]
         },
         {
@@ -956,6 +958,10 @@
                 "examining certain financial institutions to ensure and enforce compliance"
               ]
             }
+          ],
+          "paragraphs": [
+            "In addition, through their leaders and their connections to, and interactions with, members of their local communities, Reserve Banks provide the Federal Reserve System with a",
+            "wealth of information on conditions in virtually every part of the nation—information that is vital to formulating a national monetary policy that will help to maintain the health of the economy and the stability of the nation’s financial system."
           ]
         },
         {
@@ -1021,6 +1027,111 @@
           ],
           "headings": [
             "Promoting Consumer"
+          ]
+        },
+        {
+          "page": 34,
+          "paragraphs": [
+            "munications are tied to FOMC meetings and released on set dates. Other communications are associated with unanticipated events and released at the times of the events.",
+            "FOMC meetings are released three weeks after each meeting. The minutes cover all policy-related topics that receive a significant amount of attention during the meeting. They describe the views expressed by the participants, the risks and uncertainties attending the outlook, and the reasons for the Committee’s decisions. The minutes can help the public interpret economic and financial developments and better understand the Committee’s decisions. As an official record of the meeting, the minutes identify all attendees and include votes on all authorized policy operations."
+          ]
+        },
+        {
+          "page": 35,
+          "paragraphs": [
+            "Committee policy statements. In addition to the regular FOMC statements following every meeting, the FOMC also issues statements from time to time providing additional information on specific topics. Three examples of",
+            "such statements discussed in this section are the statement of the Committee’s longer-run goals and monetary policy strategy, statements regarding balance sheet normalization principles and plans, as well as its statement regarding monetary policy implementation in the longer-run."
+          ]
+        },
+        {
+          "page": 36,
+          "paragraphs": [
+            "to support the flow of credit to households and businesses. The Federal Reserve also established dollar liquidity swap arrangements with several foreign central banks to address global dollar funding pressures.",
+            "Another way that the Federal Reserve responded to the crisis was through adjustments to its traditional policy tool, the federal funds rate. Beginning in the fall of 2007, the FOMC began cutting its target for the federal funds rate and, by the end of 2008, the target had been reduced from a level of 5¼ percent to a range of 0 to ¼ percentage point (see figure 3.2).",
+            "The FOMC’s use of forward guidance influenced expectations about the future course of monetary policy. Because households and businesses can use this information in making decisions about spending and investment, forward guidance about future monetary policy can influence financial and economic conditions today. Over the course of several years, the FOMC used",
+            "various forms of forward guidance and, by December 2012, the FOMC’s statement was pointing to the economic conditions that the Committee expected to see before it would begin to consider raising its target range for the federal funds rate."
+          ]
+        },
+        {
+          "page": 37,
+          "paragraphs": [
+            "and inflation was projected to move up to 2 percent. With this backdrop, the FOMC decided that it would begin normalizing the stance of monetary policy in order to continue to foster its macroeconomic objectives. The term “normalization” refers to steps the FOMC took to return both short-term interest rates as well as the size and composition of the Federal Reserve’s balance sheet to more-normal levels."
+          ]
+        },
+        {
+          "page": 56,
+          "paragraphs": [
+            "When a systemwide shock results in all lenders demanding liquidity at the same time, institutions engaged in this maturity transformation",
+            "are at risk of being run. Deposit insurance provides protection within the traditional banking system. Nevertheless, some assets such as repurchase agreements (or “repos”), asset-backed commercial paper, or money market funds are also subject to run risk and, indeed, came under considerable pressure during the crisis. For this reason, the Federal Reserve actively monitors, as best it can given available data and measurement, both liquidity risk and the degree of maturity transformation in the financial system."
+          ]
+        },
+        {
+          "page": 60,
+          "paragraphs": [
+            "scenario that has features similar to the strains experienced in a severe recession and which includes, as appropriate, identified salient risks;"
+          ]
+        },
+        {
+          "page": 63,
+          "paragraphs": [
+            "The Federal Reserve participates in international bodies, such as the Basel Committee on Banking Supervision and the FSB, to address issues associated with the interconnected global financial system and the global activities of large U.S. financial institutions (figure 4.6).",
+            "Through both venues, the Federal Reserve is engaged with the international community in monitoring the global financial system and promoting the adoption of sound policies across countries."
+          ]
+        },
+        {
+          "page": 71,
+          "paragraphs": [
+            "Consistent with the principle of risk-focused supervision, the Federal Reserve conducts examinations of the international operations of state member banks, Edge Act and agreement corporations, and BHCs as a component of its overall assessment of the financial, operational, and compliance risks of supervised institutions and the risk-management processes and procedures to control such risks. The Federal Reserve conducts examination activities of international operations both at the U.S. head",
+            "offices of supervised institutions and abroad. Examinations conducted abroad are done with the cooperation of host-country supervisors."
+          ]
+        },
+        {
+          "page": 73,
+          "paragraphs": [
+            "The Federal Reserve shares responsibility for ensuring financial institutions operate safely and soundly. Based on a bank’s activities and how it is formed, it may be supervised and regulated by a regulator other than the Federal Reserve (figure 5.3). Federal and state regulators collaborate, for example by sharing data and examination findings where appropriate, to ensure that supervision and regulation of financial institutions are effective, efficient, and consistent.",
+            "Two councils—comprised of federal and state regulators and including Federal Reserve representatives—play important coordinating roles in the supervision and regulation of financial institutions: the FSOC, and the Federal Financial Institutions Examination Council (FFIEC). For information on the FSOC, see the “Promoting Financial System Stability” section (figure 4.5). The FFIEC is a formal interagency body that includes representatives of the Federal Reserve Board, the FDIC, the OCC, the Consumer Financial Protection Bureau, the National Credit Union Administration, and the State Liaison Committee. For more information on the FFIEC, visit https://www.ffiec.gov."
+          ]
+        },
+        {
+          "page": 74,
+          "paragraphs": [
+            "The Federal Reserve applies heightened prudential standards to the largest, most complex U.S. holding companies and foreign banking organizations. These standards become progressively more stringent as the risk profile or systemic importance of that regulated entity increases.",
+            "Standards include enhanced risk-based capital and leverage requirements, liquidity requirements, stress tests, and resolution plan (that is, “living will”) requirements."
+          ]
+        },
+        {
+          "page": 78,
+          "paragraphs": [
+            "Consolidated supervision of holding companies encompasses the parent company and its subsidiaries, and allows the Federal Reserve to understand the organization’s structure, activities, resources, and risks, as well as to address financial, managerial, operational, or other deficiencies before they pose a danger to",
+            "the holding company’s subsidiary depository institution(s)."
+          ]
+        },
+        {
+          "page": 79,
+          "paragraphs": [
+            "With the growth of the international operations of large global financial institutions, the Federal Reserve and other U.S. and foreign banking supervisors have broadened and formalized cooperative arrangements through “supervisory colleges.” Supervisory colleges are multilateral working groups of relevant supervisors that are formed to promote effective, ongoing consoli-",
+            "dated supervision of the overall operations of an international banking group. Cooperation within the working groups involves bilateral and multilateral contacts and formal and informal information-sharing arrangements."
+          ]
+        },
+        {
+          "page": 80,
+          "paragraphs": [
+            "New regulations may be adopted or existing ones revised—for example, in response to new laws enacted by Congress or because of evolving risk conditions in the financial marketplace.",
+            "If Congress enacts a legislative change—perhaps in response to a past crisis or problem, or to adapt the nation’s banking laws to respond to changes in the marketplace—the Federal Reserve might issue regulations to ensure that institutions comply with the new law (see figure 5.7 for a list of Federal Reserve regulations and the topics they address)."
+          ]
+        },
+        {
+          "page": 94,
+          "paragraphs": [
+            "by the Board pursuant to the Expedited Funds Availability Act. In expanding their return check services, the Reserve Banks played a major",
+            "role in speeding the return of unpaid checks to banks of first deposit—banks in which checks are initially deposited for collection."
+          ]
+        },
+        {
+          "page": 95,
+          "paragraphs": [
+            "In the 1990s, the Reserve Banks began offering electronic check presentment services to banks. By the early 2000s, about 20 to 25 percent of the checks the Reserve Banks handled were delivered electronically to paying banks through these services. Overall, most banks continued to sim-ply demand that original checks be presented for payment. As a result, the nation’s check-clearing system remained dependent on paper",
+            "and vulnerable to disruptions in transportation networks."
           ]
         }
       ]

@@ -1312,6 +1312,11 @@ row-major sort, one entry of each column at a time.
   the FAA handbook's acknowledgments name a chapter at the end of every credit and set each credit
   on its own line, so every row ends in a digit and three of the twenty end within half a body of
   one another, and nothing about that page is a table (#171).
+  A larger baseline gap ends the run when four following rows prove a full-measure
+  prose paragraph: the same outer edge and size, stable leading, lowercase continuations,
+  no terminal numeric cells or list markers, and a complete sentence. An indented wrapped
+  cell does not meet that proof. This keeps recovered staff contacts from absorbing the
+  separately spaced copyright paragraph beneath them.
 - A run the page **filled to one measure** states no cell boundary, however far apart the
   extractor kept its opening pieces: a cell is set to its content and a paragraph is set to a
   measure, so a table's rows end raggedly and a paragraph's lines end again and again on the same

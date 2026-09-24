@@ -114,3 +114,41 @@ func wrappedDisplaySummaryDoesNotRaiseOrdinaryHeadingSize(number: Int) throws {
         "The larger body continues on its own wider leading.",
         "A smaller note stands here", "another note starts further below."])
 }
+
+@Test func modalFedBodyKeepsItsLeadingBesideSmallerFigureNotes() throws {
+    let fixture = try SourceLayoutFixture.load("fed-body-95")
+    #expect(fixture.sourceSHA256 == "8db8fd9e1de63ac25a6f9585d78ded12f45ab56f0c14c52c199b36b368f84d60")
+    #expect(fixture.page == 95)
+    var original = fixture.content()
+    original.lines = original.lines.map { line in
+        guard let attributed = fixture.attributedLines.first(where: { $0.text == line.text }) else { return line }
+        return TextLine(content: NativeTextReader.inlineText(from: attributed.attributedString()), rect: line.rect,
+                        fontSize: line.fontSize, monospaced: line.monospaced)
+    }
+    let page = TextBackdrop.compose(original, graphics: .init(regions: original.graphics,
+        unsupported: false, images: original.pictures, paints: fixture.paints))
+    let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines, documentBody: 10)
+    #expect(typography.body == 10)
+    #expect(typography.headingBody == 10)
+    #expect(typography.leading == 10)
+    #expect(typography.additionalLeading == [10: 16])
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page,
+        images: crops.enumerated().map { ($0.element, "image-\($0.offset)") },
+        vocabulary: LayoutReconstructor.vocabulary(in: [page]), warnings: &warnings, documentBody: 10)
+    let paragraph = try #require(blocks.first { block in
+        if case .paragraph = block.content { return block.text.hasPrefix("In 2003, Congress passed") }
+        return false
+    })
+    #expect(paragraph.text.contains("facilitated electronic check processing"))
+    #expect(paragraph.text.contains("digital images of checks electronically to banks"))
+    #expect(paragraph.text.hasSuffix("By creating widespread opportunities for"))
+    let smaller = page.lines.filter { $0.fontSize == 8 }
+    let uncorroborated = PageTypography(pageLines: page.lines, reflowableLines: smaller,
+                                      documentBody: 10)
+    #expect(uncorroborated.additionalLeading[10] == nil)
+    let synthetic = PageTypography(pageLines: page.lines, reflowableLines: page.lines,
+                                   documentBody: 10, nativeSizeEvidence: false)
+    #expect(synthetic.additionalLeading.isEmpty)
+}

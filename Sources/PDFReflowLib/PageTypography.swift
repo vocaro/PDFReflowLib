@@ -59,8 +59,10 @@ struct PageTypography: Equatable {
         // The document must corroborate that larger size. A page can also contain a larger
         // display summary above its ordinary body and headings; that summary must not raise
         // the threshold for everything beneath it (NOAA's focus pages).
+        // Even when that prose equals the modal size, smaller notes may dominate the
+        // line-spacing evidence. A corroborated run supplies its own leading in that case.
         let proseBody = nativeSizeEvidence ? documentBody.flatMap { documentBody in
-            documentBody > body ? Self.wrappedProseBody(reflowableLines, ceiling: documentBody * 1.05) : nil
+            documentBody >= body ? Self.wrappedProseBody(reflowableLines, ceiling: documentBody * 1.05) : nil
         } : nil
         let headingBody = max(established.map { max(body, $0) } ?? headingPageBody, proseBody ?? 0)
         let documentFloor = documentBody.map { established == nil ? $0 * 1.1 : 0 } ?? 0

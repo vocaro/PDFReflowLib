@@ -62,7 +62,7 @@ struct PageTypography: Equatable {
         // Even when that prose equals the modal size, smaller notes may dominate the
         // line-spacing evidence. A corroborated run supplies its own leading in that case.
         let proseBody = nativeSizeEvidence ? documentBody.flatMap { documentBody in
-            documentBody >= body ? Self.wrappedProseBody(reflowableLines, ceiling: documentBody * 1.05) : nil
+            documentBody >= body ? Self.wrappedProseRuns(reflowableLines, ceiling: documentBody * 1.05).compactMap { $0.first?.fontSize }.max() : nil
         } : nil
         let headingBody = max(established.map { max(body, $0) } ?? headingPageBody, proseBody ?? 0)
         let documentFloor = documentBody.map { established == nil ? $0 * 1.1 : 0 } ?? 0
@@ -72,18 +72,73 @@ struct PageTypography: Equatable {
         self.documentFloor = documentFloor
         headingThreshold = max(headingPageBody * 1.25, headingBody * 1.1, documentFloor)
         leading = LayoutReconstructor.statedLeading(reflowableLines)
+        var secondary: [Int: CGFloat] = [:]
         if let proseBody, let ownLeading = LayoutReconstructor.statedLeading(reflowableLines.filter {
             Int($0.fontSize.rounded()) == Int(proseBody.rounded())
         }) {
-            additionalLeading = [Int(proseBody.rounded()): ownLeading]
-        } else { additionalLeading = [:] }
+            secondary[Int(proseBody.rounded())] = ownLeading
+        }
+        if nativeSizeEvidence, let documentBody, documentBody >= body,
+                  let ownLeading = Self.shortParagraphLeading(reflowableLines, size: documentBody) {
+            secondary[Int(documentBody.rounded())] = ownLeading
+        }
+        additionalLeading = secondary
     }
 
     /// A second body size needs stronger evidence than the modal estimate: four wrapped rows,
     /// 200 characters, a stable left edge and leading, and lowercase continuations. Display
     /// quotations, captions, bold headings and tagged headings cannot supply this evidence.
-    private static func wrappedProseBody(_ lines: [TextLine], ceiling: CGFloat) -> CGFloat? {
-        guard lines.count <= 2_000 else { return nil }
+    static func wrappedProseRuns(_ lines: [TextLine], ceiling: CGFloat) -> [[TextLine]] {
+        nativeWrappedRuns(lines).filter { run in
+            guard run.count >= 4, run.reduce(0, { $0 + $1.text.count }) >= 200,
+                  let first = run.first, first.fontSize <= ceiling, let opening = first.text.first,
+                  !"\"“‘«".contains(opening), !LayoutReconstructor.isCaption(first.text),
+                  run.allSatisfy({ ($0.structure?.headingLevel ?? 0) == 0
+                      && !LayoutReconstructor.readsWhollyBold($0) }),
+                  run.dropFirst().filter({ $0.text.first?.isLowercase == true }).count >= 3
+            else { return false }
+            let measure = run.map(\.rect.width).max() ?? 0
+            guard measure >= first.fontSize * 16,
+                  run.dropLast().allSatisfy({ $0.rect.width >= measure * 0.75 }),
+                  run.filter({ LayoutReconstructor.readsAsSentence($0) }).count >= 3
+            else { return false }
+            return true
+        }
+    }
+
+    /// The same geometric runs also supply spacing when a page has two short body paragraphs.
+    /// This weaker count can establish only leading, never a larger heading/body threshold.
+    /// Separate paragraphs must corroborate one another at the document's own body size.
+    private static func shortParagraphLeading(_ lines: [TextLine], size: CGFloat) -> CGFloat? {
+        let runs = nativeWrappedRuns(lines).filter { run in
+            guard run.count >= 2, let first = run.first,
+                  abs(first.fontSize - size) <= size * 0.05,
+                  run.reduce(0, { $0 + $1.text.count }) >= 100,
+                  first.text.first.map({ !"\"“‘«".contains($0) }) == true,
+                  !LayoutReconstructor.isCaption(first.text),
+                  run.allSatisfy({ ($0.structure?.headingLevel ?? 0) == 0
+                      && !LayoutReconstructor.readsWhollyBold($0)
+                      && !LayoutReconstructor.isList($0.text)
+                      && LayoutReconstructor.readsAsSentence($0) }) else { return false }
+            let measure = run.map(\.rect.width).max() ?? 0
+            return measure >= size * 16 && run.dropLast().allSatisfy { $0.rect.width >= measure * 0.75 }
+        }
+        guard runs.count >= 2, runs.reduce(0, { $0 + $1.count }) >= 5,
+              runs.flatMap({ $0 }).reduce(0, { $0 + $1.text.count }) >= 300,
+              let first = runs.first?.first else { return nil }
+        let measure = runs[0].map(\.rect.width).max() ?? 0
+        guard runs.allSatisfy({ run in
+            abs(run[0].rect.minX - first.rect.minX) <= size * 0.5
+                && abs((run.map(\.rect.width).max() ?? 0) - measure) <= measure * 0.2
+        }) else { return nil }
+        let drops = runs.flatMap { run in zip(run, run.dropFirst()).map { $0.rect.maxY - $1.rect.maxY } }
+        guard drops.count >= 3, let leading = drops.first,
+              drops.allSatisfy({ abs($0 - leading) <= max(1, leading * 0.1) }) else { return nil }
+        return (leading * 2).rounded() / 2
+    }
+
+    private static func nativeWrappedRuns(_ lines: [TextLine]) -> [[TextLine]] {
+        guard lines.count <= 2_000 else { return [] }
         var runs: [[TextLine]] = []
         for line in lines.sorted(by: { $0.rect.maxY > $1.rect.maxY }) {
             guard !line.monospaced, line.turn == .upright else { continue }
@@ -98,21 +153,7 @@ struct PageTypography: Equatable {
             }) { runs[index].append(line) }
             else { runs.append([line]) }
         }
-        return runs.compactMap { run -> CGFloat? in
-            guard run.count >= 4, run.reduce(0, { $0 + $1.text.count }) >= 200,
-                  let first = run.first, first.fontSize <= ceiling, let opening = first.text.first,
-                  !"\"“‘«".contains(opening), !LayoutReconstructor.isCaption(first.text),
-                  run.allSatisfy({ ($0.structure?.headingLevel ?? 0) == 0
-                      && !LayoutReconstructor.readsWhollyBold($0) }),
-                  run.dropFirst().filter({ $0.text.first?.isLowercase == true }).count >= 3
-            else { return nil }
-            let measure = run.map(\.rect.width).max() ?? 0
-            guard measure >= first.fontSize * 16,
-                  run.dropLast().allSatisfy({ $0.rect.width >= measure * 0.75 }),
-                  run.filter({ LayoutReconstructor.readsAsSentence($0) }).count >= 3
-            else { return nil }
-            return first.fontSize
-        }.max()
+        return runs
     }
 
     /// The typography of a whole page's lines, with no document floor: what the label survey and

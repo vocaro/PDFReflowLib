@@ -31,9 +31,9 @@ enum MathExerciseRegionJoin {
     }
 
     private static func danglingNumberedPrefix(_ text: String) -> Bool {
+        let ending = text.trimmingCharacters(in: .whitespaces)
         guard text.range(of: #"^\d{1,3}\)\s*"#, options: .regularExpression) != nil,
-              text.trimmingCharacters(in: .whitespaces).hasSuffix("−")
-                || text.trimmingCharacters(in: .whitespaces).hasSuffix("-") else { return false }
+              (ending.hasSuffix("−") || ending.hasSuffix("-")) else { return false }
         // The exercise label contributes one closing parenthesis of its own.
         return text.count(where: { $0 == "(" }) >= text.count(where: { $0 == ")" })
     }

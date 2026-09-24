@@ -34,6 +34,8 @@ func exerciseFragmentJoinRefusesASecondNeighbourAndACompleteExpression() {
     #expect(MathExerciseRegionJoin.joined([fragment], lines: [stub, other], body: 12) == [fragment])
     let complete = TextLine(text: "22) (− 2)(− 5/6)", rect: stub.rect, fontSize: 12)
     #expect(MathExerciseRegionJoin.joined([fragment], lines: [complete], body: 12) == [fragment])
+    let unnumbered = TextLine(text: "a printed word-", rect: stub.rect, fontSize: 12)
+    #expect(MathExerciseRegionJoin.joined([fragment], lines: [unnumbered], body: 12) == [fragment])
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/29"))

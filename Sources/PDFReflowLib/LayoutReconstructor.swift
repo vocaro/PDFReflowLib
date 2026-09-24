@@ -493,6 +493,8 @@ enum LayoutReconstructor {
         /// Native wrapped body text reflows over this preserved crop. The artwork stays
         /// visible, but its bounds must not weave independently established prose columns.
         var proseBackdrop = false
+        /// A source-proved broken word widens below a panel; geometry itself stays unchanged.
+        var panelContinuationFrom: CGRect?
     }
 
     /// Convenience for callers that do not report an abandoned cut.
@@ -1856,8 +1858,13 @@ enum LayoutReconstructor {
             }
         }
         let contradicted = contradictedHeadingGroups(elements, roles: roles, rank: context.headingRank)
-        let continuations = ColumnContinuation.pairs(elements, roles: roles, body: typography.body)
+        var continuations = ColumnContinuation.pairs(elements, roles: roles, body: typography.body)
             .merging(page.recognized || page.hasSyntheticTextStyle ? [:] : InterruptedColumnContinuation.pairs(elements, roles: roles, body: typography.body)) { existing, _ in existing }
+        for index in elements.indices where index > 0 && roles[index] == .prose && roles[index - 1] == .prose {
+            if let previous = elements[index].panelContinuationFrom, elements[index - 1].line?.rect == previous {
+                continuations[index] = index - 1
+            }
+        }
         let suspendedAt = Set(continuations.values)
         var paragraphHandles: [Int: Int] = [:]
         for (index, element) in elements.enumerated() {

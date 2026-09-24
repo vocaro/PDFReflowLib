@@ -9,8 +9,8 @@ enum NativeTextPanels {
         guard !panels.isEmpty, panels.count <= 128, elements.count <= 2_000 else { return elements }
         // structuredOrder has already validated these tags and their intervening barriers.
         // Geometry may group untagged prose, but cannot override the source's reading order.
-        guard !elements.contains(where: { $0.line?.structure != nil }) else { return elements }
-        struct Group { var rect: CGRect; var indices: Set<Int>; var first: Int }
+        let tagged = elements.indices.filter { elements[$0].line?.structure != nil }
+        struct Group { var rect: CGRect; var indices: Set<Int>; var first: Int; var span: Range<Int> }
         var groups: [Group] = [], claimed: Set<Int> = []
         for panel in panels.sorted(by: { $0.width * $0.height < $1.width * $1.height }) {
             // Figures and semantic tables within a panel have their own reading structure.
@@ -22,13 +22,19 @@ enum NativeTextPanels {
                 return panel.insetBy(dx: -1,dy: -1).contains(line.rect)
             })
             guard members.count >= 3, members.reduce(0,{ $0 + (elements[$1].line?.text.count ?? 0) }) >= 100 else { continue }
-            groups.append(Group(rect: panel, indices: members, first: members.min()!)); claimed.formUnion(members)
+            let first = members.min()!, last = members.max()!
+            guard !tagged.contains(where: { first <= $0 && $0 <= last }) else { continue }
+            let lower = (tagged.last(where: { $0 < first }) ?? -1) + 1
+            let upper = tagged.first(where: { $0 > last }) ?? elements.count
+            groups.append(Group(rect: panel, indices: members, first: first, span: lower..<upper))
+            claimed.formUnion(members)
         }
         guard !groups.isEmpty else { return elements }
         let outside = elements.indices.filter { !claimed.contains($0) }
         var runs: [[Int]] = []
         for index in outside.sorted(by: { elements[$0].rect.maxY > elements[$1].rect.maxY }) {
-            guard let line = elements[index].line, line.turn == .upright, !line.monospaced else { continue }
+            guard let line = elements[index].line, line.structure == nil,
+                  line.turn == .upright, !line.monospaced else { continue }
             if let run = runs.indices.last(where: { number in
                 let items = runs[number], previous = elements[items.last!].line!, size = max(line.fontSize,previous.fontSize)
                 let drop = previous.rect.minY - line.rect.minY
@@ -42,14 +48,15 @@ enum NativeTextPanels {
             else { runs.append([index]) }
         }
         var insertions: [Int: [[LayoutReconstructor.Element]]] = [:]
+        var continuationStarts: [Int: CGRect] = [:]
         for group in groups.sorted(by: { $0.first < $1.first }) {
             let adjacent = runs.filter { run in
-                guard run.count >= 3, run.filter({ LayoutReconstructor.readsAsSentence(elements[$0].line!) }).count >= 2 else { return false }
+                guard run.count >= 3, run.allSatisfy(group.span.contains), run.filter({ LayoutReconstructor.readsAsSentence(elements[$0].line!) }).count >= 2 else { return false }
                 // A paragraph in a neighboring, already ordered column is not interrupted
-                // by this panel. Move only a group whose current range overlaps that run;
-                // otherwise retain the column order already established above.
+                // by this panel. Retain that order unless the source proves a broken word
+                // continuing into the wider measure immediately below this panel.
                 guard let first = run.min(), let last = run.max(), let panelLast = group.indices.max(),
-                      first < panelLast && last > group.first else { return false }
+                      (first < panelLast && last > group.first) || widerContinuation(run) != nil else { return false }
                 let bounds = union(run.map { elements[$0].rect })
                 let overlap = min(bounds.maxY,group.rect.maxY) - max(bounds.minY,group.rect.minY)
                 guard overlap >= min(bounds.height,group.rect.height) * 0.5 else { return false }
@@ -61,7 +68,44 @@ enum NativeTextPanels {
             }
             // Complete the adjacent paragraph, including its wider continuation below the
             // panel. The panel cannot interrupt a word merely because its midpoint is higher.
-            let anchor = adjacent.compactMap(\.last).max() ?? outside.last(where: { $0 < group.first }) ?? -1
+            func widerContinuation(_ run: [Int]) -> [Int]? {
+                let last = run.last!, before = elements[last].line!
+                guard before.text.hasSuffix("-") || before.text.hasSuffix("\u{00ad}") else { return nil }
+                let size = before.fontSize
+                let leading = elements[run[0]].rect.minY - elements[run[1]].rect.minY
+                let following = runs.filter { next in
+                    guard next.count >= 2, next.allSatisfy(group.span.contains),
+                          let first = next.first, first > last,
+                          let after = elements[first].line, after.text.first?.isLowercase == true,
+                          abs(after.fontSize - size) <= size * 0.1,
+                          abs(before.rect.minY - after.rect.minY - leading) <= max(1, leading * 0.2),
+                          before.rect.minY >= group.rect.minY - size * 2,
+                          after.rect.maxY <= group.rect.minY + size * 0.2,
+                          after.rect.width >= before.rect.width + size * 2 else { return false }
+                    // A broken word may finish in the wider measure immediately below a
+                    // panel. Its new outer edge follows that panel, while its far edge still
+                    // reaches the original text column. Other columns cannot supply a row.
+                    let nearGap = rightToLeft ? group.rect.minX - before.rect.maxX
+                                             : before.rect.minX - group.rect.maxX
+                    let outerEdge = rightToLeft ? abs(after.rect.maxX - group.rect.maxX)
+                                               : abs(after.rect.minX - group.rect.minX)
+                    let reachesColumn = rightToLeft ? after.rect.minX <= before.rect.minX + size * 3
+                                                   : after.rect.maxX >= before.rect.maxX - size * 3
+                    guard nearGap >= -1, nearGap <= body * 5, outerEdge <= size,
+                          reachesColumn else { return false }
+                    return !elements.indices.contains { index in
+                        index > last && index < first && !group.indices.contains(index)
+                    }
+                }
+                guard following.count == 1 else { return nil }
+                return following[0]
+            }
+            let anchor = adjacent.map { run -> Int in
+                let last = run.last!
+                guard let following = widerContinuation(run) else { return last }
+                continuationStarts[following.first!] = elements[last].rect
+                return following.last!
+            }.max() ?? outside.last(where: { $0 < group.first }) ?? -1
             let members = LayoutReconstructor.ordered(group.indices.sorted().map { elements[$0] }, bodySize: body,
                                                        rightToLeft: rightToLeft)
             let unit = LayoutReconstructor.Element(rect: group.rect, nativePanel: members.compactMap(\.line))
@@ -69,7 +113,9 @@ enum NativeTextPanels {
         }
         var result = (insertions[-1] ?? []).flatMap { $0 }
         for index in outside {
-            result.append(elements[index]); result += (insertions[index] ?? []).flatMap { $0 }
+            var element = elements[index]
+            element.panelContinuationFrom = continuationStarts[index]
+            result.append(element); result += (insertions[index] ?? []).flatMap { $0 }
         }
         return result
     }

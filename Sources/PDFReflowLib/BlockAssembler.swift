@@ -1198,6 +1198,17 @@ struct BlockAssembler {
     /// the one beside it.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard prev.wraps != false else { return false }
+        // A scanned book can place a footnote call at the end of one paragraph and indent
+        // the next paragraph's opening line by one body. Warren 100 and 122 have inherited
+        // OCR that reads those raised calls as `^^` or `^^^`; the preceding line often fills
+        // the measure, so the usual short-line test cannot see the break (#209). A genuine
+        // hanging wrap does not follow a note call and is left to the ordinary column test.
+        if recognized, let last = prev.text.last, last == "^",
+           line.text.first?.isUppercase == true,
+           abs(prev.uprightRect.midY - line.uprightRect.midY) > body * 0.5 {
+            let indent = startEdge(line) - startEdge(prev)
+            if indent >= body * 0.75 && indent <= body * 1.75 { return false }
+        }
         // A line the page outdented a marker onto opens an entry of its own, whatever stands
         // above it: that is what the page set the marker column to say (#282).
         guard !markerEntries.contains(line.rect) else { return false }

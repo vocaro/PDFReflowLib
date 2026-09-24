@@ -82,6 +82,42 @@ func faaSourceColumnsCompleteBeforeTheNextColumn(name: String) throws {
     #expect(LayoutReconstructor.ordered(single, bodySize: 12).map { $0.line!.text } == ["First", "Second", "Third"])
 }
 
+@Test func answerKeyTitlePrecedesAColumnWhoseFirstCropRisesIntoItsRow() {
+    func line(_ text: String, x: Double, y: Double, width: Double) -> LayoutReconstructor.Element {
+        let rect = CGRect(x: x, y: y, width: width, height: 12)
+        return .init(rect: rect, line: TextLine(text: text, rect: rect, fontSize: 12), image: nil)
+    }
+    let previousKey = line("8.6", x: 85, y: 445, width: 13)
+    let title = line("Answers - Rational Exponents", x: 219, y: 422, width: 156)
+    let fraction = LayoutReconstructor.Element(rect: CGRect(x: 85, y: 398, width: 50, height: 30), image: "1")
+    let next = line("9) 4", x: 85, y: 215, width: 25)
+    let otherColumn = line("16) 1", x: 233, y: 365, width: 30)
+    let elements = [fraction, otherColumn, next, previousKey, title]
+    let order = LayoutReconstructor.ordered(elements, bodySize: 12).map { $0.line?.text ?? $0.image! }
+    #expect(order.first == "8.6")
+    #expect(order.firstIndex(of: "Answers - Rational Exponents")! < order.firstIndex(of: "1")!)
+    #expect(order.firstIndex(of: "Answers - Rational Exponents")! < order.firstIndex(of: "9) 4")!)
+}
+
+@Test func wallaceRationalExponentTitlePrecedesItsFirstPreservedAnswer() throws {
+    let fixture = try SourceLayoutFixture.load("algebra-475")
+    #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")
+    let page = fixture.content()
+    let title = try #require(page.lines.first { $0.text == "Answers - Rational Exponents" })
+    let regions = LayoutReconstructor.graphicsWithLabels(page)
+    let first = try #require(regions.enumerated().first { _, region in
+        region.midX < 150 && region.midY < title.rect.midY && region.maxY > title.rect.minY - 10
+    })
+    let images = regions.enumerated().map { ($0.element, "image-\($0.offset)") }
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: images, vocabulary: [], warnings: &warnings)
+    let headingIndex = try #require(blocks.firstIndex { $0.text == title.text })
+    let imageIndex = try #require(blocks.firstIndex {
+        if case let .image(image) = $0.content { image.assetID == "image-\(first.offset)" } else { false }
+    })
+    #expect(headingIndex < imageIndex)
+}
+
 @Test func leaderTableControlsSeparateLookupRowsFromContentsAndEllipses() {
     func page(_ strings: [String], gap: Double = 14, mono: Bool = false, header: Bool = true) -> PageContent {
         var lines = strings.enumerated().map { index, text in

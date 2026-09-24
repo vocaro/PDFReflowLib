@@ -673,6 +673,33 @@ enum LayoutReconstructor {
             }
             return best?.1
         }
+        // A displayed answer can rise into the row of the key's title without belonging to
+        // that row. In Wallace's rational-exponents key the first fraction reaches six points
+        // above its answer line. It prevents a whitespace cut at the title, after which the
+        // column cut reads that entire answer column before the title. The title's centre is
+        // still above the answer's centre, so use that source ordering when a key actually
+        // begins below the title. Earlier material remains above the title.
+        if let titleIndex = elements.indices.first(where: { index in
+            guard let line = elements[index].line,
+                  line.text.hasPrefix("Answers -"),
+                  elements.contains(where: { $0.image != nil && sameRow($0.rect, line.rect)
+                      && $0.rect.midY < line.rect.midY }) else { return false }
+            let marker = #"^\s*\d+\)"#
+            return elements.filter { $0.line?.text.range(of: marker, options: .regularExpression) != nil
+                && $0.rect.midY < line.rect.midY }.count >= 2
+        }) {
+            let title = elements[titleIndex]
+            let above = elements.indices.filter { $0 != titleIndex && elements[$0].rect.midY > title.rect.midY }
+                .map { elements[$0] }
+            let below = elements.indices.filter { $0 != titleIndex && elements[$0].rect.midY <= title.rect.midY }
+                .map { elements[$0] }
+            if !above.isEmpty && !below.isEmpty {
+                return ordered(above, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1,
+                               exhausted: &exhausted) + [title]
+                    + ordered(below, bodySize: bodySize, rightToLeft: rightToLeft, depth: depth + 1,
+                              exhausted: &exhausted)
+            }
+        }
         // A picture spanning the whole block separates what is printed above it from what is
         // printed below it (#137). The 9/11 report sets two flights' timelines side by side under
         // one map that runs across both of them: no vertical whitespace crosses the map, so no

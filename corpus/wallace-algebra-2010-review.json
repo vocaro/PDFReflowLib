@@ -24,11 +24,12 @@
     {
       "page": 266,
       "focus": "Nested complex fractions; keep inner and outer fraction structure together.",
-      "observed": "The source prints paired exercises 1–22 in row order. Current EPUB reads those markers 1–22, retains each unsupported stacked fraction as a source crop, and emits the imageRegion warning. The crop fallback preserves the visual inner and outer bars while native MathML remains unproved for this page."
+      "observed": "The source prints paired exercises 1–22 in row order. Current EPUB reads those markers 1–22. Item 11 has nested-fraction MathML with a source altimg; other unsupported stacks retain source crops, and the page emits the imageRegion warning."
     },
     {
       "page": 293,
-      "focus": "Cubed-root indices, numbered examples and aligned explanatory steps."
+      "focus": "Cubed-root indices, numbered examples and aligned explanatory steps.",
+      "observed": "Example 386 follows its prose notes in selectable text; its indexed-root working remains preserved as source image regions with an imageRegion warning. A bounded two-page EPUB containing this source page passed EPUBCheck 3.3."
     },
     {
       "page": 343,

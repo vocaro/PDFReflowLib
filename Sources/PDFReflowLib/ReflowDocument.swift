@@ -351,6 +351,8 @@ struct ReflowBlock: Sendable, Equatable {
             var text: InlineText
             /// How many columns the cell covers; a spanning heading covers several.
             var columns: Int = 1
+            /// A source-validated body-row heading, emitted with row scope (#17).
+            var isRowHeader = false
         }
         /// Rows top down, cells left to right. Every row covers the table's whole width.
         var rows: [[Cell]]

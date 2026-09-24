@@ -195,6 +195,25 @@ enum PageReader {
                                                         shows: shows, rules: rules, filledCells: graphics.filledCells)).filter { table in
                     !ruled.contains { $0.rect.intersects(table.rect) }
                 }
+                if !content.tables.isEmpty,
+                   let structure, let headers = structure.tableHeaders[i + 1], !headers.isEmpty,
+                   StructureTreeReader.validates(ids: headers,
+                                                 owners: structure.tableHeaderOwners[i + 1] ?? [:], page: reference),
+                   let scan = MarkedTextReader.scan(reference) {
+                    for tableIndex in content.tables.indices {
+                        let firstBodyRow = content.tables[tableIndex].headerRows
+                        for rowIndex in firstBodyRow..<content.tables[tableIndex].rows.count {
+                            for cellIndex in content.tables[tableIndex].rows[rowIndex].indices {
+                                let rect = content.tables[tableIndex].rows[rowIndex][cellIndex].rect.insetBy(dx: -2, dy: -2)
+                                let owners = scan.anchors.filter { rect.contains($0.point) }.map(\.id)
+                                if let id = owners.first ?? nil, headers.contains(id),
+                                   owners.allSatisfy({ $0 == id }) {
+                                    content.tables[tableIndex].rows[rowIndex][cellIndex].isRowHeader = true
+                                }
+                            }
+                        }
+                    }
+                }
             }
             content.lines = LeaderRows.joined(content, paints: graphics.paints)
             // A form widget with no new visible content needs no page picture merely because

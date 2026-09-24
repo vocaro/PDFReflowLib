@@ -8,9 +8,12 @@ enum StructureTreeReader {
         /// A Figure with one page MCID and author supplied Alt text. Artwork association is
         /// checked separately against the page's marked image draw.
         var figures: [Int: [Int: String]] = [:]
+        /// Direct TH MCIDs inside Table/TR, validated against the page ParentTree before use.
+        var tableHeaders: [Int: Set<Int>] = [:]
         // Paths through root K (-1 means dictionary K; nonnegative means array index).
         var owners: [Int: [Int: [Int]]] = [:]
         var figureOwners: [Int: [Int: [Int]]] = [:]
+        var tableHeaderOwners: [Int: [Int: [Int]]] = [:]
         var present = false
         var rejected = false
     }
@@ -63,7 +66,8 @@ enum StructureTreeReader {
                 }
             }
             if let kids = CGPDFObjects.object(root, "K") {
-                try walk(kids, parent: root, page: nil, group: nil, allowed: true, depth: 0, path: [], parentPath: [])
+                try walk(kids, parent: root, page: nil, group: nil, allowed: true, inTable: false, inRow: false,
+                         depth: 0, path: [], parentPath: [])
             }
             for page in result.pages.keys {
                 result.pages[page] = result.pages[page]?.filter { !rejectedGroups.contains($0.value.group) }
@@ -85,7 +89,7 @@ enum StructureTreeReader {
             return role
         }
         func walk(_ value: CGPDFObjectRef, parent: CGPDFDictionaryRef, page: Int?, group: TextStructure?,
-                  allowed: Bool, depth: Int, path: [Int], parentPath: [Int]) throws {
+                  allowed: Bool, inTable: Bool, inRow: Bool, depth: Int, path: [Int], parentPath: [Int]) throws {
             try step(depth)
             switch CGPDFObjectGetType(value) {
             case .integer:
@@ -99,7 +103,8 @@ enum StructureTreeReader {
                 for i in 0..<CGPDFArrayGetCount(kids) {
                     var child: CGPDFObjectRef?
                     guard CGPDFArrayGetObject(kids, i, &child), let child else { throw Invalid.tree }
-                    try walk(child, parent: parent, page: page, group: group, allowed: allowed, depth: depth + 1, path: path + [i], parentPath: parentPath)
+                    try walk(child, parent: parent, page: page, group: group, allowed: allowed,
+                             inTable: inTable, inRow: inRow, depth: depth + 1, path: path + [i], parentPath: parentPath)
                 }
             case .dictionary:
                 var dict: CGPDFDictionaryRef?
@@ -126,6 +131,13 @@ enum StructureTreeReader {
                 let inline: Set<String> = ["Span", "Link"]
                 let level = role == "P" ? 0 : (["H1", "H2", "H3", "H4", "H5", "H6"].contains(role) ? Int(role.dropFirst()) : nil)
                 var childAllowed = allowed
+                if allowed, group == nil, inRow, role == "TH",
+                   let kids = CGPDFObjects.object(dict, "K"), CGPDFObjectGetType(kids) == .integer {
+                    var id: CGPDFInteger = 0
+                    guard CGPDFObjectGetValue(kids, .integer, &id) else { throw Invalid.tree }
+                    try reference(id, page: localPage, group: nil, ownerPath: path, tableHeader: true)
+                    return
+                }
                 if allowed, group == nil, role == "Figure",
                    let alt = CGPDFObjects.text(dict, "Alt")?.trimmingCharacters(in: .whitespacesAndNewlines),
                    !alt.isEmpty, alt.count <= 2_000,
@@ -139,11 +151,17 @@ enum StructureTreeReader {
                     guard group == nil else { reject(group); return }
                     groupCounter += 1
                     next = TextStructure(group: groupCounter, order: 0, headingLevel: level)
-                } else if !(group == nil ? containers.contains(role) : inline.contains(role)) {
+                } else if !(group == nil
+                            ? (containers.contains(role) || (role == "Table" && !inTable)
+                               || (role == "TR" && inTable) || (role == "TD" && inRow))
+                            : inline.contains(role)) {
                     reject(group); next = nil; childAllowed = false
                 }
                 if let kids = CGPDFObjects.object(dict, "K") {
-                    try walk(kids, parent: dict, page: localPage, group: next, allowed: childAllowed, depth: depth + 1, path: path + [-1], parentPath: path)
+                    try walk(kids, parent: dict, page: localPage, group: next, allowed: childAllowed,
+                             inTable: childAllowed && (role == "Table" || inTable),
+                             inRow: childAllowed && role == "TR", depth: depth + 1,
+                             path: path + [-1], parentPath: path)
                 }
             case .null: break
             default: throw Invalid.tree
@@ -153,7 +171,8 @@ enum StructureTreeReader {
             result.rejected = true
             if let group { rejectedGroups.insert(group.group) }
         }
-        func reference(_ id: Int, page: Int?, group: TextStructure?, ownerPath: [Int], figure: String? = nil) throws {
+        func reference(_ id: Int, page: Int?, group: TextStructure?, ownerPath: [Int], figure: String? = nil,
+                       tableHeader: Bool = false) throws {
             guard let page, id >= 0, id < 100_000,
                   references.insert("\(page):\(id)").inserted else { throw Invalid.tree }
             guard parentKeys[page] != nil else { throw Invalid.tree }
@@ -165,6 +184,9 @@ enum StructureTreeReader {
             } else if let figure {
                 result.figures[page, default: [:]][id] = figure
                 result.figureOwners[page, default: [:]][id] = ownerPath
+            } else if tableHeader {
+                result.tableHeaders[page, default: []].insert(id)
+                result.tableHeaderOwners[page, default: [:]][id] = ownerPath
             }
         }
     }

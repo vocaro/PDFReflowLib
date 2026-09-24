@@ -151,6 +151,9 @@ struct PageTable: Equatable, Codable, Sendable {
         var rect: CGRect
         /// How many of the table's columns this cell covers. A spanning header covers several.
         var columns: Int = 1
+        /// A structure-tree TH in a body row, validated against this printed cell (#17).
+        /// Optional to decode page fixtures recorded before source row headers were retained.
+        var isRowHeader: Bool? = nil
 
         var text: String { content.text }
     }

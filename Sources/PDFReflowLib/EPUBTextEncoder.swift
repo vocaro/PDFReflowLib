@@ -159,9 +159,9 @@ enum EPUBTextEncoder {
     /// writing reads right to left carries `direction` on the `<table>`, as a paragraph does (#41).
     static func table(_ table: ReflowBlock.Table, labels: [Int: String], direction: String = "") -> String {
         func row(_ cells: [ReflowBlock.Table.Cell], header: Bool) -> String {
-            let tag = header ? "th" : "td"
-            let scope = header ? " scope=\"col\"" : ""
             return "<tr>" + cells.map { cell in
+                let tag = header || cell.isRowHeader ? "th" : "td"
+                let scope = header ? " scope=\"col\"" : (cell.isRowHeader ? " scope=\"row\"" : "")
                 let span = cell.columns > 1 ? " colspan=\"\(cell.columns)\"" : ""
                 return "<\(tag)\(scope)\(span)>\(inline(cell.text, labels: labels))</\(tag)>"
             }.joined() + "</tr>"

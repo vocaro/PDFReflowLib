@@ -574,9 +574,12 @@ same native writing in the reflowed reading. Actual lettering inside a raster pi
 with that picture.
 
 On these eligible pages, a plain 8-bit DeviceGray soft mask can narrow an image's placement to
-its nontransparent samples before transforms and clipping. Unknown masks retain full bounds.
-`ImageAlphaBounds` caps supported masks at 64 million samples and reads each through a fresh,
-short-lived Core Graphics document, so decoded mask data is not retained across images. Initial
+its nontransparent samples before transforms and clipping. Before any decoding, `ImageAlphaBounds`
+applies its existing 64-million-sample limit to the complete page pass as well as each mask.
+Every placed image counts, including reused resources that would be decoded again. An unknown
+estimate or excessive total declines backdrop composition and retains the original conservative
+page geometry and native/reference behavior. Admitted masks are read through fresh, short-lived
+Core Graphics documents, so decoded data is not retained across images. Initial
 paint seeds determine whether the page resembles a scan; later complete-crop expansion cannot
 turn the admitted native panel text into a scan layer. See
 [backdrop-separation](../measurements/backdrop-separation/record.md).

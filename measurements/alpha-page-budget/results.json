@@ -1,0 +1,63 @@
+{
+  "runtimeBase": "4f301ca",
+  "unchangedDgaCeilingBytes": 201326592,
+  "dgaMaskSamples": 164359023,
+  "aggregateBudgetSamples": 64000000,
+  "sourcePages": 10,
+  "firstCorpus": {
+    "converterSHA256": "d7dc23e62c741e98c4529c1eeeaed2f31495175c18cc3013371bd33018c52eb2",
+    "converterPeakRSSBytes": 231981056,
+    "outputSHA256": "5371e0c332b1225c7e37f411807b3466a8814c340501d154ffc8c65a24f3c750",
+    "runPassed": false,
+    "memoryGate": {
+      "limitBytes": 201326592,
+      "metric": "converter process peak RSS from wait/rusage",
+      "attempts": 1,
+      "status": "exceeded",
+      "passed": false
+    }
+  },
+  "isolatedParent": {
+    "converterSHA256": "d7dc23e62c741e98c4529c1eeeaed2f31495175c18cc3013371bd33018c52eb2",
+    "converterPeakRSSBytes": 225918976,
+    "outputSHA256": "9af2f4192b531cf4c9b605f93b15ff1f3988561610b7c6bd3787d720a888d134",
+    "runPassed": false,
+    "memoryGate": {
+      "limitBytes": 201326592,
+      "metric": "converter process peak RSS from wait/rusage",
+      "attempts": 1,
+      "status": "exceeded",
+      "passed": false
+    }
+  },
+  "candidate": {
+    "converterSHA256": "02dd5ff90fd20971e2deaeb3b2b051951eadde18cd4b63d704a078ba778cc6a1",
+    "converterPeakRSSBytes": 121700352,
+    "outputSHA256": "6453783c0812cf3f66af449daf2515be35636fd92165600b68e66d004a6dcd4e",
+    "runPassed": true,
+    "memoryGate": {
+      "limitBytes": 201326592,
+      "metric": "converter process peak RSS from wait/rusage",
+      "attempts": 1,
+      "status": "passed",
+      "passed": true
+    }
+  },
+  "changedTextPages": [
+    1
+  ],
+  "coverNativeCharacters": [
+    0,
+    118
+  ],
+  "candidateManualEpubCheckExitCode": 0,
+  "earthdata": {
+    "converterSHA256": "02dd5ff90fd20971e2deaeb3b2b051951eadde18cd4b63d704a078ba778cc6a1",
+    "converterPeakRSSBytes": 97337344,
+    "outputSHA256": "c70f3c98a68ad5f0b5d1de603e752c31ac621ef033ecafb5d1252d40c618cd8c",
+    "runPassed": true,
+    "epubcheckExitCode": 0,
+    "changedTextPages": [],
+    "allImageBytesUnchanged": true
+  }
+}

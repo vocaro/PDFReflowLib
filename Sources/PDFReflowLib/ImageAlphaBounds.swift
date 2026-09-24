@@ -8,6 +8,30 @@ import Foundation
 enum ImageAlphaBounds {
     static let maximumSamples = 64_000_000
 
+    /// The same decoded-sample limit applies to a page's complete alpha pass. Each placement
+    /// is decoded independently in a short-lived document, including repeated resources, so
+    /// count every placement before allocating any mask. Unknown formats retain the original
+    /// page geometry rather than attempting a partially bounded composition.
+    static func sampleCounts(on page: CGPDFPage) -> [Int?] {
+        EmbeddedImageReader.placements(page).map { placement in
+            guard let dictionary = CGPDFStreamGetDictionary(placement.stream) else { return nil }
+            guard CGPDFObjects.object(dictionary, "SMask") != nil,
+                  CGPDFObjects.name(dictionary, "SMask") != "None" else { return 0 }
+            guard let (_, width, height) = mask(in: dictionary) else { return nil }
+            return width * height
+        }
+    }
+
+    static func fitsPageBudget(_ samples: [Int?]) -> Bool {
+        guard samples.count <= 10_000 else { return false }
+        var remaining = maximumSamples
+        for sample in samples {
+            guard let sample, sample >= 0, sample <= remaining else { return false }
+            remaining -= sample
+        }
+        return true
+    }
+
     static func mask(in dictionary: CGPDFDictionaryRef) -> (CGPDFStreamRef, Int, Int)? {
         guard let stream = CGPDFObjects.stream(dictionary, "SMask"),
               let mask = CGPDFStreamGetDictionary(stream),

@@ -10,20 +10,36 @@ enum PrintedColumns {
 
     static func plan(_ elements: [Element], body: CGFloat) -> Plan? {
         guard elements.count <= 2_000, body > 0 else { return nil }
+        let captionLines = elements.flatMap { $0.caption ?? $0.pictureCaption ?? [] }
         let quoteLines = elements.flatMap { $0.quotation ?? [] }
         let writing = elements.flatMap { element -> [TextLine] in
             if let quote = element.quotation { return quote }
+            if let caption = element.caption ?? element.pictureCaption { return caption }
             return element.line.map { [$0] } ?? []
         }
         let evidence = writing.filter {
             $0.turn == .upright && !$0.monospaced && ($0.fontSize >= body * 0.9 && $0.fontSize <= body * 1.1 || quoteLines.contains($0)) && $0.rect.width >= body * 8
                 && $0.text.split(whereSeparator: \.isWhitespace).count >= 4
+                || captionLines.contains($0)
         }.sorted { $0.rect.minX < $1.rect.minX }
         var groups: [[TextLine]] = []
         for line in evidence {
             if let last = groups.last, line.rect.minX - last[0].rect.minX <= body * 3 {
                 groups[groups.count - 1].append(line)
             } else { groups.append([line]) }
+        }
+        // A caption can use the photograph's wider margin above an indented body column.
+        // Merge only vertically disjoint measures with substantial horizontal overlap and
+        // already proved caption ownership; simultaneous neighboring columns stay separate.
+        var index = 0
+        while index + 1 < groups.count {
+            let a = union(groups[index].map(\.rect)), b = union(groups[index + 1].map(\.rect))
+            let overlap = min(a.maxX,b.maxX) - max(a.minX,b.minX)
+            if (groups[index] + groups[index + 1]).contains(where: { captionLines.contains($0) }),
+               overlap >= min(a.width,b.width) * 0.75,
+               a.maxY <= b.minY || b.maxY <= a.minY {
+                groups[index] += groups.remove(at: index + 1)
+            } else { index += 1 }
         }
         groups = groups.filter { group in
             group.count >= 6 && group.filter { $0.rect.width >= body * 12 }.count >= 2

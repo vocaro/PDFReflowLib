@@ -1,0 +1,9970 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10,
+          "text" : "8-14"
+        }
+      ],
+      "text" : "8-14"
+    },
+    {
+      "rect" : [
+        285,
+        530.94920000000002,
+        236.89540000000011,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-15. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Teledyne’s 90004 TAS/Plus Air Data Computer (ADC)"
+        }
+      ],
+      "text" : "Figure 8-15. Teledyne’s 90004 TAS/Plus Air Data Computer (ADC)"
+    },
+    {
+      "rect" : [
+        284.99740000000003,
+        519.05420000000004,
+        237.0689999999999,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "computes air data information from the pitot-static pneumatic"
+        }
+      ],
+      "text" : "computes air data information from the pitot-static pneumatic"
+    },
+    {
+      "rect" : [
+        284.99740000000003,
+        506.55320000000006,
+        237.08699999999993,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "system, aircraft temperature probe, and barometric correction"
+        }
+      ],
+      "text" : "system, aircraft temperature probe, and barometric correction"
+    },
+    {
+      "rect" : [
+        284.99740000000003,
+        494.05220000000008,
+        218.47499999999991,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "device to help create a clear picture of flight characteristics."
+        }
+      ],
+      "text" : "device to help create a clear picture of flight characteristics."
+    },
+    {
+      "rect" : [
+        284.88058469999999,
+        548.28317579999998,
+        237.06162230000007,
+        181.99753510000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        284.75,
+        62.739200000000004,
+        127.36000000000001,
+        10.812000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-16. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Airspeed trend vector."
+        }
+      ],
+      "text" : "Figure 8-16. Airspeed trend vector."
+    },
+    {
+      "rect" : [
+        230.81310000000002,
+        -18.859500000000001,
+        327.54230000000001,
+        410.18650000000002
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        339.40380000000005,
+        231.36400000000003,
+        10.812000000000012
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8,
+          "text" : "Figure 8-14. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "Chelton’s FlightLogic (top) and Avidyne’s Entegra"
+        }
+      ],
+      "text" : "Figure 8-14. Chelton’s FlightLogic (top) and Avidyne’s Entegra"
+    },
+    {
+      "rect" : [
+        36.001000000000005,
+        327.50880000000006,
+        225.2339999999999,
+        10.206000000000017
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "(bottom) are examples of panel displays that are configurable."
+        }
+      ],
+      "text" : "(bottom) are examples of panel displays that are configurable."
+    },
+    {
+      "rect" : [
+        34.134200000000021,
+        548.601,
+        241.43630000000002,
+        172.32080000000008
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        34.901610099999999,
+        356.69570110000001,
+        239.10704689999997,
+        192.49748579999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 9,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        36,
+        296.60430000000002,
+        119.44,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Air Data Computer (ADC)"
+        }
+      ],
+      "text" : "Air Data Computer (ADC)"
+    },
+    {
+      "rect" : [
+        36,
+        284.17430000000002,
+        237.10000000000014,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "EFDs utilize the same type of instrument inputs as traditional"
+        }
+      ],
+      "text" : "EFDs utilize the same type of instrument inputs as traditional"
+    },
+    {
+      "rect" : [
+        36,
+        271.67430000000002,
+        237.04000000000008,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "analogue gauges; however, the processing system is different."
+        }
+      ],
+      "text" : "analogue gauges; however, the processing system is different."
+    },
+    {
+      "rect" : [
+        36,
+        259.17430000000002,
+        237.01000000000022,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The pitot static inputs are received by an ADC. The ADC"
+        }
+      ],
+      "text" : "The pitot static inputs are received by an ADC. The ADC"
+    },
+    {
+      "rect" : [
+        36,
+        246.67430000000002,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "computes the difference between the total pressure and the"
+        }
+      ],
+      "text" : "computes the difference between the total pressure and the"
+    },
+    {
+      "rect" : [
+        36,
+        234.17430000000002,
+        237.005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "static pressure and generates the information necessary to"
+        }
+      ],
+      "text" : "static pressure and generates the information necessary to"
+    },
+    {
+      "rect" : [
+        36,
+        221.67430000000002,
+        237.01199999999983,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "display the airspeed on the PFD. Outside air temperatures"
+        }
+      ],
+      "text" : "display the airspeed on the PFD. Outside air temperatures"
+    },
+    {
+      "rect" : [
+        36,
+        209.17430000000002,
+        237.02099999999996,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are also monitored and introduced into various components"
+        }
+      ],
+      "text" : "are also monitored and introduced into various components"
+    },
+    {
+      "rect" : [
+        36,
+        196.67430000000002,
+        237.005,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "within the system, as well as being displayed on the PFD"
+        }
+      ],
+      "text" : "within the system, as well as being displayed on the PFD"
+    },
+    {
+      "rect" : [
+        36,
+        184.17430000000002,
+        86.36999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "screen. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figure 8-15]"
+        }
+      ],
+      "text" : "screen. [Figure 8-15]"
+    },
+    {
+      "rect" : [
+        36,
+        159.17430000000002,
+        237.05000000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "The ADC is a separate solid state device that, in addition to"
+        }
+      ],
+      "text" : "The ADC is a separate solid state device that, in addition to"
+    },
+    {
+      "rect" : [
+        36,
+        146.67430000000002,
+        236.99000000000007,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "providing data to the PFD, is capable of providing data to the"
+        }
+      ],
+      "text" : "providing data to the PFD, is capable of providing data to the"
+    },
+    {
+      "rect" : [
+        36,
+        134.17430000000002,
+        237.05200000000008,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "autopilot control system. In the event of system malfunction, the"
+        }
+      ],
+      "text" : "autopilot control system. In the event of system malfunction, the"
+    },
+    {
+      "rect" : [
+        36,
+        121.67430000000002,
+        236.98999999999984,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "ADC can quickly be removed and replaced in order to decrease"
+        }
+      ],
+      "text" : "ADC can quickly be removed and replaced in order to decrease"
+    },
+    {
+      "rect" : [
+        36,
+        109.17430000000002,
+        216.13999999999999,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "downtime and decrease maintenance turn-around times."
+        }
+      ],
+      "text" : "downtime and decrease maintenance turn-around times."
+    },
+    {
+      "rect" : [
+        36,
+        84.174300000000017,
+        237.00299999999993,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Altitude information is derived from the static pressure port"
+        }
+      ],
+      "text" : "Altitude information is derived from the static pressure port"
+    },
+    {
+      "rect" : [
+        36,
+        71.674300000000017,
+        237.02000000000004,
+        11.469999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "just as an analogue system does; however, the static pressure"
+        }
+      ],
+      "text" : "just as an analogue system does; however, the static pressure"
+    },
+    {
+      "rect" : [
+        285,
+        472.51430000000005,
+        237.03999999999974,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "does not enter a diaphragm. The ADC computes the received"
+        }
+      ],
+      "text" : "does not enter a diaphragm. The ADC computes the received"
+    },
+    {
+      "rect" : [
+        285,
+        460.01430000000005,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "barometric pressure and sends a digital signal to the PFD to"
+        }
+      ],
+      "text" : "barometric pressure and sends a digital signal to the PFD to"
+    },
+    {
+      "rect" : [
+        285,
+        447.51430000000005,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "display the proper altitude readout. EFDs also show trend"
+        }
+      ],
+      "text" : "display the proper altitude readout. EFDs also show trend"
+    },
+    {
+      "rect" : [
+        285,
+        435.01430000000005,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "vectors, which show the pilot how the altitude and airspeed"
+        }
+      ],
+      "text" : "vectors, which show the pilot how the altitude and airspeed"
+    },
+    {
+      "rect" : [
+        285,
+        422.51430000000005,
+        63.870000000000005,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "are progressing."
+        }
+      ],
+      "text" : "are progressing."
+    },
+    {
+      "rect" : [
+        285,
+        396.94430000000006,
+        67.240000000000009,
+        13.189999999999998
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 10,
+          "text" : "Trend Vectors"
+        }
+      ],
+      "text" : "Trend Vectors"
+    },
+    {
+      "rect" : [
+        285,
+        384.51430000000005,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "Trend vectors are magenta lines that move up and down both"
+        }
+      ],
+      "text" : "Trend vectors are magenta lines that move up and down both"
+    },
+    {
+      "rect" : [
+        285,
+        372.01430000000005,
+        237,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "the ASI and the altimeter. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 10,
+          "text" : "[Figures 8-16 and 8-17]"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : " The ADC"
+        }
+      ],
+      "text" : "the ASI and the altimeter. [Figures 8-16 and 8-17] The ADC"
+    },
+    {
+      "rect" : [
+        285,
+        359.51430000000005,
+        237.18499999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "computes the rate of change and displays the 6-second projection"
+        }
+      ],
+      "text" : "computes the rate of change and displays the 6-second projection"
+    },
+    {
+      "rect" : [
+        285,
+        347.01430000000005,
+        237.03800000000001,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "of where the aircraft will be. Pilots can utilize the trend vectors"
+        }
+      ],
+      "text" : "of where the aircraft will be. Pilots can utilize the trend vectors"
+    },
+    {
+      "rect" : [
+        285,
+        334.51430000000005,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "to better control the aircraft’s attitude. By including the trend"
+        }
+      ],
+      "text" : "to better control the aircraft’s attitude. By including the trend"
+    },
+    {
+      "rect" : [
+        285,
+        322.01430000000005,
+        237.08500000000015,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "vectors in the instrument scan, pilots are able to precisely control"
+        }
+      ],
+      "text" : "vectors in the instrument scan, pilots are able to precisely control"
+    },
+    {
+      "rect" : [
+        285,
+        309.51430000000005,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "airspeed and altitude. Additional information can be obtained"
+        }
+      ],
+      "text" : "airspeed and altitude. Additional information can be obtained"
+    },
+    {
+      "rect" : [
+        285,
+        297.01430000000005,
+        237.125,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "by referencing the Instrument Flying Handbook or specific"
+        }
+      ],
+      "text" : "by referencing the Instrument Flying Handbook or specific"
+    },
+    {
+      "rect" : [
+        285,
+        284.51430000000005,
+        161.58999999999992,
+        11.470000000000027
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 10,
+          "text" : "avionics manufacturer’s training material."
+        }
+      ],
+      "text" : "avionics manufacturer’s training material."
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    594,
+    774
+  ],
+  "caseID" : "faa-phak-8083-25c",
+  "filledCells" : [
+    [
+      284.75,
+      81.085000000000008,
+      236.76099999999997,
+      88.75800000000001
+    ],
+    [
+      284.75,
+      169.27100000000002,
+      236.75599999999997,
+      103.26900000000001
+    ],
+    [
+      348.738,
+      94.617999999999995,
+      33.406999999999982,
+      146.51300000000001
+    ],
+    [
+      378.68000000000001,
+      95.430999999999997,
+      3.2860000000000014,
+      145.90500000000003
+    ],
+    [
+      378.68000000000001,
+      230.22800000000001,
+      3.2860000000000014,
+      11.108000000000004
+    ],
+    [
+      378.81299999999999,
+      95.466999999999999,
+      1.6580000000000155,
+      33.058000000000007
+    ],
+    [
+      378.65000000000003,
+      182.34,
+      3.2730000000000246,
+      0.49600000000000932
+    ],
+    [
+      376.31299999999999,
+      194.00300000000001,
+      5.6100000000000136,
+      0.49899999999999523
+    ],
+    [
+      376.31299999999999,
+      216.536,
+      5.6100000000000136,
+      0.49500000000000455
+    ],
+    [
+      378.65000000000003,
+      205.64500000000001,
+      3.2730000000000246,
+      0.4970000000000141
+    ],
+    [
+      378.65000000000003,
+      229.876,
+      3.2730000000000246,
+      0.5
+    ],
+    [
+      378.65000000000003,
+      109.342,
+      3.2730000000000246,
+      0.49500000000000455
+    ],
+    [
+      376.31299999999999,
+      121.00700000000001,
+      5.6100000000000136,
+      0.49500000000000455
+    ],
+    [
+      376.31299999999999,
+      96.649000000000001,
+      5.6100000000000136,
+      0.5
+    ],
+    [
+      376.31299999999999,
+      143.53700000000001,
+      5.6100000000000136,
+      0.49899999999999523
+    ],
+    [
+      378.65000000000003,
+      132.64400000000001,
+      3.2730000000000246,
+      0.50399999999999068
+    ],
+    [
+      378.65000000000003,
+      156.875,
+      3.2730000000000246,
+      0.5
+    ],
+    [
+      382.11899999999997,
+      169.82300000000001,
+      1.4370000000000118,
+      14.489000000000004
+    ],
+    [
+      348.73700000000002,
+      86.144000000000005,
+      34.185000000000002,
+      8.3850000000000051
+    ],
+    [
+      297.69100000000003,
+      196.69400000000002,
+      21.728999999999985,
+      44.321999999999974
+    ],
+    [
+      310.28100000000001,
+      196.69400000000002,
+      8.6669999999999732,
+      44.321999999999974
+    ],
+    [
+      310.20099999999996,
+      235.22499999999999,
+      8.6360000000000241,
+      1.3120000000000118
+    ],
+    [
+      319.35300000000001,
+      201.31300000000002,
+      3.7900000000000205,
+      39.113
+    ],
+    [
+      51.963000000000001,
+      580.69799999999998,
+      4.2199999999999989,
+      117.12300000000005
+    ],
+    [
+      51.963000000000001,
+      572.02300000000002,
+      4.2199999999999989,
+      36.751999999999953
+    ],
+    [
+      54.777000000000001,
+      609.69200000000001,
+      1.4059999999999988,
+      88.096000000000004
+    ],
+    [
+      51.962000000000003,
+      688.59400000000005,
+      10.424999999999997,
+      1.2039999999999509
+    ],
+    [
+      51.962000000000003,
+      678.61199999999997,
+      10.424999999999997,
+      1.2019999999999982
+    ],
+    [
+      51.962000000000003,
+      668.63099999999997,
+      10.424999999999997,
+      1.2029999999999745
+    ],
+    [
+      51.962000000000003,
+      658.649,
+      10.424999999999997,
+      1.2019999999999982
+    ],
+    [
+      51.962000000000003,
+      648.66600000000005,
+      10.424999999999997,
+      1.2039999999999509
+    ],
+    [
+      51.884,
+      638.68399999999997,
+      10.424999999999997,
+      1.2039999999999509
+    ],
+    [
+      51.962000000000003,
+      628.70299999999997,
+      10.424999999999997,
+      1.2039999999999509
+    ],
+    [
+      51.962000000000003,
+      618.721,
+      10.424999999999997,
+      1.2050000000000409
+    ],
+    [
+      51.962000000000003,
+      608.73800000000006,
+      10.424999999999997,
+      1.2050000000000409
+    ],
+    [
+      51.962000000000003,
+      598.75700000000006,
+      10.424999999999997,
+      1.2039999999999509
+    ],
+    [
+      51.962000000000003,
+      588.77499999999998,
+      10.424999999999997,
+      1.2039999999999509
+    ],
+    [
+      58.075999999999993,
+      645.27099999999996,
+      29.914000000000001,
+      12.649999999999977
+    ],
+    [
+      143.74799999999999,
+      640.80399999999997,
+      38.63900000000001,
+      1.0209999999999582
+    ],
+    [
+      143.74799999999999,
+      615.56000000000006,
+      38.63900000000001,
+      1.0199999999999818
+    ],
+    [
+      152.36499999999998,
+      619.072,
+      6.7050000000000125,
+      1.1069999999999709
+    ],
+    [
+      168.148,
+      619.072,
+      6.7050000000000125,
+      1.1100000000000136
+    ],
+    [
+      163.02700000000002,
+      624.26499999999999,
+      1.1069999999999993,
+      6.7050000000000409
+    ],
+    [
+      260.56999999999999,
+      587.73099999999999,
+      3.5819999999999936,
+      103.04499999999996
+    ],
+    [
+      255.303,
+      648.88800000000003,
+      8.8489999999999895,
+      1.0199999999999818
+    ],
+    [
+      255.303,
+      682.86099999999999,
+      8.8489999999999895,
+      1.0209999999999582
+    ],
+    [
+      255.303,
+      676.06799999999998,
+      8.8489999999999895,
+      1.0199999999999818
+    ],
+    [
+      255.303,
+      669.27099999999996,
+      8.8489999999999895,
+      1.0220000000000482
+    ],
+    [
+      255.303,
+      642.09199999999998,
+      8.8489999999999895,
+      1.0220000000000482
+    ],
+    [
+      255.303,
+      635.29700000000003,
+      8.8489999999999895,
+      1.0199999999999818
+    ],
+    [
+      255.303,
+      662.47800000000007,
+      8.8489999999999895,
+      1.0199999999999818
+    ],
+    [
+      255.303,
+      628.50099999999998,
+      8.8489999999999895,
+      1.0220000000000482
+    ],
+    [
+      255.303,
+      621.70699999999999,
+      8.8489999999999895,
+      1.0199999999999818
+    ],
+    [
+      255.303,
+      614.91100000000006,
+      8.8489999999999895,
+      1.0220000000000482
+    ],
+    [
+      255.303,
+      655.68299999999999,
+      8.8489999999999895,
+      1.0199999999999818
+    ],
+    [
+      255.303,
+      608.11400000000003,
+      8.8489999999999895,
+      1.0220000000000482
+    ],
+    [
+      255.303,
+      601.32100000000003,
+      8.8489999999999895,
+      1.0220000000000482
+    ],
+    [
+      255.303,
+      594.52600000000007,
+      8.8489999999999895,
+      1.0199999999999818
+    ],
+    [
+      255.303,
+      587.73099999999999,
+      8.8489999999999895,
+      1.0220000000000482
+    ],
+    [
+      255.304,
+      689.65600000000006,
+      15.14500000000001,
+      1.0220000000000482
+    ],
+    [
+      255.304,
+      699.80600000000004,
+      15.14500000000001,
+      1.0209999999999582
+    ],
+    [
+      228.16000000000003,
+      642.23199999999997,
+      29.913999999999987,
+      12.649999999999977
+    ],
+    [
+      218.14000000000001,
+      713.84999999999991,
+      1.0219999999999914,
+      2.8150000000000546
+    ],
+    [
+      184.005,
+      713.84999999999991,
+      1.0200000000000102,
+      2.8150000000000546
+    ],
+    [
+      149.86600000000001,
+      713.84999999999991,
+      1.0200000000000102,
+      2.8150000000000546
+    ],
+    [
+      115.729,
+      713.84999999999991,
+      1.019999999999996,
+      2.8150000000000546
+    ],
+    [
+      81.591999999999999,
+      713.84999999999991,
+      1.019999999999996,
+      2.8150000000000546
+    ],
+    [
+      252.27700000000002,
+      713.84999999999991,
+      1.0200000000000102,
+      2.8150000000000546
+    ],
+    [
+      269.39699999999999,
+      711.77999999999997,
+      1.0199999999999818,
+      4.8150000000000546
+    ],
+    [
+      47.453000000000003,
+      713.84999999999991,
+      1.0219999999999985,
+      2.8150000000000546
+    ],
+    [
+      132.79599999999999,
+      711.84799999999996,
+      1.0219999999999914,
+      4.8170000000000073
+    ],
+    [
+      166.934,
+      711.84799999999996,
+      1.0219999999999914,
+      4.8170000000000073
+    ],
+    [
+      235.20699999999999,
+      711.84799999999996,
+      1.0219999999999914,
+      4.8170000000000073
+    ],
+    [
+      64.522000000000006,
+      711.84799999999996,
+      1.0220000000000056,
+      4.8170000000000073
+    ],
+    [
+      98.659000000000006,
+      711.84799999999996,
+      1.0220000000000056,
+      4.8170000000000073
+    ],
+    [
+      201.072,
+      711.84799999999996,
+      1.0200000000000102,
+      4.8170000000000073
+    ],
+    [
+      37.984000000000002,
+      552.90899999999999,
+      56.169000000000004,
+      7.6829999999999927
+    ],
+    [
+      100.967,
+      552.90899999999999,
+      105.538,
+      7.5069999999999482
+    ],
+    [
+      153.53800000000001,
+      552.90899999999999,
+      1.0219999999999914,
+      1.2160000000000082
+    ],
+    [
+      212.30799999999999,
+      552.90899999999999,
+      59.574999999999989,
+      12.161000000000058
+    ],
+    [
+      229.92600000000002,
+      566.93000000000006,
+      41.926999999999992,
+      41.115999999999985
+    ]
+  ],
+  "filledCellText" : [
+    "",
+    "￼",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    "",
+    ""
+  ],
+  "graphics" : [
+    [
+      283,
+      547.29499999999996,
+      241,
+      183.70500000000004
+    ],
+    [
+      282.75,
+      79.085000000000008,
+      241,
+      195.45500000000001
+    ],
+    [
+      34,
+      355.74990000000003,
+      241,
+      374.25009999999997
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        33.709700000000005,
+        20.010000000000005,
+        12.310000000000002
+      ],
+      "text" : "8-14"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        530.94920000000002,
+        236.89540000000011,
+        10.812000000000012
+      ],
+      "text" : "Figure 8-15. Teledyne’s 90004 TAS/Plus Air Data Computer (ADC)"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        284.99740000000003,
+        519.05420000000004,
+        237.0689999999999,
+        10.206000000000017
+      ],
+      "text" : "computes air data information from the pitot-static pneumatic"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        284.99740000000003,
+        506.55320000000006,
+        237.08699999999993,
+        10.206000000000017
+      ],
+      "text" : "system, aircraft temperature probe, and barometric correction"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        284.99740000000003,
+        494.05220000000008,
+        218.47499999999991,
+        10.206000000000017
+      ],
+      "text" : "device to help create a clear picture of flight characteristics."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        284.75,
+        62.739200000000004,
+        127.36000000000001,
+        10.812000000000005
+      ],
+      "text" : "Figure 8-16. Airspeed trend vector."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        339.40380000000005,
+        231.36400000000003,
+        10.812000000000012
+      ],
+      "text" : "Figure 8-14. Chelton’s FlightLogic (top) and Avidyne’s Entegra"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        36.001000000000005,
+        327.50880000000006,
+        225.2339999999999,
+        10.206000000000017
+      ],
+      "text" : "(bottom) are examples of panel displays that are configurable."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        296.60430000000002,
+        119.44,
+        13.189999999999998
+      ],
+      "text" : "Air Data Computer (ADC)"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        284.17430000000002,
+        237.10000000000014,
+        11.470000000000027
+      ],
+      "text" : "EFDs utilize the same type of instrument inputs as traditional"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        271.67430000000002,
+        237.04000000000008,
+        11.470000000000027
+      ],
+      "text" : "analogue gauges; however, the processing system is different."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        259.17430000000002,
+        237.01000000000022,
+        11.470000000000027
+      ],
+      "text" : "The pitot static inputs are received by an ADC. The ADC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        246.67430000000002,
+        237.00899999999996,
+        11.470000000000027
+      ],
+      "text" : "computes the difference between the total pressure and the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        234.17430000000002,
+        237.005,
+        11.469999999999999
+      ],
+      "text" : "static pressure and generates the information necessary to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        221.67430000000002,
+        237.01199999999983,
+        11.469999999999999
+      ],
+      "text" : "display the airspeed on the PFD. Outside air temperatures"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        209.17430000000002,
+        237.02099999999996,
+        11.469999999999999
+      ],
+      "text" : "are also monitored and introduced into various components"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        196.67430000000002,
+        237.005,
+        11.469999999999999
+      ],
+      "text" : "within the system, as well as being displayed on the PFD"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        184.17430000000002,
+        86.36999999999999,
+        11.469999999999999
+      ],
+      "text" : "screen. [Figure 8-15]"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        159.17430000000002,
+        237.05000000000007,
+        11.469999999999999
+      ],
+      "text" : "The ADC is a separate solid state device that, in addition to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        146.67430000000002,
+        236.99000000000007,
+        11.469999999999999
+      ],
+      "text" : "providing data to the PFD, is capable of providing data to the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        134.17430000000002,
+        237.05200000000008,
+        11.469999999999999
+      ],
+      "text" : "autopilot control system. In the event of system malfunction, the"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        121.67430000000002,
+        236.98999999999984,
+        11.469999999999999
+      ],
+      "text" : "ADC can quickly be removed and replaced in order to decrease"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        109.17430000000002,
+        216.13999999999999,
+        11.469999999999999
+      ],
+      "text" : "downtime and decrease maintenance turn-around times."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        84.174300000000017,
+        237.00299999999993,
+        11.469999999999999
+      ],
+      "text" : "Altitude information is derived from the static pressure port"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        36,
+        71.674300000000017,
+        237.02000000000004,
+        11.469999999999999
+      ],
+      "text" : "just as an analogue system does; however, the static pressure"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        472.51430000000005,
+        237.03999999999974,
+        11.470000000000027
+      ],
+      "text" : "does not enter a diaphragm. The ADC computes the received"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        460.01430000000005,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "text" : "barometric pressure and sends a digital signal to the PFD to"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        447.51430000000005,
+        237.00400000000002,
+        11.470000000000027
+      ],
+      "text" : "display the proper altitude readout. EFDs also show trend"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        435.01430000000005,
+        237.00199999999995,
+        11.470000000000027
+      ],
+      "text" : "vectors, which show the pilot how the altitude and airspeed"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        422.51430000000005,
+        63.870000000000005,
+        11.470000000000027
+      ],
+      "text" : "are progressing."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        396.94430000000006,
+        67.240000000000009,
+        13.189999999999998
+      ],
+      "text" : "Trend Vectors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        384.51430000000005,
+        237.04999999999995,
+        11.470000000000027
+      ],
+      "text" : "Trend vectors are magenta lines that move up and down both"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        372.01430000000005,
+        237,
+        11.470000000000027
+      ],
+      "text" : "the ASI and the altimeter. [Figures 8-16 and 8-17] The ADC"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        359.51430000000005,
+        237.18499999999995,
+        11.470000000000027
+      ],
+      "text" : "computes the rate of change and displays the 6-second projection"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        347.01430000000005,
+        237.03800000000001,
+        11.470000000000027
+      ],
+      "text" : "of where the aircraft will be. Pilots can utilize the trend vectors"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        334.51430000000005,
+        237.05999999999995,
+        11.470000000000027
+      ],
+      "text" : "to better control the aircraft’s attitude. By including the trend"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        322.01430000000005,
+        237.08500000000015,
+        11.470000000000027
+      ],
+      "text" : "vectors in the instrument scan, pilots are able to precisely control"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        309.51430000000005,
+        237.00999999999999,
+        11.470000000000027
+      ],
+      "text" : "airspeed and altitude. Additional information can be obtained"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        297.01430000000005,
+        237.125,
+        11.470000000000027
+      ],
+      "text" : "by referencing the Instrument Flying Handbook or specific"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        285,
+        284.51430000000005,
+        161.58999999999992,
+        11.470000000000027
+      ],
+      "text" : "avionics manufacturer’s training material."
+    }
+  ],
+  "nativeLines" : [
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "8-14",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          33.709700000000005
+        ],
+        [
+          20.010000000000005,
+          12.310000000000002
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "Figure 8-15. ",
+              "_1" : 1
+            }
+          },
+          {
+            "text" : {
+              "_0" : "Teledyne’s 90004 TAS/Plus Air Data Computer (ADC)",
+              "_1" : 2
+            }
+          }
+        ]
+      },
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          530.94920000000002
+        ],
+        [
+          236.89540000000011,
+          10.812000000000012
+        ]
+      ],
+      "structure" : {
+        "group" : 3519,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "order" : 17150
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "computes air data information from the pitot-static pneumatic",
+              "_1" : 2
+            }
+          }
+        ]
+      },
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        [
+          284.99740000000003,
+          519.05420000000004
+        ],
+        [
+          237.0689999999999,
+          10.206000000000017
+        ]
+      ],
+      "structure" : {
+        "group" : 3519,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "order" : 17152
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "system, aircraft temperature probe, and barometric correction",
+              "_1" : 2
+            }
+          }
+        ]
+      },
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        [
+          284.99740000000003,
+          506.55320000000006
+        ],
+        [
+          237.08699999999993,
+          10.206000000000017
+        ]
+      ],
+      "structure" : {
+        "group" : 3519,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "order" : 17153
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "device to help create a clear picture of flight characteristics.",
+              "_1" : 2
+            }
+          }
+        ]
+      },
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        [
+          284.99740000000003,
+          494.05220000000008
+        ],
+        [
+          218.47499999999991,
+          10.206000000000017
+        ]
+      ],
+      "structure" : {
+        "group" : 3519,
+        "headingLevel" : 0,
+        "lineCount" : 4,
+        "order" : 17154
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "Figure 8-16. ",
+              "_1" : 1
+            }
+          },
+          {
+            "text" : {
+              "_0" : "Airspeed trend vector.",
+              "_1" : 2
+            }
+          }
+        ]
+      },
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        [
+          284.75,
+          62.739200000000004
+        ],
+        [
+          127.36000000000001,
+          10.812000000000005
+        ]
+      ],
+      "structure" : {
+        "group" : 3522,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "order" : 17159
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "Figure 8-14. ",
+              "_1" : 1
+            }
+          },
+          {
+            "text" : {
+              "_0" : "Chelton’s FlightLogic (top) and Avidyne’s Entegra",
+              "_1" : 2
+            }
+          }
+        ]
+      },
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          339.40380000000005
+        ],
+        [
+          231.36400000000003,
+          10.812000000000012
+        ]
+      ],
+      "structure" : {
+        "group" : 3520,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "order" : 17155
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "(bottom) are examples of panel displays that are configurable.",
+              "_1" : 2
+            }
+          }
+        ]
+      },
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36.001000000000005,
+          327.50880000000006
+        ],
+        [
+          225.2339999999999,
+          10.206000000000017
+        ]
+      ],
+      "structure" : {
+        "group" : 3521,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "order" : 17157
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "Air Data Computer (ADC)",
+              "_1" : 1
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          296.60430000000002
+        ],
+        [
+          119.44,
+          13.189999999999998
+        ]
+      ],
+      "structure" : {
+        "group" : 3373,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "order" : 16337
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "EFDs utilize the same type of instrument inputs as traditional",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          284.17430000000002
+        ],
+        [
+          237.10000000000014,
+          11.470000000000027
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "analogue gauges; however, the processing system is different.",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          271.67430000000002
+        ],
+        [
+          237.04000000000008,
+          11.470000000000027
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "The pitot static inputs are received by an ADC. The ADC",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          259.17430000000002
+        ],
+        [
+          237.01000000000022,
+          11.470000000000027
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "computes the difference between the total pressure and the",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          246.67430000000002
+        ],
+        [
+          237.00899999999996,
+          11.470000000000027
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "static pressure and generates the information necessary to",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          234.17430000000002
+        ],
+        [
+          237.005,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "display the airspeed on the PFD. Outside air temperatures",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          221.67430000000002
+        ],
+        [
+          237.01199999999983,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "are also monitored and introduced into various components",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          209.17430000000002
+        ],
+        [
+          237.02099999999996,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "within the system, as well as being displayed on the PFD",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          196.67430000000002
+        ],
+        [
+          237.005,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "screen. ",
+              "_1" : 0
+            }
+          },
+          {
+            "text" : {
+              "_0" : "[Figure 8-15]",
+              "_1" : 2
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          184.17430000000002
+        ],
+        [
+          86.36999999999999,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "The ADC is a separate solid state device that, in addition to",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          159.17430000000002
+        ],
+        [
+          237.05000000000007,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "providing data to the PFD, is capable of providing data to the",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          146.67430000000002
+        ],
+        [
+          236.99000000000007,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "autopilot control system. In the event of system malfunction, the",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          134.17430000000002
+        ],
+        [
+          237.05200000000008,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "ADC can quickly be removed and replaced in order to decrease",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          121.67430000000002
+        ],
+        [
+          236.98999999999984,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "downtime and decrease maintenance turn-around times.",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          109.17430000000002
+        ],
+        [
+          216.13999999999999,
+          11.469999999999999
+        ]
+      ]
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "Altitude information is derived from the static pressure port",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          84.174300000000017
+        ],
+        [
+          237.00299999999993,
+          11.469999999999999
+        ]
+      ],
+      "structure" : {
+        "group" : 3376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "order" : 16353
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "just as an analogue system does; however, the static pressure",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          36,
+          71.674300000000017
+        ],
+        [
+          237.02000000000004,
+          11.469999999999999
+        ]
+      ],
+      "structure" : {
+        "group" : 3376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "order" : 16354
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "does not enter a diaphragm. The ADC computes the received",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          472.51430000000005
+        ],
+        [
+          237.03999999999974,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "order" : 16355
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "barometric pressure and sends a digital signal to the PFD to",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          460.01430000000005
+        ],
+        [
+          237.00199999999995,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "order" : 16356
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "display the proper altitude readout. EFDs also show trend",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          447.51430000000005
+        ],
+        [
+          237.00400000000002,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "order" : 16357
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "vectors, which show the pilot how the altitude and airspeed",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          435.01430000000005
+        ],
+        [
+          237.00199999999995,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "order" : 16358
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "are progressing.",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          422.51430000000005
+        ],
+        [
+          63.870000000000005,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3376,
+        "headingLevel" : 0,
+        "lineCount" : 7,
+        "order" : 16359
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "Trend Vectors",
+              "_1" : 1
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          396.94430000000006
+        ],
+        [
+          67.240000000000009,
+          13.189999999999998
+        ]
+      ],
+      "structure" : {
+        "group" : 3377,
+        "headingLevel" : 0,
+        "lineCount" : 1,
+        "order" : 16360
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "Trend vectors are magenta lines that move up and down both",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          384.51430000000005
+        ],
+        [
+          237.04999999999995,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16361
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "the ASI and the altimeter. ",
+              "_1" : 0
+            }
+          },
+          {
+            "text" : {
+              "_0" : "[Figures 8-16 and 8-17]",
+              "_1" : 2
+            }
+          },
+          {
+            "text" : {
+              "_0" : " The ADC",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          372.01430000000005
+        ],
+        [
+          237,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16362
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "computes the rate of change and displays the 6-second projection",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          359.51430000000005
+        ],
+        [
+          237.18499999999995,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16365
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "of where the aircraft will be. Pilots can utilize the trend vectors",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          347.01430000000005
+        ],
+        [
+          237.03800000000001,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16366
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "to better control the aircraft’s attitude. By including the trend",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          334.51430000000005
+        ],
+        [
+          237.05999999999995,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16367
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "vectors in the instrument scan, pilots are able to precisely control",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          322.01430000000005
+        ],
+        [
+          237.08500000000015,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16368
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "airspeed and altitude. Additional information can be obtained",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          309.51430000000005
+        ],
+        [
+          237.00999999999999,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16369
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "by referencing the Instrument Flying Handbook or specific",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          297.01430000000005
+        ],
+        [
+          237.125,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16370
+      }
+    },
+    {
+      "content" : {
+        "elements" : [
+          {
+            "text" : {
+              "_0" : "avionics manufacturer’s training material.",
+              "_1" : 0
+            }
+          }
+        ]
+      },
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        [
+          285,
+          284.51430000000005
+        ],
+        [
+          161.58999999999992,
+          11.470000000000027
+        ]
+      ],
+      "structure" : {
+        "group" : 3378,
+        "headingLevel" : 0,
+        "lineCount" : 9,
+        "order" : 16371
+      }
+    }
+  ],
+  "page" : 216,
+  "paintOperations" : [
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          285,
+          549.29499999999996
+        ],
+        [
+          236.94200000000001,
+          179.70500000000004
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          283,
+          547.29499999999996
+        ],
+        [
+          241,
+          183.70500000000004
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          282.75,
+          79.085000000000008
+        ],
+        [
+          240.76099999999997,
+          92.75800000000001
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          282.78799999999995,
+          81.085000000000008
+        ],
+        [
+          521.51099999999997,
+          81.085000000000008
+        ],
+        [
+          521.51099999999997,
+          169.84300000000002
+        ],
+        [
+          282.78799999999995,
+          169.84300000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          282.75,
+          167.27100000000002
+        ],
+        [
+          240.75599999999997,
+          107.26900000000001
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          282.78699999999998,
+          169.27100000000002
+        ],
+        [
+          521.50599999999997,
+          169.27100000000002
+        ],
+        [
+          521.50599999999997,
+          273.09800000000001
+        ],
+        [
+          282.78699999999998,
+          273.09800000000001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          282.75,
+          166.24000000000001
+        ],
+        [
+          240.75999999999999,
+          6.6469999999999914
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          346.738,
+          92.617999999999995
+        ],
+        [
+          37.406999999999982,
+          150.51300000000001
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          348.738,
+          94.617999999999995
+        ],
+        [
+          382.14499999999998,
+          94.617999999999995
+        ],
+        [
+          382.14499999999998,
+          241.131
+        ],
+        [
+          348.738,
+          241.131
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          346.73760000000004,
+          92.618099999999998
+        ],
+        [
+          37.406999999999982,
+          150.51300000000001
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          382.14460000000003,
+          94.618099999999998
+        ],
+        [
+          348.73760000000004,
+          94.618099999999998
+        ],
+        [
+          348.73760000000004,
+          241.1311
+        ],
+        [
+          382.14460000000003,
+          241.1311
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.68000000000001,
+          93.430999999999997
+        ],
+        [
+          7.2860000000000014,
+          149.90500000000003
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.68000000000001,
+          95.430999999999997
+        ],
+        [
+          381.96600000000001,
+          95.430999999999997
+        ],
+        [
+          381.96600000000001,
+          241.33600000000001
+        ],
+        [
+          378.68000000000001,
+          241.33600000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.68000000000001,
+          228.22800000000001
+        ],
+        [
+          7.2860000000000014,
+          15.108000000000004
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.68000000000001,
+          230.22800000000001
+        ],
+        [
+          381.96600000000001,
+          230.22800000000001
+        ],
+        [
+          381.96600000000001,
+          241.33600000000001
+        ],
+        [
+          378.68000000000001,
+          241.33600000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.81299999999999,
+          93.466999999999999
+        ],
+        [
+          5.6580000000000155,
+          37.058000000000007
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.81299999999999,
+          95.466999999999999
+        ],
+        [
+          380.471,
+          95.466999999999999
+        ],
+        [
+          380.471,
+          128.52500000000001
+        ],
+        [
+          378.81299999999999,
+          128.52500000000001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          346.73770000000002,
+          84.187600000000003
+        ],
+        [
+          37.309000000000026,
+          158.94499999999999
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          382.04670000000004,
+          86.187600000000003
+        ],
+        [
+          348.73770000000002,
+          86.187600000000003
+        ],
+        [
+          348.73770000000002,
+          241.1326
+        ],
+        [
+          382.04670000000004,
+          241.1326
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          346.76420000000002,
+          92.662400000000005
+        ],
+        [
+          38.052999999999997,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          382.81720000000001,
+          94.662400000000005
+        ],
+        [
+          348.76420000000002,
+          94.662400000000005
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          347.74760000000003,
+          154.9452
+        ],
+        [
+          36.064999999999998,
+          30.945999999999998
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          347.74760000000003,
+          154.9452
+        ],
+        [
+          36.064999999999998,
+          30.945999999999998
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.65000000000003,
+          180.34
+        ],
+        [
+          7.2730000000000246,
+          4.4960000000000093
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.65000000000003,
+          182.34
+        ],
+        [
+          381.92300000000006,
+          182.34
+        ],
+        [
+          381.92300000000006,
+          182.83600000000001
+        ],
+        [
+          378.65000000000003,
+          182.83600000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          374.31299999999999,
+          192.00300000000001
+        ],
+        [
+          9.6100000000000136,
+          4.4989999999999952
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          376.31299999999999,
+          194.00300000000001
+        ],
+        [
+          381.923,
+          194.00300000000001
+        ],
+        [
+          381.923,
+          194.50200000000001
+        ],
+        [
+          376.31299999999999,
+          194.50200000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          374.31299999999999,
+          214.536
+        ],
+        [
+          9.6100000000000136,
+          4.4950000000000045
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          376.31299999999999,
+          216.536
+        ],
+        [
+          381.923,
+          216.536
+        ],
+        [
+          381.923,
+          217.03100000000001
+        ],
+        [
+          376.31299999999999,
+          217.03100000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.65000000000003,
+          203.64500000000001
+        ],
+        [
+          7.2730000000000246,
+          4.4970000000000141
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.65000000000003,
+          205.64500000000001
+        ],
+        [
+          381.92300000000006,
+          205.64500000000001
+        ],
+        [
+          381.92300000000006,
+          206.14200000000002
+        ],
+        [
+          378.65000000000003,
+          206.14200000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.65000000000003,
+          227.876
+        ],
+        [
+          7.2730000000000246,
+          4.5
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.65000000000003,
+          229.876
+        ],
+        [
+          381.92300000000006,
+          229.876
+        ],
+        [
+          381.92300000000006,
+          230.376
+        ],
+        [
+          378.65000000000003,
+          230.376
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.65000000000003,
+          107.342
+        ],
+        [
+          7.2730000000000246,
+          4.4950000000000045
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.65000000000003,
+          109.342
+        ],
+        [
+          381.92300000000006,
+          109.342
+        ],
+        [
+          381.92300000000006,
+          109.837
+        ],
+        [
+          378.65000000000003,
+          109.837
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          374.31299999999999,
+          119.00700000000001
+        ],
+        [
+          9.6100000000000136,
+          4.4950000000000045
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          376.31299999999999,
+          121.00700000000001
+        ],
+        [
+          381.923,
+          121.00700000000001
+        ],
+        [
+          381.923,
+          121.50200000000001
+        ],
+        [
+          376.31299999999999,
+          121.50200000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          374.31299999999999,
+          94.649000000000001
+        ],
+        [
+          9.6100000000000136,
+          4.5
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          376.31299999999999,
+          96.649000000000001
+        ],
+        [
+          381.923,
+          96.649000000000001
+        ],
+        [
+          381.923,
+          97.149000000000001
+        ],
+        [
+          376.31299999999999,
+          97.149000000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          374.31299999999999,
+          141.53700000000001
+        ],
+        [
+          9.6100000000000136,
+          4.4989999999999952
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          376.31299999999999,
+          143.53700000000001
+        ],
+        [
+          381.923,
+          143.53700000000001
+        ],
+        [
+          381.923,
+          144.036
+        ],
+        [
+          376.31299999999999,
+          144.036
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.65000000000003,
+          130.64400000000001
+        ],
+        [
+          7.2730000000000246,
+          4.5039999999999907
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.65000000000003,
+          132.64400000000001
+        ],
+        [
+          381.92300000000006,
+          132.64400000000001
+        ],
+        [
+          381.92300000000006,
+          133.148
+        ],
+        [
+          378.65000000000003,
+          133.148
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          376.65000000000003,
+          154.875
+        ],
+        [
+          7.2730000000000246,
+          4.5
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          378.65000000000003,
+          156.875
+        ],
+        [
+          381.92300000000006,
+          156.875
+        ],
+        [
+          381.92300000000006,
+          157.375
+        ],
+        [
+          378.65000000000003,
+          157.375
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          380.11899999999997,
+          167.82300000000001
+        ],
+        [
+          5.4370000000000118,
+          18.489000000000004
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          382.11899999999997,
+          169.82300000000001
+        ],
+        [
+          383.55599999999998,
+          169.82300000000001
+        ],
+        [
+          383.55599999999998,
+          184.31200000000001
+        ],
+        [
+          382.11899999999997,
+          184.31200000000001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          380.11869999999999,
+          167.82259999999999
+        ],
+        [
+          5.4370000000000118,
+          18.489000000000004
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          383.5557,
+          184.3116
+        ],
+        [
+          382.11869999999999,
+          184.3116
+        ],
+        [
+          382.11869999999999,
+          169.82259999999999
+        ],
+        [
+          383.5557,
+          169.82259999999999
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          346.73700000000002,
+          84.144000000000005
+        ],
+        [
+          38.185000000000002,
+          12.385000000000005
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          348.73700000000002,
+          86.144000000000005
+        ],
+        [
+          382.92200000000003,
+          86.144000000000005
+        ],
+        [
+          382.92200000000003,
+          94.529000000000011
+        ],
+        [
+          348.73700000000002,
+          94.529000000000011
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          346.73720000000003,
+          84.144300000000001
+        ],
+        [
+          38.185000000000002,
+          12.385000000000005
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          382.92220000000003,
+          86.144300000000001
+        ],
+        [
+          348.73720000000003,
+          86.144300000000001
+        ],
+        [
+          348.73720000000003,
+          94.529300000000006
+        ],
+        [
+          382.92220000000003,
+          94.529300000000006
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          372.85650000000004,
+          165.8922
+        ],
+        [
+          19.303999999999974,
+          19.305000000000007
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          372.03050000000002,
+          165.01570000000001
+        ],
+        [
+          21.029999999999973,
+          21.030000000000001
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          298.64699999999999,
+          197.304
+        ],
+        [
+          45.607000000000028,
+          45.608000000000004
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          295.69100000000003,
+          194.69400000000002
+        ],
+        [
+          25.728999999999985,
+          48.321999999999974
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          231.31400000000002,
+          3.8679999999999999
+        ],
+        [
+          319.42000000000002,
+          3.8679999999999999
+        ],
+        [
+          319.42000000000002,
+          390.28300000000002
+        ],
+        [
+          231.31400000000002,
+          390.28300000000002
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          295.69100000000003,
+          194.69400000000002
+        ],
+        [
+          25.728599999999972,
+          48.321999999999974
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          319.4196,
+          3.8679000000000001
+        ],
+        [
+          231.31360000000001,
+          3.8679000000000001
+        ],
+        [
+          231.31360000000001,
+          390.28290000000004
+        ],
+        [
+          319.4196,
+          390.28290000000004
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          308.28100000000001,
+          194.69400000000002
+        ],
+        [
+          12.666999999999973,
+          48.321999999999974
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          310.28100000000001,
+          6.0129999999999768
+        ],
+        [
+          318.94799999999998,
+          6.0129999999999768
+        ],
+        [
+          318.94799999999998,
+          391.327
+        ],
+        [
+          310.28100000000001,
+          391.327
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          295.69100000000003,
+          194.69400000000002
+        ],
+        [
+          25.471099999999979,
+          48.321999999999974
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          319.16210000000001,
+          -18.359500000000001
+        ],
+        [
+          231.31310000000002,
+          -18.359500000000001
+        ],
+        [
+          231.31310000000002,
+          390.28249999999997
+        ],
+        [
+          319.16210000000001,
+          390.28249999999997
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          295.69100000000003,
+          194.69400000000002
+        ],
+        [
+          24.85329999999999,
+          46.62299999999999
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          295.69100000000003,
+          194.69400000000002
+        ],
+        [
+          24.85329999999999,
+          46.62299999999999
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          308.20099999999996,
+          233.22499999999999
+        ],
+        [
+          12.636000000000024,
+          5.3120000000000118
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          310.20099999999996,
+          235.22499999999999
+        ],
+        [
+          318.83699999999999,
+          235.22499999999999
+        ],
+        [
+          318.83699999999999,
+          236.53700000000001
+        ],
+        [
+          310.20099999999996,
+          236.53700000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          317.35300000000001,
+          199.31300000000002
+        ],
+        [
+          7.7900000000000205,
+          43.113
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          319.35300000000001,
+          201.31300000000002
+        ],
+        [
+          323.14300000000003,
+          201.31300000000002
+        ],
+        [
+          323.14300000000003,
+          240.42600000000002
+        ],
+        [
+          319.35300000000001,
+          240.42600000000002
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          317.35309999999998,
+          199.31290000000001
+        ],
+        [
+          7.7900000000000205,
+          43.113
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          323.1431,
+          240.42590000000001
+        ],
+        [
+          319.35309999999998,
+          240.42590000000001
+        ],
+        [
+          319.35309999999998,
+          201.31290000000001
+        ],
+        [
+          323.1431,
+          201.31290000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          454.43370000000004,
+          226.26820000000001
+        ],
+        [
+          50.629999999999995,
+          5.1759999999999877
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          503.05870000000004,
+          228.26820000000001
+        ],
+        [
+          456.43370000000004,
+          228.5772
+        ],
+        [
+          456.43870000000004,
+          229.4442
+        ],
+        [
+          503.06370000000004,
+          229.13820000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          454.23349999999999,
+          195.63830000000002
+        ],
+        [
+          50.62700000000001,
+          5.1750000000000114
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          502.8535,
+          197.63830000000002
+        ],
+        [
+          456.23349999999999,
+          197.94030000000001
+        ],
+        [
+          456.23649999999998,
+          198.81330000000003
+        ],
+        [
+          502.8605,
+          198.49930000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          466.9452,
+          181.04330000000002
+        ],
+        [
+          25.004000000000019,
+          5.0099999999999909
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          489.9452,
+          183.04330000000002
+        ],
+        [
+          468.9452,
+          183.18230000000003
+        ],
+        [
+          468.9502,
+          184.05330000000001
+        ],
+        [
+          489.94920000000002,
+          183.91630000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          468.13909999999998,
+          210.8544
+        ],
+        [
+          25.004000000000019,
+          5.0120000000000005
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          491.13810000000001,
+          212.8544
+        ],
+        [
+          470.13909999999998,
+          212.99340000000001
+        ],
+        [
+          470.1431,
+          213.8664
+        ],
+        [
+          491.1431,
+          213.72239999999999
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          466.53790000000004,
+          120.34170000000002
+        ],
+        [
+          25.007999999999981,
+          4.9919999999999902
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          489.54590000000002,
+          123.20670000000001
+        ],
+        [
+          468.54290000000003,
+          123.33370000000001
+        ],
+        [
+          468.53790000000004,
+          122.46270000000001
+        ],
+        [
+          489.53890000000001,
+          122.34170000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          453.8272,
+          135.2807
+        ],
+        [
+          50.634000000000015,
+          5.1370000000000005
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          502.46120000000002,
+          138.14570000000001
+        ],
+        [
+          455.8322,
+          138.4177
+        ],
+        [
+          455.8272,
+          137.5487
+        ],
+        [
+          502.4522,
+          137.2807
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          466.738,
+          150.02459999999999
+        ],
+        [
+          25.00200000000001,
+          4.9970000000000141
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          489.74000000000001,
+          152.8956
+        ],
+        [
+          468.74700000000001,
+          153.02160000000001
+        ],
+        [
+          468.738,
+          152.14760000000001
+        ],
+        [
+          489.73500000000001,
+          152.02459999999999
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          442.80520000000001,
+          224.91550000000004
+        ],
+        [
+          7.5590000000000259,
+          9.6529999999999916
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          447.14350000000002,
+          224.79350000000002
+        ],
+        [
+          7.8020000000000209,
+          9.7460000000000093
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          504.61340000000001,
+          224.50810000000001
+        ],
+        [
+          7.5590000000000259,
+          9.6569999999999823
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          508.9495,
+          224.3888
+        ],
+        [
+          7.8019999999999641,
+          9.7450000000000045
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          443.13980000000004,
+          194.59999999999999
+        ],
+        [
+          5.8639999999999759,
+          9.5430000000000064
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          446.27080000000001,
+          201.446
+        ],
+        [
+          446.25380000000001,
+          201.44800000000001
+        ],
+        [
+          445.27980000000002,
+          200.935
+        ],
+        [
+          445.13980000000004,
+          201.506
+        ],
+        [
+          446.3578,
+          202.143
+        ],
+        [
+          447.00380000000001,
+          202.14099999999999
+        ],
+        [
+          446.9708,
+          196.59999999999999
+        ],
+        [
+          446.23579999999998,
+          196.60300000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          446.93720000000002,
+          194.47040000000001
+        ],
+        [
+          7.8009999999999877,
+          9.7450000000000045
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          504.94680000000005,
+          194.18910000000002
+        ],
+        [
+          5.8719999999999573,
+          9.5509999999999877
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          508.07780000000002,
+          201.03910000000002
+        ],
+        [
+          508.05980000000005,
+          201.03910000000002
+        ],
+        [
+          507.09180000000003,
+          200.52410000000003
+        ],
+        [
+          506.94680000000005,
+          201.10110000000003
+        ],
+        [
+          508.16980000000001,
+          201.74010000000001
+        ],
+        [
+          508.81880000000001,
+          201.73310000000001
+        ],
+        [
+          508.7758,
+          196.18910000000002
+        ],
+        [
+          508.04780000000005,
+          196.19510000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          508.74930000000001,
+          194.066
+        ],
+        [
+          7.8040000000000305,
+          9.7459999999999809
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          442.73550000000006,
+          133.9512
+        ],
+        [
+          5.8599999999999568,
+          9.5500000000000114
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          445.86850000000004,
+          140.7962
+        ],
+        [
+          445.85050000000007,
+          140.8032
+        ],
+        [
+          444.87850000000003,
+          140.2842
+        ],
+        [
+          444.73550000000006,
+          140.8562
+        ],
+        [
+          445.95850000000002,
+          141.50120000000001
+        ],
+        [
+          446.59550000000002,
+          141.49719999999999
+        ],
+        [
+          446.56450000000007,
+          135.9512
+        ],
+        [
+          445.83550000000002,
+          135.95519999999999
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          446.53190000000001,
+          133.82169999999999
+        ],
+        [
+          7.8059999999999832,
+          9.75
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          504.54650000000004,
+          133.5428
+        ],
+        [
+          5.8669999999999618,
+          9.5459999999999923
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          507.67250000000001,
+          140.3938
+        ],
+        [
+          507.6635,
+          140.3938
+        ],
+        [
+          506.68350000000004,
+          139.8758
+        ],
+        [
+          506.54650000000004,
+          140.44980000000001
+        ],
+        [
+          507.76550000000003,
+          141.08879999999999
+        ],
+        [
+          508.4135,
+          141.08680000000001
+        ],
+        [
+          508.3725,
+          135.5428
+        ],
+        [
+          507.64050000000003,
+          135.54480000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          508.34699999999998,
+          133.41419999999999
+        ],
+        [
+          7.8010000000000446,
+          9.7529999999999859
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          473.50580000000002,
+          240.69330000000002
+        ],
+        [
+          11.322999999999979,
+          12.61699999999999
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          482.8288,
+          242.69330000000002
+        ],
+        [
+          475.50580000000002,
+          242.69330000000002
+        ],
+        [
+          479.03379999999999,
+          251.31030000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          472.29930000000002,
+          237.7962
+        ],
+        [
+          13.920999999999992,
+          5.686000000000007
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          483.25330000000002,
+          241.48220000000001
+        ],
+        [
+          475.17330000000004,
+          241.48220000000001
+        ],
+        [
+          474.29930000000002,
+          239.7962
+        ],
+        [
+          484.22030000000001,
+          239.7962
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          473.68380000000002,
+          250.66879999999998
+        ],
+        [
+          11.324000000000012,
+          12.715000000000032
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          483.00780000000003,
+          261.16579999999999
+        ],
+        [
+          475.68380000000002,
+          261.38380000000001
+        ],
+        [
+          478.95080000000002,
+          252.66879999999998
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          395.6114,
+          206.24900000000002
+        ],
+        [
+          128.1386,
+          53.646000000000015
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          448.02300000000002,
+          151.08689999999999
+        ],
+        [
+          65.278999999999996,
+          14.157000000000011
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          479.25600000000003,
+          163.2439
+        ],
+        [
+          450.02300000000002,
+          153.08689999999999
+        ],
+        [
+          479.25600000000003,
+          158.30089999999998
+        ],
+        [
+          511.30200000000002,
+          153.08689999999999
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          448.02289999999999,
+          151.08770000000001
+        ],
+        [
+          65.27899999999994,
+          20.287000000000006
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          479.59890000000001,
+          169.37470000000002
+        ],
+        [
+          450.02289999999999,
+          153.08770000000001
+        ],
+        [
+          479.59890000000001,
+          162.45270000000002
+        ],
+        [
+          511.30189999999999,
+          153.08770000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          395.39960000000002,
+          167.76390000000001
+        ],
+        [
+          34.810000000000002,
+          6.3880000000000052
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          428.20960000000002,
+          169.76390000000001
+        ],
+        [
+          397.39960000000002,
+          169.76390000000001
+        ],
+        [
+          397.39960000000002,
+          172.15190000000001
+        ],
+        [
+          425.73360000000002,
+          172.15190000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          395.39960000000002,
+          165.3417
+        ],
+        [
+          34.810000000000002,
+          6.3880000000000052
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          428.20960000000002,
+          169.72970000000001
+        ],
+        [
+          397.39960000000002,
+          169.72970000000001
+        ],
+        [
+          397.39960000000002,
+          167.3417
+        ],
+        [
+          425.73360000000002,
+          167.3417
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          382.666,
+          81.085000000000008
+        ],
+        [
+          139.084,
+          185.81699999999998
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          318.829452,
+          213.35400000000001
+        ],
+        [
+          41.199547999999993,
+          57.679000000000002
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          328.30490000000003,
+          223.61699999999999
+        ],
+        [
+          25.560999999999979,
+          43.957999999999998
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          351.86590000000001,
+          265.57499999999999
+        ],
+        [
+          351.86590000000001,
+          242.88899999999998
+        ],
+        [
+          330.30490000000003,
+          225.61699999999999
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          322.8535,
+          219.25690000000003
+        ],
+        [
+          12.43300000000005,
+          11.481999999999999
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          340.93799999999999,
+          248.44499999999999
+        ],
+        [
+          95.146999999999991,
+          18.831999999999994
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          340.93780000000004,
+          248.44450000000001
+        ],
+        [
+          95.146999999999991,
+          18.831999999999994
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          434.08480000000003,
+          250.44450000000001
+        ],
+        [
+          342.93780000000004,
+          250.44450000000001
+        ],
+        [
+          342.93780000000004,
+          258.1395
+        ],
+        [
+          342.93780000000004,
+          265.2765
+        ],
+        [
+          434.08480000000003,
+          265.2765
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          317.0763,
+          166.03399999999999
+        ],
+        [
+          73.105700000000013,
+          73.353000000000009
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          282.75,
+          79.085000000000008
+        ],
+        [
+          241,
+          195.45500000000001
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          623.25800000000004
+        ],
+        [
+          241,
+          106.74199999999996
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          550.90899999999999
+        ],
+        [
+          241,
+          84.15809999999999
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          550.90899999999999
+        ],
+        [
+          241,
+          84.15809999999999
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          126.0924,
+          550.90899999999999
+        ],
+        [
+          77.295000000000016,
+          77.243000000000052
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          201.38740000000001,
+          626.15200000000004
+        ],
+        [
+          128.0924,
+          549.101
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          206.8603,
+          550.90899999999999
+        ],
+        [
+          9.1330000000000098,
+          76.532600000000116
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          213.9933,
+          549.10160000000008
+        ],
+        [
+          208.8603,
+          625.44160000000011
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          214.6893,
+          571.43000000000006
+        ],
+        [
+          60.310699999999997,
+          56.72199999999998
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          216.6893,
+          626.15200000000004
+        ],
+        [
+          274.27429999999998,
+          573.43000000000006
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          43.051900000000003,
+          550.90899999999999
+        ],
+        [
+          154.64100000000002,
+          77.955300000000079
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          45.051900000000003,
+          549.33030000000008
+        ],
+        [
+          195.69290000000001,
+          626.86430000000007
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          571.01150000000007
+        ],
+        [
+          155.1541,
+          57.140999999999963
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.159100000000002,
+          573.01150000000007
+        ],
+        [
+          187.1541,
+          626.15250000000003
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          584.50760000000002
+        ],
+        [
+          145.54349999999999,
+          44.356999999999971
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.121500000000005,
+          586.50760000000002
+        ],
+        [
+          177.54349999999999,
+          626.8646
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          592.76980000000003
+        ],
+        [
+          136.29230000000001,
+          35.739000000000033
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.142299999999999,
+          594.76980000000003
+        ],
+        [
+          168.29230000000001,
+          626.50880000000006
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          598.06650000000002
+        ],
+        [
+          127.0891,
+          31.94500000000005
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.159100000000002,
+          600.06650000000002
+        ],
+        [
+          159.0891,
+          628.01150000000007
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          601.79899999999998
+        ],
+        [
+          121.46110000000002,
+          29.177999999999997
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.159100000000002,
+          603.79899999999998
+        ],
+        [
+          153.46110000000002,
+          628.97699999999998
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          606.15219999999999
+        ],
+        [
+          112.9391,
+          25.629999999999995
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.159100000000002,
+          608.15219999999999
+        ],
+        [
+          144.9391,
+          629.78219999999999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          610.99009999999998
+        ],
+        [
+          102.86350000000002,
+          20.995000000000005
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.121500000000005,
+          612.99009999999998
+        ],
+        [
+          134.86350000000002,
+          629.98509999999999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          615.27010000000007
+        ],
+        [
+          87.211100000000016,
+          16.028999999999996
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.159100000000002,
+          617.27010000000007
+        ],
+        [
+          119.21110000000002,
+          629.29910000000007
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          619.54960000000005
+        ],
+        [
+          241,
+          13.898000000000025
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          49.834000000000003,
+          631.44760000000008
+        ],
+        [
+          112.697,
+          630.64460000000008
+        ],
+        [
+          34.853999999999999,
+          621.54960000000005
+        ],
+        [
+          274.53499999999997,
+          622.08460000000014
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          623.56309999999996
+        ],
+        [
+          74.543999999999997,
+          10.687000000000012
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          106.544,
+          632.25009999999997
+        ],
+        [
+          35.388999999999996,
+          625.56309999999996
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          626.23709999999994
+        ],
+        [
+          126.4385,
+          8.0130000000000337
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          81.666499999999999,
+          632.25009999999997
+        ],
+        [
+          34.853499999999997,
+          628.50509999999997
+        ],
+        [
+          158.4385,
+          628.23709999999994
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          227.86150000000001,
+          608.04759999999999
+        ],
+        [
+          47.138499999999993,
+          22.190000000000055
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          229.86150000000001,
+          628.23760000000004
+        ],
+        [
+          274.53550000000001,
+          610.04759999999999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          550.90899999999999
+        ],
+        [
+          241,
+          27.166100000000029
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.121500000000005,
+          576.07510000000002
+        ],
+        [
+          275.07050000000004,
+          550.39510000000007
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          567.12059999999997
+        ],
+        [
+          241,
+          21.387000000000057
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.121500000000005,
+          586.50760000000002
+        ],
+        [
+          274.80250000000001,
+          569.12059999999997
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          577.55229999999995
+        ],
+        [
+          241,
+          17.878000000000043
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.053100000000001,
+          593.43029999999999
+        ],
+        [
+          274.80309999999997,
+          579.55229999999995
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          584.50700000000006
+        ],
+        [
+          241,
+          15.476999999999975
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.142299999999999,
+          597.98400000000004
+        ],
+        [
+          274.53429999999997,
+          586.50700000000006
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          590.39260000000002
+        ],
+        [
+          241,
+          13.42999999999995
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          274.5351,
+          592.39260000000002
+        ],
+        [
+          34.964100000000002,
+          601.82259999999997
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          594.94010000000003
+        ],
+        [
+          241,
+          11.490000000000009
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.121500000000005,
+          604.43010000000004
+        ],
+        [
+          274.80250000000001,
+          596.94010000000003
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          598.41759999999999
+        ],
+        [
+          241,
+          9.6889999999999645
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          274.26760000000002,
+          600.41759999999999
+        ],
+        [
+          35.052600000000012,
+          606.10659999999996
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          601.89509999999996
+        ],
+        [
+          241,
+          8.8150000000000546
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.121500000000005,
+          608.71010000000001
+        ],
+        [
+          274.53550000000001,
+          603.89509999999996
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          605.64050000000009
+        ],
+        [
+          241,
+          7.8229999999999791
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.142299999999999,
+          611.46350000000007
+        ],
+        [
+          273.99930000000001,
+          607.64050000000009
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          609.11760000000004
+        ],
+        [
+          241,
+          7.0679999999999836
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          274.80260000000004,
+          611.11760000000004
+        ],
+        [
+          35.27260000000004,
+          614.18560000000002
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          612.86310000000003
+        ],
+        [
+          241,
+          6.4070000000000391
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.159100000000002,
+          617.27010000000007
+        ],
+        [
+          274.5351,
+          614.86310000000003
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          616.60760000000005
+        ],
+        [
+          241,
+          5.07000000000005
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          274.5351,
+          618.60760000000005
+        ],
+        [
+          35.121099999999984,
+          619.6776000000001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          622.49260000000004
+        ],
+        [
+          241,
+          4.8020000000000209
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.121500000000005,
+          624.49260000000004
+        ],
+        [
+          274.26750000000004,
+          625.29460000000006
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.963000000000001,
+          578.69799999999998
+        ],
+        [
+          8.2199999999999989,
+          121.12300000000005
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.963000000000001,
+          580.69799999999998
+        ],
+        [
+          56.183,
+          580.69799999999998
+        ],
+        [
+          56.183,
+          697.82100000000003
+        ],
+        [
+          51.963000000000001,
+          697.82100000000003
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.963000000000001,
+          570.02300000000002
+        ],
+        [
+          8.2199999999999989,
+          40.751999999999953
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.963000000000001,
+          572.02300000000002
+        ],
+        [
+          56.183,
+          572.02300000000002
+        ],
+        [
+          56.183,
+          608.77499999999998
+        ],
+        [
+          51.963000000000001,
+          608.77499999999998
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          52.777000000000001,
+          607.69200000000001
+        ],
+        [
+          5.4059999999999988,
+          92.096000000000004
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          54.777000000000001,
+          609.69200000000001
+        ],
+        [
+          56.183,
+          609.69200000000001
+        ],
+        [
+          56.183,
+          697.78800000000001
+        ],
+        [
+          54.777000000000001,
+          697.78800000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          686.59400000000005
+        ],
+        [
+          14.424999999999997,
+          5.2039999999999509
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          688.59400000000005
+        ],
+        [
+          62.387,
+          688.59400000000005
+        ],
+        [
+          62.387,
+          689.798
+        ],
+        [
+          51.962000000000003,
+          689.798
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          676.61199999999997
+        ],
+        [
+          14.424999999999997,
+          5.2019999999999982
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          678.61199999999997
+        ],
+        [
+          62.387,
+          678.61199999999997
+        ],
+        [
+          62.387,
+          679.81399999999996
+        ],
+        [
+          51.962000000000003,
+          679.81399999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          666.63099999999997
+        ],
+        [
+          14.424999999999997,
+          5.2029999999999745
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          668.63099999999997
+        ],
+        [
+          62.387,
+          668.63099999999997
+        ],
+        [
+          62.387,
+          669.83399999999995
+        ],
+        [
+          51.962000000000003,
+          669.83399999999995
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          656.649
+        ],
+        [
+          14.424999999999997,
+          5.2019999999999982
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          658.649
+        ],
+        [
+          62.387,
+          658.649
+        ],
+        [
+          62.387,
+          659.851
+        ],
+        [
+          51.962000000000003,
+          659.851
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          646.66600000000005
+        ],
+        [
+          14.424999999999997,
+          5.2039999999999509
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          648.66600000000005
+        ],
+        [
+          62.387,
+          648.66600000000005
+        ],
+        [
+          62.387,
+          649.87
+        ],
+        [
+          51.962000000000003,
+          649.87
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.884,
+          636.68399999999997
+        ],
+        [
+          14.424999999999997,
+          5.2039999999999509
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.884,
+          638.68399999999997
+        ],
+        [
+          62.308999999999997,
+          638.68399999999997
+        ],
+        [
+          62.308999999999997,
+          639.88799999999992
+        ],
+        [
+          51.884,
+          639.88799999999992
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          626.70299999999997
+        ],
+        [
+          14.424999999999997,
+          5.2039999999999509
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          628.70299999999997
+        ],
+        [
+          62.387,
+          628.70299999999997
+        ],
+        [
+          62.387,
+          629.90699999999993
+        ],
+        [
+          51.962000000000003,
+          629.90699999999993
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          616.721
+        ],
+        [
+          14.424999999999997,
+          5.2050000000000409
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          618.721
+        ],
+        [
+          62.387,
+          618.721
+        ],
+        [
+          62.387,
+          619.92600000000004
+        ],
+        [
+          51.962000000000003,
+          619.92600000000004
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          606.73800000000006
+        ],
+        [
+          14.424999999999997,
+          5.2050000000000409
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          608.73800000000006
+        ],
+        [
+          62.387,
+          608.73800000000006
+        ],
+        [
+          62.387,
+          609.9430000000001
+        ],
+        [
+          51.962000000000003,
+          609.9430000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          596.75700000000006
+        ],
+        [
+          14.424999999999997,
+          5.2039999999999509
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          598.75700000000006
+        ],
+        [
+          62.387,
+          598.75700000000006
+        ],
+        [
+          62.387,
+          599.96100000000001
+        ],
+        [
+          51.962000000000003,
+          599.96100000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          49.962000000000003,
+          586.77499999999998
+        ],
+        [
+          14.424999999999997,
+          5.2039999999999509
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          51.962000000000003,
+          588.77499999999998
+        ],
+        [
+          62.387,
+          588.77499999999998
+        ],
+        [
+          62.387,
+          589.97899999999993
+        ],
+        [
+          51.962000000000003,
+          589.97899999999993
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          50.599900000000005,
+          647.01589999999999
+        ],
+        [
+          9.3140000000000001,
+          9.3150000000000546
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          57.913900000000005,
+          649.01589999999999
+        ],
+        [
+          52.599900000000005,
+          651.6739
+        ],
+        [
+          57.913900000000005,
+          654.33090000000004
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          50.599900000000005,
+          647.01589999999999
+        ],
+        [
+          9.3140000000000001,
+          9.3150000000000546
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          57.913900000000005,
+          649.01589999999999
+        ],
+        [
+          52.599900000000005,
+          651.6739
+        ],
+        [
+          57.913900000000005,
+          654.33090000000004
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          56.075999999999993,
+          643.27099999999996
+        ],
+        [
+          33.914000000000001,
+          16.649999999999977
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          58.075999999999993,
+          645.27099999999996
+        ],
+        [
+          87.989999999999995,
+          645.27099999999996
+        ],
+        [
+          87.989999999999995,
+          657.92099999999994
+        ],
+        [
+          58.075999999999993,
+          657.92099999999994
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          56.0762,
+          643.27089999999998
+        ],
+        [
+          33.914000000000001,
+          16.649999999999977
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          87.990200000000002,
+          645.27089999999998
+        ],
+        [
+          58.0762,
+          645.27089999999998
+        ],
+        [
+          58.0762,
+          657.92089999999996
+        ],
+        [
+          87.990200000000002,
+          657.92089999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          46.353400000000001,
+          674.69040000000007
+        ],
+        [
+          9.9209999999999994,
+          9.9220000000000255
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          46.353400000000001,
+          674.69040000000007
+        ],
+        [
+          9.9209999999999994,
+          9.9220000000000255
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          624.38599999999997
+        ],
+        [
+          241,
+          5.4230000000000018
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          624.38650000000007
+        ],
+        [
+          241,
+          5.4230000000000018
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          274.67520000000002,
+          626.38650000000007
+        ],
+        [
+          34.634200000000021,
+          626.38650000000007
+        ],
+        [
+          34.634200000000021,
+          627.80950000000007
+        ],
+        [
+          274.67520000000002,
+          627.80950000000007
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          129.27100000000002,
+          646.05200000000002
+        ],
+        [
+          67.591999999999985,
+          8.2119999999999891
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          131.27100000000002,
+          652.26400000000001
+        ],
+        [
+          131.27100000000002,
+          648.05200000000002
+        ],
+        [
+          132.29300000000001,
+          648.05200000000002
+        ],
+        [
+          132.29300000000001,
+          651.24199999999996
+        ],
+        [
+          193.84100000000001,
+          651.24199999999996
+        ],
+        [
+          193.84100000000001,
+          648.05200000000002
+        ],
+        [
+          194.863,
+          648.05200000000002
+        ],
+        [
+          194.863,
+          652.26400000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          129.27100000000002,
+          601.76679999999999
+        ],
+        [
+          67.591999999999985,
+          8.2119999999999891
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          193.84100000000001,
+          607.97879999999998
+        ],
+        [
+          193.84100000000001,
+          604.78779999999995
+        ],
+        [
+          132.29400000000001,
+          604.78779999999995
+        ],
+        [
+          132.29400000000001,
+          607.97879999999998
+        ],
+        [
+          131.27100000000002,
+          607.97879999999998
+        ],
+        [
+          131.27100000000002,
+          603.76679999999999
+        ],
+        [
+          194.863,
+          603.76679999999999
+        ],
+        [
+          194.863,
+          607.97879999999998
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          141.74799999999999,
+          638.80399999999997
+        ],
+        [
+          42.63900000000001,
+          5.0209999999999582
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          143.74799999999999,
+          640.80399999999997
+        ],
+        [
+          182.387,
+          640.80399999999997
+        ],
+        [
+          182.387,
+          641.82499999999993
+        ],
+        [
+          143.74799999999999,
+          641.82499999999993
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          141.74799999999999,
+          613.56000000000006
+        ],
+        [
+          42.63900000000001,
+          5.0199999999999818
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          143.74799999999999,
+          615.56000000000006
+        ],
+        [
+          182.387,
+          615.56000000000006
+        ],
+        [
+          182.387,
+          616.58000000000004
+        ],
+        [
+          143.74799999999999,
+          616.58000000000004
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          125.462,
+          633.53899999999999
+        ],
+        [
+          29.99499999999999,
+          7.7390000000000327
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          150.36499999999998,
+          617.072
+        ],
+        [
+          10.705000000000013,
+          5.1069999999999709
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          152.36499999999998,
+          619.072
+        ],
+        [
+          159.06999999999999,
+          619.072
+        ],
+        [
+          159.06999999999999,
+          620.17899999999997
+        ],
+        [
+          152.36499999999998,
+          620.17899999999997
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          166.148,
+          617.072
+        ],
+        [
+          10.705000000000013,
+          5.1100000000000136
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          168.148,
+          619.072
+        ],
+        [
+          174.85300000000001,
+          619.072
+        ],
+        [
+          174.85300000000001,
+          620.18200000000002
+        ],
+        [
+          168.148,
+          620.18200000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          161.02700000000002,
+          622.26499999999999
+        ],
+        [
+          5.1069999999999993,
+          10.705000000000041
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          163.02700000000002,
+          624.26499999999999
+        ],
+        [
+          164.13400000000001,
+          624.26499999999999
+        ],
+        [
+          164.13400000000001,
+          630.97000000000003
+        ],
+        [
+          163.02700000000002,
+          630.97000000000003
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          155.95869999999999,
+          612.06620000000009
+        ],
+        [
+          15.230000000000018,
+          15.231999999999971
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          160.8843,
+          617.09519999999998
+        ],
+        [
+          5.1430000000000007,
+          5.1420000000000528
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          149.833,
+          617.60699999999997
+        ],
+        [
+          10.700999999999993,
+          5.1079999999999472
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          165.61500000000001,
+          617.60699999999997
+        ],
+        [
+          10.700999999999993,
+          5.1079999999999472
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          160.49100000000001,
+          622.80100000000004
+        ],
+        [
+          5.1080000000000041,
+          10.702999999999975
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          155.423,
+          612.59900000000005
+        ],
+        [
+          15.233000000000004,
+          15.232999999999947
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          160.34899999999999,
+          617.63
+        ],
+        [
+          5.1430000000000007,
+          5.1430000000000291
+        ]
+      ],
+      "rectangular" : false,
+      "shaded" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          258.56999999999999,
+          585.73099999999999
+        ],
+        [
+          7.5819999999999936,
+          107.04499999999996
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          260.56999999999999,
+          587.73099999999999
+        ],
+        [
+          264.15199999999999,
+          587.73099999999999
+        ],
+        [
+          264.15199999999999,
+          690.77599999999995
+        ],
+        [
+          260.56999999999999,
+          690.77599999999995
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          646.88800000000003
+        ],
+        [
+          12.84899999999999,
+          5.0199999999999818
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          648.88800000000003
+        ],
+        [
+          264.15199999999999,
+          648.88800000000003
+        ],
+        [
+          264.15199999999999,
+          649.90800000000002
+        ],
+        [
+          255.303,
+          649.90800000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          680.86099999999999
+        ],
+        [
+          12.84899999999999,
+          5.0209999999999582
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          682.86099999999999
+        ],
+        [
+          264.15199999999999,
+          682.86099999999999
+        ],
+        [
+          264.15199999999999,
+          683.88199999999995
+        ],
+        [
+          255.303,
+          683.88199999999995
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          674.06799999999998
+        ],
+        [
+          12.84899999999999,
+          5.0199999999999818
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          676.06799999999998
+        ],
+        [
+          264.15199999999999,
+          676.06799999999998
+        ],
+        [
+          264.15199999999999,
+          677.08799999999997
+        ],
+        [
+          255.303,
+          677.08799999999997
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          667.27099999999996
+        ],
+        [
+          12.84899999999999,
+          5.0220000000000482
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          669.27099999999996
+        ],
+        [
+          264.15199999999999,
+          669.27099999999996
+        ],
+        [
+          264.15199999999999,
+          670.29300000000001
+        ],
+        [
+          255.303,
+          670.29300000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          640.09199999999998
+        ],
+        [
+          12.84899999999999,
+          5.0220000000000482
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          642.09199999999998
+        ],
+        [
+          264.15199999999999,
+          642.09199999999998
+        ],
+        [
+          264.15199999999999,
+          643.11400000000003
+        ],
+        [
+          255.303,
+          643.11400000000003
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          633.29700000000003
+        ],
+        [
+          12.84899999999999,
+          5.0199999999999818
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          635.29700000000003
+        ],
+        [
+          264.15199999999999,
+          635.29700000000003
+        ],
+        [
+          264.15199999999999,
+          636.31700000000001
+        ],
+        [
+          255.303,
+          636.31700000000001
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          660.47800000000007
+        ],
+        [
+          12.84899999999999,
+          5.0199999999999818
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          662.47800000000007
+        ],
+        [
+          264.15199999999999,
+          662.47800000000007
+        ],
+        [
+          264.15199999999999,
+          663.49800000000005
+        ],
+        [
+          255.303,
+          663.49800000000005
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          626.50099999999998
+        ],
+        [
+          12.84899999999999,
+          5.0220000000000482
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          628.50099999999998
+        ],
+        [
+          264.15199999999999,
+          628.50099999999998
+        ],
+        [
+          264.15199999999999,
+          629.52300000000002
+        ],
+        [
+          255.303,
+          629.52300000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          619.70699999999999
+        ],
+        [
+          12.84899999999999,
+          5.0199999999999818
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          621.70699999999999
+        ],
+        [
+          264.15199999999999,
+          621.70699999999999
+        ],
+        [
+          264.15199999999999,
+          622.72699999999998
+        ],
+        [
+          255.303,
+          622.72699999999998
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          612.91100000000006
+        ],
+        [
+          12.84899999999999,
+          5.0220000000000482
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          614.91100000000006
+        ],
+        [
+          264.15199999999999,
+          614.91100000000006
+        ],
+        [
+          264.15199999999999,
+          615.93300000000011
+        ],
+        [
+          255.303,
+          615.93300000000011
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          653.68299999999999
+        ],
+        [
+          12.84899999999999,
+          5.0199999999999818
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          655.68299999999999
+        ],
+        [
+          264.15199999999999,
+          655.68299999999999
+        ],
+        [
+          264.15199999999999,
+          656.70299999999997
+        ],
+        [
+          255.303,
+          656.70299999999997
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          606.11400000000003
+        ],
+        [
+          12.84899999999999,
+          5.0220000000000482
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          608.11400000000003
+        ],
+        [
+          264.15199999999999,
+          608.11400000000003
+        ],
+        [
+          264.15199999999999,
+          609.13600000000008
+        ],
+        [
+          255.303,
+          609.13600000000008
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          599.32100000000003
+        ],
+        [
+          12.84899999999999,
+          5.0220000000000482
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          601.32100000000003
+        ],
+        [
+          264.15199999999999,
+          601.32100000000003
+        ],
+        [
+          264.15199999999999,
+          602.34300000000007
+        ],
+        [
+          255.303,
+          602.34300000000007
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          592.52600000000007
+        ],
+        [
+          12.84899999999999,
+          5.0199999999999818
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          594.52600000000007
+        ],
+        [
+          264.15199999999999,
+          594.52600000000007
+        ],
+        [
+          264.15199999999999,
+          595.54600000000005
+        ],
+        [
+          255.303,
+          595.54600000000005
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.303,
+          585.73099999999999
+        ],
+        [
+          12.84899999999999,
+          5.0220000000000482
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.303,
+          587.73099999999999
+        ],
+        [
+          264.15199999999999,
+          587.73099999999999
+        ],
+        [
+          264.15199999999999,
+          588.75300000000004
+        ],
+        [
+          255.303,
+          588.75300000000004
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.304,
+          687.65600000000006
+        ],
+        [
+          19.14500000000001,
+          5.0220000000000482
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.304,
+          689.65600000000006
+        ],
+        [
+          270.44900000000001,
+          689.65600000000006
+        ],
+        [
+          270.44900000000001,
+          690.67800000000011
+        ],
+        [
+          255.304,
+          690.67800000000011
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          253.304,
+          697.80600000000004
+        ],
+        [
+          19.14500000000001,
+          5.0209999999999582
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          255.304,
+          699.80600000000004
+        ],
+        [
+          270.44900000000001,
+          699.80600000000004
+        ],
+        [
+          270.44900000000001,
+          700.827
+        ],
+        [
+          255.304,
+          700.827
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          237.86960000000002,
+          636.45830000000001
+        ],
+        [
+          7.1409999999999911,
+          8.6879999999999882
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          242.11660000000001,
+          636.45749999999998
+        ],
+        [
+          7.1599999999999966,
+          8.6900000000000546
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          246.53300000000002,
+          636.577
+        ],
+        [
+          4.9619999999999891,
+          4.9339999999999691
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          248.53300000000002,
+          638.577
+        ],
+        [
+          249.495,
+          638.577
+        ],
+        [
+          249.495,
+          639.51099999999997
+        ],
+        [
+          248.53300000000002,
+          639.51099999999997
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          248.72000000000003,
+          636.45830000000001
+        ],
+        [
+          7.1409999999999911,
+          8.6879999999999882
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          252.96710000000002,
+          636.45749999999998
+        ],
+        [
+          7.160000000000025,
+          8.6900000000000546
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          256.08800000000002,
+          643.53060000000005
+        ],
+        [
+          7.9610000000000127,
+          9.5810000000000173
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          258.08800000000002,
+          645.53060000000005
+        ],
+        [
+          262.04900000000004,
+          648.51760000000002
+        ],
+        [
+          258.08800000000002,
+          651.11160000000007
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          256.08800000000002,
+          643.53060000000005
+        ],
+        [
+          7.9610000000000127,
+          9.5810000000000173
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          258.08800000000002,
+          645.53060000000005
+        ],
+        [
+          262.04900000000004,
+          648.51760000000002
+        ],
+        [
+          258.08800000000002,
+          651.11160000000007
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          226.16000000000003,
+          640.23199999999997
+        ],
+        [
+          33.913999999999987,
+          16.649999999999977
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          228.16000000000003,
+          642.23199999999997
+        ],
+        [
+          258.07400000000001,
+          642.23199999999997
+        ],
+        [
+          258.07400000000001,
+          654.88199999999995
+        ],
+        [
+          228.16000000000003,
+          654.88199999999995
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          226.16020000000003,
+          640.23210000000006
+        ],
+        [
+          33.913999999999987,
+          16.649999999999977
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          258.07420000000002,
+          642.23210000000006
+        ],
+        [
+          228.16020000000003,
+          642.23210000000006
+        ],
+        [
+          228.16020000000003,
+          654.88210000000004
+        ],
+        [
+          258.07420000000002,
+          654.88210000000004
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          216.14000000000001,
+          711.84999999999991
+        ],
+        [
+          5.0219999999999914,
+          6.8150000000000546
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          218.14000000000001,
+          713.84999999999991
+        ],
+        [
+          219.16200000000001,
+          713.84999999999991
+        ],
+        [
+          219.16200000000001,
+          716.66499999999996
+        ],
+        [
+          218.14000000000001,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          182.005,
+          711.84999999999991
+        ],
+        [
+          5.0200000000000102,
+          6.8150000000000546
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          184.005,
+          713.84999999999991
+        ],
+        [
+          185.02500000000001,
+          713.84999999999991
+        ],
+        [
+          185.02500000000001,
+          716.66499999999996
+        ],
+        [
+          184.005,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          147.86600000000001,
+          711.84999999999991
+        ],
+        [
+          5.0200000000000102,
+          6.8150000000000546
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          149.86600000000001,
+          713.84999999999991
+        ],
+        [
+          150.88600000000002,
+          713.84999999999991
+        ],
+        [
+          150.88600000000002,
+          716.66499999999996
+        ],
+        [
+          149.86600000000001,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          113.729,
+          711.84999999999991
+        ],
+        [
+          5.019999999999996,
+          6.8150000000000546
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          115.729,
+          713.84999999999991
+        ],
+        [
+          116.749,
+          713.84999999999991
+        ],
+        [
+          116.749,
+          716.66499999999996
+        ],
+        [
+          115.729,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          79.591999999999999,
+          711.84999999999991
+        ],
+        [
+          5.019999999999996,
+          6.8150000000000546
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          81.591999999999999,
+          713.84999999999991
+        ],
+        [
+          82.611999999999995,
+          713.84999999999991
+        ],
+        [
+          82.611999999999995,
+          716.66499999999996
+        ],
+        [
+          81.591999999999999,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          250.27700000000002,
+          711.84999999999991
+        ],
+        [
+          5.0200000000000102,
+          6.8150000000000546
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          252.27700000000002,
+          713.84999999999991
+        ],
+        [
+          253.29700000000003,
+          713.84999999999991
+        ],
+        [
+          253.29700000000003,
+          716.66499999999996
+        ],
+        [
+          252.27700000000002,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          267.39699999999999,
+          709.77999999999997
+        ],
+        [
+          5.0199999999999818,
+          8.8150000000000546
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          269.39699999999999,
+          711.77999999999997
+        ],
+        [
+          270.41699999999997,
+          711.77999999999997
+        ],
+        [
+          270.41699999999997,
+          716.59500000000003
+        ],
+        [
+          269.39699999999999,
+          716.59500000000003
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          45.453000000000003,
+          711.84999999999991
+        ],
+        [
+          5.0219999999999985,
+          6.8150000000000546
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          47.453000000000003,
+          713.84999999999991
+        ],
+        [
+          48.475000000000001,
+          713.84999999999991
+        ],
+        [
+          48.475000000000001,
+          716.66499999999996
+        ],
+        [
+          47.453000000000003,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          130.79599999999999,
+          709.84799999999996
+        ],
+        [
+          5.0219999999999914,
+          8.8170000000000073
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          132.79599999999999,
+          711.84799999999996
+        ],
+        [
+          133.81799999999998,
+          711.84799999999996
+        ],
+        [
+          133.81799999999998,
+          716.66499999999996
+        ],
+        [
+          132.79599999999999,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          164.934,
+          709.84799999999996
+        ],
+        [
+          5.0219999999999914,
+          8.8170000000000073
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          166.934,
+          711.84799999999996
+        ],
+        [
+          167.95599999999999,
+          711.84799999999996
+        ],
+        [
+          167.95599999999999,
+          716.66499999999996
+        ],
+        [
+          166.934,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          233.20699999999999,
+          709.84799999999996
+        ],
+        [
+          5.0219999999999914,
+          8.8170000000000073
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          235.20699999999999,
+          711.84799999999996
+        ],
+        [
+          236.22899999999998,
+          711.84799999999996
+        ],
+        [
+          236.22899999999998,
+          716.66499999999996
+        ],
+        [
+          235.20699999999999,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          62.522000000000006,
+          709.84799999999996
+        ],
+        [
+          5.0220000000000056,
+          8.8170000000000073
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          64.522000000000006,
+          711.84799999999996
+        ],
+        [
+          65.544000000000011,
+          711.84799999999996
+        ],
+        [
+          65.544000000000011,
+          716.66499999999996
+        ],
+        [
+          64.522000000000006,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          96.659000000000006,
+          709.84799999999996
+        ],
+        [
+          5.0220000000000056,
+          8.8170000000000073
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          98.659000000000006,
+          711.84799999999996
+        ],
+        [
+          99.681000000000012,
+          711.84799999999996
+        ],
+        [
+          99.681000000000012,
+          716.66499999999996
+        ],
+        [
+          98.659000000000006,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          199.072,
+          709.84799999999996
+        ],
+        [
+          5.0200000000000102,
+          8.8170000000000073
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          201.072,
+          711.84799999999996
+        ],
+        [
+          202.09200000000001,
+          711.84799999999996
+        ],
+        [
+          202.09200000000001,
+          716.66499999999996
+        ],
+        [
+          201.072,
+          716.66499999999996
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          151.3433,
+          703.84720000000004
+        ],
+        [
+          11.685000000000002,
+          11.684999999999945
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          161.0283,
+          705.84720000000004
+        ],
+        [
+          153.3433,
+          705.84720000000004
+        ],
+        [
+          157.0033,
+          713.53219999999999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          151.3433,
+          703.84720000000004
+        ],
+        [
+          11.685000000000002,
+          11.684999999999945
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          161.0283,
+          705.84720000000004
+        ],
+        [
+          153.3433,
+          705.84720000000004
+        ],
+        [
+          157.0033,
+          713.53219999999999
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          171.76640000000003,
+          702.2056
+        ],
+        [
+          10.20999999999998,
+          10.211000000000013
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          176.87140000000002,
+          704.2056
+        ],
+        [
+          173.76640000000003,
+          707.30960000000005
+        ],
+        [
+          176.87140000000002,
+          710.41660000000002
+        ],
+        [
+          179.97640000000001,
+          707.30960000000005
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          171.76640000000003,
+          702.2056
+        ],
+        [
+          10.20999999999998,
+          10.211000000000013
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          176.87140000000002,
+          704.2056
+        ],
+        [
+          173.76640000000003,
+          707.30960000000005
+        ],
+        [
+          176.87140000000002,
+          710.41660000000002
+        ],
+        [
+          179.97640000000001,
+          707.30960000000005
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          165.50360000000001,
+          710.72180000000003
+        ],
+        [
+          11.699000000000012,
+          11.700000000000045
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          172.71360000000001,
+          717.93380000000002
+        ],
+        [
+          175.20260000000002,
+          716.57180000000005
+        ],
+        [
+          172.71360000000001,
+          715.21180000000004
+        ],
+        [
+          171.3536,
+          712.72180000000003
+        ],
+        [
+          169.99260000000001,
+          715.21180000000004
+        ],
+        [
+          167.50360000000001,
+          716.57180000000005
+        ],
+        [
+          169.99260000000001,
+          717.93380000000002
+        ],
+        [
+          171.3536,
+          720.42180000000008
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          165.50360000000001,
+          710.72180000000003
+        ],
+        [
+          11.699000000000012,
+          11.700000000000045
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          46.1496,
+          656.38210000000004
+        ],
+        [
+          10.207000000000001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          48.1496,
+          658.38210000000004
+        ],
+        [
+          54.3566,
+          658.38210000000004
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          46.1496,
+          613.51679999999999
+        ],
+        [
+          10.207000000000001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          48.1496,
+          615.51679999999999
+        ],
+        [
+          54.3566,
+          615.51679999999999
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          46.1496,
+          626.81860000000006
+        ],
+        [
+          10.207000000000001,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          48.1496,
+          628.81860000000006
+        ],
+        [
+          54.3566,
+          628.81860000000006
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          35.984000000000002,
+          550.90899999999999
+        ],
+        [
+          60.169000000000004,
+          11.682999999999993
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          37.984000000000002,
+          552.31399999999996
+        ],
+        [
+          94.153000000000006,
+          552.31399999999996
+        ],
+        [
+          94.153000000000006,
+          560.59199999999998
+        ],
+        [
+          37.984000000000002,
+          560.59199999999998
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          35.984400000000001,
+          550.90899999999999
+        ],
+        [
+          60.169000000000004,
+          11.682600000000093
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          94.153400000000005,
+          552.31360000000006
+        ],
+        [
+          37.984400000000001,
+          552.31360000000006
+        ],
+        [
+          37.984400000000001,
+          560.59160000000008
+        ],
+        [
+          94.153400000000005,
+          560.59160000000008
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          48.7729,
+          551.65940000000001
+        ],
+        [
+          4.9620000000000033,
+          8.6090000000000373
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          50.7729,
+          553.65940000000001
+        ],
+        [
+          51.255899999999997,
+          553.65940000000001
+        ],
+        [
+          51.734900000000003,
+          553.65940000000001
+        ],
+        [
+          51.734900000000003,
+          558.26840000000004
+        ],
+        [
+          51.251899999999999,
+          558.26840000000004
+        ],
+        [
+          50.7729,
+          558.26840000000004
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          50.634700000000002,
+          551.65940000000001
+        ],
+        [
+          7.2789999999999964,
+          8.6090000000000373
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          54.5565,
+          551.65940000000001
+        ],
+        [
+          7.857999999999997,
+          8.6090000000000373
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          60.616,
+          551.65940000000001
+        ],
+        [
+          8.3760000000000048,
+          8.6090000000000373
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          65.612800000000007,
+          551.65940000000001
+        ],
+        [
+          7.5360000000000014,
+          8.6090000000000373
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          69.894900000000007,
+          551.65940000000001
+        ],
+        [
+          7.5360000000000014,
+          8.6090000000000373
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          74.177000000000007,
+          551.65940000000001
+        ],
+        [
+          7.8580000000000041,
+          8.6090000000000373
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          144.9468,
+          630.98260000000005
+        ],
+        [
+          8.2130000000000223,
+          10.253000000000043
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          149.92169999999999,
+          630.98260000000005
+        ],
+        [
+          8.2130000000000223,
+          10.253000000000043
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          155.4075,
+          631.14139999999998
+        ],
+        [
+          5.282999999999987,
+          8.38900000000001
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          157.96029999999999,
+          630.98260000000005
+        ],
+        [
+          8.2130000000000223,
+          10.253000000000043
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          162.8896,
+          630.98350000000005
+        ],
+        [
+          8.1879999999999882,
+          10.252000000000066
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          168.42080000000001,
+          631.14139999999998
+        ],
+        [
+          5.282999999999987,
+          8.38900000000001
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          170.92020000000002,
+          631.14150000000006
+        ],
+        [
+          8.1550000000000011,
+          10.093999999999937
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          175.92940000000002,
+          630.98260000000005
+        ],
+        [
+          8.2129999999999939,
+          10.253000000000043
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          146.88679999999999,
+          603.64819999999997
+        ],
+        [
+          9.7110000000000127,
+          12.379999999999995
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          153.73710000000003,
+          603.42989999999998
+        ],
+        [
+          9.7599999999999909,
+          12.59800000000007
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          160.56490000000002,
+          603.64819999999997
+        ],
+        [
+          9.7129999999999939,
+          12.379999999999995
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          167.48040000000003,
+          603.43010000000004
+        ],
+        [
+          9.7909999999999968,
+          12.59699999999998
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          174.43100000000001,
+          606.85850000000005
+        ],
+        [
+          7.8060000000000116,
+          8.6079999999999472
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          98.966999999999999,
+          550.90899999999999
+        ],
+        [
+          109.538,
+          11.506999999999948
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          100.967,
+          549.18299999999999
+        ],
+        [
+          206.506,
+          549.18299999999999
+        ],
+        [
+          206.506,
+          560.41599999999994
+        ],
+        [
+          100.967,
+          560.41599999999994
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          162.23660000000001,
+          551.24750000000006
+        ],
+        [
+          7.5670000000000073,
+          7.5679999999999836
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          137.26920000000001,
+          551.24750000000006
+        ],
+        [
+          7.5670000000000073,
+          7.5679999999999836
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          125.14189999999999,
+          551.24750000000006
+        ],
+        [
+          7.5670000000000073,
+          7.5679999999999836
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          174.36189999999999,
+          551.24750000000006
+        ],
+        [
+          7.5670000000000073,
+          7.5679999999999836
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          151.53800000000001,
+          550.90899999999999
+        ],
+        [
+          5.0219999999999914,
+          5.2160000000000082
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          153.53800000000001,
+          549.30799999999999
+        ],
+        [
+          154.56,
+          549.30799999999999
+        ],
+        [
+          154.56,
+          554.125
+        ],
+        [
+          153.53800000000001,
+          554.125
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          149.24860000000001,
+          550.90899999999999
+        ],
+        [
+          9.5999999999999943,
+          9.5940000000000509
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          156.8486,
+          552.90300000000002
+        ],
+        [
+          151.24860000000001,
+          552.90300000000002
+        ],
+        [
+          153.91460000000001,
+          558.50300000000004
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          149.24860000000001,
+          550.90899999999999
+        ],
+        [
+          9.5999999999999943,
+          9.5940000000000509
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          156.8486,
+          552.90300000000002
+        ],
+        [
+          151.24860000000001,
+          552.90300000000002
+        ],
+        [
+          153.91460000000001,
+          558.50300000000004
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          192.94860000000003,
+          553.053
+        ],
+        [
+          6.164999999999992,
+          6.1639999999999873
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          210.30799999999999,
+          550.90899999999999
+        ],
+        [
+          63.574999999999989,
+          16.161000000000058
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          212.30799999999999,
+          551.81600000000003
+        ],
+        [
+          271.88299999999998,
+          551.81600000000003
+        ],
+        [
+          271.88299999999998,
+          565.07000000000005
+        ],
+        [
+          212.30799999999999,
+          565.07000000000005
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          210.3075,
+          550.90899999999999
+        ],
+        [
+          63.574999999999989,
+          16.161000000000058
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          271.88249999999999,
+          551.81600000000003
+        ],
+        [
+          212.3075,
+          551.81600000000003
+        ],
+        [
+          212.3075,
+          565.07000000000005
+        ],
+        [
+          271.88249999999999,
+          565.07000000000005
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          227.92600000000002,
+          564.93000000000006
+        ],
+        [
+          45.926999999999992,
+          45.115999999999985
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          229.92600000000002,
+          566.93000000000006
+        ],
+        [
+          271.85300000000001,
+          566.93000000000006
+        ],
+        [
+          271.85300000000001,
+          608.04600000000005
+        ],
+        [
+          229.92600000000002,
+          608.04600000000005
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          227.9256,
+          564.9298
+        ],
+        [
+          45.926999999999992,
+          45.115999999999985
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          271.8526,
+          566.9298
+        ],
+        [
+          229.9256,
+          566.9298
+        ],
+        [
+          229.9256,
+          608.04579999999999
+        ],
+        [
+          271.8526,
+          608.04579999999999
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          249.22810000000001,
+          565.3433
+        ],
+        [
+          4,
+          19.388000000000034
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          251.22810000000001,
+          582.73130000000003
+        ],
+        [
+          251.22810000000001,
+          567.3433
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          243.09180000000001,
+          565.65020000000004
+        ],
+        [
+          10.155000000000001,
+          12.309999999999945
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          251.24680000000001,
+          575.96019999999999
+        ],
+        [
+          245.09180000000001,
+          567.65020000000004
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          232.5797,
+          568.36850000000004
+        ],
+        [
+          37.853999999999985,
+          37.851999999999975
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          237.53540000000001,
+          595.30399999999997
+        ],
+        [
+          5.9579999999999984,
+          5.9600000000000364
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          239.53540000000001,
+          599.26400000000001
+        ],
+        [
+          241.49340000000001,
+          597.30399999999997
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          259.51420000000002,
+          573.32510000000002
+        ],
+        [
+          5.9599999999999795,
+          5.95799999999997
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          261.51420000000002,
+          577.28309999999999
+        ],
+        [
+          263.4742,
+          575.32510000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          259.51650000000001,
+          595.30399999999997
+        ],
+        [
+          5.9580000000000268,
+          5.9600000000000364
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          263.47450000000003,
+          599.26400000000001
+        ],
+        [
+          261.51650000000001,
+          597.30399999999997
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          237.53569999999999,
+          573.32510000000002
+        ],
+        [
+          5.960000000000008,
+          5.95799999999997
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+        [
+          241.4957,
+          577.28309999999999
+        ],
+        [
+          239.53569999999999,
+          575.32510000000002
+        ]
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          244.61220000000003,
+          579.80790000000002
+        ],
+        [
+          14.156000000000006,
+          12.477999999999952
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          244.61220000000003,
+          579.80790000000002
+        ],
+        [
+          14.156000000000006,
+          12.477999999999952
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          247.40719999999999,
+          589.21580000000006
+        ],
+        [
+          8.6150000000000091,
+          8.6150000000000091
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          247.40719999999999,
+          589.21580000000006
+        ],
+        [
+          8.6150000000000091,
+          8.6150000000000091
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          144.69900000000001,
+          602.55740000000003
+        ],
+        [
+          32.920999999999992,
+          25.768000000000029
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          175.62,
+          604.55740000000003
+        ],
+        [
+          146.69900000000001,
+          604.55740000000003
+        ],
+        [
+          146.69900000000001,
+          626.32540000000006
+        ],
+        [
+          175.62,
+          626.32540000000006
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          149.98599999999999,
+          607.8433
+        ],
+        [
+          19.548000000000002,
+          16.441000000000031
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          167.53399999999999,
+          609.8433
+        ],
+        [
+          151.98599999999999,
+          609.8433
+        ],
+        [
+          151.98599999999999,
+          622.28430000000003
+        ],
+        [
+          167.53399999999999,
+          622.28430000000003
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          152.7834,
+          610.95260000000007
+        ],
+        [
+          12.706999999999994,
+          10.842999999999961
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          163.49039999999999,
+          612.95260000000007
+        ],
+        [
+          154.7834,
+          612.95260000000007
+        ],
+        [
+          154.7834,
+          619.79560000000004
+        ],
+        [
+          163.49039999999999,
+          619.79560000000004
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          154.95880000000002,
+          611.88679999999999
+        ],
+        [
+          10.842999999999989,
+          8.0410000000000537
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          163.80180000000001,
+          613.88679999999999
+        ],
+        [
+          156.95880000000002,
+          613.88679999999999
+        ],
+        [
+          156.95880000000002,
+          617.92780000000005
+        ],
+        [
+          163.80180000000001,
+          617.92780000000005
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          68.918599999999998,
+          550.90899999999999
+        ],
+        [
+          206.0814,
+          147.50080000000003
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          79.668599999999998,
+          549.68880000000001
+        ],
+        [
+          70.918599999999998,
+          687.45180000000005
+        ],
+        [
+          274.61660000000001,
+          696.40980000000002
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          550.90899999999999
+        ],
+        [
+          241,
+          179.09100000000001
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          36,
+          357.75
+        ],
+        [
+          237,
+          190.34100000000001
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          355.74990000000003
+        ],
+        [
+          241,
+          194.34100000000001
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      285,
+      549.29499999999996,
+      236.94200000000001,
+      179.70500000000004
+    ],
+    [
+      318.829452,
+      213.35400000000001,
+      41.199547999999993,
+      57.679000000000002
+    ],
+    [
+      36,
+      357.75,
+      237,
+      190.34100000000001
+    ]
+  ],
+  "rightsBasis" : "U.S. Government publication, retained as an external development corpus source. The PDF is not bundled or relicensed under the library license.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+  "sourceTitle" : "Pilot's Handbook of Aeronautical Knowledge, FAA-H-8083-25C",
+  "sourceURL" : "https://www.faa.gov/regulations_policies/handbooks_manuals/aviation/faa-h-8083-25c.pdf"
+}

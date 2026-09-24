@@ -1679,7 +1679,7 @@ enum LayoutReconstructor {
         let displayed = page.hasSyntheticTextStyle ? [] : DisplayQuotation.groups(in: page.lines,
             body: displayTypography.body, threshold: displayTypography.headingThreshold)
         let nativeCaptions = page.hasSyntheticTextStyle ? [] : CaptionParagraphs.groups(lines: page.lines,
-            pictures: page.pictures, body: displayTypography.body)
+            pictures: page.pictures + images.map(\.0), body: displayTypography.body)
         let captionIndices = nativeCaptions.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
         let displayedIndices = displayed.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
         let overPicture = displayedIndices.union(captionIndices).union(PageDiagnosis.proseOverPictures(lines: page.lines, pictures: page.pictures + (page.nativeTextPanels ?? []),
@@ -1756,7 +1756,7 @@ enum LayoutReconstructor {
                               height: max(crop.maxY,card.rect.maxY) - card.rect.minY)
             return GalleryCaptions.Group(image: image, lines: card.lines, rect: rect)
         }
-        let photoCaptions = CaptionParagraphs.groups(lines: lines, pictures: page.pictures, body: typography.body)
+        let photoCaptions = CaptionParagraphs.groups(lines: lines, pictures: page.pictures + images.map(\.0), body: typography.body)
         var captioned = Set(gallery.flatMap(\.lines))
         let pictureElements = images.enumerated().map { imageIndex, image -> Element in
             if let card = gallery.first(where: { $0.image == imageIndex }) {

@@ -100,3 +100,25 @@ import Testing
     #expect(figures.contains { $0.assetID == left.1 && $0.selectableLabels.contains { $0.text == "B" } })
     #expect(figures.contains { $0.assetID == right.1 && $0.selectableLabels.contains { $0.text == "C" } })
 }
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/175"))
+func earthdataWorkflowCirclesKeepTheirSeparatedNativeLabels() throws {
+    let fixture = try SourceLayoutFixture.load("earthdata-11")
+    #expect(fixture.sourceSHA256 == "f0a1ea3f5711228a9de2544fd1a94b05cfb8d9323fe3a4c253542f5a6ead5c94")
+    let url = URL(fileURLWithPath: "corpus/cache/20180003024.pdf")
+    let source = try PDFPageSource(url: url)
+    let page = try PageReader.read(pageIndex: 10, from: source, limit: 100_000,
+                                   options: ConversionOptions(), structure: nil).content
+    let images = LayoutReconstructor.graphicsWithLabels(page).enumerated().map { ($0.element, "image-\($0.offset)") }
+    let labels = DiagramLabelTranscript.labels(page: page, images: images, body: 20)
+    #expect(Set(labels.values.flatMap { $0.map(\.text) }) ==
+            Set(["Extract", "Transform", "Load", "Analyze", "Visualize"]))
+    let analyze = try #require(labels.first { $0.value.contains { $0.text == "Analyze" } })
+    let visualize = try #require(labels.first { $0.value.contains { $0.text == "Visualize" } })
+    #expect(analyze.key != visualize.key)
+    let shifted = images.map { rect, id -> (CGRect, String) in
+        guard id == analyze.key else { return (rect, id) }
+        return (CGRect(x: rect.minX, y: rect.minY, width: rect.width * 0.8, height: rect.height), id)
+    }
+    #expect(DiagramLabelTranscript.labels(page: page, images: shifted, body: 20).isEmpty)
+}

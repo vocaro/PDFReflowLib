@@ -80,6 +80,34 @@ func aCitationOpeningAPageIsNeitherAnItemNorTheParagraphBelowIt() throws {
     #expect(paragraphs(blocks).contains { $0.hasPrefix("Echoing themes that had run throughout our law") })
 }
 
+/// The same source sentence continues across its page break: the reporter volume is the final
+/// token on page 63 and the uppercase reporter abbreviation opens page 64. The three running-head
+/// lines on each page are removed as the document furniture pass does before reconstruction.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/171"))
+func aReporterCitationContinuesAcrossThePageBreak() throws {
+    let first = try SourceLayoutFixture.load("loper-63")
+    let second = try SourceLayoutFixture.load("loper-64")
+    #expect(first.sourceSHA256 == loperSHA256)
+    #expect(second.sourceSHA256 == loperSHA256)
+    var start = first.content(), next = second.content()
+    start.lines.removeAll { $0.rect.minY > 640 }
+    next.lines.removeAll { $0.rect.minY > 640 }
+    let startBlocks = reconstruct(start), nextBlocks = reconstruct(next)
+    #expect(paragraphs(startBlocks).last?.hasSuffix("Skidmore v. Swift & Co., 323") == true)
+    #expect(paragraphs(nextBlocks).first == "U. S. 134 (1944), the Court returned to its time-worn path.")
+
+    var blocks: [ReflowBlock] = [], warnings: [ConversionWarning] = []
+    LayoutReconstructor.appendPage(startBlocks, page: start, previousPage: nil, to: &blocks,
+                                   vocabulary: [], warnings: &warnings)
+    LayoutReconstructor.appendPage(nextBlocks, page: next, previousPage: start, to: &blocks,
+                                   vocabulary: [], warnings: &warnings)
+    #expect(paragraphs(blocks).contains {
+        $0.contains("Skidmore v. Swift & Co., 323 U. S. 134 (1944), the Court returned")
+    })
+    #expect(!blocks.contains { $0.content == .sourcePage(64) })
+    #expect(paragraphs(blocks).contains { $0.hasPrefix("Echoing themes that had run") })
+}
+
 /// The FAA handbook's acknowledgments name a chapter at the end of every credit and set each
 /// credit on its own line, so every row of that run ends in a digit and three of its twenty happen
 /// to end within half a body of one another. Three rows out of twenty are not a column of numbers,

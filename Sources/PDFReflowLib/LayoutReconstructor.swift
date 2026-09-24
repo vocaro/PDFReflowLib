@@ -2453,6 +2453,14 @@ enum LayoutReconstructor {
         return blocks.count - anchor
     }
 
+    /// A reporter abbreviation can begin with a capital even when the page breaks in the
+    /// middle of its citation. Loper Bright prints `…Swift & Co., 323` at the foot of page 63
+    /// and `U. S. 134 (1944),…` at the head of page 64 (#171).
+    static func continuesReporterCitation(_ left: String, _ right: String) -> Bool {
+        left.range(of: #"\b\d{1,3}$"#, options: .regularExpression) != nil
+            && right.range(of: #"^U\. S\. \d{1,4}\b"#, options: .regularExpression) != nil
+    }
+
     static func appendPage(_ pageBlocks: [ReflowBlock], page: PageContent, previousPage: PageContent?,
                            to blocks: inout [ReflowBlock], hyphens: HyphenContext,
                            warnings: inout [ConversionWarning]) {
@@ -2497,9 +2505,17 @@ enum LayoutReconstructor {
            // did when neither page carried a tag (#67).
            blocks[anchor].structureGroup == remaining[opening].structureGroup
                || blocks[anchor].structureGroup == nil || remaining[opening].structureGroup == nil,
-           remaining[opening].text.first?.isLowercase == true,
+           (remaining[opening].text.first?.isLowercase == true
+                || continuesReporterCitation(blocks[anchor].text, remaining[opening].text)),
            blocks[anchor].text.last.map({ !".!?:".contains($0) }) == true,
-           previousPage.lines.last.map({ $0.rect.minY < previousPage.bounds.minY + previousPage.bounds.height * 0.2 }) == true,
+           previousPage.lines.last.map({ line in
+               // The citation's last baseline falls one point above the usual 20% foot band.
+               // Include its own line height, only for the proven reporter continuation.
+               let allowance = continuesReporterCitation(blocks[anchor].text, remaining[opening].text)
+                   ? line.rect.height : 0
+               return line.rect.minY < previousPage.bounds.minY
+                   + previousPage.bounds.height * 0.2 + allowance
+           }) == true,
            page.lines.first.map({ $0.rect.maxY > page.bounds.minY + page.bounds.height * 0.8 }) == true {
             let stepped = Array(blocks[(anchor + 1)...])
             blocks.removeLast(stepped.count)

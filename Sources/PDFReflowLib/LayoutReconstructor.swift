@@ -2288,7 +2288,8 @@ enum LayoutReconstructor {
                 paragraphHandles[index] = handle
             }
         }
-        var result = SlideDeck.levelSecondary(assembler.finish(), candidates: slideSecondary)
+        var result = BracketedReferenceBlocks.joined(
+            SlideDeck.levelSecondary(assembler.finish(), candidates: slideSecondary))
         if !formOutline.isEmpty {
             for index in result.indices {
                 guard case let .heading(id, text, _) = result[index].content,

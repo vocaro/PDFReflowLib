@@ -55,6 +55,13 @@ enum TextLayerPlausibility {
     // In the source survey, the highest unaffected Blue Book page scored 8.0% and NBS 6.0%.
     // Leave a margin above those controls while admitting the damaged typescripts (#216).
     static let minimumMisreadShare = 0.085
+    // CDC 22's inherited layer is only 43 of 75 judged words English and misreads 7 of 88
+    // words in place. Its 7.95% misread share falls just below the ordinary cut, but the two
+    // kinds of damage corroborate each other: the page is neither reliable prose nor a page
+    // of names. Keep this combined cut above the ordinary table controls' word damage unless
+    // the English share also fails the stricter 60% check (#168).
+    static let minimumMisreadShareWithLowEnglish = 0.075
+    static let maximumEnglishShareForCombinedMisread = 0.6
     // Numeric table text can hold misread words among correctly copied column labels. Keep its
     // older, more conservative misread cut: the historical Blue Book survey has 18 table pages
     // between 8.5% and 10%, all with at least a fifth of tokens holding digits. The separate
@@ -132,7 +139,10 @@ enum TextLayerPlausibility {
         }
         let numeric = Double(counts.numericTokens) >= Double(counts.tokens) * maximumNumericShare
         let misreadCut = numeric ? minimumMisreadShareForNumericPages : minimumMisreadShare
-        if Double(counts.misread) >= Double(counts.words) * misreadCut {
+        let combinedDamage = !numeric
+            && Double(english) < Double(judged) * maximumEnglishShareForCombinedMisread
+            && Double(counts.misread) >= Double(counts.words) * minimumMisreadShareWithLowEnglish
+        if Double(counts.misread) >= Double(counts.words) * misreadCut || combinedDamage {
             return .misreadWords(misread: counts.misread, words: counts.words, examples: counts.misreadExamples)
         }
         return nil

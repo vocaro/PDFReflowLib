@@ -490,6 +490,9 @@ enum LayoutReconstructor {
         var pictureCaption: [TextLine]?
         var caption: [TextLine]?
         var nativePanel: [TextLine]?
+        /// Native wrapped body text reflows over this preserved crop. The artwork stays
+        /// visible, but its bounds must not weave independently established prose columns.
+        var proseBackdrop = false
     }
 
     /// Convenience for callers that do not report an abandoned cut.
@@ -1772,7 +1775,8 @@ enum LayoutReconstructor {
                 reading.size.height = low - image.0.minY - typography.body * 0.2
             }
             return Element(rect: reading, image: image.1,
-                           pictureCaption: caption.sorted { lines[$0].rect.minY > lines[$1].rect.minY }.map { lines[$0] })
+                           pictureCaption: caption.sorted { lines[$0].rect.minY > lines[$1].rect.minY }.map { lines[$0] },
+                           proseBackdrop: !page.recognized && !page.hasSyntheticTextStyle && bodyOver.count >= 6)
         }
         let standaloneCaptions = photoCaptions
             .filter { $0.indices.isDisjoint(with: captioned) }

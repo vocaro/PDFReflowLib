@@ -8,13 +8,15 @@ enum CaptionParagraphs {
         var lines: [TextLine]
         var rect: CGRect { union(lines.map(\.rect)) }
     }
-    static func groups(lines: [TextLine], pictures: [CGRect], body: CGFloat) -> [Group] {
-        guard body > 0, lines.count <= 2_000, !pictures.isEmpty else { return [] }
+    static func groups(lines: [TextLine], pictures: [CGRect], figures: [CGRect] = [], body: CGFloat) -> [Group] {
+        guard body > 0, lines.count <= 2_000, (!pictures.isEmpty || !figures.isEmpty) else { return [] }
         let small = lines.indices.filter { lines[$0].fontSize < body * 0.93
             && lines[$0].fontSize >= body * 0.6 && !lines[$0].monospaced
             && lines[$0].structure == nil && lines[$0].turn == .upright
         }.sorted { lines[$0].rect.minY > lines[$1].rect.minY }
-        var result = labeledGroups(lines: lines, pictures: pictures, body: body)
+        // Vector crops corroborate explicit labels/credits only. Mere proximity to a
+        // preserved table must not release its small native cells as photograph captions.
+        var result = labeledGroups(lines: lines, pictures: pictures + figures, body: body)
         var claimed = result.reduce(into: Set<Int>()) { $0.formUnion($1.indices) }
         for first in small where !claimed.contains(first) {
             let opening = lines[first]
@@ -60,19 +62,23 @@ enum CaptionParagraphs {
         var claimed: Set<Int> = [], result: [Group] = []
         for first in candidates where !claimed.contains(first) {
             let opening = lines[first]
-            let numbered = opening.text.range(of: #"^Figure\s+[0-9]"#, options: .regularExpression) != nil
+            let numbered = opening.text.range(of: #"^Figure\s+[0-9]+(?:[.-][0-9]+)*[.:]\s"#, options: .regularExpression) != nil
             let photographic = opening.text.range(of: #"^\((?:top|bottom|left|right)[ ;,)]"#, options: .regularExpression) != nil
             guard numbered || photographic else { continue }
             var run = [first], step: CGFloat?
             while run.count < 40 {
                 let previous = lines[run.last!]
                 if run.count > 1 && previous.rect.width < run.map({ lines[$0].rect.width }).max()! * 0.75 { break }
+                let openParentheses = run.reduce(0) { depth, index in
+                    depth + lines[index].text.filter { $0 == "(" }.count - lines[index].text.filter { $0 == ")" }.count
+                }
                 let next = candidates.first { index in
                     let line = lines[index], size = max(line.fontSize,previous.fontSize)
                     let drop = previous.rect.minY - line.rect.minY
                     return !claimed.contains(index) && !run.contains(index)
                         && line.structure?.group == opening.structure?.group
-                        && !LayoutReconstructor.isCaption(line.text)
+                        && (!LayoutReconstructor.isCaption(line.text) || openParentheses > 0
+                            && line.text.filter { $0 == ")" }.count - line.text.filter { $0 == "(" }.count >= openParentheses)
                         && abs(line.fontSize - previous.fontSize) <= (run.count == 1 ? size * 0.15 : 0.1)
                         && abs(line.rect.minX - opening.rect.minX) <= size * 0.5
                         && drop >= size * 0.7 && drop <= size * 1.7

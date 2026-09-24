@@ -30,7 +30,7 @@ func sourceCaptionsKeepTheirCompleteNativeRowsAndBodyOwnership(name: String) thr
         ? "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf"
         : "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7"))
     let page = try captionSource(name), crops = LayoutReconstructor.graphicsWithLabels(page)
-    let groups = CaptionParagraphs.groups(lines: page.lines, pictures: page.pictures + crops, body: PageTypography(page: page).body)
+    let groups = CaptionParagraphs.groups(lines: page.lines, pictures: page.pictures, figures: crops, body: PageTypography(page: page).body)
     let prefix: String
     switch name {
     case "noaa-caption-56": prefix = "(left; Toledo"
@@ -69,11 +69,11 @@ func sourceCaptionsKeepTheirCompleteNativeRowsAndBodyOwnership(name: String) thr
 @Test func captionOwnershipRejectsIncompleteTagsRemoteFiguresAndChangedRowGeometry() throws {
     let page = try captionSource("faa-caption-45")
     let crops = LayoutReconstructor.graphicsWithLabels(page)
-    let caption = try #require(CaptionParagraphs.groups(lines: page.lines, pictures: crops, body: 10).first)
+    let caption = try #require(CaptionParagraphs.groups(lines: page.lines, pictures: page.pictures, figures: crops, body: 10).first)
     let writing = caption.lines
     #expect(writing.allSatisfy { $0.structure?.group == writing.first?.structure?.group })
     func hasCaption(_ lines: [TextLine], _ pictures: [CGRect]) -> Bool {
-        CaptionParagraphs.groups(lines: lines, pictures: pictures, body: 10).contains { $0.lines.first?.text.hasPrefix("Figure 2-5.") == true }
+        CaptionParagraphs.groups(lines: lines, pictures: [], figures: pictures, body: 10).contains { $0.lines.first?.text.hasPrefix("Figure 2-5.") == true }
     }
     #expect(!hasCaption(Array(writing.dropLast()), crops))
     var foreign = writing
@@ -124,4 +124,81 @@ func sourceCaptionsKeepTheirCompleteNativeRowsAndBodyOwnership(name: String) thr
     var full = elements
     full[6].line?.rect.size.width = 180
     #expect(InterruptedColumnContinuation.pairs(full,roles:roles,body:10).isEmpty)
+}
+
+@Test func parentheticalTableReferenceStaysInItsSourceCaption() throws {
+    let page = try captionSource("noaa-caption-71")
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    let group = try #require(CaptionParagraphs.groups(lines:page.lines,pictures:page.pictures,figures:crops,
+        body:PageTypography(page:page).body).first { $0.lines.first?.text.hasPrefix("Figure 1.13.") == true })
+    #expect(group.lines.contains { $0.text.hasPrefix("Table 3 in the Guide") })
+    #expect(group.lines.last?.text.hasSuffix("Arias et al. 2021.") == true)
+    let expected = captionCanonical(group.lines.map(\.text).joined(separator:" "))
+    #expect(captionBlocks(page).contains { block in
+        if case .paragraph = block.content { return captionCanonical(block.text) == expected };return false
+    })
+}
+
+@Test func inlineFigureReferenceDoesNotClaimBodyAsACaption() throws {
+    let page = try captionSource("faa-caption-114")
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    let groups = CaptionParagraphs.groups(lines:page.lines,pictures:page.pictures,figures:crops,
+        body:PageTypography(page:page).body)
+    #expect(!groups.contains { $0.lines.contains { $0.text.hasPrefix("Figure 5-23 is not enough") } })
+    let expected = "The downwash of the wings is reduced and the force at T in Figure 5-23 is not enough to hold the horizontal stabilizer down."
+    #expect(captionBlocks(page).contains { block in
+        if case .paragraph = block.content { return captionCanonical(block.text).contains(captionCanonical(expected)) };return false
+    })
+}
+
+@Test func vectorTableCropDoesNotReleaseUnlabeledSmallCellsAsCaptions() throws {
+    let page = try captionSource("noaa-caption-363")
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    let groups = CaptionParagraphs.groups(lines:page.lines,pictures:page.pictures,figures:crops,
+        body:PageTypography(page:page).body)
+    #expect(!groups.contains { $0.lines.contains { $0.text.contains("Plant genotypes and species considered") } })
+    // The actual source cell remains in the preserved table region; no new unlabeled
+    // paragraph may mix it with a different column's Tribal adaptation cell.
+    #expect(!captionBlocks(page).contains { $0.text.contains("Plant genotypes and species considered") })
+}
+
+@Test func aNewCaptionStillStopsAfterTheParentheticalReferenceCloses() {
+    let words = ["Figure 1. This caption describes the complete observations across this region.",
+                 "Those observations establish conditions throughout the region (see also",
+                 "Table 1 for the complete observations across this entire region).",
+                 "Figure 2. A different caption describes another independent illustrated result."]
+    let lines = words.enumerated().map { TextLine(text:$0.element,
+        rect:CGRect(x:20,y:200-Double($0.offset)*12,width:340,height:11),fontSize:10) }
+    let groups = CaptionParagraphs.groups(lines:lines,pictures:[],
+        figures:[CGRect(x:20,y:214,width:340,height:100)],body:10)
+    #expect(groups.first?.lines.map(\.text) == Array(words.prefix(3)))
+    var unclosed = lines
+    unclosed[2] = TextLine(text:words[2].replacingOccurrences(of:")",with:""),
+        rect:lines[2].rect,fontSize:10)
+    #expect(CaptionParagraphs.groups(lines:unclosed,pictures:[],
+        figures:[CGRect(x:20,y:214,width:340,height:100)],body:10).isEmpty)
+}
+
+@Test(arguments: [102,105,111])
+func unlabeledFedProseBesideVectorChartsKeepsItsParagraph(number: Int) throws {
+    let page = try captionSource("fed-caption-\(number)")
+    let phrase = [
+        102: "Financial institutions and other parties use this service to hold, maintain, and transfer securities issued by the U.S. Treasury and other federal agencies, government-sponsored enterprises, and certain international organizations, such as the World Bank.",
+        105: "For more information about the value and volume of currency in circulation and the volume, value, and cost of the new currency print order, visit the Payment Systems section of the Federal Reserve Board’s website, https://www.federalreserve.gov/paymentsystems. htm.",
+        111: "Note: Quarterly averages of daily data. The Federal Reserve measures each depository institution’s account balance at the end of each minute during the business day. An institution’s peak daylight overdraft for a given day is its largest negative end-of-minute balance. The System peak daylight overdraft for a given day is determined by adding the negative account balances of all depository institutions at the end of each minute and then selecting the largest negative end-of-minute balance. The average daylight overdraft for a given day is the sum of the average per-minute daylight overdrafts for all institutions on that day. Further data regarding peak and average daylight overdrafts is available in the Payment Systems section of the Federal Reserve Board’s website, https://www. federalreserve.gov/paymentsystems.htm."
+    ][number]!
+    let blocks = captionBlocks(page)
+    #expect(blocks.contains { block in
+        if case .paragraph = block.content { return captionCanonical(block.text).contains(captionCanonical(phrase)) }; return false
+    })
+}
+
+@Test func noaaPhotoCaptionPrecedesTheBodyPrintedBelowIt() throws {
+    let page = try captionSource("noaa-caption-65")
+    let crops = LayoutReconstructor.graphicsWithLabels(page)
+    #expect(!crops.isEmpty)
+    let blocks = captionBlocks(page)
+    let first = try #require(blocks.firstIndex { $0.text.hasPrefix("(top left; Fort Myers Beach") })
+    let body = try #require(blocks.firstIndex { $0.text.hasPrefix("Many US households") })
+    #expect(first < body)
 }

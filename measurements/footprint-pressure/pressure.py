@@ -37,6 +37,8 @@ def main():
                         help="maximum touched allocation (default: smaller of 12 GiB or one third of RAM)")
     parser.add_argument("--step-mib", type=int, default=256,
                         help="allocation increment (default 256 MiB)")
+    parser.add_argument("--hold-at-cap", action="store_true",
+                        help="retain the capped allocation until stopped, even if pressure stays normal")
     args = parser.parse_args()
     if sys.platform != "darwin" or not 16 <= args.step_mib <= 512:
         parser.error("requires macOS and 16–512 MiB increments")
@@ -51,6 +53,7 @@ def main():
     step = args.step_mib * 1024 * 1024
     chunks = []
     running = True
+    capped = False
 
     def stop(_signum, _frame):
         nonlocal running
@@ -70,12 +73,20 @@ def main():
             note(level, "critical: stop")
             return 4
         if level == 1:
+            if capped:
+                time.sleep(1)
+                continue
             if normal_since is None:
                 normal_since = time.monotonic()
             if time.monotonic() - normal_since >= 2:
                 if (len(chunks) + 1) * step > cap:
-                    note(level, "cap reached without sustained warning: stop")
-                    return 2
+                    if not args.hold_at_cap:
+                        note(level, "cap reached without sustained warning: stop")
+                        return 2
+                    note(level, "cap reached without sustained warning: holding")
+                    capped = True
+                    normal_since = None
+                    continue
                 chunk = mmap.mmap(-1, step)
                 for offset in range(0, step, mmap.PAGESIZE):
                     chunk[offset] = 1

@@ -58,6 +58,23 @@ class EPUBReaderTests(unittest.TestCase):
                     with self.assertRaises(ValueError): view_epub.validate_resources(root)
                 path.unlink()
 
+    def test_only_bounded_diagram_label_position_styles_are_admitted(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / "mimetype").write_text("application/epub+zip")
+            chapter = root / "chapter.xhtml"
+            safe = '<span class="diagram-label" style="left:12.34%;top:0.00%;width:87.66%;height:100.00%">16</span>'
+            chapter.write_text(f"<html><body>{safe}</body></html>")
+            self.assertIn("chapter.xhtml", view_epub.validate_resources(root))
+            for unsafe in [
+                safe.replace("100.00%", "101.00%"),
+                safe.replace("class=\"diagram-label\"", "class=\"other\""),
+                safe.replace(";height:", ";background:url(https://example.com/a);height:"),
+            ]:
+                chapter.write_text(f"<html><body>{unsafe}</body></html>")
+                with self.assertRaises(ValueError):
+                    view_epub.validate_resources(root)
+
     def test_configured_reader_limit_checks_both_zip_and_expanded_size(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)

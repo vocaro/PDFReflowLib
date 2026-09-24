@@ -86,8 +86,17 @@ def validate_resources(directory):
                     url = urlsplit(value)
                     if url.scheme or url.netloc or "\\" in value or value.startswith("/"):
                         raise ValueError(f"External resource/link in {name}")
-                if "srcset" in attrs or "style" in attrs:
+                if "srcset" in attrs:
                     raise ValueError(f"Unsupported resource-bearing attribute in {name}")
+                if "style" in attrs:
+                    positions = re.fullmatch(
+                        r"left:(\d{1,3}\.\d{2})%;top:(\d{1,3}\.\d{2})%;"
+                        r"width:(\d{1,3}\.\d{2})%;height:(\d{1,3}\.\d{2})%",
+                        attrs["style"],
+                    )
+                    if (tag != "span" or attrs.get("class") != "diagram-label" or positions is None
+                            or any(float(value) > 100 for value in positions.groups())):
+                        raise ValueError(f"Unsupported resource-bearing attribute in {name}")
                 if tag == "item":
                     href = attrs.get("href", "")
                     expected = {".xhtml": "application/xhtml+xml", ".png": "image/png", ".jpg": "image/jpeg", ".jpeg": "image/jpeg", ".css": "text/css"}

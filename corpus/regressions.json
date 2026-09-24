@@ -2576,7 +2576,7 @@
     {
       "id": "noaa-nca5-2023",
       "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image. Issue #215 adds physical pages 6, 25 and 1738: page 6 keeps both J. Michael Kuperberg entries as paragraphs, page 25 pins both painted two-column tables cell by cell plus their titles and the adjacent prose, and page 1738 protects the credit roles and names. Exact separation of Cover Art and Diane Burko is additionally checked by the source-layout regression and the whole-conversion comparison record. Physical pages 50, 60, 63, 64 and 78 were rendered with MuPDF and visually reviewed for complete left-column-before-right-column order. Their pinned JSON fixtures separately capture native text, geometry, attributed runs and raw paint operations from the SHA-identified source; capture alone is not the visual review. The page-50 map caption must finish before right-column prose; page 60 keeps both infrastructure and health paragraphs whole; page 63 completes the left ecosystem paragraph before the right marine-ecosystem column; pages 64 and 78 keep economic and mitigation prose in complete columns. These checks protect paragraph continuity and source order while preserving each page’s artwork; they do not qualify omitted heading lines or other existing fidelity gaps.",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image. Issue #215 adds physical pages 6, 25 and 1738: page 6 keeps both J. Michael Kuperberg entries as paragraphs, page 25 pins both painted two-column tables cell by cell plus their titles and the adjacent prose, and page 1738 protects the credit roles and names. Exact separation of Cover Art and Diane Burko is additionally checked by the source-layout regression and the whole-conversion comparison record. Physical pages 50, 60, 63, 64 and 78 were rendered with MuPDF and visually reviewed for complete left-column-before-right-column order. Their pinned JSON fixtures separately capture native text, geometry, attributed runs and raw paint operations from the SHA-identified source; capture alone is not the visual review. The page-50 map caption must finish before right-column prose; page 60 keeps both infrastructure and health paragraphs whole; page 63 completes the left ecosystem paragraph before the right marine-ecosystem column; pages 64 and 78 keep economic and mitigation prose in complete columns. These checks protect paragraph continuity and source order while preserving each page’s artwork; they do not qualify omitted heading lines or other existing fidelity gaps. The #191 integration audit additionally rendered physical contents pages 8, 19 and 20 and compared their native painted leaders with the complete converted pages. All 68 entry/locator pairs are pinned in source order, including the Roman front-matter locators, chapter 1 entries, F3/F4/F5 focus entries and A4/A5 appendix entries; source layout controls pin native styles/links and preserved artwork. See measurements/noaa-toc-leaders/record.md. Full final integrated conversion qualification is recorded there separately.",
       "pages": [
         {
           "page": 1,
@@ -2610,7 +2610,32 @@
             "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now",
             "Chapter 3. Earth Systems Processes",
             "Key Message 3.1. Human Activities Have Caused the Observed Global Warming",
-            "Key Message 3.5. Humans Are Changing Weather and Climate Extremes"
+            "Key Message 3.5. Humans Are Changing Weather and Climate Extremes",
+            "About This Report xx",
+            "Guide to the Report xxi",
+            "Key Advances Since the Fourth National Climate Assessment xxviii",
+            "Chapter 1. Overview: Understanding Risks, Impacts, and Responses 1-1",
+            "How the United States Is Addressing Climate Change 1-5",
+            "How the United States Is Experiencing Climate Change 1-16",
+            "Current and Future Climate Risks to the United States 1-23",
+            "The Choices That Will Determine the Future 1-37",
+            "How Climate Action Can Create a More Resilient and Just Nation 1-42",
+            "Chapter 2. Climate Trends 2-1",
+            "Introduction 2-4",
+            "Key Message 2.1. Climate Is Changing, and Scientists Understand Why 2-5",
+            "Key Message 2.2. Extreme Events Are Becoming More Frequent and Severe 2-16",
+            "Key Message 2.3. How Much the Climate Changes Depends on the Choices Made Now 2-21",
+            "Traceable Accounts 2-34",
+            "References 2-41",
+            "Chapter 3. Earth Systems Processes 3-1",
+            "Introduction 3-5",
+            "Key Message 3.1. Human Activities Have Caused the Observed Global Warming 3-5",
+            "Key Message 3.2. The Estimated Range of Climate Sensitivity Has Narrowed by 50% 3-10",
+            "Key Message 3.3. New Data and Analysis Methods Have Advanced Climate Science 3-13",
+            "Key Message 3.4. Humans Are Changing Earth System Processes 3-18",
+            "Key Message 3.5. Humans Are Changing Weather and Climate Extremes 3-30",
+            "Traceable Accounts 3-34",
+            "References 3-48"
           ],
           "text": [
             "Ellen Anderson"
@@ -2878,6 +2903,61 @@
         {
           "page": 1834,
           "minimumImages": 1
+        },
+        {
+          "page": 19,
+          "minimumImages": 1,
+          "orderedText": [
+            "Focus on COVID-19 and Climate Change F3-1",
+            "Focus on COVID-19 and Climate Change F3-3",
+            "Traceable Accounts F3-7",
+            "References F3-8",
+            "Focus on Risks to Supply Chains F4-1",
+            "Focus on Risks to Supply Chains F4-3",
+            "Traceable Accounts F4-6",
+            "References F4-7",
+            "Focus on Blue Carbon F5-1",
+            "Focus on Blue Carbon F5-3",
+            "Traceable Accounts F5-6",
+            "References F5-7",
+            "Appendix 1 Assessment Development Process A1-1",
+            "A1.1. The US Global Change Research Program A1-3",
+            "A1.2. Roles and Participants in NCA5 A1-3",
+            "A1.3. Creating the NCA5 Report A1-4",
+            "References A1-8",
+            "Appendix 2 Information Quality A2-1",
+            "A.2.1. Introduction A2-3",
+            "A2.2. Source Materials A2-3",
+            "A2.3. Data and Metadata Standards A2-4",
+            "References A2-5",
+            "Appendix 3 Scenarios and Datasets A3-1",
+            "A3.1. Scenarios and Climate Model Output A3-3",
+            "A3.2. Projected Climate Variables A3-4",
+            "A3.3. Sea Level Rise A3-6",
+            "A3.4. Tools and Applications A3-7",
+            "References A3-8"
+          ]
+        },
+        {
+          "page": 20,
+          "minimumImages": 1,
+          "orderedText": [
+            "Appendix 4 Indicators A4-1",
+            "A4.1. The Importance of Indicators A4-5",
+            "A4.2. Atmospheric Indicators A4-12",
+            "A4.3. Ice, Snow, and Water Indicators A4-16",
+            "A4.4. Ocean and Coastal Indicators A4-19",
+            "A4.5. Land and Ecosystems Indicators A4-24",
+            "A4.6. Health Indicators A4-29",
+            "A4.7. Adaptation and Mitigation Indicators A4-31",
+            "A4.8. Knowledge Gaps and New Approaches A4-32",
+            "References A4-33",
+            "Appendix 5 Glossary of Terms A5-1",
+            "About the Glossary of Terms A5-3",
+            "Note on Glossary Development Process A5-3",
+            "Glossary A5-4",
+            "References A5-31"
+          ]
         }
       ]
     },

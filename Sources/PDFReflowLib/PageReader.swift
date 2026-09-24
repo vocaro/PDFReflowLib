@@ -83,6 +83,19 @@ enum PageReader {
                 }
                 if let composed = PageBackdrop.compose(content, graphics: trimmed) { content = composed }
             }
+            if styled {
+                // A pair of boxes printed at the ends of form labels is page content, not a
+                // little illustration. Emit selectable marks and remove only the region made
+                // wholly of their outlines and connecting rules (#211).
+                let drawnBoxes = DrawnCheckboxReader.read(lines: content.lines, paints: graphics.paints,
+                                                          regions: content.graphics)
+                let outlines = drawnBoxes.flatMap(\.regions)
+                content.graphics.removeAll { outlines.contains($0) }
+                for box in drawnBoxes.flatMap(\.boxes) {
+                    content.lines.append(TextLine(text: "☐", rect: box,
+                                                  fontSize: min(12, max(6, box.height))))
+                }
+            }
             if !requiresPageImage && !syntheticStyle && options.ocr != .always, let structure,
                let tags = structure.pages[i + 1], !tags.isEmpty,
                !(StructureTreeReader.validates(tags, owners: structure.owners[i + 1] ?? [:], page: reference)

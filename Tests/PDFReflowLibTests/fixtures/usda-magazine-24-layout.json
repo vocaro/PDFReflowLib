@@ -1,0 +1,1347 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        80,
+        745.81770000000006,
+        135.61000000000004,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10,
+          "text" : "U.S. Department of Agriculture"
+        }
+      ],
+      "text" : "U.S. Department of Agriculture"
+    },
+    {
+      "rect" : [
+        80,
+        732.3777,
+        141.71000000000004,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10,
+          "text" : "Agricultural Research Magazine"
+        }
+      ],
+      "text" : "Agricultural Research Magazine"
+    },
+    {
+      "rect" : [
+        80,
+        718.93769999999995,
+        93.78000000000003,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10,
+          "text" : "5601 Sunnyside Ave."
+        }
+      ],
+      "text" : "5601 Sunnyside Ave."
+    },
+    {
+      "rect" : [
+        80,
+        704.53769999999997,
+        116.71000000000004,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10,
+          "text" : "Beltsville, MD 20705-5129"
+        }
+      ],
+      "text" : "Beltsville, MD 20705-5129"
+    },
+    {
+      "rect" : [
+        457.56370000000004,
+        745.34799999999996,
+        52.370999999999981,
+        12.275999999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11,
+          "text" : "PRST STD"
+        }
+      ],
+      "text" : "PRST STD"
+    },
+    {
+      "rect" : [
+        434.71670000000006,
+        732.14799999999991,
+        98.076000000000022,
+        12.275999999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11,
+          "text" : "Postage and Fees Paid"
+        }
+      ],
+      "text" : "Postage and Fees Paid"
+    },
+    {
+      "rect" : [
+        414.24570000000006,
+        718.94799999999987,
+        139.00700000000006,
+        12.275999999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11,
+          "text" : "U.S. Department of Agriculture"
+        }
+      ],
+      "text" : "U.S. Department of Agriculture"
+    },
+    {
+      "rect" : [
+        446.92670000000004,
+        705.74799999999982,
+        73.633999999999958,
+        12.275999999999954
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 11,
+          "text" : "Permit No. G-95"
+        }
+      ],
+      "text" : "Permit No. G-95"
+    },
+    {
+      "rect" : [
+        80,
+        676.93769999999995,
+        73.910000000000025,
+        13.309999999999945
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialMT",
+          "fontSize" : 10,
+          "text" : "Official Business"
+        }
+      ],
+      "text" : "Official Business"
+    },
+    {
+      "rect" : [
+        81,
+        649.72249999999997,
+        109.48500000000004,
+        11.826000000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "Please return the mailing label"
+        }
+      ],
+      "text" : "Please return the mailing label"
+    },
+    {
+      "rect" : [
+        81,
+        639.72349999999994,
+        71.990999999999985,
+        11.826000000000022
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 9,
+          "text" : "from this magazine:"
+        }
+      ],
+      "text" : "from this magazine:"
+    },
+    {
+      "rect" : [
+        81,
+        616.02949999999998,
+        50.112000000000023,
+        10.512000000000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 8,
+          "text" : "To stop mailing"
+        }
+      ],
+      "text" : "To stop mailing"
+    },
+    {
+      "rect" : [
+        81,
+        602.02949999999998,
+        75.639999999999986,
+        10.512000000000057
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 8,
+          "text" : "To change your address"
+        }
+      ],
+      "text" : "To change your address"
+    },
+    {
+      "rect" : [
+        488.19740000000002,
+        338.27910000000003,
+        63.79200000000003,
+        23.651999999999987
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "TimesNewRomanPSMT",
+          "fontSize" : 18,
+          "text" : "Subscribe"
+        }
+      ],
+      "text" : "Subscribe"
+    },
+    {
+      "rect" : [
+        492.13730000000004,
+        316.62520000000001,
+        55.43199999999996,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "for $60.00 per year"
+        }
+      ],
+      "text" : "for $60.00 per year"
+    },
+    {
+      "rect" : [
+        497.79330000000004,
+        303.62520000000001,
+        44.128000000000043,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "($84.00 foreign"
+        }
+      ],
+      "text" : "($84.00 foreign"
+    },
+    {
+      "rect" : [
+        503.63330000000002,
+        290.62520000000001,
+        32.448000000000036,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "addresses)"
+        }
+      ],
+      "text" : "addresses)"
+    },
+    {
+      "rect" : [
+        489.83330000000001,
+        277.62520000000001,
+        60.048000000000002,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Visa and Mastercard"
+        }
+      ],
+      "text" : "Visa and Mastercard"
+    },
+    {
+      "rect" : [
+        505.63330000000002,
+        264.62520000000001,
+        28.448000000000036,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "accepted."
+        }
+      ],
+      "text" : "accepted."
+    },
+    {
+      "rect" : [
+        483.20930000000004,
+        251.62520000000004,
+        73.295999999999992,
+        11.143999999999977
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Prices subject to change."
+        }
+      ],
+      "text" : "Prices subject to change."
+    },
+    {
+      "rect" : [
+        505.82530000000003,
+        238.62520000000004,
+        28.07200000000006,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Order By:"
+        }
+      ],
+      "text" : "Order By:"
+    },
+    {
+      "rect" : [
+        490.13730000000004,
+        225.62520000000004,
+        59.439999999999998,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Fax: (202) 512-2104"
+        }
+      ],
+      "text" : "Fax: (202) 512-2104"
+    },
+    {
+      "rect" : [
+        486.12130000000002,
+        212.62520000000004,
+        67.47199999999998,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Phone: (202) 512-1800"
+        }
+      ],
+      "text" : "Phone: (202) 512-1800"
+    },
+    {
+      "rect" : [
+        512.93730000000005,
+        199.62520000000004,
+        13.847999999999956,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Mail:"
+        }
+      ],
+      "text" : "Mail:"
+    },
+    {
+      "rect" : [
+        502.36930000000007,
+        186.62520000000004,
+        34.991999999999962,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "New Orders"
+        }
+      ],
+      "text" : "New Orders"
+    },
+    {
+      "rect" : [
+        493.96930000000009,
+        173.62520000000004,
+        51.79200000000003,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Superintendent of"
+        }
+      ],
+      "text" : "Superintendent of"
+    },
+    {
+      "rect" : [
+        503.2813000000001,
+        160.62520000000004,
+        33.176000000000045,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Documents"
+        }
+      ],
+      "text" : "Documents"
+    },
+    {
+      "rect" : [
+        495.3053000000001,
+        147.62520000000004,
+        49.128000000000043,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "P.O. Box 371954"
+        }
+      ],
+      "text" : "P.O. Box 371954"
+    },
+    {
+      "rect" : [
+        504.19330000000008,
+        134.62520000000004,
+        31.359999999999957,
+        11.144000000000005
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "Pittsburgh,"
+        }
+      ],
+      "text" : "Pittsburgh,"
+    },
+    {
+      "rect" : [
+        497.49730000000005,
+        121.62520000000002,
+        44.75200000000001,
+        11.143999999999991
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "ArialNarrow",
+          "fontSize" : 8,
+          "text" : "PA 15250-7954"
+        }
+      ],
+      "text" : "PA 15250-7954"
+    },
+    {
+      "rect" : [
+        488.35610000000003,
+        103.9492,
+        63.007000000000005,
+        9.7019999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Arial-BoldMT",
+          "fontSize" : 7,
+          "text" : "bookstore.gpo.gov"
+        }
+      ],
+      "text" : "bookstore.gpo.gov"
+    },
+    {
+      "rect" : [
+        115.09540000000001,
+        42.051099999999998,
+        381.39639999999997,
+        15.289999999999999
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Arial-Black",
+          "fontSize" : 11,
+          "text" : "Visit us at "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Arial-Black",
+          "fontSize" : 11,
+          "text" : "ars.usda.gov/ar"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Arial-Black",
+          "fontSize" : 11,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 1,
+          "fontName" : "Helvetica",
+          "fontSize" : 6,
+          "text" : "l"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Arial-Black",
+          "fontSize" : 11,
+          "text" : " "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Arial-Black",
+          "fontSize" : 11,
+          "text" : "Follow us at "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Arial-Black",
+          "fontSize" : 11,
+          "text" : "twitter.com/USDA_ARS"
+        }
+      ],
+      "text" : "Visit us at ars.usda.gov/ar l Follow us at twitter.com/USDA_ARS"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    612,
+    792
+  ],
+  "caseID" : "usda-ars-agresearch-2012-11",
+  "filledCells" : [
+    [
+      465.46699999999998,
+      75.460000000000008,
+      109.24900000000002,
+      307.03800000000001
+    ]
+  ],
+  "filledCellText" : [
+    "Subscribe\nfor $60.00 per year\n($84.00 foreign\naddresses)\nVisa and Mastercard\naccepted.\nPrices subject to change.\nOrder By:\nFax: (202) 512-2104\nPhone: (202) 512-1800\nMail:\nNew Orders\nSuperintendent of\nDocuments\nP.O. Box 371954\nPittsburgh,\nPA 15250-7954\nbookstore.gpo.gov"
+  ],
+  "graphics" : [
+    [
+      390.25,
+      697.65100000000007,
+      187.5,
+      63.538999999999987
+    ],
+    [
+      34,
+      695.24000000000001,
+      188,
+      4
+    ],
+    [
+      130,
+      600.79399999999998,
+      104.875,
+      26.25
+    ],
+    [
+      36.357116699999999,
+      704.79711910000003,
+      36.321472199999995,
+      52.335205099999939
+    ],
+    [
+      463.46699999999998,
+      73.460000000000008,
+      113.24900000000002,
+      311.03800000000001
+    ],
+    [
+      33.7209,
+      62.996099999999998,
+      543.42100000000005,
+      4
+    ],
+    [
+      34.578600000000002,
+      390.90530000000001,
+      543.42100000000005,
+      4
+    ],
+    [
+      37.298583999999998,
+      74.960006699999994,
+      406.79997250000002,
+      308.03797909999997
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80,
+        745.81770000000006,
+        135.61000000000004,
+        13.309999999999945
+      ],
+      "text" : "U.S. Department of Agriculture"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80,
+        732.3777,
+        141.71000000000004,
+        13.309999999999945
+      ],
+      "text" : "Agricultural Research Magazine"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80,
+        718.93769999999995,
+        93.78000000000003,
+        13.309999999999945
+      ],
+      "text" : "5601 Sunnyside Ave."
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80,
+        704.53769999999997,
+        116.71000000000004,
+        13.309999999999945
+      ],
+      "text" : "Beltsville, MD 20705-5129"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        457.56370000000004,
+        745.34799999999996,
+        52.370999999999981,
+        12.275999999999954
+      ],
+      "text" : "PRST STD"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        434.71670000000006,
+        732.14799999999991,
+        98.076000000000022,
+        12.275999999999954
+      ],
+      "text" : "Postage and Fees Paid"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        414.24570000000006,
+        718.94799999999987,
+        139.00700000000006,
+        12.275999999999954
+      ],
+      "text" : "U.S. Department of Agriculture"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        446.92670000000004,
+        705.74799999999982,
+        73.633999999999958,
+        12.275999999999954
+      ],
+      "text" : "Permit No. G-95"
+    },
+    {
+      "fontSize" : 10,
+      "monospaced" : false,
+      "rect" : [
+        80,
+        676.93769999999995,
+        73.910000000000025,
+        13.309999999999945
+      ],
+      "text" : "Official Business"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        649.72249999999997,
+        109.48500000000004,
+        11.826000000000022
+      ],
+      "text" : "Please return the mailing label"
+    },
+    {
+      "fontSize" : 9,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        639.72349999999994,
+        71.990999999999985,
+        11.826000000000022
+      ],
+      "text" : "from this magazine:"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        616.02949999999998,
+        50.112000000000023,
+        10.512000000000057
+      ],
+      "text" : "To stop mailing"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        81,
+        602.02949999999998,
+        75.639999999999986,
+        10.512000000000057
+      ],
+      "text" : "To change your address"
+    },
+    {
+      "fontSize" : 18,
+      "monospaced" : false,
+      "rect" : [
+        488.19740000000002,
+        338.27910000000003,
+        63.79200000000003,
+        23.651999999999987
+      ],
+      "text" : "Subscribe"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        492.13730000000004,
+        316.62520000000001,
+        55.43199999999996,
+        11.144000000000005
+      ],
+      "text" : "for $60.00 per year"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        497.79330000000004,
+        303.62520000000001,
+        44.128000000000043,
+        11.144000000000005
+      ],
+      "text" : "($84.00 foreign"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        503.63330000000002,
+        290.62520000000001,
+        32.448000000000036,
+        11.144000000000005
+      ],
+      "text" : "addresses)"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        489.83330000000001,
+        277.62520000000001,
+        60.048000000000002,
+        11.144000000000005
+      ],
+      "text" : "Visa and Mastercard"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        505.63330000000002,
+        264.62520000000001,
+        28.448000000000036,
+        11.144000000000005
+      ],
+      "text" : "accepted."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        483.20930000000004,
+        251.62520000000004,
+        73.295999999999992,
+        11.143999999999977
+      ],
+      "text" : "Prices subject to change."
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        505.82530000000003,
+        238.62520000000004,
+        28.07200000000006,
+        11.144000000000005
+      ],
+      "text" : "Order By:"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        490.13730000000004,
+        225.62520000000004,
+        59.439999999999998,
+        11.144000000000005
+      ],
+      "text" : "Fax: (202) 512-2104"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        486.12130000000002,
+        212.62520000000004,
+        67.47199999999998,
+        11.144000000000005
+      ],
+      "text" : "Phone: (202) 512-1800"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        512.93730000000005,
+        199.62520000000004,
+        13.847999999999956,
+        11.144000000000005
+      ],
+      "text" : "Mail:"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        502.36930000000007,
+        186.62520000000004,
+        34.991999999999962,
+        11.144000000000005
+      ],
+      "text" : "New Orders"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        493.96930000000009,
+        173.62520000000004,
+        51.79200000000003,
+        11.144000000000005
+      ],
+      "text" : "Superintendent of"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        503.2813000000001,
+        160.62520000000004,
+        33.176000000000045,
+        11.144000000000005
+      ],
+      "text" : "Documents"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        495.3053000000001,
+        147.62520000000004,
+        49.128000000000043,
+        11.144000000000005
+      ],
+      "text" : "P.O. Box 371954"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        504.19330000000008,
+        134.62520000000004,
+        31.359999999999957,
+        11.144000000000005
+      ],
+      "text" : "Pittsburgh,"
+    },
+    {
+      "fontSize" : 8,
+      "monospaced" : false,
+      "rect" : [
+        497.49730000000005,
+        121.62520000000002,
+        44.75200000000001,
+        11.143999999999991
+      ],
+      "text" : "PA 15250-7954"
+    },
+    {
+      "fontSize" : 7,
+      "monospaced" : false,
+      "rect" : [
+        488.35610000000003,
+        103.9492,
+        63.007000000000005,
+        9.7019999999999982
+      ],
+      "text" : "bookstore.gpo.gov"
+    },
+    {
+      "fontSize" : 11,
+      "monospaced" : false,
+      "rect" : [
+        115.09540000000001,
+        42.051099999999998,
+        381.39639999999997,
+        15.289999999999999
+      ],
+      "text" : "Visit us at ars.usda.gov/ar ● Follow us at twitter.com/USDA_ARS"
+    }
+  ],
+  "page" : 24,
+  "paintOperations" : [
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          390.25,
+          697.65100000000007
+        ],
+        [
+          187.5,
+          63.538999999999987
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          392.25,
+          699.65100000000007
+        ],
+        [
+          575.75,
+          699.65100000000007
+        ],
+        [
+          575.75,
+          759.19000000000005
+        ],
+        [
+          392.25,
+          759.19000000000005
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          218.375,
+          614.79399999999998
+        ],
+        [
+          16.25,
+          12.25
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          220.375,
+          616.79399999999998
+        ],
+        [
+          232.625,
+          616.79399999999998
+        ],
+        [
+          232.625,
+          625.04399999999998
+        ],
+        [
+          220.375,
+          625.04399999999998
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          218.625,
+          600.79399999999998
+        ],
+        [
+          16.25,
+          12.25
+        ]
+      ],
+      "rectangular" : true,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          220.625,
+          602.79399999999998
+        ],
+        [
+          232.875,
+          602.79399999999998
+        ],
+        [
+          232.875,
+          611.04399999999998
+        ],
+        [
+          220.625,
+          611.04399999999998
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34,
+          695.24000000000001
+        ],
+        [
+          188,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          36,
+          697.24000000000001
+        ],
+        [
+          220,
+          697.24000000000001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          130,
+          615.47109999999998
+        ],
+        [
+          86.199999999999989,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          132,
+          617.47109999999998
+        ],
+        [
+          214.19999999999999,
+          617.47109999999998
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          154.72,
+          602.46810000000005
+        ],
+        [
+          61.47999999999999,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          156.72,
+          604.46810000000005
+        ],
+        [
+          214.19999999999999,
+          604.46810000000005
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          36.678588900000001,
+          732.41232300000001
+        ],
+        [
+          35.999999999999993,
+          24.720001199999956
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          36.357116699999999,
+          704.79711910000003
+        ],
+        [
+          36.000000000000007,
+          24
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : true,
+      "image" : false,
+      "rect" : [
+        [
+          463.46699999999998,
+          73.460000000000008
+        ],
+        [
+          113.24900000000002,
+          311.03800000000001
+        ]
+      ],
+      "rectangular" : true,
+      "vertices" : [
+        [
+          465.46699999999998,
+          75.460000000000008
+        ],
+        [
+          574.71600000000001,
+          75.460000000000008
+        ],
+        [
+          574.71600000000001,
+          382.49800000000005
+        ],
+        [
+          465.46699999999998,
+          382.49800000000005
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          33.7209,
+          62.996099999999998
+        ],
+        [
+          543.42100000000005,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          35.7209,
+          64.996099999999998
+        ],
+        [
+          575.14190000000008,
+          64.996099999999998
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : false,
+      "rect" : [
+        [
+          34.578600000000002,
+          390.90530000000001
+        ],
+        [
+          543.42100000000005,
+          4
+        ]
+      ],
+      "rectangular" : false,
+      "strokeOnly" : true,
+      "vertices" : [
+        [
+          36.578600000000002,
+          392.90530000000001
+        ],
+        [
+          575.9996000000001,
+          392.90530000000001
+        ]
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          37.298583999999998,
+          74.960006699999994
+        ],
+        [
+          406.79997250000002,
+          308.03797909999997
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      36.357116699999999,
+      704.79711910000003,
+      36.321472199999995,
+      52.335205099999939
+    ],
+    [
+      37.298583999999998,
+      74.960006699999994,
+      406.79997250000002,
+      308.03797909999997
+    ]
+  ],
+  "rightsBasis" : "Published by the Agricultural Research Service, U.S. Department of Agriculture: a work of the United States Government under 17 U.S.C. 105. The page-3 masthead states: Most information in this magazine is public property and may be reprinted without permission (except where copyright is noted); no copyright, courtesy or permission notice appears anywhere in the issue. The masthead staff are the ARS Information Staff, every article byline is ARS (Ann Perry, Dennis O'Brien, Marcia Wood, Sandra Avant), and the page-2 Forum is by Daniel Strickman, ARS National Program Leader. All 24 printed photo numbers (D2619-4 through D2700-2 and K5657-3; photographers Peggy Greb, Stephen Ausmus, Seth Britch, Brad Fritz, Regis Lefebure, Neil Sanscrainte and Dong Wang) were resolved on 2026-09-17 in the ARS Image Gallery (https://www.ars.usda.gov/oc/images/photos/nov12/<id>/), with photographers matching the printed credits. The gallery rights page (https://www.ars.usda.gov/oc/images/copyright/, checked 2026-09-17) says its photos are copyright-free, public domain unless otherwise indicated, may not be used to infer or imply ARS endorsement of any product, company, or position, and asks for credit to the Agricultural Research Service. The masthead also states no endorsement by USDA is implied. Uncredited elements are the flag treatments on pages 1, 2 and 14 (the cover photo is D2700-2), small holly ornaments on the index pages 22-23, and the USDA, ARS and 150 Years marks and mailing panel on page 24. Owner approved on 2026-09-17. Not relicensed under MIT.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "2673d1fded74ad89c8b5c59dc325c7884601e1aca5b5755b15a105c1f5b0d761",
+  "sourceTitle" : "Agricultural Research, Vol. 60, No. 10 (November/December 2012)",
+  "sourceURL" : "https://agresearchmag.ars.usda.gov/AR/archive/2012/Nov/November-December2012.pdf"
+}

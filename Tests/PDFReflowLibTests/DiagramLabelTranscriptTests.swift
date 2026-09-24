@@ -40,6 +40,23 @@ import Testing
     #expect(labelsByImage.isEmpty)
 }
 
+@Test func ruledGridCellsDoNotBecomeLooseSelectableDiagramLabels() {
+    // The preserved-region regression draws this 240 × 150 pt frame with three rows and two
+    // columns. Its numeric text is real, but without proven cell structure it stays in the
+    // image rather than becoming detached label spans (#210).
+    let frame = CGRect(x: 80, y: 180, width: 240, height: 150)
+    let crop = frame.insetBy(dx: -2, dy: -2)
+    let lines = [
+        TextLine(text: "36", rect: CGRect(x: 100, y: 300, width: 18, height: 14), fontSize: 14),
+        TextLine(text: "84", rect: CGRect(x: 220, y: 300, width: 18, height: 14), fontSize: 14),
+        TextLine(text: "9 21", rect: CGRect(x: 100, y: 250, width: 138, height: 14), fontSize: 14),
+        TextLine(text: "3 7", rect: CGRect(x: 100, y: 200, width: 130, height: 14), fontSize: 14),
+    ]
+    let page = PageContent(number: 1, bounds: CGRect(x: 0, y: 0, width: 400, height: 500),
+                           lines: lines, graphics: [frame])
+    #expect(DiagramLabelTranscript.labels(page: page, images: [(crop, "table")], body: 14).isEmpty)
+}
+
 @Test func wallaceTriangleLabelsAllHaveNativeTextOverlays() throws {
     let fixture = try SourceLayoutFixture.load("algebra-427")
     #expect(fixture.sourceSHA256 == "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678")

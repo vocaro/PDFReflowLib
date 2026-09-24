@@ -10,7 +10,18 @@ enum DiagramLabelTranscript {
         let word = #"\p{L}{3,}"#
         for (crop, assetID) in images {
             let lines = page.lines.filter { LayoutReconstructor.takes(crop, $0) && !$0.text.isEmpty }
+            // A ruled table's outer frame nearly fills its crop. Its short numeric cells are
+            // not diagram labels: transcribing them as loose spans loses their row/column
+            // associations (#210). Wallace's triangles have drawing ink inset on all sides.
+            let hasTableFrame = page.graphics.contains { graphic in
+                crop.intersects(graphic)
+                    && graphic.width >= crop.width * 0.9
+                    && graphic.height >= crop.height * 0.9
+                    && abs(graphic.midX - crop.midX) <= body
+                    && abs(graphic.midY - crop.midY) <= body
+            }
             guard (2...8).contains(lines.count),
+                  !hasTableFrame,
                   lines.allSatisfy({ line in
                       line.text.count <= 12
                           && (line.text.range(of: marker, options: .regularExpression) != nil

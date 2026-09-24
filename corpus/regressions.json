@@ -298,7 +298,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Pages 12 and 347 source rasters reviewed: page 12 prints the 36/84 = (36 ÷ 4)/(84 ÷ 4) = 9/21 fraction reduction, and page 347 exercise 35 prints −5n² − 3n − 52 = 2 − 7n². These are now MathML with verified source structures and existing altimg fallback assets, so earlier visible-image requirements are obsolete. The page-347 reference remains as source evidence, not a converted-image requirement. This does not qualify all forty equation structures or their two-column reading order (#29). Does not bless flattened inline exponents or validate every equation image. Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230). Page 101 rendered and read at 100 DPI: exercises 11-30 are a two-column numbered list, one printed line to an item, and 17 and 28 are set exactly as 16 and 27 are. PDFKit ends those two lines at the marker, so each arrived as `17)` and its coordinates separately and read as prose; all four must be preformatted items, as their neighbours on the page already are (#172). Page 2 read against the source for the list conversion (#292): the licence's bulleted terms list where two touch (`to Share`/`to Remix`, `Waiver`/`Public Domain`), `Attribution`, which its wrapped line sets apart, is a paragraph keeping its bullet, the `−` sub-items stay preformatted because a minus is no bullet, and `Notice`, standing beside them, stays preformatted too.",
+      "basis": "Pages 12 and 347 source rasters reviewed: page 12 prints the 36/84 = (36 ÷ 4)/(84 ÷ 4) = 9/21 fraction reduction, and page 347 exercise 35 prints −5n² − 3n − 52 = 2 − 7n². These are now MathML with verified source structures and existing altimg fallback assets, so earlier visible-image requirements are obsolete. Page 347's 1–40 problem numbers now read in source row order with individual equation fallback images; the reference image remains source evidence, not a converted-image requirement. Page 438's integer answer numbers read 1–60 under their chapter and section headings before the fractions answer title. The corpus checks do not qualify every equation structure or every answer image (#29). Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230). Page 101 rendered and read at 100 DPI: exercises 11-30 are a two-column numbered list, one printed line to an item, and 17 and 28 are set exactly as 16 and 27 are. PDFKit ends those two lines at the marker, so each arrived as `17)` and its coordinates separately and read as prose; all four must be preformatted items, as their neighbours on the page already are (#172). Page 2 read against the source for the list conversion (#292): the licence's bulleted terms list where two touch (`to Share`/`to Remix`, `Waiver`/`Public Domain`), `Attribution`, which its wrapped line sets apart, is a paragraph keeping its bullet, the `−` sub-items stay preformatted because a minus is no bullet, and `Notice`, standing beside them, stays preformatted too.",
       "spineContinuity": [
         {
           "sourcePages": [
@@ -386,6 +386,12 @@
         },
         {
           "page": 347,
+          "orderedText": [
+            "1)", "2)", "3)", "4)", "5)", "6)", "7)", "8)", "9)", "10)",
+            "11)", "12)", "13)", "14)", "15)", "16)", "17)", "18)", "19)", "20)",
+            "21)", "22)", "23)", "24)", "25)", "26)", "27)", "28)", "29)", "30)",
+            "31)", "32)", "33)", "34)", "35)", "36)", "37)", "38)", "39)", "40)"
+          ],
           "text": [
             "Solve each equation with the quadratic formula."
           ],
@@ -394,6 +400,22 @@
               "alttext": "−5n^2 − 3n − 52 = 2 − 7n^2",
               "structure": "mrow(mo(−),mn(5),msup(mi(n),mn(2)),mo(−),mn(3),mi(n),mo(−),mn(52),mo(=),mn(2),mo(−),mn(7),msup(mi(n),mn(2)))"
             }
+          ]
+        },
+        {
+          "page": 438,
+          "orderedText": [
+            "Answers - Chapter 0",
+            "0.1",
+            "Answers - Integers",
+            "1)− 2",
+            "21)− 7",
+            "22) 0",
+            "42) 4",
+            "43)− 20",
+            "60)− 9",
+            "0.2",
+            "Answers - Fractions"
           ]
         },
         {

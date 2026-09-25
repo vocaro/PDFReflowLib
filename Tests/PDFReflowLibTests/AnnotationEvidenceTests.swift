@@ -74,3 +74,47 @@ func checkboxWithNoPrintedGlyphSuppliesAReadableBox() async throws {
     #expect(chapter.contains("Jury Trial"))
     #expect(report.warnings.contains { $0.code == .annotationsNotConverted })
 }
+
+/// The same box, checked, reads `☒`, whatever its form calls the checked state (#307). A form names
+/// a checkbox's on-state as it likes: `/On`, Acrobat's `/Yes`, `/1` where the export values are
+/// numbers. The widget names it in `/V`, in `/AS`, and as the key beside `/Off` in `/AP /N`. On
+/// macOS 27 PDFKit's `buttonWidgetState` reports `.onState` for all three names with `/V` and `/AS`
+/// set to it, and `.offState` for the same widget at `/V /Off /AS /Off`, so a custom on-state that
+/// the appearance dictionary offers but the widget has not selected leaves the box `☐`.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/307"), arguments: ["On", "Yes", "1"], [true, false])
+func checkboxWithNoPrintedGlyphReadsCheckedWhateverItsOnStateIsCalled(onState: String, checked: Bool) async throws {
+    let state = checked ? onState : "Off"
+    let box = "/Type /XObject /Subtype /Form /BBox [0 0 16 16]"
+    let data = testPDF(objects: [
+        "<< /Type /Catalog /Pages 2 0 R >>",
+        "<< /Type /Pages /Kids [3 0 R] /Count 1 >>",
+        "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] "
+            + "/Resources << /Font << /F1 5 0 R >> >> /Contents 4 0 R /Annots [6 0 R] >>",
+        testPDFStream("BT /F1 12 Tf 1 0 0 1 110 600 Tm (Jury Trial) Tj ET"),
+        "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>",
+        "<< /Type /Annot /Subtype /Widget /FT /Btn /T (jury) /F 4 /Rect [72 596 88 612] "
+            + "/V /\(state) /AS /\(state) /AP << /N << /\(onState) 7 0 R /Off 8 0 R >> >> >>",
+        testPDFStream("0.5 0.5 15 15 re 3 3 m 13 13 l 3 13 m 13 3 l S", extra: box),
+        testPDFStream("0.5 0.5 15 15 re S", extra: box),
+    ])
+    let document = try #require(PDFDocument(data: data))
+    let page = try #require(document.page(at: 0))
+    let widget = try #require(page.annotations.first)
+    #expect(widget.widgetControlType == .checkBoxControl)
+    #expect(widget.buttonWidgetState == (checked ? .onState : .offState))
+    let judgment = try AnnotationEvidence.judge(page.annotations, on: page,
+                                                bounds: page.bounds(for: .cropBox))
+    #expect(judgment.boxes.map(\.on) == [checked])
+
+    let directory = try testPDFDirectory()
+    defer { try? FileManager.default.removeItem(at: directory) }
+    let source = directory.appendingPathComponent("checkbox.pdf")
+    let output = directory.appendingPathComponent("checkbox.epub")
+    try data.write(to: source)
+    _ = try await PDFConverter().convert(from: source, to: output)
+    let chapter = String(decoding: try Archive(url: output, accessMode: .read)
+        .entryData("EPUB/chapter-1.xhtml"), as: UTF8.self)
+    #expect(chapter.contains(checked ? "☒" : "☐"))
+    #expect(!chapter.contains(checked ? "☐" : "☒"))
+    #expect(chapter.contains("Jury Trial"))
+}

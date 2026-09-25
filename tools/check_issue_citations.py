@@ -261,6 +261,8 @@ ALLOWED = {
         'carries one, on main and named by its issue'),
     290: ('historical', 'a bare number in the outer margin refused the title reading, on main and '
         'named by its issue'),
+    307: ('historical', "a checked box's mark whatever its on-state is called, pinned on main and "
+        'named by its issue'),
 
     # Closed, but the defect is still in `main`; the prose says so and names the commit. #5 and
     # #11 join this group from #236's audit: both were read against `main` — Warren and NOAA

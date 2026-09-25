@@ -2331,6 +2331,21 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
   is what that warning has always claimed.
   Evidence: [converted-links](../measurements/converted-links/record.md).
 
+## Form fields
+
+- **Checkbox marks (#170, #307).** A checkbox or radio widget is written into the text as its
+  state wherever the page's own text is reconstructed (not on a page preserved whole, nor over a
+  scan's invisible transcription). Over one printed box glyph (the US Courts form's
+  `WP-IconicSymbolsA` box, which its ToUnicode map reads as `’`) the glyph is rewritten `☐` or
+  `☒`; over nothing printed, where the widget is the page's only drawing of its box, a line
+  holding `☐` or `☒` is added at the widget's rectangle. The state is PDFKit's
+  `buttonWidgetState`. A form names a checkbox's on-state as it likes (`/On`, Acrobat's `/Yes`,
+  `/1` where the export values are numbers), in `/V`, in `/AS` and as the key beside `/Off` in
+  `/AP /N`. On macOS 27 PDFKit reports `.onState` for each of the three with `/V` and `/AS` set to
+  it, and `.offState` for the same widget at `/V /Off /AS /Off`, so the name needs no reading of
+  the library's own: a checked box reads `☒` and an unchecked one `☐` whatever its on-state is
+  called.
+
 ## EPUBWriter, SpinePacker, EPUBTextEncoder
 
 - **Lists (#292).** A run of list items is written as one `<ul>` or `<ol>` — `<ol start="6">`

@@ -2727,7 +2727,7 @@ enum LayoutReconstructor {
     /// hold back (#203, [decision 0008](../../doc/decisions/0008-streamed-blocks-to-the-writer.md)).
     ///
     /// Ordinarily that is the trailing block alone, which is the paragraph a continued paragraph
-    /// joins. Where images or complete source containers stand at the tail, the join steps over them to the paragraph beneath,
+    /// joins. Where images, complete source containers or a page's footnotes stand at the tail, the join steps over them to the paragraph beneath,
     /// so that paragraph and every block the join would move are still open.
     ///
     /// The count cannot grow without bound: a page that opens no paragraph puts its own marker at
@@ -2756,9 +2756,52 @@ enum LayoutReconstructor {
             if let unit = completeClosedUnit(at: anchor, in: blocks), unit.upperBound == anchor + 1 {
                 anchor = unit.lowerBound - 1
             } else if blocks[anchor].closedUnit == nil && blocks[anchor].isImage { anchor -= 1 }
+            else if isPageFootNote(at: anchor, in: blocks) { anchor -= 1 }
             else { break }
         }
         return anchor
+    }
+
+    /// Whether a block is part of the notes a page sets at its own foot: a footnote whose page
+    /// established it (#299), or a rule typed directly above one. Such notes stand between the
+    /// page's last paragraph and the page's end exactly as a picture at its foot does, so a
+    /// paragraph the page left open reaches past them to its continuation. Loper Bright page 76
+    /// ends its body on `…voiced their own thoughtful and extensive`, then prints `——————` and
+    /// note 6, and page 77 opens `criticisms of Chevron.` (#306). An endnote is not one: a page of
+    /// endnotes is the book's back matter, not a page's foot.
+    static func isPageFootNote(at index: Int, in blocks: [ReflowBlock]) -> Bool {
+        let block = blocks[index]
+        guard block.closedUnit == nil else { return false }
+        if block.note?.kind == .footnote { return true }
+        guard block.note == nil, index + 1 < blocks.count, blocks[index + 1].note?.kind == .footnote,
+              blocks[index + 1].page == block.page, case let .paragraph(text) = block.content else { return false }
+        return isTypedRule(text.text)
+    }
+
+    /// Whether text is nothing but a rule set in type: two or more dashes, underscores or
+    /// horizontal box-drawing strokes and no other mark, the way a slip opinion sets `——————`
+    /// between its body and its notes (#306).
+    static func isTypedRule<S: StringProtocol>(_ text: S) -> Bool {
+        let strokes = text.filter { !$0.isWhitespace }
+        return strokes.count >= 2 && strokes.allSatisfy { "—–―‒‐-_─━".contains($0) }
+    }
+
+    /// Whether a block's text ends on a typed rule standing as a word of its own: the page's note
+    /// separator, run into the paragraph above it. Loper Bright page 67 reads `…(GORSUCH, J.,
+    /// concurring in judgment).5 ——————` as one paragraph. A dash that ends a word, `Congress—`,
+    /// is punctuation carrying the sentence on and is not one (#306).
+    static func endsOnTypedRule(_ text: String) -> Bool {
+        text.split(whereSeparator: \.isWhitespace).last.map { isTypedRule($0) } ?? false
+    }
+
+    /// Whether the block at `index` stands directly beneath a rule its own page typed, which is
+    /// where the notes' own matter stands. Loper Bright page 99 sets the end of note 3, carried
+    /// over from page 98, between its rule and note 4; nothing recognizes that as a note (#299),
+    /// so it reads as a paragraph, and a join reaching past note 4 would find it (#306).
+    static func standsBelowTypedRule(_ index: Int, in blocks: [ReflowBlock]) -> Bool {
+        guard index > 0, blocks[index - 1].page == blocks[index].page, blocks[index - 1].note == nil,
+              case let .paragraph(text) = blocks[index - 1].content else { return false }
+        return isTypedRule(text.text)
     }
 
     static func amendableTail(of blocks: [ReflowBlock]) -> Int {
@@ -2788,7 +2831,8 @@ enum LayoutReconstructor {
         // boundary its own page is on, because the marker the join sets stands inside the
         // paragraph: page 47's box is placed before the paragraph, where it also reads before the
         // sentence that refers to it, and page 48's rule after it. Placing page 47's box after the
-        // paragraph would carry it past the page-48 marker (#203).
+        // paragraph would carry it past the page-48 marker (#203). The notes a page sets at its
+        // foot, and the rule above them, are stepped over and placed the same way (#306).
         let anchor = continuationAnchor(in: blocks)
         var opening = 0
         while opening < remaining.count {
@@ -2808,6 +2852,17 @@ enum LayoutReconstructor {
            // block directly before a boundary is still reached whatever it holds: #45's wider
            // defect, a join anchored on a folio that is simply the last block, is untouched here.
            (anchor == blocks.count - 1 && opening == 0) || readsAsSentence(blocks[anchor].text),
+           // A paragraph the join reaches past the page's notes has to be the page's body, and to
+           // have stopped where the body did. One that carries the notes' own rule at its end ran
+           // into the separator, and what it ends on is not a sentence the page broke off; one
+           // the page set beneath its rule is the notes' own matter (#306).
+           !(blocks[(anchor + 1)...].contains { $0.note?.kind == .footnote }
+               && (endsOnTypedRule(blocks[anchor].text) || standsBelowTypedRule(anchor, in: blocks))),
+           // The notes go before the joined paragraph, on the side of the boundary that paragraph
+           // opens on. One that opened on an earlier page already carries the notes' own page's
+           // marker inside it, so no place keeps them on their page, and the join is refused
+           // rather than carry them back a page (#306).
+           blocks[(anchor + 1)...].allSatisfy { $0.note?.kind != .footnote || $0.page == blocks[anchor].page },
            // The block a page opens with is the sentence's other half only where it is where the
            // page's text begins. Wallace's page 430 prints `b are the other two sides (legs),
            // then we can use the following formula, a² + b² = c²` and a display crop takes all of
@@ -2818,9 +2873,12 @@ enum LayoutReconstructor {
            // Two validated paragraph identities that differ are two paragraphs, and never join.
            // One identity and no identity is not that: a page whose tags were not applied says
            // nothing about where its last paragraph ends, so the geometric rule decides, as it
-           // did when neither page carried a tag (#67).
-           blocks[anchor].structureGroup == remaining[opening].structureGroup
-               || blocks[anchor].structureGroup == nil || remaining[opening].structureGroup == nil,
+           // did when neither page carried a tag (#67). What is joined is the earlier block's
+           // end, so its identity is the one its last line carries, not the one it opened with:
+           // Loper Bright page 76 opens a block on the close of a paragraph tagged from page 75
+           // and ends it on lines the tags never reached (#306).
+           blocks[anchor].closingStructureGroup == remaining[opening].structureGroup
+               || blocks[anchor].closingStructureGroup == nil || remaining[opening].structureGroup == nil,
            (remaining[opening].text.first?.isLowercase == true
                 || continuesReporterCitation(blocks[anchor].text, remaining[opening].text)),
            blocks[anchor].text.last.map({ !".!?:".contains($0) }) == true,
@@ -2843,6 +2901,8 @@ enum LayoutReconstructor {
             } else {
                 blocks[anchor].content = .paragraph(carried)
             }
+            // The joined block now ends where the later page's paragraph does.
+            blocks[anchor].close(on: remaining[opening].closingStructureGroup)
             blocks.insert(contentsOf: stepped, at: anchor)
             blocks += remaining.prefix(opening)
             remaining.removeFirst(opening + 1)

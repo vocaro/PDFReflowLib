@@ -1992,7 +1992,7 @@
     {
       "id": "scotus-loper-bright-2024",
       "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
-      "basis": "Source pages 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Source pages 2, 7 and 13 visually reviewed for the same shape: a wrapped line opening with an initial, a citation abbreviation or a year stays inside its paragraph (#39). Does not bless footnotes merged into body paragraphs with dash separators or retained running headers (#40).",
+      "basis": "Source pages 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Source pages 2, 7 and 13 visually reviewed for the same shape: a wrapped line opening with an initial, a citation abbreviation or a year stays inside its paragraph (#39). Does not bless footnotes merged into body paragraphs with dash separators or retained running headers (#40). Source pages 40–41, 56–57 and 76–77 read with pdftotext -layout: each page's body ends mid-sentence above a `——————` rule and a footnote, and the next page opens on the rest of the sentence (`…voiced their own thoughtful and extensive` / `criticisms of Chevron. Buffington, 598 U. S., at ___–___`). One paragraph must carry each sentence across the page marker, and each note must stay an aside on its own page, never taking the next page's opening words (#306).",
       "pages": [
         {
           "page": 60,
@@ -2071,6 +2071,53 @@
           ],
           "paragraphs": [
             "A divided panel of the D. C. Circuit affirmed. See 45 F. 4th 359 (2022). The majority addressed various provisions of the MSA"
+          ]
+        },
+        {
+          "page": 76,
+          "continuedParagraphs": [
+            {
+              "end": "appellate judges voiced their own thoughtful and extensive",
+              "next": "criticisms of Chevron. Buffington, 598 U. S., at ___–___"
+            }
+          ],
+          "asides": [
+            "It should be recalled that, when Justice Scalia launched the Chevron revolution, there were many judges"
+          ]
+        },
+        {
+          "page": 77,
+          "absentText": [
+            "we’re all textualists now"
+          ],
+          "orderedText": [
+            "criticisms of Chevron. Buffington, 598 U. S., at ___–___",
+            "their own administrative law jurisprudence. See 598 U. S., at ___ (slip op., at 15).",
+            "Even if all that and everything else laid out above is true"
+          ]
+        },
+        {
+          "page": 40,
+          "continuedParagraphs": [
+            {
+              "end": "(2008). At this point, all",
+              "next": "that remains of Chevron is a decaying husk with bold pretensions."
+            }
+          ],
+          "asides": [
+            "Citing an empirical study, the dissent adds that Chevron"
+          ]
+        },
+        {
+          "page": 56,
+          "continuedParagraphs": [
+            {
+              "end": "learning of past generations, a font of established wisdom",
+              "next": "richer than what can be found in any single judge or panel of judges."
+            }
+          ],
+          "asides": [
+            "For relevant databases of decisions, see Congressional Research Service"
           ]
         }
       ]

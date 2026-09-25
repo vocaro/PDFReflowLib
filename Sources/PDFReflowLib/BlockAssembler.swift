@@ -560,6 +560,10 @@ struct BlockAssembler {
     /// tags partly apply interleaves them (#67) — so the open paragraph is one slot, and the tag
     /// travels with it rather than holding a second, parallel one (#238).
     private var paragraphTag: TextStructure?
+    /// The last line the open paragraph took under its tag. Where `previous` is some later line,
+    /// the paragraph went on past what the tags reached, and its end carries no validated
+    /// identity (#306).
+    private var paragraphTaggedLine: TextLine?
     /// A resumed paragraph keeps its original position before the intervening figure (#160).
     private var paragraphTarget: Int?
     private var previous: TextLine?
@@ -707,15 +711,21 @@ struct BlockAssembler {
             let level = paragraphHeadingLevel
             let content: ReflowBlock.Content = level == 0 ? .paragraph(paragraph)
                 : .heading(id: headingID(), text: paragraph, level: level)
+            // The paragraph ends on its tag only where its last line is the last one the tag took.
+            let closing = previous != nil && previous == paragraphTaggedLine ? paragraphTag?.group : nil
             if let target = paragraphTarget {
                 blocks[target].content = content
+                blocks[target].close(on: closing)
             } else {
-                blocks.append(ReflowBlock(content: content, structureGroup: paragraphTag?.group, page: page))
+                var block = ReflowBlock(content: content, structureGroup: paragraphTag?.group, page: page)
+                block.close(on: closing)
+                blocks.append(block)
             }
         }
         paragraphTarget = nil
         paragraph = InlineText()
         paragraphTag = nil
+        paragraphTaggedLine = nil
         previous = nil
         previousRow = nil
     }
@@ -736,6 +746,7 @@ struct BlockAssembler {
         paragraph = join(text, line.content)
         paragraphTarget = target
         paragraphTag = line.structure
+        paragraphTaggedLine = line.structure == nil ? nil : line
         previous = line
         previousRow = nil
         initialOpening = nil
@@ -889,6 +900,7 @@ struct BlockAssembler {
         } else {
             paragraph = join(paragraph, line.content)
         }
+        paragraphTaggedLine = line
         previous = line
         previousRow = nil
     }
@@ -1288,6 +1300,17 @@ struct BlockAssembler {
     /// the one beside it.
     private func continuesParagraph(_ prev: TextLine, _ line: TextLine) -> Bool {
         guard prev.wraps != false else { return false }
+        // A rule the page sets in type is a separator, not a line of prose: neither the text
+        // above it nor the text below it runs on through it. A slip opinion types `——————`
+        // between its body and its footnotes at the body's own leading, and Loper Bright page 67
+        // read it onto the end of `…concurring in judgment).5`, where a paragraph the page left
+        // open could not reach past its notes to the next page (#306). Only on a page whose text
+        // is the page's own: in a transcription of a scan a run of dashes is the reader's
+        // rendering of whatever the scan drew there, and Project Blue Book's questionnaires set
+        // their answer blanks that way, `Age ------Sex ------`, beside the labels they answer.
+        if !recognized, LayoutReconstructor.isTypedRule(prev.text) || LayoutReconstructor.isTypedRule(line.text) {
+            return false
+        }
         if bibliographyOpenings.contains(line.rect) { return false }
         if bibliographyWraps.contains(line.rect), prev.hasSize(line.fontSize),
            prev.rect.minY > line.rect.minY,

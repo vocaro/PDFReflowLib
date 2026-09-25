@@ -486,6 +486,13 @@ Evidence: [native-label-spacing](../measurements/native-label-spacing/record.md)
   invalidates an incomplete group. Two validated paragraph identities that differ prevent a
   heuristic cross-page join; one identity against a page that applied no tags does not, since that
   page states nothing about where its last paragraph ends, and the geometric rule decides (#67).
+  The identity compared on the earlier page is the one the block's **last** line carries
+  (`closingStructureGroup`), because the block's end is what is joined: a paragraph the tags open
+  can take lines the tags never reached. Loper Bright page 76 opens a block on the four lines that
+  finish a paragraph tagged from page 75 and carries it through twenty-two untagged lines to the
+  foot of its body, and page 77 opens on a paragraph tagged as another; the join compared the
+  block's opening identity with page 77's and refused, where the block's end states none (#306).
+  A block joined across a page closes on the later page's identity.
   OCR text and unverified image-backed text never inherit tags.
 - A page whose tags never name a heading has not stated that its display lines are not headings:
   there, a line the page's own typography reads as a heading keeps that reading and its tag is
@@ -1048,10 +1055,11 @@ reload as positive zero, and no reconstruction step reads the sign of zero), rel
 order, and deleted on reload; the page directory goes when reconstruction finishes, leaving only
 assets. Reconstruction emits each page's assets and blocks to the writer as it finishes them,
 holding back only what a later page can still amend (`amendableTail`): the trailing block, or,
-where images stand at the tail, the paragraph beneath them that a continued paragraph can still
-join together with the images that join would step over (#203). The whole block list is never
-resident, and the held tail cannot grow past one page's pictures, because a page that opens no
-paragraph puts its own marker at the tail and a marker is not a paragraph. Model validation follows: each block is checked as
+where images or a page's footnotes stand at the tail, the paragraph beneath them that a continued
+paragraph can still join together with the images and notes that join would step over (#203,
+#306). The whole block list is never resident, and the held tail cannot grow past one page's
+pictures and notes, because a page that opens no paragraph puts its own marker at the tail and a
+marker is not a paragraph. Model validation follows: each block is checked as
 it arrives, and the checks that need the whole document — that it has blocks at all, and that
 every chapter boundary reached a standalone page marker — run when the stream ends.
 
@@ -1312,6 +1320,28 @@ row-major sort, one entry of each column at a time.
   `amendableTail` is the trailing block, or, where images stand at the tail, the paragraph
   beneath them and those images ([decision 0008](decisions/0008-streamed-blocks-to-the-writer.md),
   [decision 0011](decisions/0011-a-picture-keeps-its-side-of-the-page-marker.md)).
+- **A page's footnotes interrupt a paragraph the way a picture does** (#306). A cross-page join
+  steps over the notes a page sets at its foot — each footnote `PageFootnotes` established, and a
+  rule typed directly above one — and places them as it places a picture: before the joined
+  paragraph, on their own page's side of the marker the join sets inside it. Loper Bright page 76
+  ends its body on `…voiced their own thoughtful and extensive`, prints `——————` and note 6, and
+  page 77 opens `criticisms of Chevron.`; before this rule `criticisms of Chevron. …` opened a
+  paragraph of its own, and before #299 it was joined into note 6. Pages 40–41 (`At this point,
+  all` / `that remains of Chevron…`) and 56–57 (`a font of established wisdom` / `richer than…`)
+  are the same shape, and those three are the book's only changes from the join. A block reached
+  past notes is held to what a block reached past a picture is (`readsAsSentence`), and to three
+  things more, because it must be the page's body: it may not end on a typed rule standing as a
+  word of its own, which is the separator read into the paragraph above it, and it may not stand
+  directly beneath its own page's typed rule, where only the notes' own matter stands — page 99
+  sets the end of note 3, carried over from page 98, there, and nothing recognizes it as a note;
+  and it must open on the notes' own page: a paragraph that opened a page earlier already
+  carries the notes' page marker inside it, so no place keeps the notes on their page, and the
+  join is refused rather than carry them back a page (no corpus page has this shape today).
+  An endnote is not stepped over: a page of endnotes is back matter, not a page's foot. The
+  join's other conditions are unchanged, so a paragraph that ends before the notes, or a next
+  page that opens with a heading or a new paragraph on a capital, keeps its own marker, and the
+  notes stay where the page put them. `amendableTail` holds the paragraph, the rule and the notes
+  back together, bounded as before by the next page's marker.
 - A cross-page join reaches **only a block the page's own text begins at** (#267). Where a crop
   took prose the page printed *before* the first line it reflows, that block is not the other
   half of the sentence the page before left open, and no join is made: the boundary keeps a
@@ -1342,7 +1372,17 @@ row-major sort, one entry of each column at a time.
   shorter one's height, the second stands to the right of the first, and less than 0.75 of a body
   separates them — the width a whitespace cut needs for a column, so a table's cells and the two
   ends of a running header remain separate blocks (#57). A short previous line ending a sentence
-  closes its paragraph either way. That gap is measured from the line's own depth where PDFKit
+  closes its paragraph either way. A **rule set in type** is a separator, not prose: a line of
+  nothing but two or more dashes, underscores or horizontal box-drawing strokes (`isTypedRule`)
+  neither continues the paragraph above it nor is continued by the line below it. A slip opinion
+  types `——————` between its body and its footnotes at the body's own leading, and Loper Bright
+  read it into the text on either side: page 67 ended a paragraph on `…concurring in
+  judgment).5 ——————`, page 68 opened a note's continuation as `—————— serve the Constitution`,
+  and page 98 ran its body on through the rule into the end of note 2 carried over from page 97;
+  eight of the book's twenty-eight rules were glued to prose, and none now is (#306). Only on a page whose text is its own: a transcription of a scan renders
+  whatever the scan drew as dashes, and Project Blue Book's questionnaires set their answer blanks
+  that way — `Age ------Sex ------` — beside the labels they answer, which this rule would split.
+  That gap is measured from the line's own depth where PDFKit
   **grew the rectangle to fit what the line carries**: the page's own lines state what an ordinary
   line of each type size measures (the lower quartile of their heights at that size), and where
   two rectangles overlap and the upper one is taller than an ordinary line by more than a quarter
@@ -2158,10 +2198,10 @@ pairs retain separate paragraphs. See
     marker, and a reading system that presents footnotes as pop-ups finds it by its reference. A
     reading system that hides footnote asides from the running text shows it only there.
   - *Not done.* A note that continues onto the next page is not recognized as one (the page it
-    ends on has no opening for it), and a paragraph that runs on past a page's notes does not
-    step over them to join its continuation on the next page, as it steps over a picture. Loper
-    Bright page 76 shows the second: before this rule the opening of page 77 was joined into
-    note 6; now it is a paragraph of its own, still not joined to the sentence page 76 left open (#306).
+    ends on has no opening for it). A paragraph that runs on past a page's notes now steps over
+    them to its continuation on the next page, as it steps over a picture (#306, under
+    *Columns and paragraphs*); before this rule the opening of Loper Bright's page 77 was joined
+    into note 6, and with it alone that opening stood as a paragraph of its own.
   Against the corpus at 684cf06b this links Dietary Guidelines page 2 (four notes, which had read
   as two paragraphs of two), the nine Earthdata slides that footnote `AODS¹` (pages 12–14 and
   16–21), eight Loper Bright pages (23, 40, 56, 61, 67, 76, 77 and 99; on 99 the note had been

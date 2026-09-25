@@ -433,7 +433,35 @@ struct ReflowBlock: Sendable, Equatable {
         var kind: Kind
     }
     /// Validated source paragraph identity, used to avoid heuristic joins across tag boundaries.
+    /// It is the identity of the paragraph the block opens with.
     var structureGroup: Int?
+    /// The validated identity of the paragraph the block's last line belongs to, where that is
+    /// not `structureGroup`. A paragraph the tags open can take lines the tags never reached:
+    /// Loper Bright page 76 opens a block on the four lines that finish a tagged paragraph from
+    /// page 75, and the page's geometry carries it on through twenty-two untagged lines to the foot
+    /// of the body. A cross-page join joins a block's end, so that is the identity it compares
+    /// (#306).
+    var closingStructure: ClosingStructure = .opening
+    enum ClosingStructure: Sendable, Equatable {
+        /// The block ends in the paragraph it opens with.
+        case opening
+        /// The block's last line carries no validated identity.
+        case untagged
+        /// The block ends in another validated paragraph, which a cross-page join carried on.
+        case group(Int)
+    }
+    /// The validated identity at the block's end.
+    var closingStructureGroup: Int? {
+        switch closingStructure {
+        case .opening: structureGroup
+        case .untagged: nil
+        case let .group(group): group
+        }
+    }
+    /// Records `group` as the validated identity at the block's end.
+    mutating func close(on group: Int?) {
+        closingStructure = group == structureGroup ? .opening : group.map { .group($0) } ?? .untagged
+    }
     /// Physical PDF page where this block begins; inline markers record later page boundaries.
     var page: Int
     /// Whether reconstruction opened this preformatted block on a list marker (#292): a bullet

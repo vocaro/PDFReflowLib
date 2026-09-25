@@ -267,3 +267,161 @@ private func figuresPDF() throws -> Data {
     #expect(formats["png"] == [.png, .png, .png])
     #expect(formats["jpeg"] == [.jpeg, .jpeg, .jpeg])
 }
+
+// #216: an image whose only colour is its ground's tint is written as its lightness alone.
+
+/// A scan of black writing on yellowed paper, as Warren's pages are: every pixel is the paper's
+/// colour darkened toward black, plus a few levels of scanner noise in each channel. `mark`
+/// paints a saturated red rectangle over it, a stamp or a correction in coloured ink.
+private func tintedScan(width: Int, height: Int, mark: CGRect? = nil) throws -> CGImage {
+    var noise = Noise(seed: 17)
+    let paper = (241.0, 233.0, 211.0)
+    return try raster(width: width, height: height) { x, y in
+        if let mark, mark.contains(CGPoint(x: x, y: y)) { return (200, 40, 40) }
+        // Strokes of type and handwriting, with soft edges, over the paper; one pixel in four
+        // carries a few levels of scanner noise in each channel.
+        let band = (x / 5 + y / 7) % 4
+        let shade = band == 0 ? 0.15 : band == 1 ? 0.6 : 1.0
+        let grain = noise.next(4) == 0 ? 2 : 0
+        return (clamp(Int(paper.0 * shade) + noise.next(2 * grain + 1) - grain),
+                clamp(Int(paper.1 * shade) + noise.next(2 * grain + 1) - grain),
+                clamp(Int(paper.2 * shade) + noise.next(2 * grain + 1) - grain))
+    }
+}
+
+@Test func onlyTheGroundsTintIsTakenForNoColour() throws {
+    typealias C = ImageContentClassifier
+    let scan = C.features(of: try tintedScan(width: 200, height: 150))
+    #expect(scan.background == (241, 233, 211) && C.isMonochrome(scan))
+    var noise = Noise(seed: 23)
+    let gray = try raster(width: 200, height: 150) { x, y in
+        let g = clamp(((x / 6 + y / 9) % 5 == 0 ? 40 : 225) + noise.next(14)); return (g, g, g)
+    }
+    let neutral = C.features(of: gray)
+    #expect(C.isMonochrome(neutral) && neutral.largestOffTint == 0)
+
+    // Negative controls: colour of the image's own.
+    let photograph = try raster(width: 200, height: 150) { x, y in
+        let grain = noise.next(40)
+        return (clamp(30 + x + grain), clamp(60 + y + grain), clamp(20 + (x + y) / 2 + grain))
+    }
+    #expect(!C.isMonochrome(C.features(of: photograph)))
+    let chart = try raster(width: 200, height: 150) { x, y in
+        x > 20 && x < 60 && y > 40 ? (220, 30, 30) : (255, 255, 255)
+    }
+    #expect(!C.isMonochrome(C.features(of: chart)))
+    // A coloured ground is not paper, however plain: Our Flag's blue back cover, and a pale
+    // blue slide with black lettering.
+    let cover = try raster(width: 200, height: 150) { x, y in (x / 8 + y / 8) % 9 == 0 ? (255, 255, 255) : (12, 32, 117) }
+    #expect(!C.isMonochrome(C.features(of: cover)))
+    let slide = try raster(width: 200, height: 150) { x, y in (x / 5 + y / 7) % 4 == 0 ? (0, 0, 0) : (205, 222, 245) }
+    #expect(!C.isMonochrome(C.features(of: slide)))
+    // A slate-blue fill on a gray slide, as on the Earthdata slides: 21 levels off gray, under the
+    // 24 allowed on tinted paper, and colour on a neutral ground.
+    let fill = try raster(width: 200, height: 150) { x, _ in x < 60 ? (52, 73, 94) : (238, 238, 238) }
+    #expect(!C.isMonochrome(C.features(of: fill)))
+    // A stamp on the scan, and a coloured mark too small for the share: 16 of 30,000 pixels.
+    let stamped = C.features(of: try tintedScan(width: 200, height: 150,
+                                                mark: CGRect(x: 20, y: 20, width: 30, height: 20)))
+    #expect(stamped.offTintShare > C.monochromeOffTintShare && !C.isMonochrome(stamped))
+    let marked = C.features(of: try tintedScan(width: 200, height: 150,
+                                               mark: CGRect(x: 100, y: 60, width: 4, height: 4)))
+    #expect(marked.offTintShare <= C.monochromeOffTintShare)
+    #expect(marked.largestOffTint >= C.monochromeLargestOffTint && !C.isMonochrome(marked))
+}
+
+/// Three pages: a scan of yellowed paper filling its page, a born-digital diagram of hairlines
+/// and small lettering, and a colour photograph filling its page.
+private func tintPDF() throws -> Data {
+    let page = CGRect(x: 0, y: 0, width: 300, height: 400)
+    let data = NSMutableData()
+    var box = page
+    let consumer = try #require(CGDataConsumer(data: data as CFMutableData))
+    let pdf = try #require(CGContext(consumer: consumer, mediaBox: &box, nil))
+    pdf.beginPDFPage(nil)
+    pdf.draw(try tintedScan(width: 750, height: 1_000), in: page)
+    pdf.endPDFPage()
+    pdf.beginPDFPage(nil)
+    pdf.setStrokeColor(gray: 0, alpha: 1)
+    pdf.setLineWidth(0.25)
+    for step in 0..<40 {
+        let offset = 40 + CGFloat(step) * 5.5
+        pdf.strokeLineSegments(between: [CGPoint(x: offset, y: 60), CGPoint(x: offset, y: 340),
+                                         CGPoint(x: 40, y: 60 + CGFloat(step) * 7),
+                                         CGPoint(x: 260, y: 64 + CGFloat(step) * 7)])
+    }
+    pdfKitGated {
+        let font = CTFontCreateWithName("Helvetica" as CFString, 4, nil)
+        let line = CTLineCreateWithAttributedString(NSAttributedString(string: "Fig. 3 hairline grid, 0.25 pt",
+            attributes: [NSAttributedString.Key(kCTFontAttributeName as String): font]))
+        pdf.textPosition = CGPoint(x: 40, y: 50)
+        CTLineDraw(line, pdf)
+    }
+    pdf.endPDFPage()
+    pdf.beginPDFPage(nil)
+    var noise = Noise(seed: 31)
+    pdf.draw(try raster(width: 300, height: 400) { x, y in
+        let grain = noise.next(40)
+        return (clamp(30 + x / 2 + grain), clamp(60 + y / 3 + grain), clamp(120 - x / 4 + grain))
+    }, in: page)
+    pdf.endPDFPage()
+    pdf.closePDF()
+    return data as Data
+}
+
+@Test func monochromeImagesAreWrittenAsGrayAtFullResolutionAndColourKeepsItsChannels() throws {
+    let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+    let document = try #require(PDFDocument(data: try tintPDF()))
+    let options = ConversionOptions()
+    func writer(_ options: ConversionOptions, _ name: String) throws -> PageAssetWriter {
+        let workspace = dir.appendingPathComponent(name)
+        try FileManager.default.createDirectory(at: workspace.appendingPathComponent("assets"),
+                                                withIntermediateDirectories: true)
+        return PageAssetWriter(workspace: workspace, options: options)
+    }
+    func decode(_ asset: ReflowDocument.Asset?) throws -> CGImage {
+        let url = try #require(asset).fileURL
+        let source = try #require(CGImageSourceCreateWithURL(url as CFURL, nil))
+        return try #require(CGImageSourceCreateImageAtIndex(source, 0, nil))
+    }
+    let automatic = try writer(options, "automatic")
+    let diagram = CGRect(x: 30, y: 40, width: 240, height: 310)
+    var decoded: [CGImage] = [], renders: [CGImage] = []
+    for (index, crop) in [nil, diagram, nil].enumerated() {
+        let page = try #require(document.page(at: index))
+        let rect = crop ?? page.bounds(for: .cropBox)
+        _ = try automatic.save(page: page, rect: rect, fullPage: crop == nil, drawnFromImage: crop == nil)
+        renders.append(try PageRasterizer.image(page: page, rect: rect, options: options))
+        decoded.append(try decode(automatic.assets.last))
+    }
+    // Every image keeps the render's pixel size: the rule never resamples.
+    for (image, render) in zip(decoded, renders) {
+        #expect(image.width == render.width && image.height == render.height)
+    }
+    func samples(_ image: CGImage, _ value: (UnsafePointer<UInt8>, Int) -> UInt8) throws -> [UInt8] {
+        let data = try #require(image.dataProvider?.data)
+        let bytes = try #require(CFDataGetBytePtr(data))
+        let step = image.bitsPerPixel / 8
+        return (0..<image.height).flatMap { y in
+            (0..<image.width).map { value(bytes, y * image.bytesPerRow + $0 * step) }
+        }
+    }
+    // The scan: gray, one channel.
+    #expect(decoded[0].colorSpace?.model == .monochrome && decoded[0].bitsPerPixel == 8)
+    // The diagram has no hue at all; as a lossless gray PNG its every pixel is the render's.
+    #expect(automatic.assets[1].format == .png && decoded[1].colorSpace?.model == .monochrome)
+    let rendered = try samples(renders[1]) { bytes, o in
+        #expect(bytes[o] == bytes[o + 1] && bytes[o + 1] == bytes[o + 2]); return bytes[o]
+    }
+    #expect(try samples(decoded[1]) { bytes, o in bytes[o] } == rendered)
+    #expect(rendered.contains { $0 < 128 })
+    // The photograph keeps its colour.
+    #expect(decoded[2].colorSpace?.model == .rgb)
+
+    // A client that names an encoding gets the render's own channels.
+    var png = options; png.fullPageImageEncoding = .png
+    let named = try writer(png, "png")
+    let scan = try #require(document.page(at: 0))
+    _ = try named.save(page: scan, rect: scan.bounds(for: .cropBox), fullPage: true, drawnFromImage: true)
+    #expect(try decode(named.assets.last).colorSpace?.model == .rgb)
+}

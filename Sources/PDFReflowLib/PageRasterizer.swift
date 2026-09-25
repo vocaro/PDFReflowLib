@@ -129,6 +129,28 @@ enum PageRasterizer {
         return relabeled
     }
 
+    /// The raster's lightness as one 8-bit DeviceGray channel, read from the drawing buffer
+    /// (`image(inspect:)`'s RGBA8 rows) with the classifier's weights, rounded. A neutral pixel
+    /// keeps its exact value, so an image with no hue decodes to the same pixels; the only thing
+    /// dropped is hue, which `ImageContentClassifier.isMonochrome` has found to be the ground's
+    /// tint (#216). Same size, same resolution: a third of the samples to encode.
+    static func grayscale(_ bytes: UnsafeBufferPointer<UInt8>, width: Int, height: Int,
+                          bytesPerRow: Int) -> CGImage? {
+        var gray = [UInt8](repeating: 0, count: width * height)
+        for y in 0..<height {
+            let base = y * bytesPerRow
+            for x in 0..<width {
+                let offset = base + x * 4
+                gray[y * width + x] = UInt8((299 * Int(bytes[offset]) + 587 * Int(bytes[offset + 1])
+                                             + 114 * Int(bytes[offset + 2]) + 500) / 1_000)
+            }
+        }
+        guard let provider = CGDataProvider(data: Data(gray) as CFData) else { return nil }
+        return CGImage(width: width, height: height, bitsPerComponent: 8, bitsPerPixel: 8, bytesPerRow: width,
+                       space: CGColorSpaceCreateDeviceGray(), bitmapInfo: CGBitmapInfo(rawValue: 0),
+                       provider: provider, decode: nil, shouldInterpolate: false, intent: .defaultIntent)
+    }
+
     static func write(_ image: CGImage, to url: URL, jpegQuality: Double? = nil) throws {
         guard let destination = CGImageDestinationCreateWithURL(url as CFURL,
             (jpegQuality == nil ? UTType.png : UTType.jpeg).identifier as CFString, 1, nil) else {

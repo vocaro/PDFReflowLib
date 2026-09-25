@@ -2266,6 +2266,25 @@ Evidence: [outline-navigation](../measurements/outline-navigation/record.md).
   and two candidate files, and the rejected candidate is deleted. The asset registry records the
   actual format; the writer uses matching extensions and media types. Quality is an ImageIO
   setting, lossy even at 1; encoding never resizes or validates OCR.
+- **Monochrome images are written gray (#216).** Under `.automatic`, a rendered image whose only
+  colour is its paper's tint is written as one 8-bit DeviceGray channel, its lightness
+  (0.299 R + 0.587 G + 0.114 B, rounded), at the render's own pixel size, and then encoded as the
+  classifier decides (lossy permission is unchanged; where it is permitted, the smaller of gray PNG
+  and gray JPEG is kept). A pixel whose hue is already neutral keeps its exact value, so an image
+  with no hue decodes to the same pixels. The test, on the raster's own buffer: the modal colour
+  (the ground) must be paper — neutral within 4 levels of hue at any lightness, or warm
+  (R ≥ G ≥ B), within 64 levels of tint and at lightness 160 or more, the colour white stock turns
+  as it ages — and each pixel's hue (R − G, G − B) is compared with the ground's hue scaled by the
+  pixel's lightness over the ground's: the line from black to the paper. A pixel off that line by
+  8 levels on a neutral ground, or by 24 on a tinted one (the chroma test's step; aged paper's
+  tint varies across a page), is colour; at most 0.1% of pixels may be colour and none may be off
+  by 64 levels (the hard-edge step). A coloured ground, fill, stamp, ink, photograph or chart
+  keeps its RGB channels; so does any image under an encoding the client names. Recognition and
+  the layer tests read the RGB raster, never the gray one. On Warren 906 of 932 images are
+  written gray and the book's entry bytes fall 27.4%; a colour fainter than 24 levels of hue on
+  tinted paper is taken for the paper's own, and the paper's tint itself is dropped: a yellowed
+  page is written light gray.
+  Evidence: [monochrome-page-images](../measurements/monochrome-page-images/record.md).
 - `maximumOutputBytes` is checked against cumulative image bytes during reconstruction and all
   entry bytes during packaging; the library never drops images or lowers quality to fit.
 - Reference policy: `.automatic` adds a source-page reference for fresh OCR, inherited text over a

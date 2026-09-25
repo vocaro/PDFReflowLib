@@ -288,6 +288,16 @@ It is refused for colored line art and charts, `mixed` crops, required page fall
 neither neutral nor tonal (a fallback is its page's only copy, so it is judged as a crop), and
 colored bilevel scans and born-digital text pages. The thresholds were fitted to this corpus.
 
+An image whose only colour is its paper's tint — a scan of type, handwriting or halftone on
+white or yellowed paper, a black-and-white diagram — is written as a single gray channel at the
+same pixel size, whichever format is chosen. Where the image held no hue this changes no pixel;
+on yellowed paper it drops the paper's tint, so the page reads light gray instead of cream.
+Coloured grounds, fills, stamps, ink and photographs keep their colour, and naming an encoding
+keeps every image's RGB channels. The thresholds are in
+[behavior.md](behavior.md#pagerasterizer-and-pageassetwriter-images) and the corpus measurements
+in the [record](../measurements/monochrome-page-images/record.md): the Warren report's entry bytes
+fall 27.4% and Blue Book's 37.4%.
+
 The classifier reads the raster from the drawing buffer before the `CGImage` is made, because
 reading a finished image's pixels copies them. It costs a few milliseconds per crop and about
 20 ms per page-sized raster; measured wall-clock cost over the gated cases was +28% on one run

@@ -39,15 +39,25 @@ final class PageAssetWriter {
             // raster's own buffer: reading a finished `CGImage`'s pixels would copy them (#193).
             let requested = fullPage ? options.fullPageImageEncoding : options.regionImageEncoding
             var measured: ImageContentClassifier.Features?
+            // An image whose only colour is its ground's tint is written as its lightness alone
+            // (#216), taken from the same buffer while it is still the context's.
+            var monochrome: CGImage?
             let image = try PageRasterizer.image(page: page, rect: rect, options: options, applyRotation: rotate,
-                inspect: requested.isAutomatic ? { measured = ImageContentClassifier.features($0,
-                    width: $1, height: $2, bytesPerRow: $3) } : nil)
+                inspect: requested.isAutomatic ? { bytes, width, height, bytesPerRow in
+                    let features = ImageContentClassifier.features(bytes, width: width, height: height,
+                                                                    bytesPerRow: bytesPerRow)
+                    measured = features
+                    if ImageContentClassifier.isMonochrome(features) {
+                        monochrome = PageRasterizer.grayscale(bytes, width: width, height: height,
+                                                              bytesPerRow: bytesPerRow)
+                    }
+                } : nil)
             // Only a supplementary reference sits beside its page's reflowed text; a required
             // fallback (the rotated page) is the page's only copy and is judged like a crop.
             let encoding = ImageContentClassifier.resolve(requested, role: fullPage && !rotate ? .page : .region,
                 pageDrawnFromImage: drawnFromImage,
                 features: measured ?? ImageContentClassifier.features(of: image))
-            return try PageRasterizer.encode(image, at: workspace.appendingPathComponent("assets/" + assetID),
+            return try PageRasterizer.encode(monochrome ?? image, at: workspace.appendingPathComponent("assets/" + assetID),
                 encoding: encoding)
         }
         imageBytes += Int64(try encoded.url.resourceValues(forKeys: [.fileSizeKey]).fileSize ?? 0)

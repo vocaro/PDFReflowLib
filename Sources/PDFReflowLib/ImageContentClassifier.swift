@@ -41,6 +41,10 @@ enum ImageContentClassifier {
         var distinctColours = 0
         /// Share with no neighbor differing at all, a step edge (≥ 64 levels) or a ramp (6–63).
         var flatShare = 0.0, hardEdgeShare = 0.0, softEdgeShare = 0.0
+        /// Share whose hue (R−G, G−B) departs from the ground's hue scaled to the pixel's own
+        /// lightness by `offTintStep` or more, and the largest departure: colour that is not the
+        /// ground's tint darkened toward ink.
+        var offTintShare = 0.0, largestOffTint = 0
 
         var hardRatio: Double {
             hardEdgeShare + softEdgeShare > 0 ? hardEdgeShare / (hardEdgeShare + softEdgeShare) : 0
@@ -51,7 +55,8 @@ enum ImageContentClassifier {
                 && a.backgroundShare == b.backgroundShare && a.chromaShare == b.chromaShare
                 && a.bilevelShare == b.bilevelShare && a.distinctColours == b.distinctColours
                 && a.flatShare == b.flatShare && a.hardEdgeShare == b.hardEdgeShare
-                && a.softEdgeShare == b.softEdgeShare
+                && a.softEdgeShare == b.softEdgeShare && a.offTintShare == b.offTintShare
+                && a.largestOffTint == b.largestOffTint
         }
     }
 
@@ -138,6 +143,48 @@ enum ImageContentClassifier {
     /// The flat share at which a continuous-tone crop counts as drawn illustration: the same
     /// constant as the line-art test's "flat fields".
     static let drawnIllustrationFlatShare = 0.30
+
+    /// Whether the image's only colour is its paper's tint, so that writing its lightness alone
+    /// loses nothing drawn (#216): a scan of black type, handwriting or halftone on yellowed paper,
+    /// or an image with no hue at all. The ground must be paper (`paperGround`), and every pixel's
+    /// hue must lie on the line from black to it, within `offTintStep`, save for scanner fringes:
+    /// at most one pixel in `1 / monochromeOffTintShare`, and none as far as the hard-edge step. A
+    /// coloured ground, fill, stamp, ink, photograph or chart fails one or the other, and keeps
+    /// its colour.
+    static func isMonochrome(_ f: Features) -> Bool {
+        paperGround(red: f.background.red, green: f.background.green, blue: f.background.blue)
+            && f.offTintShare <= monochromeOffTintShare && f.largestOffTint < monochromeLargestOffTint
+    }
+
+    static let monochromeOffTintShare = 0.001
+    static let monochromeLargestOffTint = 64
+
+    /// Whether a ground is paper, whose tint may be dropped: neutral within a few levels, at any
+    /// lightness (white stock, a black slide), or light, warm and faint, the colour white stock
+    /// turns as it ages (it loses blue first, so red ≥ green ≥ blue). A coloured ground — a blue
+    /// cover, a pale blue slide or panel — is not paper, however plain. Warren's 918 paper grounds
+    /// are all at lightness 203 or more with at most 51 levels of tint; the controls are Our
+    /// Flag's blue back cover, (12, 32, 117), and a pale blue slide whose hue is under the chroma
+    /// test's step.
+    static func paperGround(red: Int, green: Int, blue: Int) -> Bool {
+        if max(abs(red - green), abs(green - blue)) <= paperNeutralHue { return true }
+        return red >= green && green >= blue && red - blue <= paperLargestTint
+            && 0.299 * Double(red) + 0.587 * Double(green) + 0.114 * Double(blue) >= paperLeastLightness
+    }
+
+    static let paperNeutralHue = 4
+    static let paperLargestTint = 64
+    static let paperLeastLightness = 160.0
+
+    /// How far a pixel's hue may sit from the tint line and still be the paper's. On a neutral
+    /// ground there is no tint to vary, and a render's grays are exact, so 8 levels is colour: the
+    /// Earthdata slides' slate-blue fill, 21 levels off gray, is. Aged paper's tint varies across
+    /// one page and its scans carry chroma noise — Warren's pages reach 21 levels at the 99th
+    /// percentile — so there the chroma test's own 24 levels apply, and a colour fainter than that
+    /// on tinted paper is taken for the paper's.
+    static func offTintStep(red: Int, green: Int, blue: Int) -> Int {
+        max(abs(red - green), abs(green - blue)) <= paperNeutralHue ? 8 : 24
+    }
 
     // MARK: - Features
 
@@ -273,7 +320,10 @@ enum ImageContentClassifier {
         let groundHue = (groundRed - groundGreen, groundGreen - groundBlue)
 
         // Last pass: shares measured against the ground.
-        var background = 0, chroma = 0, nearGround = 0, ink = 0
+        // The tint line runs from black to the ground: ink on tinted paper darkens the paper's hue
+        // in proportion to its lightness, so a pixel off that line carries colour of its own.
+        let step = offTintStep(red: groundRed, green: groundGreen, blue: groundBlue)
+        var background = 0, chroma = 0, nearGround = 0, ink = 0, offTint = 0, largestOffTint = 0
         for y in 0..<height {
             let base = y * bytesPerRow
             for x in 0..<width {
@@ -283,7 +333,13 @@ enum ImageContentClassifier {
                 if distance <= 10 { background += 1 }
                 if distance <= 32 { nearGround += 1 }
                 if max(abs(r - g - groundHue.0), abs(g - b - groundHue.1)) >= 24 { chroma += 1 }
-                if Double(gray(offset)) < groundGray - 110 { ink += 1 }
+                let lightness = Double(gray(offset))
+                if lightness < groundGray - 110 { ink += 1 }
+                let tint = groundGray > 0 ? lightness / groundGray : 0
+                let departure = Int(max(abs(Double(r - g) - tint * Double(groundHue.0)),
+                                        abs(Double(g - b) - tint * Double(groundHue.1))).rounded())
+                if departure >= step { offTint += 1 }
+                largestOffTint = max(largestOffTint, departure)
             }
         }
         let total = Double(count)
@@ -291,6 +347,7 @@ enum ImageContentClassifier {
                         backgroundShare: Double(background) / total, chromaShare: Double(chroma) / total,
                         bilevelShare: min(1, Double(nearGround) / total + Double(ink) / total),
                         distinctColours: distinct, flatShare: Double(flat) / total,
-                        hardEdgeShare: Double(hard) / total, softEdgeShare: Double(soft) / total)
+                        hardEdgeShare: Double(hard) / total, softEdgeShare: Double(soft) / total,
+                        offTintShare: Double(offTint) / total, largestOffTint: largestOffTint)
     }
 }

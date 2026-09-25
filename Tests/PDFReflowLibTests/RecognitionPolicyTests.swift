@@ -7,10 +7,12 @@ import Testing
 /// or lexicon involved.
 private func evidence(requiresPageImage: Bool = false, hasText: Bool = true, characters: Int = 400,
                       replacements: Int = 0, imageBacked: Bool = false, damagedEncoding: Bool = false,
-                      finding: TextLayerPlausibility.Finding? = nil, drawnText: Bool = false) -> PageEvidence {
+                      finding: TextLayerPlausibility.Finding? = nil, drawnText: Bool = false,
+                      sparseWords: Int? = nil) -> PageEvidence {
     PageEvidence(requiresPageImage: requiresPageImage, hasText: hasText, characters: characters,
                  replacementCharacters: replacements, imageBackedText: imageBacked,
-                 damagedEncoding: damagedEncoding, implausibleLayer: finding, drawnText: drawnText)
+                 damagedEncoding: damagedEncoding, implausibleLayer: finding, drawnText: drawnText,
+                 sparseLayerWords: sparseWords)
 }
 
 private func line(_ text: String) -> TextLine {
@@ -391,4 +393,60 @@ func theIncompleteRecognitionMessageStatesTheShareTheRetryAndWhereToCompare() {
                                        page: 3, options: references).code == .incompleteRecognition)
     references.referenceImages = .always
     #expect(text(.incompleteRecognition(uncoveredFraction: 0.9, retriedInBands: false), references).contains("about 90%"))
+}
+
+/// A sparse image-backed layer that passes every test is recognized under the judging policy and
+/// stands unless the recognition reads as noise: then the page's writing is handwriting neither
+/// reading transcribes, and the page is an image (#216).
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func sparseLayersAreVerifiedAgainstRecognition() {
+    let sparse = evidence(imageBacked: true, sparseWords: 11)
+    let verify = RecognitionPlan.recognize(.verify(englishWords: 11), keepCropsIfUnread: false)
+    #expect(RecognitionPolicy.plan(sparse, policy: .automatic) == verify)
+    #expect(verify.compares)
+    // The other policies already decide image-backed layers without it.
+    #expect(RecognitionPolicy.plan(sparse, policy: .automaticIncludingImageBackedText) == .recognize(.replace, keepCropsIfUnread: false))
+    #expect(RecognitionPolicy.plan(sparse, policy: .automaticKeepingImageBackedText) == .keepExtracted)
+    #expect(RecognitionPolicy.plan(sparse, policy: .never) == .keepExtracted)
+    #expect(RecognitionPolicy.plan(sparse, policy: .always) == .recognize(.replace, keepCropsIfUnread: false))
+    #expect(RecognitionPolicy.plan(evidence(requiresPageImage: true, imageBacked: true, sparseWords: 11), policy: .automatic)
+        == .keepExtracted)
+    // A finding keeps its own plan, and a layer that is not sparse is not verified.
+    #expect(RecognitionPolicy.plan(evidence(imageBacked: true, finding: fewEnglish, sparseWords: 4), policy: .automatic)
+        == .recognize(.replace, keepCropsIfUnread: false))
+    #expect(RecognitionPolicy.plan(evidence(imageBacked: true), policy: .automatic) == .keepExtracted)
+
+    // Recognition that reads the page as English, reads nothing or fails leaves the layer as
+    // keeping it did.
+    let read = RecognitionPolicy.resolve(verify, evidence: sparse, outcome: .read(reading), judge: trusting)
+    #expect(read == .init(disposition: .keptLayer, warnings: [.unverifiedTextLayer]))
+    let empty = RecognitionPolicy.resolve(verify, evidence: sparse, outcome: .read(nothing), judge: noise)
+    #expect(empty == .init(disposition: .keptLayer, warnings: [.unverifiedTextLayer]))
+    let failed = RecognitionPolicy.resolve(verify, evidence: sparse, outcome: .failed, judge: trusting)
+    #expect(failed == .init(disposition: .keptLayer, warnings: [.unverifiedTextLayer, .ocrFailed(.layerRetained)]))
+
+    // Noise: the page becomes an image, and both readings are reported.
+    let unread = RecognitionPolicy.resolve(verify, evidence: sparse, outcome: .read(reading), judge: noise)
+    #expect(unread.disposition == .pageImage)
+    #expect(unread.warnings == [.implausibleRecognition(fewEnglish),
+                                .implausibleTextLayer(.unreadWriting(englishWords: 11), .implausibleRecognition)])
+
+    // A sparse misread layer is compared as before, but noise beside it is handwriting too.
+    let compare = RecognitionPlan.recognize(.compare(misread: 12, words: 100), keepCropsIfUnread: false)
+    let sparseMisread = evidence(imageBacked: true, finding: misread, sparseWords: 22)
+    #expect(RecognitionPolicy.plan(sparseMisread, policy: .automatic) == compare)
+    let handwriting = RecognitionPolicy.resolve(compare, evidence: sparseMisread, outcome: .read(reading), judge: noise)
+    #expect(handwriting.disposition == .pageImage)
+    #expect(handwriting.warnings == [.implausibleRecognition(fewEnglish), .implausibleTextLayer(misread, .implausibleRecognition)])
+    let worse = RecognitionPolicy.resolve(compare, evidence: sparseMisread, outcome: .read(reading),
+                                          judge: .init(finding: { _ in nil }, readsBetter: { _, _, _ in false }))
+    #expect(worse.disposition == .keptLayer)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func unreadWritingStatesWhatTheLayerHolds() {
+    let message = TextLayerPlausibility.message(.unreadWriting(englishWords: 11), outcome: .implausibleRecognition,
+                                                referencesDisabled: false)
+    #expect(message == "Existing text over a page-sized image transcribes little of the page: it holds only 11 English words, "
+        + "and the rest of the page's writing does not read as English when recognized (handwriting, or print recognition "
+        + "cannot read). The existing text was discarded, but OCR of the page image does not read as English either, so the "
+        + "page is preserved as an image and does not reflow.")
 }

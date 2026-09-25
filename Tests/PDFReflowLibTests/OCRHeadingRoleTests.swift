@@ -33,6 +33,17 @@ func recognizedProseFragmentsAndWordColumnsDoNotBecomeHeadings() throws {
     #expect(try recognizedRole("Certain Doubtful | Total", on: blueBook150) == .prose)
     #expect(try recognizedRole("TABLE A63", on: blueBook150) == .heading)
     #expect(try recognizedRole("METALLIC", on: blueBook150) == .prose)
+    // The issue's own word column heads under `--ocr always`: a month in the tables of sightings
+    // by month (Blue Book 121, printed page 112), and the continents in the table by geographic
+    // location (Blue Book 251, printed page 242), which this reading splits into `NORTH` and
+    // `AMERICA`.
+    let blueBook121 = try recognizedPage("blue-121")
+    #expect(try recognizedRole("SEPTEMBER", on: blueBook121) == .prose)
+    #expect(try recognizedRole("JANUARY", on: blueBook121) == .prose)
+    let blueBook251 = try recognizedPage("blue-251")
+    #expect(try recognizedRole("NORTH", on: blueBook251) == .prose)
+    #expect(try recognizedRole("AMERICA", on: blueBook251) == .prose)
+    #expect(try recognizedRole("EUROPE", on: blueBook251) == .prose)
 
     // The current Vision reading of page 50 gives this chart-axis month a tall box, but the
     // caption establishes a still larger type size. It remains a negative control for #216.

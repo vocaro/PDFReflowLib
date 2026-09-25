@@ -1,0 +1,607 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        136.09336999999999,
+        581.70776617187505,
+        96.717979680000013,
+        10.634540000000015
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.14370999999994183,
+          "fontName" : "Courier",
+          "fontSize" : 9.2448642999999997,
+          "text" : "THIRD "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 10.634540000000001,
+          "text" : "FLOOR "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 10.299695700000001,
+          "text" : "PLAN"
+        }
+      ],
+      "text" : "THIRD FLOOR PLAN"
+    },
+    {
+      "rect" : [
+        113.38719,
+        569.53379454726564,
+        143.2759958,
+        10.466399300000035
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 10.0194612,
+          "text" : "DALLAS "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.8625957,
+          "text" : "POLICE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 10.466399300000001,
+          "text" : "DEPARTMENT"
+        }
+      ],
+      "text" : "DALLAS POLICE DEPARTMENT"
+    },
+    {
+      "rect" : [
+        148.59613999999999,
+        557.31018683593754,
+        72.286130000000014,
+        9.9159899999999652
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.1701351000000013,
+          "text" : "DALLAS, "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 9.9159900000000007,
+          "text" : "TEXAS"
+        }
+      ],
+      "text" : "DALLAS, TEXAS"
+    },
+    {
+      "rect" : [
+        237.69634000000002,
+        350.19937667968748,
+        85.076894839999966,
+        3.5927500000000236
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.14370999999999867,
+          "fontName" : "Courier",
+          "fontSize" : 3.2334750000000003,
+          "text" : "10 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.2334750000000003,
+          "text" : "15 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.4734707000000005,
+          "text" : "20 25 30 35 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.5927500000000001,
+          "text" : "40 45 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.4734707000000005,
+          "text" : "50"
+        }
+      ],
+      "text" : "10 15 20 25 30 35 40 45 50"
+    },
+    {
+      "rect" : [
+        57.915130000000005,
+        345.63991308710939,
+        69.412792260000003,
+        3.4332319000000098
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.1731168000000003,
+          "text" : "Oswald's "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.0179100000000001,
+          "text" : "route "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.3527543000000004,
+          "text" : "between "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.4332319,
+          "text" : "Homicide-"
+        }
+      ],
+      "text" : "Oswald's route between Homicide-"
+    },
+    {
+      "rect" : [
+        158.65584000000001,
+        345.68305976914064,
+        37.509747099999998,
+        3.2579056999999807
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.1141957000000002,
+          "text" : "Glass "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.0179100000000001,
+          "text" : "panel "
+        },
+        {
+          "baselineOffset" : 0.14370999999999867,
+          "fontName" : "Courier",
+          "fontSize" : 2.3956457000000002,
+          "text" : "in "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.2579057000000002,
+          "text" : "upper"
+        }
+      ],
+      "text" : "Glass panel in upper"
+    },
+    {
+      "rect" : [
+        19.25714,
+        343.83357381953124,
+        21.556787419999999,
+        3.1817394000000263
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.1817394000000001,
+          "text" : "APPROX. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.1141957000000002,
+          "text" : "23"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 0.95854570000000006,
+          "text" : "I"
+        }
+      ],
+      "text" : "APPROX. 23I"
+    },
+    {
+      "rect" : [
+        57.915130000000005,
+        340.17893308710939,
+        69.410492899999994,
+        3.4332319000000098
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.3872447000000001,
+          "text" : "Robbery "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.3139525999999999,
+          "text" : "Bureau "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.4332319,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 1.9760124999999999,
+          "text" : "jail "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 2.8742000000000001,
+          "text" : "elevator "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.0653343000000004,
+          "text" : "lobby"
+        }
+      ],
+      "text" : "Robbery Bureau and jail elevator lobby"
+    },
+    {
+      "rect" : [
+        158.79955000000001,
+        340.19873812148438,
+        36.93347,
+        3.3527543000000151
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 2.7549207000000004,
+          "text" : "part "
+        },
+        {
+          "baselineOffset" : -0.14370999999999867,
+          "fontName" : "Courier",
+          "fontSize" : 2.7549207000000004,
+          "text" : "of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 2.6945625,
+          "text" : "wall "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.3527543000000004,
+          "text" : "and "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 3.2334750000000003,
+          "text" : "door"
+        }
+      ],
+      "text" : "part of wall and door"
+    },
+    {
+      "rect" : [
+        119.99785,
+        319.41411800429688,
+        121.00381999999999,
+        7.8077642999999739
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 7.8077642999999997,
+          "text" : "Commission "
+        },
+        {
+          "baselineOffset" : 0.14370999999999867,
+          "fontName" : "Courier",
+          "fontSize" : 7.562020200000001,
+          "text" : "Exhibit "
+        },
+        {
+          "baselineOffset" : 0.14370999999999867,
+          "fontName" : "Courier",
+          "fontSize" : 6.7069457000000003,
+          "text" : "No. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 6.826225,
+          "text" : "2175"
+        }
+      ],
+      "text" : "Commission Exhibit No. 2175"
+    },
+    {
+      "rect" : [
+        0,
+        0,
+        387,
+        636
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1440457000000013,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        0,
+        0,
+        387,
+        636
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1440457000000013,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    },
+    {
+      "rect" : [
+        314.00635,
+        25.156991253515628,
+        14.659282259999998,
+        8.1440456999999995
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1440457000000013,
+          "text" : "1"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1440457000000013,
+          "text" : "9"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Courier",
+          "fontSize" : 8.1440457000000013,
+          "text" : "7"
+        }
+      ],
+      "text" : "197"
+    }
+  ],
+  "bounds" : [
+    0,
+    0,
+    387,
+    636
+  ],
+  "caseID" : "gpo-warren-1964",
+  "filledCells" : [
+
+  ],
+  "filledCellText" : [
+
+  ],
+  "graphics" : [
+    [
+      0,
+      0,
+      387,
+      636
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 9.2448642999999997,
+      "monospaced" : true,
+      "rect" : [
+        136.09336999999999,
+        581.70776617187505,
+        96.717979680000013,
+        10.634540000000015
+      ],
+      "text" : "THIRD FLOOR PLAN"
+    },
+    {
+      "fontSize" : 10.0194612,
+      "monospaced" : true,
+      "rect" : [
+        113.38719,
+        569.53379454726564,
+        143.2759958,
+        10.466399300000035
+      ],
+      "text" : "DALLAS POLICE DEPARTMENT"
+    },
+    {
+      "fontSize" : 9.1701351000000013,
+      "monospaced" : true,
+      "rect" : [
+        148.59613999999999,
+        557.31018683593754,
+        72.286130000000014,
+        9.9159899999999652
+      ],
+      "text" : "DALLAS, TEXAS"
+    },
+    {
+      "fontSize" : 3.2334750000000003,
+      "monospaced" : true,
+      "rect" : [
+        237.69634000000002,
+        350.19937667968748,
+        85.076894839999966,
+        3.5927500000000236
+      ],
+      "text" : "10 15 20 25 30 35 40 45 50"
+    },
+    {
+      "fontSize" : 3.1731168000000003,
+      "monospaced" : true,
+      "rect" : [
+        57.915130000000005,
+        345.63991308710939,
+        69.412792260000003,
+        3.4332319000000098
+      ],
+      "text" : "Oswald's route between Homicide-"
+    },
+    {
+      "fontSize" : 3.1141957000000002,
+      "monospaced" : true,
+      "rect" : [
+        158.65584000000001,
+        345.68305976914064,
+        37.509747099999998,
+        3.2579056999999807
+      ],
+      "text" : "Glass panel in upper"
+    },
+    {
+      "fontSize" : 3.1817394000000001,
+      "monospaced" : true,
+      "rect" : [
+        19.25714,
+        343.83357381953124,
+        21.556787419999999,
+        3.1817394000000263
+      ],
+      "text" : "APPROX. 23I"
+    },
+    {
+      "fontSize" : 3.3872447000000001,
+      "monospaced" : true,
+      "rect" : [
+        57.915130000000005,
+        340.17893308710939,
+        69.410492899999994,
+        3.4332319000000098
+      ],
+      "text" : "Robbery Bureau and jail elevator lobby"
+    },
+    {
+      "fontSize" : 2.7549207000000004,
+      "monospaced" : true,
+      "rect" : [
+        158.79955000000001,
+        340.19873812148438,
+        36.93347,
+        3.3527543000000151
+      ],
+      "text" : "part of wall and door"
+    },
+    {
+      "fontSize" : 7.8077642999999997,
+      "monospaced" : true,
+      "rect" : [
+        119.99785,
+        319.41411800429688,
+        121.00381999999999,
+        7.8077642999999739
+      ],
+      "text" : "Commission Exhibit No. 2175"
+    },
+    {
+      "fontSize" : 8.1440457000000013,
+      "monospaced" : true,
+      "rect" : [
+        314.00635,
+        25.156991253515628,
+        14.659282259999998,
+        8.1440456999999995
+      ],
+      "text" : "197"
+    }
+  ],
+  "page" : 225,
+  "paintOperations" : [
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          387,
+          636
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    },
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          0,
+          0
+        ],
+        [
+          387,
+          636
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      0,
+      0,
+      387,
+      636
+    ]
+  ],
+  "rightsBasis" : "U.S. Government commission report published by GPO in 1964, retained as an external development corpus source. The PDF is not bundled or relicensed under MIT.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+  "sourceTitle" : "Report of the President’s Commission on the Assassination of President John F. Kennedy",
+  "sourceURL" : "https://www.govinfo.gov/content/pkg/GPO-WARRENCOMMISSIONREPORT/pdf/GPO-WARRENCOMMISSIONREPORT.pdf"
+}

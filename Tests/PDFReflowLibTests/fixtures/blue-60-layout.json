@@ -1,0 +1,714 @@
+{
+  "attributedLines" : [
+    {
+      "rect" : [
+        9.6799999999999997,
+        -32.640000000000001,
+        774.05882639999993,
+        72
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Roman",
+          "fontSize" : 82.206950000000006,
+          "text" : "----------------------"
+        }
+      ],
+      "text" : "----------------------"
+    },
+    {
+      "rect" : [
+        38.780000000000001,
+        306.58609028320313,
+        8.087260999999998,
+        5.8000999999999863
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 6.0915499999999998,
+          "text" : "(JI"
+        }
+      ],
+      "text" : "(JI"
+    },
+    {
+      "rect" : [
+        38.539999999999999,
+        297.28916992187504,
+        4.8372000000000028,
+        8.6999999999999886
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 8.7000000000000011,
+          "text" : "0"
+        }
+      ],
+      "text" : "0"
+    },
+    {
+      "rect" : [
+        84.090000000000003,
+        503.69508442382818,
+        190.77638979999998,
+        6.4600999999999544
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0.95999999999997954,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.0783500000000004,
+          "text" : "10/5 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 4.9358000000000004,
+          "text" : "1010 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.1926000000000005,
+          "text" : "915"
+        }
+      ],
+      "text" : "10/5 1010 915"
+    },
+    {
+      "rect" : [
+        95.519999999999996,
+        391.93864887695315,
+        372.15122780000002,
+        34.400100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.440049999999999,
+          "text" : "~ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 34.400100000000002,
+          "text" : "l "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 9.7200000000000006,
+          "text" : "~ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 34.400100000000002,
+          "text" : "\\ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 12.600000000000001,
+          "text" : "~ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 34.400100000000002,
+          "text" : "\\ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 20.100000000000001,
+          "text" : "J "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 17.136700000000001,
+          "text" : "L> "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.4001000000000001,
+          "text" : "I"
+        }
+      ],
+      "text" : "~ l ~ \\ ~ \\ J L> I"
+    },
+    {
+      "rect" : [
+        84.700000000000003,
+        386.81147460937501,
+        424.53000000000003,
+        25.26852539062503
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.5323500000000001,
+          "text" : "43 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.4001000000000001,
+          "text" : "; "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 17.280000000000001,
+          "text" : "~ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.7000000000000011,
+          "text" : "1 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 23.900000000000002,
+          "text" : "r "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 23.900000000000002,
+          "text" : "\\ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.079250000000002,
+          "text" : "l\\ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.300000000000001,
+          "text" : "\\ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 7.7000000000000002,
+          "text" : "J"
+        }
+      ],
+      "text" : "43 ; ~ 1 r \\ l\\ \\ J"
+    },
+    {
+      "rect" : [
+        185.65000000000001,
+        225.82108051757811,
+        54.450856000000016,
+        5.3001000000000147
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 5.3001000000000005,
+          "text" : "Balance of "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 5.3644499999999997,
+          "text" : "Central"
+        }
+      ],
+      "text" : "Balance of Central"
+    },
+    {
+      "rect" : [
+        108.15000000000001,
+        209.76862934570315,
+        396.87837904000003,
+        33.400100000000009
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Times-Italic",
+          "fontSize" : 8.3000000000000007,
+          "text" : "l "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 33.400100000000002,
+          "text" : "I"
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.5463000000000005,
+          "text" : "Midwest "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.4001000000000001,
+          "text" : "Region "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 19.900000000000002,
+          "text" : "I "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 8.2000000000000011,
+          "text" : "I "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 8.2000000000000011,
+          "text" : ") "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 5.4001000000000001,
+          "text" : "V "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 12.008500000000002,
+          "text" : "~,. "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 20.386500000000002,
+          "text" : "\\/ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.4001000000000001,
+          "text" : "\\ -"
+        }
+      ],
+      "text" : "l IMidwest Region I I ) V ~,. \\/ \\ -"
+    },
+    {
+      "rect" : [
+        84.170000000000002,
+        205.79248046875003,
+        428.69823330000003,
+        24.599999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.7638499999999997,
+          "text" : "36 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 24.600000000000001,
+          "text" : "I "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.4001000000000001,
+          "text" : "164 object "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 10.148400000000001,
+          "text" : "sightings,\\ "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Oblique",
+          "fontSize" : 5.4001000000000001,
+          "text" : "("
+        }
+      ],
+      "text" : "36 I 164 object sightings,\\ ("
+    },
+    {
+      "rect" : [
+        165.92000000000002,
+        113.69508442382813,
+        121.18638979999997,
+        5.7400999999999982
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.2902500000000003,
+          "text" : "1010 "
+        },
+        {
+          "baselineOffset" : -0.23999999999999488,
+          "fontName" : "Helvetica",
+          "fontSize" : 5.1926000000000005,
+          "text" : "915"
+        }
+      ],
+      "text" : "1010 915"
+    },
+    {
+      "rect" : [
+        105.60000000000001,
+        81.697236328125001,
+        569.67144159999998,
+        12.099999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.572950000000002,
+          "text" : "FIGURE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 12.695300000000001,
+          "text" : "34 "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.573350000000001,
+          "text" : "COMPARISON "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.5656,
+          "text" : "OF "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.676750000000002,
+          "text" : "EVALUATION "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.38475,
+          "text" : "OF "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.624700000000001,
+          "text" : "OBJECT "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.785800000000002,
+          "text" : "SIGHTINGS "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.114150000000002,
+          "text" : "IN "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.751950000000001,
+          "text" : "THE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.73555,
+          "text" : "STRATEGIC "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.734100000000002,
+          "text" : "AREAS "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.475200000000001,
+          "text" : "OF"
+        }
+      ],
+      "text" : "FIGURE 34 COMPARISON OF EVALUATION OF OBJECT SIGHTINGS IN THE STRATEGIC AREAS OF"
+    },
+    {
+      "rect" : [
+        183.53,
+        65.857236328124998,
+        425.45282159999999,
+        12.099999999999994
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.751950000000001,
+          "text" : "THE "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.68675,
+          "text" : "CENTRAL "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.721950000000001,
+          "text" : "MIDWEST "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 11.372600000000002,
+          "text" : "REGION "
+        },
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 9.4116,
+          "text" : "a-7512"
+        }
+      ],
+      "text" : "THE CENTRAL MIDWEST REGION a-7512"
+    },
+    {
+      "rect" : [
+        0,
+        0,
+        792,
+        613.44010000000003
+      ],
+      "runs" : [
+        {
+          "baselineOffset" : 0,
+          "fontName" : "Helvetica-Bold",
+          "fontSize" : 9.4116,
+          "text" : "￼"
+        }
+      ],
+      "text" : "￼"
+    }
+  ],
+  "bounds" : [
+    1.2000000000000002,
+    1.4399999999999999,
+    789.60000000000002,
+    610.55999999999995
+  ],
+  "caseID" : "cia-blue-book-14-1955",
+  "filledCells" : [
+
+  ],
+  "filledCellText" : [
+
+  ],
+  "graphics" : [
+    [
+      1.2000000000000002,
+      1.4399999999999999,
+      789.60000000000002,
+      610.55999999999995
+    ]
+  ],
+  "lines" : [
+    {
+      "fontSize" : 82.206950000000006,
+      "monospaced" : false,
+      "rect" : [
+        9.6799999999999997,
+        -32.640000000000001,
+        774.05882639999993,
+        72
+      ],
+      "text" : "----------------------"
+    },
+    {
+      "fontSize" : 6.0915499999999998,
+      "monospaced" : false,
+      "rect" : [
+        38.780000000000001,
+        306.58609028320313,
+        8.087260999999998,
+        5.8000999999999863
+      ],
+      "text" : "(JI"
+    },
+    {
+      "fontSize" : 8.7000000000000011,
+      "monospaced" : false,
+      "rect" : [
+        38.539999999999999,
+        297.28916992187504,
+        4.8372000000000028,
+        8.6999999999999886
+      ],
+      "text" : "0"
+    },
+    {
+      "fontSize" : 5.0783500000000004,
+      "monospaced" : false,
+      "rect" : [
+        84.090000000000003,
+        503.69508442382818,
+        190.77638979999998,
+        6.4600999999999544
+      ],
+      "text" : "10/5 1010 915"
+    },
+    {
+      "fontSize" : 34.400100000000002,
+      "monospaced" : false,
+      "rect" : [
+        95.519999999999996,
+        391.93864887695315,
+        372.15122780000002,
+        34.400100000000009
+      ],
+      "text" : "~ l ~ \\ ~ \\ J L> I"
+    },
+    {
+      "fontSize" : 5.5323500000000001,
+      "monospaced" : false,
+      "rect" : [
+        84.700000000000003,
+        386.81147460937501,
+        424.53000000000003,
+        25.26852539062503
+      ],
+      "text" : "43 ; ~ 1 r \\ l\\ \\ J"
+    },
+    {
+      "fontSize" : 5.3001000000000005,
+      "monospaced" : false,
+      "rect" : [
+        185.65000000000001,
+        225.82108051757811,
+        54.450856000000016,
+        5.3001000000000147
+      ],
+      "text" : "Balance of Central"
+    },
+    {
+      "fontSize" : 8.3000000000000007,
+      "monospaced" : false,
+      "rect" : [
+        108.15000000000001,
+        209.76862934570315,
+        396.87837904000003,
+        33.400100000000009
+      ],
+      "text" : "l IMidwest Region I I ) V ~,. \\/ \\ -"
+    },
+    {
+      "fontSize" : 5.7638499999999997,
+      "monospaced" : false,
+      "rect" : [
+        84.170000000000002,
+        205.79248046875003,
+        428.69823330000003,
+        24.599999999999994
+      ],
+      "text" : "36 I 164 object sightings,\\ ("
+    },
+    {
+      "fontSize" : 5.2902500000000003,
+      "monospaced" : false,
+      "rect" : [
+        165.92000000000002,
+        113.69508442382813,
+        121.18638979999997,
+        5.7400999999999982
+      ],
+      "text" : "1010 915"
+    },
+    {
+      "fontSize" : 11.572950000000002,
+      "monospaced" : false,
+      "rect" : [
+        105.60000000000001,
+        81.697236328125001,
+        569.67144159999998,
+        12.099999999999994
+      ],
+      "text" : "FIGURE 34 COMPARISON OF EVALUATION OF OBJECT SIGHTINGS IN THE STRATEGIC AREAS OF"
+    },
+    {
+      "fontSize" : 11.751950000000001,
+      "monospaced" : false,
+      "rect" : [
+        183.53,
+        65.857236328124998,
+        425.45282159999999,
+        12.099999999999994
+      ],
+      "text" : "THE CENTRAL MIDWEST REGION a-7512"
+    }
+  ],
+  "page" : 60,
+  "paintOperations" : [
+    {
+      "filled" : false,
+      "image" : true,
+      "rect" : [
+        [
+          1.2000000000000002,
+          1.4399999999999999
+        ],
+        [
+          789.60000000000002,
+          610.55999999999995
+        ]
+      ],
+      "rectangular" : false,
+      "vertices" : [
+
+      ]
+    }
+  ],
+  "pictures" : [
+    [
+      1.2000000000000002,
+      1.4399999999999999,
+      789.60000000000002,
+      610.55999999999995
+    ]
+  ],
+  "rightsBasis" : "Government report; physical page 4 states no copyright material is contained in the publication. Source unchanged; PDF copy permissions are a separate technical constraint.",
+  "schemaVersion" : 3,
+  "sourceSHA256" : "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+  "sourceTitle" : "Project Blue Book Special Report No. 14",
+  "sourceURL" : "https://www.war.gov/medialink/ufo/061226/release_03/documents/CIA-UAP-015-Project_Blue_Book_Special_Report_No_14.pdf"
+}

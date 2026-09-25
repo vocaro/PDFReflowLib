@@ -66,6 +66,12 @@ runs.
 | `.automaticIncludingImageBackedText`, `.always` | Replaced outright |
 | `.automaticKeepingImageBackedText`, `.never` | Kept, with `unverifiedTextLayer` and its reference |
 
+`.automatic` also recognizes a page whose image-backed English layer passes the test but holds
+fewer than 32 English words, to verify it (#216): the layer is kept unless the recognition does
+not read as English either, in which case the page's writing is handwriting neither reading
+transcribes and the page is preserved as an image (`implausibleRecognition`,
+`implausibleTextLayer`). Verification is not counted as a recognized page.
+
 A client that wants the pre-#93 automatic behavior, recognition only of absent or damaged text,
 selects `.automaticKeepingImageBackedText`. When recognition fails or finds no text the page is
 preserved as an image (`ocrFailed` or `pageImageFallback`). Because recognition replaces the whole

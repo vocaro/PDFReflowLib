@@ -104,11 +104,14 @@ private func reading(_ text: String) -> OCRReader.Result {
         pdf.insert(try #require(pagePDF.page(at: 0)), at: index)
     }
     #expect(pdf.write(to: source))
-    for (name, policy, count) in [
-        ("automatic", ConversionOptions.OCRPolicy.automatic, 0),
-        ("never", .never, 0),
-        ("selective", .automaticIncludingImageBackedText, 1),
-        ("always", .always, 3),
+    // The automatic policy recognizes page 1 too, because its image-backed layer is sparse, but
+    // only to verify it (#216): the reading of this printed page is English, so the layer stands
+    // and the page is not counted as recognized.
+    for (name, policy, count, recognizing) in [
+        ("automatic", ConversionOptions.OCRPolicy.automatic, 0, [1]),
+        ("never", .never, 0, []),
+        ("selective", .automaticIncludingImageBackedText, 1, [1]),
+        ("always", .always, 3, [1, 2, 3]),
     ] {
         var options = ConversionOptions(); options.ocr = policy
         options.removeRepeatedHeadersAndFooters = false
@@ -121,7 +124,7 @@ private func reading(_ text: String) -> OCRReader.Result {
         #expect(report.reflowedPageCount == 3)
         let events = await log.events
         let recognizedPages = events.filter { $0.stage == .recognizing }.compactMap(\.page)
-        #expect(recognizedPages == (count == 3 ? [1, 2, 3] : count == 1 ? [1] : []))
+        #expect(recognizedPages == recognizing)
         #expect(zip(events, events.dropFirst()).allSatisfy { $0.fractionCompleted <= $1.fractionCompleted })
         #expect(events.last?.stage == .completed && events.last?.fractionCompleted == 1)
         #expect(report.warnings.filter { $0.code == .unverifiedTextLayer }.count == (count == 0 ? 1 : 0))

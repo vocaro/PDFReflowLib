@@ -30,6 +30,10 @@ import PDFKit
 ///   `OCRTextCoverage`; the layer fails when its lines leave at least three quarters of that ink
 ///   and at least seven text rows uncovered, and it holds fewer English words than those rows.
 ///
+/// A sparse layer that passes all three is checked against recognition of its page
+/// (`sparseEnglishWords`, #216): handwriting whose layer only looks plausible in aggregate reads as
+/// noise there.
+///
 /// Only English (`en`, `en-*`) inherited layers are judged; the lexicon and word classification are
 /// `EnglishText`'s (no network or download), and without a lexicon only the ink test runs.
 ///
@@ -44,6 +48,11 @@ enum TextLayerPlausibility {
         case missingText(uncoveredFraction: Double, uncoveredRows: Int, englishWords: Int)
         /// `misread` of `words` words are misread in place; `examples` are the first of them (#7).
         case misreadWords(misread: Int, words: Int, examples: [String])
+        /// A sparse layer holding `englishWords` English words passed every test above, but
+        /// recognition of its page does not read as English: the page's writing is handwriting,
+        /// or print recognition cannot read, and the layer transcribes little of it (#216). Found
+        /// only once recognition has run (`RecognitionPlan.Mode.verify`), never by `judge`.
+        case unreadWriting(englishWords: Int)
     }
 
     typealias WordCounts = EnglishText.WordCounts
@@ -171,6 +180,25 @@ enum TextLayerPlausibility {
         return inkFinding(measurement, englishWords: english)
     }
 
+    /// The English words of a sparse inherited layer, nil when the layer is not one: an English
+    /// layer holding fewer than `maximumWordsForInkTest` English words (#216). Such a layer can
+    /// pass every test above and still transcribe almost nothing of its page. On the Warren report's handwritten exhibits the
+    /// layer is the printed title and caption plus a few symbol-broken tokens over the handwriting
+    /// (`^<^ ,7^^Crt^`), which the word tests count as neutral names; cursive strokes are not
+    /// glyph-shaped, so the ink test finds few rows to leave uncovered. The text and the ink alone
+    /// do not separate those pages from the photographs, diagrams and floor plans whose sparse
+    /// layers are their labels (`measurements/issue-216-handwriting-gap`), but recognition of the
+    /// page does: it reads a printed page's labels as English and handwriting as noise. A sparse
+    /// layer is therefore recognized under the judging policy, and kept unless that recognition
+    /// does not read as English (`judgeRecognized`). The word count is read raw, as the ink test's
+    /// gate is, and a dense layer is never verified: a typescript's layer is far above it.
+    static func sparseEnglishWords(lines: [TextLine], language: String) -> Int? {
+        guard !lines.isEmpty, EnglishText.isDeclared(language),
+              let counts = EnglishText.wordCounts(lines.map(\.text).joined(separator: "\n")),
+              counts.english < maximumWordsForInkTest else { return nil }
+        return counts.english
+    }
+
     /// Whether recognition of a page reads as English, judged as an inherited layer's words are
     /// (#7, #216); nil when it does, or the language is not judged. The English-share test applies:
     /// recognition of a legible page can misread a tenth of its words and still be the best text
@@ -275,6 +303,10 @@ enum TextLayerPlausibility {
         case .misreadWords(let misread, let words, let examples):
             problem = "Existing text over a page-sized image is a damaged transcription: \(misread) of its \(words) words are "
                 + "misread, not English words or names (such as " + examples.map { "\u{201C}\($0)\u{201D}" }.joined(separator: ", ") + ")."
+        case .unreadWriting(let english):
+            problem = "Existing text over a page-sized image transcribes little of the page: it holds only \(english) English "
+                + (english == 1 ? "word" : "words") + ", and the rest of the page's writing does not read as English when "
+                + "recognized (handwriting, or print recognition cannot read)."
         }
         switch outcome {
         case .replaced:

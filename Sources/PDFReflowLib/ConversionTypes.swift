@@ -4,7 +4,9 @@ import Foundation
 public struct ConversionOptions: Sendable {
     public enum OCRPolicy: Sendable {
         /// Recognize pages with absent or visibly damaged native text, and image-backed pages whose
-        /// existing text fails the English plausibility test (`implausibleTextLayer`).
+        /// existing text fails the English plausibility test (`implausibleTextLayer`). A sparse
+        /// image-backed layer that passes is recognized only to verify it: it is kept unless the
+        /// recognition reads as noise, which makes the page an image (#216).
         case automatic
         /// Automatic recognition plus retry of existing text over a graphic covering more
         /// than 75% of the page. This conservative signal also matches valid illustrated

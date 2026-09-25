@@ -9,6 +9,10 @@ enum RecognitionPlan: Equatable, Sendable {
         /// A layer that misreads `misread` of its `words` words in place is recognized again and
         /// the better reading kept (#7).
         case compare(misread: Int, words: Int)
+        /// A sparse layer holding `englishWords` English words that passed every test is
+        /// recognized to check it (#216): it stands unless the recognition reads as noise, which
+        /// shows the page's writing is handwriting the layer does not transcribe.
+        case verify(englishWords: Int)
     }
 
     /// The extracted page stands; no recognition.
@@ -19,7 +23,8 @@ enum RecognitionPlan: Equatable, Sendable {
     case recognize(Mode, keepCropsIfUnread: Bool)
 
     var recognizes: Bool { self != .keepExtracted }
-    var compares: Bool { if case .recognize(.compare, _) = self { true } else { false } }
+    /// The layer stands unless recognition proves it worse: a comparison or a verification.
+    var compares: Bool { if case .recognize(let mode, _) = self { mode.keepsLayer } else { false } }
 }
 
 /// What recognition of a page produced. Cancellation is not an outcome; it propagates.
@@ -92,7 +97,16 @@ enum RecognitionPolicy {
 
     /// Whether the policy asks for recognition of a page with this evidence.
     static func plan(_ evidence: PageEvidence, policy: ConversionOptions.OCRPolicy) -> RecognitionPlan {
-        guard !evidence.requiresPageImage, needsRecognition(evidence, policy: policy) else { return .keepExtracted }
+        guard !evidence.requiresPageImage else { return .keepExtracted }
+        guard needsRecognition(evidence, policy: policy) else {
+            // A sparse layer that passed every test can still be the printed title and caption of a
+            // handwritten page, which only recognition of the page tells from a photograph's
+            // labels (#216). Only the judging policy verifies it.
+            if policy.imageBackedLayerRule == .judge, let english = evidence.sparseLayerWords {
+                return .recognize(.verify(englishWords: english), keepCropsIfUnread: false)
+            }
+            return .keepExtracted
+        }
         var mode = RecognitionPlan.Mode.replace
         // A layer that reads as English but misreads its words in place (#7) is recognized
         // again and the better reading kept: recognition of a faint carbon typescript misreads
@@ -121,7 +135,9 @@ enum RecognitionPolicy {
     /// of the layer and of the recognition.
     static func resolve(_ plan: RecognitionPlan, evidence: PageEvidence, outcome: RecognitionOutcome?,
                         judge: RecognitionJudge) -> Resolution {
-        let (disposition, outcomeWarnings) = reconcile(plan, finding: evidence.implausibleLayer, outcome: outcome, judge: judge)
+        let (disposition, outcomeWarnings) = reconcile(plan, finding: evidence.implausibleLayer,
+                                                       sparseLayer: evidence.sparseLayerWords != nil,
+                                                       outcome: outcome, judge: judge)
         var warnings: [PageWarning] = []
         if evidence.damagedEncoding {
             warnings.append(.damagedTextEncoding(disposition.encodingOutcome))
@@ -136,15 +152,20 @@ enum RecognitionPolicy {
         return Resolution(disposition: disposition, warnings: warnings)
     }
 
-    private static func reconcile(_ plan: RecognitionPlan, finding: TextLayerPlausibility.Finding?,
+    private static func reconcile(_ plan: RecognitionPlan, finding: TextLayerPlausibility.Finding?, sparseLayer: Bool,
                                   outcome: RecognitionOutcome?, judge: RecognitionJudge) -> (PageDisposition, [PageWarning]) {
-        // The implausible-layer warning states what became of the layer, known only after
-        // recognition is attempted (or, for a retained layer, never attempted at all).
-        func layer(_ outcome: TextLayerPlausibility.Outcome) -> [PageWarning] {
-            finding.map { [.implausibleTextLayer($0, outcome)] } ?? []
-        }
         guard case .recognize(let mode, let keepCropsIfUnread) = plan, let outcome else {
-            return (.keptLayer, layer(.retained))
+            return (.keptLayer, finding.map { [.implausibleTextLayer($0, .retained)] } ?? [])
+        }
+        // The implausible-layer warning states what became of the layer, known only after
+        // recognition is attempted (or, for a retained layer, never attempted at all). A verified
+        // layer has a finding only once its recognition has read as noise.
+        func layer(_ outcome: TextLayerPlausibility.Outcome) -> [PageWarning] {
+            if case .verify(let english) = mode {
+                return outcome == .implausibleRecognition
+                    ? [.implausibleTextLayer(.unreadWriting(englishWords: english), outcome)] : []
+            }
+            return finding.map { [.implausibleTextLayer($0, outcome)] } ?? []
         }
         switch outcome {
         case .read(let recognized):
@@ -157,25 +178,29 @@ enum RecognitionPolicy {
             // Recognition that does not read as English is noise, not a transcription (#7): a
             // reader is better served by the page image than by text made of it.
             let recognitionFinding = judge.finding(recognized.lines)
-            var warnings: [PageWarning] = []
-            if let recognitionFinding, mode == .replace {
-                warnings.append(.implausibleRecognition(recognitionFinding))
+            // Recognition that reads as noise beside a sparse layer is handwriting neither reading
+            // transcribes (#216): the page image serves the reader, whatever the layer's own finding.
+            // A reading of nothing is not noise; the layer stands over it.
+            if let recognitionFinding, mode == .replace || (sparseLayer && !recognized.lines.isEmpty) {
+                return (.pageImage, [.implausibleRecognition(recognitionFinding)] + layer(.implausibleRecognition))
+            }
+            if case .verify = mode {
+                // The sparse layer stands: recognition read the page's writing as English, or read
+                // nothing at all.
+                return (.keptLayer, [])
             }
             if case .compare(let misread, let words) = mode,
                !(recognitionFinding == nil && judge.readsBetter(recognized.lines, misread, words)) {
                 // The damaged layer stands: recognition read no better.
-                return (.keptLayer, warnings + layer(.keptOverRecognition))
-            }
-            if recognitionFinding != nil {
-                return (.pageImage, warnings + layer(.implausibleRecognition))
+                return (.keptLayer, layer(.keptOverRecognition))
             }
             if recognized.lines.isEmpty {
                 // Recognition succeeded and read nothing. There is no transcription to announce and
                 // nothing for the page to reflow, so it is preserved as an image and is not counted
                 // as a recognized page (#222).
-                return (.pageImage, warnings + layer(.pageImage) + [.ocrFailed(.noText)])
+                return (.pageImage, layer(.pageImage) + [.ocrFailed(.noText)])
             }
-            warnings += layer(.replaced)
+            var warnings = layer(.replaced)
             warnings.append(.ocrUsed)
             // The transcription the reader is being given does not account for all of the page's
             // writing (#116). Only this disposition reports it: a reading that was discarded for
@@ -188,7 +213,7 @@ enum RecognitionPolicy {
             }
             return (.replaced(recognized), warnings)
         case .failed:
-            if mode.compares {
+            if mode.keepsLayer {
                 return (.keptLayer, layer(.keptOverRecognition) + [.ocrFailed(.layerRetained)])
             }
             if keepCropsIfUnread {
@@ -200,5 +225,10 @@ enum RecognitionPolicy {
 }
 
 private extension RecognitionPlan.Mode {
-    var compares: Bool { if case .compare = self { true } else { false } }
+    var keepsLayer: Bool {
+        switch self {
+        case .compare, .verify: true
+        case .replace: false
+        }
+    }
 }

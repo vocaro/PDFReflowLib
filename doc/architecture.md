@@ -55,7 +55,7 @@ Extraction is one pass over the pages, each through named stages with value type
 | --- | --- | --- |
 | Read | `PageReader` over `PDFPageSource`, `NativeTextReader`, `GraphicsReader`, `StructureTreeReader` | `ExtractedPage`: the `PageContent`, placed raster images, unmapped-font flag, the glyphs the decoder read that the lines did not take, reader warnings |
 | Diagnose | `PageDiagnosis` with `PageInkMeasurer`, `TextEncodingCheck`, `TextLayerPlausibility`, `OCRTextCoverage`, `EnglishText` | `PageEvidence`: image-backed, damaged encoding, plausibility finding, drawn text, replacement-character counts |
-| Plan | `RecognitionPolicy.plan` (pure) | `RecognitionPlan`: keep the extracted page, or recognize it replacing or comparing |
+| Plan | `RecognitionPolicy.plan` (pure) | `RecognitionPlan`: keep the extracted page, or recognize it replacing, comparing or verifying |
 | Recognize | `OCRReader` (Vision) when the plan asks, checking its own reading against the page with `OCRTextCoverage` | `RecognitionOutcome` |
 | Resolve | `RecognitionPolicy.resolve` (pure) with `RecognitionJudge` | `PageDisposition` plus the page's `PageWarning`s in report order |
 | Fold | `DocumentEvidence`, `PageAssetWriter`, `PageStore` | Document-wide evidence, written assets, the spilled page |

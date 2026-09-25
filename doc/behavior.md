@@ -620,7 +620,8 @@ twice and only when a judgment needs it:
   pages.
 - **Exclusions.** A damaged encoding is diagnosed first, and such a page is judged neither for
   layer plausibility nor for drawn text. Plausibility is judged only on image-backed pages that
-  do not already require a page image. Drawn-text candidacy requires some text, no damaged
+  do not already require a page image; the same pages record whether the layer is sparse, which
+  the judging policy verifies against recognition (#216). Drawn-text candidacy requires some text, no damaged
   encoding, no required page image and an automatic OCR policy; it deliberately does not require
   `!imageBackedText`, because a born-digital slide with a full-bleed background fill reads as
   image-backed on that signal exactly as a scan does (the abandoned branch's `layoutComesApart`,
@@ -781,8 +782,11 @@ The warning is written after recognition, so its message states what failed and 
 The problem clause is one of "Existing text over a page-sized image does not read as English:
 only *e* of *j* words are English words (misspelled, wrongly capitalized or letter-spaced
 text).", "… is missing most of the page's text: about *p*% of the page's text-shaped ink
-(*r* rows) lies outside its lines, which hold *e* English words." or "… is a damaged
-transcription: *m* of its *w* words are misread, not English words or names (such as “…”)."
+(*r* rows) lies outside its lines, which hold *e* English words.", "… is a damaged
+transcription: *m* of its *w* words are misread, not English words or names (such as “…”)." or,
+for a sparse layer that recognition shows to be over handwriting (below), "… transcribes little
+of the page: it holds only *e* English words, and the rest of the page's writing does not read as
+English when recognized (handwriting, or print recognition cannot read)."
 The outcome clause is one of:
 
 | Outcome | Message tail | Companion warning |
@@ -802,6 +806,25 @@ reads as English and misreads a smaller share of its own words (`readsBetter`).
 reference. A client wanting the pre-#93 automatic behavior, recognition only of absent or
 damaged text, selects `.automaticKeepingImageBackedText`. Recognition replaces the whole layer,
 so a replaced page's reading order, styles and headings come from the recognized text.
+
+**Sparse layers are verified (#216).** A layer can pass all three tests and still transcribe
+almost nothing of its page. Over the Warren report's handwritten exhibits it is the printed title
+and caption plus a few symbol-broken tokens (`^<^ ,7^^Crt^`), which the word tests count as
+neutral, and cursive strokes are not glyph-shaped, so the ink test finds too few rows. The text
+and the ink do not separate those pages from photographs, diagrams and floor plans whose sparse
+layers are their labels; recognition of the page does: it reads printed labels as English and the
+handwriting as noise. So under `.automatic` an image-backed English layer with fewer than 32
+English words (the ink test's gate, `sparseEnglishWords`) that passes every test is recognized
+(`RecognitionPlan.Mode.verify`). It stands, with `unverifiedTextLayer` as before, unless the
+recognition fails `judgeRecognized` below; then the page is an image and reports
+`implausibleRecognition` and `implausibleTextLayer` (the "transcribes little of the page" clause,
+with the "does not read as English either" tail). A reading of nothing, or a failed one
+(`ocrFailed`), leaves the layer standing. The same noise beside a sparse layer that the misread
+test sent to a comparison also makes the page an image instead of keeping the layer. A layer of 32
+or more English words, such as any typescript page, is never verified. Verification adds one
+recognition for each sparse image-backed page that no test already sends to recognition: 74 of
+Warren's 920 pages and 32 of Blue Book's 312. Evidence and the pages it does not catch:
+[issue-216-handwriting-gap](../measurements/issue-216-handwriting-gap/record.md).
 
 ### Every recognition is judged (#7)
 
@@ -866,7 +889,7 @@ below, is tested without a PDF in `RecognitionPolicyTests`.
 
 | Policy | Recognizes when | Image-backed layer rule |
 | --- | --- | --- |
-| `.automatic` | the page lacks readable text, or its layer is implausible | judge: replace a failing layer, compare a misreading one |
+| `.automatic` | the page lacks readable text, its layer is implausible, or its image-backed layer is sparse | judge: replace a failing layer, compare a misreading one, verify a sparse one (#216) |
 | `.automaticIncludingImageBackedText` | lacks readable text, or the text is image-backed (graphic over 75% of the page) | always retry, replacing the whole page's native text |
 | `.automaticKeepingImageBackedText` | lacks readable text | keep, reporting only |
 | `.always` | every eligible page | always retry |
@@ -2414,7 +2437,7 @@ Evidence: [spine-packing](../measurements/spine-packing/record.md),
 | `unreadTableCells` | Recognition located a table on the page and transcribed under half of the grid it returned, so the table's rows, columns and cells are not reconstructed (#31). One warning per such table, beside the picture that preserves it; the message states the share transcribed and the size of the returned grid, never the page's own shape. |
 | `referenceImageOmitted` | Analysis recommended a supplementary source-page image and client policy omitted it. |
 | `unverifiedTextLayer` | Existing text over a page-sized graphic stands unverified ("Transcription, tables, numbers and reading order may be inaccurate."); a review signal, not an OCR confidence score. |
-| `implausibleTextLayer` | An inherited image-backed layer failed the word, misread or ink test, under every policy (`TextLayerPlausibility.message`). |
+| `implausibleTextLayer` | An inherited image-backed layer failed the word, misread or ink test, under every policy, or, under `.automatic`, is a sparse layer whose page recognition reads as noise (#216) (`TextLayerPlausibility.message`). |
 | `implausibleRecognition` | Recognition of a page did not read as English and was discarded (`TextLayerPlausibility.recognitionMessage`). |
 | `damagedTextEncoding` | A font without a usable Unicode mapping is present and the words fail the English statistics; the message is emitted after the recognition outcome is known and says whether recognition replaced the text, the text is retained, or it was discarded and the page became an image (#221). |
 

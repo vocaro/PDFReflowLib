@@ -312,6 +312,65 @@ import Testing
         == .fewEnglishWords(english: 6, judged: 11))
 }
 
+// The Warren report's handwritten exhibits, each read off its 180 DPI source raster: Oswald's
+// cursive notes to the Moscow embassy (289, 291), his block-capital diary (292), the draft speech
+// (301), the letter and preliminary drafts (339) and the Parkland admission notes (547, 551). Each
+// layer is a printed title and caption and a few symbol-broken tokens over the handwriting, and
+// passes or is only compared by the word tests. The controls are pages whose sparse layers are
+// legible print: a floor plan (225), a labelled diagram (Warren 615) and a pie chart (Blue Book
+// 60). The layouts and the Vision readings are captures from the pinned sources; a reading is one
+// run of Vision, which is what the test replays (#173). See measurements/issue-216-handwriting-gap.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func handwrittenPagesUnderSparseLayersBecomePageImages() throws {
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
+    let warrenSHA256 = "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19"
+    let blueBookSHA256 = "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3"
+    func resolve(_ name: String, sha256: String) throws -> RecognitionPolicy.Resolution {
+        let layer = try SourceLayoutFixture.load(name)
+        let capture = try SourceRecognitionFixture.load(name)
+        #expect(layer.sourceSHA256 == sha256 && capture.sourceSHA256 == sha256, "\(name)")
+        #expect(layer.page == capture.page, "\(name)")
+        let content = layer.content()
+        #expect(content.graphics.contains { PageDiagnosis.coversPage($0, bounds: content.bounds) }, "\(name) is not image-backed")
+        // The word tests alone: the ink test renders the page, and these pages' ink numbers are
+        // in the record. None of them fails it.
+        let finding = TextLayerPlausibility.judge(lines: content.lines, language: "en") { nil }
+        let sparse = TextLayerPlausibility.sparseEnglishWords(lines: content.lines, language: "en")
+        #expect(sparse != nil, "\(name) is not sparse")
+        let evidence = PageEvidence(requiresPageImage: false, hasText: true,
+                                    characters: content.lines.map(\.text.count).reduce(0, +), replacementCharacters: 0,
+                                    imageBackedText: true, damagedEncoding: false, implausibleLayer: finding,
+                                    drawnText: false, sparseLayerWords: sparse)
+        let plan = RecognitionPolicy.plan(evidence, policy: .automatic)
+        #expect(plan.compares, "\(name): \(plan)")
+        return RecognitionPolicy.resolve(plan, evidence: evidence, outcome: .read(capture.reading()),
+                                         judge: .english(language: "en"))
+    }
+    for page in [289, 291, 292, 301, 339, 547, 551] {
+        let resolution = try resolve("warren-\(page)", sha256: warrenSHA256)
+        #expect(resolution.disposition == .pageImage, "Warren \(page): \(resolution.disposition)")
+        #expect(resolution.warnings.contains { if case .implausibleRecognition = $0 { true } else { false } }, "Warren \(page)")
+        #expect(resolution.warnings.contains { if case .implausibleTextLayer(_, .implausibleRecognition) = $0 { true } else { false } },
+                "Warren \(page)")
+    }
+    // Page 292 is the one the misread test already flagged; it was kept over this reading before.
+    if case .misreadWords? = TextLayerPlausibility.judge(lines: try SourceLayoutFixture.load("warren-292").content().lines,
+                                                        language: "en", measureInk: { nil }) {} else {
+        Issue.record("warren-292 is no longer a misread layer")
+    }
+    for (name, sha256) in [("warren-225", warrenSHA256), ("warren-615", warrenSHA256), ("blue-60", blueBookSHA256)] {
+        let resolution = try resolve(name, sha256: sha256)
+        #expect(resolution == .init(disposition: .keptLayer, warnings: [.unverifiedTextLayer]), "\(name): \(resolution)")
+    }
+    // Dense layers are never verified: the damaged carbon typescript, a printed page of the
+    // report, Blue Book's typewritten table, and Census's born-digital page.
+    for name in ["warren-636", "warren-50", "blue-74", "census-1"] {
+        let lines = try SourceLayoutFixture.load(name).lines.map {
+            TextLine(text: $0.text, rect: .zero, fontSize: $0.fontSize)
+        }
+        #expect(TextLayerPlausibility.sparseEnglishWords(lines: lines, language: "en") == nil, "\(name)")
+    }
+}
+
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/93")) func warningStatesWhatFailedAndWhatWasDone() {
     let words = TextLayerPlausibility.message(.fewEnglishWords(english: 31, judged: 95), outcome: .replaced, referencesDisabled: false)
     #expect(words == "Existing text over a page-sized image does not read as English: only 31 of 95 words are English words "

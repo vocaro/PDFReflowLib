@@ -21,6 +21,10 @@ struct PageEvidence: Equatable, Sendable {
     var implausibleLayer: TextLayerPlausibility.Finding?
     /// The sparse layer leaves rows of drawn writing unaccounted for (#176, #192).
     var drawnText: Bool
+    /// The English words of an image-backed layer that is sparse, nil otherwise
+    /// (`TextLayerPlausibility.sparseEnglishWords`): whatever its finding, recognition of the page
+    /// that reads as noise shows handwriting the layer does not transcribe (#216).
+    var sparseLayerWords: Int? = nil
 
     /// The page has no text worth keeping under an automatic policy: nothing, mostly
     /// replacement characters, only drawn writing, or an unreadable encoding.
@@ -252,9 +256,12 @@ enum PageDiagnosis {
         // transcription of it (#93). Judged under every policy, so the page is reported whether
         // or not its text is replaced. Excluded when the layer itself is a damaged encoding
         // (#38): that is a different diagnosis of the same page, not a second one.
-        let implausibleLayer = imageBackedText && !content.requiresPageImage && !damagedEncoding
+        let judgesLayer = imageBackedText && !content.requiresPageImage && !damagedEncoding
+        let implausibleLayer = judgesLayer
             ? try TextLayerPlausibility.judge(lines: content.lines, language: options.language) { try measureInk([]) }
             : nil
+        let sparseLayerWords = judgesLayer
+            ? TextLayerPlausibility.sparseEnglishWords(lines: content.lines, language: options.language) : nil
         let noText = raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         // A sparse layer may omit writing drawn as outlines, whatever its language (#192).
         // A layer already diagnosed as damaged belongs to the existing replacement/comparison
@@ -268,7 +275,7 @@ enum PageDiagnosis {
         return PageEvidence(requiresPageImage: content.requiresPageImage, hasText: !noText,
                             characters: raw.count, replacementCharacters: replacements,
                             imageBackedText: imageBackedText, damagedEncoding: damagedEncoding,
-                            implausibleLayer: implausibleLayer, drawnText: drawnText)
+                            implausibleLayer: implausibleLayer, drawnText: drawnText, sparseLayerWords: sparseLayerWords)
     }
 
     /// Prepares a page whose extracted text stands, at least until recognition is compared with

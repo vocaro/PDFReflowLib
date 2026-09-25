@@ -661,10 +661,68 @@ enum NativeTextReader {
             ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
     }
 
+    /// A first-level script run: its style, its baseline offset and its size.
+    struct ScriptAnchor {
+        let script: TextStyle
+        let offset: Double
+        let size: Double
+    }
+
+    /// The script level a glyph run is drawn at, from its baseline offset, and from the
+    /// first-level script it follows when there is one (#302).
+    ///
+    /// On its own a run is a script where its offset lies beyond positioning noise and within
+    /// three quarters of its own size; beyond that is a layout shift of a whole line, not a script.
+    /// A run that follows a first-level script with no baseline glyph between can be read against
+    /// that script instead, in two ways the source draws:
+    ///
+    /// - **A second level.** A run set smaller again than the script it follows, drawn off the
+    ///   line's baseline and raised or lowered from that script by more than noise and at most
+    ///   three quarters of the script's size, is the script's own superscript or subscript:
+    ///   `STA` with `n` raised and `i` raised from `n`, or `x` with `i` lowered and `j` lowered
+    ///   from `i`. Smaller again but on the script's own baseline, it is more of that script. Its
+    ///   own size says nothing about how far it may sit from the line's baseline, because that
+    ///   distance is the two levels' shifts together.
+    /// - **The same level set further out.** A run the script's size, further from the baseline on
+    ///   the script's side, within three quarters of the line's own size, is a script at the same
+    ///   level: Wallace page 178 raises the exponent of `(a²)³` over a tall parenthesis the text
+    ///   layer does not carry, so it stands higher than the `²` it follows.
+    static func scriptStyle(offset: Double, size: Double, tolerance: Double,
+                            after anchor: ScriptAnchor?, lineSize: Double) -> TextStyle {
+        var own: TextStyle = []
+        if abs(offset) <= size * 0.75 {
+            if offset > tolerance { own = .superscript } else if offset < -tolerance { own = .subscript }
+        }
+        guard let anchor else { return own }
+        let shift = offset - anchor.offset
+        if size <= anchor.size * 0.9 {
+            guard abs(offset) > tolerance else { return own }
+            if abs(shift) <= tolerance { return anchor.script }
+            guard abs(shift) <= anchor.size * 0.75 else { return own }
+            return anchor.script.union(shift > 0 ? .nestedSuperscript : .nestedSubscript)
+        }
+        let further = anchor.script.contains(.superscript) ? shift > tolerance : shift < -tolerance
+        if own.isEmpty, further, abs(size - anchor.size) <= max(0.5, anchor.size * 0.1),
+           abs(shift) <= anchor.size * 0.75, abs(offset) <= lineSize * 0.75 {
+            return anchor.script
+        }
+        return own
+    }
+
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
         let hasDropCap = dropCapBodySize(in: attributed) != nil
         var runs: [(text: String, style: TextStyle, link: LinkTarget?)] = []
-        var previous: (offset: Double, size: Double, text: String)?
+        var previous: (offset: Double, size: Double, text: String, nested: Bool)?
+        // The first-level script the runs since the last one on the baseline belong to, which a
+        // second level is measured from (#302).
+        var anchor: ScriptAnchor?
+        var lineSize = 0.0
+        attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
+            guard let size = (attributes[.font] as? PlatformFont)?.pointSize, size.isFinite, size <= 100_000,
+                  (attributed.string as NSString).substring(with: range).contains(where: { !$0.isWhitespace })
+            else { return }
+            lineSize = max(lineSize, Double(size))
+        }
         attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
             let font = attributes[.font] as? PlatformFont
             let name = font?.fontName.lowercased() ?? ""
@@ -687,19 +745,6 @@ enum NativeTextReader {
             let offset = (attributes[NSAttributedString.Key(kCTBaselineOffsetAttributeName as String)] as? NSNumber
                 ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
             let size = Double(font?.pointSize ?? 12)
-            // PDFKit can concatenate separate visual lines without a space while retaining
-            // their full-line baseline offsets. Require matching font sizes and a jump beyond
-            // the inline-script range; opposite superscripts/subscripts alone are not evidence.
-            if let previous, font != nil, size.isFinite, size > 0, offset.isFinite,
-               abs(size - previous.size) <= max(0.5, max(size, previous.size) * 0.1),
-               abs(offset - previous.offset) > max(size, previous.size) * 0.75,
-               (abs(offset) > size * 0.75 || abs(previous.offset) > previous.size * 0.75),
-               let last = previous.text.last, let first = run.first,
-               !last.isWhitespace, !first.isWhitespace, last != "-", last != "\u{00ad}" {
-                runs.append((" ", [], nil))
-            }
-            previous = font != nil && size.isFinite && size > 0 && offset.isFinite
-                ? (offset, size, run) : nil
             let tolerance = max(0.5, (font?.pointSize ?? 12) * 0.12)
             // Some PDFKit selections combine several OCR lines, represented as baseline
             // shifts of a full line height. Those are layout offsets, not inline scripts.
@@ -717,10 +762,38 @@ enum NativeTextReader {
                attributes[GlyphIdentityReader.isolatedAttribute] == nil,
                hasGlyph,
                !ArabicText.isRightToLeftRun(run),
-               offset.isFinite, abs(offset) <= (font?.pointSize ?? 12) * 0.75 {
-                if offset > tolerance { style.insert(.superscript) }
-                else if offset < -tolerance { style.insert(.subscript) }
+               offset.isFinite {
+                let script = scriptStyle(offset: offset, size: size, tolerance: tolerance,
+                                         after: anchor, lineSize: lineSize)
+                style.formUnion(script)
+                // A second-level run leaves the anchor where it is, so the outer script can resume
+                // after it. Only a first-level script anchors, and only one set smaller than the
+                // line's own text: a body-sized run the reference baseline happens to place off
+                // zero is not a script a smaller glyph could be raised from.
+                if !script.contains(.nestedSuperscript), !script.contains(.nestedSubscript) {
+                    anchor = !script.isEmpty && size <= lineSize * 0.9
+                        ? ScriptAnchor(script: script, offset: offset, size: size) : nil
+                }
+            } else if hasGlyph {
+                anchor = nil
             }
+            let nested = style.contains(.nestedSuperscript) || style.contains(.nestedSubscript)
+            // PDFKit can concatenate separate visual lines without a space while retaining
+            // their full-line baseline offsets. Require matching font sizes and a jump beyond
+            // the inline-script range; opposite superscripts/subscripts alone are not evidence.
+            // Nor is a step between two glyphs of one second script level, which rises and falls
+            // around the script they belong to by more than their own small size (#302).
+            if let previous, font != nil, size.isFinite, size > 0, offset.isFinite,
+               !(nested && previous.nested),
+               abs(size - previous.size) <= max(0.5, max(size, previous.size) * 0.1),
+               abs(offset - previous.offset) > max(size, previous.size) * 0.75,
+               (abs(offset) > size * 0.75 || abs(previous.offset) > previous.size * 0.75),
+               let last = previous.text.last, let first = run.first,
+               !last.isWhitespace, !first.isWhitespace, last != "-", last != "\u{00ad}" {
+                runs.append((" ", [], nil))
+            }
+            previous = font != nil && size.isFinite && size > 0 && offset.isFinite
+                ? (offset, size, run, nested) : nil
             runs.append((run, style, (attributes[linkAttribute] as? LinkBox)?.target))
         }
         // `enumerateAttributes` splits at every attribute change, including ones no style reads, so

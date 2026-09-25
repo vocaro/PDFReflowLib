@@ -106,6 +106,20 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   inline script over nothing a reader can see raised, and the space itself is written where the
   page set it. Whitespace *inside* a run that also holds a glyph is that script's own. Evidence:
   [whitespace-only-inline-scripts](../measurements/whitespace-only-inline-scripts/record.md).
+- **Second script level (#302).** On its own, a run is a script when its offset is beyond
+  max(0.5, 12% of its size) and at most 75% of its size. A first-level script set at most 90% of
+  the line's largest glyph size *anchors* the runs after it, up to the next glyph run that is not
+  a script. A run at most 90% of the
+  anchor's size, off the baseline by more than its tolerance, and raised or lowered from the anchor by
+  more than that tolerance and at most 75% of the anchor's size, is the anchor's own superscript
+  or subscript. Its own size does not bound its offset, which adds the two levels' shifts. Smaller
+  again but within tolerance of the anchor's offset, it continues the anchor's script. A run
+  within 10% of the anchor's size that its own size would reject, further out on the anchor's side
+  by at most 75% of the anchor's size and within 75% of the line's largest size, is a script at the
+  anchor's level: Wallace page 178 raises the ³ of `(a²)³` over parentheses the text layer
+  drops (#305). A body-sized run is never an anchor, and neither is a rejected numerator. Nor
+  does a step between two second-level glyphs insert the word boundary kept for PDFKit's
+  concatenated lines. Rows that PDFKit splits into several lines are read apart (#303).
 - Emphasis is read the same way. A run holding no non-whitespace character takes neither italic
   nor bold from its font, so `<em> </em>` and `<strong> </strong>` are never written over a space
   (#278). The run itself is kept — the page set that space and the words on either side need it —

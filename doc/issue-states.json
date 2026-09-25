@@ -5,7 +5,6 @@
   "purpose": "What tools/check_issue_citations.py reads instead of the network. Refresh with `python3 tools/check_issue_citations.py --refresh` and commit the result.",
   "open": [
     4,
-    28,
     32,
     149,
     168,
@@ -43,6 +42,7 @@
     25,
     26,
     27,
+    28,
     29,
     30,
     31,

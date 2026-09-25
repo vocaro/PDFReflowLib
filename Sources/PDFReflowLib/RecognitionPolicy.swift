@@ -74,17 +74,24 @@ enum PageDisposition: Equatable {
     }
 }
 
-/// The two judgments of recognized text that `RecognitionPolicy.resolve` needs, injectable so
-/// the resolution can be tested without the system lexicon.
+/// The judgments of recognized text that `RecognitionPolicy.resolve` needs, injectable so the
+/// resolution can be tested without the system lexicon.
 struct RecognitionJudge: Sendable {
     /// Whether the recognition reads as noise rather than English (`judgeRecognized`).
     var finding: @Sendable ([TextLine]) -> TextLayerPlausibility.Finding?
     /// Whether the recognition misreads a smaller share of its words than the layer (`readsBetter`).
     var readsBetter: @Sendable (_ lines: [TextLine], _ misread: Int, _ words: Int) -> Bool
+    /// Whether a recognition too short for `finding` reads as noise beside the sparse layer it
+    /// verifies (`judgeRecognized(lines:besideLayer:language:)`, #216). None by default.
+    var findingBesideLayer: @Sendable (_ lines: [TextLine], _ layer: EnglishText.WordCounts)
+        -> TextLayerPlausibility.Finding? = { _, _ in nil }
 
     static func english(language: String) -> RecognitionJudge {
         RecognitionJudge(finding: { TextLayerPlausibility.judgeRecognized(lines: $0, language: language) },
-                         readsBetter: { TextLayerPlausibility.readsBetter($0, than: $1, of: $2, language: language) })
+                         readsBetter: { TextLayerPlausibility.readsBetter($0, than: $1, of: $2, language: language) },
+                         findingBesideLayer: {
+                             TextLayerPlausibility.judgeRecognized(lines: $0, besideLayer: $1, language: language)
+                         })
     }
 }
 
@@ -136,7 +143,7 @@ enum RecognitionPolicy {
     static func resolve(_ plan: RecognitionPlan, evidence: PageEvidence, outcome: RecognitionOutcome?,
                         judge: RecognitionJudge) -> Resolution {
         let (disposition, outcomeWarnings) = reconcile(plan, finding: evidence.implausibleLayer,
-                                                       sparseLayer: evidence.sparseLayerWords != nil,
+                                                       sparseLayer: evidence.sparseLayer,
                                                        outcome: outcome, judge: judge)
         var warnings: [PageWarning] = []
         if evidence.damagedEncoding {
@@ -152,7 +159,8 @@ enum RecognitionPolicy {
         return Resolution(disposition: disposition, warnings: warnings)
     }
 
-    private static func reconcile(_ plan: RecognitionPlan, finding: TextLayerPlausibility.Finding?, sparseLayer: Bool,
+    private static func reconcile(_ plan: RecognitionPlan, finding: TextLayerPlausibility.Finding?,
+                                  sparseLayer: EnglishText.WordCounts?,
                                   outcome: RecognitionOutcome?, judge: RecognitionJudge) -> (PageDisposition, [PageWarning]) {
         guard case .recognize(let mode, let keepCropsIfUnread) = plan, let outcome else {
             return (.keptLayer, finding.map { [.implausibleTextLayer($0, .retained)] } ?? [])
@@ -177,11 +185,16 @@ enum RecognitionPolicy {
             }
             // Recognition that does not read as English is noise, not a transcription (#7): a
             // reader is better served by the page image than by text made of it.
-            let recognitionFinding = judge.finding(recognized.lines)
+            var recognitionFinding = judge.finding(recognized.lines)
+            if recognitionFinding == nil, case .verify = mode, let sparseLayer {
+                // A reading too short to judge alone is judged beside the layer it verifies: where
+                // both read under half English, together they are long enough to judge (#216).
+                recognitionFinding = judge.findingBesideLayer(recognized.lines, sparseLayer)
+            }
             // Recognition that reads as noise beside a sparse layer is handwriting neither reading
             // transcribes (#216): the page image serves the reader, whatever the layer's own finding.
             // A reading of nothing is not noise; the layer stands over it.
-            if let recognitionFinding, mode == .replace || (sparseLayer && !recognized.lines.isEmpty) {
+            if let recognitionFinding, mode == .replace || (sparseLayer != nil && !recognized.lines.isEmpty) {
                 return (.pageImage, [.implausibleRecognition(recognitionFinding)] + layer(.implausibleRecognition))
             }
             if case .verify = mode {

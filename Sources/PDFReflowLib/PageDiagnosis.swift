@@ -21,10 +21,13 @@ struct PageEvidence: Equatable, Sendable {
     var implausibleLayer: TextLayerPlausibility.Finding?
     /// The sparse layer leaves rows of drawn writing unaccounted for (#176, #192).
     var drawnText: Bool
-    /// The English words of an image-backed layer that is sparse, nil otherwise
-    /// (`TextLayerPlausibility.sparseEnglishWords`): whatever its finding, recognition of the page
-    /// that reads as noise shows handwriting the layer does not transcribe (#216).
-    var sparseLayerWords: Int? = nil
+    /// The word counts of an image-backed layer that is sparse, nil otherwise
+    /// (`TextLayerPlausibility.sparseLayerCounts`): whatever its finding, recognition of the page
+    /// that reads as noise shows handwriting the layer does not transcribe, and a recognition too
+    /// short to judge alone is judged beside these counts (#216).
+    var sparseLayer: EnglishText.WordCounts? = nil
+    /// The sparse layer's English words, read raw as the ink test's gate reads them.
+    var sparseLayerWords: Int? { sparseLayer?.english }
 
     /// The page has no text worth keeping under an automatic policy: nothing, mostly
     /// replacement characters, only drawn writing, or an unreadable encoding.
@@ -260,8 +263,8 @@ enum PageDiagnosis {
         let implausibleLayer = judgesLayer
             ? try TextLayerPlausibility.judge(lines: content.lines, language: options.language) { try measureInk([]) }
             : nil
-        let sparseLayerWords = judgesLayer
-            ? TextLayerPlausibility.sparseEnglishWords(lines: content.lines, language: options.language) : nil
+        let sparseLayer = judgesLayer
+            ? TextLayerPlausibility.sparseLayerCounts(lines: content.lines, language: options.language) : nil
         let noText = raw.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
         // A sparse layer may omit writing drawn as outlines, whatever its language (#192).
         // A layer already diagnosed as damaged belongs to the existing replacement/comparison
@@ -275,7 +278,7 @@ enum PageDiagnosis {
         return PageEvidence(requiresPageImage: content.requiresPageImage, hasText: !noText,
                             characters: raw.count, replacementCharacters: replacements,
                             imageBackedText: imageBackedText, damagedEncoding: damagedEncoding,
-                            implausibleLayer: implausibleLayer, drawnText: drawnText, sparseLayerWords: sparseLayerWords)
+                            implausibleLayer: implausibleLayer, drawnText: drawnText, sparseLayer: sparseLayer)
     }
 
     /// Prepares a page whose extracted text stands, at least until recognition is compared with

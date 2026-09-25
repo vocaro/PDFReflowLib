@@ -32,7 +32,8 @@ import PDFKit
 ///
 /// A sparse layer that passes all three is checked against recognition of its page
 /// (`sparseEnglishWords`, #216): handwriting whose layer only looks plausible in aggregate reads as
-/// noise there.
+/// noise there. A recognition too short to judge alone is judged beside the layer's own words
+/// (`judgeRecognized(lines:besideLayer:language:)`).
 ///
 /// Only English (`en`, `en-*`) inherited layers are judged; the lexicon and word classification are
 /// `EnglishText`'s (no network or download), and without a lexicon only the ink test runs.
@@ -53,6 +54,10 @@ enum TextLayerPlausibility {
         /// or print recognition cannot read, and the layer transcribes little of it (#216). Found
         /// only once recognition has run (`RecognitionPlan.Mode.verify`), never by `judge`.
         case unreadWriting(englishWords: Int)
+        /// A recognition too short to judge alone reads `english` of `judged` words as English, and
+        /// the sparse layer it verifies `layerEnglish` of `layerJudged`: each under half, and
+        /// together enough words to judge (#216). Found only by `judgeRecognized(lines:besideLayer:language:)`.
+        case fewEnglishWordsInEitherReading(english: Int, judged: Int, layerEnglish: Int, layerJudged: Int)
     }
 
     typealias WordCounts = EnglishText.WordCounts
@@ -193,10 +198,16 @@ enum TextLayerPlausibility {
     /// does not read as English (`judgeRecognized`). The word count is read raw, as the ink test's
     /// gate is, and a dense layer is never verified: a typescript's layer is far above it.
     static func sparseEnglishWords(lines: [TextLine], language: String) -> Int? {
+        sparseLayerCounts(lines: lines, language: language)?.english
+    }
+
+    /// The word counts of a sparse inherited layer (`sparseEnglishWords`), nil when the layer is
+    /// not one. A recognition too short to judge alone is judged beside them (#216).
+    static func sparseLayerCounts(lines: [TextLine], language: String) -> WordCounts? {
         guard !lines.isEmpty, EnglishText.isDeclared(language),
               let counts = EnglishText.wordCounts(lines.map(\.text).joined(separator: "\n")),
               counts.english < maximumWordsForInkTest else { return nil }
-        return counts.english
+        return counts
     }
 
     /// Whether recognition of a page reads as English, judged as an inherited layer's words are
@@ -230,6 +241,46 @@ enum TextLayerPlausibility {
         return .fewEnglishWords(english: english, judged: judged)
     }
 
+    /// Whether a recognition too short for `judgeRecognized` reads as noise beside the sparse layer
+    /// it verifies (#216); nil when it does not, or the language is not judged.
+    ///
+    /// The layer and the recognition are two readings of one page. Where each reads under half
+    /// English but neither holds the `minimumJudgedWords` the word test needs, the share each
+    /// reports is unstable alone, yet both readings agree that the page's writing is not English,
+    /// and together they hold enough words to judge. Warren 550's cursive admission note is the
+    /// case: its layer reads 6 of 14 judged words as English (the printed title and caption among
+    /// symbol-broken tokens), and its recognition 5 of 16 (`artauit benepit`, `pneed cad penntent`).
+    /// Only the count of judged words is pooled; each reading's share is judged on its own, so the
+    /// printed words both hold raise both shares. A legible page's labels read as English in at
+    /// least one of the two readings, which is enough to keep its layer.
+    static func judgeRecognized(lines: [TextLine], besideLayer layer: WordCounts, language: String) -> Finding? {
+        let text = lines.map(\.text).joined(separator: "\n")
+        guard !lines.isEmpty, EnglishText.isDeclared(language),
+              let counts = EnglishText.wordCounts(text),
+              !EnglishText.readsAsAnotherLanguage(text) else { return nil }
+        return shortReadingsFinding(counts, layer: layer)
+    }
+
+    /// The two-reading test over word counts: the recognition and the layer each hold at least
+    /// `minimumShortRecognitionWords` and fewer than `minimumJudgedWords` judged words, are not
+    /// numeric, read under half English, and hold `minimumJudgedWords` judged words between them.
+    static func shortReadingsFinding(_ reading: WordCounts, layer: WordCounts) -> Finding? {
+        // A reading's share as the word test reads it: lone letters set aside (#275), a table or
+        // form not judged.
+        func unreadShare(_ counts: WordCounts) -> (english: Int, judged: Int)? {
+            let english = counts.english - counts.lonelyLetters
+            let judged = counts.judged - counts.lonelyLetters
+            guard judged >= minimumShortRecognitionWords, judged < minimumJudgedWords,
+                  Double(counts.numberTokens) < Double(counts.tokens) * maximumNumericShare,
+                  Double(english) < Double(judged) * minimumEnglishShare else { return nil }
+            return (english, judged)
+        }
+        guard let read = unreadShare(reading), let kept = unreadShare(layer),
+              read.judged + kept.judged >= minimumJudgedWords else { return nil }
+        return .fewEnglishWordsInEitherReading(english: read.english, judged: read.judged,
+                                               layerEnglish: kept.english, layerJudged: kept.judged)
+    }
+
     /// Whether recognition reads a page better than a layer that misreads `misread` of its `words`
     /// words (#7): it reads as English (`judgeRecognized`) and misreads a smaller share of its own.
     static func readsBetter(_ lines: [TextLine], than misread: Int, of words: Int, language: String) -> Bool {
@@ -240,6 +291,12 @@ enum TextLayerPlausibility {
 
     /// The `implausibleRecognition` warning for a page whose recognition was discarded.
     static func recognitionMessage(_ finding: Finding) -> String {
+        if case .fewEnglishWordsInEitherReading(let english, let judged, let layerEnglish, let layerJudged) = finding {
+            return "OCR of this page image is too short a reading to judge alone, and like the page's existing text it does "
+                + "not read as English: only \(english) of its \(judged) judged words are English, and \(layerEnglish) of the "
+                + "existing text's \(layerJudged) (handwriting, or print recognition cannot read). The recognized text was "
+                + "discarded; the page is preserved as an image and does not reflow."
+        }
         guard case .fewEnglishWords(let english, let judged) = finding else { return "" }
         if judged < minimumJudgedWords {
             return "OCR of this page image is a short, mixed-script reading rather than a reliable English transcription: "
@@ -307,6 +364,9 @@ enum TextLayerPlausibility {
             problem = "Existing text over a page-sized image transcribes little of the page: it holds only \(english) English "
                 + (english == 1 ? "word" : "words") + ", and the rest of the page's writing does not read as English when "
                 + "recognized (handwriting, or print recognition cannot read)."
+        case .fewEnglishWordsInEitherReading(let english, let judged, let layerEnglish, let layerJudged):
+            problem = "Existing text over a page-sized image does not read as English, and neither does OCR of the page: only "
+                + "\(layerEnglish) of its \(layerJudged) judged words are English, and \(english) of the OCR's \(judged)."
         }
         switch outcome {
         case .replaced:

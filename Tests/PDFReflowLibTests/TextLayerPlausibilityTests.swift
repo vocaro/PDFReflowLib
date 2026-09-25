@@ -1,6 +1,7 @@
 import CoreGraphics
 import CoreText
 import Foundation
+import NaturalLanguage
 import PDFKit
 import Testing
 @testable import PDFReflowLib
@@ -314,9 +315,11 @@ import Testing
 
 // The Warren report's handwritten exhibits, each read off its 180 DPI source raster: Oswald's
 // cursive notes to the Moscow embassy (289, 291), his block-capital diary (292), the draft speech
-// (301), the letter and preliminary drafts (339) and the Parkland admission notes (547, 551). Each
-// layer is a printed title and caption and a few symbol-broken tokens over the handwriting, and
-// passes or is only compared by the word tests. The controls are pages whose sparse layers are
+// (301), the letter and preliminary drafts (339) and the Parkland admission notes (547, 548, 550,
+// 551). Each layer is a printed title and caption and a few symbol-broken tokens over the
+// handwriting, and passes or is only compared by the word tests. Page 548's reading is taken for
+// Romanian until its accents are folded, and page 550's is too short to judge without its layer's
+// words beside it. The controls are pages whose sparse layers are
 // legible print: a floor plan (225), a labelled diagram (Warren 615) and a pie chart (Blue Book
 // 60). The layouts and the Vision readings are captures from the pinned sources; a reading is one
 // run of Vision, which is what the test replays (#173). See measurements/issue-216-handwriting-gap.
@@ -334,24 +337,32 @@ import Testing
         // The word tests alone: the ink test renders the page, and these pages' ink numbers are
         // in the record. None of them fails it.
         let finding = TextLayerPlausibility.judge(lines: content.lines, language: "en") { nil }
-        let sparse = TextLayerPlausibility.sparseEnglishWords(lines: content.lines, language: "en")
+        let sparse = TextLayerPlausibility.sparseLayerCounts(lines: content.lines, language: "en")
         #expect(sparse != nil, "\(name) is not sparse")
         let evidence = PageEvidence(requiresPageImage: false, hasText: true,
                                     characters: content.lines.map(\.text.count).reduce(0, +), replacementCharacters: 0,
                                     imageBackedText: true, damagedEncoding: false, implausibleLayer: finding,
-                                    drawnText: false, sparseLayerWords: sparse)
+                                    drawnText: false, sparseLayer: sparse)
         let plan = RecognitionPolicy.plan(evidence, policy: .automatic)
         #expect(plan.compares, "\(name): \(plan)")
         return RecognitionPolicy.resolve(plan, evidence: evidence, outcome: .read(capture.reading()),
                                          judge: .english(language: "en"))
     }
-    for page in [289, 291, 292, 301, 339, 547, 551] {
+    var findings: [Int: TextLayerPlausibility.Finding] = [:]
+    for page in [289, 291, 292, 301, 339, 547, 548, 550, 551] {
         let resolution = try resolve("warren-\(page)", sha256: warrenSHA256)
         #expect(resolution.disposition == .pageImage, "Warren \(page): \(resolution.disposition)")
-        #expect(resolution.warnings.contains { if case .implausibleRecognition = $0 { true } else { false } }, "Warren \(page)")
+        for warning in resolution.warnings {
+            if case .implausibleRecognition(let finding) = warning { findings[page] = finding }
+        }
+        #expect(findings[page] != nil, "Warren \(page)")
         #expect(resolution.warnings.contains { if case .implausibleTextLayer(_, .implausibleRecognition) = $0 { true } else { false } },
                 "Warren \(page)")
     }
+    // 548's reading is judged as English once the Romanian its accents suggest is set aside, and
+    // 550's beside its layer's own 6 English words of 14.
+    #expect(findings[548] == .fewEnglishWords(english: 12, judged: 52))
+    #expect(findings[550] == .fewEnglishWordsInEitherReading(english: 5, judged: 16, layerEnglish: 6, layerJudged: 14))
     // Page 292 is the one the misread test already flagged; it was kept over this reading before.
     if case .misreadWords? = TextLayerPlausibility.judge(lines: try SourceLayoutFixture.load("warren-292").content().lines,
                                                         language: "en", measureInk: { nil }) {} else {
@@ -369,6 +380,103 @@ import Testing
         }
         #expect(TextLayerPlausibility.sparseEnglishWords(lines: lines, language: "en") == nil, "\(name)")
     }
+}
+
+/// Recognition of handwriting scatters accented letters through its guesses, and a few letters
+/// peculiar to one language decide the language recognizer. A language is written in its words, so
+/// its claim must survive folding the accents (#216). The genuine samples are short sentences and
+/// titles in fourteen Latin-script languages, several of them written mostly in accented letters.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func aLanguageIsNamedByItsWordsNotByAFewAccentedLetters() throws {
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
+    func lines(_ text: String) -> [TextLine] {
+        text.split(separator: "\n").map { TextLine(text: String($0), rect: CGRect(x: 0, y: 0, width: 100, height: 10), fontSize: 10) }
+    }
+    // Warren 548's cursive admission note, as Vision read it: `unfunșia`, `nalună`, `crcliăe`.
+    let handwriting = try SourceRecognitionFixture.load("warren-548").reading().lines.map(\.text).joined(separator: "\n")
+    let recognizer = NLLanguageRecognizer()
+    recognizer.processString(handwriting)
+    let named = recognizer.languageHypotheses(withMaximum: 1).first
+    #expect(named?.key == .romanian && (named?.value ?? 0) >= EnglishText.minimumOtherLanguageConfidence,
+            "the reading this test was written against is no longer taken for Romanian: \(String(describing: named))")
+    #expect(!EnglishText.readsAsAnotherLanguage(handwriting))
+    #expect(TextLayerPlausibility.judgeRecognized(lines: lines(handwriting), language: "en") == .fewEnglishWords(english: 12, judged: 52))
+
+    for text in [
+        "Le rapport de la commission a été publié à Paris au mois de septembre. Les témoins ont décrit la voiture et la foule.",
+        "El informe de la comisión fue publicado en la Ciudad de México en septiembre. Los testigos describieron el automóvil.",
+        "O relatório da comissão foi publicado em Lisboa no mês de setembro. As testemunhas descreveram o automóvel.",
+        "Il rapporto della commissione è stato pubblicato a Roma nel mese di settembre. I testimoni hanno descritto l'automobile.",
+        "Der Bericht der Kommission wurde im September in Berlin veröffentlicht. Die Zeugen beschrieben das Auto und die Schüsse.",
+        "Raportul comisiei a fost publicat la București în luna septembrie. Martorii au descris mașina și împușcăturile.",
+        "Raport komisji został opublikowany w Warszawie we wrześniu. Świadkowie opisali samochód i strzały.",
+        "Zpráva komise byla zveřejněna v Praze v září. Svědci popsali auto, výstřely a dav, který čekal poblíž nádraží.",
+        "Komisyonun raporu eylül ayında Ankara'da yayımlandı. Tanıklar arabayı ve silah seslerini anlattı.",
+        "A bizottság jelentését szeptemberben tették közzé Budapesten. A tanúk leírták az autót és a lövéseket.",
+        "Báo cáo của ủy ban đã được công bố ở Hà Nội vào tháng chín. Các nhân chứng đã mô tả chiếc xe và tiếng súng.",
+        "Het rapport van de commissie werd in september in Amsterdam gepubliceerd. De getuigen beschreven de auto.",
+        "Kommissionens rapport publicerades i Stockholm i september. Vittnena beskrev bilen och skotten.",
+        "L'informe de la comissió es va publicar a Barcelona al setembre. Els testimonis van descriure el cotxe.",
+        "Raportul comisiei privind asasinarea președintelui",
+        "Báo cáo của ủy ban về vụ ám sát tổng thống",
+        "Rapport de la commission sur l'assassinat du président",
+        "ESTADOS UNIDOS MEXICANOS SECRETARÍA DE GOBERNACIÓN TARJETA DE TURISTA Nombre Nacionalidad Firma del portador",
+    ] {
+        #expect(EnglishText.readsAsAnotherLanguage(text), "\(text)")
+        #expect(TextLayerPlausibility.judgeRecognized(lines: lines(text), language: "en") == nil, "\(text)")
+    }
+}
+
+/// A recognition too short to judge alone is judged beside the sparse layer it verifies (#216):
+/// where each reads under half English, together they hold enough words to judge. Warren 550 is
+/// the reproducer; the controls are drawn from the recognitions of every sparse page in the English
+/// corpus (measurements/issue-216-handwriting-gap), where no other short reading reads under half.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func aShortReadingIsJudgedBesideTheLayerItVerifies() throws {
+    try #require(EnglishText.wordCounts("the") != nil, "no system English lexicon")
+    typealias Counts = TextLayerPlausibility.WordCounts
+    let layer = try #require(TextLayerPlausibility.sparseLayerCounts(
+        lines: try SourceLayoutFixture.load("warren-550").content().lines, language: "en"))
+    let reading = try SourceRecognitionFixture.load("warren-550").reading().lines
+    // Neither reading is long enough to judge alone.
+    #expect(TextLayerPlausibility.wordFinding(layer) == nil)
+    #expect(TextLayerPlausibility.judgeRecognized(lines: reading, language: "en") == nil)
+    #expect(TextLayerPlausibility.judgeRecognized(lines: reading, besideLayer: layer, language: "en")
+        == .fewEnglishWordsInEitherReading(english: 5, judged: 16, layerEnglish: 6, layerJudged: 14))
+    // Nothing to judge in another language, or in a declared language that is not English.
+    #expect(TextLayerPlausibility.judgeRecognized(lines: reading, besideLayer: layer, language: "fr") == nil)
+    let french = [TextLine(text: "Rapport de la commission sur l'assassinat du président, publié à Paris au mois de septembre",
+                           rect: CGRect(x: 0, y: 0, width: 100, height: 10), fontSize: 10)]
+    #expect(TextLayerPlausibility.judgeRecognized(lines: french, besideLayer: layer, language: "en") == nil)
+
+    let unread = Counts(english: 5, damaged: 11, neutral: 4, numberTokens: 1, tokens: 21)
+    let unreadLayer = Counts(english: 10, damaged: 8, neutral: 13, numberTokens: 1, tokens: 29, lonelyLetters: 4)
+    #expect(TextLayerPlausibility.shortReadingsFinding(unread, layer: unreadLayer)
+        == .fewEnglishWordsInEitherReading(english: 5, judged: 16, layerEnglish: 6, layerJudged: 14))
+    // A legible page's short labels read as English in at least one of the two readings: Warren
+    // 615's diagram (13 of 13 beside 9 of 9), Blue Book 312's (4 of 4 beside 1 of 5) and a short
+    // reading under half beside an English layer.
+    #expect(TextLayerPlausibility.shortReadingsFinding(Counts(english: 13, neutral: 3, tokens: 20),
+                                                      layer: Counts(english: 9, neutral: 5, tokens: 16)) == nil)
+    #expect(TextLayerPlausibility.shortReadingsFinding(Counts(english: 4, neutral: 1, tokens: 6),
+                                                      layer: Counts(english: 1, damaged: 4, tokens: 6)) == nil)
+    #expect(TextLayerPlausibility.shortReadingsFinding(unread, layer: Counts(english: 12, neutral: 4, tokens: 16)) == nil)
+    // Too few words between them, too few in either, a form of numbers, or a reading long enough
+    // to be judged alone (`judgeRecognized` has already judged it).
+    #expect(TextLayerPlausibility.shortReadingsFinding(Counts(english: 3, damaged: 5, tokens: 9),
+                                                      layer: Counts(english: 4, damaged: 5, tokens: 10)) == nil)
+    #expect(TextLayerPlausibility.shortReadingsFinding(unread, layer: Counts(english: 1, damaged: 3, tokens: 4)) == nil)
+    #expect(TextLayerPlausibility.shortReadingsFinding(Counts(english: 5, damaged: 11, numberTokens: 6, tokens: 26),
+                                                      layer: unreadLayer) == nil)
+    #expect(TextLayerPlausibility.shortReadingsFinding(Counts(english: 9, damaged: 16, tokens: 26), layer: unreadLayer) == nil)
+
+    let finding = TextLayerPlausibility.Finding.fewEnglishWordsInEitherReading(english: 5, judged: 16, layerEnglish: 6,
+                                                                              layerJudged: 14)
+    #expect(TextLayerPlausibility.recognitionMessage(finding)
+        == "OCR of this page image is too short a reading to judge alone, and like the page's existing text it does not read "
+        + "as English: only 5 of its 16 judged words are English, and 6 of the existing text's 14 (handwriting, or print "
+        + "recognition cannot read). The recognized text was discarded; the page is preserved as an image and does not reflow.")
+    #expect(TextLayerPlausibility.message(finding, outcome: .implausibleRecognition, referencesDisabled: false)
+        .hasPrefix("Existing text over a page-sized image does not read as English, and neither does OCR of the page: only 6 "
+            + "of its 14 judged words are English, and 5 of the OCR's 16."))
 }
 
 @Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/93")) func warningStatesWhatFailedAndWhatWasDone() {

@@ -70,7 +70,9 @@ runs.
 fewer than 32 English words, to verify it (#216): the layer is kept unless the recognition does
 not read as English either, in which case the page's writing is handwriting neither reading
 transcribes and the page is preserved as an image (`implausibleRecognition`,
-`implausibleTextLayer`). Verification is not counted as a recognized page.
+`implausibleTextLayer`). A recognition too short to judge alone is judged beside the layer: when
+both read under half English and together hold at least 20 judged words, the page is preserved
+as an image the same way. Verification is not counted as a recognized page.
 
 A client that wants the pre-#93 automatic behavior, recognition only of absent or damaged text,
 selects `.automaticKeepingImageBackedText`. When recognition fails or finds no text the page is
@@ -79,7 +81,9 @@ layer, native reading order, styles and headings on a replaced page come from th
 
 Fresh recognition is itself judged against the same English test under every policy (#7): a
 reading that still does not read as English (handwriting, or print recognition cannot read) is
-discarded as noise, reported `implausibleRecognition`, and the page is preserved as an image; a
+discarded as noise, reported `implausibleRecognition`, and the page is preserved as an image. A
+reading the language recognizer confidently names as another language, both as read and with its
+accents folded to base letters (#216), is text in that language and is not judged. A
 recognized line that does not read as English words is also excluded from heading detection
 ([behavior](behavior.md#every-recognition-is-judged-7)).
 

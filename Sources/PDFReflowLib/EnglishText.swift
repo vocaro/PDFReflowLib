@@ -238,8 +238,21 @@ enum EnglishText {
 
     /// Whether text that is not English is confidently another language: a page in French is text,
     /// not noise, even in a book declared English (the default). The system's language recognizer
-    /// must name one language other than English with at least `minimumOtherLanguageConfidence`.
+    /// must name one language other than English with at least `minimumOtherLanguageConfidence`,
+    /// and still do so with the text's diacritics folded to their base letters (#216).
+    ///
+    /// The fold is there because a recognizer reading handwriting it cannot read scatters accented
+    /// letters through its guesses, and a few letters peculiar to one language decide the language
+    /// recognizer. Warren 548's cursive admission note reads `unfunșia`, `nalună`, `crcliăe` and
+    /// `îum` (6 accented letters of 328), which the recognizer takes for Romanian at 0.998; folded,
+    /// the same reading is Romanian at only 0.523. A language is written in its words: French,
+    /// Romanian, Vietnamese, Czech or Hungarian prose, their short titles, and the Arabic, Chinese,
+    /// Hebrew, Japanese and Hindi corpus text, are all named alike before and after the fold.
     static func readsAsAnotherLanguage(_ text: String) -> Bool {
+        namesAnotherLanguage(text) && namesAnotherLanguage(text.folding(options: .diacriticInsensitive, locale: nil))
+    }
+
+    private static func namesAnotherLanguage(_ text: String) -> Bool {
         let recognizer = NLLanguageRecognizer()
         recognizer.processString(text)
         guard let (language, confidence) = recognizer.languageHypotheses(withMaximum: 1).first else { return false }

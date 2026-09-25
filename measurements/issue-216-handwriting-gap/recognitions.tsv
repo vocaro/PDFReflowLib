@@ -1,0 +1,334 @@
+case	page	plan	sparseLayerEnglishJudged	readingEnglishJudged	readingLanguage	readingLanguageFolded	judgment
+gpo-warren-1964	1	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	2	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	3	verify	0/0	0/0	-	-	read nothing
+gpo-warren-1964	4	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	5	verify	9/9	9/9	en 0.994	en 0.994	-
+gpo-warren-1964	6	verify	6/7	6/7	en 0.983	en 0.983	-
+gpo-warren-1964	7	verify	14/17	14/14	en 0.996	en 0.996	-
+gpo-warren-1964	8	verify	19/19	18/20	en 0.957	en 0.957	-
+gpo-warren-1964	10	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	12	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	20	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	62	verify	13/15	14/16	en 0.988	en 0.988	-
+gpo-warren-1964	63	verify	31/33	31/31	en 0.990	en 0.990	-
+gpo-warren-1964	64	verify	13/13	18/18	en 0.982	en 0.982	-
+gpo-warren-1964	65	verify	13/13	20/21	en 0.995	en 0.995	-
+gpo-warren-1964	66	verify	25/27	25/26	en 1.000	en 1.000	-
+gpo-warren-1964	72	verify	9/9	9/9	en 0.998	en 0.998	-
+gpo-warren-1964	75	verify	6/7	7/7	en 0.993	en 0.993	-
+gpo-warren-1964	94	verify	7/8	8/8	en 0.994	en 0.994	-
+gpo-warren-1964	95	verify	5/5	5/6	en 0.987	en 0.987	-
+gpo-warren-1964	97	verify	12/12	10/11	en 0.999	en 0.999	-
+gpo-warren-1964	101	verify	16/18	24/24	en 0.990	en 0.990	-
+gpo-warren-1964	102	verify	8/9	16/16	en 0.995	en 0.995	-
+gpo-warren-1964	103	replace	3/3	21/21	en 0.993	en 0.993	-
+gpo-warren-1964	106	verify	8/8	7/7	en 0.788	en 0.788	-
+gpo-warren-1964	108	verify	12/12	13/13	en 0.968	en 0.968	-
+gpo-warren-1964	110	verify	3/3	3/3	en 0.917	en 0.917	-
+gpo-warren-1964	111	verify	8/9	8/9	en 0.961	en 0.961	-
+gpo-warren-1964	127	verify	12/12	12/12	en 1.000	en 1.000	-
+gpo-warren-1964	129	verify	12/16	33/33	en 0.985	en 0.985	-
+gpo-warren-1964	130	verify	30/32	33/33	en 0.967	en 0.967	-
+gpo-warren-1964	131	verify	30/32	31/31	en 0.952	en 0.952	-
+gpo-warren-1964	132	verify	10/10	9/9	en 0.996	en 0.996	-
+gpo-warren-1964	141	verify	8/9	9/9	en 0.990	en 0.990	-
+gpo-warren-1964	142	verify	31/36	33/33	en 0.975	en 0.975	-
+gpo-warren-1964	154	verify	20/22	19/19	en 0.998	en 0.998	-
+gpo-warren-1964	160	verify	16/17	17/17	en 0.994	en 0.994	-
+gpo-warren-1964	166	verify	17/17	34/34	en 0.997	en 0.997	-
+gpo-warren-1964	170	verify	19/20	41/41	en 0.991	en 0.991	-
+gpo-warren-1964	176	verify	15/15	33/33	en 0.947	en 0.947	-
+gpo-warren-1964	192	verify	16/16	24/24	en 0.942	en 0.942	-
+gpo-warren-1964	198	verify	7/7	6/6	en 0.998	en 0.998	-
+gpo-warren-1964	201	compare	-	112/168	en 0.988	en 0.988	-
+gpo-warren-1964	205	verify	14/14	14/14	en 0.991	en 0.991	-
+gpo-warren-1964	225	verify	25/25	102/102	en 0.993	en 0.993	-
+gpo-warren-1964	231	verify	8/11	9/10	en 0.803	en 0.803	-
+gpo-warren-1964	233	verify	8/9	8/9	en 0.960	en 0.960	-
+gpo-warren-1964	235	verify	9/9	8/8	en 0.998	en 0.998	-
+gpo-warren-1964	239	verify	15/15	7/10	en 0.850	en 0.850	-
+gpo-warren-1964	242	verify	13/16	11/13	en 0.973	en 0.973	-
+gpo-warren-1964	245	verify	13/14	23/23	en 0.995	en 0.995	-
+gpo-warren-1964	246	verify	5/5	6/6	en 0.979	en 0.979	-
+gpo-warren-1964	248	verify	12/12	11/11	en 0.995	en 0.995	-
+gpo-warren-1964	251	verify	3/3	3/3	en 0.917	en 0.917	-
+gpo-warren-1964	260	verify	12/12	13/13	en 0.983	en 0.983	-
+gpo-warren-1964	289	verify	11/15	19/61	en 1.000	en 1.000	noise
+gpo-warren-1964	291	verify	12/18	16/44	en 0.998	en 0.998	noise
+gpo-warren-1964	292	compare	18/33	127/285	en 0.999	en 0.999	noise
+gpo-warren-1964	296	verify	15/16	15/15	en 1.000	en 1.000	-
+gpo-warren-1964	298	verify	25/25	24/24	en 0.987	en 0.987	-
+gpo-warren-1964	299	verify	28/28	18/18	en 0.988	en 0.988	-
+gpo-warren-1964	301	verify	22/23	68/215	en 1.000	en 1.000	noise
+gpo-warren-1964	328	verify	18/25	22/56	en 0.569	en 0.569	noise
+gpo-warren-1964	331	verify	30/35	32/45	en 0.998	en 0.998	-
+gpo-warren-1964	339	verify	11/16	40/165	en 0.946	en 0.946	noise
+gpo-warren-1964	367	compare	-	81/96	en 0.998	en 0.998	-
+gpo-warren-1964	384	verify	10/10	12/12	en 0.804	en 0.804	-
+gpo-warren-1964	424	verify	17/17	19/19	en 0.998	en 0.998	-
+gpo-warren-1964	498	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	501	compare	-	412/504	en 0.681	en 0.681	-
+gpo-warren-1964	502	compare	-	67/75	en 0.862	en 0.862	-
+gpo-warren-1964	510	verify	6/6	6/6	en 0.350	en 0.350	-
+gpo-warren-1964	528	verify	24/31	23/32	en 0.945	en 0.945	-
+gpo-warren-1964	544	compare	-	73/98	en 0.988	en 0.988	-
+gpo-warren-1964	545	compare	-	168/241	en 0.893	en 0.893	-
+gpo-warren-1964	546	compare	-	101/172	en 0.993	en 0.993	-
+gpo-warren-1964	547	verify	15/26	25/128	en 0.978	en 0.978	noise
+gpo-warren-1964	548	verify	7/17	12/52	ro 0.998	ro 0.523	noise
+gpo-warren-1964	549	replace	10/31	32/94	pl 0.892	en 0.972	noise
+gpo-warren-1964	550	verify	6/14	5/16	en 0.616	en 0.616	noise (short, beside the layer)
+gpo-warren-1964	551	verify	12/21	30/125	en 0.645	en 0.645	noise
+gpo-warren-1964	552	replace	6/30	17/98	fr 0.656	fr 0.656	noise
+gpo-warren-1964	553	replace	4/49	15/88	cs 0.829	cs 0.829	noise
+gpo-warren-1964	554	replace	13/31	15/33	en 0.803	en 0.803	noise
+gpo-warren-1964	555	replace	7/21	6/11	nl 0.494	nl 0.494	noise (short, mixed script)
+gpo-warren-1964	556	replace	13/33	20/67	sv 0.320	en 0.907	noise
+gpo-warren-1964	566	compare	-	69/81	en 0.997	en 0.997	-
+gpo-warren-1964	584	verify	8/8	8/8	en 0.987	en 0.987	-
+gpo-warren-1964	592	verify	12/14	20/20	en 0.999	en 0.999	-
+gpo-warren-1964	601	compare	-	183/235	en 0.989	en 0.989	-
+gpo-warren-1964	602	compare	-	107/110	en 0.997	en 0.997	-
+gpo-warren-1964	615	verify	9/9	13/13	en 0.976	en 0.976	-
+gpo-warren-1964	617	verify	7/7	6/6	en 0.928	en 0.928	-
+gpo-warren-1964	622	verify	17/17	16/16	en 0.994	en 0.994	-
+gpo-warren-1964	627	compare	-	212/262	en 0.744	en 0.744	-
+gpo-warren-1964	628	compare	-	215/309	en 1.000	en 1.000	-
+gpo-warren-1964	629	compare	-	255/322	en 0.999	en 0.999	-
+gpo-warren-1964	630	compare	-	200/268	en 0.915	en 0.915	-
+gpo-warren-1964	631	compare	-	180/231	en 1.000	en 1.000	-
+gpo-warren-1964	632	compare	-	233/302	en 0.881	en 0.881	-
+gpo-warren-1964	633	compare	-	235/294	en 1.000	en 1.000	-
+gpo-warren-1964	634	compare	-	209/308	en 0.998	en 0.998	-
+gpo-warren-1964	635	compare	-	216/271	en 0.988	en 0.988	-
+gpo-warren-1964	636	compare	-	220/285	en 1.000	en 1.000	-
+gpo-warren-1964	637	compare	-	214/278	en 0.992	en 0.992	-
+gpo-warren-1964	646	verify	21/23	18/21	vi 0.397	vi 0.397	-
+gpo-warren-1964	648	verify	19/19	0/0	vi 0.991	pl 0.974	another language
+gpo-warren-1964	649	compare	-	237/298	en 0.976	en 0.976	-
+gpo-warren-1964	655	compare	-	368/480	en 0.999	en 0.999	-
+gpo-warren-1964	656	compare	-	249/422	en 0.869	en 0.869	-
+gpo-warren-1964	657	compare	-	393/485	en 0.823	en 0.823	-
+gpo-warren-1964	659	compare	-	368/527	en 0.979	en 0.979	-
+gpo-warren-1964	661	compare	-	328/438	en 0.928	en 0.928	-
+gpo-warren-1964	662	compare	-	390/553	en 0.999	en 0.999	-
+gpo-warren-1964	663	compare	-	354/529	en 0.989	en 0.989	-
+gpo-warren-1964	664	compare	-	292/497	en 0.906	en 0.906	-
+gpo-warren-1964	913	verify	30/33	28/31	nb 0.229	nb 0.229	-
+gpo-warren-1964	915	verify	27/27	30/30	pl 0.726	pl 0.726	-
+gpo-warren-1964	917	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	918	replace	-	0/0	-	-	read nothing
+gpo-warren-1964	919	verify	3/4	0/0	en 0.131	en 0.131	-
+gpo-warren-1964	920	replace	-	0/0	-	-	read nothing
+cia-blue-book-14-1955	1	verify	28/33	33/39	en 0.999	en 0.999	-
+cia-blue-book-14-1955	27	verify	19/19	19/20	tr 0.096	tr 0.096	-
+cia-blue-book-14-1955	28	verify	19/19	26/26	en 0.971	en 0.971	-
+cia-blue-book-14-1955	29	verify	21/21	24/26	pl 1.000	pl 0.998	another language
+cia-blue-book-14-1955	30	verify	17/20	24/26	id 0.831	id 0.831	-
+cia-blue-book-14-1955	33	replace	-	20/20	en 0.951	en 0.951	-
+cia-blue-book-14-1955	50	verify	27/29	27/27	en 0.747	en 0.747	-
+cia-blue-book-14-1955	51	verify	27/29	27/27	en 0.805	en 0.805	-
+cia-blue-book-14-1955	52	verify	25/28	27/28	en 0.995	en 0.995	-
+cia-blue-book-14-1955	54	verify	27/28	26/26	en 0.995	en 0.995	-
+cia-blue-book-14-1955	55	verify	27/30	27/27	en 0.955	en 0.955	-
+cia-blue-book-14-1955	59	verify	24/24	46/48	en 0.971	en 0.971	-
+cia-blue-book-14-1955	60	verify	25/30	33/35	en 0.850	en 0.850	-
+cia-blue-book-14-1955	61	verify	16/16	33/34	en 0.837	en 0.837	-
+cia-blue-book-14-1955	62	verify	19/22	35/38	en 0.579	en 0.522	-
+cia-blue-book-14-1955	63	verify	17/19	33/36	en 0.897	en 0.897	-
+cia-blue-book-14-1955	64	verify	21/21	29/31	en 0.986	en 0.986	-
+cia-blue-book-14-1955	66	verify	6/6	10/10	en 0.925	en 0.925	-
+cia-blue-book-14-1955	98	verify	2/2	2/2	en 0.724	en 0.724	-
+cia-blue-book-14-1955	100	verify	4/4	3/3	en 0.754	en 0.754	-
+cia-blue-book-14-1955	105	verify	11/11	11/11	en 0.999	en 0.999	-
+cia-blue-book-14-1955	117	replace	-	13/34	en 0.860	en 0.860	-
+cia-blue-book-14-1955	122	replace	-	15/76	pt 0.416	fr 0.752	-
+cia-blue-book-14-1955	141	replace	-	186/234	en 0.955	en 0.955	-
+cia-blue-book-14-1955	142	compare	15/30	148/179	en 0.810	en 0.810	-
+cia-blue-book-14-1955	143	replace	-	198/263	en 0.540	en 0.540	-
+cia-blue-book-14-1955	145	replace	-	227/273	en 0.753	en 0.753	-
+cia-blue-book-14-1955	146	replace	-	204/232	en 0.977	en 0.977	-
+cia-blue-book-14-1955	147	replace	-	201/254	en 0.874	en 0.874	-
+cia-blue-book-14-1955	148	replace	9/39	106/121	en 0.951	en 0.951	-
+cia-blue-book-14-1955	150	replace	-	201/236	en 0.904	en 0.904	-
+cia-blue-book-14-1955	151	replace	-	30/93	en 0.542	en 0.542	-
+cia-blue-book-14-1955	157	replace	-	190/225	en 0.992	en 0.992	-
+cia-blue-book-14-1955	158	replace	-	20/53	en 0.996	en 0.996	-
+cia-blue-book-14-1955	159	replace	-	187/212	en 0.535	en 0.535	-
+cia-blue-book-14-1955	161	replace	-	19/41	en 0.861	en 0.861	-
+cia-blue-book-14-1955	168	replace	-	183/224	en 0.697	en 0.697	-
+cia-blue-book-14-1955	171	replace	-	180/215	en 0.840	en 0.840	-
+cia-blue-book-14-1955	172	replace	-	188/229	en 0.895	en 0.895	-
+cia-blue-book-14-1955	175	replace	-	122/163	en 0.998	en 0.998	-
+cia-blue-book-14-1955	177	replace	-	124/173	en 0.941	en 0.941	-
+cia-blue-book-14-1955	179	replace	-	141/171	en 0.775	en 0.775	-
+cia-blue-book-14-1955	184	compare	15/25	118/154	en 0.801	en 0.801	-
+cia-blue-book-14-1955	185	replace	-	144/190	en 0.549	en 0.549	-
+cia-blue-book-14-1955	188	replace	-	28/73	en 0.920	en 0.920	-
+cia-blue-book-14-1955	189	compare	16/24	9/53	da 0.319	da 0.319	-
+cia-blue-book-14-1955	190	replace	13/19	124/158	en 0.927	en 0.927	-
+cia-blue-book-14-1955	191	replace	-	124/169	en 0.994	en 0.994	-
+cia-blue-book-14-1955	192	replace	-	22/86	en 0.942	en 0.942	-
+cia-blue-book-14-1955	194	replace	-	120/157	en 0.908	en 0.908	-
+cia-blue-book-14-1955	196	replace	-	13/65	pl 0.547	pl 0.547	-
+cia-blue-book-14-1955	198	replace	-	165/209	en 0.686	en 0.686	-
+cia-blue-book-14-1955	200	replace	-	196/230	en 0.906	en 0.906	-
+cia-blue-book-14-1955	205	replace	-	92/111	en 0.493	en 0.493	-
+cia-blue-book-14-1955	206	replace	-	195/236	en 0.669	en 0.669	-
+cia-blue-book-14-1955	209	replace	-	15/51	en 0.439	en 0.439	-
+cia-blue-book-14-1955	219	replace	-	160/178	en 0.903	en 0.903	-
+cia-blue-book-14-1955	221	replace	-	146/175	en 0.957	en 0.957	-
+cia-blue-book-14-1955	226	replace	-	106/129	en 0.981	en 0.981	-
+cia-blue-book-14-1955	230	replace	-	207/265	en 0.880	en 0.880	-
+cia-blue-book-14-1955	232	replace	-	202/246	en 0.604	en 0.604	-
+cia-blue-book-14-1955	238	replace	-	196/253	en 0.876	en 0.876	-
+cia-blue-book-14-1955	239	replace	-	186/233	en 0.992	en 0.992	-
+cia-blue-book-14-1955	241	replace	-	226/262	en 0.907	en 0.907	-
+cia-blue-book-14-1955	242	replace	-	214/264	en 0.711	en 0.711	-
+cia-blue-book-14-1955	243	replace	-	99/133	en 0.974	en 0.974	-
+cia-blue-book-14-1955	245	replace	-	204/240	en 0.984	en 0.984	-
+cia-blue-book-14-1955	246	replace	-	102/116	en 0.817	en 0.817	-
+cia-blue-book-14-1955	248	replace	-	214/254	en 0.822	en 0.822	-
+cia-blue-book-14-1955	249	replace	-	19/52	es 0.451	es 0.451	-
+cia-blue-book-14-1955	252	compare	-	171/208	en 0.305	en 0.473	-
+cia-blue-book-14-1955	253	replace	-	16/52	vi 0.264	vi 0.264	-
+cia-blue-book-14-1955	255	compare	-	30/81	en 0.465	en 0.465	-
+cia-blue-book-14-1955	256	compare	19/27	22/80	it 0.272	it 0.272	-
+cia-blue-book-14-1955	257	replace	-	174/209	en 0.956	en 0.956	-
+cia-blue-book-14-1955	258	compare	-	172/200	en 0.912	en 0.912	-
+cia-blue-book-14-1955	259	replace	-	164/187	en 0.788	en 0.788	-
+cia-blue-book-14-1955	263	verify	5/5	5/5	en 0.975	en 0.975	-
+cia-blue-book-14-1955	265	verify	5/5	6/6	en 0.987	en 0.987	-
+cia-blue-book-14-1955	271	verify	5/5	5/5	en 0.963	en 0.963	-
+cia-blue-book-14-1955	279	verify	20/20	20/21	en 0.999	en 0.999	-
+cia-blue-book-14-1955	280	verify	7/7	7/8	en 0.992	en 0.992	-
+cia-blue-book-14-1955	290	verify	0/0	0/0	-	-	-
+cia-blue-book-14-1955	291	verify	6/6	6/6	en 0.988	en 0.988	-
+cia-blue-book-14-1955	297	verify	4/4	0/1	es 0.382	es 0.382	-
+cia-blue-book-14-1955	300	verify	6/6	5/6	en 0.948	en 0.948	-
+cia-blue-book-14-1955	307	verify	4/4	4/4	en 0.980	en 0.980	-
+cia-blue-book-14-1955	310	verify	6/6	0/2	es 0.570	es 0.570	-
+cia-blue-book-14-1955	312	verify	1/5	4/4	en 0.985	en 0.985	-
+noaa-nca5-2023	1	verify	8/8	8/8	en 0.915	en 0.915	-
+noaa-nca5-2023	3	verify	8/9	12/12	en 0.910	en 0.910	-
+noaa-nca5-2023	33	verify	11/11	11/11	en 0.983	en 0.983	-
+noaa-nca5-2023	80	verify	7/7	7/7	en 0.950	en 0.950	-
+noaa-nca5-2023	139	verify	8/8	224/298	en 0.968	en 0.968	-
+noaa-nca5-2023	210	verify	6/6	6/6	en 0.870	en 0.870	-
+noaa-nca5-2023	256	verify	10/10	11/11	en 0.959	en 0.959	-
+noaa-nca5-2023	300	verify	11/11	11/11	en 0.995	en 0.995	-
+noaa-nca5-2023	342	verify	6/6	6/6	en 0.962	en 0.962	-
+noaa-nca5-2023	384	verify	10/10	10/10	en 0.902	en 0.902	-
+noaa-nca5-2023	444	verify	7/7	7/7	en 0.960	en 0.960	-
+noaa-nca5-2023	487	verify	10/10	10/10	en 0.945	en 0.945	-
+noaa-nca5-2023	526	verify	11/11	11/11	en 0.988	en 0.988	-
+noaa-nca5-2023	567	verify	11/11	11/11	en 0.979	en 0.979	-
+noaa-nca5-2023	609	verify	6/6	6/6	en 0.918	en 0.918	-
+noaa-nca5-2023	642	verify	7/7	7/7	en 0.962	en 0.962	-
+noaa-nca5-2023	691	verify	7/7	7/7	en 0.911	en 0.911	-
+noaa-nca5-2023	739	verify	9/9	9/9	en 0.996	en 0.996	-
+noaa-nca5-2023	779	verify	11/11	44/57	en 0.976	en 0.976	-
+noaa-nca5-2023	815	verify	12/12	12/12	en 0.994	en 0.994	-
+noaa-nca5-2023	855	verify	6/6	6/6	en 0.871	en 0.871	-
+noaa-nca5-2023	893	verify	9/9	9/9	en 0.942	en 0.942	-
+noaa-nca5-2023	934	verify	6/6	6/6	en 0.881	en 0.881	-
+noaa-nca5-2023	985	verify	6/6	6/6	en 0.915	en 0.915	-
+noaa-nca5-2023	1050	verify	6/6	9/10	en 0.985	en 0.985	-
+noaa-nca5-2023	1107	verify	5/5	5/5	en 0.974	en 0.974	-
+noaa-nca5-2023	1165	verify	8/8	8/8	en 0.960	en 0.960	-
+noaa-nca5-2023	1223	verify	8/8	9/9	en 0.924	en 0.924	-
+noaa-nca5-2023	1285	verify	6/6	6/6	en 0.952	en 0.952	-
+noaa-nca5-2023	1354	verify	6/6	6/6	en 0.940	en 0.940	-
+noaa-nca5-2023	1420	verify	5/5	5/5	en 0.831	en 0.831	-
+noaa-nca5-2023	1485	verify	10/11	10/10	en 0.980	en 0.980	-
+noaa-nca5-2023	1560	verify	6/6	6/6	en 0.866	en 0.866	-
+noaa-nca5-2023	1619	verify	6/6	6/6	en 0.931	en 0.931	-
+noaa-nca5-2023	1689	verify	8/8	8/8	en 0.979	en 0.979	-
+noaa-nca5-2023	1699	verify	8/8	8/8	en 0.950	en 0.950	-
+noaa-nca5-2023	1710	verify	9/9	9/9	en 0.987	en 0.987	-
+noaa-nca5-2023	1720	verify	10/10	10/10	en 0.996	en 0.996	-
+noaa-nca5-2023	1728	verify	8/8	8/8	en 0.910	en 0.910	-
+noaa-nca5-2023	1737	verify	8/8	8/8	en 0.964	en 0.964	-
+noaa-nca5-2023	1745	verify	7/7	7/7	en 0.946	en 0.946	-
+noaa-nca5-2023	1750	verify	8/8	8/8	en 0.952	en 0.952	-
+noaa-nca5-2023	1760	verify	6/6	6/6	en 0.986	en 0.986	-
+noaa-nca5-2023	1798	verify	8/8	8/8	en 0.986	en 0.986	-
+cdc-zombie-pandemic-2011	1	verify	12/12	15/15	en 0.986	en 0.986	-
+cdc-zombie-pandemic-2011	2	replace	-	0/0	-	-	read nothing
+cdc-zombie-pandemic-2011	3	replace	-	54/54	en 0.996	en 0.996	-
+cdc-zombie-pandemic-2011	4	compare	23/39	37/37	en 0.999	en 0.999	-
+cdc-zombie-pandemic-2011	5	replace	21/75	79/80	en 1.000	en 1.000	-
+cdc-zombie-pandemic-2011	6	replace	11/87	49/50	en 0.989	en 0.989	-
+cdc-zombie-pandemic-2011	7	replace	23/48	120/144	en 0.998	en 0.998	-
+cdc-zombie-pandemic-2011	8	replace	28/75	46/48	en 0.999	en 0.999	-
+cdc-zombie-pandemic-2011	9	replace	24/52	48/48	en 0.993	en 0.993	-
+cdc-zombie-pandemic-2011	10	replace	17/83	42/44	en 0.987	en 0.987	-
+cdc-zombie-pandemic-2011	11	replace	-	69/69	en 0.940	en 0.940	-
+cdc-zombie-pandemic-2011	12	replace	-	174/174	en 0.998	en 0.998	-
+cdc-zombie-pandemic-2011	13	replace	-	24/25	en 0.998	en 0.998	-
+cdc-zombie-pandemic-2011	14	replace	-	66/66	en 0.995	en 0.995	-
+cdc-zombie-pandemic-2011	15	replace	-	4/4	en 0.972	en 0.972	-
+cdc-zombie-pandemic-2011	16	replace	-	2/3	sk 0.366	es 0.260	-
+cdc-zombie-pandemic-2011	17	replace	-	12/12	en 0.975	en 0.975	-
+cdc-zombie-pandemic-2011	18	replace	28/60	59/59	en 0.997	en 0.997	-
+cdc-zombie-pandemic-2011	19	replace	30/66	43/43	en 0.989	en 0.989	-
+cdc-zombie-pandemic-2011	20	replace	0/3	24/24	en 0.997	en 0.997	-
+cdc-zombie-pandemic-2011	21	replace	-	137/137	en 0.999	en 0.999	-
+cdc-zombie-pandemic-2011	22	compare	-	74/74	en 0.998	en 0.998	-
+cdc-zombie-pandemic-2011	23	replace	-	134/134	en 1.000	en 1.000	-
+cdc-zombie-pandemic-2011	24	replace	-	105/105	en 0.999	en 0.999	-
+cdc-zombie-pandemic-2011	25	replace	11/27	43/43	en 0.998	en 0.998	-
+cdc-zombie-pandemic-2011	26	replace	-	45/45	en 0.999	en 0.999	-
+cdc-zombie-pandemic-2011	27	replace	-	103/103	en 1.000	en 1.000	-
+cdc-zombie-pandemic-2011	28	replace	14/88	56/56	en 0.999	en 0.999	-
+cdc-zombie-pandemic-2011	29	replace	20/54	72/74	en 0.998	en 0.998	-
+cdc-zombie-pandemic-2011	30	replace	-	68/69	en 0.984	en 0.984	-
+cdc-zombie-pandemic-2011	31	replace	0/10	92/92	en 0.999	en 0.999	-
+cdc-zombie-pandemic-2011	32	replace	11/28	57/57	en 0.997	en 0.997	-
+cdc-zombie-pandemic-2011	33	replace	-	79/80	en 0.995	en 0.995	-
+cdc-zombie-pandemic-2011	34	replace	24/69	99/99	en 1.000	en 1.000	-
+cdc-zombie-pandemic-2011	35	verify	21/21	23/23	en 0.999	en 0.999	-
+cdc-zombie-pandemic-2011	36	replace	-	2/2	en 0.876	en 0.876	-
+cdc-zombie-pandemic-2011	37	replace	-	55/55	en 0.996	en 0.996	-
+cdc-zombie-pandemic-2011	38	replace	-	0/0	-	-	read nothing
+cdc-zombie-pandemic-2011	40	replace	-	0/0	-	-	read nothing
+cdc-zombie-pandemic-2011	41	replace	-	0/0	-	-	read nothing
+cdc-zombie-pandemic-2011	42	verify	0/0	0/0	hu 0.290	hu 0.290	-
+gpo-our-flag-2003	1	replace	-	0/0	tr 0.972	es 0.381	-
+gpo-our-flag-2003	2	verify	30/30	37/38	en 0.996	en 0.996	-
+gpo-our-flag-2003	55	replace	-	0/0	-	-	read nothing
+dga-2025-2030	1	verify	11/11	14/14	en 0.991	en 0.991	-
+usda-ars-agresearch-2012-11	1	verify	22/22	24/24	en 0.986	en 0.986	-
+gpo-911-2004	2	replace	-	0/0	-	-	read nothing
+gpo-911-2004	4	replace	-	0/0	-	-	read nothing
+gpo-911-2004	8	replace	-	0/0	-	-	read nothing
+gpo-911-2004	10	replace	-	0/0	-	-	read nothing
+gpo-911-2004	12	replace	-	0/0	-	-	read nothing
+gpo-911-2004	162	replace	-	0/0	-	-	read nothing
+gpo-911-2004	342	replace	-	0/0	-	-	read nothing
+gpo-911-2004	466	replace	-	0/0	-	-	read nothing
+fed-explained-2021	2	replace	-	0/0	-	-	read nothing
+fed-explained-2021	7	replace	-	0/0	da 0.484	da 0.484	-
+fed-explained-2021	23	replace	-	0/0	-	-	read nothing
+fed-explained-2021	49	replace	-	0/0	-	-	read nothing
+fed-explained-2021	65	replace	-	0/0	-	-	read nothing
+fed-explained-2021	87	replace	-	0/0	-	-	read nothing
+fed-explained-2021	134	replace	-	0/0	-	-	read nothing
+census-rrs2002-01	4	replace	-	365/406	en 0.997	en 0.997	-
+census-rrs2002-01	5	replace	-	329/347	en 0.999	en 0.999	-
+census-rrs2002-01	6	replace	-	373/438	en 0.995	en 0.995	-
+census-rrs2002-01	7	replace	-	432/457	en 1.000	en 1.000	-
+census-rrs2002-01	8	replace	-	386/396	en 1.000	en 1.000	-
+census-rrs2002-01	9	replace	-	361/372	en 1.000	en 1.000	-
+census-rrs2002-01	16	replace	-	277/293	fr 0.660	fr 0.660	-
+census-rrs2002-01	18	replace	-	256/290	en 0.984	en 0.984	-
+census-rrs2002-01	19	replace	-	178/190	en 1.000	en 1.000	-
+census-rrs2002-01	20	replace	-	41/47	en 0.996	en 0.996	-
+ntrs-20180003024-earthdata-slides-2018	5	replace (drawn text)	0/0	11/11	en 0.989	en 0.989	-
+gpo-warren-1964-suspect-text-excerpt	1	replace	10/31	32/94	pl 0.892	en 0.972	noise
+gpo-warren-1964-suspect-text-excerpt	2	replace	4/49	15/88	cs 0.829	cs 0.829	noise
+gpo-warren-1964-suspect-text-excerpt	3	replace	13/33	20/67	sv 0.320	en 0.907	noise
+gpo-warren-1964-suspect-text-excerpt	4	compare	-	220/285	en 1.000	en 1.000	-
+gpo-warren-1964-suspect-text-excerpt	5	compare	-	292/497	en 0.906	en 0.906	-
+faa-phak-8083-25c	1	verify	2/2	21/26	en 0.961	en 0.961	-

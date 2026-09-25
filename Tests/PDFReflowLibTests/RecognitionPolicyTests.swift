@@ -8,11 +8,11 @@ import Testing
 private func evidence(requiresPageImage: Bool = false, hasText: Bool = true, characters: Int = 400,
                       replacements: Int = 0, imageBacked: Bool = false, damagedEncoding: Bool = false,
                       finding: TextLayerPlausibility.Finding? = nil, drawnText: Bool = false,
-                      sparseWords: Int? = nil) -> PageEvidence {
+                      sparseWords: Int? = nil, sparseLayer: TextLayerPlausibility.WordCounts? = nil) -> PageEvidence {
     PageEvidence(requiresPageImage: requiresPageImage, hasText: hasText, characters: characters,
                  replacementCharacters: replacements, imageBackedText: imageBacked,
                  damagedEncoding: damagedEncoding, implausibleLayer: finding, drawnText: drawnText,
-                 sparseLayerWords: sparseWords)
+                 sparseLayer: sparseLayer ?? sparseWords.map { TextLayerPlausibility.WordCounts(english: $0) })
 }
 
 private func line(_ text: String) -> TextLine {
@@ -449,4 +449,39 @@ func theIncompleteRecognitionMessageStatesTheShareTheRetryAndWhereToCompare() {
         + "and the rest of the page's writing does not read as English when recognized (handwriting, or print recognition "
         + "cannot read). The existing text was discarded, but OCR of the page image does not read as English either, so the "
         + "page is preserved as an image and does not reflow.")
+}
+
+/// A verification whose reading is too short to judge alone asks the judge again, beside the sparse
+/// layer's own word counts (#216); nothing else does.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/216")) func onlyAVerificationJudgesAShortReadingBesideItsLayer() {
+    let layerCounts = TextLayerPlausibility.WordCounts(english: 10, damaged: 8, neutral: 13, numberTokens: 1, tokens: 29,
+                                                      lonelyLetters: 4)
+    let beside = TextLayerPlausibility.Finding.fewEnglishWordsInEitherReading(english: 5, judged: 16, layerEnglish: 6,
+                                                                             layerJudged: 14)
+    // Reads nothing into a reading alone, and finds noise in any reading beside a layer.
+    let shortNoise = RecognitionJudge(finding: { _ in nil }, readsBetter: { _, _, _ in false },
+                                      findingBesideLayer: { _, layer in layer == layerCounts ? beside : nil })
+    let sparse = evidence(imageBacked: true, sparseLayer: layerCounts)
+    let verify = RecognitionPlan.recognize(.verify(englishWords: 10), keepCropsIfUnread: false)
+    #expect(RecognitionPolicy.plan(sparse, policy: .automatic) == verify)
+    let unread = RecognitionPolicy.resolve(verify, evidence: sparse, outcome: .read(reading), judge: shortNoise)
+    #expect(unread == .init(disposition: .pageImage,
+                            warnings: [.implausibleRecognition(beside),
+                                       .implausibleTextLayer(.unreadWriting(englishWords: 10), .implausibleRecognition)]))
+    // A reading of nothing, or a failed one, still leaves the layer standing.
+    #expect(RecognitionPolicy.resolve(verify, evidence: sparse, outcome: .read(nothing), judge: shortNoise)
+        == .init(disposition: .keptLayer, warnings: [.unverifiedTextLayer]))
+    #expect(RecognitionPolicy.resolve(verify, evidence: sparse, outcome: .failed, judge: shortNoise).disposition == .keptLayer)
+    // A judge without the test keeps the layer, as every verification did before it.
+    #expect(RecognitionPolicy.resolve(verify, evidence: sparse, outcome: .read(reading), judge: trusting)
+        == .init(disposition: .keptLayer, warnings: [.unverifiedTextLayer]))
+    // A replaced or compared layer is not verified, so its reading is never judged beside it.
+    let failing = evidence(imageBacked: true, finding: fewEnglish, sparseLayer: layerCounts)
+    let replace = RecognitionPlan.recognize(.replace, keepCropsIfUnread: false)
+    #expect(RecognitionPolicy.resolve(replace, evidence: failing, outcome: .read(reading), judge: shortNoise).disposition
+        == .replaced(reading))
+    let misreading = evidence(imageBacked: true, finding: misread, sparseLayer: layerCounts)
+    let compare = RecognitionPlan.recognize(.compare(misread: 12, words: 100), keepCropsIfUnread: false)
+    #expect(RecognitionPolicy.resolve(compare, evidence: misreading, outcome: .read(reading), judge: shortNoise).disposition
+        == .keptLayer)
 }

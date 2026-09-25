@@ -78,6 +78,8 @@ ALLOWED = {
     235: ('historical', 'the painted-underline rule, on main and named by its issue'),
     246: ('historical', "the page-furniture rule for a footer band, on main and named by its issue"),
     299: ('historical', 'the page-foot footnote ownership, on main and named by its issue'),
+    216: ('historical', 'sparse-layer verification against recognition, the accent-folded language test and gray '
+          'page images, on main and named by their issue; the Blue Book passage cites the catalogue it kept'),
     59: ('historical', 'the released half of a word a crop cut off, on main and named by its issue'),
     183: ('historical', 'the list-marker size rule, on main and named by its issue; its mirror is #254'),
     245: ('historical', 'the crop rule it established, on main and named by its issue'),

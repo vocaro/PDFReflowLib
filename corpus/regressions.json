@@ -3610,7 +3610,7 @@
     {
       "id": "gpo-warren-1964",
       "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
-      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242 at the margin that ruling accepts, measured on 8faeaab at library defaults: 920 pages, 934 images all written as JPEG, 536,305,614 entry bytes, 565,298 bytes (0.105%) inside the 512 MiB budget, 14 pages recognized (measurements/corpus-lane-admissions/record.md). Source pages 1, 7, 21, 30, 50, 100, 890, 910 and 920 rendered with Poppler and read against the converted output and against the inherited text layer (pdftotext). Every pinned line is one the inherited layer already holds and the source prints unambiguously, on a page whose layer the plausibility rules keep, so no check depends on what Vision reads: Vision's reading of a page differs between compiled model sets and between runs (#173, #284), the lesson of #269 and #281 on the suspect-text excerpt. Pages 1 and 920 are the textless cloth covers: each keeps a page image, and whether recognition reads nothing or noise on them is not pinned. Page 7 protects the title page's seven printed lines in order; the misread call-number scrawl beneath them is not pinned. Page 21 protects the contents entries in the order the page prints them, skipping the entries the layer misreads (Luncheon, Return). Page 30 protects the five paragraphs the page prints, each inside its own paragraph, and their order. Page 50 pins the unverifiedTextLayer notice the review asked for and two sentences the layer holds correctly; the layer's h/b confusions ('bis known contacts witb tbe') are inherited and pinned neither way. Page 100 protects three sentences of the running prose. Page 890 protects that the left column of notes completes through 476 before 477 opens the right column, and page 910 that the index's left column completes through Fair Play for Cuba Committee before Federal Bureau of Investigation opens the right; the review found both interleaved and both read in column order now. Not pinned: the layer's own OCR errors, the preformatted setting of the notes and of the numbered paragraphs, and any claim about pages not listed. Issue #295 adds the nine source word boundaries on pages 21, 30, 50 and 100: the invisible Courier layer positions words separately, but PDFKit fuses some neighboring boxes. The invisible-layer reader restores those measured gaps, with complete-line ownership, while preserving the layer's own misread characters. Source shows and PDFKit geometry are pinned in the Warren spacing/layout fixtures; measurements/invisible-word-spaces/record.md records the full conversion.",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242 at the margin that ruling accepts, measured on 8faeaab at library defaults: 920 pages, 934 images all written as JPEG, 536,305,614 entry bytes, 565,298 bytes (0.105%) inside the 512 MiB budget, 14 pages recognized (measurements/corpus-lane-admissions/record.md). Source pages 1, 7, 21, 30, 50, 100, 890, 910 and 920 rendered with Poppler and read against the converted output and against the inherited text layer (pdftotext). Every pinned line is one the inherited layer already holds and the source prints unambiguously, on a page whose layer the plausibility rules keep, so no check but the two on pages 548 and 550 (below) depends on what Vision reads: Vision's reading of a page differs between compiled model sets and between runs (#173, #284), the lesson of #269 and #281 on the suspect-text excerpt. Pages 1 and 920 are the textless cloth covers: each keeps a page image, and whether recognition reads nothing or noise on them is not pinned. Page 7 protects the title page's seven printed lines in order; the misread call-number scrawl beneath them is not pinned. Page 21 protects the contents entries in the order the page prints them, skipping the entries the layer misreads (Luncheon, Return). Page 30 protects the five paragraphs the page prints, each inside its own paragraph, and their order. Page 50 pins the unverifiedTextLayer notice the review asked for and two sentences the layer holds correctly; the layer's h/b confusions ('bis known contacts witb tbe') are inherited and pinned neither way. Page 100 protects three sentences of the running prose. Page 890 protects that the left column of notes completes through 476 before 477 opens the right column, and page 910 that the index's left column completes through Fair Play for Cuba Committee before Federal Bureau of Investigation opens the right; the review found both interleaved and both read in column order now. Not pinned: the layer's own OCR errors, the preformatted setting of the notes and of the numbered paragraphs, and any claim about pages not listed. Issue #295 adds the nine source word boundaries on pages 21, 30, 50 and 100: the invisible Courier layer positions words separately, but PDFKit fuses some neighboring boxes. The invisible-layer reader restores those measured gaps, with complete-line ownership, while preserving the layer's own misread characters. Source shows and PDFKit geometry are pinned in the Warren spacing/layout fixtures; measurements/invisible-word-spaces/record.md records the full conversion. Issue #216 adds pages 548 and 550, cursive Parkland admission notes under a printed title and caption, as their rendered source pages show. Their inherited layers pass the word tests, so under the automatic policy each is verified against a recognition of the page; the reading does not read as English and the page is preserved as an image. These checks pin that disposition (implausibleRecognition reported, no unverifiedTextLayer, the page image) and not what Vision read, and they depend on recognition running at all: a failed recognition keeps the layer. The margins are wide. Page 548's reading holds 12 English of 52 judged words and is taken for Romanian at 0.998 only because of six accented letters, at 0.523 with them folded; page 550's holds 5 of 16 beside the layer's 6 of 14. The captured readings are replayed in handwrittenPagesUnderSparseLayersBecomePageImages, and measurements/issue-216-handwriting-gap/record.md has the survey.",
       "pages": [
         {
           "page": 1,
@@ -3724,6 +3724,26 @@
           "minimumImages": 1,
           "text": [
             "Persons who were not railroad employees"
+          ]
+        },
+        {
+          "page": 548,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "implausibleRecognition"
+          ],
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
+          ]
+        },
+        {
+          "page": 550,
+          "minimumImages": 1,
+          "warningCodesAnyOf": [
+            "implausibleRecognition"
+          ],
+          "absentWarningCodes": [
+            "unverifiedTextLayer"
           ]
         },
         {

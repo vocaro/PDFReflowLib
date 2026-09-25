@@ -823,16 +823,43 @@ with the "does not read as English either" tail). A reading of nothing, or a fai
 test sent to a comparison also makes the page an image instead of keeping the layer. A layer of 32
 or more English words, such as any typescript page, is never verified. Verification adds one
 recognition for each sparse image-backed page that no test already sends to recognition: 74 of
-Warren's 920 pages and 32 of Blue Book's 312. Evidence and the pages it does not catch:
-[issue-216-handwriting-gap](../measurements/issue-216-handwriting-gap/record.md).
+Warren's 920 pages and 32 of Blue Book's 312.
+
+A verifying recognition too short for the word test (5 to 19 judged words, the range the short
+mixed-script test of Warren 555 also reads, `shortRecognitionFinding`) is judged once more,
+beside the layer it verifies (`judgeRecognized(lines:besideLayer:language:)`): when the layer
+also holds 5 to 19 judged words, neither reading is a table or form (a fifth or more of its
+tokens numbers), each reads under half English, and the two together hold at least 20 judged
+words, the two readings agree that the page's writing is not English, and the recognition is
+noise. Lone letters are set aside in both, as the word test sets them aside (#275). Only the
+count of judged words is pooled: each reading's share is judged on its own, so printed words both
+readings hold raise both shares. The page becomes an image as above, and
+`implausibleRecognition` reads "OCR of this page image is too short a reading to judge alone, and
+like the page's existing text it does not read as English: only *e* of its *j* judged words are
+English, and *e′* of the existing text's *j′* (handwriting, or print recognition cannot read). The
+recognized text was discarded; the page is preserved as an image and does not reflow." Warren
+550's cursive admission note is the case (its reading 5 of 16, its layer 6 of 14); among the
+recognitions of every sparse page in the English corpus, no other short reading reads under half
+English. Only verification asks it: a replaced or compared layer has already been judged on its
+own.
+
+Evidence: [issue-216-handwriting-gap](../measurements/issue-216-handwriting-gap/record.md).
 
 ### Every recognition is judged (#7)
 
 `judgeRecognized` applies the English-share test alone to every recognition in an English book,
 under every policy: a reading under half English that the language recognizer does not name as
 another language with at least 0.95 confidence is noise (handwriting, or print recognition cannot
-read). The recognized text is discarded, the page reports `implausibleRecognition` ("OCR of this
-page image does not read as English: only *e* of *j* words are English words (handwriting, or
+read). The recognizer must name that language twice, on the reading and on the reading with its
+diacritics folded to their base letters (#216): recognition of handwriting scatters accented
+letters through its guesses, and a few letters peculiar to one language decide the recognizer.
+Warren 548's cursive note reads `unfunșia`, `nalună` and `crcliăe`, six accented letters of 328,
+and is named Romanian at 0.998, but at 0.523 once folded, so it is judged, and 12 of its 52 judged
+words are English. A language is written in its words: prose and titles in fourteen Latin-script
+languages (Vietnamese, Czech and Hungarian among them) and the Arabic, Chinese, Hebrew, Japanese
+and Hindi corpus text are named alike before and after the fold, and of the 333 recognitions made
+under `.automatic` in the English corpus only page 548 changes. The recognized text is
+discarded, the page reports `implausibleRecognition` ("OCR of this page image does not read as English: only *e* of *j* words are English words (handwriting, or
 print recognition cannot read). The recognized text was discarded; the page is preserved as an
 image and does not reflow.") and becomes a page image. A recognition can misread a tenth of its
 words and still be the best text the page has, so the misread test is not applied to it.
@@ -1969,7 +1996,7 @@ pairs retain separate paragraphs. See
   report alone — by 1,457 characters when #257 landed, and by a further 681 when the letters
   reading was added — and every other book is unchanged to the character.
   The report's handwriting is not this rule's to fix: that book's inherited OCR layer is
-  unverified, and #216 catalogues what it produces.
+  unverified, and #216 catalogued what it produces.
   Evidence: [table-headers-inside-crops](../measurements/table-headers-inside-crops/record.md),
   [spoiled-column-labels](../measurements/spoiled-column-labels/record.md).
 - **A row a picture's crop reaches into (#207).** `takes` keeps the lines whose middle row a crop

@@ -1,0 +1,100 @@
+[
+  {
+    "metrics": {
+      "after": {
+        "availableBytes": 5342214208,
+        "compressedBytes": 0,
+        "footprintBytes": 26494912,
+        "purgeableResidentBytes": 0,
+        "residentBytes": 220725248
+      },
+      "before": {
+        "availableBytes": 5360744824,
+        "compressedBytes": 0,
+        "footprintBytes": 7964296,
+        "purgeableResidentBytes": 0,
+        "residentBytes": 52461568
+      },
+      "case": "gpo-warren-1964",
+      "device": "iPad iPadOS 27.0",
+      "epubBytes": 531573084,
+      "maximumOutputBytes": 4294967296,
+      "maximumRasterPixels": 12000000,
+      "minimumAvailableBytes": 5070911456,
+      "ocr": "automatic",
+      "os": "Version 27.0 (Build 24A435)",
+      "peakRSSBytes": 391806976,
+      "physicalMemoryBytes": 7993540608,
+      "rasterDPI": 180,
+      "referenceImages": "automatic",
+      "sampledPeakFootprintBytes": 297797664,
+      "sampledPeakPurgeableResidentBytes": 0,
+      "seconds": 541.635733962059,
+      "sourceSHA256": "341cc3471750c9c3be68b95a34b52f6cbdc86c4392427a8483ee1c6bc53cfc19",
+      "status": "completed"
+    },
+    "images": 933,
+    "imageBytes": 533333867,
+    "largestImagePixels": 1767900,
+    "encodings": {
+      "JPEG": 933
+    },
+    "baselineDPI": 180,
+    "changedTextPages": [],
+    "pageMarkersEqual": true,
+    "warningCounts": {
+      "annotationsNotConverted": 1,
+      "ocrFailed": 10,
+      "unverifiedTextLayer": 890,
+      "implausibleTextLayer": 38,
+      "ocrUsed": 15,
+      "incompleteRecognition": 10,
+      "implausibleRecognition": 5,
+      "furnitureRemoved": 803,
+      "pageImageFallback": 15,
+      "imageRegion": 917,
+      "uncertainHyphen": 121,
+      "unreadTableCells": 3
+    },
+    "pageCount": 920,
+    "reflowedPages": 905,
+    "recognizedPages": 15,
+    "ocrPages": [
+      103,
+      201,
+      502,
+      545,
+      554,
+      566,
+      602,
+      628,
+      629,
+      630,
+      631,
+      632,
+      633,
+      635,
+      636
+    ],
+    "rawContent": {
+      "case": "gpo-warren-1964",
+      "passed": true,
+      "reviewPages": [
+        1,
+        7,
+        21,
+        30,
+        50,
+        100,
+        890,
+        910,
+        920
+      ],
+      "contentChecks": 94,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/MathML/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+    },
+    "epubcheckExitCode": 0
+  }
+]

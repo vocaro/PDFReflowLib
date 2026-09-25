@@ -1,0 +1,105 @@
+{
+  "revision": "dc81a78087ace4215841cd1d8059924dddd279e8",
+  "sources": {
+    "measurements/raster-qualification/sweep/results.json.gz": "6353dba8ffba791dedfc06f98ca85a13ecf66193e747837bc317fdc4a30c98d1",
+    "measurements/raster-qualification/books/summary.json": "cb73b4d23976b35e84e3fe7af26981f697d14ed9f8f540feefed08484bb9b58d"
+  },
+  "maximumAbsolutePhraseDelta": 3,
+  "counterexamplesToAtMostOneClaim": [
+    {
+      "target": "blue-150",
+      "dpi": 96,
+      "encoding": "jpeg60",
+      "pngPhrases": 5,
+      "encodedPhrases": 3,
+      "delta": -2
+    },
+    {
+      "target": "warren-890",
+      "dpi": 150,
+      "encoding": "jpeg60",
+      "pngPhrases": 3,
+      "encodedPhrases": 5,
+      "delta": 2
+    },
+    {
+      "target": "warren-890",
+      "dpi": 150,
+      "encoding": "jpeg90",
+      "pngPhrases": 3,
+      "encodedPhrases": 6,
+      "delta": 3
+    },
+    {
+      "target": "warren-890",
+      "dpi": 150,
+      "encoding": "jpeg95",
+      "pngPhrases": 3,
+      "encodedPhrases": 5,
+      "delta": 2
+    },
+    {
+      "target": "faa-121",
+      "dpi": 150,
+      "encoding": "jpeg60",
+      "pngPhrases": 1,
+      "encodedPhrases": 3,
+      "delta": 2
+    },
+    {
+      "target": "blue-150",
+      "dpi": 180,
+      "encoding": "jpeg75",
+      "pngPhrases": 7,
+      "encodedPhrases": 5,
+      "delta": -2
+    },
+    {
+      "target": "warren-890",
+      "dpi": 240,
+      "encoding": "jpeg75",
+      "pngPhrases": 6,
+      "encodedPhrases": 8,
+      "delta": 2
+    },
+    {
+      "target": "warren-890",
+      "dpi": 240,
+      "encoding": "jpeg90",
+      "pngPhrases": 6,
+      "encodedPhrases": 8,
+      "delta": 2
+    },
+    {
+      "target": "flag-27",
+      "dpi": 240,
+      "encoding": "jpeg60",
+      "pngPhrases": 13,
+      "encodedPhrases": 15,
+      "delta": 2
+    },
+    {
+      "target": "flag-27",
+      "dpi": 240,
+      "encoding": "jpeg75",
+      "pngPhrases": 13,
+      "encodedPhrases": 15,
+      "delta": 2
+    },
+    {
+      "target": "flag-27",
+      "dpi": 240,
+      "encoding": "jpeg85",
+      "pngPhrases": 13,
+      "encodedPhrases": 15,
+      "delta": 2
+    }
+  ],
+  "bookSettings": [
+    "defaults",
+    "dpi-120",
+    "dpi-180",
+    "dpi-240",
+    "strict-comparison defaults vs dpi-180"
+  ]
+}

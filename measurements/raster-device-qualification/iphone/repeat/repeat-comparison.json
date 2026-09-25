@@ -1,0 +1,20 @@
+[
+  {
+    "case": "cdc-zombie-pandemic-2011",
+    "baselineEPUBSHA256": "4d612c6448d1e41ff2dabc8117d7274d118cac7d4737f645f84ad66bb08cd06c",
+    "repeatEPUBSHA256": "4d612c6448d1e41ff2dabc8117d7274d118cac7d4737f645f84ad66bb08cd06c",
+    "reportsEqualApartFromOutputURL": true,
+    "changedTextPages": [],
+    "note": "Host and library source identical; signed executable differs only after addition of stress PDF resource.",
+    "epubBytesIdentical": true
+  },
+  {
+    "case": "cia-blue-book-14-1955",
+    "baselineEPUBSHA256": "eff5526ee1749931dfcb210adf697a55ae337c1b88b6797e91239d7db64f4cbb",
+    "repeatEPUBSHA256": "eff5526ee1749931dfcb210adf697a55ae337c1b88b6797e91239d7db64f4cbb",
+    "reportsEqualApartFromOutputURL": true,
+    "changedTextPages": [],
+    "note": "Host and library source identical; signed executable differs only after addition of stress PDF resource.",
+    "epubBytesIdentical": true
+  }
+]

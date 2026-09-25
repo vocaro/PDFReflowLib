@@ -1,0 +1,40 @@
+{
+  "baseline": "/tmp/pdfreflow-raster28-iphone-warren-4g",
+  "candidate": "/tmp/pdfreflow-raster28-ipad-warren-4g",
+  "scope": "Observed same-setting differences, not accuracy or attribution to hardware.",
+  "comparisons": [
+    {
+      "run": "gpo-warren-1964-180-12000000",
+      "baselineSHA256": "c18b70f13b52cb1f30dcb94f429ff875a813fe41bde0e55916522b5c04bfdd3a",
+      "candidateSHA256": "ecc55282d2ac47eac85e97eeb3107c8b1982beb4e07b1a396843a5bd52a5a3af",
+      "changedTextPages": [
+        103,
+        201,
+        502,
+        545,
+        554,
+        566,
+        601,
+        602,
+        627,
+        628,
+        629,
+        630,
+        631,
+        632,
+        633,
+        635,
+        636,
+        637,
+        655,
+        663
+      ],
+      "pageMarkersEqual": true,
+      "reportsEqualExceptOutputURL": false,
+      "encodedImagesEqualIgnoringNames": false,
+      "unmatchedBaselineImages": 5,
+      "unmatchedCandidateImages": 7
+    }
+  ],
+  "skipped": []
+}

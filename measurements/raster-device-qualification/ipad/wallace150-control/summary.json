@@ -1,0 +1,106 @@
+[
+  {
+    "metrics": {
+      "after": {
+        "availableBytes": 5342460208,
+        "compressedBytes": 0,
+        "footprintBytes": 26248912,
+        "purgeableResidentBytes": 0,
+        "residentBytes": 107429888
+      },
+      "before": {
+        "availableBytes": 5360826744,
+        "compressedBytes": 0,
+        "footprintBytes": 7882376,
+        "purgeableResidentBytes": 0,
+        "residentBytes": 52166656
+      },
+      "case": "wallace-algebra-2010",
+      "device": "iPad iPadOS 27.0",
+      "epubBytes": 26977520,
+      "maximumRasterPixels": 12000000,
+      "minimumAvailableBytes": 5335824688,
+      "ocr": "automatic",
+      "os": "Version 27.0 (Build 24A435)",
+      "peakRSSBytes": 112197632,
+      "physicalMemoryBytes": 7993540608,
+      "rasterDPI": 150,
+      "referenceImages": "automatic",
+      "sampledPeakFootprintBytes": 32868048,
+      "sampledPeakPurgeableResidentBytes": 0,
+      "seconds": 32.78666400909424,
+      "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
+      "status": "completed"
+    },
+    "images": 3278,
+    "imageBytes": 27342229,
+    "largestImagePixels": 1007832,
+    "encodings": {
+      "JPEG": 10,
+      "PNG": 3268
+    },
+    "baselineDPI": 150,
+    "changedTextPages": [],
+    "pageMarkersEqual": true,
+    "warningCounts": {
+      "furnitureRemoved": 487,
+      "imageRegion": 385,
+      "uncertainHyphen": 2
+    },
+    "pageCount": 489,
+    "reflowedPages": 482,
+    "recognizedPages": 0,
+    "ocrPages": [],
+    "rawContent": {
+      "case": "wallace-algebra-2010",
+      "passed": false,
+      "reviewPages": [
+        2,
+        12,
+        16,
+        266,
+        293,
+        347,
+        438,
+        479,
+        483,
+        343,
+        26,
+        18,
+        43,
+        101
+      ],
+      "contentChecks": 166,
+      "spineBoundariesCrossed": 0,
+      "errors": [
+        "Page 16: no image shows corpus/references/wallace-algebra-2010/page-16-product-33.png (best correlation 0.423 < 0.95)"
+      ],
+      "scope": "Reviewed text/order/script-context/MathML/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+    },
+    "normalizedImageDiagnostic": {
+      "case": "wallace-algebra-2010",
+      "passed": true,
+      "reviewPages": [
+        2,
+        12,
+        16,
+        266,
+        293,
+        347,
+        438,
+        479,
+        483,
+        343,
+        26,
+        18,
+        43,
+        101
+      ],
+      "contentChecks": 166,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/MathML/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+    },
+    "epubcheckExitCode": 0
+  }
+]

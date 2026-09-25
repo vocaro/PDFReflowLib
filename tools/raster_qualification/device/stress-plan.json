@@ -1,0 +1,40 @@
+{
+  "documents": [
+    {
+      "id": "raster-ceiling-stress",
+      "filename": "raster-ceiling-stress.pdf",
+      "bytes": 443062,
+      "sha256": "09ecb521af3d841ef29fa2ffc05222856cc440630bb6be22ddd0e888f626fbac",
+      "pages": 2
+    }
+  ],
+  "cases": [
+    {
+      "id": "raster-ceiling-stress",
+      "sourceSHA256": "09ecb521af3d841ef29fa2ffc05222856cc440630bb6be22ddd0e888f626fbac",
+      "pages": [
+        {
+          "page": 1,
+          "minimumImages": 1
+        },
+        {
+          "page": 2,
+          "minimumImages": 1
+        }
+      ]
+    }
+  ],
+  "parents": [
+    {
+      "id": "cia-blue-book-14-1955",
+      "sha256": "90e05e77fc088c29758c2ddda514c0c12f317e5686ee213d348db2f9da152ee3",
+      "bytes": 24433155
+    },
+    {
+      "id": "faa-phak-8083-25c",
+      "sha256": "247929cace0ab56b376e683eba540cc4c8f39f199ab35414e8b604e24f395cb7",
+      "bytes": 77598564
+    }
+  ],
+  "recipe": "make-stress.swift: Blue Book page 74, FAA page 121, each enlarged 3x"
+}

@@ -1,0 +1,59 @@
+{
+  "baseCommit": "1ec71183caa9a89d6d97c42726402b9d6a337903",
+  "platform": "macOS-27.0-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "hardwareModel": "Mac17,6",
+  "swVersion": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0\nBuildVersion:\t\t26A428\n",
+  "xcodeVersion": "Xcode 27.0\nBuild version 27A266a\n",
+  "popplerVersion": "pdftoppm version 26.04.0\nCopyright 2005-2026 The Poppler Developers - http://poppler.freedesktop.org\nCopyright 1996-2011, 2022 Glyph & Cog, LLC\n",
+  "compileCommand": [
+    "xcrun",
+    "swiftc",
+    "-O",
+    "-parse-as-library",
+    "-module-cache-path",
+    "/private/tmp/pdfreflow-raster-28-sweep-host/module-cache",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/PageRasterizer.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/ImageContentClassifier.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/ConversionTypes.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/TableCellEvidence.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/DocumentModel.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/ReflowDocument.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/MathExpression.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/Sources/PDFReflowLib/FormBlank.swift",
+    "/Users/trevorharmon/Development/PDFReflowLib/tools/probes/probe-raster-sweep.swift",
+    "-o",
+    "/private/tmp/pdfreflow-raster-28-sweep-host/probe"
+  ],
+  "binarySHA256": "f3777b6451f567d0f22b8d047325c7cbd306f9639cdbd980e0eff0353f57fa97",
+  "producerSHA256": {
+    "Sources/PDFReflowLib/PageRasterizer.swift": "4f6e4f217b5ac1954dd7f73bf8eb021528cf76218d7c3824c479690b7747d95c",
+    "Sources/PDFReflowLib/ImageContentClassifier.swift": "4781022d57bb61e4536fbbc40012190080b2d232533c1facd84b2bef3495649c",
+    "Sources/PDFReflowLib/ConversionTypes.swift": "ff0f4fdaa1fd18bf9eb069355098020e4a7dd706a50d519b98c3e6cb2d5a7758",
+    "Sources/PDFReflowLib/TableCellEvidence.swift": "7c9822b389c4f5a858182ac5647bcc7638b7777b0375e6a7c1f2d2244f66e07d",
+    "Sources/PDFReflowLib/DocumentModel.swift": "5e074e4817eeed41209c632a3316981aa7fb0bc54dea9602f9c6c7decaaa9443",
+    "Sources/PDFReflowLib/ReflowDocument.swift": "aaec1df2b7cfa89c196df799453495d61f70afed0aca690c2c2a597c10d4d1f8",
+    "Sources/PDFReflowLib/MathExpression.swift": "0484364496e56e49558bc059d334612323d4f97bd5904dbe557cd6b37be85d41",
+    "Sources/PDFReflowLib/FormBlank.swift": "de96cc2520016f435e8bd244d0063785858d6b7ea4aa2a0198e183b0d9398bf0",
+    "tools/probes/probe-raster-sweep.swift": "d11f002728e84758d66b713e4c854dea9731b677f6b29d852b48f2337c5bb921",
+    "tools/raster_sweep.py": "abb72984a64ee29d547002043dcca8b03f760e9b1952ca203ba4165f32df1b39"
+  },
+  "targetsSHA256": "6c2b154e6f303a31397463b6d8bcef9a9206b13848d9c034b8d251f1759786cb",
+  "dpis": [
+    96,
+    120,
+    150,
+    180,
+    240,
+    300
+  ],
+  "qualities": [
+    0.6,
+    0.75,
+    0.85,
+    0.9,
+    0.95
+  ],
+  "maximumRasterPixels": 12000000,
+  "ocr": true
+}

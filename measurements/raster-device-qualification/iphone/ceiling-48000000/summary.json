@@ -1,0 +1,71 @@
+[
+  {
+    "metrics": {
+      "after": {
+        "availableBytes": 3344889824,
+        "compressedBytes": 0,
+        "footprintBytes": 195102752,
+        "purgeableResidentBytes": 0,
+        "residentBytes": 269336576
+      },
+      "before": {
+        "availableBytes": 3533289848,
+        "compressedBytes": 0,
+        "footprintBytes": 6702728,
+        "purgeableResidentBytes": 0,
+        "residentBytes": 23117824
+      },
+      "case": "raster-ceiling-stress",
+      "device": "iPhone iOS 27.0",
+      "epubBytes": 6698068,
+      "maximumRasterPixels": 48000000,
+      "minimumAvailableBytes": 2860791560,
+      "ocr": "always",
+      "os": "Version 27.0 (Build 24A435)",
+      "peakRSSBytes": 743882752,
+      "physicalMemoryBytes": 12263424000,
+      "rasterDPI": 600,
+      "referenceImages": "always",
+      "sampledPeakFootprintBytes": 679201016,
+      "sampledPeakPurgeableResidentBytes": 0,
+      "seconds": 6.188955068588257,
+      "sourceSHA256": "09ecb521af3d841ef29fa2ffc05222856cc440630bb6be22ddd0e888f626fbac",
+      "status": "completed"
+    },
+    "images": 3,
+    "imageBytes": 8227138,
+    "largestImagePixels": 47996344,
+    "encodings": {
+      "PNG": 3
+    },
+    "baselineDPI": 600,
+    "changedTextPages": [],
+    "pageMarkersEqual": true,
+    "warningCounts": {
+      "structureFallback": 1,
+      "ocrUsed": 2,
+      "imageRegion": 3,
+      "uncertainHyphen": 1
+    },
+    "pageCount": 2,
+    "reflowedPages": 2,
+    "recognizedPages": 2,
+    "ocrPages": [
+      1,
+      2
+    ],
+    "rawContent": {
+      "case": "raster-ceiling-stress",
+      "passed": true,
+      "reviewPages": [
+        1,
+        2
+      ],
+      "contentChecks": 2,
+      "spineBoundariesCrossed": 0,
+      "errors": [],
+      "scope": "Reviewed text/order/script-context/MathML/image-presence, spine-boundary continuity and source-region image checks; not full-book fidelity or image legibility qualification."
+    },
+    "epubcheckExitCode": 0
+  }
+]

@@ -1,0 +1,35 @@
+{
+  "baseline": "/tmp/pdfreflow-raster28-iphone-large",
+  "candidate": "/tmp/pdfreflow-raster28-ipad-large",
+  "scope": "Observed same-setting differences, not accuracy or attribution to hardware.",
+  "comparisons": [
+    {
+      "run": "faa-phak-8083-25c-180-12000000",
+      "baselineSHA256": "a59ac9572e6c6b419eceec2995a5995532e5a84199109af1ed30f58268593926",
+      "candidateSHA256": "a59ac9572e6c6b419eceec2995a5995532e5a84199109af1ed30f58268593926",
+      "changedTextPages": [],
+      "pageMarkersEqual": true,
+      "reportsEqualExceptOutputURL": true,
+      "encodedImagesEqualIgnoringNames": true,
+      "unmatchedBaselineImages": 0,
+      "unmatchedCandidateImages": 0
+    },
+    {
+      "run": "noaa-nca5-2023-180-12000000",
+      "baselineSHA256": "ebe482188e577491dd0a64417fb8bb10f1ee28a595ce94b362fe44ab2a16d863",
+      "candidateSHA256": "46ab78e878503495c6e30c0716b6cc642ae28b4a057bde9a46b8b2cda7118e47",
+      "changedTextPages": [],
+      "pageMarkersEqual": true,
+      "reportsEqualExceptOutputURL": true,
+      "encodedImagesEqualIgnoringNames": false,
+      "unmatchedBaselineImages": 214,
+      "unmatchedCandidateImages": 214
+    }
+  ],
+  "skipped": [
+    {
+      "run": "gpo-warren-1964-180-12000000",
+      "reason": "incomplete conversion"
+    }
+  ]
+}

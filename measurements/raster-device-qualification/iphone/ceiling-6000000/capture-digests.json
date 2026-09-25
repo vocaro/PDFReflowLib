@@ -1,0 +1,17 @@
+[
+  {
+    "file": "results.json.gz",
+    "bytes": 1147,
+    "sha256": "888d49c259423ec9bf2ca97dbc560869a638866a5bf85a45b22ce573381cc32a"
+  },
+  {
+    "file": "comparison.json.gz",
+    "bytes": 858,
+    "sha256": "238cd874a4c813f5566772cb5979f20431d2b8c20c0b9dccb2981d17cb30338a"
+  },
+  {
+    "file": "receipts.tar.gz",
+    "bytes": 8529,
+    "sha256": "77c461186eb196195cfc91f6be1a968d4982c12e8fd4018967435af54f217939"
+  }
+]

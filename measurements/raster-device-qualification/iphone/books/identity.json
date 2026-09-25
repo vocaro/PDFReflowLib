@@ -1,0 +1,20 @@
+{
+  "baseCommit": "1ec71183caa9a89d6d97c42726402b9d6a337903",
+  "binarySHA256": "cfce1ad03bbafdabe2ddd5fe7d0fac97ac906e2aefd28a36d08e6deaeecf4bcc",
+  "settings": {
+    "app": "/tmp/pdfreflow-raster28-device-build/Build/Products/Release-iphoneos/RasterHost.app",
+    "output": "/tmp/pdfreflow-raster28-iphone-books",
+    "cases": [
+      "cdc-zombie-pandemic-2011",
+      "fed-explained-2021",
+      "cia-blue-book-14-1955",
+      "wallace-algebra-2010"
+    ],
+    "dpis": null,
+    "pixels": 12000000,
+    "ocr": "automatic",
+    "references": "automatic"
+  },
+  "hostSourceSHA256": "d71db5e2e2265c7a65735444bb579c4514de2e564ec2be97468c30226bea1dda",
+  "deviceIdentifierRedacted": true
+}

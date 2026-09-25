@@ -1,0 +1,618 @@
+{
+  "settings": [
+    {
+      "dpi": 96,
+      "encoding": "png",
+      "page": {
+        "images": 17,
+        "bytes": 5124962,
+        "pixels": 12044214
+      },
+      "region": {
+        "images": 17,
+        "bytes": 705943,
+        "pixels": 1171186
+      },
+      "medianRGBPSNRdB": null,
+      "meanPhraseFraction": 0.632
+    },
+    {
+      "dpi": 96,
+      "encoding": "jpeg60",
+      "page": {
+        "images": 17,
+        "bytes": 2489403,
+        "pixels": 12044214
+      },
+      "region": {
+        "images": 17,
+        "bytes": 331355,
+        "pixels": 1171186
+      },
+      "medianRGBPSNRdB": 37.87,
+      "meanPhraseFraction": 0.5588
+    },
+    {
+      "dpi": 96,
+      "encoding": "jpeg75",
+      "page": {
+        "images": 17,
+        "bytes": 3171005,
+        "pixels": 12044214
+      },
+      "region": {
+        "images": 17,
+        "bytes": 422640,
+        "pixels": 1171186
+      },
+      "medianRGBPSNRdB": 41.43,
+      "meanPhraseFraction": 0.5826
+    },
+    {
+      "dpi": 96,
+      "encoding": "jpeg85",
+      "page": {
+        "images": 17,
+        "bytes": 3733964,
+        "pixels": 12044214
+      },
+      "region": {
+        "images": 17,
+        "bytes": 498445,
+        "pixels": 1171186
+      },
+      "medianRGBPSNRdB": 43.38,
+      "meanPhraseFraction": 0.5826
+    },
+    {
+      "dpi": 96,
+      "encoding": "jpeg90",
+      "page": {
+        "images": 17,
+        "bytes": 3853960,
+        "pixels": 12044214
+      },
+      "region": {
+        "images": 17,
+        "bytes": 513643,
+        "pixels": 1171186
+      },
+      "medianRGBPSNRdB": 44.06,
+      "meanPhraseFraction": 0.6058
+    },
+    {
+      "dpi": 96,
+      "encoding": "jpeg95",
+      "page": {
+        "images": 17,
+        "bytes": 4065772,
+        "pixels": 12044214
+      },
+      "region": {
+        "images": 17,
+        "bytes": 542183,
+        "pixels": 1171186
+      },
+      "medianRGBPSNRdB": 44.6,
+      "meanPhraseFraction": 0.6231
+    },
+    {
+      "dpi": 120,
+      "encoding": "png",
+      "page": {
+        "images": 17,
+        "bytes": 7240897,
+        "pixels": 18817614
+      },
+      "region": {
+        "images": 17,
+        "bytes": 992361,
+        "pixels": 1830658
+      },
+      "medianRGBPSNRdB": null,
+      "meanPhraseFraction": 0.7444
+    },
+    {
+      "dpi": 120,
+      "encoding": "jpeg60",
+      "page": {
+        "images": 17,
+        "bytes": 3537054,
+        "pixels": 18817614
+      },
+      "region": {
+        "images": 17,
+        "bytes": 459605,
+        "pixels": 1830658
+      },
+      "medianRGBPSNRdB": 38.33,
+      "meanPhraseFraction": 0.7442
+    },
+    {
+      "dpi": 120,
+      "encoding": "jpeg75",
+      "page": {
+        "images": 17,
+        "bytes": 4502438,
+        "pixels": 18817614
+      },
+      "region": {
+        "images": 17,
+        "bytes": 586985,
+        "pixels": 1830658
+      },
+      "medianRGBPSNRdB": 42.11,
+      "meanPhraseFraction": 0.7372
+    },
+    {
+      "dpi": 120,
+      "encoding": "jpeg85",
+      "page": {
+        "images": 17,
+        "bytes": 5310777,
+        "pixels": 18817614
+      },
+      "region": {
+        "images": 17,
+        "bytes": 694632,
+        "pixels": 1830658
+      },
+      "medianRGBPSNRdB": 44.11,
+      "meanPhraseFraction": 0.7413
+    },
+    {
+      "dpi": 120,
+      "encoding": "jpeg90",
+      "page": {
+        "images": 17,
+        "bytes": 5476982,
+        "pixels": 18817614
+      },
+      "region": {
+        "images": 17,
+        "bytes": 715720,
+        "pixels": 1830658
+      },
+      "medianRGBPSNRdB": 45.0,
+      "meanPhraseFraction": 0.7493
+    },
+    {
+      "dpi": 120,
+      "encoding": "jpeg95",
+      "page": {
+        "images": 17,
+        "bytes": 5771652,
+        "pixels": 18817614
+      },
+      "region": {
+        "images": 17,
+        "bytes": 755048,
+        "pixels": 1830658
+      },
+      "medianRGBPSNRdB": 45.23,
+      "meanPhraseFraction": 0.7431
+    },
+    {
+      "dpi": 150,
+      "encoding": "png",
+      "page": {
+        "images": 17,
+        "bytes": 10016680,
+        "pixels": 29401986
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1403027,
+        "pixels": 2860185
+      },
+      "medianRGBPSNRdB": null,
+      "meanPhraseFraction": 0.8571
+    },
+    {
+      "dpi": 150,
+      "encoding": "jpeg60",
+      "page": {
+        "images": 17,
+        "bytes": 4854623,
+        "pixels": 29401986
+      },
+      "region": {
+        "images": 17,
+        "bytes": 634534,
+        "pixels": 2860185
+      },
+      "medianRGBPSNRdB": 39.05,
+      "meanPhraseFraction": 0.9117
+    },
+    {
+      "dpi": 150,
+      "encoding": "jpeg75",
+      "page": {
+        "images": 17,
+        "bytes": 6129792,
+        "pixels": 29401986
+      },
+      "region": {
+        "images": 17,
+        "bytes": 809792,
+        "pixels": 2860185
+      },
+      "medianRGBPSNRdB": 42.7,
+      "meanPhraseFraction": 0.8633
+    },
+    {
+      "dpi": 150,
+      "encoding": "jpeg85",
+      "page": {
+        "images": 17,
+        "bytes": 7214918,
+        "pixels": 29401986
+      },
+      "region": {
+        "images": 17,
+        "bytes": 960723,
+        "pixels": 2860185
+      },
+      "medianRGBPSNRdB": 44.81,
+      "meanPhraseFraction": 0.8651
+    },
+    {
+      "dpi": 150,
+      "encoding": "jpeg90",
+      "page": {
+        "images": 17,
+        "bytes": 7425675,
+        "pixels": 29401986
+      },
+      "region": {
+        "images": 17,
+        "bytes": 988159,
+        "pixels": 2860185
+      },
+      "medianRGBPSNRdB": 45.91,
+      "meanPhraseFraction": 0.8655
+    },
+    {
+      "dpi": 150,
+      "encoding": "jpeg95",
+      "page": {
+        "images": 17,
+        "bytes": 7800559,
+        "pixels": 29401986
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1040535,
+        "pixels": 2860185
+      },
+      "medianRGBPSNRdB": 46.88,
+      "meanPhraseFraction": 0.8552
+    },
+    {
+      "dpi": 180,
+      "encoding": "png",
+      "page": {
+        "images": 17,
+        "bytes": 13746337,
+        "pixels": 42344867
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1892756,
+        "pixels": 4122823
+      },
+      "medianRGBPSNRdB": null,
+      "meanPhraseFraction": 0.8961
+    },
+    {
+      "dpi": 180,
+      "encoding": "jpeg60",
+      "page": {
+        "images": 17,
+        "bytes": 6537215,
+        "pixels": 42344867
+      },
+      "region": {
+        "images": 17,
+        "bytes": 808517,
+        "pixels": 4122823
+      },
+      "medianRGBPSNRdB": 39.31,
+      "meanPhraseFraction": 0.8715
+    },
+    {
+      "dpi": 180,
+      "encoding": "jpeg75",
+      "page": {
+        "images": 17,
+        "bytes": 8308677,
+        "pixels": 42344867
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1037437,
+        "pixels": 4122823
+      },
+      "medianRGBPSNRdB": 43.12,
+      "meanPhraseFraction": 0.8866
+    },
+    {
+      "dpi": 180,
+      "encoding": "jpeg85",
+      "page": {
+        "images": 17,
+        "bytes": 9830867,
+        "pixels": 42344867
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1235776,
+        "pixels": 4122823
+      },
+      "medianRGBPSNRdB": 44.49,
+      "meanPhraseFraction": 0.9009
+    },
+    {
+      "dpi": 180,
+      "encoding": "jpeg90",
+      "page": {
+        "images": 17,
+        "bytes": 10125780,
+        "pixels": 42344867
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1271962,
+        "pixels": 4122823
+      },
+      "medianRGBPSNRdB": 45.27,
+      "meanPhraseFraction": 0.9009
+    },
+    {
+      "dpi": 180,
+      "encoding": "jpeg95",
+      "page": {
+        "images": 17,
+        "bytes": 10653562,
+        "pixels": 42344867
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1340569,
+        "pixels": 4122823
+      },
+      "medianRGBPSNRdB": 46.03,
+      "meanPhraseFraction": 0.9009
+    },
+    {
+      "dpi": 240,
+      "encoding": "png",
+      "page": {
+        "images": 17,
+        "bytes": 20466020,
+        "pixels": 75287961
+      },
+      "region": {
+        "images": 17,
+        "bytes": 2821887,
+        "pixels": 7330947
+      },
+      "medianRGBPSNRdB": null,
+      "meanPhraseFraction": 0.8959
+    },
+    {
+      "dpi": 240,
+      "encoding": "jpeg60",
+      "page": {
+        "images": 17,
+        "bytes": 9695554,
+        "pixels": 75287961
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1229367,
+        "pixels": 7330947
+      },
+      "medianRGBPSNRdB": 40.91,
+      "meanPhraseFraction": 0.9062
+    },
+    {
+      "dpi": 240,
+      "encoding": "jpeg75",
+      "page": {
+        "images": 17,
+        "bytes": 12334050,
+        "pixels": 75287961
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1577444,
+        "pixels": 7330947
+      },
+      "medianRGBPSNRdB": 44.13,
+      "meanPhraseFraction": 0.9356
+    },
+    {
+      "dpi": 240,
+      "encoding": "jpeg85",
+      "page": {
+        "images": 17,
+        "bytes": 14656835,
+        "pixels": 75287961
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1884757,
+        "pixels": 7330947
+      },
+      "medianRGBPSNRdB": 45.83,
+      "meanPhraseFraction": 0.9205
+    },
+    {
+      "dpi": 240,
+      "encoding": "jpeg90",
+      "page": {
+        "images": 17,
+        "bytes": 15099720,
+        "pixels": 75287961
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1940145,
+        "pixels": 7330947
+      },
+      "medianRGBPSNRdB": 46.81,
+      "meanPhraseFraction": 0.9308
+    },
+    {
+      "dpi": 240,
+      "encoding": "jpeg95",
+      "page": {
+        "images": 17,
+        "bytes": 15865368,
+        "pixels": 75287961
+      },
+      "region": {
+        "images": 17,
+        "bytes": 2042783,
+        "pixels": 7330947
+      },
+      "medianRGBPSNRdB": 47.81,
+      "meanPhraseFraction": 0.9181
+    },
+    {
+      "dpi": 300,
+      "encoding": "png",
+      "page": {
+        "images": 17,
+        "bytes": 26524371,
+        "pixels": 117633893
+      },
+      "region": {
+        "images": 17,
+        "bytes": 3685144,
+        "pixels": 11453220
+      },
+      "medianRGBPSNRdB": null,
+      "meanPhraseFraction": 0.9444
+    },
+    {
+      "dpi": 300,
+      "encoding": "jpeg60",
+      "page": {
+        "images": 17,
+        "bytes": 13475881,
+        "pixels": 117633893
+      },
+      "region": {
+        "images": 17,
+        "bytes": 1692612,
+        "pixels": 11453220
+      },
+      "medianRGBPSNRdB": 41.92,
+      "meanPhraseFraction": 0.9444
+    },
+    {
+      "dpi": 300,
+      "encoding": "jpeg75",
+      "page": {
+        "images": 17,
+        "bytes": 17057627,
+        "pixels": 117633893
+      },
+      "region": {
+        "images": 17,
+        "bytes": 2171375,
+        "pixels": 11453220
+      },
+      "medianRGBPSNRdB": 44.69,
+      "meanPhraseFraction": 0.9397
+    },
+    {
+      "dpi": 300,
+      "encoding": "jpeg85",
+      "page": {
+        "images": 17,
+        "bytes": 20219478,
+        "pixels": 117633893
+      },
+      "region": {
+        "images": 17,
+        "bytes": 2596091,
+        "pixels": 11453220
+      },
+      "medianRGBPSNRdB": 46.39,
+      "meanPhraseFraction": 0.9397
+    },
+    {
+      "dpi": 300,
+      "encoding": "jpeg90",
+      "page": {
+        "images": 17,
+        "bytes": 20827958,
+        "pixels": 117633893
+      },
+      "region": {
+        "images": 17,
+        "bytes": 2673302,
+        "pixels": 11453220
+      },
+      "medianRGBPSNRdB": 47.28,
+      "meanPhraseFraction": 0.9444
+    },
+    {
+      "dpi": 300,
+      "encoding": "jpeg95",
+      "page": {
+        "images": 17,
+        "bytes": 21848988,
+        "pixels": 117633893
+      },
+      "region": {
+        "images": 17,
+        "bytes": 2812969,
+        "pixels": 11453220
+      },
+      "medianRGBPSNRdB": 47.54,
+      "meanPhraseFraction": 0.9444
+    }
+  ],
+  "processes": [
+    {
+      "dpi": 96,
+      "peakRSSBytes": 489144320,
+      "peakPhysicalFootprintBytes": 321881360,
+      "elapsedSeconds": 68.276
+    },
+    {
+      "dpi": 120,
+      "peakRSSBytes": 409993216,
+      "peakPhysicalFootprintBytes": 308905232,
+      "elapsedSeconds": 14.45
+    },
+    {
+      "dpi": 150,
+      "peakRSSBytes": 421183488,
+      "peakPhysicalFootprintBytes": 320849168,
+      "elapsedSeconds": 14.306
+    },
+    {
+      "dpi": 180,
+      "peakRSSBytes": 481394688,
+      "peakPhysicalFootprintBytes": 340149616,
+      "elapsedSeconds": 14.044
+    },
+    {
+      "dpi": 240,
+      "peakRSSBytes": 452411392,
+      "peakPhysicalFootprintBytes": 346260848,
+      "elapsedSeconds": 16.043
+    },
+    {
+      "dpi": 300,
+      "peakRSSBytes": 494862336,
+      "peakPhysicalFootprintBytes": 385828328,
+      "elapsedSeconds": 18.334
+    }
+  ]
+}

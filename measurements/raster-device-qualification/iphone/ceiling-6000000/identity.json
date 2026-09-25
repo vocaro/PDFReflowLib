@@ -1,0 +1,27 @@
+{
+  "hardware": {
+    "marketingName": "iPhone 17 Pro Max",
+    "productType": "iPhone18,2",
+    "reality": "physical",
+    "osVersion": "27.0",
+    "osBuild": "24A435"
+  },
+  "baseCommit": "1ec71183caa9a89d6d97c42726402b9d6a337903",
+  "binarySHA256": "f2357fdde6bd7e2d76537d42e240955f87660e32c7b2c67c8246c5bb256f52da",
+  "settings": {
+    "plan": "measurements/raster-device-qualification/device/stress-plan.json",
+    "app": "/tmp/pdfreflow-raster28-device-build/Build/Products/Release-iphoneos/RasterHost.app",
+    "output": "/tmp/pdfreflow-raster28-iphone-ceiling-6000000",
+    "cases": [
+      "raster-ceiling-stress"
+    ],
+    "dpis": [
+      600
+    ],
+    "pixels": 6000000,
+    "ocr": "always",
+    "references": "always"
+  },
+  "hostSourceSHA256": "d71db5e2e2265c7a65735444bb579c4514de2e564ec2be97468c30226bea1dda",
+  "deviceIdentifierRedacted": true
+}

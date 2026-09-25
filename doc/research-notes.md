@@ -32,7 +32,12 @@ equations) compared 120/180/240 DPI and PNG/JPEG at quality 0.90. The results su
 180 DPI as the baseline and reviewing 240 DPI for small detail, with measured storage costs and
 pixel-cap behavior. This conclusion is already reflected in the [recommended conversion
 settings](conversion-options.md#recommended-starting-settings). See
-[raster-dpi evidence](../measurements/raster-dpi/record.md).
+[raster-dpi evidence](../measurements/raster-dpi/record.md). The [current qualification](../measurements/raster-device-qualification/record.md)
+repeats the broader 17-page/eleven-document sweep on `main` at 96–300 DPI and JPEG 0.60–0.95,
+and records whole-book and binding-ceiling measurements on physical hardware. It retains 180 DPI
+and quality 0.90 as defaults: small scan notes lose detail at 96/120, recognition is not monotonic
+in DPI, and native 300-DPI bilevel scans can compress better at 300 than after downsampling.
+The linked record separates current receipts from the abandoned branch's unsupported claims.
 
 ## CDC Zombie Pandemic comic (OCR headings)
 

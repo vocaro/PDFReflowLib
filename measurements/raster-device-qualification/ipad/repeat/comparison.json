@@ -1,0 +1,30 @@
+{
+  "baseline": "/tmp/pdfreflow-raster28-ipad-books",
+  "candidate": "/tmp/pdfreflow-raster28-ipad-repeat",
+  "scope": "Observed same-setting differences, not accuracy or attribution to hardware.",
+  "comparisons": [
+    {
+      "run": "cdc-zombie-pandemic-2011-180-12000000",
+      "baselineSHA256": "a910fb2080d441c95e372475ee953a045b8fb318b88cd8ad90f8899d62e5f101",
+      "candidateSHA256": "a910fb2080d441c95e372475ee953a045b8fb318b88cd8ad90f8899d62e5f101",
+      "changedTextPages": [],
+      "pageMarkersEqual": true,
+      "reportsEqualExceptOutputURL": true,
+      "encodedImagesEqualIgnoringNames": true,
+      "unmatchedBaselineImages": 0,
+      "unmatchedCandidateImages": 0
+    },
+    {
+      "run": "cia-blue-book-14-1955-180-12000000",
+      "baselineSHA256": "53fcd5172942a929580273302b1eb5907db16fa2497930a26f9a09768e921100",
+      "candidateSHA256": "53fcd5172942a929580273302b1eb5907db16fa2497930a26f9a09768e921100",
+      "changedTextPages": [],
+      "pageMarkersEqual": true,
+      "reportsEqualExceptOutputURL": true,
+      "encodedImagesEqualIgnoringNames": true,
+      "unmatchedBaselineImages": 0,
+      "unmatchedCandidateImages": 0
+    }
+  ],
+  "skipped": []
+}

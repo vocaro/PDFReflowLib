@@ -1,0 +1,57 @@
+[
+  {
+    "file": "summary.md",
+    "bytes": 6953,
+    "sha256": "d3998a2a809753818ff63813f6e2ef60842d0fe109bf6c26cf0f718cde778fe6"
+  },
+  {
+    "file": "targets.json",
+    "bytes": 14584,
+    "sha256": "5b08f442f65bd5ff4d1c5af9a2e8668ef3f41bdf05f0133053fece96ccb2565e"
+  },
+  {
+    "file": "producer-raster_sweep.py.gz",
+    "bytes": 6276,
+    "sha256": "06b83cd6da899004fc565e98fc21a057fb056dbdbb61ae9d09c6c82a33d04bbb"
+  },
+  {
+    "file": "probe-targets.json",
+    "bytes": 3797,
+    "sha256": "00747387e4485686cb03b4751455b15c8744ee44edd2e6d5a6bda2fc31345157"
+  },
+  {
+    "file": "source-references.json",
+    "bytes": 1462,
+    "sha256": "703eae0e630fb721279f1893c2568249b7b1df797bedfdabb154e606fa69807d"
+  },
+  {
+    "file": "results.json.gz",
+    "bytes": 161351,
+    "sha256": "d6b5c319047b6c188e76f42e8fc085ccfcb9662c570e4b129564a524d8266c9a"
+  },
+  {
+    "file": "targets-as-measured.json.gz",
+    "bytes": 3490,
+    "sha256": "14c5cd28e0baf60634f3cdd2b8ef9e3a4d1b48a7bd645a3f3a34cc6af98a2060"
+  },
+  {
+    "file": "identity.json",
+    "bytes": 3118,
+    "sha256": "04e8fe3bf023885b0004f449e06b8cd1a6c3e14392de5c55df5d8ecb78ddbf9d"
+  },
+  {
+    "file": "review/warren-890-dpi-comparison.png",
+    "bytes": 368802,
+    "sha256": "4c30330024bdbd6652ab772c0f08984ed2ca28886e02597baae3642d3105af0e"
+  },
+  {
+    "file": "review/faa-121-encoding-comparison.png",
+    "bytes": 262338,
+    "sha256": "a2056440ef402232867787092a312990d76944d7068f5abe8182cbb292ff91b5"
+  },
+  {
+    "file": "review/warren-890-encoding-comparison.png",
+    "bytes": 444758,
+    "sha256": "fc31f0c3e52db49e58a6634558dd5626c6b6c0b84ae36115cfbd40b0fa482073"
+  }
+]

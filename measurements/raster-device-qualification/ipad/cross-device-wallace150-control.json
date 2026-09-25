@@ -1,0 +1,19 @@
+{
+  "baseline": "/tmp/pdfreflow-raster28-iphone-books",
+  "candidate": "/tmp/pdfreflow-raster28-ipad-wallace150-control",
+  "scope": "Observed same-setting differences, not accuracy or attribution to hardware.",
+  "comparisons": [
+    {
+      "run": "wallace-algebra-2010-150-12000000",
+      "baselineSHA256": "7ffdc6137426dd08ee97ec623a19e723629e63429b9244fadd9bf6f243035706",
+      "candidateSHA256": "7ffdc6137426dd08ee97ec623a19e723629e63429b9244fadd9bf6f243035706",
+      "changedTextPages": [],
+      "pageMarkersEqual": true,
+      "reportsEqualExceptOutputURL": true,
+      "encodedImagesEqualIgnoringNames": true,
+      "unmatchedBaselineImages": 0,
+      "unmatchedCandidateImages": 0
+    }
+  ],
+  "skipped": []
+}

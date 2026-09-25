@@ -1,0 +1,48 @@
+{
+  "case": "wallace-algebra-2010",
+  "dpi": 150,
+  "initialOutcome": "interrupted; console reported signal 9; only started metrics retained",
+  "peakMemory": "unmeasured",
+  "diagnostics": [
+    "CoreDevice listed PID 1008 while Instruments could not attach by PID or name.",
+    "The first LLDB batch attach produced no stopped-process backtrace. A subsequent attachment reported no such process. Debugger cleanup may have contributed to termination; the signal is not attributed to jetsam or library behavior.",
+    "The crash-file index contained no matching RasterHost crash or contemporaneous Jetsam event.",
+    "No final conversion report, EPUB or sampled peak was published. The interrupted attempt is retained separately from the completed control."
+  ],
+  "control": "wallace150-control/summary.json",
+  "externalCaptureDirectory": "/tmp/pdfreflow-raster28-evidence/ipad/diagnostics",
+  "captures": [
+    {
+      "file": "pdfreflow-raster28-ipad-processes.json",
+      "sha256": "199579636b80020024d473245c89e6cbfa550b04e6c898d459f90b5f38a192c7"
+    },
+    {
+      "file": "pdfreflow-raster28-ipad-processes-2.json",
+      "sha256": "469ec1fc4bed5688c8a92951030bb3778e4a2553f24410ce22ad612129090e8a"
+    },
+    {
+      "file": "pdfreflow-raster28-ipad-state.json",
+      "sha256": "01a81edf8930a48b91e09ba71c5bbccefc387f95957e664d99e11384999419b2"
+    },
+    {
+      "file": "pdfreflow-raster28-ipad-lock.json",
+      "sha256": "b47f2714f66241de1fdbc2f677be07400d639dcafe31e27f0c07e5d00bee901a"
+    },
+    {
+      "file": "pdfreflow-raster28-ipad-wallace150-live-metrics.json",
+      "sha256": "76847f9fe8dab7b60ac4faf5c33929f5fc20290fad234b9ddda2d36a446f15ae"
+    },
+    {
+      "file": "pdfreflow-raster28-ipad-wallace150-backtrace.txt",
+      "sha256": "cd75a115802eb2b0eff85ed487d2f6f64f31ab011dda887f22a17b43d9649477"
+    },
+    {
+      "file": "pdfreflow-raster28-ipad-crash-index.json",
+      "sha256": "083b19235cf74f6f8a6d1f8f61b8cdc3495ac0a1898145997fe22981317e151b"
+    },
+    {
+      "file": "pdfreflow-raster28-ipad-host-crashes.json",
+      "sha256": "9205d6c945b1707a54a4e4213da469d430a7c808cdb958211d342ec5cad29282"
+    }
+  ]
+}

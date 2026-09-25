@@ -1,0 +1,369 @@
+[
+  {
+    "id": "warren-50",
+    "case": "gpo-warren-1964",
+    "class": "scan",
+    "page": 50,
+    "regionNormalized": [
+      0.19,
+      0.058,
+      0.765,
+      0.038
+    ],
+    "review": "Two opening scan lines: September 26 to October 3, 1963, and his known contacts with the Soviet Embassy in the United States. Thin serifs, commas and date digits.",
+    "expectedPhrases": [
+      "September 26 to October 3, 1963",
+      "the Soviet Embassy in the United States"
+    ]
+  },
+  {
+    "id": "warren-890",
+    "case": "gpo-warren-1964",
+    "class": "scan",
+    "page": 890,
+    "regionNormalized": [
+      0.118,
+      0.074,
+      0.4,
+      0.075
+    ],
+    "review": "Small notes 415-421 with citations; tiny numerals and punctuation. Inherited OCR is not accepted as truth.",
+    "expectedPhrases": [
+      "415.",
+      "8 H 232",
+      "Delgado",
+      "416. Id. at 233, 241, 246-248.",
+      "417. Id. at 233.",
+      "418. See id. at 240-241, 243-244, 255.",
+      "419. Id. at 240.",
+      "420. Id. at 241.",
+      "421. Id. at 241-243."
+    ]
+  },
+  {
+    "id": "warren-100",
+    "case": "gpo-warren-1964",
+    "class": "scan",
+    "page": 100,
+    "region": [
+      45,
+      38,
+      366,
+      150
+    ],
+    "review": "Body prose with inline note markers 63-66; serif body type on a tinted scan.",
+    "expectedPhrases": [
+      "motorcade reached the intersection of Elm and Houston Streets",
+      "Stemmons Freeway",
+      "Patrolman Foster estimated that there were",
+      "11 people on the railroad bridge",
+      "witness testified that there were between 14 and 18 people",
+      "Texas-Louisiana Freight Bureau",
+      "employees of the Union Terminal Co."
+    ]
+  },
+  {
+    "id": "blue-150",
+    "case": "cia-blue-book-14-1955",
+    "class": "scan",
+    "page": 150,
+    "regionNormalized": [
+      0.204,
+      0.123,
+      0.173,
+      0.113
+    ],
+    "review": "TOTALS header, printed Certain/Doubtful/Total labels and the first handwritten row 270, 180, 450; 8.4, 5.6, 14.0.",
+    "expectedPhrases": [
+      "TOTALS",
+      "Certain",
+      "Doubtful",
+      "Total",
+      "270",
+      "180",
+      "450",
+      "8.4",
+      "5.6",
+      "14.0"
+    ]
+  },
+  {
+    "id": "blue-74",
+    "case": "cia-blue-book-14-1955",
+    "class": "scan",
+    "page": 74,
+    "region": [
+      60,
+      225,
+      550,
+      485
+    ],
+    "review": "Table IV chi-square test: typewritten headers, seven shape rows, totals and decimal values.",
+    "expectedPhrases": [
+      "CHI SQUARE TEST OF KNOWNS VERSUS",
+      "UNKNOWNS ON THE BASIS OF SHAPE",
+      "Number of",
+      "KNOWNS (K)",
+      "UNKNOWNS (n)",
+      "Elliptical",
+      "Rocket and aircraft",
+      "Meteor or comet",
+      "838",
+      "206",
+      "195",
+      "0.59",
+      "8.45",
+      "7.14",
+      "0.36",
+      "8.17",
+      "1.04",
+      "3.30",
+      "1765",
+      "434",
+      "29.05"
+    ]
+  },
+  {
+    "id": "geltman-1",
+    "case": "nbs-jres-geltman-1977",
+    "class": "scan",
+    "page": 1,
+    "region": [
+      55,
+      200,
+      465,
+      275
+    ],
+    "review": "Abstract paragraph and key words of a scanned two-column paper in small type.",
+    "expectedPhrases": [
+      "A review is presented of the basic classical mechanism whereby an electron can absorb energy from an",
+      "electromagnetic field while undergoing a collision with an atom or ion",
+      "quantum mechanical collision and the absorption or emission of photons",
+      "coefficients.",
+      "Key words: Bremsstrahlung; electron-ion collisions; free-free transitions; multiphoton processes; plasma"
+    ]
+  },
+  {
+    "id": "faa-121",
+    "case": "faa-phak-8083-25c",
+    "class": "figure",
+    "page": 121,
+    "regionNormalized": [
+      0.68,
+      0.707,
+      0.205,
+      0.052
+    ],
+    "review": "Figure 5-37 orange callout: Level flight / forces balanced / constant speed with the blue lift arrow and thin orange border.",
+    "expectedPhrases": [
+      "Level flight",
+      "forces balanced",
+      "constant speed"
+    ]
+  },
+  {
+    "id": "fed-45",
+    "case": "fed-explained-2021",
+    "class": "figure",
+    "page": 45,
+    "region": [
+      60,
+      385,
+      235,
+      482
+    ],
+    "review": "Figure 3.3 OPEN MARKET DESK node: white condensed label on a dark band, illustration and four small caption lines.",
+    "expectedPhrases": [
+      "OPEN MARKET DESK",
+      "The Fed instructs the Desk to",
+      "reduce the overnight reverse",
+      "repurchase agreement (ON RRP)",
+      "offering rate"
+    ]
+  },
+  {
+    "id": "fed-82",
+    "case": "fed-explained-2021",
+    "class": "figure",
+    "page": 82,
+    "region": [
+      95,
+      130,
+      530,
+      227
+    ],
+    "review": "Figure 5.7 regulations table: white header text on a dark red band, tinted row bands and small condensed text.",
+    "expectedPhrases": [
+      "Regulation (by letter and name)",
+      "Description",
+      "Banks and banking",
+      "Limitations on Interbank Liabilities",
+      "Prescribes standards to limit the risks",
+      "Membership of State Banking Institutions in the",
+      "Federal Reserve System",
+      "Bank Secrecy Act compliance"
+    ]
+  },
+  {
+    "id": "dga-3",
+    "case": "dga-2025-2030",
+    "class": "figure",
+    "page": 3,
+    "regionNormalized": [
+      0.048,
+      0.228,
+      0.445,
+      0.086
+    ],
+    "review": "Food photograph, left portion of the green gradient title Prioritize Protein Foods and the blue bullet beginning Prioritize high-quality, nutrient-dense. The crop intentionally cuts the continuation.",
+    "expectedPhrases": [
+      "Prioritize",
+      "high-quality, nutrient-dense"
+    ]
+  },
+  {
+    "id": "flag-27",
+    "case": "gpo-our-flag-2003",
+    "class": "table",
+    "page": 27,
+    "region": [
+      80,
+      438,
+      246,
+      575
+    ],
+    "review": "Clean numeric table: FLAGPOLE HEIGHT (FT.) and FLAG SIZE (FT.) headers, ten pairs and dot leaders.",
+    "expectedPhrases": [
+      "FLAGPOLE HEIGHT (FT.)",
+      "FLAG SIZE (FT.)",
+      "4 x 6",
+      "5 x 8",
+      "6 x 10",
+      "8 x 12",
+      "10 x 15",
+      "12 x 18",
+      "15 x 25",
+      "20 x 30",
+      "30 x 40",
+      "40 x 50",
+      "125",
+      "200",
+      "250"
+    ]
+  },
+  {
+    "id": "flag-33",
+    "case": "gpo-our-flag-2003",
+    "class": "figure",
+    "page": 33,
+    "region": [
+      224,
+      160,
+      373,
+      255
+    ],
+    "review": "Colorado flag illustration: red C, gold disc, blue and white bands.",
+    "expectedPhrases": []
+  },
+  {
+    "id": "cdc-13",
+    "case": "cdc-zombie-pandemic-2011",
+    "class": "figure",
+    "page": 13,
+    "region": [
+      306,
+      0,
+      612,
+      396
+    ],
+    "review": "Image-only comic page; upper-right quarter with the awakening exchange lettering. The committed reference covers the whole page.",
+    "expectedPhrases": []
+  },
+  {
+    "id": "algebra-343",
+    "case": "wallace-algebra-2010",
+    "class": "equation",
+    "page": 343,
+    "regionNormalized": [
+      0.217,
+      0.665,
+      0.255,
+      0.159
+    ],
+    "review": "Bottom three equation steps: radicals, squared parenthesized left side, plus/minus sign, b-squared minus 4ac and 2a denominators. Tyler Wallace, Beginning and Intermediate Algebra, 2010, CC BY 3.0.",
+    "expectedPhrases": [
+      "4ac",
+      "2a"
+    ]
+  },
+  {
+    "id": "algebra-347",
+    "case": "wallace-algebra-2010",
+    "class": "equation",
+    "page": 347,
+    "region": [
+      70,
+      615,
+      260,
+      655
+    ],
+    "review": "Exercise 35 with its exponent and minus sign. Tyler Wallace, Beginning and Intermediate Algebra, 2010, CC BY 3.0.",
+    "expectedPhrases": []
+  },
+  {
+    "id": "usgs-1",
+    "case": "usgs-mcs2025-copper",
+    "class": "small-text",
+    "page": 1,
+    "region": [
+      40,
+      205,
+      565,
+      481
+    ],
+    "review": "Salient Statistics borderless table: small labels, indentation-only row groups, year columns and estimate markers.",
+    "expectedPhrases": [
+      "Salient Statistics",
+      "Mine, recoverable",
+      "1,200",
+      "1,230",
+      "1,130",
+      "1,100",
+      "Primary (from ore)",
+      "872",
+      "922",
+      "930",
+      "843",
+      "Secondary (from scrap)",
+      "Copper recovered from old (post-consumer) scrap",
+      "161",
+      "169"
+    ]
+  },
+  {
+    "id": "911-472",
+    "case": "gpo-911-2004",
+    "class": "small-text",
+    "page": 472,
+    "region": [
+      35,
+      62,
+      362,
+      150
+    ],
+    "review": "Chapter 1 endnotes 38-41: small serif type with italic titles, numbers and dates.",
+    "expectedPhrases": [
+      "38. Ibid.; Michael Woodward interview (Jan. 25, 2004).",
+      "39. NTSB report",
+      "Flight Path Study",
+      "American Airlines Flight 11",
+      "Feb. 19, 2002.",
+      "load factor of 33.33 percent",
+      "seating capacity of 168",
+      "49.22 percent for Flight 175",
+      "Flight 175 BOS-LAX Load Factors",
+      "Sept. 17, 2001",
+      "175 Flight Data Recap"
+    ]
+  }
+]

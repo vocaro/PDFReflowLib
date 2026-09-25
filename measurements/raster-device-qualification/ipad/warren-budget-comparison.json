@@ -1,0 +1,6 @@
+{
+  "scope": "Same iPad source and raster settings with default versus explicit 4 GiB entry budget. Different host binaries; this is an output-identity observation, not a performance attribution.",
+  "defaultSHA256": "ecc55282d2ac47eac85e97eeb3107c8b1982beb4e07b1a396843a5bd52a5a3af",
+  "explicitBudgetSHA256": "ecc55282d2ac47eac85e97eeb3107c8b1982beb4e07b1a396843a5bd52a5a3af",
+  "byteIdentical": true
+}

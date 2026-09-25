@@ -44,6 +44,7 @@ PROBE_SOURCES = {
     'probe-pdfkit-concurrency.swift': EXTRACTION,       # native mode; -D PDFREFLOW_NATIVE
     'probe-pdfkit-memory.swift': [],                    # Apple SDKs only
     'probe-raster-environment.swift': RASTER,
+    'probe-raster-sweep.swift': RASTER,
     'probe-vision-titles.swift': RASTER,
     # A password reaches every open through PDFPageSource's SourceDocument, so the two probes
     # that open a document themselves compile it and the options type it takes (#252).

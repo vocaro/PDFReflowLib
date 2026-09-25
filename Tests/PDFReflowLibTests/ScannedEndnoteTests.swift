@@ -74,7 +74,7 @@ func warrenNotesReadDownEachColumnWithoutRewritingMarkers(_ number: Int) throws 
         .init(content: .paragraph(text), page: 1),
         .init(content: .paragraph(InlineText(String(repeating: "Text ", count: 12_000))), page: 1),
         .init(content: .sourcePage(2), page: 2),
-        .init(content: .paragraph(InlineText("5. Source citation.")), endnoteID: "note-2-10-20", page: 2),
+        .init(content: .paragraph(InlineText("5. Source citation.")), note: .init(id: "note-2-10-20", kind: .endnote), page: 2),
     ], assets: [])
     _ = try await EPUBWriter.write(book, maximumOutputBytes: 1_000_000, directory: dir, progress: { _ in })
     let folder = dir.appendingPathComponent("EPUB")
@@ -106,12 +106,12 @@ func warrenNotesReadDownEachColumnWithoutRewritingMarkers(_ number: Int) throws 
 }
 
 @Test func endnoteIdentifiersAreUniqueAndCannotBecomeMarkup() {
-    let note = ReflowBlock(content: .paragraph(InlineText("5. Citation")), endnoteID: "note-1", page: 1)
+    let note = ReflowBlock(content: .paragraph(InlineText("5. Citation")), note: .init(id: "note-1", kind: .endnote), page: 1)
     #expect(throws: ReflowDocument.ValidationError.invalidEndnote) {
         try ReflowDocument(metadata: .init(title: "Notes", language: "en"), blocks: [note, note], assets: []).validate()
     }
     var invalid = note
-    invalid.endnoteID = "note-\" onclick=\"bad"
+    invalid.note = .init(id: "note-\" onclick=\"bad", kind: .endnote)
     #expect(throws: ReflowDocument.ValidationError.invalidEndnote) {
         try ReflowDocument(metadata: .init(title: "Notes", language: "en"), blocks: [invalid], assets: []).validate()
     }
@@ -126,7 +126,7 @@ func warrenNotesReadDownEachColumnWithoutRewritingMarkers(_ number: Int) throws 
     #expect(ScannedEndnotes.plan(input, page: page, headingEvidence: false) != nil)
     var warnings: [ConversionWarning] = []
     let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: [], warnings: &warnings)
-    #expect(blocks.count { $0.endnoteID != nil } >= 80)
+    #expect(blocks.count { $0.note != nil } >= 80)
     let source = try PDFPageSource(url: URL(fileURLWithPath: "corpus/cache/GPO-WARRENCOMMISSIONREPORT.pdf"))
     let actual = try PageReader.read(pageIndex: 904, from: source, limit: 100_000,
                                      options: ConversionOptions(), structure: nil).content
@@ -135,7 +135,7 @@ func warrenNotesReadDownEachColumnWithoutRewritingMarkers(_ number: Int) throws 
                                      page: actual, headingEvidence: false)
     #expect(direct != nil)
     let output = LayoutReconstructor.blocks(page: actual, images: [], vocabulary: [], warnings: &warnings)
-    #expect(output.count { $0.endnoteID != nil } >= 80)
+    #expect(output.count { $0.note != nil } >= 80)
 }
 
 @Test func warrenMergedNoteRowStaysUnlinkedWhenCharacterPositionsCannotDivideIt() throws {

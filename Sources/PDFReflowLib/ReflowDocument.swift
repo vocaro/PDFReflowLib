@@ -88,7 +88,7 @@ struct ReflowDocument: Sendable, Equatable {
                 guard identifiers.insert(asset.id).inserted else { throw ValidationError.duplicateAsset(asset.id) }
             case let .block(block):
                 blocks += 1
-                if let id = block.endnoteID {
+                if let id = block.note?.id {
                     guard case .paragraph = block.content,
                           id.hasPrefix("note-"), id.utf8.count <= 80,
                           id.utf8.allSatisfy({ (48...57).contains($0) || (97...122).contains($0) || $0 == 45 }),
@@ -419,8 +419,19 @@ struct ReflowBlock: Sendable, Equatable {
         case sourcePage(Int)
     }
     var content: Content
-    /// A grouped endnote keeps its printed marker in its text, including uncertain OCR.
-    var endnoteID: String? = nil
+    /// A note the page prints, and the identifier its references link to. A grouped note keeps its
+    /// printed marker in its text, including uncertain OCR.
+    var note: Note? = nil
+    struct Note: Sendable, Equatable {
+        enum Kind: Sendable, Equatable {
+            /// One entry of a run of notes the book collects in a section of their own.
+            case endnote
+            /// A note the page sets at its own foot, beneath the text that refers to it (#299).
+            case footnote
+        }
+        var id: String
+        var kind: Kind
+    }
     /// Validated source paragraph identity, used to avoid heuristic joins across tag boundaries.
     var structureGroup: Int?
     /// Physical PDF page where this block begins; inline markers record later page boundaries.

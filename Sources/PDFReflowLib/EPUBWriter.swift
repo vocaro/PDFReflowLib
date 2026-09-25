@@ -318,7 +318,8 @@ actor EPUBWriter {
                 documentsWithPageLinks.append(spineDocument.name)
             }
             if spineDocument.body.contains("pdfreflow:note:") { documentsWithNoteLinks.append(spineDocument.name) }
-            let notes = try NSRegularExpression(pattern: #"<aside epub:type="endnote" role="note" id="([^"]+)""#)
+            let notes = try NSRegularExpression(
+                pattern: #"<aside epub:type="(?:endnote" role="note|footnote" role="doc-footnote)" id="([^"]+)""#)
             let body = spineDocument.body as NSString
             for match in notes.matches(in: spineDocument.body, range: NSRange(location: 0, length: body.length)) {
                 noteFiles[body.substring(with: match.range(at: 1))] = spineDocument.name

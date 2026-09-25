@@ -2073,6 +2073,53 @@ pairs retain separate paragraphs. See
   writer resolves against endnotes actually emitted into the spine; a target lost to a
   later fallback leaves the original reference text unlinked. This does not infer page-label
   offsets, repair OCR digits or certify the transcription. Source images remain available.
+- **`PageFootnotes` (#299).** Notes a page sets at its own foot are owned by the raised numbers
+  that refer to them, a unit apart from the two endnote layouts above and consulted only on a
+  page neither claims. Native text only: a recognized page, an inherited transcription and a page
+  kept as an image are never read for footnotes. Everything is the page's own, after its crops
+  and its furniture have taken their lines:
+  - *Openings.* A line opens a note when it begins with one to three digits followed by space or
+    a control character, or with raised digits, has a letter after them, and states a size under
+    0.9 body sizes. PDFKit states a line's size from its first glyph, which on a note is the
+    raised number (3.5 points on the Dietary Guidelines' page 2), so the notes are matched to
+    one another by line height instead: every opening within 20% of the first one's.
+  - *Order.* Openings whose left edges stand within two body sizes of one another form a column;
+    read down each column and then across, left to right, the numbers run on by one from the
+    first. Dietary Guidelines page 2 reads 1 and 2 at x=54, then 3 and 4 at x=315.
+  - *Continuations.* A small line of the notes' height below the top of the notes belongs to the
+    note above it in its column, within one line height; one that belongs to none refuses the
+    page.
+  - *The foot of the page.* Every line of the body's size stands above the notes. A running
+    footer the furniture pass did not remove is such a line and refuses the page, which is why a
+    single page with a printed folio under its notes is not linked.
+  - *References.* Each note's number is raised exactly once, in a line above the notes: digits
+    alone in a superscript run, straight after a word of three letters or more and at most two
+    closing marks, with no letter or digit straight after and none of `= + × ÷ ^` in the 30
+    characters before. So `x²`, `in²`, `ft³`, `10³`, `(a + b)²` and `4th` are not references. A
+    note never raised, or raised twice, refuses the page.
+  - *Output.* Each note is one paragraph block written as
+    `<aside epub:type="footnote" role="doc-footnote" id="note-fn-PAGE-N">`, keeping its printed
+    number, and each reference becomes a noteref the writer resolves to it. Where the finished
+    blocks do not carry every reference exactly once, nothing is linked and the notes stay
+    ordinary paragraphs, so no note is reachable only through a link that is not there.
+  - *Placement (a choice to confirm).* A note stays where the page prints it, at the end of that
+    page's text, rather than moving to the end of the chapter or the book: it is the smallest
+    change from the flow the book already had, it keeps each note beside its page's source-page
+    marker, and a reading system that presents footnotes as pop-ups finds it by its reference. A
+    reading system that hides footnote asides from the running text shows it only there.
+  - *Not done.* A note that continues onto the next page is not recognized as one (the page it
+    ends on has no opening for it), and a paragraph that runs on past a page's notes does not
+    step over them to join its continuation on the next page, as it steps over a picture. Loper
+    Bright page 76 shows the second: before this rule the opening of page 77 was joined into
+    note 6; now it is a paragraph of its own, still not joined to the sentence page 76 left open (#306).
+  Against the corpus at 684cf06b this links Dietary Guidelines page 2 (four notes, which had read
+  as two paragraphs of two), the nine Earthdata slides that footnote `AODS¹` (pages 12–14 and
+  16–21), eight Loper Bright pages (23, 40, 56, 61, 67, 76, 77 and 99; on 99 the note had been
+  joined into the body paragraph) and the Fed's page 75, where the note sits at the foot of
+  figure 5.5 rather than of the page and the page's measured body is the figure's 8-point type.
+  Every other corpus document converts byte for byte as before, the Wallace algebra among them;
+  the full Warren report and the NOAA assessment were checked by confirming no page of either is
+  read for footnotes, not by a second conversion.
 - Source-proved numbered bibliography entries with citation evidence reflow as paragraphs,
   preserving printed citation numbers (#195 owner decision). They do not become ordered-list
   counters. The hanging-indent join is applied before this markup choice.

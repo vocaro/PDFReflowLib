@@ -94,8 +94,8 @@ enum EPUBTextEncoder {
         let dir = ArabicText.readsRightToLeft(block.text) ? " dir=\"rtl\"" : ""
         switch block.content {
         case .paragraph:
-            if let id = block.endnoteID {
-                return SpinePacker.Piece(markup: "<aside epub:type=\"endnote\" role=\"note\" id=\"\(xml(id))\"\(dir)><p>\(payload)</p></aside>\n",
+            if let note = block.note {
+                return SpinePacker.Piece(markup: "<aside \(noteType(note.kind)) id=\"\(xml(note.id))\"\(dir)><p>\(payload)</p></aside>\n",
                                          sourcePages: block.sourcePages, heading: nil)
             }
             return SpinePacker.Piece(markup: "<p\(dir)>\(payload)</p>\n", sourcePages: block.sourcePages, heading: nil)
@@ -119,6 +119,15 @@ enum EPUBTextEncoder {
             return SpinePacker.Piece(markup: payload + "\n", sourcePages: block.sourcePages, heading: nil)
         case .sourcePage:
             preconditionFailure("Source boundaries are separate markers")
+        }
+    }
+
+    /// The type and role a note's `aside` states. A footnote is a note a reading system may show
+    /// where its reference is, rather than only where it stands (#299).
+    static func noteType(_ kind: ReflowBlock.Note.Kind) -> String {
+        switch kind {
+        case .endnote: "epub:type=\"endnote\" role=\"note\""
+        case .footnote: "epub:type=\"footnote\" role=\"doc-footnote\""
         }
     }
 

@@ -553,7 +553,7 @@ struct BlockAssembler {
     private(set) var blocks: [ReflowBlock] = []
     /// Uncertain-hyphen warnings the joins raised, one per page.
     private(set) var warnings: [ConversionWarning] = []
-    private var note: (group: Int, text: InlineText, id: String?)?
+    private var note: (group: Int, text: InlineText, note: ReflowBlock.Note?)?
     private var paragraph = InlineText()
     /// The structure group the open paragraph belongs to, when the tags named one. A tagged and
     /// an untagged line of the same printed paragraph arrive at one assembler — a page whose
@@ -694,7 +694,7 @@ struct BlockAssembler {
     }
 
     private mutating func flushNote() {
-        if let note { blocks.append(ReflowBlock(content: .paragraph(note.text), endnoteID: note.id, page: page)) }
+        if let note { blocks.append(ReflowBlock(content: .paragraph(note.text), note: note.note, page: page)) }
         note = nil
     }
 
@@ -770,7 +770,7 @@ struct BlockAssembler {
     }
 
     /// A line of a numbered note; consecutive lines of one `group` join into one paragraph.
-    mutating func appendNote(group: Int, _ line: TextLine, endnoteID: String? = nil) {
+    mutating func appendNote(group: Int, _ line: TextLine, note identified: ReflowBlock.Note? = nil) {
         initialOpening = nil
         flushParagraph()
         codeOrigin = nil
@@ -778,9 +778,9 @@ struct BlockAssembler {
         itemRowInProgress = nil
         if note?.group != group { flushNote() }
         if let current = note {
-            note = (group, join(current.text, line.content), current.id)
+            note = (group, join(current.text, line.content), current.note)
         } else {
-            note = (group, line.content, endnoteID)
+            note = (group, line.content, identified)
         }
     }
 

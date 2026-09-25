@@ -41,7 +41,7 @@ struct NoteLinker {
 
     func applying(to block: ReflowBlock, pageLabels: [Int: String]) -> ReflowBlock {
         // Physical page offsets are not proof of the page numbers an endnote head names.
-        guard block.endnoteID == nil, let label = pageLabels[block.page],
+        guard block.note == nil, let label = pageLabels[block.page],
               let printedPage = Int(label), case let .paragraph(text) = block.content else { return block }
         var output = block
         var changed = text

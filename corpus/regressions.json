@@ -1443,7 +1443,7 @@
     {
       "id": "dga-2025-2030",
       "sourceSHA256": "c34f1bec5c9416265670b7fcb24556bb8616ba95e8de2f2890460b6bbca1a472",
-      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning. Page 3 read against the source for the list conversion (#292): the guidelines set their items with `+`, which reconstruction reads whole as paragraphs, and runs of them are unordered lists without the plus — the three under Eat the Right Amount for You and the two under Consume Dairy; the protein items, whose columns interleave (a defect this contract does not bless), are outside the pin. Page 1 reviewed again for #172: the left and right labels each form one paragraph, including their ampersand-led second line; opposite-side footer labels remain complete. Cover column order is accepted as recorded on the issue. The final #191 alpha-budget audit rendered the cover again and reproduced loss of all 118 native characters during oversized backdrop composition. Its 45 independently decoded mask placements total 164,359,023 samples. The aggregate preflight restores the existing native/reference path; the title and every #172 label above remain required native text/paragraphs, with the existing review warning and image. No memory ceiling is raised. See measurements/alpha-page-budget/record.md.",
+      "basis": "Page 2 source raster reviewed; protects letter paragraph order and imagery, not the known page-3 protein-column defect. Page 1 source title and labels visually reviewed: the distinct Guidelines / For Americans lines retain their word boundary, and source Type3 character maps/TJ adjustments support intact Dairy and Vegetables. Graphic-label ownership remains unqualified; retain the source image and review warning. Page 3 read against the source for the list conversion (#292): the guidelines set their items with `+`, which reconstruction reads whole as paragraphs, and runs of them are unordered lists without the plus — the three under Eat the Right Amount for You and the two under Consume Dairy; the protein items, whose columns interleave (a defect this contract does not bless), are outside the pin. Page 1 reviewed again for #172: the left and right labels each form one paragraph, including their ampersand-led second line; opposite-side footer labels remain complete. Cover column order is accepted as recorded on the issue. The final #191 alpha-budget audit rendered the cover again and reproduced loss of all 118 native characters during oversized backdrop composition. Its 45 independently decoded mask placements total 164,359,023 samples. The aggregate preflight restores the existing native/reference path; the title and every #172 label above remain required native text/paragraphs, with the existing review warning and image. No memory ceiling is raised. See measurements/alpha-page-budget/record.md. Page 2 read against the source for #299: the page prints four numbered notes at its foot, 1 and 2 at x=54 and 3 and 4 at x=315, each a URL, and raises 1–4 after chronic diseases., obese., prediabetes. and mobility.; each note is pinned inside a footnote aside of its own, which is where the rule that links them from their references writes it.",
       "pages": [
         {
           "page": 1,
@@ -1476,7 +1476,13 @@
             "The United States is amid a health emergency.",
             "This changes today."
           ],
-          "minimumImages": 1
+          "minimumImages": 1,
+          "asides": [
+            "https://www.cdc.gov/chronic-disease/data-research/facts-stats/index.html",
+            "https://www.cdc.gov/nchs/fastats/obesity-overweight.htm",
+            "https://gis.cdc.gov/grasp/diabetes/diabetesatlas-spotlight.html",
+            "https://www.cdc.gov/physical-activity/php/military-readiness/unfit-to-serve.html"
+          ]
         },
         {
           "page": 3,

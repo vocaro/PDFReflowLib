@@ -113,7 +113,8 @@ and consulted by the reconstructor where a page's tags contradict it. `HyphenRep
 the geometric predicates the rules share (`hasSize`, `overlapsHorizontally`, `sharesColumn`,
 `sharesRow`) live on `TextLine` in `TextLineGeometry`. `TableRegionDetector`,
 `FractionRegionDetector` and `NumberedNoteDetector` are bounded detectors that hand regions or
-groups to the assembler; `ChapterBoundaryReader` supplies validated chapter-start pages.
+groups to the assembler; `PageFootnotes` is the one that also owns references, tying the notes a
+page sets at its foot to the raised numbers above them and linking those after assembly; `ChapterBoundaryReader` supplies validated chapter-start pages.
 `ListBuilder` is the one pass that reads blocks rather than lines: it sits between reconstruction
 and the writer, on the stream of finished blocks, and turns a verified run of marker-opened
 blocks into list items. A run crosses pages and is verified whole, so the pass holds a block only

@@ -2265,6 +2265,11 @@ enum LayoutReconstructor {
         if let scannedNotes { elements = scannedNotes.elements }
         let noteGroups = scannedNotes?.groups ?? NumberedNoteDetector.groups(in: elements, page: page,
                                                      headingEvidence: context.numberedNotePages.contains(page.number))
+        // Notes the page sets at its own foot belong to the raised numbers that refer to them.
+        // That ownership is its own evidence, apart from the endnote layouts above (#299).
+        let footnotes = noteGroups.isEmpty
+            ? PageFootnotes.plan(page: page, lines: lines, body: typography.body) : nil
+        let footnoteGroups = footnotes.flatMap { PageFootnotes.groups(in: elements, plan: $0) } ?? [:]
         // A link whose rectangle covers a figure links the figure (#247).
         var imageLinks: [String: LinkTarget] = [:]
         for (rect, path) in images where !page.links.isEmpty {
@@ -2390,9 +2395,12 @@ enum LayoutReconstructor {
                                                  inheritedInlineReferenceWraps: inlineReferenceWraps,
                                                  warnings: &warnings))
             } else if let group = noteGroups[index], let line = element.line {
-                assembler.appendNote(group: group, line, endnoteID: scannedNotes.map {
-                    ScannedEndnotes.identifier(page: page.number, line: $0.elements[group].line!)
+                assembler.appendNote(group: group, line, note: scannedNotes.map {
+                    .init(id: ScannedEndnotes.identifier(page: page.number, line: $0.elements[group].line!), kind: .endnote)
                 })
+            } else if let member = footnoteGroups[index], let line = element.line, let footnotes {
+                assembler.appendNote(group: member.opening, line,
+                                     note: .init(id: footnotes.identifier(of: member.note), kind: .footnote))
             } else if let path = element.image {
                 assembler.appendImage(path)
                 if let caption = element.pictureCaption { assembler.appendCaption(caption) }
@@ -2437,6 +2445,7 @@ enum LayoutReconstructor {
         }
         var result = BracketedReferenceBlocks.joined(
             SlideDeck.levelSecondary(assembler.finish(), candidates: slideSecondary))
+        if let footnotes, !footnoteGroups.isEmpty { result = PageFootnotes.linking(result, plan: footnotes) }
         if !formOutline.isEmpty {
             for index in result.indices {
                 guard case let .heading(id, text, _) = result[index].content,
@@ -2788,7 +2797,7 @@ enum LayoutReconstructor {
         }
         if anchor >= 0, opening < remaining.count, let previousPage,
            blocks[anchor].closedUnit == nil, remaining[opening].closedUnit == nil,
-           blocks[anchor].endnoteID == nil, remaining[opening].endnoteID == nil,
+           blocks[anchor].note == nil, remaining[opening].note == nil,
            let left = carriedOn(blocks[anchor].content, substitute: hyphens.lineEndSubstitute),
            case let .paragraph(right) = remaining[opening].content,
            // Reaching past a picture asks more of the paragraph than standing beside the boundary

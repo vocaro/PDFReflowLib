@@ -69,7 +69,7 @@ travels with it as evidence; deciding whether that is worth reporting stays with
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs and copies them
 into values at once. The content-stream readers (`NativeSpacingReader`, `GlyphIdentityReader`,
-`GlyphIndexDecoder`, `MarkedTextReader`) are visitors on one driver, `ContentStreamWalk`, which owns the scanner
+`GlyphIndexDecoder`, `MarkedTextReader`, `GlyphPlacementReader`) are visitors on one driver, `ContentStreamWalk`, which owns the scanner
 lifecycle, graphics-state stack, matrices, text-object state, show operators, operation budget
 and cancellation check; a reader keeps only the state its evidence needs and differs from the
 others only in `ContentStreamWalk.Options`. `NativeSpacingReader` keeps the text matrix itself,
@@ -122,7 +122,8 @@ while a run it may belong to can still change — at most three pages past the r
 what a decision reads from further back travels as a count or a marker, never as blocks
 ([decision 0008](decisions/0008-streamed-blocks-to-the-writer.md)).
 What seeds a crop is separate from how far the crop grows. A thin painted rule that underlines
-prose is that text's decoration and seeds nothing, while a rule carrying a fraction, a rule
+prose is that text's decoration and seeds nothing, a bar over or under one glyph is that glyph's
+accent and is read into its line (`PaintedAccents`), while a rule carrying a fraction, a rule
 inside a short word-free mathematical line, a rule clear of every line and a row of header
 underlines over numeric rows each remain evidence of something to preserve. A crop then admits
 only the lines its seed captures and the other pieces of those lines' rows, and is trimmed away

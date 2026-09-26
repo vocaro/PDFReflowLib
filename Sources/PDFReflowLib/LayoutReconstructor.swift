@@ -229,6 +229,44 @@ enum LayoutReconstructor {
         min(a.maxY, b.maxY) - max(a.minY, b.minY) >= min(a.height, b.height) * 0.5
     }
 
+    /// Whether `line` carries on a display row a crop admitted, past the gap TeX sets before an
+    /// arrow (#302).
+    ///
+    /// DASC's page 9 displays `½xᵀPx + qᵀx  ⟶ₓ min,` with a quad before the arrow. PDFKit reads
+    /// the row as two lines 12.7 points apart, and a crop admits the other pieces of a row only
+    /// where its own rectangle reaches them, so the arrow and `min` stayed in the prose beside the
+    /// picture of the rest. An arrow cannot open a sentence, a label or an exercise; opening a
+    /// piece of the admitted row's own line, within two bodies of it with nothing between and a
+    /// term after it, it continues the expression the crop holds.
+    ///
+    /// Only an arrow. Wallace sets `=` as a line of its own between two fractions, each its own
+    /// crop and each read as MathML; joining the `=` carried one crop into the next, and where
+    /// the two together were no longer one proven row, twenty expressions went into pictures and
+    /// five worked steps' annotations (pages 43, 274, 277 and 367) with them.
+    static func continuesDisplay(_ line: TextLine, after admitted: [CGRect], among lines: [TextLine],
+                                 body: CGFloat) -> Bool {
+        guard opensWithArrow(line.text), !readsAsSentence(line) else { return false }
+        return admitted.contains { piece in
+            let gap = line.rect.minX - piece.maxX
+            guard sameRow(piece, line.rect), gap >= 0, gap <= body * 2 else { return false }
+            let between = CGRect(x: piece.maxX, y: line.rect.midY - 1, width: gap, height: 2)
+            return !lines.contains { $0.rect != line.rect && $0.rect != piece && $0.rect.intersects(between) }
+        }
+    }
+
+    /// Whether a piece of text opens with an arrow and has a term after it. PDFKit reads TeX's
+    /// `\longrightarrow` as the minus and the arrow it is drawn from, `−→`.
+    static func opensWithArrow(_ text: String) -> Bool {
+        let arrows = "→←↔⇒⇐⇔⟶⟵⟷⟹⟸⟺↦"
+        var rest = text.drop(while: \.isWhitespace)
+        if let first = rest.first, first == "−" || first == "-", let second = rest.dropFirst().first,
+           arrows.contains(second) {
+            rest = rest.dropFirst()
+        }
+        guard let first = rest.first, arrows.contains(first) else { return false }
+        return rest.dropFirst().contains { !$0.isWhitespace }
+    }
+
     private struct Region {
         var seed: CGRect
         var bounds: CGRect
@@ -268,7 +306,7 @@ enum LayoutReconstructor {
     /// prose; a line whose rectangle genuinely overlaps admitted text is admitted instead.
     /// Returns nil for a thin rule that lies inside text it does not strike through.
     private static func expanded(_ region: Region, page: PageContent, language: String,
-                                 columnHeaders: [CGRect]) -> CGRect? {
+                                 columnHeaders: [CGRect], body: CGFloat) -> CGRect? {
         var admitted: [CGRect] = []
         while true {
             var bounds = admitted.reduce(region.seed) { $0.union($1.insetBy(dx: -2, dy: -2)) }
@@ -288,6 +326,12 @@ enum LayoutReconstructor {
                                 || !reachesInto(region.seed, line, among: page.lines,
                                                 pictures: page.pictures, bounds: page.bounds,
                                                 columnHeaders: columnHeaders))) else { continue }
+                admitted.append(line.rect)
+                changed = true
+            }
+            // A display row goes on past the gap TeX sets before an arrow (#302).
+            for line in page.lines where !admitted.contains(line.rect) && !bounds.intersects(line.rect)
+                && continuesDisplay(line, after: admitted, among: page.lines, body: body) {
                 admitted.append(line.rect)
                 changed = true
             }
@@ -441,6 +485,10 @@ enum LayoutReconstructor {
 
     /// Expand crops to whole intersecting text lines so a label cannot be cut in half.
     static func graphicsWithLabels(_ page: PageContent, language: String = "en") -> [CGRect] {
+        // A glyph's overline or underline is read into its line, not preserved (#302).
+        var page = page
+        let accents = page.accents
+        page.graphics.removeAll(where: accents.contains)
         // Displayed formulas have spatial meaning (superscripts, fractions, aligned terms)
         // that line concatenation cannot reproduce. Preserve recognizable formulas as crops.
         let formulas = page.lines.filter { line in
@@ -521,7 +569,7 @@ enum LayoutReconstructor {
         while regions.map(\.bounds) != previous {
             previous = regions.map(\.bounds)
             regions = regions.compactMap { region in
-                expanded(region, page: page, language: language, columnHeaders: columnHeaders)
+                expanded(region, page: page, language: language, columnHeaders: columnHeaders, body: body)
                     .map { Region(seed: region.seed, bounds: $0) }
             }
             // A merged bounding rectangle can newly intersect a label that neither component

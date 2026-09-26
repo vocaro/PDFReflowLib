@@ -445,6 +445,18 @@ spatial reconstruction rather than partial results.
   occurrence there (its only occurrence, or the one standing alone between word spaces). Redrawn
   glyphs found isolated are flagged so a dingbat font's metrics never read as a superscript. It
   never invents a character.
+- **`GlyphPlacementReader` (#302).** Places every glyph a page's own content stream draws — its
+  advance along the baseline, its baseline and its size — from each simple font's `FirstChar`,
+  `Widths` and `MissingWidth`, `Tc`, `Tw`, `Tz`, `Ts` and the text and current matrices. It
+  decodes no character, so it reads the TeX fonts with built-in encodings and no `ToUnicode` map
+  that `NativeSpacingReader` cannot; which character a glyph is stays PDFKit's to say. Code 32
+  is a space and inks nothing. A page is placed whole or not at all, because the rules that read
+  it look for what stands near a mark: a Type0 or Type3 font, a simple font without widths, text
+  drawn turned or mirrored, a show continuing a cursor no earlier show placed, `'` or `"`, a Form
+  XObject (whose text the walk does not follow), 256 distinct fonts or 100,000 glyphs refuses it,
+  and the accent and display-term rules ([Region detectors](#region-detectors)) read nothing from
+  that page. Of the 5,875 pages of the 24 corpus books, DASC and two other cached papers it
+  places 1,632, at about a millisecond a page.
 - **`MarkedTextReader`.** Matches explicitly positioned text-show origins to unique native line
   rectangles for tagged-PDF association. Unknown glyph-cursor advancement, missing or duplicate
   MCIDs, ambiguous geometry and incomplete groups keep spatial reconstruction. Origin matching is
@@ -2137,6 +2149,52 @@ pairs retain separate paragraphs. See
   keeping the seed's ink (for a thin rule, its one-point stroke), because layout removes every
   intersecting line from the reflowed prose; a line the crop cannot be trimmed away from is
   admitted instead, and a thin rule left with nothing admitted yields no crop at all (#36, #229).
+  The other pieces of a row are those the crop's rectangle reaches, with one addition (#302): a
+  piece of an admitted line's row that opens with an arrow (`→ ← ↔ ⇒ ⇐ ⇔ ⟶ ⟵ ⟷ ⟹ ⟸ ⟺ ↦`, or
+  PDFKit's `−→` for TeX's `\longrightarrow`) with a term after it, does not read as a sentence,
+  and begins within two body sizes to the right of that line with no other line between, carries
+  the display on and is admitted too. DASC page 9 sets `½xᵀPx + qᵀx ⟶ₓ min,` with a quad before
+  the arrow, which PDFKit reads as a separate line 12.7 points on; the crop held the expression
+  and left `−→ₓ min,` in the prose beside it. Only an arrow: Wallace sets `=` as a line of its
+  own between two fractions that are each a crop read as MathML, and admitting it carried one
+  crop into the next: 16 expressions read as 8 whole equations, but where the two together were
+  no longer one proven row, 20 more went into pictures, and five worked steps' annotations
+  (pages 43, 274, 277 and 367) with them.
+- **Painted accents (#302).** A painted region at most 1.5 points of ink high and 1 to 40 points
+  long (once `GraphicsReader`'s padding is removed) is a glyph's accent when exactly one glyph
+  `GlyphPlacementReader` placed spans it, each end within max(0.5 pt, 0.15 em) of the glyph's
+  advance, with the bar over it (0.3 to 1.1 em above its baseline) or under it (0.02 to 0.45 em
+  below), and nothing on the bar's other side: no glyph reaching over a fifth of the bar with its
+  baseline within 0.5 em above an overline (a numerator's) or within 1 em below an underline (a
+  denominator's), and, for an overline, no glyph ending within 0.3 em of the bar's left end with
+  its baseline within 0.3 em of the bar (a radical sign hanging from its vinculum). The one
+  upright, proportional line whose rectangle holds the glyph's middle then carries U+0304
+  COMBINING MACRON (`ā`) over, or U+0331 COMBINING MACRON BELOW (`a̱`) under, straight after the
+  character PDFKit selects under the middle half of the glyph, which must be one letter or digit.
+  The character is placed by PDFKit's own text of the line from its left edge through three
+  quarters of the glyph, which must open the line's text character for character (spaces and
+  marks set aside) and end in it. A bar so read is recorded in `PageContent.accents` and seeds
+  no crop; a bar the evidence does not settle stays the graphic it was. DASC page 9 prints the
+  time window `(a̱ₖ, āₖ)` in a sentence and in displays; the sentence's two bars had each been a
+  crop of its own, a 9-by-4-point sliver set between its lines, while it read `(aₖ,aₖ)`. Ten of
+  the page's twelve bars are now read; the two in display (12)'s constraints stand where PDFKit's
+  lines overlap and stay graphics inside that display's crop. No bar anywhere else in the cached
+  corpus is read as an accent: Wallace's fraction bars have a term on each side, and its
+  radicals' vinculum meets the sign. Evidence:
+  [maths-reading-leftovers](../measurements/maths-reading-leftovers/record.md).
+- **A sentence run into a display's term (#302).** Where a line's placed glyphs (those whose
+  middles its rectangle holds) break by more than two ems of the glyph before the break, and
+  every glyph past the break is at most 0.8 of that glyph's size and the first stands at least a
+  fifth of its size off its baseline, what lies past the break is a display's term, not the
+  line's: nothing in running text leaves two ems between glyphs, and a script is set against its
+  base. The line is split where PDFKit's text of it up to the middle of the break ends, which
+  must open the line's text, hold a word of three letters, and leave a remainder holding no such
+  word. The words keep the line's rectangle up to their last glyph and its size; the term takes
+  its glyphs' extent and size. DASC page 9 ends a sentence `has the form` beside its display, and
+  the ½ that opens the display shares the words' row: PDFKit read `the form 1` as one line, the
+  ½'s crop could not be cut around it, and `the form` went into the picture. Only that line in
+  the cached corpus breaks this way. Evidence:
+  [maths-reading-leftovers](../measurements/maths-reading-leftovers/record.md).
 - **Prose printed over a picture** (`PageDiagnosis.proseOverPictures`, #239). A crop a page's own
   prose sits inside cannot be trimmed away from it, so the words would leave the book. A run of
   lines a crop takes still reflows, while the crop is preserved and shown unchanged, when every

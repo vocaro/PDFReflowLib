@@ -91,6 +91,17 @@ enum PageReader {
             if styled, !SlideDeck.title(in: content).isEmpty {
                 content.lines = try NativeTextReader.separateSlideLabels(content.lines, on: page)
             }
+            if styled {
+                // Where each glyph stands, from the content stream (#302).
+                let placed = GlyphPlacementReader.read(reference)
+                // A line PDFKit ran from a sentence into a display's term is two lines.
+                if let placed {
+                    content.lines = try DisplayTermSplit.separated(content.lines, glyphs: placed, page: page)
+                }
+                // A bar painted over or under one glyph is that glyph's accent.
+                (content.lines, content.accents) = try PaintedAccents.read(content.lines, regions: graphics.regions,
+                                                                           glyphs: placed, page: page)
+            }
             content.links = links
             content = TextBackdrop.compose(content, graphics: graphics)
             if !requiresPageImage, PageBackdrop.eligible(graphics, bounds: bounds),

@@ -209,6 +209,9 @@ struct PageContent: Equatable, Codable {
     /// that picture holds, and which of those pictures the recognizer could not read. A scanned
     /// page states no grid of its own, so `tables` above is empty wherever these are not.
     var recognizedTables: [TableCellEvidence.Reading] = []
+    /// The bars among `graphics` that are one glyph's overline or underline, which its line
+    /// carries as a combining mark and which seed no crop (#302).
+    var accents: [CGRect] = []
 }
 
 extension PageContent {
@@ -217,6 +220,7 @@ extension PageContent {
         case sidebarValueRows, nativeTextPanels, closedNativeFrames, blanks, requiresPageImage
         case recognized, hasSyntheticTextStyle, preservePageReference, recognizedArtwork
         case backdropTextPanels, links, tables, recognizedTables
+        case accents
     }
 
     init(from decoder: Decoder) throws {
@@ -243,6 +247,8 @@ extension PageContent {
         links = try values.decode([PageLink].self, forKey: .links)
         tables = try values.decode([PageTable].self, forKey: .tables)
         recognizedTables = try values.decode([TableCellEvidence.Reading].self, forKey: .recognizedTables)
+        // Captured page fixtures predate accent evidence (#302).
+        accents = try values.decodeIfPresent([CGRect].self, forKey: .accents) ?? []
     }
 }
 

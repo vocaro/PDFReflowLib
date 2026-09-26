@@ -37,13 +37,14 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->264 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->272 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
   the comparison and reader servers (no Poppler or socket needed; a real-Poppler image-URL check
   through the safe HTTP handler in simple and positioned modes, with paths containing spaces,
-  skips explicitly when Poppler is absent), and
+  skips explicitly when Poppler is absent), the gate's prune of earlier results directories
+  (a run in progress kept and not counted, finished and reused-PID runs removed), and
   `tools/test_pdfkit_gate.py`, which runs `tools/check_pdfkit_gate.py` over `Sources/` and
   `Tests/` and fails on any font, CoreText or PDFKit call made outside
   `NativeTextReader.withExtractionLock` or `pdfKitGated` (`Tests/PDFReflowLibTests/PDFKitGate.swift`).
@@ -152,6 +153,20 @@ most recent directories left behind by earlier runs, naming each one it removes 
 `pdfreflow-checks.*` directories in the script's own scratch directory (`TMPDIR`, else `/tmp`) are
 ever touched. A `--fast` run leaves about 350 MiB and a `--corpus` run about 1 GiB, and keeping
 every one of them filled a 1.8 TiB volume in three days and failed a build with `ENOSPC` (#287).
+
+**A run still in progress is never pruned.** Parallel agents in worktrees share one `TMPDIR`,
+and a run starting could otherwise remove another's results under it (#311). Each run records
+its own process, the PID of `check-all.sh` and that process's start time, in an `owner` file in
+its directory before the directory takes its `pdfreflow-checks.` name. The prune leaves any
+directory whose process is still that run; a PID the system has since given to another process
+does not match that process's start time, so it keeps nothing. A run in progress is not counted
+either: the runs `PDFREFLOW_KEPT_RUNS` keeps are finished ones, however many are running beside
+them. A directory whose process has exited, or with no record because an earlier version of the
+script made it, is finished and pruned as before. The protection therefore holds between runs of
+this version only: a run from an older checkout records nothing, so it is pruned like a finished
+one, and its own prune still removes others' directories. The bookkeeping is
+`scripts/check-all-runs.sh`; `tools/test_check_all_runs.py` runs it against a private `TMPDIR`
+with live, finished, unrecorded and reused-PID runs.
 
 The converter is single-threaded (CPU seconds match wall seconds on every corpus case), so cases
 in separate processes scale with cores. Peak RSS is measured per process, so concurrent cases do

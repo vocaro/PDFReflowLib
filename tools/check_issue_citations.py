@@ -250,6 +250,8 @@ ALLOWED = {
         'asked for it'),
     287: ('historical', 'the gate results directory kept only while it is worth reading, on main and '
         'named by its issue'),
+    311: ('historical', 'the prune that leaves a gate run still in progress, on main and named by its '
+        'issue'),
     # Closed the same day these citations were written, which is the blind spot #286 records: the
     # snapshot agreed with GitHub until the push, and the refresh that followed it exposed them.
     174: ('historical', 'the block-level reading order `columnRuns` gives a page with no straight '

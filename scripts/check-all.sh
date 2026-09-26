@@ -32,22 +32,18 @@ SCRATCH="${TMPDIR:-/tmp}"
 # So a passing run removes its own directory at the end, and every run first prunes all but the
 # most recent KEPT_RUNS of the ones left behind, naming each one it removes. Only this script's
 # own `pdfreflow-checks.` directories in its own scratch directory are ever touched.
+# Runs share that directory whenever they share a TMPDIR, as parallel agents in worktrees do, and
+# the prune could not tell a finished run from one still in progress, so a run starting could
+# remove another's results under it (#311). Each run now records its process in its directory
+# before the directory takes its final name (scripts/check-all-runs.sh). The prune leaves a run
+# whose process is still that run, and does not count it: KEPT_RUNS finished runs are kept however
+# many are in progress. A directory with no record, from an earlier version of this script, or
+# whose process is gone is finished and pruned as before.
 KEPT_RUNS="${PDFREFLOW_KEPT_RUNS:-5}"
 if [[ ! $KEPT_RUNS =~ ^[0-9]+$ ]]; then echo "PDFREFLOW_KEPT_RUNS must be a non-negative integer." >&2; exit 2; fi
-prune_old_runs() {
-    local kept=0 directory
-    # Newest first, by modification time, so the ones kept are the ones just run.
-    while IFS= read -r directory; do
-        [[ -d $directory ]] || continue
-        kept=$((kept + 1))
-        if [[ $kept -gt $KEPT_RUNS ]]; then
-            echo "Removing an earlier run's results: $directory"
-            rm -rf "$directory"
-        fi
-    done < <(ls -dt "$SCRATCH"/pdfreflow-checks.* 2>/dev/null)
-}
-prune_old_runs
-WORK="$(mktemp -d "$SCRATCH/pdfreflow-checks.XXXXXX")"
+source scripts/check-all-runs.sh
+prune_old_runs "$SCRATCH" "$KEPT_RUNS"
+WORK="$(new_run_directory "$SCRATCH")"
 LOGS="$WORK/logs"
 mkdir "$LOGS"
 echo "Validation results: $WORK"

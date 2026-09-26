@@ -69,7 +69,7 @@ travels with it as evidence; deciding whether that is worth reporting stays with
 
 `NativeTextReader` obtains PDFKit line selections, geometry and attributed runs and copies them
 into values at once. The content-stream readers (`NativeSpacingReader`, `GlyphIdentityReader`,
-`GlyphIndexDecoder`, `MarkedTextReader`, `GlyphPlacementReader`) are visitors on one driver, `ContentStreamWalk`, which owns the scanner
+`ExtensionDelimiterReader`, `GlyphIndexDecoder`, `MarkedTextReader`, `GlyphPlacementReader`) are visitors on one driver, `ContentStreamWalk`, which owns the scanner
 lifecycle, graphics-state stack, matrices, text-object state, show operators, operation budget
 and cancellation check; a reader keeps only the state its evidence needs and differs from the
 others only in `ContentStreamWalk.Options`. `NativeSpacingReader` keeps the text matrix itself,

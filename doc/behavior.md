@@ -116,8 +116,9 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   again but within tolerance of the anchor's offset, it continues the anchor's script. A run
   within 10% of the anchor's size that its own size would reject, further out on the anchor's side
   by at most 75% of the anchor's size and within 75% of the line's largest size, is a script at the
-  anchor's level: Wallace page 178 raises the ³ of `(a²)³` over parentheses the text layer
-  drops (#305). A body-sized run is never an anchor, and neither is a rejected numerator. Nor
+  anchor's level: an exponent set over a tall parenthesis the text layer does not carry stands
+  higher than the script before it, as Wallace page 178's `(a²)³` did until its parentheses were
+  restored (#305). A body-sized run is never an anchor, and neither is a rejected numerator. Nor
   does a step between two second-level glyphs insert the word boundary kept for PDFKit's
   concatenated lines. Rows that PDFKit splits into several lines are read apart (#303).
 - **Script baseline (#304).** PDFKit states a line's offsets from one reference, which need not be
@@ -140,6 +141,15 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   exponent stand after a problem number, `=`, `(` or `,`, and none of the 33 after a letter or digit
   carries one. A run within 10% of a first-level script's size and within its tolerance of the
   script's offset continues that script however far from the baseline (DASC's `STA^{r_f(k)}`).
+- **A script set against a restored delimiter (#305).** A glyph run straight after a delimiter
+  `ExtensionDelimiterReader` restored, at most 90% of the delimiter's size, is its superscript
+  when raised from the delimiter's baseline offset by more than its own tolerance and no further
+  than the delimiter's top plus that tolerance, and its subscript when lowered by more than the
+  tolerance and no further than the delimiter's foot plus it, whatever its own size says. TeX
+  raises a group's exponent from the top of the delimiter that closes it: the ³ of Wallace page
+  178's `(a²)³` stands 7.44 points up on 7.97, past three quarters of its own size, and reads
+  `(a<sup>2</sup>)<sup>3</sup>`. Only the glyph run immediately after the delimiter is read so; a
+  delimiter PDFKit read itself carries no reach, and the rule never applies to it.
 - Emphasis is read the same way. A run holding no non-whitespace character takes neither italic
   nor bold from its font, so `<em> </em>` and `<strong> </strong>` are never written over a space
   (#278). The run itself is kept — the page set that space and the words on either side need it —
@@ -457,6 +467,59 @@ spatial reconstruction rather than partial results.
   and the accent and display-term rules ([Region detectors](#region-detectors)) read nothing from
   that page. Of the 5,875 pages of the 24 corpus books, DASC and two other cached papers it
   places 1,632, at about a millisecond a page.
+- **`ExtensionDelimiterReader` (#305).** TeX draws a sized delimiter (`\big(`, or the one
+  `\left(`/`\right)` chooses around a tall group) from its maths extension font, CMEX10 or one
+  laid out like it (txexs), under a glyph name no glyph list gives a character, and the font's
+  `ToUnicode` map, where it has one, covers only the pieces of the tallest brackets; PDFKit reads
+  nothing where the delimiter stands. Wallace page 178 read `a2 3` for `(a²)³`.
+  - *Which glyphs.* Only sized delimiters: `parenleft`, `parenright`, `bracketleft`,
+    `bracketright`, `braceleft`, `braceright`, `floorleft`, `floorright`, `ceilingleft`,
+    `ceilingright`, `angbracketleft`, `angbracketright`, `slash` and `backslash`, each followed by
+    `big`, `Big`, `bigg` or `Bigg`, read as `( ) [ ] { } ⌊ ⌋ ⌈ ⌉ ⟨ ⟩ / \`. Extensible pieces
+    (`parenlefttp`, `braceex`, `vextendsingle`), radicals and big operators are never read: they
+    build displays, not lines of text. The name comes from the font's own resources: its
+    `Differences` array, or, where no base encoding replaces it, the built-in encoding of its
+    embedded Type 1 program (`FontFile`, clear-text part), read only when the descriptor's
+    `CharSet` lists a sized delimiter. A compact (`FontFile3`) program's built-in encoding is not
+    read. A code the font's `ToUnicode` map states is left to PDFKit, and a map that cannot be
+    read, or a missing advance, supplies nothing.
+  - *Where each is drawn.* The page's own content stream (`Tj`/`TJ`, positioned or continuing
+    the previous show's advance, with `Tc`, `Tw` and `Ts`; not under `Tz` other than 100, not in
+    Form XObjects, not on a rotated page). A delimiter drawn in one show with glyphs of any other
+    kind is never placed. Delimiters within half an em of each other on overlapping heights are
+    one run.
+  - *Whether it encloses a row.* TeX centres a delimiter on the maths axis, a quarter em above the
+    baseline of the row it encloses, and hangs it from its origin 0.04 em up, to 1.16, 1.76, 2.36
+    or 2.96 em down by size. Walking inward (right of an opening run, left of a closing one, both
+    ways from a slash) show by show on the run's height, with no gap over an em, the first glyph
+    within 10% of the delimiter's size must stand within 0.2 em of that baseline; smaller glyphs
+    are passed over as scripts. Another delimiter, a larger glyph, a glyph of unknown text or a
+    radical sign ends the walk and the run is left out: a tall parenthesis around a fraction
+    meets a displayed numerator or denominator, or only an inline fraction's smaller glyphs, and
+    encloses no row a line of text could hold.
+  - *Which line.* The run's anchors are the nearest non-blank shows before and after it, each
+    within an em and with its baseline on the run's height (the spacing reader's shows, so a page
+    that reader cannot scan places nothing). The run's line is the one line whose rectangle holds
+    an anchor's origin and whose text the shows around the run spell: the shows that rectangle
+    holds on the run's height, left to right, one more on each side at a time, must occur once in
+    the line with its spaces taken out, at the line's start or end where the shows reach it with
+    nothing undecoded between. PDFKit stretches a line's rectangle over any tall glyph it
+    attaches to it, so rectangles overlap around a delimiter and do not settle the line; a run two
+    lines could take, or none, stays out.
+  - *Spaces.* PDFKit sets a space in the gap a delimiter's width leaves whether or not the page
+    spaces a word there, so that space is placed, not kept: never between a delimiter and what it
+    encloses, nor between a closing delimiter and a smaller glyph off the row's baseline after it
+    (its script). On its outer side a delimiter keeps PDFKit's space, and takes a space PDFKit did
+    not set where a space glyph stands between or the gap reaches 0.15 em. A slash is spaced by
+    that gap alone. An advance understates the gap beside a delimiter, whose ink is narrower than
+    its advance, so a narrow measure never removes a space PDFKit set on the outer side.
+  - The delimiter takes the attributes of the nearest character within 10% of its size, so it
+    stands on that text's baseline, and carries how far it reaches above and below the enclosed
+    row's baseline for the script that follows it (see *A script set against a restored
+    delimiter*). Across the corpus it reads 411 delimiters in Wallace and places 42 of them in a
+    line; only page 178's reach the EPUB as text, the rest standing in displays kept as pictures,
+    which do not change. The arXiv paper's 12 all place, and the one display row it reads as text
+    gains its three. The DASC paper's 32 place nothing: the spacing reader cannot scan its pages.
 - **`MarkedTextReader`.** Matches explicitly positioned text-show origins to unique native line
   rectangles for tagged-PDF association. Unknown glyph-cursor advancement, missing or duplicate
   MCIDs, ambiguous geometry and incomplete groups keep spatial reconstruction. Origin matching is

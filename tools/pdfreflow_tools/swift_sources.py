@@ -23,6 +23,8 @@ EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpac
               # (#270), for the same reason and from the same character boxes.
               'ColumnGutterCut.swift', 'DetachedTextReader.swift', 'TextLineGeometry.swift',
               'GlyphIdentityReader.swift', 'DiscretionaryHyphenReader.swift',
+              # TeX's sized delimiters, which no map states, are restored where the line is read (#305).
+              'ExtensionDelimiterReader.swift',
               'GlyphIndexDecoder.swift', 'TextEncodingCheck.swift',
               'EnglishText.swift', 'CJKText.swift', 'ArabicText.swift', 'VerticalJapaneseColumns.swift', 'ContentStreamWalk.swift',
               'CGPDFObjects.swift',

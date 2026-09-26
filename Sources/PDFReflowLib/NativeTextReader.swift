@@ -68,6 +68,11 @@ enum NativeTextReader {
         // filter below and `attributedTexts`'s alignment check reuse it instead of asking PDFKit
         // for each line's plain text twice.
         let textsByLine = selections.map(\.string)
+        // TeX's sized delimiters, which no map states and PDFKit reads as nothing, and the lines
+        // the shows around them place them in (#305); without the shows none can be placed.
+        let delimiters = includeStyle && !spacing.isEmpty ? page.pageRef.map(ExtensionDelimiterReader.read) ?? [] : []
+        let delimiterPlacements = ExtensionDelimiterReader.placements(delimiters, shows: spacing, lines: boundsByLine,
+                                                                      texts: textsByLine.map { $0 ?? "" })
         let discretionaryShows = includeStyle ? page.pageRef.map(DiscretionaryHyphenReader.read) ?? [] : []
         let discretionary = includeStyle ? DiscretionaryHyphenReader.lines(
             shows: discretionaryShows,
@@ -148,6 +153,10 @@ enum NativeTextReader {
             if let spacingFixed {
                 repaired = GlyphIdentityReader.apply(glyphs, to: spacingFixed, bounds: bounds,
                                                      allBounds: boundsByLine, carry: &carry)
+            }
+            if let placed = delimiterPlacements[index], let current = repaired {
+                repaired = ExtensionDelimiterReader.apply(placed, shows: spacing, delimiters: delimiters, to: current,
+                                                          bounds: bounds)
             }
             // Preserve the literal source glyph; the exact continuation and compound guards
             // decide whether this font evidence applies when two lines are actually joined.
@@ -811,6 +820,8 @@ enum NativeTextReader {
         // The first-level script the runs since the last one on the baseline belong to, which a
         // second level is measured from (#302).
         var anchor: ScriptAnchor?
+        // A tall delimiter restored just before this run, and its baseline offset (#305).
+        var delimiter: (reach: ExtensionDelimiterReader.Reach, offset: Double)?
         var lineSize = 0.0
         // Every run as the script measurement reads it (#304).
         var scriptRuns: [ScriptRun] = []
@@ -868,8 +879,12 @@ enum NativeTextReader {
                 // Measured from the baseline the line's text stands on, where PDFKit's reference
                 // is not that baseline (#304).
                 let measured = offset - baseline.reference
-                let script = scriptStyle(offset: measured, size: size, tolerance: tolerance, after: anchor,
+                var script = scriptStyle(offset: measured, size: size, tolerance: tolerance, after: anchor,
                                          lineSize: lineSize, stacked: baseline.stacked.contains(range.location))
+                if script.isEmpty, let delimiter {
+                    script = ExtensionDelimiterReader.script(after: delimiter.reach, at: delimiter.offset,
+                                                             offset: offset, size: size, tolerance: tolerance)
+                }
                 style.formUnion(script)
                 // A second-level run leaves the anchor where it is, so the outer script can resume
                 // after it. Only a first-level script anchors, and only one set smaller than the
@@ -881,6 +896,10 @@ enum NativeTextReader {
                 }
             } else if hasGlyph {
                 anchor = nil
+            }
+            if hasGlyph {
+                delimiter = (attributes[ExtensionDelimiterReader.reachAttribute] as? ExtensionDelimiterReader.Reach)
+                    .map { ($0, offset) }
             }
             let nested = style.contains(.nestedSuperscript) || style.contains(.nestedSubscript)
             // PDFKit can concatenate separate visual lines without a space while retaining

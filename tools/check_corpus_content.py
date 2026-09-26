@@ -30,7 +30,8 @@ CELLS = {HTML + 'th', HTML + 'td'}
 CONTRACT_CHECK_TYPES = {'spineContinuity': 'sequence'}
 PAGE_CHECK_TYPES = {
     'text': 'sequence', 'orderedText': 'sequence', 'absentText': 'sequence',
-    'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
+    'headings': 'sequence', 'paragraphs': 'sequence', 'paragraphOpenings': 'sequence',
+    'continuedParagraphs': 'sequence',
     'preformatted': 'sequence', 'absentPreformatted': 'sequence', 'lists': 'sequence',
     'asides': 'sequence', 'quotations': 'sequence',
     'scripts': 'sequence', 'absentScripts': 'sequence', 'math': 'sequence', 'imageRegions': 'sequence',
@@ -371,7 +372,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'originalPageImage', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentScripts', 'math', 'absentText', 'headings', 'paragraphs', 'preformatted', 'absentPreformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'originalPageImage', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentScripts', 'math', 'absentText', 'headings', 'paragraphs', 'paragraphOpenings', 'preformatted', 'absentPreformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -397,6 +398,14 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
             checks += 1
             if not any(normalized(phrase) in paragraph for paragraph in page.get('paragraphs', [])):
                 errors.append(f'Page {number}: missing paragraph {phrase!r}')
+        for phrase in item.get('paragraphOpenings', []):
+            # A paragraph on the page opens with the phrase: a note that runs on from the line
+            # above it holds the phrase but does not open with it (#314).
+            if not isinstance(phrase, str) or not normalized(phrase):
+                raise ValueError('Empty or invalid paragraph opening')
+            checks += 1
+            if not any(paragraph.startswith(normalized(phrase)) for paragraph in page.get('paragraphs', [])):
+                errors.append(f'Page {number}: no paragraph opens with {phrase!r}')
         for kind, phrases in (('asides', item.get('asides', [])),
                               ('quotations', item.get('quotations', []))):
             for phrase in phrases:

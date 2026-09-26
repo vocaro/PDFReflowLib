@@ -4,7 +4,8 @@ import ZIPFoundation
 @testable import PDFReflowLib
 
 // A printed row of stacked scripts that PDFKit returns as several lines is read back as one
-// (#303), and nothing else is. Every fixture sets Helvetica on a 400 × 300 page; each run is
+// (#303), and so is a row PDFKit splits at a raised note number (#314), and nothing else is.
+// Every fixture sets Helvetica on a 400 × 300 page; each run is
 // placed where the one before it leaves off unless the stream moves it, and a subscript set
 // under a superscript is moved back under it, as TeX does.
 
@@ -198,4 +199,120 @@ func aFractionPreservedAsAnImageIsNotReadAsScripts() async throws {
     #expect(images == 1)
     #expect(!html.contains("<sub>b"))
     #expect(html.contains("<p>The next paragraph is plain prose again.</p>"))
+}
+
+// A raised note number PDFKit returns as a line of its own is read with its row (#314). PDFKit
+// splits a printed row at a full stop, and the 9/11 report, NOAA's assessment and Loper Bright
+// set a note number by a text matrix of its own straight after the stop: `selectionsByLine` ends
+// the line there and returns the number, alone or with the words after it on the row, as a line
+// that starts where the first one ends. These rows are set with the 9/11 report's own operators:
+// a unit font scaled by `Tm`, the stop shown on its own after a `TD`, and the number placed by
+// `Tm` a hundredth of a point inside the stop's end.
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/314"))
+func aNoteNumberPDFKitSplitsOffMidRowIsReadWithItsRow() async throws {
+    // The 9/11 report's page 145: PDFKit returns `…to the Washington Times.` and
+    // `105 This made it`, and the paragraph broke in two at the note.
+    let content = """
+    BT /F1 10 Tf 1 0 0 1 40 272 Tm (The officials recalled that the source went quiet soon) Tj ET
+    BT /F1 1 Tf 10 0 0 10 40 260 Tm (after a leak to the Washington Times) Tj 16.285 0 TD 0 Tc 0 Tw (.) Tj \
+    7 0 0 7 205.62 263 Tm -0.0002 Tc (105) Tj 10 0 0 10 220.1 260 Tm 0.0002 Tc (This made it ) Tj ET
+    BT /F1 10 Tf 1 0 0 1 40 248 Tm (much more difficult to intercept the calls.) Tj ET
+    """
+    let read = try lines(content)
+    #expect(read.count == 3)
+    #expect(read.contains {
+        EPUBTextEncoder.inline($0.content).hasPrefix("after a leak to the Washington Times.<sup>105 </sup>This made it")
+    })
+    let (html, _) = try await converted(content)
+    #expect(html.contains("<p>The officials recalled that the source went quiet soon after a leak to the "
+        + "Washington Times.<sup>105 </sup>This made it much more difficult to intercept the calls.</p>"))
+}
+
+/// Loper Bright's page 13 in miniature: the number closes its row alone, a page-foot note carries
+/// it, and an ordinal in the next sentence is raised inline.
+private let aNoteNumberAloneOnItsPiece = """
+BT /F1 10 Tf 1 0 0 1 40 272 Tm (Petitioners own two vessels that operate in the herring) Tj ET
+BT /F1 1 Tf 10 0 0 10 40 260 Tm (fishery: the F/V Relentless and the F/V Persistence) Tj 22.621 0 TD 0 Tc 0 Tw (.) Tj \
+7 0 0 7 268.98 264 Tm -0.0002 Tc (1) Tj ET
+BT /F1 10 Tf 1 0 0 1 40 248 Tm (These vessels have fished these waters since the 19) Tj /F1 7 Tf 3.6 Ts (th) Tj \
+/F1 10 Tf 0 Ts ( century.) Tj ET
+BT /F1 5 Tf 1 0 0 1 40 53 Tm (1) Tj /F1 8 Tf 1 0 0 1 44 50 Tm (For any landlubbers, F/V is simply the designation for a fishing vessel.) Tj ET
+"""
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/314"))
+func aNoteNumberAloneOnItsPieceIsReadWithItsRowAndLinkedToItsNote() async throws {
+    // PDFKit returns the `1` as a line of its own after `…the F/V Persistence.`; it was written
+    // as a plain `1` in a paragraph of its own, and the page-foot note it refers to was not linked.
+    let read = try lines(aNoteNumberAloneOnItsPiece)
+    #expect(read.contains { EPUBTextEncoder.inline($0.content) == "fishery: the F/V Relentless and the F/V Persistence.<sup>1</sup>" })
+    #expect(!read.contains { $0.text == "1" })
+    let (html, _) = try await converted(aNoteNumberAloneOnItsPiece)
+    #expect(html.contains("the F/V Persistence.<a epub:type=\"noteref\" role=\"doc-noteref\" "
+        + "href=\"chapter-1.xhtml#note-fn-1-1\"><sup>1</sup></a> These vessels have fished these waters"))
+    #expect(html.contains("<aside epub:type=\"footnote\" role=\"doc-footnote\" id=\"note-fn-1-1\">"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/314"))
+func aRaisedOrdinalIsNotTakenForANoteNumber() async throws {
+    // Control: the ordinal raised inline on the same page stays a superscript of its word, and the
+    // page's one note is linked from its number alone.
+    let (html, _) = try await converted(aNoteNumberAloneOnItsPiece)
+    #expect(html.contains("since the 19<sup>th</sup> century."))
+    #expect(html.components(separatedBy: "epub:type=\"noteref\"").count == 2)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/314"))
+func aStopPDFKitReturnsOnItsOwnIsReadBeforeTheNoteNumberAfterIt() async throws {
+    // NOAA's page 145: PDFKit returns `…W/m²`, the stop and `² Since NCA4, the` as three lines. The
+    // stop is the row's next character, so it is taken with the piece after it, and read before it.
+    let content = """
+    BT /F1 10 Tf 1 0 0 1 40 272 Tm (Changes in aerosols over the period have had) Tj ET
+    BT /F1 1 Tf 10 0 0 10 40 260 Tm (an overall cooling effect of 1.3 W/m) Tj 7 0 0 7 196.18 263.6 Tm (2) Tj \
+    10 0 0 10 200.07 260 Tm 0 Tc 0 Tw (.) Tj 7 0 0 7 202.85 263.6 Tm -0.0002 Tc (2) Tj \
+    10 0 0 10 206.74 260 Tm 0.0002 Tc ( Since NCA4, the) Tj ET
+    BT /F1 10 Tf 1 0 0 1 40 248 Tm (uncertainty in the total has been reduced.) Tj ET
+    """
+    let read = try lines(content)
+    #expect(read.map { EPUBTextEncoder.inline($0.content) }.contains(
+        "an overall cooling effect of 1.3 W/m<sup>2</sup>.<sup>2</sup> Since NCA4, the"))
+    let (html, _) = try await converted(content)
+    #expect(html.contains("<p>Changes in aerosols over the period have had an overall cooling effect of "
+        + "1.3 W/m<sup>2</sup>.<sup>2</sup> Since NCA4, the uncertainty in the total has been reduced.</p>"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/314"))
+func aNoteNumberAfterAnUnderlinedRowIsReadWithIt() throws {
+    // NOAA underlines its links up to the stop a note number follows (page 26's `Table 1.1.9.` and
+    // its note 12). A rule under the baseline is the row's own; one standing above it, where a
+    // fraction's bar would, still keeps the pieces apart.
+    func content(_ rule: String) -> String {
+        """
+        BT /F1 10 Tf 1 0 0 1 40 272 Tm (Unless noted, the estimates in this report have been) Tj ET
+        BT /F1 1 Tf 10 0 0 10 40 260 Tm (converted with the Price Deflators, Table 1.1.9) Tj 20.509 0 TD 0 Tc 0 Tw (.) Tj \
+        7 0 0 7 247.86 264 Tm -0.0002 Tc (12) Tj 10 0 0 10 255.65 260 Tm 0.0002 Tc ( Where documented,) Tj ET
+        BT /F1 10 Tf 1 0 0 1 40 248 Tm (discount rates are noted next to the projections.) Tj ET
+        \(rule)
+        """
+    }
+    let underlined = try lines(content("0.75 w 170 258 m 245.09 258 l S"))
+    #expect(underlined.contains { $0.text.hasSuffix("Table 1.1.9.12 Where documented,") })
+    let barred = try lines(content("0.5 w 170 262.5 m 247.5 262.5 l S"))
+    #expect(!joins(barred, "Table 1.1.9", "Where documented"))
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/314"))
+func noteNumbersThatOpenTheirLinesAreNotJoinedToTheLineAbove() throws {
+    // Control: a list of notes, each number raised at the head of its note and drawn after the
+    // notes' text, so PDFKit returns every number as a line of its own. A number that opens a
+    // line starts no row's end: none is joined to the note above it.
+    let read = try lines("""
+    BT /F1 10 Tf 1 0 0 1 40 272 Tm (The body of the page closes with its last full sentence here.) Tj ET
+    BT /F1 8 Tf 1 0 0 1 45 80 Tm (The first note explains the rule and ends at the margin here.) Tj ET
+    BT /F1 8 Tf 1 0 0 1 45 70 Tm (The second note opens at its own number.) Tj ET
+    BT /F1 8 Tf 1 0 0 1 45 60 Tm (The third note opens at its number too.) Tj ET
+    BT /F1 5 Tf 1 0 0 1 40 83 Tm (1) Tj 1 0 0 1 40 73 Tm (2) Tj 1 0 0 1 40 63 Tm (3) Tj ET
+    """)
+    #expect(read.filter { ["1", "2", "3"].contains($0.text) }.count == 3)
+    #expect(!read.contains { $0.text.hasSuffix("here.2") || $0.text.hasSuffix("number.3") })
 }

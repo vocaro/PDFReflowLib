@@ -100,6 +100,42 @@ func wrappedDisplaySummaryDoesNotRaiseOrdinaryHeadingSize(number: Int) throws {
     }
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/314"))
+func smallerProseKeepsItsOwnLeadingBesideALargerWrappedRun() {
+    // Hebrew Shakespeare page 87 in miniature: a letter at 9.5 points on 13, then 7-point notes on
+    // 9, the last opening with its number 12.75 below the note above it. Once the letter's row
+    // that PDFKit split at a note number is whole, the letter qualifies as wrapped prose too; the
+    // notes keep their own leading, and the numbered note stays a paragraph of its own rather
+    // than run on from `The Publisher.` under the letter's 13 points.
+    func line(_ text: String, x: CGFloat, y: CGFloat, width: CGFloat, size: CGFloat) -> TextLine {
+        TextLine(text: text, rect: CGRect(x: x, y: y, width: width, height: size * 0.96), fontSize: size)
+    }
+    let letter = [
+        "with his book, which I have called by the", "title So He Drove Out the Man, because",
+        "wondrous things can be seen in it which", "have not been devised in any nation until",
+        "this day. It is not so with Shakespeare; his", "books are read in the four corners of the",
+        "world in seventy languages, and viewers can",
+    ].enumerated().map { line($0.element, x: 68, y: 437 - CGFloat($0.offset) * 13, width: 162, size: 9.5) }
+    let notes = [
+        "matter is desirable and acceptable to all readers,", "and moreover the translator has succeeded greatly",
+        "in his work. He can trust that this translation will", "be a desirable offering for all those who love the",
+    ].enumerated().map { line($0.element, x: 82, y: 121.5 - CGFloat($0.offset) * 9, width: 142, size: 7) }
+        + [line("language of their forefathers – The Publisher.", x: 82, y: 85.5, width: 129.5, size: 7),
+           line("18 The title of the translation is a citation of the beginning of Gen. 3:24, in which God",
+                x: 82, y: 72.75, width: 304, size: 7),
+           line("drives Adam and Eve out of the Garden of Eden.", x: 82, y: 63.75, width: 160, size: 7)]
+    let page = PageContent(number: 87, bounds: CGRect(x: 0, y: 0, width: 459, height: 649),
+                           lines: letter + notes, graphics: [])
+    let typography = PageTypography(pageLines: page.lines, reflowableLines: page.lines, documentBody: 10)
+    #expect(typography.leading == 13)
+    #expect(typography.additionalLeading[7] == 9)
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(page: page, images: [], vocabulary: LayoutReconstructor.vocabulary(in: [page]),
+                                            warnings: &warnings, documentBody: 10)
+    #expect(blocks.contains { $0.text.hasSuffix("forefathers – The Publisher.") })
+    #expect(blocks.contains { $0.text.hasPrefix("18 The title of the translation") })
+}
+
 @Test func secondaryBodyLeadingDoesNotLoosenSmallerText() {
     func line(_ text: String, y: CGFloat, size: CGFloat) -> TextLine {
         TextLine(text: text, rect: CGRect(x: 30, y: y, width: 240, height: size * 1.2), fontSize: size)

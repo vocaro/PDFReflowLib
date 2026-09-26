@@ -86,11 +86,11 @@ show draws a whole printed row that PDFKit splits into a line per column, the gl
 line cannot take are carried along `NativeTextReader`'s own line loop to the next line of that row
 (#237): the loop is the only place that sees every line's text in reading order, since the readers
 are handed one line at a time. For the same reason the loop's result passes through
-`SplitScriptRows`, which joins the lines PDFKit makes of one printed row of stacked scripts
-before any line is read into inline text (#303): a script's level is read against the row it
-stands in, and `inlineText` sees one line. Then `BorrowedLineReference` measures a line PDFKit
-stated from the baseline of smaller text beside it, which only the neighbouring lines show, from
-its own baseline (#308). A page whose fonts it cannot establish keeps the damaged-encoding
+`SplitScriptRows`, which joins the lines PDFKit makes of one printed row of stacked scripts, or
+of a row it ended at a raised note number, before any line is read into inline text (#303,
+#314): a script's level is read against the row it stands in, and `inlineText` sees one line.
+Then `BorrowedLineReference` measures a line PDFKit stated from the baseline of smaller text
+beside it, which only the neighbouring lines show, from its own baseline (#308). A page whose fonts it cannot establish keeps the damaged-encoding
 diagnosis and its recognition.
 `GraphicsReader` keeps its own paint-oriented scan over the same helpers, tracking the clip in
 force so that what it records for a figure is what the page lets show rather than how far the

@@ -25,7 +25,9 @@ struct PageTypography: Equatable {
     /// The leading the page's reflowable text states, or nil where it states none (#123).
     let leading: CGFloat?
     /// A corroborated secondary body's own leading. Smaller table text must not set the
-    /// paragraph spacing of the larger prose, nor borrow that prose's looser spacing itself.
+    /// paragraph spacing of the larger prose, nor borrow that prose's looser spacing itself:
+    /// a smaller size that sets wrapped prose of its own keeps its own leading too, where it
+    /// differs from the page's (#314).
     let additionalLeading: [Int: CGFloat]
 
     init(pageLines: [TextLine], reflowableLines: [TextLine], documentBody: CGFloat?,
@@ -61,9 +63,11 @@ struct PageTypography: Equatable {
         // the threshold for everything beneath it (NOAA's focus pages).
         // Even when that prose equals the modal size, smaller notes may dominate the
         // line-spacing evidence. A corroborated run supplies its own leading in that case.
-        let proseBody = nativeSizeEvidence ? documentBody.flatMap { documentBody in
-            documentBody >= body ? Self.wrappedProseRuns(reflowableLines, ceiling: documentBody * 1.05).compactMap { $0.first?.fontSize }.max() : nil
-        } : nil
+        var proseSizes: [CGFloat] = []
+        if nativeSizeEvidence, let documentBody, documentBody >= body {
+            proseSizes = Self.wrappedProseRuns(reflowableLines, ceiling: documentBody * 1.05).compactMap { $0.first?.fontSize }
+        }
+        let proseBody = proseSizes.max()
         let headingBody = max(established.map { max(body, $0) } ?? headingPageBody, proseBody ?? 0)
         let documentFloor = documentBody.map { established == nil ? $0 * 1.1 : 0 } ?? 0
         self.body = body
@@ -73,10 +77,18 @@ struct PageTypography: Equatable {
         headingThreshold = max(headingPageBody * 1.25, headingBody * 1.1, documentFloor)
         leading = LayoutReconstructor.statedLeading(reflowableLines)
         var secondary: [Int: CGFloat] = [:]
-        if let proseBody, let ownLeading = LayoutReconstructor.statedLeading(reflowableLines.filter {
-            Int($0.fontSize.rounded()) == Int(proseBody.rounded())
-        }) {
-            secondary[Int(proseBody.rounded())] = ownLeading
+        func ownLeading(_ size: Int) -> CGFloat? {
+            LayoutReconstructor.statedLeading(reflowableLines.filter { Int($0.fontSize.rounded()) == size })
+        }
+        if let proseBody, let own = ownLeading(Int(proseBody.rounded())) {
+            secondary[Int(proseBody.rounded())] = own
+        }
+        // A smaller size that sets wrapped prose of its own keeps its own spacing where it
+        // differs from the page's, rather than borrow the page's looser leading: Hebrew
+        // Shakespeare page 87 sets its notes on 9 points under a letter on 13, and once the
+        // letter's wrapped run is whole the notes would otherwise be measured against 13 (#314).
+        for size in Set(proseSizes.map { Int($0.rounded()) }).sorted() where secondary[size] == nil {
+            if let own = ownLeading(size), own != leading { secondary[size] = own }
         }
         if nativeSizeEvidence, let documentBody, documentBody >= body,
                   let ownLeading = Self.shortParagraphLeading(reflowableLines, size: documentBody) {

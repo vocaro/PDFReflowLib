@@ -124,6 +124,23 @@ class CorpusContentTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 self.check()
 
+    def test_paragraph_opening_requires_a_paragraph_to_open_with_the_phrase(self):
+        # A page-foot note is its own paragraph; run on from the note above it, it holds the same
+        # words without opening a paragraph, and fails (#314).
+        self.contract['pages'][0]['paragraphOpenings'] = ['18 The title of']
+        self.pages[1]['paragraphs'] = ['The Publisher.', '18 The title of the translation']
+        self.assertTrue(self.check()['passed'])
+        for paragraphs in [['The Publisher. 18 The title of the translation'], []]:
+            self.pages[1]['paragraphs'] = paragraphs
+            self.assertFalse(self.check()['passed'])
+        self.pages[1]['paragraphs'] = []
+        self.pages[2]['paragraphs'] = ['18 The title of the translation']
+        self.assertFalse(self.check()['passed'])
+        for phrase in ['', '  ', 123]:
+            self.contract['pages'][0]['paragraphOpenings'] = [phrase]
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_display_blocks_require_their_semantics_whole_text_and_page(self):
         for kind in ('asides', 'quotations'):
             self.contract['pages'][0][kind] = ['alpha beta']

@@ -88,6 +88,8 @@ ALLOWED = {
     303: ('historical', 'the stacked-script row joining, on main and named by its issue'),
     308: ('historical', 'a line measured from smaller text beside it and the absent-script contract check, '
           'on main and named by their issue'),
+    314: ('historical', 'the split note-number joining, the notes\' own leading, the letter-counted spine '
+          'direction and the paragraph-opening contract check, on main and named by their issue'),
     297: ('historical', 'the closed-en-dash line join, the numbered section-title outline and the Census '
           'maths-glyph measurement, on main and named by their issue'),
     316: ('historical', 'the space glyph a page takes back, the stroked text read like filled text and the '

@@ -41,11 +41,15 @@ actor EPUBWriter {
     private var mathDocuments: Set<String> = []
     private var consumed: Int64 = 0
     private var started = false
-    /// Text blocks whose own writing runs right to left, and blocks of text in all (#41). A book
-    /// most of whose text is written that way states `page-progression-direction="rtl"`, so a
-    /// reader turns its pages and lays out its spreads the way the source does.
-    private var rightToLeftBlocks = 0
-    private var textBlocks = 0
+    /// The right-to-left and the Latin letters of the book's text blocks (#41). A book most of
+    /// whose text is written that way states `page-progression-direction="rtl"`, so a reader turns
+    /// its pages and lays out its spreads the way the source does. Letters, not blocks: the Hebrew
+    /// Shakespeare sets its Hebrew verse a short block to a line beside English prose and notes,
+    /// so its blocks stand near half and half, and joining its split note numbers into their
+    /// paragraphs moved them from 49.5% to 50.3% right to left (#314), where its letters are 27.5%
+    /// Hebrew, in a book bound left to right.
+    private var rightToLeftLetters = 0
+    private var latinLetters = 0
     /// The list being packed (#292). A list is packed as one unit, like a table: its items are
     /// gathered until a block that is not an item, a chapter start or the end of the document
     /// arrives, so a spine document never ends inside a list. A list may hold nothing but items,
@@ -123,8 +127,7 @@ actor EPUBWriter {
                     try add(sourcePage: number)
                 }
             case let .listItem(item):
-                textBlocks += 1
-                if ArabicText.readsRightToLeft(block.text) { rightToLeftBlocks += 1 }
+                ArabicText.countLetters(block.text, rightToLeft: &rightToLeftLetters, latin: &latinLetters)
                 if var open = openList,
                    (item.level > 0 || (!item.opensList && open.kind == item.kind)) {
                     open.entries.append(.init(block: block, item: item, pagesBefore: heldPage.map { [$0] } ?? []))
@@ -140,8 +143,7 @@ actor EPUBWriter {
                 // as a standalone one does: it is the same marker, and a reader jumping to it is
                 // looking for the same printed page (#248, surfaced by #203's cross-page joins).
                 if case .image = block.content {} else {
-                    textBlocks += 1
-                    if ArabicText.readsRightToLeft(block.text) { rightToLeftBlocks += 1 }
+                    ArabicText.countLetters(block.text, rightToLeft: &rightToLeftLetters, latin: &latinLetters)
                 }
                 try write(try packer.add(EPUBTextEncoder.piece(for: block, imagePaths: imagePathByID,
                                                               labels: pageLabels),
@@ -234,7 +236,7 @@ actor EPUBWriter {
             "<item id=\"img\($0.offset)\" href=\"\($0.element)\" media-type=\"\(assets[$0.offset].format.mediaType)\"/>"
         }.joined()
         let spine = chapters.indices.map { "<itemref idref=\"c\($0)\"/>" }.joined()
-        let direction = textBlocks > 0 && rightToLeftBlocks * 2 > textBlocks
+        let direction = rightToLeftLetters > 0 && rightToLeftLetters >= latinLetters
             ? " page-progression-direction=\"rtl\"" : ""
         try writeText("""
         <?xml version="1.0" encoding="UTF-8"?>

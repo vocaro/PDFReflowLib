@@ -733,7 +733,7 @@
     {
       "id": "gpo-911-2004",
       "sourceSHA256": "657d41475eb3a9a5e3e87a6c7c51ac1dfbe1af7566d1abff7bf7286e7e1c0e1b",
-      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 161, 526 and 581-583 visually reviewed against their Poppler rasters for #229 and #227: 161 and 526 print an underlined word (`gain` and `risk`; `not`) as a painted rule and must reflow their prose with no crop at all, and 581-583 are notes pages that paint nothing, cite web addresses with query strings, and keep only their source-page reference image. Their earlier minimumImages 2 counted the runaway crop, not a figure the page prints. Notes 39, 40 and 9 on pages 472 and 532 carry the word spaces the source draws without a space glyph, which the spacing reader restores (#119, #128, #225): the boundaries were reviewed against the rendered source pages, and the expectations do not bless any other line of those notes. Page 117 visually reviewed: the page's last printed line opens with the second half of a president's name (\"W. Bush\"), which the restored word spaces made visible, and must stay inside the paragraph it wraps from (#39). Pages 257, 572, 579, 580, 584 and 585 are source-reviewed running heads standing in the margin slot the book keeps on 538 of its 585 pages; their words repeat on too few neighboring pages for a run. Each page keeps every other line, and pages 572 and 580 keep their genuine notes-chapter titles (#10). Page 381 read against the source for the list conversion (#292): the strategy's three bulleted policies are one unordered list between the sentence that introduces them and the heading that follows; the notes pages, headed NOTES TO CHAPTER, gain no list. Source pages164/374 visually reviewed: the Detainee Interrogation Reports frame and the Operational Opportunities continuation frame respectively precede the main body continuation. These intentional block interruptions retain their own page markers and are not forced into cross-page paragraph identities. Source pages 25 and 108 break a line after a closed em dash ('…An attendant has been stabbed—' over 'and someone else up front may have been killed.', 'daily “newspapers”—' over 'the Senior Executive Intelligence Brief', the source's text layer); each reads closed, as the book sets the em dash inside its lines, with no space of the converter's own (#315).",
+      "basis": "Existing reviewed positiveTextChecks in gpo-911-2004-review.json; native word boundaries must survive. Header/source-body checks cover visually reviewed physical pages 20/21, 65/67 and 472; chapter 1 title is reviewed on page 19. Captured source geometry protects remaining lines on 21 pages; no external prototype heading statistics are reproduced. Page 20 protects the already-supported raised reference 4 after 7:45. Reviewed pages 472/473/532 protect selected numbered paragraphs, a second paragraph within note 66, and the dedented chapter-number continuation inside note 9. General multi-paragraph/cross-page ownership and chapter-scoped reference links remain unqualified. Pages 20-21 and 24-25 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Pages 161, 526 and 581-583 visually reviewed against their Poppler rasters for #229 and #227: 161 and 526 print an underlined word (`gain` and `risk`; `not`) as a painted rule and must reflow their prose with no crop at all, and 581-583 are notes pages that paint nothing, cite web addresses with query strings, and keep only their source-page reference image. Their earlier minimumImages 2 counted the runaway crop, not a figure the page prints. Notes 39, 40 and 9 on pages 472 and 532 carry the word spaces the source draws without a space glyph, which the spacing reader restores (#119, #128, #225): the boundaries were reviewed against the rendered source pages, and the expectations do not bless any other line of those notes. Page 117 visually reviewed: the page's last printed line opens with the second half of a president's name (\"W. Bush\"), which the restored word spaces made visible, and must stay inside the paragraph it wraps from (#39). Pages 257, 572, 579, 580, 584 and 585 are source-reviewed running heads standing in the margin slot the book keeps on 538 of its 585 pages; their words repeat on too few neighboring pages for a run. Each page keeps every other line, and pages 572 and 580 keep their genuine notes-chapter titles (#10). Page 381 read against the source for the list conversion (#292): the strategy's three bulleted policies are one unordered list between the sentence that introduces them and the heading that follows; the notes pages, headed NOTES TO CHAPTER, gain no list. Source pages164/374 visually reviewed: the Detainee Interrogation Reports frame and the Operational Opportunities continuation frame respectively precede the main body continuation. These intentional block interruptions retain their own page markers and are not forced into cross-page paragraph identities. Source pages 25 and 108 break a line after a closed em dash ('…An attendant has been stabbed—' over 'and someone else up front may have been killed.', 'daily “newspapers”—' over 'the Senior Executive Intelligence Brief', the source's text layer); each reads closed, as the book sets the em dash inside its lines, with no space of the converter's own (#315). Page 145 read against its source for #314: PDFKit returns the raised note number 105 and the words after it on its row as a line of its own after `Washington Times.`, and the paragraph must run on through `105` as one paragraph.",
       "pages": [
         {
           "page": 25,
@@ -1080,6 +1080,20 @@
             "June 2001: FBI and CIA",
             "August 2001: the CIA and FBI",
             "responsible for making it work"
+          ]
+        },
+        {
+          "page": 145,
+          "paragraphs": [
+            "almost immediately after a leak to the Washington Times.105 This made it much more difficult for the National Security Agency to intercept his conversations."
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "105",
+              "before": "after a leak to the Washington Times.",
+              "after": "This made it much more difficult"
+            }
           ]
         }
       ]
@@ -1938,7 +1952,7 @@
     {
       "id": "usgs-mcs2025-copper",
       "sourceSHA256": "348b1e224d830a51e6d35cf81343eead26a0cb2a4e74c474d699b7faed1b10e6",
-      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, the COMEX paragraph, the ordered superscript table-note markers, and the three tables of the extract read as cells (#210): the salient-statistics table, the tariff table and the world mine-and-refinery table. Twenty of their rows are pinned cell by cell, including the column headings, the two rows the earlier image contract read by eye — Mine, recoverable reads 1,200 / 1,230 / 1,230 / 1,130 / 1,100 and London Metal Exchange, grade A, cash reads 279.8 / 422.5 / 399.8 / 384.8 / 420 across the 2020-2024 columns — and every row carrying a mark the tables use: an estimate e, a note marker in a cell, a bracketed note, a dash for zero, and the label the page wrapped onto two printed rows. A pinned row catches a cell lost, a cell read into the wrong column and a row lost, which the whole-table image reference it replaces could not; it does not catch two cells of similar shape exchanged between two rows (#27). Until #210 these tables were preserved-region crops and the contract pinned their pictures; the prose beside them reflows and no longer needs its own exemption.",
+      "basis": "Source pages 1 and 2 visually reviewed. Protects the unit note, author line, the COMEX paragraph, the ordered superscript table-note markers, and the three tables of the extract read as cells (#210): the salient-statistics table, the tariff table and the world mine-and-refinery table. Twenty of their rows are pinned cell by cell, including the column headings, the two rows the earlier image contract read by eye — Mine, recoverable reads 1,200 / 1,230 / 1,230 / 1,130 / 1,100 and London Metal Exchange, grade A, cash reads 279.8 / 422.5 / 399.8 / 384.8 / 420 across the 2020-2024 columns — and every row carrying a mark the tables use: an estimate e, a note marker in a cell, a bracketed note, a dash for zero, and the label the page wrapped onto two printed rows. A pinned row catches a cell lost, a cell read into the wrong column and a row lost, which the whole-table image reference it replaces could not; it does not catch two cells of similar shape exchanged between two rows (#27). Until #210 these tables were preserved-region crops and the contract pinned their pictures; the prose beside them reflows and no longer needs its own exemption. Page 2 read against its source for #314: the note mark 8 PDFKit returns alone after `3.5 billion tons of copper.` closes that paragraph raised, not as a plain ` 8`.",
       "pages": [
         {
           "page": 1,
@@ -2126,7 +2140,16 @@
               "text": "7",
               "before": "information concerning data sources.",
               "after": "For Australia, Joint Ore Reserves"
+            },
+            {
+              "tag": "sup",
+              "text": "8",
+              "before": "an estimated 3.5 billion tons of copper.",
+              "after": "Substitutes: Aluminum substitutes for copper"
             }
+          ],
+          "paragraphs": [
+            "undiscovered resources contained an estimated 3.5 billion tons of copper.8"
           ]
         }
       ]
@@ -2134,7 +2157,7 @@
     {
       "id": "scotus-loper-bright-2024",
       "sourceSHA256": "12f5ea075004886774c25e7831ea1608fd0f831f0113e83bb0e85811c0a4bb6e",
-      "basis": "Source pages 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Source pages 2, 7 and 13 visually reviewed for the same shape: a wrapped line opening with an initial, a citation abbreviation or a year stays inside its paragraph (#39). Does not bless footnotes merged into body paragraphs with dash separators or retained running headers (#40). Source pages 40–41, 56–57 and 76–77 read with pdftotext -layout: each page's body ends mid-sentence above a `——————` rule and a footnote, and the next page opens on the rest of the sentence (`…voiced their own thoughtful and extensive` / `criticisms of Chevron. Buffington, 598 U. S., at ___–___`). One paragraph must carry each sentence across the page marker, and each note must stay an aside on its own page, never taking the next page's opening words (#306). Source page 45 breaks '576 U. S. 743, 761–' over '763 (2015)' (the source's text layer) and reads closed, '761–763' (#297). Source pages 19 and 22 break a line after a closed em dash ('statutory term—“other disposal” of coal—' over 'encompassed a transaction', '§706 (emphasis added)—' over 'even those involving ambiguous laws', the source's text layer); each reads closed (#315).",
+      "basis": "Source pages 60, 97 and 98 visually reviewed. Protects footnote reference markers and text, the footnote continued from page 97 onto page 98 in source order before footnote 3, and body text around citation-leading lines. Source pages 2, 7 and 13 visually reviewed for the same shape: a wrapped line opening with an initial, a citation abbreviation or a year stays inside its paragraph (#39). Does not bless footnotes merged into body paragraphs with dash separators or retained running headers (#40). Source pages 40–41, 56–57 and 76–77 read with pdftotext -layout: each page's body ends mid-sentence above a `——————` rule and a footnote, and the next page opens on the rest of the sentence (`…voiced their own thoughtful and extensive` / `criticisms of Chevron. Buffington, 598 U. S., at ___–___`). One paragraph must carry each sentence across the page marker, and each note must stay an aside on its own page, never taking the next page's opening words (#306). Source page 45 breaks '576 U. S. 743, 761–' over '763 (2015)' (the source's text layer) and reads closed, '761–763' (#297). Source pages 19 and 22 break a line after a closed em dash ('statutory term—“other disposal” of coal—' over 'encompassed a transaction', '§706 (emphasis added)—' over 'even those involving ambiguous laws', the source's text layer); each reads closed (#315). Page 13 read against its source for #314: the raised note 1 PDFKit returns alone after `the F/V Persistence.` is a superscript of that paragraph, which runs on and continues onto page 14, and footnote 1 is linked to it and written as an aside.",
       "pages": [
         {
           "page": 19,
@@ -2239,7 +2262,25 @@
             "F. 4th 359 (2022). The majority addressed various provi"
           ],
           "paragraphs": [
-            "A divided panel of the D. C. Circuit affirmed. See 45 F. 4th 359 (2022). The majority addressed various provisions of the MSA"
+            "A divided panel of the D. C. Circuit affirmed. See 45 F. 4th 359 (2022). The majority addressed various provisions of the MSA",
+            "the F/V Relentless and the F/V Persistence.1 These vessels use small-mesh bottom-trawl gear and can freeze fish at sea"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "1",
+              "before": "the F/V Relentless and the F/V Persistence.",
+              "after": "These vessels use small-mesh bottom-trawl gear"
+            }
+          ],
+          "asides": [
+            "For any landlubbers, “F/V” is simply the designation for a fishing vessel."
+          ],
+          "continuedParagraphs": [
+            {
+              "end": "take longer trips than other vessels (about 10 to 14 days, as",
+              "next": "opposed to the more typical 2 to 4). As a result"
+            }
           ]
         },
         {
@@ -3174,7 +3215,7 @@
     {
       "id": "noaa-nca5-2023",
       "sourceSHA256": "1942cbf346dc2c711fea413d6d6543edb8bc1e3a88d4c3a85e733c6b6d3577bf",
-      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image. Issue #215 adds physical pages 6, 25 and 1738: page 6 keeps both J. Michael Kuperberg entries as paragraphs, page 25 pins both painted two-column tables cell by cell plus their titles and the adjacent prose, and page 1738 protects the credit roles and names. Exact separation of Cover Art and Diane Burko is additionally checked by the source-layout regression and the whole-conversion comparison record. Physical pages 50, 60, 63, 64 and 78 were rendered with MuPDF and visually reviewed for complete left-column-before-right-column order. Their pinned JSON fixtures separately capture native text, geometry, attributed runs and raw paint operations from the SHA-identified source; capture alone is not the visual review. The page-50 map caption must finish before right-column prose; page 60 keeps both infrastructure and health paragraphs whole; page 63 completes the left ecosystem paragraph before the right marine-ecosystem column; pages 64 and 78 keep economic and mitigation prose in complete columns. These checks protect paragraph continuity and source order while preserving each page’s artwork; they do not qualify omitted heading lines or other existing fidelity gaps. The #191 integration audit additionally rendered physical contents pages 8, 19 and 20 and compared their native painted leaders with the complete converted pages. All 68 entry/locator pairs are pinned in source order, including the Roman front-matter locators, chapter 1 entries, F3/F4/F5 focus entries and A4/A5 appendix entries; source layout controls pin native styles/links and preserved artwork. See measurements/noaa-toc-leaders/record.md. Full final integrated conversion qualification is recorded there separately. The final #191 audit extends the native leader review to every contents page 8–20: all 272 complete entry/locator phrases, including wrapped entries, now have ordered-text contracts. Rendered source pages 9/10/12/13/15/16 proves the seven restored locators 4-16, 9-5, 15-17, 18-11, 24-21, 27-8, 27-21; their preceding rows overlap PDFKit leading but not the actual leader stroke. The obstruction guard follows the stroke band while retaining the same third-text veto and 2M comparison budget. Existing paragraph styling is not pinned by these ordered contents contracts. Physical pages 69, 74, and 1061 visually reviewed: complete multi-sentence display summaries remain ordinary paragraphs despite recovered smaller box text; nearby 14-point headings retain navigation roles. Physical pages 56, 58, 67 captions and adjacent paragraphs were checked against rendered source pages; the schema 3 native-line fixtures retain exact extracted styles and source tags. Their full captions and body continuity are required in the final EPUB. Physical page 71 was visually reviewed: the complete Figure 1.13 caption includes a parenthesized reference to Table 3 across a line break and remains one paragraph. Physical page 65 was visually reviewed: the photo caption must precede the right-column body below it; the lower decorative crop cannot claim the caption by its final credit row. The body paragraph on physical pages 65–66 continues across the source-page marker after the separate photograph/caption, without inserting that caption into the continuing sentence. Source pages 185 and 510 break a compound after its closed en dash ('the Saffir–' over 'Simpson wind speed', 'marine social–' over 'ecological systems', the source's text layer); each reads closed, with no space of the converter's own (#297). Source pages 56 and 1624 break a line after a closed em dash ('adopting innovations—' over 'such as agroecological practices', 'contributions (NDCs)—' over 'emissions-reduction targets', the source's text layer); each reads closed, with no space of the converter's own (#315).",
+      "basis": "Admitted to the corpus lane on the owner's 2026-09-23 ruling on #242, measured on 8faeaab at library defaults: 1,834 pages, 1,609 images, 286,429,009 entry bytes, 0.53 of the 512 MiB budget, no recognized page (measurements/corpus-lane-admissions/record.md). Source pages 1, 8, 33, 48, 80, 84, 139, 1700 and 1834 rendered with Poppler and read against the converted output. Page 1 protects the cover title as a heading and the cover photograph. Page 8 protects the front-matter and chapter entries of the contents in the order the page prints them, the key-message entries under chapters 2 and 3, the painting and its credit; how each entry is set (some preformatted, the chapter 3 entries a table) is not pinned. Pages 33, 80 and 139 are chapter openers: each protects its running head, its title and its photograph; on all three the title is a heading (#296), and page 33 keeps its running head as prose. Page 48 protects its section heading, the first line of its sub-heading and its first two paragraphs; the sub-heading's second line, the rest of the column and both captions sit inside the figure crop, the state #181 recorded and #231 reconciled as closed with its fix only on the abandoned branch, so nothing there is pinned. Page 84 protects the prose before and after the Key Message 2.1 box in order, the paragraph's closing sentence inside one paragraph, and the absence of the running foot; the box itself is a crop and its heading is not pinned. Page 1700 protects the focus-section title as a heading, the contributor roles and names in source order and the absence of the running foot; the Authors and Contributors band is a crop. Page 1834 is the back cover of agency seals and keeps a page image. Issue #215 adds physical pages 6, 25 and 1738: page 6 keeps both J. Michael Kuperberg entries as paragraphs, page 25 pins both painted two-column tables cell by cell plus their titles and the adjacent prose, and page 1738 protects the credit roles and names. Exact separation of Cover Art and Diane Burko is additionally checked by the source-layout regression and the whole-conversion comparison record. Physical pages 50, 60, 63, 64 and 78 were rendered with MuPDF and visually reviewed for complete left-column-before-right-column order. Their pinned JSON fixtures separately capture native text, geometry, attributed runs and raw paint operations from the SHA-identified source; capture alone is not the visual review. The page-50 map caption must finish before right-column prose; page 60 keeps both infrastructure and health paragraphs whole; page 63 completes the left ecosystem paragraph before the right marine-ecosystem column; pages 64 and 78 keep economic and mitigation prose in complete columns. These checks protect paragraph continuity and source order while preserving each page’s artwork; they do not qualify omitted heading lines or other existing fidelity gaps. The #191 integration audit additionally rendered physical contents pages 8, 19 and 20 and compared their native painted leaders with the complete converted pages. All 68 entry/locator pairs are pinned in source order, including the Roman front-matter locators, chapter 1 entries, F3/F4/F5 focus entries and A4/A5 appendix entries; source layout controls pin native styles/links and preserved artwork. See measurements/noaa-toc-leaders/record.md. Full final integrated conversion qualification is recorded there separately. The final #191 audit extends the native leader review to every contents page 8–20: all 272 complete entry/locator phrases, including wrapped entries, now have ordered-text contracts. Rendered source pages 9/10/12/13/15/16 proves the seven restored locators 4-16, 9-5, 15-17, 18-11, 24-21, 27-8, 27-21; their preceding rows overlap PDFKit leading but not the actual leader stroke. The obstruction guard follows the stroke band while retaining the same third-text veto and 2M comparison budget. Existing paragraph styling is not pinned by these ordered contents contracts. Physical pages 69, 74, and 1061 visually reviewed: complete multi-sentence display summaries remain ordinary paragraphs despite recovered smaller box text; nearby 14-point headings retain navigation roles. Physical pages 56, 58, 67 captions and adjacent paragraphs were checked against rendered source pages; the schema 3 native-line fixtures retain exact extracted styles and source tags. Their full captions and body continuity are required in the final EPUB. Physical page 71 was visually reviewed: the complete Figure 1.13 caption includes a parenthesized reference to Table 3 across a line break and remains one paragraph. Physical page 65 was visually reviewed: the photo caption must precede the right-column body below it; the lower decorative crop cannot claim the caption by its final credit row. The body paragraph on physical pages 65–66 continues across the source-page marker after the separate photograph/caption, without inserting that caption into the continuing sentence. Source pages 185 and 510 break a compound after its closed en dash ('the Saffir–' over 'Simpson wind speed', 'marine social–' over 'ecological systems', the source's text layer); each reads closed, with no space of the converter's own (#297). Source pages 56 and 1624 break a line after a closed em dash ('adopting innovations—' over 'such as agroecological practices', 'contributions (NDCs)—' over 'emissions-reduction targets', the source's text layer); each reads closed, with no space of the converter's own (#315). Pages 145 and 163 read against the source for #314: PDFKit returns a raised note number, with the words after it on its row, as a line of its own (on page 145 after a stop it also returns alone, after `W/m²`); each paragraph must run on through its note number, with the stop before the number.",
       "pages": [
         {
           "page": 1624,
@@ -3898,6 +3939,26 @@
           "paragraphs": [
             "Figure 1.13. How much warming the US will experience—and when a given temperature threshold is crossed—depends on future global emissions. The top graph shows observed change in US surface temperature during 1975–2022 (black line, 5-year averaged) and modeled historical (1975–2014) and projected (2015–2095) change in surface temperature compared to 1951–1980, annually averaged over all 50 states and Puerto Rico under different climate scenarios (multicolored lines; see Table 3 in the Guide to the Report). The bottom graph shows the same projections in a different way, highlighting the year in which the US crosses temperature thresholds under each scenario. The vertical dashed line represents the year 2023. Data for the US-Affiliated Pacific Islands and the US Virgin Islands are not available. See Figure 1.5 for observed US and global temperature changes since 1895. Adapted with permission from Figure TS.1 in Arias et al. 2021."
           ]
+        },
+        {
+          "page": 145,
+          "paragraphs": [
+            "have had an overall cooling effect of –1.3 ± 0.7 W/m2.2 Since NCA4, the uncertainty in total aerosol ERF has been reduced"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "2",
+              "before": "overall cooling effect of –1.3 ± 0.7 W/m2.",
+              "after": "Since NCA4, the uncertainty in total aerosol ERF"
+            }
+          ]
+        },
+        {
+          "page": 163,
+          "paragraphs": [
+            "as ocean waters become saturated with dissolved CO2.131 Recent observations show that ocean carbon processes are starting to change"
+          ]
         }
       ]
     },
@@ -4199,7 +4260,7 @@
     {
       "id": "ucl-hebrew-shakespeare-2017",
       "sourceSHA256": "8c28b79157cdbf57f4a3e9b65b2ecc1bb02e9e1597a7574e9a9cf2fb53ed6393",
-      "basis": "Rendered source pages 5, 13, 81, 150, 250 and 550 were compared with the --language he --no-ocr EPUB. Positive checks protect the title and cover art, introduction opening, selectable Hebrew prose on the dense bilingual page, vocalized Hebrew beside English translation, a stage direction and the order of three reference authors. They do not bless parallel alignment, verse heading levels, notes, speaker pairing or the remaining 547 unreviewed pages. Rendered source pages 13 and 21 reviewed for the introduction's numbered section titles: '1 The historical and literary background to the first Hebrew Shakespeare translations' (two lines), '3 Salkinson’s Shakespeare translations' and '3.1 Publication and reception' are headings, and the book's own numbering reads them so (#297). Rendered source pages 14 and 35 reviewed for the spaces the book draws and takes back (#316): the page prints '(Shavit 1993: 117–18)', '114–15', 'non-fiction', 'twenty-five', 'Schlegel-Tieck' and the section title '4.2 The English back-translation' closed, and draws each space there as a space glyph whose advance a TJ adjustment takes back before the next glyph (mutool trace: page 14's space at x 139.868, the '1' after it at 139.867).",
+      "basis": "Rendered source pages 5, 13, 81, 150, 250 and 550 were compared with the --language he --no-ocr EPUB. Positive checks protect the title and cover art, introduction opening, selectable Hebrew prose on the dense bilingual page, vocalized Hebrew beside English translation, a stage direction and the order of three reference authors. They do not bless parallel alignment, verse heading levels, notes, speaker pairing or the remaining 547 unreviewed pages. Rendered source pages 13 and 21 reviewed for the introduction's numbered section titles: '1 The historical and literary background to the first Hebrew Shakespeare translations' (two lines), '3 Salkinson’s Shakespeare translations' and '3.1 Publication and reception' are headings, and the book's own numbering reads them so (#297). Rendered source pages 14 and 35 reviewed for the spaces the book draws and takes back (#316): the page prints '(Shavit 1993: 117–18)', '114–15', 'non-fiction', 'twenty-five', 'Schlegel-Tieck' and the section title '4.2 The English back-translation' closed, and draws each space there as a space glyph whose advance a TJ adjustment takes back before the next glyph (mutool trace: page 14's space at x 139.868, the '1' after it at 139.867). Pages 87 and 91 read against their rendered source for #314: note numbers PDFKit returns as lines of their own (`18 because`, `14 a`, `13`) run on in the English paragraph they interrupt, and page 87's page-foot note 18 still opens a paragraph of its own. The pins name no space before a comma or stop the page takes back (#316) and bless no verse heading level.",
       "pages": [
         {
           "page": 21,
@@ -4292,6 +4353,35 @@
             "Markel",
             "Needler",
             "Salkinson"
+          ]
+        },
+        {
+          "page": 87,
+          "paragraphs": [
+            "18 because wondrous things can be seen in it which have not been devised in any nation until this day."
+          ],
+          "paragraphOpenings": [
+            "18 The title of Salkinson’s translation of Paradise Lost is a citation of the beginning of Gen. 3:24"
+          ]
+        },
+        {
+          "page": 91,
+          "paragraphs": [
+            "14 a native of the city of Florence"
+          ],
+          "scripts": [
+            {
+              "tag": "sup",
+              "text": "14",
+              "before": ",",
+              "after": "a native of the city of Florence"
+            },
+            {
+              "tag": "sup",
+              "text": "13",
+              "before": ".",
+              "after": "And who is this"
+            }
           ]
         }
       ]

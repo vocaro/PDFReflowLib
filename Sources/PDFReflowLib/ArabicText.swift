@@ -39,7 +39,7 @@ enum ArabicText {
     }
 
     /// The letters of each direction `text` carries, counted into a running total.
-    private static func countLetters(_ text: some StringProtocol, rightToLeft: inout Int, latin: inout Int) {
+    static func countLetters(_ text: some StringProtocol, rightToLeft: inout Int, latin: inout Int) {
         for scalar in text.unicodeScalars {
             if isRightToLeftLetter(scalar) { rightToLeft += 1 }
             else if EnglishText.isLatinLetter(scalar), scalar.properties.isAlphabetic { latin += 1 }

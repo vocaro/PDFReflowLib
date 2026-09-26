@@ -248,6 +248,28 @@ private func heading(_ id: String, _ text: String, page: Int = 2) -> ReflowBlock
     #expect(chapters.map(body) == ["<p>intro</p>\n", "<h2 id=\"large\">Large section</h2>\n<p>\(large)</p>\n", "<p>after</p>\n"])
 }
 
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/314"))
+func aBookTurnsItsPagesTheWayMostOfItsLettersRead() async throws {
+    // The Hebrew Shakespeare's shape: its Hebrew verse is a short block to a line beside long
+    // English paragraphs, so the right-to-left blocks are the more numerous while most of the
+    // letters are English, in a book bound left to right. Joining its split note numbers into
+    // their paragraphs took its blocks from 49.5% to 50.3% right to left and turned the spine.
+    // The Arabic guide's shape is the other way round: long Arabic paragraphs and short English
+    // labels.
+    let english = String(repeating: "The translation keeps the sense of the verse beside it. ", count: 6)
+    let arabic = String(repeating: "يقدم هذا الدليل معلومات مفيدة للمهاجرين الجدد في الولايات المتحدة. ", count: 6)
+    for (blocks, rightToLeft) in [
+        ([paragraph("וְהִנְנִי נִשְׁבַּע"), paragraph("כִּי יָדִי רַב לִי"), paragraph("וְלֹא קָטֹנְתִּי"),
+          paragraph(english), paragraph(english)], false),
+        ([paragraph(arabic), paragraph(arabic), paragraph("USCIS"), paragraph("Form I-551"), paragraph("Green Card")], true),
+    ] {
+        let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
+        _ = try await writtenChapters(spineBook(blocks), directory: dir)
+        let package = try String(contentsOf: dir.appendingPathComponent("EPUB/package.opf"), encoding: .utf8)
+        #expect(package.contains("<spine page-progression-direction=\"rtl\">") == rightToLeft)
+    }
+}
+
 @Test func longHeadingRunsStillRespectTheSizeTarget() async throws {
     let dir = try testPDFDirectory(); defer { try? FileManager.default.removeItem(at: dir) }
     let headings = (1...2_000).map { heading("h\($0)", "Heading number \($0)") }

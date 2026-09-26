@@ -28,7 +28,7 @@ Fetch sources with `tools/fetch_corpus.py --case <id>` (checksum-verified, cache
 
 What the individual gates check:
 
-- `swift test`: <!-- counts:swift-tests -->1066 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
+- `swift test`: <!-- counts:swift-tests -->1074 Swift Testing tests<!-- counts:end --> with no known-issue wrappers, using the real Apple
   PDF/OCR stack. They cover extraction, the document model, layout, raster pixels (crop origins,
   rotations, annotations, resource ceilings), preserved regions (fraction bars, raised exponents
   and all six cells of a ruled table in actual EPUB images at 72/144 DPI, with prose and code
@@ -37,7 +37,7 @@ What the individual gates check:
   concurrency test overlaps four conversions and one canceled conversion, checking ownership,
   styles, images, monotonic progress and staging cleanup. For iOS:
   `xcodebuild test -scheme PDFReflowLib-Package -destination 'platform=iOS Simulator,name=iPhone 18 Pro' CODE_SIGNING_ALLOWED=NO`.
-- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->273 Python tests<!-- counts:end --> over the tools,
+- `python3 -m unittest discover -s tools -p 'test_*.py' -v`: <!-- counts:python-tests -->274 Python tests<!-- counts:end --> over the tools,
   including the checker's negative controls, the identity tool, the memory-gate instrumentation
   (real child allocations above and below a ceiling, source verification, isolation from an
   earlier child's high-water mark, and each host-pressure outcome with its settle-and-retry),
@@ -222,7 +222,7 @@ loaded host. Each case verifies the pinned source identity, converts in a fresh 
 otherwise; see [corpus.md](corpus.md#index)),
 checks EPUB structure, EPUBCheck, monotonic progress, the manifest memory ceiling and the
 reviewed content contract in [corpus/regressions.json](../corpus/regressions.json):
-<!-- counts:contract-coverage -->1642 checks on 299 reviewed pages across 24 documents<!-- counts:end -->.
+<!-- counts:contract-coverage -->1658 checks on 304 reviewed pages across 24 documents<!-- counts:end -->.
 All source-page anchors must remain complete and ordered, and semantic text must
 contain no image-attachment placeholders. The manifest consistency test requires every corpus
 document to be covered or explicitly excluded (`excludedFullConversions`, whose entries the
@@ -234,9 +234,9 @@ each book is in [corpus.md](corpus.md#warren-commission-report) and the admissio
 [corpus-lane-admissions](../measurements/corpus-lane-admissions/record.md).
 
 <!-- counts:contract-breakdown -->
-Those 1642 checks are 4 `spineContinuity`, 127 `text`, 848 `orderedText`, 94 `absentText`,
-66 `headings`, 154 `paragraphs`, 19 `continuedParagraphs`, 10 `preformatted`,
-6 `absentPreformatted`, 15 `lists`, 14 `asides`, 2 `quotations`, 20 `scripts`, 15 `absentScripts`,
+Those 1658 checks are 4 `spineContinuity`, 127 `text`, 848 `orderedText`, 94 `absentText`,
+66 `headings`, 161 `paragraphs`, 1 `paragraphOpenings`, 20 `continuedParagraphs`, 10 `preformatted`,
+6 `absentPreformatted`, 15 `lists`, 15 `asides`, 2 `quotations`, 26 `scripts`, 15 `absentScripts`,
 11 `math`, 11 `imageRegions`, 37 `tableRows`, 126 `minimumImages`, 1 `originalPageImage`,
 31 `warningCodesAnyOf` and 31 `absentWarningCodes`, counted as `tools/check_corpus_content.py`
 counts them.
@@ -244,7 +244,9 @@ counts them.
 
 Contract expectations per page: `orderedText` and `text` (selected correct words in order),
 `paragraphs` (a phrase inside one spine paragraph on that source page; a phrase spread over
-separate paragraphs, headings or preformatted text cannot pass), `preformatted` (the mirror of it:
+separate paragraphs, headings or preformatted text cannot pass), `paragraphOpenings` (a phrase a
+spine paragraph on that source page opens with, so a page-foot note that runs on from the note
+above it fails although its words are all there, #314), `preformatted` (the mirror of `paragraphs`:
 a phrase inside one `<pre>` block, which a paragraph, two adjacent items or the page's running text
 cannot satisfy — what pins a list-shaped line that is not a list item, #172), `lists` (one list
 element on the page — `{"kind": "ul" | "ol", "items": [...]}`, with `start` where an `<ol>`'s first

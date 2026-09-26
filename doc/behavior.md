@@ -137,10 +137,10 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   the row ends in script glyphs, or the piece is scripts alone at two levels more than
   max(0.5, 12%) apart; it starts at most max(1, 25% of the host's size) right of the row's end and
   at most the closing scripts' width left of it, counted at one em a character and capped at four
-  ems; no other line sets host-size glyphs on the baseline in between; no painted mark at most 6
-  points tall lies within that reach over that width (a fraction's bar, a radical's vinculum, a
-  table's rule); and no mark at most 6 points wide and taller than that stands up through the
-  row as far as the piece reaches (a column rule). A line PDFKit returns *before* the host joins
+  ems; no other line sets host-size glyphs on the baseline in between (a stop excepted, next); no
+  painted mark at most 6 points tall lies within that reach over that width (a fraction's bar, a
+  radical's vinculum, a table's rule); and no mark at most 6 points wide and taller than that
+  stands up through the row as far as the piece reaches (a column rule). A line PDFKit returns *before* the host joins
   only if it is scripts alone within a neighbouring host's reach, as DASC page 2 returns `tt`'s
   superscripts. A piece holding no host-size glyph is placed by measurement alone: a line's
   reference baseline is its rectangle's bottom less its lowest run's descent, in PDFKit's
@@ -148,11 +148,44 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   measured and places nothing. Pieces are sought 12 lines either side in PDFKit's order. A joined
   row's offsets are all measured from its baseline. Lines holding right-to-left letters, an
   attachment or a monospaced font take no part. A raised note number after a body glyph is one
-  level and stays as PDFKit returned it. Evidence: DASC (`20190030725.pdf`, not a corpus case)
-  pages 2–6, rendered at 200 DPI and read against the output. Wallace, Replay Clocks, Geltman,
-  the Census report, Loper Bright, the copper summary, the Fed, the 9/11 report and the Hebrew
-  Shakespeare convert byte-identically with and without the rule; NOAA's one change is `CO₂`
-  followed by its note number 180, which no longer breaks the paragraph.
+  level, and joins its row by the rule of the next item (#314). Evidence: DASC
+  (`20190030725.pdf`, not a corpus case) pages 2–6, rendered at 200 DPI and read against the
+  output. Wallace, Replay Clocks, Geltman, the Census report, Loper Bright, the copper summary,
+  the Fed, the 9/11 report and the Hebrew Shakespeare convert byte-identically with and without
+  the rule; NOAA's one change is `CO₂` followed by its note number 180, which no longer breaks the
+  paragraph.
+- **Note numbers PDFKit returns as a line of their own (#314).** `selectionsByLine` also breaks
+  a row at a full stop that a raised note number follows, where the page sets the number by a
+  text matrix of its own, and returns the number, alone or with the words printed after it on
+  the row, as a line starting where the first one ends: the 9/11 report's page 145 came back as
+  `…to the Washington Times.` and `105 This made it`, and was written
+  `…Times.</p><p><sup>105 </sup>This made it</p>`; Loper Bright's page 13 as `…the F/V
+  Persistence.` and a plain `1`, whose footnote was then left unlinked. `SplitScriptRows` takes
+  such a piece as the row's next piece when the row ends in a body glyph and every script run the
+  piece opens with, before its first host-size glyph, stands above the baseline by more than
+  max(0.5, 12% of its own size) at one level; every other condition of the previous item holds,
+  so the piece starts at the row's end (at most max(1, 25% of the host's size) right of it, at
+  most 0.5 left), its words stand on the row's baseline at the host's size, and its number within
+  a first level's reach. A line of one or two punctuation marks at the row's size, on its baseline
+  and starting at its end, is the row's next character when a piece follows it: NOAA page 145
+  comes back as `…W/m²`, `.` and `² Since NCA4, the`, and reads `W/m².² Since NCA4, the` in
+  that order, never with the stop after the words. Beside such a mark a painted mark lying
+  wholly under the baseline (within max(0.5, 12%)) is the row's own underline and keeps nothing
+  apart: NOAA underlines its links with a 4-point bar from the baseline down, up to the stop the
+  note follows (page 26's `Table 1.1.9.¹²`); a bar above the baseline still does. A number that
+  opens a line — a page-foot note's own, or a line-initial marker in a list of notes — starts at
+  no row's end and is never joined to the line above it. The joined row is read as one line, so
+  `PageFootnotes` sees the raised number after its word and links Loper Bright's footnote 1.
+  Two page statistics count the joined rows as they count rows PDFKit did not split: a line's
+  characters weigh at its first glyph's size, so on the Hebrew Shakespeare's pages 91 and 476,
+  where the 8-point translation and the 7-point notes tie within 5 and 1 characters, the note
+  numbers' characters move to the translation, the page body becomes 8, and the 9.5-point Hebrew
+  verse falls under the 10-point heading threshold and reads as paragraphs, as on the book's pages
+  where the translation already outweighs the notes. And a row that was short of its measure
+  fills it, so the letter on the same book's page 87 now qualifies as wrapped prose, and its
+  7-point notes keep their own leading beside it ([Paragraphs interrupted by a displayed
+  block](#paragraphs-interrupted-by-a-displayed-block)).
+  Evidence: [note-numbers-split-off-their-row](../measurements/note-numbers-split-off-their-row/record.md).
 - **Script baseline (#304).** PDFKit states a line's offsets from one reference, which need not be
   the baseline its text stands on: Wallace page 178's `a²` arrives as `a` at −4.32 and `2` at 0,
   DASC page 5's `STA` at −2.71 and its superscript at +2.71. Where every body-size run of the line
@@ -2765,8 +2798,14 @@ Evidence: [raster-dpi](../measurements/raster-dpi/record.md),
 - **Base direction (#41).** A paragraph, heading, table or preformatted block whose own text reads right
   to left (`ArabicText.readsRightToLeft`) is written with `dir="rtl"`, a global attribute of
   XHTML5 and valid on each of those elements; nothing else carries the attribute, so a Latin or
-  East Asian book's markup is byte-identical to what it was. A book most of whose text blocks read
-  that way also states `page-progression-direction="rtl"` on its spine. Together they let a reader
+  East Asian book's markup is byte-identical to what it was. A book whose text blocks carry at
+  least as many right-to-left letters as Latin ones also states
+  `page-progression-direction="rtl"` on its spine: the same judgment `readsRightToLeft` makes of a
+  block, made of the book's letters, not a count of its blocks. The Hebrew Shakespeare sets its
+  Hebrew verse a short block to a line beside English prose, so its blocks stand near half and
+  half (49.5% right to left before #314 joined its split note numbers into their paragraphs,
+  50.3% after, which turned the spine) while its letters are 27.5% Hebrew, in a book bound left to
+  right; the Arabic guide's are 94.9% Arabic. Together they let a reader
   lay out the numbers, Latin terms and brackets inside each paragraph the way the source page did,
   and turn the book's pages the way it was bound. EPUBCheck 5 passes the Arabic guide with both.
 - **Painted underlines (#235).** A page can emphasize a word by painting a rule under it rather
@@ -2969,7 +3008,12 @@ a stable margin and leading, three lowercase continuations, and a substantial me
 Bold/tagged headings, caption openings and displayed quotations do not supply that evidence.
 The document's body size must corroborate the run: a larger heading floor cannot exceed it
 by more than 5%. The same strong evidence supplies leading for its own font size, including
-when that size is already the page's modal body. Smaller notes retain their own spacing.
+when that size is already the page's modal body. Smaller notes retain their own spacing: every
+smaller size that sets such a run keeps its own leading too, where it differs from the page's
+(#314). The Hebrew Shakespeare's page 87 sets a letter at 9.5 points on 13 and notes at 7 on 9;
+once the letter's row PDFKit split at its note number 18 is whole, the letter's run qualifies
+beside the notes', and measured against 13 points instead of their own 9 the notes ran the
+page-foot note `18 The title…` on from `…The Publisher.` above it.
 Two shorter paragraphs can establish leading alone when the document corroborates their
 font size and they share a margin, measure and spacing across at least five rows and 300
 characters. This does not raise the heading threshold. Fed pages 13, 46, 47 and 95 provide

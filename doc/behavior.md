@@ -120,7 +120,39 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   higher than the script before it, as Wallace page 178's `(a²)³` did until its parentheses were
   restored (#305). A body-sized run is never an anchor, and neither is a rejected numerator. Nor
   does a step between two second-level glyphs insert the word boundary kept for PDFKit's
-  concatenated lines. Rows that PDFKit splits into several lines are read apart (#303).
+  concatenated lines. A row PDFKit splits into several lines is joined before it is read (next).
+- **Rows of stacked scripts (#303).** `selectionsByLine` breaks a printed row where its glyphs
+  step back to the left or down among small sizes, which is what stacked scripts do: DASC page 5's
+  `STA` with `n^i_h` above and `h` below came back as `Step 2. For each STAni`, `h` and
+  `h occurring in the computed schedules`. `SplitScriptRows` joins such pieces after the page's
+  lines are read and before any is turned into inline text. A *host* is a line whose glyphs above
+  90% of its largest size share one baseline (within max(0.5, 12%) of that size) and include a
+  letter or digit. Another line is the host row's next piece, the first such line in PDFKit's
+  order each time, when: its first glyph run is set between 45% and 90% of the host's size and
+  stands off the baseline by more than max(0.5, 12% of its own size); any larger glyphs it holds
+  are the host's size (within max(0.5, 10%)) and measure onto the host's baseline within
+  max(0.5, 12%), which then places them exactly; every script glyph stands at most 50% of the
+  host's size below the baseline and at most 85% above it when set at 60% of the host's size or
+  more, 135% when smaller (DASC page 6's third-level `N` stands 12.08 points up a 9.96-point line);
+  the row ends in script glyphs, or the piece is scripts alone at two levels more than
+  max(0.5, 12%) apart; it starts at most max(1, 25% of the host's size) right of the row's end and
+  at most the closing scripts' width left of it, counted at one em a character and capped at four
+  ems; no other line sets host-size glyphs on the baseline in between; no painted mark at most 6
+  points tall lies within that reach over that width (a fraction's bar, a radical's vinculum, a
+  table's rule); and no mark at most 6 points wide and taller than that stands up through the
+  row as far as the piece reaches (a column rule). A line PDFKit returns *before* the host joins
+  only if it is scripts alone within a neighbouring host's reach, as DASC page 2 returns `tt`'s
+  superscripts. A piece holding no host-size glyph is placed by measurement alone: a line's
+  reference baseline is its rectangle's bottom less its lowest run's descent, in PDFKit's
+  substitute font, and a line whose top disagrees with that by more than 30% of its size is not
+  measured and places nothing. Pieces are sought 12 lines either side in PDFKit's order. A joined
+  row's offsets are all measured from its baseline. Lines holding right-to-left letters, an
+  attachment or a monospaced font take no part. A raised note number after a body glyph is one
+  level and stays as PDFKit returned it. Evidence: DASC (`20190030725.pdf`, not a corpus case)
+  pages 2–6, rendered at 200 DPI and read against the output. Wallace, Replay Clocks, Geltman,
+  the Census report, Loper Bright, the copper summary, the Fed, the 9/11 report and the Hebrew
+  Shakespeare convert byte-identically with and without the rule; NOAA's one change is `CO₂`
+  followed by its note number 180, which no longer breaks the paragraph.
 - **Script baseline (#304).** PDFKit states a line's offsets from one reference, which need not be
   the baseline its text stands on: Wallace page 178's `a²` arrives as `a` at −4.32 and `2` at 0,
   DASC page 5's `STA` at −2.71 and its superscript at +2.71. Where every body-size run of the line

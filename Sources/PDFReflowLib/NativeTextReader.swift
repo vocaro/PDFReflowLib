@@ -40,21 +40,24 @@ enum NativeTextReader {
     /// `rules` are the page's painted thin rules, which supply the underline evidence the text
     /// layer does not carry (#235). `shows` are the page's own text-showing operations, where the
     /// caller has already read them: `TableReader` needs the same reading to divide a printed row
-    /// into cells, and one walk of the content stream serves both (#210).
+    /// into cells, and one walk of the content stream serves both (#210). `marks` are the page's
+    /// painted shapes, unclustered, whose bars and column rules keep a fraction's terms and a
+    /// table's cells from being read as one row's scripts (#303).
     static func lines(on page: PDFPage, limit: Int, includeStyle: Bool = true,
                       rules: [CGRect] = [], links: [PageLink] = [], preserveInvisibleWordGaps: Bool = false,
-                      shows: [NativeSpacingReader.Evidence]? = nil, language: String = "en") throws -> [TextLine] {
+                      shows: [NativeSpacingReader.Evidence]? = nil, language: String = "en",
+                      marks: [CGRect] = []) throws -> [TextLine] {
         try withExtractionLock {
             try extractLines(on: page, limit: limit, includeStyle: includeStyle, rules: rules,
                              links: links, preserveInvisibleWordGaps: preserveInvisibleWordGaps, shows: shows,
-                             language: language)
+                             language: language, marks: marks)
         }
     }
 
     private static func extractLines(on page: PDFPage, limit: Int, includeStyle: Bool,
                                      rules: [CGRect], links: [PageLink] = [], preserveInvisibleWordGaps: Bool = false,
                                      shows: [NativeSpacingReader.Evidence]? = nil,
-                                     language: String) throws -> [TextLine] {
+                                     language: String, marks: [CGRect] = []) throws -> [TextLine] {
         guard page.numberOfCharacters <= limit else {
             throw ConversionError.resourceLimit("too many characters")
         }
@@ -228,6 +231,11 @@ enum NativeTextReader {
             }
         }
         let rightToLeft = ArabicText.readsRightToLeft(pending.map(\.semantic))
+        // A row of stacked scripts PDFKit returned as several lines is read back as one, so its
+        // script levels are read together (#303).
+        if includeStyle, !rightToLeft {
+            pending = SplitScriptRows.rejoin(pending, marks: marks)
+        }
         let lines = pending.map { item in
             guard rightToLeft else { return textLine(semantic: item.semantic, bounds: item.bounds, attributed: item.attributed) }
             let ordered = item.attributed.map { ArabicText.logicalOrder($0, onRightToLeftPage: true) }

@@ -85,7 +85,7 @@ enum PageReader {
             var content = PageContent(number: i + 1, bounds: bounds,
                 lines: try NativeTextReader.lines(on: page, limit: limit, includeStyle: styled,
                     rules: rules, links: links, preserveInvisibleWordGaps: syntheticStyle, shows: shows,
-                    language: options.language), graphics: graphics.regions,
+                    language: options.language, marks: graphics.paints.map(\.rect)), graphics: graphics.regions,
                 pictures: graphics.images)
             content.blanks = fieldBlanks
             if styled, !SlideDeck.title(in: content).isEmpty {

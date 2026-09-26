@@ -22,6 +22,9 @@ EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpac
               # A row of two columns PDFKit merged into one line is cut where the box is formed
               # (#270), for the same reason and from the same character boxes.
               'ColumnGutterCut.swift', 'DetachedTextReader.swift', 'TextLineGeometry.swift',
+              # A row of stacked scripts PDFKit split into several lines is joined before the
+              # lines are read (#303), for the same reason.
+              'SplitScriptRows.swift',
               'GlyphIdentityReader.swift', 'DiscretionaryHyphenReader.swift',
               # TeX's sized delimiters, which no map states, are restored where the line is read (#305).
               'ExtensionDelimiterReader.swift',

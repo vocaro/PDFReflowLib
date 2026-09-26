@@ -83,6 +83,7 @@ ALLOWED = {
     306: ('historical', "the cross-page join that steps over a page's footnotes and the typed rule as a separator, on main and named by their issue"),
     304: ('historical', 'the script baseline and the stacked-superscript admission, on main and named by their issue'),
     302: ('historical', 'the second script level, painted accents and whole display crops, on main and named by their issue'),
+    312: ('historical', "the whole-sentence exception to the formula seeds and the union of a display's seeds, on main and named by their issue"),
     305: ('historical', "TeX's sized delimiters read back from their glyph names, on main and named by its issue"),
     303: ('historical', 'the stacked-script row joining, on main and named by its issue'),
     308: ('historical', 'a line measured from smaller text beside it and the absent-script contract check, '
@@ -285,6 +286,7 @@ ALLOWED = {
     37: ('branch-only', '277cbde39'),
     40: ('branch-only', '20c78f352'),
     45: ('branch-only', 'e1cbc0d0e'),
+    51: ('branch-only', 'eb0197c89'),
     153: ('branch-only', '58a2ddda6'),
     158: ('branch-only', 'bff0a046c'),
     164: ('branch-only', '88803aca7'),

@@ -132,3 +132,120 @@ split apart around the page boundary, is #303's.
   `census-rrs2002-01`: `runPassed` true and no content-assessment errors on each.
 - `GlyphPlacementReader` walks each page it reads once more; over the survey above the walk took
   about a millisecond a page (0.55 seconds over the 9/11 report's 585 pages).
+
+## Page 9's time-window display takes `with` and the sentence after it (#312)
+
+Build: `main` at `af18cfb9` with this change; baseline `af18cfb9` alone. Same host, Xcode 27.0
+(27A266a), macOS 27.0 (26A428). Each binary converted DASC, Wallace
+(`Beginning_and_Intermediate_Algebra.pdf`, SHA-256 `856bd81e…`), the arXiv paper
+(`2311.07842v1.pdf`, `1e8172e4…`), Geltman (`jresv82n3p173_A1b.pdf`, `44653967…`) and Census
+(`rrs2002-01.pdf`, `0f97380a…`) with
+`--no-ocr --package-identifier urn:uuid:identity --modification-date 2026-01-01T00:00:00Z`; the
+pairs were compared with `tools/epub_identity.py` (conversion reports included), then page by
+page with each image named by its content's SHA-256, and every changed page was checked against
+`pdftoppm -r 150`. The rule's alternatives were measured with a Swift Testing probe (not
+committed) that reads every page with `PageReader.read` and lists each line whose `takes` changes
+when `LayoutReconstructor.graphicsWithLabels` runs with a variant, over the same 27 cached PDFs
+(5,875 pages) as item 2's survey, all read as English.
+
+### How `main` read the page
+
+The page prints `…these are the time windows (11),` / `with` / the display
+`(a̱ₖ, āₖ) = A^{n^k_f, j_k}_f.` / `Let N = N_f be the length of the route.` / an indented
+`The problem of scheduling flight f can then be written as`. The sentence states an equation in
+eight words (#57's rule allows twelve), so it seeds a crop, x 44.96–216.12, y 188.94–214.70; the
+display seeds x 132.51–216.48, y 206.11–239.32. The issue read the two seeds as clustered. They are
+not: `with` belongs to the four-line paragraph above it, which `TextBackdrop.paragraphs` protects,
+so `clustersKeepingText` keeps them apart. The sentence's crop took the rest by itself. Its
+margin reaches 0.59 point into the display's line (y 214.11–231.32), so no cut clears the display
+while keeping the seed, and the display is admitted; the display's line reaches 2.01 points into
+that of `with` (y 229.31–238.22), so no cut clears `with`, and a one-word line is not the book's
+prose (#255), so it is admitted too. The two regions then overlap and merge into one crop,
+x 44.96–216.48, y 188.94–240.22.
+
+### Should a sentence that states a relation seed a crop?
+
+Not a whole sentence. Each variant stops a formula line from seeding when it matches:
+
+| variant | DASC | Wallace | arXiv | Geltman, Census | the other 22 PDFs |
+| --- | --- | --- | --- | --- | --- |
+| reads as prose by #255's test (`releasesProse`) | p. 9 fixed; p. 2's three prose lines released; p. 6's display released | 79 pages, 175 lines released | 7 pages, 32 lines released, among them the numbered lines of the algorithm listings on pages 4 and 5 | none | not run |
+| the above, opening with a capital and ending in `.` | p. 9 fixed | p. 112 | two captions released, p. 12's two crops become four | none | not run |
+| four words of two letters, nothing else | p. 9's display released as well | 84 pages | 7 pages | none | not run |
+| **a whole sentence (the rule)** | **p. 9 fixed** | **p. 112** | **none** | **none** | **none** |
+| the rule, with words on both sides of the relation | p. 9 fixed | none | none | none | none |
+| the rule, ending in `.`, `?` or `!` | p. 9 fixed | p. 112, and a crop on p. 280 moves | none | not run | FAA handbook: none; the rest not run |
+
+The rule reads a whole sentence of the book's prose: a line that opens with a capitalised English
+word of two letters or more, ends with a full stop, has #255's shape (four words of two letters)
+and reads as English words (`EnglishText.readsAsWords`), in a book that declares English. It
+applies to both formula tests, the relation and the symbols `∫∑∏√∂∇≈≠≤≥∞`; over the 27 PDFs the
+two readings change the same lines. The opening word is what keeps Wallace's worked steps, which
+set an equation and its annotation as one line (`5x = 25 Divide both sides by 5`). English words,
+not #255's shape alone, keep the arXiv paper's lines of mathematical italic, which `releasesProse`
+judges on shape because `EnglishText.foreignLetters` counts `𝑡` as another script's letter.
+
+The narrower reading, words on both sides of the relation, changes DASC alone; it was not taken
+because it leaves Wallace page 112's `Find the slope of a line parallel to 5y − 2x = 7.`, as much a
+whole sentence as DASC's, seeding a crop that pictures the example's first two rows twice.
+
+### May the union of two seeds take a line neither takes?
+
+Yes, unless the line belongs to a paragraph of the book's prose, as `clustersKeepingText` already
+provides. On `af18cfb9`, 407 of Wallace's lines on 137 pages are taken by a union of seeds and
+reached by none of its seeds; 168 of them hold four words of two letters, the annotations of
+worked steps (`Our solution for x` beside the row `x = 13` on page 74). DASC has 44, on page 2 (the
+scripts of `STA^n_f`) and page 8 (Table II, whose ruled cells are one crop only through the union
+of its rules). The arXiv paper, Geltman and Census have none. Keeping every line no seed reaches
+out of the union, in `clustersKeepingText` and in the merge after each expansion, changed 98 of
+Wallace's pages (207 lines released, one newly taken), broke DASC's Table II into eleven crops with
+its 47 lines released as text, and left DASC page 9 as it was, since its crop reaches `with`
+through the display's line, not through a union.
+
+### Before and after
+
+DASC page 9:
+
+| | before | after |
+| --- | --- | --- |
+| text | `…these are the time windows (11),` / `The problem of scheduling flight f can then be written as the Quadratic Program` | `…these are the time windows (11), with` / `Let N= N<sub>f </sub>be the length of the route. The problem of scheduling flight f can then be written as the Quadratic Program` |
+| crop | x 44.96–216.48, y 188.94–240.22: `with`, the display and the sentence | x 132.51–216.48, y 206.11–239.32: the display |
+
+Wallace page 112, Example 146:
+
+| before | after |
+| --- | --- |
+| crop: `Find the slope of a line parallel to 5y − 2x = 7.` with rows `5y − 2x = 7` and `+2x + 2x` and their annotations | `Find the slope of a line parallel to 5y− 2x = 7.` |
+| | `To find the slope we will put equation in slope− intercept form` |
+| crop: rows `5y − 2x = 7`, `+2x + 2x`, `5y = 2x + 7` | the same crop |
+| `Put x term first` | `Add 2x to both sides Put x term first` |
+
+The first crop is gone, so the two rows it repeated are pictured once; the example's prompt and
+two annotations read as text, the last two run together in one paragraph as the page's other
+annotations already did. Wallace's images go from 3,278 to 3,277, and its conversion report
+differs in `imageCount` alone. Every other page of both books, and the arXiv paper, Geltman and
+Census whole, convert byte-identically. The corpus lane on `wallace-algebra-2010`,
+`arxiv-replay-clocks-2023`, `nbs-jres-geltman-1977` and `census-rrs2002-01` gives `runPassed`
+true and no content-assessment errors on each.
+
+Left as they are:
+
+- The crop's foot is the display seed's eight-point margin, 0.59 point inside the sentence's line,
+  so the tops of the sentence's ascenders show as two pixel rows (18 inked pixels at 180 DPI)
+  along its lower edge. A crop keeps its own extent against prose it cannot cut (#255); stopping a
+  formula's margin at the prose beside it is the other half of #51's fix, which lives only in
+  `eb0197c89`. Formula margins reach into a whole sentence on 18 of Wallace's pages, 2 of the
+  arXiv paper's and one of the FAA handbook's, so that change is not this one.
+- `The problem of scheduling flight f…` opens a new paragraph with an indent, but runs on after
+  the released sentence, which ends at 0.68 of its width: over the 0.65 at which a line above an
+  indented line closes its paragraph. That is #310's mechanism, reported there on Loper Bright.
+- Lines inside a running paragraph that state a relation still seed crops and are read only in
+  pictures: DASC page 2 (`are given a set of flights, indexed by f: f = 1,2,...,F,` with the lines
+  above and below it) and the arXiv paper's pages 5, 6, 7 and 10 (`…to ensure that if E= 1ms then
+  the worst-case`, `We presented RepCl to solve the replay problem with E1 = E+I`). They open in
+  lowercase or run on past the line, and the rule does not read them; #51's paragraph-measure
+  test in `eb0197c89` does.
+- Wallace page 112's two crops that pictured the same rows were one case of a shape nine other
+  Wallace pages keep: two crops of one worked example overlap, the rows they share are pictured
+  twice, and the upper crop cuts the next row in half (17 lines on pages 48, 49, 103, 104, 147,
+  170, 239, 275 and 408; checked in the EPUB on pages 104 and 239). Filed as #318.

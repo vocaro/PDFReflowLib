@@ -2181,6 +2181,42 @@ pairs retain separate paragraphs. See
   removed before it is measured, because a query string is not a relation: a word holding `://`,
   opening `www.`, or joining a `name=value` pair after a `?` or `&` is an address, and a note that
   cites one no longer seeds a crop (#227).
+- **A whole sentence is not a display (#312).** Neither test above seeds a region for a line that
+  reads as a whole sentence of the book's prose: in a book that declares English, a line that
+  opens with a capitalised English word of two letters or more, ends with a full stop, has the
+  shape #255 reads prose by (four words of two letters or more), and reads as English words
+  (`EnglishText.readsAsWords`). DASC page 9 follows its display `(a̱ₖ, āₖ) = A^{n^k_f, j_k}_f.` with
+  the sentence `Let N = N_f be the length of the route.`, eight words holding an `=`. Its crop's
+  margin reached 0.59 point into the display's line, which no cut could then clear, and the
+  display's line reaches 2 points into that of `with`, the word before the display; the crop took
+  all three, and the sentence and `with` were read only in the picture. The opening word is what
+  keeps a worked step a display: Wallace sets an equation and its annotation as one line
+  (`5x = 25 Divide both sides by 5`), which has the prose's shape and opens with its term. The
+  prose test alone changed the crops of 79 of Wallace's pages, released the numbered lines of the
+  arXiv paper's algorithm listings from their crops and released a display on DASC page 6; ending
+  a sentence with `?` or `!` as well moved a crop on Wallace page 280, so only a full stop ends
+  one here. A line of mathematical italic is not judged, because an English lexicon cannot read
+  it. Over the 27 cached PDFs the rule changes two crops. DASC page 9's now holds the display,
+  and `with` and the sentence read as text; only the tops of the sentence's ascenders show along
+  the crop's foot, where the seed's margin reaches. Wallace page 112's Example 146 opens with the
+  sentence `Find the slope of a line parallel to 5y − 2x = 7.`, whose crop also held the
+  example's first two rows with their annotations while a second crop held the same two rows
+  again: the sentence and the two annotations now read as text, and each row is pictured once.
+  A line inside a running paragraph that states a relation, opening in lowercase or running on
+  past the line, still seeds a crop, and the prose it takes is read only in the picture: the arXiv
+  paper loses such lines on pages 5, 6, 7 and 10, and DASC on page 2. #51 is closed, but its fix,
+  which reads such a line against its paragraph's measure, lives only in `eb0197c89` on the
+  abandoned coordination branch.
+- **The union of a display's seeds (#312).** Seeds within three points of each other are one
+  region, and that region may take a line none of them reaches alone, unless the line belongs to
+  a paragraph of the book's prose. That is how a display keeps what stands between its parts: 407 of Wallace's lines,
+  on 137 pages, are held by a union of seeds and by none of its seeds, 168 of them worded like
+  prose, the annotations of worked steps (`Our solution for x` beside the row `x = 13`); DASC
+  page 8's ruled Table II is one crop only through its rules' union. Keeping every such line out
+  of the union changed 98 of Wallace's pages, broke Table II into eleven crops with its cells
+  scattered as text, and would not have freed DASC page 9's `with`, which that page's crop reached
+  through the display's own line rather than through a union. Evidence:
+  [maths-reading-leftovers](../measurements/maths-reading-leftovers/record.md).
 - **A word a crop cuts in half.** A crop does not take one half of a word whose other half falls
   outside it: where a line the crop takes ends in a hyphen or a soft hyphen and the line directly
   beneath it, in the same column, opens in lowercase outside the crop, the taken line is released

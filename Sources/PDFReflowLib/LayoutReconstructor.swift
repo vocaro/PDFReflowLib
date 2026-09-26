@@ -494,7 +494,9 @@ enum LayoutReconstructor {
         let formulas = page.lines.filter { line in
             guard !line.monospaced, line.text.count < 160 else { return false }
             let mathSymbols = line.text.rangeOfCharacter(from: CharacterSet(charactersIn: "∫∑∏√∂∇≈≠≤≥∞")) != nil
-            return mathSymbols || statesAnEquation(line.text)
+            guard mathSymbols || statesAnEquation(line.text) else { return false }
+            // A whole sentence of the book's prose states its mathematics in running text (#312).
+            return !readsAsWholeSentence(line, language: language)
         }.map { $0.rect.insetBy(dx: -4, dy: -8) }
         // A rule underlining one text line is that text's decoration, not a figure. Rows of
         // column-header underlines are table evidence instead (#36).
@@ -562,6 +564,9 @@ enum LayoutReconstructor {
         let columnHeaders = TableRegionDetector.columnHeaders(in: page, body: body)
         let protectedProse = TextBackdrop.paragraphs(page.lines).filter { !PageBackdrop.reflows($0, on: page) }
             + TextBackdrop.galleryGutters(page.lines, pictures: page.pictures)
+        // The union of a display's seeds may take a line none of them reaches alone, such as a
+        // worked step's annotation set beside its rows, so long as the line is not the book's
+        // prose (#312).
         let seedsGrouped = page.backdropTextPanels != nil ? PageBackdrop.clustered(seeds)
             : TextBackdrop.clustersKeepingText(seeds, lines: protectedProse, distance: 3)
         var regions = seedsGrouped.map { Region(seed: $0, bounds: $0) }
@@ -701,6 +706,40 @@ enum LayoutReconstructor {
         guard let sign = measured.lastIndex(of: "="),
               measured[measured.index(after: sign)...].contains(where: { !$0.isWhitespace }) else { return false }
         return measured.split(whereSeparator: \.isWhitespace).count <= 12
+    }
+
+    /// Whether a line reads as a whole sentence of the book's own prose, which no formula seeds a
+    /// crop for, whatever relation or symbol it carries (#312).
+    ///
+    /// DASC's page 9 sets its display `(a̱ₖ, āₖ) = A^{n^k_f, j_k}_f.` between `with`, the last word
+    /// of the sentence that introduces it, and the sentence `Let N = N_f be the length of the
+    /// route.` That sentence states an equation in eight words, under #57's twelve, so it seeded a
+    /// crop of its own. The crop's margin reached 0.59 point into the display's line, so no cut
+    /// cleared the display and the crop admitted it; the display's line reaches 2 points into that
+    /// of `with`, so no cut cleared `with` either. The crop took all three, and the sentence and
+    /// `with` left the text.
+    ///
+    /// A sentence is told by all four of: it opens with a capitalised English word and ends with
+    /// a full stop, it has the shape #255 reads the book's prose by (`readsAsSentence`), and it
+    /// reads as English words (`EnglishText.readsAsWords`). The opening word is what keeps a
+    /// worked step: Wallace sets an equation and its annotation on one line (`5x = 25 Divide both
+    /// sides by 5`), which has the prose's shape and is still a display row, and it opens with its
+    /// term. The prose test alone, without the opening word and the full stop, changed the crops
+    /// of 79 of Wallace's pages, released the numbered lines of the arXiv paper's algorithm
+    /// listings from their crops, and released DASC page 6's display `= ETA^{current node} +
+    /// 3600.0 · distance betw. the nodes / 150.0 KTS.` A question or an exclamation is not read as
+    /// a sentence here: admitting `?` moved a crop on Wallace page 280. The test is English's, so
+    /// it reads only a book that declares English and a line of Latin letters; a TeX line of
+    /// mathematical italic (the arXiv paper's `Figure 5: 𝜏 vs E when varying 𝐼, 𝛿= 8𝜇𝑠.`) is not
+    /// judged.
+    static func readsAsWholeSentence(_ line: TextLine, language: String) -> Bool {
+        guard EnglishText.isDeclared(language), readsAsSentence(line) else { return false }
+        let text = line.text.trimmingCharacters(in: .whitespaces)
+        let opening = text.prefix(while: \.isLetter)
+        guard text.hasSuffix("."), opening.count >= 2, opening.allSatisfy(\.isASCII),
+              opening.first?.isUppercase == true,
+              EnglishText.lexiconContains(opening.lowercased()) == true else { return false }
+        return EnglishText.readsAsWords(text)
     }
 
     /// Whether a word is a web address: a scheme, a `www.` host, or a query string — a `?` or

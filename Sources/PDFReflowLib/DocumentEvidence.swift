@@ -41,6 +41,8 @@ struct DocumentEvidence {
     private var labelStylePages: [LayoutReconstructor.LabelStyle: Int] = [:]
     /// The display sizes the book's own tags call headings, page by page (#294).
     private var headingTally = HeadingRank.Tally()
+    /// The numbered titles native pages set apart, in reading order (#297).
+    private var numberedTitles: [NumberedSectionTitles.Candidate] = []
     private var formOutlineCandidates: [FormOutlineEvidence.Candidate] = []
     private var slideTextPages = 0
     private var slidePages = 0
@@ -99,6 +101,11 @@ struct DocumentEvidence {
             }
             // The sizes this page's tags call a heading, ranked once the book is read (#294).
             headingTally.record(content, pageIndex: i)
+            // The numbered titles this page sets apart, read as an outline once the book is
+            // read (#297).
+            if numberedTitles.count < 10_000 {
+                numberedTitles += NumberedSectionTitles.candidates(on: content)
+            }
         }
         if ScannedEndnotes.hasHeading(content) {
             scannedNotePages.insert(content.number)
@@ -129,6 +136,7 @@ struct DocumentEvidence {
             documentBody: documentBody,
             labelStyles: LayoutReconstructor.labelStyles(from: labelStylePages),
             headingRank: HeadingRank(headingTally),
+            numberedTitles: NumberedSectionTitles.outline(from: numberedTitles),
             numberedNotePages: numberedNotePages,
             scannedNotePages: scannedNotePages,
             slideDeck: slideCount >= 3 && uniformLandscape && slideTextPages > 0

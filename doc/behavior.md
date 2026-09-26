@@ -1175,8 +1175,9 @@ furniture plan says the reader keeps the line, so a running head set at the body
 the reference vocabulary a broken word's carry is judged against, #184), margin-furniture candidates, numbered-note heading pages, chapter
 matches, the running character budget, the document's body size (the character-weighted
 commonest size over every native page, #186), the bold label styles that recur on at least
-three pages (#218) and the display sizes the book's tags call headings on at least three pages,
-ranked with their levels (`HeadingRank`, #294). Each extracted page is encoded as a binary property list in the workspace
+three pages (#218), the display sizes the book's tags call headings on at least three pages,
+ranked with their levels (`HeadingRank`, #294), and the numbered section titles native pages set
+apart, read as the book's outline (`NumberedSectionTitles`, #297). Each extracted page is encoded as a binary property list in the workspace
 (finite, infinite and NaN doubles round-trip; equal values share a slot, so a negative zero can
 reload as positive zero, and no reconstruction step reads the sign of zero), reloaded once in
 order, and deleted on reload; the page directory goes when reconstruction finishes, leaving only
@@ -1692,6 +1693,30 @@ right-aligned cover label stays whole without joining mathematical derivation st
   established first-line indent (at least two instances) counts as its text. Only this bold,
   body-adjacent path exists: italic labels, two-line stacked titles, hanging-entry titles, outline
   labels and tinted-box titles are not implemented.
+- **Numbered section titles (#297).** A book's own section numbering reads a title as a heading
+  where neither its size nor its weight does. The Census report sets `2 Data Files` in 12-point
+  bold over a 10.08-point body — a fifth larger, under the threshold — and `2.1 Domingo-Ferrer and
+  Mateo-Sanz` in bold at the body's size, and PDFKit reports no weight for any of its fonts
+  (#250), so no label style can recur. A candidate opens with a number of one or two levels (one
+  or two digits each, no point after the last, so `1.` stays a list item), then a capital and at
+  least three letters; it stands at least 0.8 of a body below the line above it in its column and
+  0.4 above the line beneath, which must exist, and it ends no sentence. A title the page wraps
+  onto one more line at its own size and leading ends on that line, which must stand apart from
+  the text beneath, and the two are read as one heading (Replay Clocks' `6 REPRESENTATION OF REPCL
+  AND ITS` / `OVERHEAD`). Only native pages give candidates, gathered in the extraction pass, and
+  the book must state an outline: **sections** are one-level titles set at least 10% over the
+  page's body, at one size, at least three, starting at `1`, each number once and rising in
+  reading order by at most three (the Census report's native pages read `1`, `2`, `4`, `7`; its
+  sections 3, 5 and 6 fall on pages it recognizes) — a running head repeats its number and a
+  magazine's contents lists page numbers (`4`, `18`, `20`, `21`), and neither is an outline;
+  **subsections** are two-level titles at the body's size, at least two, rising in reading order,
+  each after the section its number names and before the next (`2.1`, `2.2`, `4.1`, `4.2`). A
+  numbered paragraph, a run-in title and a numbered list stand one leading from their next line,
+  and a bold body line carries no number, so none of them qualifies. Across the corpus the rule
+  reads the Census report's seven native titles, Replay Clocks' ten sections (which had opened
+  their paragraphs) and the Hebrew Shakespeare study's ten, and changes nothing else. Levels stay
+  flat, as for every untagged heading. Evidence:
+  [numbered-section-titles](../measurements/numbered-section-titles/record.md).
 - Heading levels from tags serialize as `h1`–`h6`; visible typography otherwise supplies flat
   heading navigation. Synthetic invisible-text pages supply no code or heading typography.
 

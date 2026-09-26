@@ -1990,6 +1990,8 @@ enum LayoutReconstructor {
         var documentBody: CGFloat?
         var labelStyles: Set<LabelStyle> = []
         var headingRank = HeadingRank()
+        /// The section titles the book's own numbering vouches for (#297).
+        var numberedTitles = NumberedSectionTitles.Outline()
         var numberedNotePages: Set<Int> = []
         var scannedNotePages: Set<Int> = []
         var slideDeck = false
@@ -2223,6 +2225,12 @@ enum LayoutReconstructor {
         labels += lines.filter { line in
             formHeadings.headings.contains { $0.text == line.text && abs($0.rect.minY - line.rect.minY) <= 1 }
         }
+        // A section title the book's own numbering vouches for, where its size and weight do not
+        // say it is one, and one line however many the page wrapped it onto (#297).
+        let numbered = NumberedSectionTitles.coalescing(lines, page: page, body: typography.body,
+                                                        outline: context.numberedTitles)
+        lines = numbered.lines
+        labels += numbered.titles.filter { !labels.contains($0) }
         // A recognized line in an English book is a heading only if it reads as words: a table
         // cell or a reading of handwriting set large is not a title, and every heading is a
         // navigation entry (#7).

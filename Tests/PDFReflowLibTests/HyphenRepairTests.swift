@@ -374,3 +374,106 @@ func aParagraphBrokenAfterARangeReadsTheRangeWhole() {
         "The Kim-Winkler data were masked twice – once with additive noise and once by swapping.",
     ])
 }
+
+// MARK: - A line broken after a closed em dash (#315)
+
+/// A line that ends in an em dash set closed against what stands before it carries on with no
+/// space: a book that closes its em dashes closes them on both sides, and the page drew no space
+/// after the one it broke the line at. The 9/11 report came out `stabbed— and someone else`,
+/// Loper Bright `of coal— encompassed` and *NCA5* `innovations— such as`, in books that set the
+/// dash closed on both sides everywhere inside their lines.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/315"))
+func aLineBrokenAfterAClosedEmDashCarriesOnWithNoSpace() {
+    var warnings: [ConversionWarning] = []
+    func join(_ left: String, _ right: String) -> String {
+        LayoutReconstructor.join(left, right, hyphens: HyphenContext(), page: 25, warnings: &warnings)
+    }
+    // The three the issue reproduces, each read from its source's text layer.
+    #expect(join("“I think they’ve taken over the cockpit—An attendant has been stabbed—",
+                 "and someone else up front may have been killed.")
+            == "“I think they’ve taken over the cockpit—An attendant has been stabbed—and someone else up front may have been killed.")
+    #expect(join("whether another statutory term—“other disposal” of coal—", "encompassed a transaction lacking a transfer of title.")
+            == "whether another statutory term—“other disposal” of coal—encompassed a transaction lacking a transfer of title.")
+    #expect(join("In response, some farmers and ranchers are adopting innovations—", "such as agroecological practices,")
+            == "In response, some farmers and ranchers are adopting innovations—such as agroecological practices,")
+    // A capital or a figure on either side: the dash is closed all the same.
+    #expect(join("fly into a building—Don’t worry, Dad—", "If it happens, it’ll be very fast—My God, my God.")
+            == "fly into a building—Don’t worry, Dad—If it happens, it’ll be very fast—My God, my God.")
+    #expect(join("one of these teleconferences—at least before 10:00—", "included the right officials")
+            == "one of these teleconferences—at least before 10:00—included the right officials")
+    #expect(join("in a dangerous helicopter rappel operation—", "15 hours after the bombing.")
+            == "in a dangerous helicopter rappel operation—15 hours after the bombing.")
+    // Closed against punctuation: a parenthesis, a quotation mark, a run-in heading's stop.
+    #expect(join("the Reserve Banks, and the Federal Open Market Committee (FOMC)—", "make decisions that help")
+            == "the Reserve Banks, and the Federal Open Market Committee (FOMC)—make decisions that help")
+    #expect(join("included in one of the classified daily “newspapers”—", "the Senior Executive Intelligence Brief")
+            == "included in one of the classified daily “newspapers”—the Senior Executive Intelligence Brief")
+    #expect(join("Conduct of Secret Service agents in Fort Worth on November 22.—", "In the early morning hours")
+            == "Conduct of Secret Service agents in Fort Worth on November 22.—In the early morning hours")
+    // An em dash carries on into a quotation, as the page sets it inside a line.
+    #expect(join("Example: ATC Instructions—", "“Hold Short”") == "Example: ATC Instructions—“Hold Short”")
+    #expect(join("address consisted of a three-line stamp—", "\"DR. A. J. HIDEEL/P.O.")
+            == "address consisted of a three-line stamp—\"DR. A. J. HIDEEL/P.O.")
+    // A dash is not a hyphen: nothing is looked up, nothing is removed and nothing is warned.
+    #expect(warnings.isEmpty)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/315"))
+func aSpacedOrStrandedEmDashKeepsTheSpaceAfterIt() {
+    var warnings: [ConversionWarning] = []
+    func join(_ left: String, _ right: String) -> String {
+        LayoutReconstructor.join(left, right, hyphens: HyphenContext(), page: 550, warnings: &warnings)
+    }
+    // A spaced dash keeps the space after it: the Warren report's reproduced advertisement, and
+    // the Hebrew Shakespeare study's ditto dashes after a sentence's stop.
+    #expect(join("entertain Tito — Moscow’s Trojan Horse —", "just a short time after our sworn")
+            == "entertain Tito — Moscow’s Trojan Horse — just a short time after our sworn")
+    #expect(join("[ בן קהלת . 1877 . — — —", "Ram and Jael ]. Ed. Ilan Bar- Dor")
+            == "[ בן קהלת . 1877 . — — — Ram and Jael ]. Ed. Ilan Bar- Dor")
+    // A dash alone on its line, and a rule of dashes above a footnote, stand apart from their text.
+    #expect(join("—", "the next line") == "— the next line")
+    #expect(join("——————", "clearly states that it is.") == "—————— clearly states that it is.")
+    #expect(join("One idea behind the Chevron presumption is that Congress—", "——————")
+            == "One idea behind the Chevron presumption is that Congress— ——————")
+    // A next line that opens with a marker or a bracket starts an item, not the rest of a phrase.
+    #expect(join("addressing the problem of migrants—possibly including terrorists—", "• staffing land border crossings")
+            == "addressing the problem of migrants—possibly including terrorists— • staffing land border crossings")
+    #expect(join("there shall be printed the lesser of—", "(1) 550,000 copies of the document")
+            == "there shall be printed the lesser of— (1) 550,000 copies of the document")
+    // Other line ends are untouched: a line with no dash takes the space it always did.
+    #expect(join("the whole line", "and the next") == "the whole line and the next")
+    #expect(warnings.isEmpty)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/315"))
+func aParagraphBrokenAfterAClosedEmDashReadsTheDashClosed() {
+    // The 9/11 report's page 25, one paragraph over three lines, with a spaced-dash paragraph
+    // beneath it as the control.
+    var y = 700.0
+    func lines(_ texts: [String]) -> [TextLine] {
+        texts.map { text -> TextLine in
+            defer { y -= 12 }
+            return TextLine(text: text, rect: CGRect(x: 60, y: y, width: Double(text.count) * 5, height: 10), fontSize: 10)
+        }
+    }
+    let closed = lines([
+        "phone call from his son Peter, a passenger on United 175. His son told him:",
+        "“I think they’ve taken over the cockpit—An attendant has been stabbed—",
+        "and someone else up front may have been killed.",
+    ])
+    y -= 12
+    let control = lines([
+        "The attendants had been told to wait —",
+        "and the passengers were moved to the back of the plane.",
+    ])
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(
+        page: PageContent(number: 25, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                          lines: closed + control, graphics: []),
+        images: [], vocabulary: [], warnings: &warnings)
+    #expect(paragraphTexts(blocks) == [
+        "phone call from his son Peter, a passenger on United 175. His son told him: "
+            + "“I think they’ve taken over the cockpit—An attendant has been stabbed—and someone else up front may have been killed.",
+        "The attendants had been told to wait — and the passengers were moved to the back of the plane.",
+    ])
+}

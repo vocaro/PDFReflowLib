@@ -104,7 +104,7 @@ extension LayoutReconstructor {
         // sentence back at the head of the left-hand piece, with the page's own space after it;
         // a space of this library's own would put the stop a space from its sentence (#41).
         if ArabicText.setsNoSpace(between: left, and: right) { return .concatenate }
-        if breaksAtClosedEnDash(left, right) { return .concatenate }
+        if breaksAtClosedEnDash(left, right) || breaksAtClosedEmDash(left, right) { return .concatenate }
         guard left.hasSuffix("-") else { return .space }
         // Both halves are read as the vocabulary holds them, so a ligature the font draws is the
         // letters it stands for on both sides of the lookup (#123).
@@ -169,16 +169,48 @@ extension LayoutReconstructor {
     /// A dash set with a space before it is a parenthetical dash, `word – word`, whose space after
     /// is the page's own too, and the join keeps it. Only the en dash is read here: every one the
     /// corpus closes against a letter or figure at a line end is closed in the source (the em dash
-    /// is #315). A line
-    /// that is the dash alone, or a next line opening with a marker, bracket or quotation mark, is
-    /// left to the space, as before.
+    /// has its own rule, `breaksAtClosedEmDash`). A line that is the dash alone, or a next line
+    /// opening with a marker, bracket or quotation mark, is left to the space, as before.
     static func breaksAtClosedEnDash(_ left: String, _ right: String) -> Bool {
-        func closes(_ character: Character) -> Bool {
-            character.isLetter || character.isNumber || character == "_"
-        }
-        guard left.last == "\u{2013}", let before = left.dropLast().last, closes(before),
-              let after = right.first, closes(after) else { return false }
+        guard left.last == "\u{2013}", let before = left.dropLast().last, closesUpDash(before),
+              let after = right.first, closesUpDash(after) else { return false }
         return true
+    }
+
+    /// True when a line ends in an em dash the page set closed against what stands before it, and
+    /// the next line carries on with a letter, a figure or an opening quotation mark (#315). A book
+    /// that closes its em dashes closes them on both sides, and a line end is no exception: the
+    /// break fell there because a dash is a place a line may end, and the page drew no space
+    /// after it. The 9/11 report came out with `has been stabbed— and someone else`, Loper Bright
+    /// with `“other disposal” of coal— encompassed`, and *NCA5* with `adopting innovations— such as`,
+    /// in books that set the dash closed on both sides everywhere inside their lines (9/11 751
+    /// times, *NCA5* 705, Loper Bright 125) and never spaced after it.
+    ///
+    /// What stands before the dash may be punctuation: a closing parenthesis or quotation mark,
+    /// `(FOMC)—make`, `“newspapers”—the`, or a run-in heading's stop, the Warren report's
+    /// `…on November 22.—` over `In the early morning hours`. Every one of those the corpus breaks
+    /// at a line end is closed in its source. A dash with a space before it is a spaced dash,
+    /// `word — word`, and keeps the space after it, as do a line that is the dash alone and a rule
+    /// of dashes. A next line may open with a quotation mark, which the em dash, unlike a
+    /// range's en dash, carries on into: `stamp—"DR. A. J. HIDEEL`, `ATC Instructions—“Hold Short”`.
+    /// A next line opening with a marker or a bracket is left to the space.
+    static func breaksAtClosedEmDash(_ left: String, _ right: String) -> Bool {
+        guard left.last == "\u{2014}", let before = left.dropLast().last, !before.isWhitespace,
+              before.unicodeScalars.first?.properties.generalCategory != .dashPunctuation,
+              let after = right.first,
+              closesUpDash(after) || opensQuotation(after) else { return false }
+        return true
+    }
+
+    /// A letter, a figure or `_`: what a closed dash joins on either side.
+    private static func closesUpDash(_ character: Character) -> Bool {
+        character.isLetter || character.isNumber || character == "_"
+    }
+
+    /// An opening quotation mark: a curly one, or a straight one at the head of a line.
+    private static func opensQuotation(_ character: Character) -> Bool {
+        character == "\"" || character == "'"
+            || character.unicodeScalars.first?.properties.generalCategory == .initialPunctuation
     }
 
     /// A line-end hyphen the book's own words cannot decide, in an English document (#186). A

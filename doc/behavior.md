@@ -2050,8 +2050,22 @@ and [current qualification](../measurements/structure-and-note-qualification/rec
   opinion's blank page numbers, `___–___`. A dash with a space before it is a parenthetical dash,
   `word – word`, and keeps the space after it — the Hebrew Shakespeare study ends 271 lines so — as
   does a line that is the dash alone or a next line that opens with a marker, bracket or quotation
-  mark. Only the en dash is read; a dash is never looked up in the vocabulary and never warns.
-  Evidence: [en-dash-line-ends](../measurements/en-dash-line-ends/record.md).
+  mark. Evidence: [en-dash-line-ends](../measurements/en-dash-line-ends/record.md).
+
+  An em dash set closed against what stands before it joins the same way (#315). A book that
+  closes its em dashes closes them on both sides: 9/11, *NCA5* and Loper Bright set the dash
+  closed between letters or figures 751, 705 and 125 times inside their lines and never with a
+  space after it, yet a line end came out `stabbed— and`, `innovations— such` and
+  `coal— encompassed`. What stands before the dash may be punctuation — `(FOMC)—make`,
+  `“newspapers”—the`, and the Warren report's run-in headings, `November 22.—In the early` —
+  and, unlike a range, the next line may open with a quotation mark,
+  `ATC Instructions—“Hold Short”`, `stamp—"DR. A. J. HIDEEL`. The rule closes 129 joins in nine
+  books and changes no other character; 128 are dashes the page sets closed, and the one it
+  spaces is an advertisement the Warren report reproduces, whose OCR layer reads its dashes
+  closed. A spaced em dash keeps the space after it, as do a line that is the dash alone, a rule
+  of dashes, and a next line opening with a marker, a bracket or another dash. Neither dash is
+  looked up in the vocabulary or ever warns. Evidence:
+  [em-dash-line-ends](../measurements/em-dash-line-ends/record.md).
 
 - A heading East Asian writing breaks between two characters of one word is one heading: a
   heading line whose break sets no space, at the same size, on the page's own leading, continues

@@ -307,11 +307,13 @@ func aParagraphThatRanIntoTheNotesRuleIsNotJoinedPastTheNotes() {
     LayoutReconstructor.appendPage(opening, page: next, previousPage: previous, to: &ran, vocabulary: [], warnings: &warnings)
     #expect(ran.map(\.text) == ["the court declined to follow the rule ——————", footnote.text, "", "carries on here."])
     // The control: the same paragraph without the rule joins past the note, which keeps page 1's
-    // side of the boundary. A dash that ends a word carries the sentence on and is not a rule.
-    for ending in ["the court declined to follow the rule", "the court declined to follow the rule—"] {
+    // side of the boundary. A dash that ends a word carries the sentence on and is not a rule; set
+    // closed against its word, it carries on with no space (#315).
+    for (ending, joined) in [("the court declined to follow the rule", "the court declined to follow the rule carries on here."),
+                             ("the court declined to follow the rule—", "the court declined to follow the rule—carries on here.")] {
         var open = [ReflowBlock(content: .paragraph(InlineText(ending)), page: 1), footnote]
         LayoutReconstructor.appendPage(opening, page: next, previousPage: previous, to: &open, vocabulary: [], warnings: &warnings)
-        #expect(open.map(\.text) == [footnote.text, ending + " carries on here."])
+        #expect(open.map(\.text) == [footnote.text, joined])
         #expect(open.last?.sourcePages == [2])
     }
 }

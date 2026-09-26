@@ -1949,6 +1949,18 @@ and [current qualification](../measurements/structure-and-note-qualification/rec
   genuine one inside a line, such as a URL's `name=value`, is left as read, and the join itself
   is then decided by the vocabulary and lexicon above, warning where it would warn for a printed
   hyphen. A join the evidence cannot decide keeps a real hyphen, never the encoded character.
+- A line that ends in an en dash set closed against a letter or figure, carried on by a line that
+  opens with a letter or figure, joins with no space (#297). The page broke the line at the dash and
+  drew no space after it: the Census report's references came out `456– 461` and `114– 119`.
+  Every line in the corpus that ends this way reads closed in its source — 60 joins in
+  six books: 35 with a figure beside the dash (*NCA5*'s page ranges and `(2020–2050)`, Loper
+  Bright's `761–763`, Replay Clocks' `134–141`, `January 31–July 3`, `S38–S43`), 24 between words
+  (`Saffir–Simpson`, `social–ecological`, `September–October`, `Surveillance–Broadcast`), and a slip
+  opinion's blank page numbers, `___–___`. A dash with a space before it is a parenthetical dash,
+  `word – word`, and keeps the space after it — the Hebrew Shakespeare study ends 271 lines so — as
+  does a line that is the dash alone or a next line that opens with a marker, bracket or quotation
+  mark. Only the en dash is read; a dash is never looked up in the vocabulary and never warns.
+  Evidence: [en-dash-line-ends](../measurements/en-dash-line-ends/record.md).
 
 - A heading East Asian writing breaks between two characters of one word is one heading: a
   heading line whose break sets no space, at the same size, on the page's own leading, continues

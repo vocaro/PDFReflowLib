@@ -104,6 +104,7 @@ extension LayoutReconstructor {
         // sentence back at the head of the left-hand piece, with the page's own space after it;
         // a space of this library's own would put the stop a space from its sentence (#41).
         if ArabicText.setsNoSpace(between: left, and: right) { return .concatenate }
+        if breaksAtClosedEnDash(left, right) { return .concatenate }
         guard left.hasSuffix("-") else { return .space }
         // Both halves are read as the vocabulary holds them, so a ligature the font draws is the
         // letters it stands for on both sides of the lookup (#123).
@@ -154,6 +155,30 @@ extension LayoutReconstructor {
             }
         }
         return .concatenate
+    }
+
+    /// True when a line ends in an en dash the page set closed against the letter or figure before
+    /// it, and the next line carries on with a letter or figure (#297). Such a dash joins what it
+    /// stands between — a range, `456–461`, `January 31–July 3`, `S38–S43`, or a compound,
+    /// `Saffir–Simpson`, `social–ecological` — and the page drew no space after it: the break
+    /// fell there because a dash is a place a line may end. The Census report came out with
+    /// `456– 461` and `114– 119`, and *NCA5* with `10407– 10418` and `Saffir– Simpson`, a space
+    /// of this library's own in the middle. A slip opinion's blank page number, `___–___`, is a
+    /// figure still to be printed and reads the same way.
+    ///
+    /// A dash set with a space before it is a parenthetical dash, `word – word`, whose space after
+    /// is the page's own too, and the join keeps it. Only the en dash is read here: every one the
+    /// corpus closes against a letter or figure at a line end is closed in the source (the em dash
+    /// is #315). A line
+    /// that is the dash alone, or a next line opening with a marker, bracket or quotation mark, is
+    /// left to the space, as before.
+    static func breaksAtClosedEnDash(_ left: String, _ right: String) -> Bool {
+        func closes(_ character: Character) -> Bool {
+            character.isLetter || character.isNumber || character == "_"
+        }
+        guard left.last == "\u{2013}", let before = left.dropLast().last, closes(before),
+              let after = right.first, closes(after) else { return false }
+        return true
     }
 
     /// A line-end hyphen the book's own words cannot decide, in an English document (#186). A

@@ -281,3 +281,96 @@ func aCompoundBrokenAtItsOwnHyphenCloseUpWhateverFollows() {
     #expect(LayoutReconstructor.join("the whole line", "Next Section", vocabulary: [], page: 3,
                                      warnings: &plain) == "the whole line Next Section")
 }
+
+// MARK: - A line broken after a closed en dash (#297)
+
+/// A line that ends in an en dash set closed against the figure or letter before it carries on
+/// with no space: the page broke the line at the dash, and drew no space after it. The Census
+/// report's references came out `(1990) 456– 461.` and `(1995) 114– 119.`, and every other line
+/// the corpus breaks after a closed en dash reads closed in its source: *NCA5*'s page ranges and
+/// `Saffir–Simpson`, Loper Bright's `761–763`, 9/11's `September–October`.
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/297"))
+func aLineBrokenAfterAClosedEnDashCarriesOnWithNoSpace() {
+    var warnings: [ConversionWarning] = []
+    func join(_ left: String, _ right: String) -> String {
+        LayoutReconstructor.join(left, right, hyphens: HyphenContext(), page: 17, warnings: &warnings)
+    }
+    // Ranges of figures, the case the Census report reproduces.
+    #expect(join("Proceedings of the Section on Survey Research Methods, (1990) 456–", "461.")
+            == "Proceedings of the Section on Survey Research Methods, (1990) 456–461.")
+    #expect(join("Over the next 30 years (2020–", "2050), coastal sea levels")
+            == "Over the next 30 years (2020–2050), coastal sea levels")
+    // A range whose ends are not bare figures, and a slip opinion's blank page numbers.
+    #expect(join("Alaska Native persons—23 states, January 31–", "July 3, 2020.")
+            == "Alaska Native persons—23 states, January 31–July 3, 2020.")
+    #expect(join("Meteorological Society, 103 (3), S38–", "S43.") == "Meteorological Society, 103 (3), S38–S43.")
+    #expect(join("Baldwin v. United States, 589 U. S. ___, ___–", "___ (2020)")
+            == "Baldwin v. United States, 589 U. S. ___, ___–___ (2020)")
+    // Compounds joined by the dash, lowercase or capital beneath.
+    #expect(join("the most common metric—the Saffir–", "Simpson wind speed")
+            == "the most common metric—the Saffir–Simpson wind speed")
+    #expect(join("risks to marine social–", "ecological systems are lower")
+            == "risks to marine social–ecological systems are lower")
+    // A dash is not a hyphen: nothing is looked up, nothing is removed and nothing is warned.
+    #expect(warnings.isEmpty)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/297"))
+func aSpacedOrStrandedEnDashKeepsTheSpaceAfterIt() {
+    var warnings: [ConversionWarning] = []
+    func join(_ left: String, _ right: String) -> String {
+        LayoutReconstructor.join(left, right, hyphens: HyphenContext(), page: 14, warnings: &warnings)
+    }
+    // A parenthetical dash is spaced on both sides, and the space after it is the page's own.
+    // The Hebrew Shakespeare study ends 271 lines this way.
+    #expect(join("form (Shavit 1993: 117–18) –", "although not all early Maskilim")
+            == "form (Shavit 1993: 117–18) – although not all early Maskilim")
+    #expect(join("pilots should also consider the following –", "whether the runway")
+            == "pilots should also consider the following – whether the runway")
+    // A dash alone on its line is a marker or a rule, not half of a range.
+    #expect(join("–", "the next line") == "– the next line")
+    // A next line that opens with a marker, a bracket or a quotation mark is not the other end
+    // of a range or a compound.
+    #expect(join("Deputy Secretary of State, 2001–", "• Commander, U.S. Central Command")
+            == "Deputy Secretary of State, 2001– • Commander, U.S. Central Command")
+    #expect(join("in office 1998–", "(when he resigned)") == "in office 1998– (when he resigned)")
+    #expect(join("the title read Operations–", "“Single Runway”") == "the title read Operations– “Single Runway”")
+    // A dash closed against punctuation rather than a letter or figure.
+    #expect(join("an axis .–", "pro") == "an axis .– pro")
+    // Other line ends are untouched: a line with no dash takes the space it always did.
+    #expect(join("the whole line", "461.") == "the whole line 461.")
+    #expect(warnings.isEmpty)
+}
+
+@Test(.bug("https://github.com/vocaro/PDFReflowLib/issues/297"))
+func aParagraphBrokenAfterARangeReadsTheRangeWhole() {
+    // Census page 17's reference [ 9], one paragraph over three lines, with a spaced dash in a
+    // second paragraph beneath it as the control.
+    var y = 700.0
+    let lines = [
+        "Kim, J. J.: Subdomain Estimation for the Masked Data, American Statistical",
+        "Association, Proceedings of the Section on Survey Research Methods, (1990) 456–",
+        "461.",
+    ].map { text -> TextLine in
+        defer { y -= 12 }
+        return TextLine(text: text, rect: CGRect(x: 60, y: y, width: Double(text.count) * 5, height: 10), fontSize: 10)
+    }
+    y -= 12
+    let control = [
+        "The Kim-Winkler data were masked twice –",
+        "once with additive noise and once by swapping.",
+    ].map { text -> TextLine in
+        defer { y -= 12 }
+        return TextLine(text: text, rect: CGRect(x: 60, y: y, width: Double(text.count) * 5, height: 10), fontSize: 10)
+    }
+    var warnings: [ConversionWarning] = []
+    let blocks = LayoutReconstructor.blocks(
+        page: PageContent(number: 17, bounds: CGRect(x: 0, y: 0, width: 612, height: 792),
+                          lines: lines + control, graphics: []),
+        images: [], vocabulary: [], warnings: &warnings)
+    #expect(paragraphTexts(blocks) == [
+        "Kim, J. J.: Subdomain Estimation for the Masked Data, American Statistical Association, "
+            + "Proceedings of the Section on Survey Research Methods, (1990) 456–461.",
+        "The Kim-Winkler data were masked twice – once with additive noise and once by swapping.",
+    ])
+}

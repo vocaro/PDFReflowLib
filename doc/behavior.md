@@ -873,7 +873,23 @@ for runs of at least four stated characters that hold one of #38's function word
 a column heading holds none, and rows a detector lifts into a preserved image never reach a reader
 as text.
 
-Evidence: [glyph-index-decoding](../measurements/glyph-index-decoding/record.md).
+**Where the document states nothing (#297).** The Census report's mathematics pages, 4–9 and
+18–20, keep `damagedTextEncoding` and recognition, and that is the source's limit rather than a
+defect. Their formulas are drawn in `cmmi`, `cmsy`, `cmex` and four Type 3 fonts (`T3`–`T6`)
+whose glyphs nothing in the file identifies: every name is an index (`G<n>` in the CFF charsets
+and `Differences`, `c<code>` for the Type 3 `CharProcs`), there is no `ToUnicode`, the font
+descriptors state nothing (`/Flags 4`, `/StemV 0`), the Type 3 glyphs are bitmaps, and not one
+of those fonts' outlines is shared with a font the document's words establish. `cmmi` in
+particular numbers its letters and its Greek at different offsets, so no family offset would read
+it either. The file does identify one maths font, `cmr`: 15 of its 24 glyphs have exactly the
+outline of `dcr`'s glyph at the same index. But even with every `cmr` glyph read, the replacements
+left on each of those pages (15 to 104) exceed its allowance of `max(2, characters / 50)` (5 to 58),
+so no reading of what the file identifies brings a page back to its own text. `cmr` is not read:
+it unlocks no page, and on the native pages it reaches it would turn an unreadable `IL1` into
+`��1`.
+
+Evidence: [glyph-index-decoding](../measurements/glyph-index-decoding/record.md),
+[census-math-glyph-identity](../measurements/census-math-glyph-identity/record.md).
 
 ## EnglishText and TextLayerPlausibility: inherited layers, recognition, drawn text
 

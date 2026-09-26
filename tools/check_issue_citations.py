@@ -85,6 +85,8 @@ ALLOWED = {
     302: ('historical', 'the second script level, painted accents and whole display crops, on main and named by their issue'),
     305: ('historical', "TeX's sized delimiters read back from their glyph names, on main and named by its issue"),
     303: ('historical', 'the stacked-script row joining, on main and named by its issue'),
+    297: ('historical', 'the closed-en-dash line join, the numbered section-title outline and the Census '
+          'maths-glyph measurement, on main and named by their issue'),
     59: ('historical', 'the released half of a word a crop cut off, on main and named by its issue'),
     183: ('historical', 'the list-marker size rule, on main and named by its issue; its mirror is #254'),
     245: ('historical', 'the crop rule it established, on main and named by its issue'),

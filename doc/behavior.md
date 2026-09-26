@@ -404,12 +404,15 @@ spatial reconstruction rather than partial results.
 
 - **`NativeSpacingReader`.** Repairs a PDFKit word boundary only where a supported text-show
   operation contradicts it. It *removes* a space when a Type3 `TJ` array places a tiny negative
-  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching, and
-  where two shows continue one number (#274, below). It
+  adjustment there, with the font's one-byte `ToUnicode` map, text and placement matching,
+  where two shows continue one number (#274, below), and where the page takes back the advance
+  of a space glyph it draws (#316, below). It
   *inserts* the space the source draws without a space glyph (#43/#110, #119, #128, #120), on
   pages it can model completely: `Tc`, `Tw` and the text matrix are tracked (a show that draws
   straight after another continues the cursor by the previous show's own advance, spacing and
-  adjustments included); `Ts` and `Tr` must be 0 and `Tz` 100; a `gs` that selects a font, a
+  adjustments included); `Ts` must be 0, `Tz` 100 and `Tr` 0, 1 or 2 — text filled, stroked or
+  both places its glyphs alike, and the Hebrew Shakespeare study strokes its pointed Hebrew on
+  the pages whose English notes it reads (#316); a `gs` that selects a font, a
   missing resource, `'`, `"`, an inline image, rotated pages and work beyond the caps (10,000
   font selections, 256 distinct fonts parsed, 10,000 shows, 4,096 codes or `TJ` elements per
   show, 8,192 code units per line) reject the page's evidence. Rotated or mirrored text supplies
@@ -445,6 +448,25 @@ spatial reconstruction rather than partial results.
     which draws no space glyph at all — so #119's constraint holds by mechanism and not by
     threshold. Only two digits close: a number against a word is what the font-change rule
     weighs, and a period or comma against one is a contents leader or a sentence.
+  - **`takesBackSpace`** takes a space back where the page draws a space glyph and takes its
+    advance back (#316): a run of U+0020 glyphs of positive width between two marks, the mark
+    after it in the run's own show — after the run, or after a `TJ` adjustment — and the mark
+    before it in that show or ending the show before on its baseline at its size, where the mark
+    after begins within 0.01 em of where the mark before ends, or up to 0.1 em back over it (a
+    kern). A run that ends its show reaches the next show's first mark only where the mark before
+    it is the run's own show's: a space drawn as a show of its own is placed like a leader's tab.
+    *The First Hebrew Shakespeare Translations* marks every break it allows without a space so —
+    after a dash, a hyphen or a slash, around a linked citation, before punctuation, after a
+    ligature — and read `117– 18`, `back- translation`, `(Shavit 1993 : 114– 15)` and `ﬁ rst`;
+    page 14 draws `117–` and `( )254(18)`, 0.222 em of space and 0.032 em of word spacing taken
+    back to 0.0001 em short of where the space began. Over the reader's own placement of every
+    space glyph between two marks in the 24 corpus books, the book's 4,392 such spaces leave a gap
+    between −0.064 em (a kern, `Bar-|Yosef`) and +0.01 em, most within 0.001 em, and *The Fed
+    Explained* draws nine (`www.|federalreserve`, `check-|collection`, `short|falls`); no other
+    book draws one. The narrowest gap a word space leaves is 9/11's `New York`, 0.044 em, a space narrowed by
+    word spacing and not taken back; the Fed's leader spaces narrowed to 0.02 em keep their reading,
+    and so does a space whose glyph width the page takes back but whose word spacing it keeps (the
+    study's `52– 3`, 0.07 em), because the page still draws that gap.
   - **`sentenceSpace`** finds sentence punctuation (`. , ; : ? !`, optionally behind closing
     quotes or brackets) after a letter, digit or closing bracket, before a capital not followed by
     a period or an opening quote before an alphanumeric, at a gap between -0.15 and 1 em: the
@@ -491,11 +513,17 @@ spatial reconstruction rather than partial results.
   reports one space for a run, so on such a row the source draws the whitespace the extraction
   does not, and the segmented walk — which skips only the extraction's own spaces — resynchronizes
   on nothing (between `MH     Under 50         25` and `MH Under 50 2 5` the longest anchor is the
-  nine characters of `Under 50 `). `closedSpaces` therefore owns a removal whole-line and blind to
-  whitespace on both sides: every non-blank character the shows draw must be the next non-blank
-  character PDFKit read, in order, with nothing left over either way, the closure must have no
-  whitespace beside it in the source, and exactly one space at it in the extraction. That is
-  stricter than the segmented walk, not looser, and it reaches no insertion (#274).
+  nine characters of `Under 50 `). `closedSpaces` therefore owns a removal blind to whitespace on
+  both sides: every non-blank character PDFKit read must be the next non-blank character the
+  shows draw, in order, with nothing of PDFKit's left over; between the closure's two marks the
+  source holds nothing (#274) or only space glyphs the page takes back (#316), and the extraction
+  exactly one space. The shows may draw more than the line holds only where PDFKit split one
+  printed row into lines that each hold part of a show — the Hebrew study's notes, number and text
+  one show and two lines — and then the line's marks must stand in exactly one place among the
+  shows'; a Latin ligature counts as the letters it joins, since PDFKit reads the study's `ﬁ` as
+  `fi` (#316). That is stricter than the segmented walk, not looser, and it reaches no insertion.
+  A line holding a show the reader cannot decode — the study's pointed Hebrew, drawn in a Type0
+  font — owns no removal, because PDFKit's reading of it is left over.
 - **`GlyphIdentityReader` (#217, two of #186's five fixes).** PDFKit reads every glyph through
   its font's `ToUnicode` map; two kinds of font disagree with what they draw. A dingbat font
   (Zapf Dingbats and its clones ITC Zapf Dingbats, `Dingbats`, Monotype Sorts, subset tags

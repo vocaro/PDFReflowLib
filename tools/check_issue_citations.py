@@ -90,6 +90,8 @@ ALLOWED = {
           'on main and named by their issue'),
     297: ('historical', 'the closed-en-dash line join, the numbered section-title outline and the Census '
           'maths-glyph measurement, on main and named by their issue'),
+    316: ('historical', 'the space glyph a page takes back, the stroked text read like filled text and the '
+          'removal owned across a split row, on main and named by their issue'),
     59: ('historical', 'the released half of a word a crop cut off, on main and named by its issue'),
     183: ('historical', 'the list-marker size rule, on main and named by its issue; its mirror is #254'),
     245: ('historical', 'the crop rule it established, on main and named by its issue'),

@@ -2,11 +2,12 @@ import CoreGraphics
 import Foundation
 
 /// Repairs PDFKit word boundaries only where a supported text-show operation contradicts them:
-/// it removes spaces that a Type3 TJ array places inside a word, and inserts the space a font
-/// change, a kerned word space or a kerned sentence boundary hides. This is deliberately a small
-/// evidence reader, not a replacement text extractor: every boundary traces to a measured gap
-/// between two glyph advances the page's own content stream places, and a line whose shows do not
-/// account for PDFKit's own characters supplies no evidence at all.
+/// it removes spaces that a Type3 TJ array places inside a word, that one number drawn in two shows
+/// leaves between them (#274) and that a space glyph the page takes back leaves (#316), and inserts
+/// the space a font change, a kerned word space or a kerned sentence boundary hides. This is
+/// deliberately a small evidence reader, not a replacement text extractor: every boundary traces to
+/// a measured gap between two glyph advances the page's own content stream places, and a line
+/// whose shows do not account for PDFKit's own characters supplies no evidence at all.
 ///
 /// Ported onto `main`'s `ContentStreamWalk` from the abandoned
 /// `claude/fable-agents-coordination-d95da7` branch's commits `9bf4e76` (#43/#110, font-change
@@ -47,6 +48,9 @@ enum NativeSpacingReader {
         var spaceWidth: CGFloat?
         /// Individual decoded glyphs and advances, requested only for MathML recognition (#206).
         var glyphs: [Glyph]?
+        /// UTF-16 offsets in `unicode` of the space glyphs whose advance the page takes back, so
+        /// that the mark after them begins where the mark before them ends (`takesBackSpace`, #316).
+        var takenBackSpaces: Set<Int> = []
 
         struct Glyph: Equatable {
             var text: String
@@ -108,9 +112,10 @@ enum NativeSpacingReader {
     }
 
     /// The spaces a PDFKit line is missing, and the ones it has that the page does not draw: the
-    /// boundaries of `missingSpaces`, and the closed numbers of `closesNumber` (#274). Both are
-    /// UTF-16 offsets in `native`, and each keeps its own ownership walk — the segmented one for
-    /// an insertion, `closedSpaces`' whole-line one for a removal.
+    /// boundaries of `missingSpaces`, and the closed numbers of `closesNumber` (#274) and space
+    /// glyphs the page takes back (`takesBackSpace`, #316). Both are UTF-16 offsets in `native`, and
+    /// each keeps its own ownership walk — the segmented one for an insertion, `closedSpaces`' own
+    /// one for a removal.
     static func repairs(in native: String, shows: [Evidence]) -> (insertions: [Int], removals: [Int]) {
         let line = line(of: shows), extracted = Array(native.utf16)
         guard !line.source.isEmpty else { return ([], []) }
@@ -243,6 +248,11 @@ enum NativeSpacingReader {
             for offset in show.wordSpaces.union(show.sentenceSpaces) where offset > 0 && offset < unicode.utf16.count {
                 boundaries.insert(source.count + offset)
             }
+            // A space glyph the page takes back (#316) is a closure at the space itself: the source
+            // holds the space, and `closedSpaces` reads the marks on either side of it.
+            for offset in show.takenBackSpaces where offset < unicode.utf16.count {
+                closures.insert(source.count + offset)
+            }
             previousStart = source.count
             spans.append((source.count, Array(unicode.utf16)))
             source += unicode.utf16
@@ -340,6 +350,33 @@ enum NativeSpacingReader {
               previous.spaceWidth != nil, show.spaceWidth != nil, space > 0 else { return false }
         let gap = (show.origin.x - end) / max(previous.size, show.size)
         return gap > 0 && gap < space
+    }
+
+    /// Whether a run of space glyphs drawn between two marks is one whose advance the page takes
+    /// back, so that PDFKit's space there is not the page's (#316). `gap` is the distance, in em,
+    /// from where the mark before the run ends (its origin plus its own width) to where the mark
+    /// after it begins.
+    ///
+    /// *The First Hebrew Shakespeare Translations* marks every place a line may break without a
+    /// space — after a dash, a hyphen or a slash, around a linked citation, before a closing bracket
+    /// or punctuation, after a ligature — with a space glyph and a `TJ` adjustment that takes its
+    /// advance back: page 14 draws `117–` and then `( )254(18)`, the space's 0.222 em plus 0.032 em
+    /// of word spacing taken back to 0.0001 em short of where it began. PDFKit reads each as a
+    /// space, and the book read `117– 18`, `back- translation`, `(Shavit 1993 : 114– 15)`, `ﬁ rst`.
+    ///
+    /// Measured over the reader's own placement of every space glyph between two marks in the 24
+    /// corpus books: the book's 4,392 such spaces leave a gap between −0.064 em (a kern between the
+    /// two marks, `Bar-|Yosef`) and +0.01 em, most within 0.001 em; *The Fed Explained* draws nine
+    /// the same way (`www.|federalreserve`, `check-|collection`, `short|falls`); no other book
+    /// draws one. The narrowest gap any word space leaves is 9/11's `New York`, 0.044 em, a space
+    /// narrowed by word spacing and not taken back, and the Fed's leader spaces narrowed to 0.02 em
+    /// keep their reading too. So a gap of at most 0.01 em is no word space. A mark drawn more than
+    /// 0.1 em back over the one before is a repositioning — FAA's chart labels step 2 em backwards
+    /// — and is not read here.
+    static let takenBackTolerance: CGFloat = 0.01
+
+    static func takesBackSpace(gap: CGFloat) -> Bool {
+        gap.isFinite && gap >= -0.1 && gap <= takenBackTolerance
     }
 
     /// A letter of a mathematical alphabet or a letterlike symbol, which TeX's math mode kerns and
@@ -766,6 +803,13 @@ enum NativeSpacingReader {
         var fontSelections = 0
         var fonts: [Int: Font?] = [:]
         var evidence: [Evidence] = []
+        /// The last glyph the previous show drew, in page space: where its own width ends, its
+        /// baseline and size, and whether it is a mark (#316). A space glyph that opens a show
+        /// measures its gap from it.
+        var lastGlyph: (inkEnd: CGFloat, y: CGFloat, size: CGFloat, mark: Bool)?
+        /// A run of space glyphs after a mark that ended the previous show, in page space: the
+        /// evidence it belongs to, its offsets there, and where the mark before it ends (#316).
+        var trailingSpaces: (evidence: Int, offsets: [Int], markEnd: CGFloat, y: CGFloat, size: CGFloat)?
 
         func saveState() { saved.append((font, size, characterSpacing, wordSpacing, renderingMode)) }
         func restoreState() {
@@ -793,6 +837,9 @@ enum NativeSpacingReader {
 
         func show(_ arguments: [ContentStreamWalk.ShowArgument], walk: ContentStreamWalk) {
             guard walk.inText, evidence.count < 10_000, !invisible || renderingMode == 3 else { walk.invalid = true; return }
+            let preceding = lastGlyph, precedingSpaces = trailingSpaces
+            lastGlyph = nil
+            trailingSpaces = nil
             // A show that continues the text cursor needs the previous show's complete advance.
             if walk.positioned { text = walk.lineMatrix } else if !continuing { walk.invalid = true; return }
             continuing = false
@@ -815,14 +862,62 @@ enum NativeSpacingReader {
             if size > 0, let width = font?.widths?[32] {
                 item.spaceWidth = min(width, width + wordSpacing / size)
             }
-            func append(_ string: CGPDFStringRef) {
+            // #316: the glyph this show drew last — its text-space origin, the width its font gives
+            // it, and whether it is a mark — and a run of space glyphs drawn after a mark, waiting for
+            // the glyph after it: the run's offsets in `unicode` and where that mark's width ends.
+            var previousGlyph: (origin: CGFloat, width: CGFloat, mark: Bool)?
+            var openSpace: (offsets: [Int], markEnd: CGFloat)?
+            /// Whether a glyph of the show before, ending at page-space `y` in `size`, stands on this
+            /// show's baseline at this show's size.
+            func besideThisShow(y: CGFloat, size other: CGFloat) -> Bool {
+                abs(y - transform.ty) <= size * transform.a * 0.1 && abs(other - size * transform.a) <= size * transform.a * 0.01
+            }
+            /// `kern`: the adjustment units since the previous glyph of this show, nil where this
+            /// string opens the show.
+            func append(_ string: CGPDFStringRef, kern: CGFloat?) {
                 let count = CGPDFStringGetLength(string)
                 guard count <= 4096, value.utf16.count + count <= 4096,
                       let bytes = CGPDFStringGetBytePtr(string), let font else {
-                    valid = false; decodable = false; measurable = false; glyphs = nil; return
+                    valid = false; decodable = false; measurable = false; glyphs = nil; openSpace = nil; return
                 }
                 for index in 0..<count {
                     let code = bytes[index]
+                    // Whether a glyph of this show came before this one, which it did unless this
+                    // is the show's first string and its first code.
+                    let followsGlyph = index > 0 || kern != nil
+                    if measurable, decodable, size > 0, let character = font.unicode?[code], let width = font.widths?[code] {
+                        let mark = !character.unicodeScalars.contains { CharacterSet.whitespacesAndNewlines.contains($0) }
+                        // A mark after a run of spaces: the gap from where the mark before the run
+                        // ends to where this one begins, in em. The run may have ended the show
+                        // before, on this baseline at this size.
+                        if !followsGlyph, mark, let run = precedingSpaces, run.evidence < evidence.count,
+                           besideThisShow(y: run.y, size: run.size),
+                           NativeSpacingReader.takesBackSpace(
+                               gap: (transform.tx + advance * transform.a - run.markEnd) / (size * transform.a)) {
+                            evidence[run.evidence].takenBackSpaces.formUnion(run.offsets)
+                        }
+                        if let run = openSpace, mark, NativeSpacingReader.takesBackSpace(gap: (advance - run.markEnd) / size) {
+                            item.takenBackSpaces.formUnion(run.offsets)
+                        }
+                        if character == " ", width > 0, openSpace != nil {
+                            // A run of space glyphs is read whole, its gap measured across all of it.
+                            openSpace?.offsets.append(unicode.utf16.count)
+                        } else if character == " ", width > 0 {
+                            // The mark before the space: this show's previous glyph or, where the space
+                            // opens the show, the last glyph of the show before, on this baseline at
+                            // this size.
+                            if followsGlyph, let previousGlyph, previousGlyph.mark {
+                                openSpace = ([unicode.utf16.count], previousGlyph.origin + previousGlyph.width * size)
+                            } else if !followsGlyph, let preceding, preceding.mark, besideThisShow(y: preceding.y, size: preceding.size) {
+                                openSpace = ([unicode.utf16.count], (preceding.inkEnd - transform.tx) / transform.a)
+                            }
+                        } else {
+                            openSpace = nil
+                        }
+                        previousGlyph = (advance, width, mark)
+                    } else {
+                        openSpace = nil; previousGlyph = nil
+                    }
                     if glyphs != nil {
                         if let character = font.unicode?[code] ?? font.mathNames[code], let width = font.widths?[code] {
                             let start = transform.tx + advance * transform.a
@@ -862,7 +957,7 @@ enum NativeSpacingReader {
                         let adjustment = -sinceGlyph / 1000
                         boundaries.append((offset, min(adjustment, adjustment + spacing.0 / size), strings, lastCount))
                     }
-                    append(string); previousWasString = true
+                    append(string, kern: strings > 0 ? sinceGlyph : nil); previousWasString = true
                     if count > 0 { strings += 1; lastCount = count; sinceGlyph = 0 }
                 case .adjustment(let number):
                     sinceGlyph += number
@@ -872,7 +967,7 @@ enum NativeSpacingReader {
                     previousWasString = false
                     pending += number / 1000 * size
                 case .other:
-                    valid = false; decodable = false; measurable = false; glyphs = nil
+                    valid = false; decodable = false; measurable = false; glyphs = nil; openSpace = nil; previousGlyph = nil
                 }
             }
             let trailingAdjustment = pending
@@ -958,6 +1053,17 @@ enum NativeSpacingReader {
             if let glyphs, !glyphs.isEmpty,
                glyphs.allSatisfy({ $0.minX.isFinite && $0.maxX.isFinite }) { item.glyphs = glyphs }
             evidence.append(item)
+            if let previousGlyph, measurable, advance.isFinite {
+                lastGlyph = (transform.tx + (previousGlyph.origin + previousGlyph.width * size) * transform.a,
+                             transform.ty, size * transform.a, previousGlyph.mark)
+                // A run that ends the show reaches the next show's first glyph only where the mark
+                // before it is this show's own: a space drawn as a show of its own between two others
+                // is placed by its own positioning, like a leader's tab, and nothing is taken back.
+                if let openSpace, let first = openSpace.offsets.first, first > 0 {
+                    trailingSpaces = (evidence.count - 1, openSpace.offsets, transform.tx + openSpace.markEnd * transform.a,
+                                      transform.ty, size * transform.a)
+                }
+            }
             // The next show may continue from this one's full advance, spacing and adjustments
             // included (Replay Clocks page 10's reference list, #120).
             let full = advance - trailingAdjustment
@@ -980,8 +1086,11 @@ enum NativeSpacingReader {
             case "Ts":
                 if ContentStreamWalk.numbers(scanner, 1) != [0] { walk.invalid = true }
             case "Tr":
+                // Filled, stroked, or filled and stroked text places its glyphs alike (#316: the
+                // Hebrew Shakespeare study strokes its pointed Hebrew with `1 Tr` and `2 Tr` on the
+                // pages whose English notes it reads); the invisible reader reads mode 3 alone.
                 guard let n = ContentStreamWalk.numbers(scanner, 1),
-                      n[0] == 0 || invisible && n[0] == 3 else { walk.invalid = true; return }
+                      invisible ? n[0] == 0 || n[0] == 3 : (0...2).contains(n[0]) else { walk.invalid = true; return }
                 renderingMode = n[0]
             case "Tz":
                 if ContentStreamWalk.numbers(scanner, 1) != [100] { walk.invalid = true }

@@ -4121,7 +4121,7 @@
     {
       "id": "ucl-hebrew-shakespeare-2017",
       "sourceSHA256": "8c28b79157cdbf57f4a3e9b65b2ecc1bb02e9e1597a7574e9a9cf2fb53ed6393",
-      "basis": "Rendered source pages 5, 13, 81, 150, 250 and 550 were compared with the --language he --no-ocr EPUB. Positive checks protect the title and cover art, introduction opening, selectable Hebrew prose on the dense bilingual page, vocalized Hebrew beside English translation, a stage direction and the order of three reference authors. They do not bless parallel alignment, verse heading levels, notes, speaker pairing or the remaining 547 unreviewed pages. Rendered source pages 13 and 21 reviewed for the introduction's numbered section titles: '1 The historical and literary background to the first Hebrew Shakespeare translations' (two lines), '3 Salkinson’s Shakespeare translations' and '3.1 Publication and reception' are headings, and the book's own numbering reads them so (#297).",
+      "basis": "Rendered source pages 5, 13, 81, 150, 250 and 550 were compared with the --language he --no-ocr EPUB. Positive checks protect the title and cover art, introduction opening, selectable Hebrew prose on the dense bilingual page, vocalized Hebrew beside English translation, a stage direction and the order of three reference authors. They do not bless parallel alignment, verse heading levels, notes, speaker pairing or the remaining 547 unreviewed pages. Rendered source pages 13 and 21 reviewed for the introduction's numbered section titles: '1 The historical and literary background to the first Hebrew Shakespeare translations' (two lines), '3 Salkinson’s Shakespeare translations' and '3.1 Publication and reception' are headings, and the book's own numbering reads them so (#297). Rendered source pages 14 and 35 reviewed for the spaces the book draws and takes back (#316): the page prints '(Shavit 1993: 117–18)', '114–15', 'non-fiction', 'twenty-five', 'Schlegel-Tieck' and the section title '4.2 The English back-translation' closed, and draws each space there as a space glyph whose advance a TJ adjustment takes back before the next glyph (mutool trace: page 14's space at x 139.868, the '1' after it at 139.867).",
       "pages": [
         {
           "page": 21,
@@ -4148,6 +4148,38 @@
           "orderedText": [
             "The historical and literary background to the first Hebrew Shakespeare translations",
             "Shakespeare translations are a product of the Haskalah"
+          ]
+        },
+        {
+          "page": 14,
+          "orderedText": [
+            "form (Shavit 1993: 117–18) – although not all early Maskilim",
+            "(Shavit 1993: 114–15; Eldar 2016: 29)",
+            "other forms of non-fiction. Maskilic fiction included",
+            "(Almagor 1975: 721–6; Toury 2012: 162–72)",
+            "there was a gap of twenty-five years"
+          ],
+          "absentText": [
+            "117– 18",
+            "114– 15",
+            "1993 :",
+            "non- fi ction",
+            "twenty- fi ve"
+          ]
+        },
+        {
+          "page": 35,
+          "headings": [
+            "4.2 The English back-translation"
+          ],
+          "orderedText": [
+            "consulted the Schlegel-Tieck German translation",
+            "4.2 The English back-translation",
+            "accompanied by a facing English back-translation. The primary purpose of the back-translation"
+          ],
+          "absentText": [
+            "back- translation",
+            "Schlegel- Tieck"
           ]
         },
         {

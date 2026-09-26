@@ -77,6 +77,7 @@ extension NativeSpacingReader {
         hole.wordSpaces = []
         hole.sentenceSpaces = []
         hole.sentenceCandidates = [:]
+        hole.takenBackSpaces = []
         return hole
     }
 
@@ -175,7 +176,10 @@ extension NativeSpacingReader {
     }
 
     /// The offsets in `extracted` where PDFKit spells a space across a boundary the page closes
-    /// (#274), each the one space between the two characters the closure separates.
+    /// (#274, #316), each the one space between the two characters the closure separates. A
+    /// closure is a character offset in `source`: the second of two marks the page draws against
+    /// each other (#274), or a space glyph the page takes back (#316), every one of which between
+    /// the two marks must be one.
     ///
     /// The segmented walk cannot own these lines, and the reason is the shape of the defect. A
     /// page sets a table row by carrying the text cursor from cell to cell with runs of space
@@ -185,29 +189,64 @@ extension NativeSpacingReader {
     /// longest anchor left between `MH     Under 50         25` and `MH Under 50 2 5` is the nine
     /// characters of `Under 50 `, against an anchor length of twelve.
     ///
-    /// So a removal is owned whole-line and blind to whitespace on both sides: every non-blank
-    /// character the shows draw must be the next non-blank character PDFKit read, in order, with
-    /// nothing left over on either side, and the closure itself must have no whitespace beside it
-    /// in the source and exactly one space at it in the extraction. That is stricter than the
-    /// segmented walk, not looser — one character of the line the shows cannot account for
-    /// supplies no removal at all, where the segmented walk would still apply what its other
-    /// segments yielded. It also reaches no insertion: insertions keep the walk they already had.
+    /// So a removal is owned blind to whitespace on both sides: every non-blank character PDFKit
+    /// read must be the next non-blank character the shows draw, in order, with nothing left over
+    /// on PDFKit's side, and the closure itself must have exactly one space at it in the
+    /// extraction. The shows may draw more than the line holds only where PDFKit split one printed
+    /// row into lines that each hold part of a show — the Hebrew Shakespeare study's notes, whose
+    /// number and text are one show and two PDFKit lines — and then the line's marks must stand in
+    /// exactly one place among the shows' (#316). A ligature counts as the letters it joins, because
+    /// PDFKit reads the study's `ﬁ` as `fi` (#316). That is stricter than the segmented walk, not
+    /// looser — one character of the line the shows cannot account for supplies no removal at all,
+    /// where the segmented walk would still apply what its other segments yielded. It also reaches
+    /// no insertion: insertions keep the walk they already had.
     static func closedSpaces(in extracted: [UInt16], source: [UInt16], closures: Set<Int>) -> [Int] {
         guard !closures.isEmpty else { return [] }
-        let sourceMarks = source.indices.filter { !whitespace(source[$0]) }
-        let extractedMarks = extracted.indices.filter { !whitespace(extracted[$0]) }
-        guard sourceMarks.count == extractedMarks.count, !sourceMarks.isEmpty,
-              zip(sourceMarks, extractedMarks).allSatisfy({ source[$0] == extracted[$1] }) else { return [] }
+        let sourceMarks = foldedMarks(source), extractedMarks = foldedMarks(extracted)
+        guard !extractedMarks.isEmpty, extractedMarks.count <= sourceMarks.count else { return [] }
+        // Where PDFKit's marks stand among the shows' marks: all of them, or the one run of them
+        // they fill exactly, where PDFKit split one printed row into lines that each hold part of a
+        // show (#316, the shape #139 answered for insertions).
+        var start: Int?
+        for k in 0...(sourceMarks.count - extractedMarks.count)
+            where extractedMarks.indices.allSatisfy({ sourceMarks[k + $0].unit == extractedMarks[$0].unit }) {
+            guard start == nil else { return [] }
+            start = k
+        }
+        guard let start else { return [] }
         var removals: [Int] = []
-        for (rank, offset) in sourceMarks.enumerated() where closures.contains(offset) {
-            // The closure separates two characters the page draws with nothing between them.
-            guard rank > 0, sourceMarks[rank - 1] == offset - 1 else { continue }
-            let before = extractedMarks[rank - 1], after = extractedMarks[rank]
-            guard after == before + 2, extracted[before + 1] == 32 else { continue }
-            removals.append(before + 1)
+        for rank in extractedMarks.indices.dropFirst() {
+            // The closure separates two characters the page draws with nothing between them (#274),
+            // or with nothing but space glyphs whose advance the page takes back, each of which is
+            // itself a closure (#316).
+            let before = sourceMarks[start + rank - 1].offset, after = sourceMarks[start + rank].offset
+            guard after == before + 1 && closures.contains(after)
+                || after > before + 1 && (before + 1..<after).allSatisfy(closures.contains) else { continue }
+            let left = extractedMarks[rank - 1].offset, right = extractedMarks[rank].offset
+            guard right == left + 2, extracted[left + 1] == 32 else { continue }
+            removals.append(left + 1)
         }
         return removals
     }
+
+    /// The non-blank UTF-16 units of a reading, each with the offset of the character it came from,
+    /// and a Latin ligature standing for the letters it joins: PDFKit hands back the `ﬁ` a font's map
+    /// names as `fi` on one line and keeps it on another (#316).
+    static func foldedMarks(_ text: [UInt16]) -> [(unit: UInt16, offset: Int)] {
+        var marks: [(unit: UInt16, offset: Int)] = []
+        for (offset, unit) in text.enumerated() where !whitespace(unit) {
+            if let letters = ligatureLetters[unit] {
+                marks += letters.utf16.map { ($0, offset) }
+            } else {
+                marks.append((unit, offset))
+            }
+        }
+        return marks
+    }
+
+    private static let ligatureLetters: [UInt16: String] = [
+        0xFB00: "ff", 0xFB01: "fi", 0xFB02: "fl", 0xFB03: "ffi", 0xFB04: "ffl", 0xFB06: "st",
+    ]
 
     /// Where the two walks agree again after a disagreement at `i` and `j`: the positions reached
     /// by the fewest skipped characters in all, and among those the fewest skipped in the source,

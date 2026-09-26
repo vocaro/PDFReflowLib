@@ -120,6 +120,26 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   drops (#305). A body-sized run is never an anchor, and neither is a rejected numerator. Nor
   does a step between two second-level glyphs insert the word boundary kept for PDFKit's
   concatenated lines. Rows that PDFKit splits into several lines are read apart (#303).
+- **Script baseline (#304).** PDFKit states a line's offsets from one reference, which need not be
+  the baseline its text stands on: Wallace page 178's `a²` arrives as `a` at −4.32 and `2` at 0,
+  DASC page 5's `STA` at −2.71 and its superscript at +2.71. Where every body-size run of the line
+  (over 90% of its largest glyph size) stands within its tolerance of one offset, and a run at most
+  90% of a body run's size follows it with no whitespace between, off that offset by more than its
+  own tolerance and within the script limit, every run of the line is measured from that offset
+  instead. The body run must not end in an opening bracket, a dash, a relation or an operator
+  (Unicode categories Ps, Pd and Sm, and `·` and `/`): the smaller run after one is a numerator or
+  a new operand (the Replay Clocks paper's `⌊mpt.f / I⌋` after `(`). Body text on two baselines
+  (a sum sign PDFKit measures from its top in the Census report, rows run together) keeps
+  PDFKit's reference. A raised run past 75% of its own size is a superscript when it follows a body
+  run ending in a letter or digit, stands at most 75% of that run's size above it, and the run
+  after it is its own second level (at most 90% of its size, no whitespace between, off it by more
+  than its tolerance and at most 75% of its size): TeX raises a superscript that carries scripts of
+  its own. DASC sets 27 such superscripts, 5.42 to 7.14 points up at 6.97 points, all after a letter
+  and 23 with a second level in the same PDFKit line (the other four are rows PDFKit splits, #303).
+  Wallace sets 428 raised runs past that limit, all fraction numerators: the 80 carrying an
+  exponent stand after a problem number, `=`, `(` or `,`, and none of the 33 after a letter or digit
+  carries one. A run within 10% of a first-level script's size and within its tolerance of the
+  script's offset continues that script however far from the baseline (DASC's `STA^{r_f(k)}`).
 - Emphasis is read the same way. A run holding no non-whitespace character takes neither italic
   nor bold from its font, so `<em> </em>` and `<strong> </strong>` are never written over a space
   (#278). The run itself is kept — the page set that space and the words on either side need it —

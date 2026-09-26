@@ -661,6 +661,16 @@ enum NativeTextReader {
             ?? attributes[.baselineOffset] as? NSNumber)?.doubleValue ?? 0
     }
 
+    /// Whether a run may take a script style at all; `inlineText` gives the reasons for each exception.
+    private static func mayTakeScript(_ attributes: [NSAttributedString.Key: Any], run: String, first: Bool,
+                                      hasDropCap: Bool, offset: Double) -> Bool {
+        !(hasDropCap && first)
+            && attributes[GlyphIdentityReader.isolatedAttribute] == nil
+            && run.contains(where: { !$0.isWhitespace })
+            && !ArabicText.isRightToLeftRun(run)
+            && offset.isFinite
+    }
+
     /// A first-level script run: its style, its baseline offset and its size.
     struct ScriptAnchor {
         let script: TextStyle
@@ -686,11 +696,16 @@ enum NativeTextReader {
     /// - **The same level set further out.** A run the script's size, further from the baseline on
     ///   the script's side, within three quarters of the line's own size, is a script at the same
     ///   level: Wallace page 178 raises the exponent of `(a²)³` over a tall parenthesis the text
-    ///   layer does not carry, so it stands higher than the `²` it follows.
+    ///   layer does not carry, so it stands higher than the `²` it follows. On the script's own
+    ///   baseline it is more of that script, however far that is from the line's (#304): DASC's
+    ///   `STA^{r_f(k)}` resumes `(k)` at `r`'s height after the second-level `f`.
+    ///
+    /// `stacked` admits a superscript its own size would reject, where `scriptBaseline` found the
+    /// stack TeX raises it over (#304).
     static func scriptStyle(offset: Double, size: Double, tolerance: Double,
-                            after anchor: ScriptAnchor?, lineSize: Double) -> TextStyle {
+                            after anchor: ScriptAnchor?, lineSize: Double, stacked: Bool = false) -> TextStyle {
         var own: TextStyle = []
-        if abs(offset) <= size * 0.75 {
+        if abs(offset) <= size * 0.75 || stacked {
             if offset > tolerance { own = .superscript } else if offset < -tolerance { own = .subscript }
         }
         guard let anchor else { return own }
@@ -701,12 +716,92 @@ enum NativeTextReader {
             guard abs(shift) <= anchor.size * 0.75 else { return own }
             return anchor.script.union(shift > 0 ? .nestedSuperscript : .nestedSubscript)
         }
+        let sameSize = abs(size - anchor.size) <= max(0.5, anchor.size * 0.1)
+        if own.isEmpty, sameSize, abs(offset) > tolerance, abs(shift) <= tolerance { return anchor.script }
         let further = anchor.script.contains(.superscript) ? shift > tolerance : shift < -tolerance
-        if own.isEmpty, further, abs(size - anchor.size) <= max(0.5, anchor.size * 0.1),
-           abs(shift) <= anchor.size * 0.75, abs(offset) <= lineSize * 0.75 {
+        if own.isEmpty, further, sameSize, abs(shift) <= anchor.size * 0.75, abs(offset) <= lineSize * 0.75 {
             return anchor.script
         }
         return own
+    }
+
+    /// A run as `scriptBaseline` reads it (#304).
+    struct ScriptRun {
+        let location: Int
+        let text: String
+        /// Its font's size; nil where PDFKit names no font.
+        let size: Double?
+        let offset: Double
+        /// Whether it may take a script style at all: `inlineText` never gives one to a drop
+        /// cap, an isolated glyph, a run of right-to-left letters or a run holding no glyph.
+        let eligible: Bool
+    }
+
+    /// The offset a line's scripts are measured from, and the runs admitted as superscripts raised
+    /// over a stack of their own (#304).
+    ///
+    /// PDFKit states every run's baseline offset from one reference per line, and the reference
+    /// need not be the baseline the line's text stands on: Wallace page 178 reads `a²` as `a` at
+    /// −4.32 and its exponent at 0.00, and DASC page 5 reads `STA` at −2.71 and its superscript at
+    /// +2.71. Where every body-size run of the line (over 90% of its largest glyph size) stands on
+    /// one baseline, and a script set against that text shows it — a run at most 90% of a body
+    /// run's size, following it with no space between, off it by more than its tolerance and
+    /// within the script limit — the line's scripts are measured from that baseline instead. The
+    /// body run must end in a glyph a script is set against. An opening bracket, a dash, a relation
+    /// or an operator begins or joins operands, and a smaller run after one is a numerator or a new
+    /// operand: the Replay Clocks paper sets the numerator of `⌊mpt.f / I⌋` after `(`. Body text on
+    /// two baselines, such as a big operator PDFKit measures from its top (the Census report's
+    /// sums) or two rows it ran together, leaves the reference where PDFKit put it.
+    ///
+    /// TeX raises a superscript further when it carries a script of its own, past three quarters
+    /// of its own size, the limit that otherwise tells a script from a fraction's numerator: DASC
+    /// raises `n` in `STA^{n^i_h}_h` 5.42 points at 6.97, and in `A^{n^i_f,j}_f` 6.39. Such a run
+    /// is admitted when it is raised from a body run ending in a letter or digit, at most three
+    /// quarters of that run's size, and the run after it is its own second level: smaller again,
+    /// following it with no space between, and raised or lowered from it by more than its
+    /// tolerance and at most three quarters of its size. A numerator starts a new operand after
+    /// `=`, a bracket or a problem number (Wallace page 51's `10) E = mv²/2`, page 187's `13)` over
+    /// `u²v`), and the numerators Wallace sets after a letter or digit (a mixed number's `1`) carry
+    /// no second level of their own.
+    static func scriptBaseline(of runs: [ScriptRun], lineSize: Double) -> (reference: Double, stacked: Set<Int>) {
+        func tolerance(_ size: Double) -> Double { max(0.5, size * 0.12) }
+        func size(_ run: ScriptRun) -> Double? { run.eligible ? run.size : nil }
+        func touching(_ left: ScriptRun, _ right: ScriptRun) -> Bool {
+            left.text.last?.isWhitespace == false && right.text.first?.isWhitespace == false
+        }
+        let body = runs.filter { (size($0) ?? 0) > lineSize * 0.9 }
+        guard let reference = body.first?.offset,
+              body.allSatisfy({ abs($0.offset - reference) <= tolerance($0.size ?? 0) }) else { return (0, []) }
+        var shown = false
+        var stacked: Set<Int> = []
+        for index in runs.indices.dropLast() {
+            let base = runs[index], script = runs[index + 1]
+            guard let baseSize = size(base), baseSize > lineSize * 0.9, let scriptSize = size(script),
+                  scriptSize <= baseSize * 0.9, touching(base, script),
+                  let last = base.text.unicodeScalars.last, carriesScripts(last) else { continue }
+            let shift = script.offset - reference
+            guard abs(shift) > tolerance(scriptSize) else { continue }
+            if abs(shift) <= scriptSize * 0.75 { shown = true; continue }
+            guard shift > 0, shift <= baseSize * 0.75,
+                  last.properties.isAlphabetic || last.properties.numericType != nil,
+                  index + 2 < runs.count, case let inner = runs[index + 2], let innerSize = size(inner),
+                  innerSize <= scriptSize * 0.9, touching(script, inner),
+                  case let step = abs(inner.offset - script.offset),
+                  step > tolerance(innerSize), step <= scriptSize * 0.75 else { continue }
+            shown = true
+            stacked.insert(script.location)
+        }
+        return shown ? (reference, stacked) : (0, [])
+    }
+
+    /// Whether a script can be set against this glyph: not an opening bracket, a dash, a relation
+    /// or an operator, which begin or join operands rather than carry scripts (#304).
+    static func carriesScripts(_ glyph: Unicode.Scalar) -> Bool {
+        guard !glyph.properties.isWhitespace else { return false }
+        switch glyph.properties.generalCategory {
+        case .openPunctuation, .dashPunctuation, .mathSymbol: return false
+        default: return glyph != "·" && glyph != "/"
+        }
     }
 
     static func inlineText(from attributed: NSAttributedString) -> InlineText {
@@ -717,12 +812,23 @@ enum NativeTextReader {
         // second level is measured from (#302).
         var anchor: ScriptAnchor?
         var lineSize = 0.0
+        // Every run as the script measurement reads it (#304).
+        var scriptRuns: [ScriptRun] = []
         attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
-            guard let size = (attributes[.font] as? PlatformFont)?.pointSize, size.isFinite, size <= 100_000,
-                  (attributed.string as NSString).substring(with: range).contains(where: { !$0.isWhitespace })
+            let raw = (attributed.string as NSString).substring(with: range)
+            let text = raw.replacingOccurrences(of: "\u{FFFC}", with: " ")
+            let pointSize = (attributes[.font] as? PlatformFont).map { Double($0.pointSize) }
+            let offset = baselineOffset(attributes)
+            scriptRuns.append(ScriptRun(
+                location: range.location, text: text,
+                size: pointSize.flatMap { $0.isFinite && $0 > 0 && $0 <= 100_000 ? $0 : nil }, offset: offset,
+                eligible: mayTakeScript(attributes, run: text, first: range.location == 0, hasDropCap: hasDropCap,
+                                        offset: offset)))
+            guard let size = pointSize, size.isFinite, size <= 100_000, raw.contains(where: { !$0.isWhitespace })
             else { return }
-            lineSize = max(lineSize, Double(size))
+            lineSize = max(lineSize, size)
         }
+        let baseline = scriptBaseline(of: scriptRuns, lineSize: lineSize)
         attributed.enumerateAttributes(in: NSRange(location: 0, length: attributed.length)) { attributes, range, _ in
             let font = attributes[.font] as? PlatformFont
             let name = font?.fontName.lowercased() ?? ""
@@ -758,13 +864,12 @@ enum NativeTextReader {
             // nothing a reader can see raised (#273). The run itself is kept — the page set that
             // space and the words on either side of it need it — it simply keeps the body's
             // baseline, which is the only thing about it a reader could have observed.
-            if !(hasDropCap && range.location == 0),
-               attributes[GlyphIdentityReader.isolatedAttribute] == nil,
-               hasGlyph,
-               !ArabicText.isRightToLeftRun(run),
-               offset.isFinite {
-                let script = scriptStyle(offset: offset, size: size, tolerance: tolerance,
-                                         after: anchor, lineSize: lineSize)
+            if mayTakeScript(attributes, run: run, first: range.location == 0, hasDropCap: hasDropCap, offset: offset) {
+                // Measured from the baseline the line's text stands on, where PDFKit's reference
+                // is not that baseline (#304).
+                let measured = offset - baseline.reference
+                let script = scriptStyle(offset: measured, size: size, tolerance: tolerance, after: anchor,
+                                         lineSize: lineSize, stacked: baseline.stacked.contains(range.location))
                 style.formUnion(script)
                 // A second-level run leaves the anchor where it is, so the outer script can resume
                 // after it. Only a first-level script anchors, and only one set smaller than the
@@ -772,7 +877,7 @@ enum NativeTextReader {
                 // zero is not a script a smaller glyph could be raised from.
                 if !script.contains(.nestedSuperscript), !script.contains(.nestedSubscript) {
                     anchor = !script.isEmpty && size <= lineSize * 0.9
-                        ? ScriptAnchor(script: script, offset: offset, size: size) : nil
+                        ? ScriptAnchor(script: script, offset: measured, size: size) : nil
                 }
             } else if hasGlyph {
                 anchor = nil

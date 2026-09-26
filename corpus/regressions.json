@@ -298,7 +298,7 @@
     {
       "id": "wallace-algebra-2010",
       "sourceSHA256": "856bd81edc61c50496982ddc849138f4e0e56fd0ddf0edb53fee9bb0830d0678",
-      "basis": "Pages 12, 16 and 347 source rasters reviewed: page 12 prints the 36/84 = (36 ÷ 4)/(84 ÷ 4) = 9/21 fraction reduction, and page 347 exercise 35 prints −5n² − 3n − 52 = 2 − 7n². These are now MathML with verified source structures and existing altimg fallback assets, so earlier visible-image requirements are obsolete. Page 16's product exercises 22, 23, 27, 28, 30 and 32 once split a numbered text stub from its fraction crop; the source-backed MathML checks now require each complete expression with its fallback, and absentPreformatted excludes detached <pre> stubs without rejecting the same tokens inside valid MathML. The source prints exercise 33 without a closing parenthesis after its number; a Poppler-rendered reference pins its complete warned image fallback. Page 347's 1–40 problem numbers now read in source row order with individual equation fallback images; the reference image remains source evidence, not a converted-image requirement. Page 438's integer answer numbers read 1–60 under their chapter and section headings before the fractions answer title. Page 479 source geometry and source raster establish 33–56 above 9.4 and the quadratic-formula title, then 1–27 left-column first; the complex expressions remain explicit image-region fallbacks, and a pinned source fixture checks the four crop runs. Page 483's 18 numbered graph answers are in source column order, each followed by its own graph crop; a pinned source fixture checks one distinctive coordinate within each paired crop. Page 266 source raster prints 1–22 as paired complex-fraction exercises; the row order and marker-to-crop ownership are pinned by a source fixture, item 11 is nested-fraction MathML with altimg, and unsupported stacks retain warned image crops. Page 293 keeps Example 386 after its prose and preserves indexed-root working as warned image regions. The corpus checks do not qualify every equation structure or every answer image (#29). Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230). Page 101 rendered and read at 100 DPI: exercises 11-30 are a two-column numbered list, one printed line to an item, and 17 and 28 are set exactly as 16 and 27 are. PDFKit ends those two lines at the marker, so each arrived as `17)` and its coordinates separately and read as prose; all four must be preformatted items, as their neighbours on the page already are (#172). Page 2 read against the source for the list conversion (#292): the licence's bulleted terms list where two touch (`to Share`/`to Remix`, `Waiver`/`Public Domain`), `Attribution`, which its wrapped line sets apart, is a paragraph keeping its bullet, the `−` sub-items stay preformatted because a minus is no bullet, and `Notice`, standing beside them, stays preformatted too. Pages 178 and 205 rendered at 150 DPI for script levels (#302). Page 178's Example 202 prints (a²)³ with tall parentheses drawn from CMEX10, whose Differences array names them parenleftbig and parenrightbig and whose ToUnicode map states neither, so PDFKit reads nothing where they stand. Rendered again at 150 DPI for #305, which reads both back from those names: the ² is a's exponent inside them, and the ³, raised 7.44 points over the closing parenthesis, is the exponent of the whole group, so the page reads (a²)³ and not a²³. Page 205 prints the inline fraction 4x²/4x², whose lowered denominator carries x's exponent raised from it at a smaller size again: that ² is a second level inside the denominator's script. The pin qualifies that exponent only, not the reading of the fraction around it. Page 178 rendered at 150 DPI for the first-level script baseline (#304): Example 202's middle row prints a² · a² · a², and PDFKit hands its first a² over on its own with a 4.32 points below its reference and the exponent on it, which read as a lowered a and a flat 2. The pin requires that first exponent raised on the a after \"three times\".",
+      "basis": "Pages 12, 16 and 347 source rasters reviewed: page 12 prints the 36/84 = (36 ÷ 4)/(84 ÷ 4) = 9/21 fraction reduction, and page 347 exercise 35 prints −5n² − 3n − 52 = 2 − 7n². These are now MathML with verified source structures and existing altimg fallback assets, so earlier visible-image requirements are obsolete. Page 16's product exercises 22, 23, 27, 28, 30 and 32 once split a numbered text stub from its fraction crop; the source-backed MathML checks now require each complete expression with its fallback, and absentPreformatted excludes detached <pre> stubs without rejecting the same tokens inside valid MathML. The source prints exercise 33 without a closing parenthesis after its number; a Poppler-rendered reference pins its complete warned image fallback. Page 347's 1–40 problem numbers now read in source row order with individual equation fallback images; the reference image remains source evidence, not a converted-image requirement. Page 438's integer answer numbers read 1–60 under their chapter and section headings before the fractions answer title. Page 479 source geometry and source raster establish 33–56 above 9.4 and the quadratic-formula title, then 1–27 left-column first; the complex expressions remain explicit image-region fallbacks, and a pinned source fixture checks the four crop runs. Page 483's 18 numbered graph answers are in source column order, each followed by its own graph crop; a pinned source fixture checks one distinctive coordinate within each paired crop. Page 266 source raster prints 1–22 as paired complex-fraction exercises; the row order and marker-to-crop ownership are pinned by a source fixture, item 11 is nested-fraction MathML with altimg, and unsupported stacks retain warned image crops. Page 293 keeps Example 386 after its prose and preserves indexed-root working as warned image regions. The corpus checks do not qualify every equation structure or every answer image (#29). Page 343 preserves the source's squared exponent in its actual introductory context; the source typo \"from\" is intentional. Page 26 visually reviewed: numbered exercise 80 has squared exponents on both 7a and 6a; retaining those scripts does not qualify other exercise layout. Pages 18-19 and 43-44 visually reviewed: each paragraph continues onto the next page and must remain one paragraph across the source-page marker (#27). Source pages 155-156 and 290 visually reviewed for the spine-document boundaries written there: the three-variable summary ends one document and the 4.4 Practice - Three Variables heading with its instruction opens the next, and the page-290 sentence runs on mid-sentence from \"perfect square is more\" into \"than it would take to simplify in several steps\" in the following document, with nothing dropped, repeated or inserted at the join (#27). Does not bless that sentence being split into two paragraphs in the first place (#230). Page 101 rendered and read at 100 DPI: exercises 11-30 are a two-column numbered list, one printed line to an item, and 17 and 28 are set exactly as 16 and 27 are. PDFKit ends those two lines at the marker, so each arrived as `17)` and its coordinates separately and read as prose; all four must be preformatted items, as their neighbours on the page already are (#172). Page 2 read against the source for the list conversion (#292): the licence's bulleted terms list where two touch (`to Share`/`to Remix`, `Waiver`/`Public Domain`), `Attribution`, which its wrapped line sets apart, is a paragraph keeping its bullet, the `−` sub-items stay preformatted because a minus is no bullet, and `Notice`, standing beside them, stays preformatted too. Pages 178 and 205 rendered at 150 DPI for script levels (#302). Page 178's Example 202 prints (a²)³ with tall parentheses drawn from CMEX10, whose Differences array names them parenleftbig and parenrightbig and whose ToUnicode map states neither, so PDFKit reads nothing where they stand. Rendered again at 150 DPI for #305, which reads both back from those names: the ² is a's exponent inside them, and the ³, raised 7.44 points over the closing parenthesis, is the exponent of the whole group, so the page reads (a²)³ and not a²³. Page 205 prints the inline fraction 4x²/4x², whose lowered denominator carries x's exponent raised from it at a smaller size again: that ² is a second level inside the denominator's script. The pin qualifies that exponent only, not the reading of the fraction around it. Page 178 rendered at 150 DPI for the first-level script baseline (#304): Example 202's middle row prints a² · a² · a², and PDFKit hands its first a² over on its own with a 4.32 points below its reference and the exponent on it, which read as a lowered a and a flat 2. The pin requires that first exponent raised on the a after \"three times\". Pages 21, 210 and 246 rendered at 150 DPI for exercise numbers beside an inline fraction (#308): each page prints its exercise numbers upright on the line, and none is lowered. PDFKit measures such an exercise's row from its numerator, 6.24 points up, and hands the number over alone, which read as a subscript: 1), 2), 3), 4), 5), 6), 7), 17), 25), 37) and 40) on page 210, 21) and 24) on page 21, 15) and 32) on page 246. The pins require that none of them is written as a subscript and that the numbers still read in order. They do not bless page 210 writing a left-column number both on its own and as its MathML row's label, nor its right column's 2), 4) and 6) standing apart from their expressions (#317).",
       "spineContinuity": [
         {
           "sourcePages": [
@@ -580,6 +580,100 @@
               "text": "2",
               "before": "4x",
               "after": "divided out completely."
+            }
+          ]
+        },
+        {
+          "page": 21,
+          "orderedText": [
+            "21)",
+            "22)",
+            "24)"
+          ],
+          "absentScripts": [
+            {
+              "tag": "sub",
+              "text": "21)"
+            },
+            {
+              "tag": "sub",
+              "text": "24)"
+            }
+          ]
+        },
+        {
+          "page": 210,
+          "orderedText": [
+            "Divide.",
+            "1)",
+            "3)",
+            "5)",
+            "7)",
+            "9)"
+          ],
+          "absentScripts": [
+            {
+              "tag": "sub",
+              "text": "1)"
+            },
+            {
+              "tag": "sub",
+              "text": "2)"
+            },
+            {
+              "tag": "sub",
+              "text": "3)"
+            },
+            {
+              "tag": "sub",
+              "text": "4)"
+            },
+            {
+              "tag": "sub",
+              "text": "5)"
+            },
+            {
+              "tag": "sub",
+              "text": "6)"
+            },
+            {
+              "tag": "sub",
+              "text": "7)"
+            },
+            {
+              "tag": "sub",
+              "text": "17)"
+            },
+            {
+              "tag": "sub",
+              "text": "25)"
+            },
+            {
+              "tag": "sub",
+              "text": "37)"
+            },
+            {
+              "tag": "sub",
+              "text": "40)"
+            }
+          ]
+        },
+        {
+          "page": 246,
+          "orderedText": [
+            "14)",
+            "15)",
+            "16)",
+            "32)"
+          ],
+          "absentScripts": [
+            {
+              "tag": "sub",
+              "text": "15)"
+            },
+            {
+              "tag": "sub",
+              "text": "32)"
             }
           ]
         },

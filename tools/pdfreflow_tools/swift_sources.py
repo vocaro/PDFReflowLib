@@ -25,6 +25,9 @@ EXTRACTION = ['NativeTextReader.swift', 'NativeSpacingReader.swift', 'NativeSpac
               # A row of stacked scripts PDFKit split into several lines is joined before the
               # lines are read (#303), for the same reason.
               'SplitScriptRows.swift',
+              # A line PDFKit measured from smaller text beside it is measured from its own
+              # baseline before it is read (#308), for the same reason.
+              'BorrowedLineReference.swift',
               'GlyphIdentityReader.swift', 'DiscretionaryHyphenReader.swift',
               # TeX's sized delimiters, which no map states, are restored where the line is read (#305).
               'ExtensionDelimiterReader.swift',

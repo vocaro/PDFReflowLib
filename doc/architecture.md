@@ -88,7 +88,9 @@ line cannot take are carried along `NativeTextReader`'s own line loop to the nex
 are handed one line at a time. For the same reason the loop's result passes through
 `SplitScriptRows`, which joins the lines PDFKit makes of one printed row of stacked scripts
 before any line is read into inline text (#303): a script's level is read against the row it
-stands in, and `inlineText` sees one line. A page whose fonts it cannot establish keeps the damaged-encoding
+stands in, and `inlineText` sees one line. Then `BorrowedLineReference` measures a line PDFKit
+stated from the baseline of smaller text beside it, which only the neighbouring lines show, from
+its own baseline (#308). A page whose fonts it cannot establish keeps the damaged-encoding
 diagnosis and its recognition.
 `GraphicsReader` keeps its own paint-oriented scan over the same helpers, tracking the clip in
 force so that what it records for a figure is what the page lets show rather than how far the

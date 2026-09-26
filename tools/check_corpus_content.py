@@ -33,8 +33,8 @@ PAGE_CHECK_TYPES = {
     'headings': 'sequence', 'paragraphs': 'sequence', 'continuedParagraphs': 'sequence',
     'preformatted': 'sequence', 'absentPreformatted': 'sequence', 'lists': 'sequence',
     'asides': 'sequence', 'quotations': 'sequence',
-    'scripts': 'sequence', 'math': 'sequence', 'imageRegions': 'sequence', 'tableRows': 'sequence',
-    'minimumImages': 'presence', 'originalPageImage': 'presence',
+    'scripts': 'sequence', 'absentScripts': 'sequence', 'math': 'sequence', 'imageRegions': 'sequence',
+    'tableRows': 'sequence', 'minimumImages': 'presence', 'originalPageImage': 'presence',
     'warningCodesAnyOf': 'presence', 'absentWarningCodes': 'presence',
 }
 LISTS = {HTML + 'ul', HTML + 'ol'}
@@ -371,7 +371,7 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
     for item in expected:
         number = item['page']
         page = pages.get(number, {'text': '', 'images': []})
-        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'originalPageImage', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'math', 'absentText', 'headings', 'paragraphs', 'preformatted', 'absentPreformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
+        if not any(key in item for key in ('text', 'orderedText', 'minimumImages', 'originalPageImage', 'warningCodesAnyOf', 'absentWarningCodes', 'scripts', 'absentScripts', 'math', 'absentText', 'headings', 'paragraphs', 'preformatted', 'absentPreformatted', 'lists', 'continuedParagraphs', 'imageRegions', 'tableRows', 'asides', 'quotations')):
             raise ValueError('Review page has no expectations')
         for phrase in item.get('text', []):
             if not normalized(phrase):
@@ -475,6 +475,17 @@ def assess(case, contract, result, report, pages, markers, *, documents=(),
                        and span['after'].startswith(normalized(script['after']))
                        for span in page.get('scripts', [])):
                 errors.append(f'Page {number}: missing script or incorrect context {script!r}')
+        for script in item.get('absentScripts', []):
+            # A run the page sets on the line and the conversion once wrote as a script (#308):
+            # no span of that style on the page may hold exactly that text.
+            if (not isinstance(script, dict) or set(script) != {'tag', 'text'}
+                    or script['tag'] not in ('sup', 'sub') or not isinstance(script['text'], str)
+                    or not 1 <= len(normalized(script['text'])) <= 96):
+                raise ValueError('Absent script check requires sup/sub and nonempty bounded text')
+            checks += 1
+            if any(span['tag'] == script['tag'] and span['text'] == normalized(script['text'])
+                   for span in page.get('scripts', [])):
+                errors.append(f'Page {number}: unwanted script {script!r}')
         for expression in item.get('math', []):
             if (not isinstance(expression, dict) or set(expression) != {'alttext', 'structure'}
                     or not isinstance(expression['alttext'], str) or not normalized(expression['alttext'])

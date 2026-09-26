@@ -236,6 +236,11 @@ enum NativeTextReader {
         if includeStyle, !rightToLeft {
             pending = SplitScriptRows.rejoin(pending, marks: marks)
         }
+        // A line PDFKit measured from smaller text beside it, such as an exercise number beside
+        // an inline fraction's numerator, is measured from its own baseline (#308).
+        if includeStyle, !rightToLeft {
+            pending = BorrowedLineReference.rebased(pending)
+        }
         let lines = pending.map { item in
             guard rightToLeft else { return textLine(semantic: item.semantic, bounds: item.bounds, attributed: item.attributed) }
             let ordered = item.attributed.map { ArabicText.logicalOrder($0, onRightToLeftPage: true) }

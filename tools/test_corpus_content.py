@@ -520,6 +520,23 @@ class CorpusContentTests(unittest.TestCase):
             self.pages[1] = pages[1]
             self.assertFalse(self.check()['passed'])
 
+    def test_absent_script_rejects_that_style_and_text_only_on_its_own_page(self):
+        # Wallace page 210's exercise number, once written lowered beside its fraction (#308).
+        self.contract['pages'][0]['absentScripts'] = [{'tag': 'sub', 'text': '1)'}]
+        second = '<span epub:type="pagebreak" id="page-2"/><p>omega <sub>1)</sub></p>'
+        for body, passed in [('<p>alpha beta</p><p>1)</p>', True),
+                             ('<p>alpha beta x<sup>1)</sup> H<sub>2</sub>O</p>', True),
+                             ('<p>alpha beta</p><p><sub>1) </sub></p>', False),
+                             ('<pre>alpha beta <sub><em>1)</em></sub></pre>', False)]:
+            pages, _ = read_pages(self.epub('<span epub:type="pagebreak" id="page-1"/>' + body
+                                            + '<img src="picture.png"/>', second))
+            self.assertEqual(self.check(pages=pages)['passed'], passed, body)
+        for script in [{}, {'tag': 'span', 'text': '1)'}, {'tag': 'sub', 'text': ' '},
+                       {'tag': 'sub', 'text': '1)', 'before': 'Divide.'}]:
+            self.contract['pages'][0]['absentScripts'] = [script]
+            with self.assertRaises(ValueError):
+                self.check()
+
     def test_caption_or_literal_markup_cannot_supply_a_script(self):
         for content in ['<figcaption>ax<sup>2</sup>+ b</figcaption>',
                         '<p>ax&lt;sup&gt;2&lt;/sup&gt;+ b</p>']:

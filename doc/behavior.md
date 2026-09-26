@@ -173,6 +173,28 @@ Evidence: [pdfkit-structure-tree](../measurements/pdfkit-structure-tree/record.m
   exponent stand after a problem number, `=`, `(` or `,`, and none of the 33 after a letter or digit
   carries one. A run within 10% of a first-level script's size and within its tolerance of the
   script's offset continues that script however far from the baseline (DASC's `STA^{r_f(k)}`).
+- **A line measured from smaller text beside it (#308).** PDFKit gathers a printed row into one
+  line, states its offsets from one reference and can hand the row over in pieces, each carrying
+  the whole row's vertical extent. Wallace page 210 prints `1)` beside an inline fraction whose
+  numerator stands 6.24 points higher: PDFKit takes the numerator's baseline as the reference and
+  hands the number over alone at −6.24, which read as a lowered script, and a line alone shows
+  nothing the script baseline (above) could measure it from. `BorrowedLineReference` measures such
+  a line from its own baseline, after `SplitScriptRows` and before any line is read, when every
+  glyph run of it is within max(0.5, 10%) of its largest size and within max(0.5, 12%) of that size
+  of one offset, beyond that tolerance and within 75% of the size; another line has its vertical
+  extent within 0.05 points and starts at most one em of its size after its end or ends at most one
+  em before its start; those pieces set glyph runs on the reference (within max(0.5, 12% of their
+  own size) of it), every one at most 90% of the line's size; and no glyph run in them is larger
+  than the line (beyond max(0.5, 10%)), while every run over 90% of it stands on the line's own
+  offset (page 21's `21)` beside `6·` on its baseline and the numerator over it). A script is set
+  smaller than the text it is set against, so a line larger than all the text on its reference is
+  not that text's script. A script PDFKit splits from its row (#303), a note number and a chemical
+  formula's subscript are smaller than the text on their reference and keep their offsets; a line
+  holding right-to-left letters or an attachment takes no part. Across the 27 cached corpus
+  sources the rule moves 31 lines and no other: Wallace's 19 exercise numbers beside a numerator
+  (pages 21, 210, 246, 251 and 469; 15 are written as text, the rest stand in crops) and the Fed's
+  12 regulation letters on pages 82–83, set at 12 points 2.74 below their 8-point names inside a
+  preserved picture.
 - **A script set against a restored delimiter (#305).** A glyph run straight after a delimiter
   `ExtensionDelimiterReader` restored, at most 90% of the delimiter's size, is its superscript
   when raised from the delimiter's baseline offset by more than its own tolerance and no further

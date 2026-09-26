@@ -1,4 +1,4 @@
-# DASC pages 6 and 9: display crops, painted accents and a stray 3 (#302 items 2–4)
+# DASC pages 5, 6 and 9: nested scripts, display crops, painted accents and a stray 3 (#302)
 
 Tier: deterministic Apple PDF stack, isolated macOS arm64 release CLI.
 Subject: DASC (Sadovsky and Windhorst, DASC 2019), `corpus/cache/20190030725.pdf`, SHA-256
@@ -13,7 +13,32 @@ glyph positions come from `mutool draw -F stext` and from `GlyphPlacementReader`
 graphics and crops of a page come from a Swift Testing probe calling `PageReader.read`,
 `GraphicsReader.read` and `LayoutReconstructor.graphicsWithLabels` (not committed).
 
-Item 1 of #302 (nested script levels) is not measured here.
+Items 2–4 were measured at `2bff36c6` with the change that became `e792a282`; item 1 was measured
+last, on the tree that holds every change it needed (below).
+
+## Item 1: nested script levels
+
+54213607 taught `NativeTextReader` to set the nested flags, but DASC's `STA^{n^i_h}_h` still read
+flat. Two things stood in the way. PDFKit split the row into three lines (#303), and it measured
+`STA` and `n` from a line reference that was not their baseline, which left the outer `n` past the
+own-size limit (#304). a0e8aeac measures scripts from the text they are set against and admits a
+TeX superscript raised over its own stack. f49e2206 rejoins the row's pieces before the line is
+read.
+
+On `f49e2206` (which also holds a0e8aeac, 5de69c27 and e792a282), with the command above, DASC
+reads:
+
+- page 5, Step 2: `For each STA<sup>n<sup>i</sup><sub>h</sub></sup><sub>h </sub>occurring in the
+  computed schedules`, both levels nested as printed (the space inside the last `<sub>` is
+  PDFKit's own run);
+- page 5, the time windows: `A<sup>n<sup>i</sup><sub>f </sub>,j</sup> <sub>f </sub>satisfy all the
+  constraints`;
+- page 9: `(a̱<sub>k</sub>,ā<sub>k</sub>) the time window available to flight f`, and `problem (12)
+  has the form` followed by the display's crop (items 2 and 3, unchanged by the later commits).
+
+The issue's other open question, whether Wallace page 178's `(a²)³` still read `a<sup>2 </sup>3`,
+is settled by 5de69c27. It restores the tall parentheses and reads `(a<sup>2</sup>)<sup>3</sup>`,
+pinned in the `wallace-algebra-2010` contract.
 
 ## Item 2: the display `½xᵀPx + qᵀx ⟶ₓ min, Gᵀx ≤ h`
 
